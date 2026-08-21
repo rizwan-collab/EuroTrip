@@ -789,7 +789,6 @@ function renderDetail(){
     +'</div>'
     +'</div>'
     +'</div>';
-  }
   } else if(curtab==='pack'){
     body='<div style="padding:24px 28px;background:#fff">'
     +'<div style="font-size:22px;font-weight:800;color:#111827;margin-bottom:4px">🎒 Packing List</div>'
@@ -1076,7 +1075,7 @@ function renderDetail(){
     +'</div>'
     +'</div>';
     setTimeout(function(){if(typeof loadBdg==="function")loadBdg();},50);
-
+  }
 
   var ft='<div class="det-ft"><span class="ft-text">'+o.name+' · '+o.cities+' · Nov 2026 · '+o.nights+' · Family of 3 · Izyan age 5 </span>'
     +'<button class="ft-btn" onclick="sendItinerary()">📅 Build Full Itinerary — '+o.name+'</button></div>';
