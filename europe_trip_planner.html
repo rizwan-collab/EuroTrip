@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Europe Trip Planner — Nov 2026</title>
+<style>
+:root { color-scheme: light; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 17px; background: #f3f4f6; color: #111827; }
+
+.app-hdr { background: #1e1b4b; color: #fff; padding: 18px 28px; display: flex; align-items: center; gap: 18px; }
+.app-hdr h1 { font-size: 22px; font-weight: 800; }
+.app-hdr p { font-size: 15px; opacity: .75; margin-top: 3px; }
+.hdr-chip { background: #4f46e5; padding: 7px 16px; border-radius: 20px; font-size: 14px; font-weight: 700; white-space: nowrap; }
+
+.tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; padding: 20px; background: #f9fafb; border-bottom: 2px solid #e5e7eb; }
+.tile { padding: 22px 20px; border-radius: 16px; cursor: pointer; border: 3px solid transparent; background: #fff; transition: all .15s; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+.tile:hover { border-color: #a5b4fc; }
+.tile.sel { border-color: #4f46e5; box-shadow: 0 4px 20px rgba(79,70,229,.2); }
+.tile-top { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+.tile-name { font-size: 22px; font-weight: 800; color: #111827; line-height: 1.2; }
+.tile-cities { font-size: 15px; color: #6b7280; margin-top: 3px; }
+.tile-chips { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.tchip { font-size: 13px; padding: 5px 12px; border-radius: 20px; font-weight: 700; white-space: nowrap; }
+.tw { background: #fef9c3; color: #713f12; }
+.tm { background: #dbeafe; color: #1e40af; }
+.trisk-low { background: #dcfce7; color: #166534; }
+.trisk-med { background: #fef9c3; color: #713f12; }
+.tprice { font-size: 16px; font-weight: 800; color: #4f46e5; }
+.tnights { background: #ede9fe; color: #5b21b6; }
+
+.det-hd { display: flex; align-items: flex-start; gap: 22px; padding: 24px 28px; background: #fff; border-bottom: 1px solid #e5e7eb; }
+.det-flag { font-size: 58px; line-height: 1; flex-shrink: 0; }
+.det-info { flex: 1; }
+.det-title { font-size: 28px; font-weight: 800; color: #111827; margin-bottom: 6px; }
+.det-sub { font-size: 17px; color: #4b5563; margin-bottom: 14px; line-height: 1.5; }
+.det-badges { display: flex; gap: 9px; flex-wrap: wrap; }
+.badge { font-size: 15px; padding: 6px 15px; border-radius: 20px; font-weight: 700; }
+.bw { background: #fef9c3; color: #713f12; }
+.bm { background: #dbeafe; color: #1e40af; }
+.bk { background: #f3e8ff; color: #6b21a8; }
+.bg { background: #dcfce7; color: #166534; }
+.bp { background: #fef3c7; color: #92400e; font-weight: 800; }
+.brisk-low { background: #dcfce7; color: #166534; }
+.brisk-med { background: #fef9c3; color: #713f12; }
+
+.info-strip { display: grid; grid-template-columns: 1fr 1fr 1fr; background: #fff; border-bottom: 1px solid #e5e7eb; }
+.info-box { padding: 20px 22px; }
+.info-box:not(:last-child) { border-right: 1px solid #e5e7eb; }
+.info-label { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .07em; color: #9ca3af; margin-bottom: 13px; }
+.bline { display: flex; justify-content: space-between; align-items: baseline; padding: 7px 0; border-bottom: 1px solid #f3f4f6; gap: 10px; }
+.bline:last-child { border: none; }
+.bline-cat { font-size: 15px; color: #374151; flex: 1; }
+.bline-sub { font-size: 12px; color: #9ca3af; display: block; margin-top: 2px; line-height: 1.4; }
+.bline-amt { font-size: 15px; font-weight: 800; color: #111827; white-space: nowrap; flex-shrink: 0; }
+.btotal { display: flex; justify-content: space-between; align-items: center; padding: 11px 0 3px; border-top: 2px solid #d1d5db; margin-top: 7px; font-size: 18px; font-weight: 800; }
+.btotal-amt { color: #4f46e5; }
+.info-val { font-size: 18px; font-weight: 700; color: #111827; margin-bottom: 9px; }
+.info-note { font-size: 15px; color: #374151; line-height: 1.75; }
+.info-note b { color: #111827; }
+
+.risk-bar { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 10px; margin-bottom: 14px; font-size: 15px; font-weight: 700; }
+.risk-bar-low { background: #dcfce7; color: #166534; }
+.risk-bar-med { background: #fef9c3; color: #713f12; }
+.risk-item { font-size: 14px; color: #374151; padding: 6px 0; border-bottom: 1px solid #f3f4f6; line-height: 1.55; }
+.risk-item:last-child { border: none; }
+
+.det-tabs { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; background: #f1f5f9; padding: 12px 16px; border-bottom: 2px solid #e2e8f0; }
+.det-tab { padding: 12px 8px 10px; font-size: 11.5px; font-weight: 800; color: #64748b; cursor: pointer; border-radius: 10px; border: 1.5px solid #e2e8f0; background: #fff; text-align: center; transition: all .15s; line-height: 1.35; display: flex; flex-direction: column; align-items: center; gap: 4px; } .det-tab .t-icon { font-size: 20px; line-height: 1; }
+.det-tab.act { background: #4f46e5; color: #fff; border-color: #4f46e5; box-shadow: 0 3px 10px rgba(79,70,229,.3); }
+.det-tab:hover:not(.act) { background: #f8faff; border-color: #a5b4fc; color: #3730a3; }
+
+/* Day cards */
+.day-grid { padding: 22px 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; background: #f9fafb; }
+.day-card { background: #fff; border-radius: 14px; padding: 18px 20px; border: 1px solid #e5e7eb; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+.day-card.xmas { border-color: #86efac; }
+.day-card.local { border-color: #c4b5fd; }
+.day-num { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: #9ca3af; margin-bottom: 5px; }
+.day-title-row { display: flex; align-items: center; gap: 11px; margin-bottom: 13px; }
+.day-ic { font-size: 24px; }
+.day-title-txt { font-size: 17px; font-weight: 800; color: #111827; line-height: 1.3; }
+.day-item { font-size: 15px; color: #374151; padding: 6px 0; border-bottom: 1px solid #f3f4f6; line-height: 1.65; }
+.day-item:last-child { border: none; padding-bottom: 0; }
+.day-time { font-size: 13px; font-weight: 800; color: #6366f1; background: #eef2ff; padding: 1px 7px; border-radius: 5px; margin-right: 6px; white-space: nowrap; }
+.day-walk { font-size: 12px; color: #9ca3af; font-style: italic; margin-left: 4px; }
+.day-tag { font-size: 11px; padding: 2px 7px; border-radius: 4px; margin-left: 6px; font-weight: 800; vertical-align: middle; }
+.dt-local { background: #ede9fe; color: #5b21b6; }
+.dt-xmas { background: #dcfce7; color: #166534; }
+
+/* Section divider */
+.section-divider { padding: 18px 28px 10px; background: #f9fafb; border-top: 2px solid #e5e7eb; }
+.section-divider-lbl { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: .09em; color: #6b7280; display: flex; align-items: center; gap: 10px; }
+.section-divider-lbl:after { content: ''; flex: 1; height: 1px; background: #e5e7eb; }
+
+/* Activities chain layout */
+.acts-wrap { padding: 14px 28px 22px; background: #f9fafb; }
+.acts-2col { display: grid; grid-template-columns: 1fr 280px; gap: 24px; align-items: start; }
+.acts-cities { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
+.city-sec { margin-bottom: 28px; }
+.city-lbl { font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: .1em; color: #4f46e5; background: #eef2ff; display: inline-block; padding: 4px 12px; border-radius: 6px; margin-bottom: 14px; }
+.act-node { display: flex; gap: 11px; align-items: flex-start; padding: 10px 12px; background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,.04); cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+.act-node:hover { border-color: #a5b4fc; box-shadow: 0 2px 8px rgba(79,70,229,.10); }
+.act-node.expanded { border-color: #4f46e5; background: #f8f7ff; }
+.act-ic2 { font-size: 22px; flex-shrink: 0; margin-top: 1px; }
+.act-nm { font-size: 15px; font-weight: 700; color: #111827; line-height: 1.3; margin-bottom: 3px; }
+.act-desc2 { font-size: 13px; color: #6b7280; line-height: 1.5; }
+.act-expand { display: none; margin-top: 10px; padding: 10px 12px; background: #fff; border: 1px solid #e0e7ff; border-radius: 8px; font-size: 13px; color: #1f2937; line-height: 1.7; }
+.act-node.expanded .act-expand { display: block; }
+.act-hint { font-size: 11px; color: #a5b4fc; font-weight: 600; margin-top: 4px; letter-spacing: .02em; }
+.dist-conn { display: flex; align-items: center; gap: 7px; padding: 5px 6px 5px 22px; position: relative; }
+.dist-conn:before { content: '↓'; position: absolute; left: 7px; top: 50%; transform: translateY(-50%); color: #c4b5fd; font-size: 13px; font-weight: 900; }
+.dist-mi { font-size: 12px; font-weight: 800; color: #1f2937; background: #f3f4f6; padding: 2px 7px; border-radius: 20px; }
+.dist-min { font-size: 12px; font-weight: 800; color: #4f46e5; background: #eef2ff; padding: 2px 7px; border-radius: 20px; }
+.dist-mode-lbl { font-size: 12px; color: #9ca3af; font-style: italic; }
+.acts-notes { background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 20px; }
+.acts-notes-hd { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .07em; color: #9ca3af; margin-bottom: 16px; }
+
+.tag { display: inline-block; font-size: 11px; padding: 2px 7px; border-radius: 5px; margin-left: 5px; vertical-align: middle; font-weight: 700; }
+.ti { background: #f3e8ff; color: #6b21a8; }
+.tf { background: #dcfce7; color: #166534; }
+.tb { background: #fef9c3; color: #713f12; }
+.tl { background: #ede9fe; color: #5b21b6; }
+.tt { background: #fef3c7; color: #b45309; }
+.tx { background: #bbf7d0; color: #15803d; }
+
+/* Hotels */
+.hotels-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin-top: 8px; }
+.hotel-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px 18px; }
+.hotel-card:hover { border-color: #a5b4fc; }
+.hotel-city-lbl { font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: .08em; color: #4f46e5; margin-bottom: 5px; }
+.hotel-nights-chip { display: inline-block; font-size: 12px; font-weight: 700; background: #ede9fe; color: #5b21b6; padding: 2px 8px; border-radius: 20px; margin-bottom: 8px; }
+.hotel-name { font-size: 16px; font-weight: 800; color: #111827; margin-bottom: 4px; line-height: 1.3; }
+.hotel-price { font-size: 15px; font-weight: 800; color: #4f46e5; margin-bottom: 8px; }
+.hotel-loc { font-size: 13px; color: #374151; margin-bottom: 5px; line-height: 1.5; }
+.hotel-why { font-size: 13px; color: #6b7280; line-height: 1.55; }
+.hotel-book { margin-top: 9px; font-size: 12px; color: #9ca3af; border-top: 1px solid #f3f4f6; padding-top: 8px; }
+
+.route { padding: 15px 28px; background: #eff6ff; border-bottom: 1px solid #e5e7eb; font-size: 15px; color: #1e40af; line-height: 1.8; }
+.route b { color: #1e1b4b; font-size: 16px; }
+.note { padding: 14px 18px; border-radius: 12px; font-size: 14px; line-height: 1.75; margin-bottom: 12px; }
+.note-tip { background: #dcfce7; color: #166534; }
+.note-warn { background: #fef9c3; color: #713f12; }
+.note-train { background: #eff6ff; color: #1e40af; }
+.note-xmas { background: #bbf7d0; color: #15803d; }
+
+.fly-wrap { padding: 22px 28px; background: #fff; border-bottom: 1px solid #e5e7eb; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.fly-hotel-wrap { padding: 22px 28px; background: #f9fafb; border-bottom: 1px solid #e5e7eb; }
+.col-hd { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: .07em; color: #9ca3af; margin-bottom: 16px; }
+.fly-row { font-size: 15px; padding: 9px 0; border-bottom: 1px solid #f3f4f6; display: flex; gap: 14px; }
+.fly-row:last-child { border: none; }
+.fly-label { font-size: 12px; color: #9ca3af; min-width: 120px; flex-shrink: 0; font-weight: 800; padding-top: 2px; text-transform: uppercase; letter-spacing: .04em; }
+.fly-val { color: #111827; flex: 1; }
+.book-item { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; font-size: 15px; color: #374151; border-bottom: 1px solid #f3f4f6; line-height: 1.55; }
+.book-item:last-child { border: none; }
+
+.det-ft { padding: 20px 28px; background: #1e1b4b; display: flex; align-items: center; gap: 18px; }
+.ft-text { font-size: 15px; color: #a5b4fc; flex: 1; line-height: 1.5; }
+.ft-btn { padding: 15px 32px; font-size: 16px; font-weight: 800; border: none; border-radius: 12px; background: #4f46e5; color: #fff; cursor: pointer; transition: background .15s; white-space: nowrap; }
+.ft-btn:hover { background: #4338ca; }
+</style>
+</head>
+<body>
+
+<div class="app-hdr">
+  <div style="font-size:40px">✈️</div>
+  <div style="flex:1">
+    <h1>Europe Trip Planner — November 2026</h1>
+    <p>Rizwan · Zaibnish · Izyan (age 5) &nbsp;·&nbsp; Departing Houston IAH &nbsp;·&nbsp; Goway Travel Ref 1185612/1 — Narmin Kermally</p>
+  </div>
+  <div class="hdr-chip">2 Options · Family of 3</div>
+</div>
+
+<div class="tiles" id="tiles"></div>
+<div id="detail"></div>
+
+<script>
+function T(t){ return '<span class="day-time">'+t+'</span>'; }
+function W(t){ return '<span class="day-walk">'+t+'</span>'; }
+function LG(){ return '<span class="day-tag dt-local">🏘 Local gem</span>'; }
+function XM(){ return '<span class="day-tag dt-xmas">🎄 Festive</span>'; }
+
+var opts = [
+{
+  n:1, f:"🇵🇹🇪🇸🇫🇷",
+  name:"Portugal · Spain · Paris",
+  cities:"Lisbon · Seville · Granada · Paris",
+  sub:"Lisbon 2n · Seville 2n · Granada 2n · Paris 2n · <b>8 nights · Nov 9–18 · depart Sun · home Tue</b>",
+  nights:"8 Nights", w:"warm", wl:"☀🌤 55–68°F · Lisbon mildest", k:"★★★",
+  fly:"3 flights · IAH→LIS + AGP→CDG + CDG→IAH",
+  risk:"LOW", riskClass:"low",
+  riskSummary:"Portugal + Spain + France — all Schengen · very safe · family-rated",
+  riskItems:[
+    "✅ Lisbon: Lowest street crime of any Iberian capital. Chiado + Belém safe at all hours. Taxis metered.",
+    "✅ Seville + Granada: Normal tourist awareness. Alcázar + Alhambra entrances: keep bags zipped and front-facing.",
+    "✅ Paris: Eiffel + Louvre areas: keep crossbody bags zipped. Metro: phone in front pocket not back. Anti-theft bag for Zaibnish.",
+    "✅ Málaga transit: Airport only — no overnight. Bus GRX→Malaga is safe ALSA coach. Taxi to AGP if preferred.",
+    "✅ Mitigation: Hotel safe for passports. Arrive Lisbon rested before sightseeing begins."
+  ],
+  budget:{
+    flights:    {lo:2400,hi:3000,note:"IAH→LIS (via LHR/AMS/FRA hub) + AGP→CDG (Vueling/EasyJet ~€80-150/person) + CDG→IAH nonstop · 3 people"},
+    hotels:     {lo:1640,hi:2280,note:"Lisbon 2n ($440-640) + Seville 2n ($360-500) + Granada 2n ($520-680) + Paris 2n ($320-460)"},
+    food:       {lo:1360,hi:1760,note:"~$170-220/day · 3 meals + snacks × 3 people × 8 days"},
+    activities: {lo:680, hi:950, note:"Sintra Palace · Belém Tower · Alcázar · Alhambra · Flamenco · Eiffel Tower · Notre Dame · Disneyland"},
+    transport:  {lo:700, hi:1200,note:"Alfa Pendular LIS→SVQ ($75-150) · ALSA bus SVQ→GRX ($45-60) · Bus+taxi GRX→Málaga ($60-80) · City Ubers Lisbon+Seville+Granada ($200-300) · Paris Metro + CDG taxi + Disney RER ($120-200)"},
+    total:      {lo:6780,hi:9190}
+  },
+  weather:"Lisbon 55–65°F mild (warmest city on the trip) · Seville 57–68°F warm · Granada 46–57°F (cold mornings — layer for Alhambra 9am) · Paris 45–55°F cool + Christmas lights. November = fewest tourists of the year in all four cities.",
+  weatherIcon:"🌤 Lisbon mild · ☀ Seville warm · 🌅 Granada clear · 🎄 Paris festive",
+  visa:"ONE ETIAS covers Portugal + Spain + France (all Schengen)",
+  visaNote:"<b>One ETIAS covers all three countries.</b> €7/adult, Izyan free under 18. etias.com · apply 72h before departure.",
+  vaccine:"No vaccines required. Flu shot recommended. Ensure Izyan's pediatric vaccines are current.",
+  route:"IAH ──overnight──▶ Lisbon · Alfa Pendular 2.5h → Seville · ALSA 3h → Granada · Bus 1.5h + Vueling 2.5h ──▶ Paris ──nonstop──▶ IAH",
+  hotels:[
+    {city:"Lisbon",nights:2,flag:"🇵🇹",name:"Bairro Alto Hotel",price:"$220–$320 / night",loc:"📍 Chiado — central Lisbon",why:"Best boutique hotel in Lisbon. Steps from Tram 28 stop. 20-min walk to Alfama. Rooftop terrace with Tagus river views. 15-min walk from the Ismaili Centre. Everything on Day 3 is walkable or a short tram from here.",book:"<a href='https://www.bairroaltohotel.com/en/reservations' target='_blank' style='color:#4f46e5;font-weight:700'>bairroaltohotel.com/reservations</a>"},
+    {city:"Seville",nights:2,flag:"🇪🇸",name:"EME Catedral Hotel",price:"$180–$250 / night",loc:"📍 Steps from Seville Cathedral + Alcázar",why:"Alcázar is a 5-min walk. Triana bridge is 15 min on foot. Rooftop pool faces the Cathedral — the view pays for itself. Prime base for all Day 5 activities.",book:"<a href='https://www.emecatedralhotel.com/en/book-now' target='_blank' style='color:#4f46e5;font-weight:700'>emecatedralhotel.com/en/book-now</a>"},
+    {city:"Granada",nights:2,flag:"🇪🇸",name:"Parador de Granada",price:"$260–$340 / night",loc:"📍 Inside the Alhambra complex",why:"Izyan wakes up inside the palace complex — breakfast with Alhambra views, steps from the 9am timed-entry gate. No taxi needed. Book immediately: fills months ahead. The most memorable hotel of the trip.",book:"<a href='https://paradores.es/en/parador-de-granada' target='_blank' style='color:#4f46e5;font-weight:700'>paradores.es/en/parador-de-granada</a> — Book immediately"},
+    {city:"Paris",nights:2,flag:"🇫🇷",name:"Hôtel du Champ de Mars",price:"$160–$230 / night",loc:"📍 7th Arr — 2 blocks from Rue Cler",why:"2 nights — check in Sun Nov 16 evening, check out Tue Nov 18 morning (Disneyland day). Rue Cler market is steps away. Eiffel Tower is a 10-min walk. Perfect base: everything on Day 9 is walkable or a short Metro.",book:"<a href='https://www.hotelduchampdemars.com/en/direct-booking' target='_blank' style='color:#4f46e5;font-weight:700'>hotelduchampdemars.com/en/direct-booking</a>"},
+  ],
+  acts:[
+    // ── LISBON ─────────────────────────────────────
+    {i:"🕌",city:"Lisbon",dp:null,
+      n:"Jamatkhana + Diwan (Ismaili Centre)",
+      d:"Ismaili Centre Lisbon — morning Diwan. Dress modestly. 15-min walk from Bairro Alto Hotel. Open 9–11am.",
+      blurb:"The Ismaili Centre in Lisbon sits in the Chiado neighbourhood — 15-min walk from the Bairro Alto Hotel. Morning Diwan is a meaningful anchor to start the trip. Dress modestly (covered shoulders and legs). Visit first thing Day 3 before tourist sites open — after Diwan you're positioned perfectly to catch the Tram 15E to Belém.",ti:1},
+    {i:"🏛️",city:"Lisbon",dp:{mi:3.5,min:20,mode:"Tram 15E or Uber"},
+      n:"Belém Tower + Jerónimos Monastery",
+      d:"Lisbon's two UNESCO monuments on the river. Built to celebrate the Age of Discovery. Izyan free.",
+      blurb:"Belém Tower (1516) was built to guard Lisbon's harbour — a Manueline fortress at the mouth of the Tagus. Jerónimos Monastery is 800m away: intricate Gothic cloisters built to celebrate Vasco da Gama's discovery of the sea route to India. Both UNESCO World Heritage. Izyan free. Allow 2.5 hours. Walk the riverside promenade between them — the waterfront view of the Tower from the promenade is the best photo of the trip.",ti:1,tb:1},
+    {i:"🥐",city:"Lisbon",dp:{mi:0.2,min:3,mode:"walk"},
+      n:"Pastéis de Belém",
+      d:"Hidden gem: the original custard tart shop, open since 1837. Order 6 with cinnamon. Izyan's introduction to Portugal.",
+      blurb:"Pastéis de Belém has been making custard tarts from the same secret recipe since 1837. Eat them warm from the oven with cinnamon and powdered sugar at the marble counter. Queue looks long but moves in 10 minutes. Right beside Jerónimos. This single pastry will be Izyan's first food memory of Lisbon — order at least two per person.",tl:1,ti:1},
+    {i:"🚋",city:"Lisbon",dp:{mi:3.5,min:25,mode:"Uber back to Alfama"},
+      n:"Tram 28 Through Alfama",
+      d:"Lisbon's legendary yellow tram scraping through medieval lanes. Izyan rides in the front car. The most iconic thing in Lisbon.",
+      blurb:"Tram 28 is Europe's most famous tram — a vintage yellow carriage that squeezes through streets so narrow the tram literally scrapes the building walls on both sides. The route climbs through Alfama, Lisbon's oldest Moorish neighbourhood, past tiled facades, laundry lines, and locals stepping aside. Izyan sits at the front window. Board at Martim Moniz heading toward Alfama. Afternoon light on the orange-tiled rooftops is extraordinary.",tl:1,ti:1},
+    {i:"🏰",city:"Lisbon",dp:{mi:0.3,min:8,mode:"walk uphill"},
+      n:"Portas do Sol + São Jorge Castle",
+      d:"Hidden gem: the miradouro with the best Lisbon panorama — red rooftops sweeping to the Tagus. Castle battlements have peacocks.",
+      blurb:"Portas do Sol is a terrace miradouro overlooking Alfama's rooftops and the Tagus river — the classic Lisbon panorama. São Jorge Castle sits above it: an 11th-century Moorish fortress with peacocks wandering the battlements. Izyan chases them. The 360° view from the towers takes in the entire city, the river, and the Ponte 25 de Abril suspension bridge. November: no queues, perfect light.",ti:1,tf:1},
+    // ── SEVILLE ────────────────────────────────────
+    {i:"🧱",city:"Seville",dp:null,
+      n:"Triana + Calle Betis Afternoon Walk",
+      d:"Hidden gem: Seville's ceramics and Roma neighbourhood across the river. Zero tour buses. Locals only.",
+      blurb:"Triana is the real Seville — historically the Roma and ceramics district. Workshops still make hand-painted azulejo tiles for sale. Calle Betis is the riverside promenade where locals walk in the evening. Cross the iron Triana bridge, walk Betis end to end, sit at any outdoor bar. Arrive Day 4 afternoon after the train — this is the perfect low-key first Seville experience before the full Day 5 schedule.",tl:1},
+    {i:"🏯",city:"Seville",dp:{mi:0.8,min:18,mode:"walk"},
+      n:"Real Alcázar Gardens",
+      d:"UNESCO royal palace — world-class Mudejar architecture + 7 hectares of gardens. Izyan free under 16. Pre-book.",
+      blurb:"The oldest royal palace in continuous use in Europe, built in 1364 over a Moorish fortress. Extraordinary Mudejar tile work, horseshoe arches, carved stucco ceilings. The gardens: 7 hectares of orange trees, peacocks, fountains, hidden pavilions, and mazes. Game of Thrones was filmed here. Izyan free under 16. Pre-book timed entry — queues without reservation run 45+ minutes.",ti:1,tf:1,tb:1},
+    {i:"🍽️",city:"Seville",dp:{mi:0.6,min:15,mode:"walk"},
+      n:"Lonja del Barranco Food Market",
+      d:"Hidden gem: 19th-century iron market restored by Eiffel's firm. 35 local food stalls on the Guadalquivir river.",
+      blurb:"A 19th-century iron fish market on the Guadalquivir, restored by Gustavo Eiffel's engineering firm. 35 stalls of local jamón, seafood, Spanish cheese, and tapas — no tourist pricing. The outdoor riverside terrace overlooks the Torre del Oro. Best lunch spot after the Alcázar. 15-min walk via the river path.",tl:1},
+    {i:"🕌",city:"Seville",dp:{mi:0.3,min:7,mode:"walk"},
+      n:"Giralda Tower Climb",
+      d:"Seville Cathedral's Moorish bell tower — NO stairs, only ramps. Izyan sprints straight to the top. 104m panoramic views.",
+      blurb:"The Giralda is a 12th-century Moorish minaret converted to a bell tower. The 34 ramps were built so the muezzin could ride a horse to the top — Izyan sprints straight to the 104m summit without a single step. Views: the entire city, the Guadalquivir, and the flat Andalusian plain. Book as Cathedral combo ticket. One of Spain's best tower climbs.",ti:1,tb:1},
+    {i:"🌊",city:"Seville",dp:{mi:0.6,min:14,mode:"walk"},
+      n:"Plaza de España",
+      d:"One of Europe's most spectacular plazas — 48 tile alcoves of every Spanish province. Star Wars filmed here. Izyan runs the whole thing.",
+      blurb:"Built for the 1929 Ibero-American Exposition: a massive semicircle of terracotta buildings surrounding an ornate moat with four carved bridges. The 48 tile alcoves each depict a different Spanish province — Izyan runs between them reading the blue-and-white maps. Appeared as planet Naboo in Star Wars: Attack of the Clones. Adjacent Maria Luisa Park has peacocks. Free to enter. November: amber sunset light on the terracotta.",ti:1,tf:1},
+    {i:"💃",city:"Seville",dp:{mi:0.5,min:12,mode:"walk"},
+      n:"Cave Flamenco Show",
+      d:"Intimate cave performance — not a theater. ~$90 for 3. Pre-book 3-5 days ahead. Izyan mesmerized.",
+      blurb:"Real flamenco is a conversation between dancer, guitarist, and singer — the raw emotion called duende. Tablao venues seat 30-60 in caves or cellars; you feel the floor vibrate under the heels. November: smaller crowds, more concentrated performances. Options: Casa del Flamenco, Tablao El Arenal, or La Carboneria (free, informal). Pre-book 3-5 days ahead.",ti:1,tb:1},
+    // ── GRANADA ────────────────────────────────────
+    {i:"🥙",city:"Granada",dp:null,
+      n:"Granada Tapas Trail (Arrival Evening)",
+      d:"Hidden gem: every food order in Granada comes with a free tapa plate — unique in all of Spain. Best introduction to the city.",
+      blurb:"Granada is the only city in Spain where every drink order comes with a free tapa plate — beer, juice, or water. Plates escalate with each bar: bread with oil first, jamón and cheese by the third. Best streets: Plaza Nueva, Calle Navas. Budget: €15-20 for the family to eat very well across 3 bars. Izyan eats more than expected. Do this the evening you arrive — it's the perfect gentle introduction to Granada.",tl:1},
+    {i:"🏰",city:"Granada",dp:{mi:0,min:5,mode:"walk from Parador"},
+      n:"Alhambra + Generalife",
+      d:"Book TODAY — sells out 2-3 months ahead for November. 9am entry = best light, fewest crowds. Generalife gardens are Izyan's playground.",
+      blurb:"The finest surviving Moorish architecture in the world. Built by the Nasrid dynasty in the 13th-14th centuries on a forested ridge above Granada — palace, fortress, and gardens in one complex. The Nasrid Palaces have the most intricate carved-plaster ceilings anywhere. The Generalife gardens have 800-year-old irrigation channels still flowing. 9am entry from the Parador = 5-min walk to the gate. Book via alhambra-patronato.es TODAY — the most critical booking of the entire trip.",ti:1,tb:1},
+    {i:"🌅",city:"Granada",dp:{mi:0.8,min:30,mode:"walk downhill through Albaicín"},
+      n:"Mirador San Nicolás",
+      d:"Hidden gem: the definitive Alhambra view — palace across the valley with Sierra Nevada behind it. Locals gather here at sunset.",
+      blurb:"The Mirador San Nicolas in the Albaicín — Granada's medieval Moorish neighbourhood — gives the definitive view: the entire Alhambra across the valley with snow-capped Sierra Nevada directly behind it. The 30-min walk uphill through narrow Albaicín lanes is part of the experience: white walls, jasmine, cats, Arabic music from open windows. Go at sunset. Free. Locals gather here with friends every evening.",tl:1},
+    {i:"🏘️",city:"Granada",dp:{mi:0.3,min:7,mode:"walk"},
+      n:"Sacromonte Cave District",
+      d:"Roma cave homes carved into the hillside. 5-min walk from Mirador. Magical at dusk — Izyan calls it a hobbit village.",
+      blurb:"Granada's cave district where Roma families have lived in hillside cave homes for 500 years. The caves are real houses — electricity, kitchens, living rooms. At dusk the hillside glows amber. 5-7 minutes from Mirador San Nicolas via the Camino del Sacromonte. Looking back, the Alhambra is lit on the opposite ridge. Izyan declares it a hobbit village. 20 minutes here before heading down for dinner.",tl:1,ti:1},
+    // ── PARIS ──────────────────────────────────────
+    {i:"🌸",city:"Paris",dp:null,
+      n:"Rue Cler Morning Market",
+      d:"Hidden gem: the most local market street in Paris. Zero tourists before 9am. Breakfast from the stalls. 5-min walk to Eiffel.",
+      blurb:"A pedestrian market street in the 7th arrondissement where Paris's diplomatic corps buys food every morning. Produce merchants, cheesemongers, butchers, bakeries, flower stalls — almost no tourists before 9am. Buy breakfast: fresh baguette, tarte from the patisserie, coffee at the café end. Izyan picks something from a stall. Then walk 5 minutes to the Eiffel Tower.",tl:1},
+    {i:"🗼",city:"Paris",dp:{mi:0.3,min:6,mode:"walk"},
+      n:"Eiffel Tower Summit",
+      d:"Pre-book weeks ahead — queues without tickets = 2+ hours. Go at 4pm: arrive daylight, descend with city lit. Izyan's biggest Paris moment.",
+      blurb:"Built in 1889, hated by Parisians at first. Summit is 276m — on a clear November day, visibility reaches 70km. Glass floor panels at Level 1 look straight down. Best timing: 4pm — arrive in daylight, watch Paris go golden at dusk, come down with the city fully lit. Every hour after dark, 20,000 light bulbs sparkle for 5 minutes. Pre-book weeks ahead. Izyan's summit photo defines the trip.",ti:1,tb:1},
+    {i:"⛪",city:"Paris",dp:{mi:1.5,min:25,mode:"walk along river"},
+      n:"Notre Dame Cathedral (Restored)",
+      d:"Reopened Dec 2024 after the 2019 fire — more stunning than before. Free entry. Izyan inside a 900-year-old cathedral.",
+      blurb:"The April 2019 fire collapsed the spire on live television, watched by 1 billion people. The €700M restoration completed December 2024 produced the most perfectly preserved Gothic interior in the world. New gilded vaults glow warm gold. The 800-year-old rose windows were cleaned and now blaze with colour. Free entry with timed reservation (book day before). Izyan walks into a 900-year-old space.",tf:1,ti:1},
+    {i:"🚢",city:"Paris",dp:{mi:0.5,min:10,mode:"walk to Pont de l'Alma"},
+      n:"Seine River Cruise (Bateaux Mouches)",
+      d:"1h cruise past every major Paris monument from the water. Evening = Eiffel sparkling above you. Ideal for Izyan.",
+      blurb:"Bateaux Mouches depart from Pont de l'Alma (beside the Princess Diana memorial flame). The 1-hour cruise passes Musée d'Orsay, Notre Dame on its island, the Louvre riverside wing, and the Eiffel Tower. At night all monuments are floodlit and the Eiffel sparkles hourly. Multi-language audio. Children under 4 free, discounted 4-12. All major monuments from the water — perfect for Izyan.",ti:1},
+    {i:"🛍️",city:"Paris",dp:{mi:1.2,min:22,mode:"Metro line 9"},
+      n:"Galeries Lafayette Windows + Passage Jouffroy",
+      d:"Free Christmas windows with mechanical animated scenes. Then duck into the 1847 arcade — antique toy shop for Izyan.",
+      blurb:"Galeries Lafayette: world-famous Christmas window displays — animated mechanical scenes and hundreds of moving figures. Free from the street. Inside, the 1912 glass dome is one of the most beautiful spaces in Paris. Passage Jouffroy is right behind it: a 19th-century heated glass-roofed arcade with an antique wooden toy shop, rare travel bookshop, and small cafes. Izyan picks a toy. No purchase required.",tf:1,tl:1},
+    {i:"🎢",city:"Paris",dp:{mi:32,min:40,mode:"RER A from Châtelet"},
+      n:"Disneyland Paris (Christmas Season)",
+      d:"Christmas season opens Nov 8. Enchanted Christmas parade + castle lights. 40-min RER from central Paris. Izyan's perfect final day.",
+      blurb:"November is the best time for Disneyland Paris: Enchanted Christmas decorations from Nov 8 (Sleeping Beauty's Castle lit up, Mickey Christmas parade), no summer crowds, cool weather ideal for hot chocolate. RER A from Châtelet: 40 min, ~€8 each way. Key rides: Pirates of the Caribbean, Big Thunder Mountain, It's a Small World (holiday version). Budget ~€180-200 for 3 with food. Pre-book online. Fly home from CDG the same afternoon.",ti:1,tb:1},
+  ],
+  flies:[
+    {leg:"IAH → LIS",airline:"British Airways / KLM / Lufthansa",detail:"Via London Heathrow, Amsterdam, or Frankfurt · Overnight · Depart Sun Nov 9 ~5–9pm IAH · Connect at hub · Arrive Lisbon Mon Nov 10 ~11am–2pm"},
+    {leg:"AGP → CDG",airline:"Vueling / EasyJet",detail:"Málaga Airport → Paris CDG · ~2.5h · Sun Nov 16 · Book direct: vueling.com or easyjet.com · ~€80-150/person · Depart ~noon-2pm · Arrive Paris ~3–5pm"},
+    {leg:"CDG → IAH",airline:"Air France (AF 659)",detail:"Paris CDG → Houston IAH nonstop · ~10h · Depart Tue Nov 18 ~3–6pm · Arrive Houston Tue Nov 18 evening or Wed Nov 19 morning"}
+  ],
+  book:[
+    "🚨 BOOK NOW: Alhambra at alhambra-patronato.es — November sells out 2-3 months ahead",
+    "🚨 BOOK NOW: Parador de Granada — fills months in advance for November",
+    "📅 Book 30+ days out: Bairro Alto Hotel Lisbon · EME Catedral Seville · Hôtel du Champ de Mars Paris",
+    "📅 Book 30+ days out: AGP→CDG Vueling — fills fast for Nov weekends",
+    "🎢 Book 2-4 weeks out: Disneyland Paris · Eiffel Tower Summit (pre-booked entry mandatory) · Notre Dame timed entry",
+    "💃 Book 3-5 days ahead: Cave Flamenco show in Seville (Casa del Flamenco or Tablao El Arenal)",
+    "📅 Book 1 week out: Bateaux Mouches Seine Cruise (no pre-book required, but evening slots fill)"
+  ],
+  tip:"8 nights — the right pace for a 5-year-old. Lisbon 2 nights includes proper Belém + Alfama + Jamatkhana. Granada Parador means Izyan wakes up inside the Alhambra. No Madrid stopover: fly direct Málaga→Paris (Vueling). 3 flights total (IAH→LIS, AGP→CDG, CDG→IAH). ONE ETIAS covers all three countries.",
+  warn:"Day 4 train (Alfa Pendular) departs Lisbon Oriente ~10:22am — check Renfe/CP timetable and book in advance. ALSA bus Seville→Granada on Fridays: book 1 week ahead (popular route). Alhambra: buy tickets the moment you book this trip.",
+  days:[
+    {d:"Day 1 · Sun Nov 9",i:"✈️",t:"Fly Houston IAH → Lisbon Overnight",cls:"",items:[
+      T("5–7pm")+" Depart Houston IAH · British Airways / KLM toward London or Amsterdam",
+      T("Night")+" 9–11h total flight time · settle Izyan · overnight on board",
+      T("Tip")+" Fly overnight so you arrive Lisbon morning rather than losing a full day"
+    ]},
+    {d:"Day 2 · Mon Nov 10",i:"🌊",t:"Arrive Lisbon — Rest + Gentle Chiado Introduction",cls:"",items:[
+      T("11am–1pm")+" Land Lisbon LIS · immigration · taxi or Aerobus to Bairro Alto Hotel (~30-40 min, €20-35)",
+      T("1pm")+" Check in (early check-in if room ready; luggage storage if not) · freshen up",
+      T("2pm")+" Light lunch in Chiado · find a tasca near the hotel · no agenda",
+      T("3:30pm")+" Short walk: Praça do Comércio + waterfront promenade · Tagus riverfront · Izyan runs the square",
+      T("5pm")+" Return to hotel · Izyan nap · recovery time after the flight",
+      T("7pm")+" Dinner near hotel · Taberna da Rua das Flores or similar · early night"
+    ]},
+    {d:"Day 3 · Tue Nov 11",i:"🕌",t:"Lisbon Full Day — Jamatkhana → Belém → Alfama",cls:"",items:[
+      T("9am")+" Jamatkhana at Lisbon Ismaili Centre · morning Diwan · dress modestly · 15-min walk from hotel",
+      T("10:30am")+" Tram 15E or Uber to Belém (~20 min) — the right pace, no rushing",
+      T("11am")+" Pastéis de Belém · warm custard tarts with cinnamon · Izyan's first Portuguese pastry",
+      T("11:30am")+" Jerónimos Monastery · UNESCO Gothic cloisters · Izyan free",
+      T("1pm")+" Belém Tower · riverside walk between them · photo stop",
+      T("2pm")+" Uber back toward Alfama (~20 min)",
+      T("2:30pm")+" Tram 28 through Alfama · Izyan in the front car · scraping through medieval lanes",
+      T("3:30pm")+" Portas do Sol miradouro · panorama of Alfama rooftops + Tagus",
+      T("4pm")+" São Jorge Castle · peacocks on the battlements · Izyan chases them",
+      T("6pm")+" Back to hotel · rest",
+      T("7:30pm")+" Final Lisbon dinner · Chiado · early night — Alfa Pendular departs 10:22am tomorrow"
+    ]},
+    {d:"Day 4 · Wed Nov 12",i:"🚆",t:"Lisbon → Seville (Alfa Pendular) · Triana Afternoon",cls:"train",items:[
+      T("9am")+" Check out Bairro Alto Hotel · taxi to Lisbon Oriente station (~25 min, €20)",
+      T("10:22am")+" Alfa Pendular departs Lisbon Oriente → Seville Santa Justa · scenic coastal route · 2h30m · pre-book on CP/Renfe",
+      T("1pm")+" Arrive Seville Santa Justa · taxi to EME Catedral Hotel (~10 min, €8)",
+      T("1:30pm")+" Check in · lunch at hotel rooftop or nearby",
+      T("3pm")+" Cross Triana bridge · Calle Betis riverside walk · ceramics workshops · locals only",
+      T("5pm")+" Return to hotel · rest for Izyan",
+      T("7pm")+" Dinner in Seville old town · gentle intro · early night before full Seville day"
+    ]},
+    {d:"Day 5 · Thu Nov 13",i:"🏯",t:"Seville — Alcázar · Giralda · Plaza España · Flamenco",cls:"",items:[
+      T("9am")+" Real Alcázar · pre-booked timed entry · 2h · gardens + palaces · Izyan free under 16",
+      T("11am")+" Lonja del Barranco food market · 0.6mi walk · lunch on the Guadalquivir river terrace",
+      T("1pm")+" Giralda Tower · Cathedral combo ticket · 34 ramps, no steps · Izyan sprints to the top",
+      T("2:30pm")+" Plaza de España · 0.6mi walk · tiled alcoves of all 48 Spanish provinces · Izyan finds each one",
+      T("4pm")+" Hotel rest · Izyan nap · recharge before evening",
+      T("8pm")+" Cave Flamenco show · pre-booked · intimate cave venue · ~$90 for 3 · finish ~9:30pm"
+    ]},
+    {d:"Day 6 · Fri Nov 14",i:"🚌",t:"Seville → Granada (ALSA Bus) · Albaicín Evening",cls:"train",items:[
+      T("8am")+" Check out EME Catedral · taxi to Seville bus station Prado de San Sebastián (~10 min)",
+      T("9am")+" ALSA bus SVQ → Granada · 3h · scenic Andalusian countryside · book online in advance",
+      T("Noon")+" Arrive Granada bus station · taxi to Parador de Granada (inside Alhambra, ~15 min, €15)",
+      T("1pm")+" Check in · lunch at Parador restaurant with Alhambra views",
+      T("3pm")+" Free afternoon · explore Alhambra grounds (Parador guests have access) · Izyan explores the gardens",
+      T("5pm")+" Walk down through Albaicín lanes to Plaza Nueva",
+      T("7pm")+" Granada Tapas Trail · Plaza Nueva → Calle Navas · free tapas with every order · 3 bars = full dinner"
+    ]},
+    {d:"Day 7 · Sat Nov 15",i:"🏰",t:"Granada — ALHAMBRA · Mirador San Nicolás · Sacromonte",cls:"",items:[
+      T("9am")+" Alhambra timed entry (5-min walk from Parador) · Nasrid Palaces + Alcazaba + Generalife gardens · 3-4h",
+      T("1pm")+" Lunch at Parador terrace · Alhambra walls around you",
+      T("2:30pm")+" Walk down through Albaicín alleys toward Mirador San Nicolás · 30-min walk",
+      T("4pm")+" Sunset at Mirador San Nicolás · Alhambra across the valley + Sierra Nevada · best photo of the trip",
+      T("5pm")+" Sacromonte cave district · 10-min walk · Izyan's hobbit village moment",
+      T("7pm")+" Final Andalusia dinner in Granada · celebrate Alhambra day",
+      T("Night")+" Early night — 8am bus to Málaga tomorrow"
+    ]},
+    {d:"Day 8 · Sun Nov 16",i:"✈️",t:"Granada → Málaga → Paris · Arrive Evening",cls:"train",items:[
+      T("7:30am")+" Check out Parador · ALSA bus Granada → Málaga (~1.5h, €12/person) or group taxi (~€70) · depart 8am",
+      T("9:30am")+" Arrive Málaga AGP airport · drop bags · check in",
+      T("Noon")+" Vueling AGP → CDG · ~2.5h flight",
+      T("3–4pm")+" Arrive Paris CDG · RER B → central Paris (45 min, €11/person) · OR taxi for group (~€55-70)",
+      T("5pm")+" Check into Hôtel du Champ de Mars · 7th arrondissement",
+      T("6pm")+" Rue Cler evening walk · buy bread + cheese from the market street · first Paris air",
+      T("7pm")+" Light dinner near hotel · early night — full Paris day tomorrow"
+    ]},
+    {d:"Day 9 · Mon Nov 17",i:"🗼",t:"Paris — Rue Cler · Eiffel · Notre Dame · Seine · Passage Jouffroy",cls:"",items:[
+      T("8am")+" Rue Cler morning market · buy breakfast from the stalls · Izyan picks his item",
+      T("9:30am")+" Walk to Eiffel Tower · 5-min stroll",
+      T("10am")+" Eiffel Tower Summit · pre-booked · 1.5h · go at late morning for good light",
+      T("Noon")+" Walk along the Seine toward Île de la Cité · lunch at a riverside café",
+      T("2pm")+" Notre Dame Cathedral · timed free entry · restored interior (reopened Dec 2024)",
+      T("3:30pm")+" Walk along Left Bank → back toward Pont de l'Alma",
+      T("4pm")+" Seine River Cruise · Bateaux Mouches · 1h · all monuments from the water · Eiffel sparkles at dusk",
+      T("5:30pm")+" Metro line 9 → Grands Boulevards · Galeries Lafayette Christmas windows · free",
+      T("6pm")+" Passage Jouffroy arcade · antique toy shop · Izyan picks a toy",
+      T("7:30pm")+" Final dinner · Paris brasserie near hotel",
+      T("Night")+" Hotel check out bags packed — Disneyland early start tomorrow"
+    ]},
+    {d:"Day 10 · Tue Nov 18",i:"🎢",t:"Disneyland Paris → Fly Home CDG",cls:"xmas",items:[
+      T("7am")+" Breakfast + check out (or luggage storage at hotel until flight)",
+      T("8am")+" RER A from Nation or Châtelet–Les Halles → Disneyland · 40 min · ~€8/person each way",
+      T("9am–1pm")+" Disneyland Enchanted Christmas: castle lights + parade + Pirates of Caribbean + Big Thunder Mountain + It's a Small World (Christmas version) · hot chocolate break",
+      T("1pm")+" Leave Disneyland · RER B to CDG from Marne-la-Vallée station (or RER A → transfer) · 45-60 min",
+      T("3pm")+" CDG airport · check in + security + duty free",
+      T("5–6pm")+" Air France CDG → Houston IAH nonstop · ~10h",
+      T("Night")+" Land Houston · home · Izyan asleep on the plane before wheels up"
+    ]}
+  ],
+  prompt:"Portugal + Spain + Paris: Lisbon 2n + Seville 2n + Granada 2n + Paris 2n = 8 nights, Nov 9-18. IAH→LIS overnight (via hub), Alfa Pendular LIS→SVQ 10:22am, ALSA bus SVQ→GRX, ALSA bus GRX→Málaga + Vueling AGP→CDG noon, CDG→IAH nonstop. No Madrid. Disneyland Day 10 morning then fly home. Family: Rizwan + Zaibnish + Izyan (age 5). Goway Ref 1185612/1, agent Narmin Kermally."
+}
+];
+
+var sel=1, curtab='it';
+
+function renderTiles(){
+  document.getElementById('tiles').innerHTML=opts.map(function(o){
+    var wc=o.w==='warm'?'tw':'tm';
+    var rc=o.riskClass==='low'?'trisk-low':'trisk-med';
+    return '<div class="tile'+(o.n===sel?' sel':'')+'" onclick="pick('+o.n+')">'
+      +'<div class="tile-top"><span style="font-size:46px;line-height:1">'+o.f+'</span>'
+      +'<div><div class="tile-name">'+o.name+'</div><div class="tile-cities">'+o.cities+'</div></div></div>'
+      +'<div class="tile-chips">'
+      +'<span class="tchip '+wc+'">'+o.wl+'</span>'
+      +'<span class="tchip '+rc+'">'+o.riskSummary.split(' — ')[0]+' '+o.risk+'</span>'
+      +'<span class="tchip tnights">📅 '+o.nights+'</span>'
+      +'<span class="tprice">💵 $'+o.budget.total.lo.toLocaleString()+'–$'+o.budget.total.hi.toLocaleString()+'</span>'
+      +'</div></div>';
+  }).join('');
+}
+
+function bRow(icon,label,note,lo,hi){
+  return '<div class="bline"><span class="bline-cat">'+icon+' <b>'+label+'</b><span class="bline-sub">'+note+'</span></span>'
+    +'<span class="bline-amt">$'+lo.toLocaleString()+'–$'+hi.toLocaleString()+'</span></div>';
+}
+
+function modeIcon(mode){
+  if(!mode) return '';
+  var m=mode.toLowerCase();
+  if(m.indexOf('walk')>=0) return '🚶';
+  if(m.indexOf('metro')>=0||m.indexOf('subway')>=0) return '🚇';
+  if(m.indexOf('ferry')>=0||m.indexOf('boat')>=0) return '⛵';
+  if(m.indexOf('bus')>=0) return '🚌';
+  if(m.indexOf('rer')>=0||m.indexOf('train')>=0) return '🚄';
+  return '➡️';
+}
+
+function renderDetail(){
+  var o=opts.find(function(x){return x.n===sel;});
+  var wc=o.w==='warm'?'bw':'bm';
+  var rc=o.riskClass==='low'?'brisk-low':'brisk-med';
+  var b=o.budget;
+
+  var hdr='<div class="det-hd"><span class="det-flag">'+o.f+'</span><div class="det-info">'
+    +'<div class="det-title">'+o.name+' — '+o.cities+'</div>'
+    +'<div class="det-sub">'+o.sub+'</div>'
+    +'<div class="det-badges">'
+    +'<span class="badge '+wc+'">'+o.wl+'</span>'
+    +'<span class="badge bk">Izyan '+o.k+'</span>'
+    +'<span class="badge bg">'+o.fly+'</span>'
+    +'<span class="badge '+rc+'">🛡 '+o.risk+' RISK</span>'
+    +'<span class="badge bp">💵 $'+b.total.lo.toLocaleString()+'–$'+b.total.hi.toLocaleString()+' · '+o.nights+'</span>'
+    +'</div></div></div>';
+
+  var strip='<div class="info-strip">'
+    +'<div class="info-box"><div class="info-label">💵 Budget — Family of 3</div>'
+    +bRow('✈️','Flights',b.flights.note,b.flights.lo,b.flights.hi)
+    +bRow('🏨','Hotels',b.hotels.note,b.hotels.lo,b.hotels.hi)
+    +bRow('🍽️','Food + Snacks',b.food.note,b.food.lo,b.food.hi)
+    +bRow('🎯','Activities',b.activities.note,b.activities.lo,b.activities.hi)
+    +(b.transport?bRow('🚖','Ground Transport',b.transport.note,b.transport.lo,b.transport.hi):'')
+    +'<div class="btotal"><span>Total Estimate</span><span class="btotal-amt">$'+b.total.lo.toLocaleString()+' – $'+b.total.hi.toLocaleString()+'</span></div>'
+    +'</div>'
+    +'<div class="info-box"><div class="info-label">🌡 November Weather (°F)</div><div class="info-val">'+o.weatherIcon+'</div><div class="info-note">'+o.weather+'</div></div>'
+    +'<div class="info-box"><div class="info-label">🛡 Safety · 🛂 Visa · 💉 Vaccines</div>'
+    +'<div class="risk-bar risk-bar-'+o.riskClass+'">'+o.riskSummary+'</div>'
+    +o.riskItems.slice(0,3).map(function(r){return '<div class="risk-item">'+r+'</div>';}).join('')
+    +'<br><div class="info-note" style="margin-top:10px"><b>'+o.visa+'</b><br>'+o.visaNote+'<br><br><b>Vaccines:</b> '+o.vaccine+'</div>'
+    +'</div></div>';
+
+  var tabs='<div class="det-tabs">'
+    +'<div class="det-tab'+(curtab==='it'?' act':'')+'"  onclick="switchtab(\'it\')"><span class="t-icon">📅</span><span>Itinerary</span></div>'
+    +'<div class="det-tab'+(curtab==='fl'?' act':'')+'"  onclick="switchtab(\'fl\')"><span class="t-icon">✈️</span><span>Flights &amp; Hotels</span></div>'
+    +'<div class="det-tab'+(curtab==='rs'?' act':'')+'"  onclick="switchtab(\'rs\')"><span class="t-icon">🛡</span><span>Safety</span></div>'
+    +'<div class="det-tab'+(curtab==='bk'?' act':'')+'"  onclick="switchtab(\'bk\')"><span class="t-icon">📋</span><span>Book It</span></div>'
+    +'<div class="det-tab'+(curtab==='pack'?' act':'')+'"  onclick="switchtab(\'pack\')"><span class="t-icon">🎒</span><span>Packing</span></div>'
+    +'<div class="det-tab'+(curtab==='bdg'?' act':'')+'"  onclick="switchtab(\'bdg\')"><span class="t-icon">💰</span><span>Budget</span></div>'
+    +'<div class="det-tab'+(curtab==='food'?' act':'')+'"  onclick="switchtab(\'food\')"><span class="t-icon">🍽</span><span>Food Guide</span></div>'
+    +'<div class="det-tab'+(curtab==='kid'?' act':'')+'"  onclick="switchtab(\'kid\')"><span class="t-icon">👦</span><span>Izyan&#39;s Guide</span></div>'
+    +'</div>';
+
+  var body='';
+
+  if(curtab==='it'){
+    // Day-by-day grid
+    var dayCards=o.days.map(function(d){
+      var cardCls='day-card'+(d.cls==='xmas'?' xmas':d.cls==='local'?' local':'');
+      return '<div class="'+cardCls+'">'
+        +'<div class="day-num">'+d.d+'</div>'
+        +'<div class="day-title-row"><span class="day-ic">'+d.i+'</span><span class="day-title-txt">'+d.t+'</span></div>'
+        +d.items.map(function(it){return '<div class="day-item">'+it+'</div>';}).join('')
+        +'</div>';
+    }).join('');
+
+    // Activities city chain
+    var cities=[], cityMap={};
+    o.acts.forEach(function(a){
+      if(!cityMap[a.city]){cityMap[a.city]=[];cities.push(a.city);}
+      cityMap[a.city].push(a);
+    });
+    var chainHtml='';
+    cities.forEach(function(city){
+      chainHtml+='<div class="city-sec"><div class="city-lbl">📍 '+city+'</div>';
+      cityMap[city].forEach(function(a){
+        if(a.dp){
+          var ico=modeIcon(a.dp.mode);
+          chainHtml+='<div class="dist-conn">'
+            +'<span class="dist-mi">'+a.dp.mi+' mi</span>'
+            +' · <span class="dist-min">'+a.dp.min+' min</span>'
+            +' <span class="dist-mode-lbl">'+ico+' '+a.dp.mode+'</span>'
+            +'</div>';
+        }
+        var isTourist=(!a.tl && (a.ti||a.tb||a.tt));
+        var tags=(isTourist?'<span class="tag tt">🗺 Tourist</span>':'')
+          +(a.tl?'<span class="tag tl">🏘 Local</span>':'')
+          +(a.ti?'<span class="tag ti">Izyan ★</span>':'')
+          +(a.tf?'<span class="tag tf">Free</span>':'')
+          +(a.tb?'<span class="tag tb">Pre-book</span>':'')
+          +(a.tx?'<span class="tag tx">🎄 Festive</span>':'');
+        var aid='act-'+Math.random().toString(36).slice(2,8);
+        chainHtml+='<div class="act-node" onclick="toggleAct(this)">'
+          +'<span class="act-ic2">'+a.i+'</span>'
+          +'<div style="flex:1"><div class="act-nm">'+a.n+tags+'</div>'
+          +'<div class="act-desc2">'+a.d+'</div>'
+          +(a.blurb?'<div class="act-hint">tap to expand ↓</div>':'')
+          +(a.blurb?'<div class="act-expand">'+a.blurb+'</div>':'')
+          +'</div></div>';
+      });
+      chainHtml+='</div>';
+    });
+
+    var notesHtml='<div class="acts-notes">'
+      +'<div class="acts-notes-hd">Notes + Tips</div>'
+      +'<div class="note note-train" style="font-size:13px">🚆 <b>Trains + budget flight:</b> 3 flights total (IAH→LIS overnight · Vueling AGP→CDG · Air France CDG→IAH nonstop). Alfa Pendular LIS→SVQ inside Europe. No Madrid — fly Málaga→Paris directly.</div>'
+      +'<div class="note note-xmas" style="font-size:13px">🎄 <b>Christmas season:</b> Disneyland Paris Enchanted Christmas opens Nov 8. Paris festive lights + markets throughout November.</div>'
+      +(o.tip?'<div class="note note-tip" style="font-size:13px">✅ '+o.tip+'</div>':'')
+      +(o.warn?'<div class="note note-warn" style="font-size:13px">⚠️ '+o.warn+'</div>':'')
+      +'<div style="margin-top:14px;padding-top:12px;border-top:1px solid #e5e7eb;font-size:12px;color:#9ca3af;line-height:1.8">'
+      +'<b style="color:#374151">Key:</b><br>'
+      +'<span style="background:#fef3c7;color:#b45309;padding:1px 6px;border-radius:4px;font-weight:700;font-size:11px">🗺 Tourist</span> = classic must-see<br>'
+      +'<span style="background:#ede9fe;color:#5b21b6;padding:1px 6px;border-radius:4px;font-weight:700;font-size:11px">🏘 Local</span> = hidden gem, few tourists<br>'
+      +'<span style="background:#f3e8ff;color:#6b21a8;padding:1px 6px;border-radius:4px;font-weight:700;font-size:11px">Izyan ★</span> = best for a 5-year-old<br>'
+      +'<span style="background:#dcfce7;color:#166534;padding:1px 6px;border-radius:4px;font-weight:700;font-size:11px">Free</span> = no ticket needed<br>'
+      +'<span style="background:#fef9c3;color:#713f12;padding:1px 6px;border-radius:4px;font-weight:700;font-size:11px">Pre-book</span> = reserve before travel<br>'
+      +'<span style="background:#bbf7d0;color:#15803d;padding:1px 6px;border-radius:4px;font-weight:700;font-size:11px">🎄 Festive</span> = Christmas seasonal'
+      +'</div></div>';
+
+    body='<div class="day-grid">'+dayCards+'</div>'
+      +'<div class="section-divider"><div class="section-divider-lbl">📍 Activity Distances by City</div></div>'
+      +'<div class="route"><b>Full Route:</b> '+o.route+'</div>'
+      +'<div class="acts-wrap"><div class="acts-2col">'
+      +'<div class="acts-cities">'+chainHtml+'</div>'
+      +notesHtml
+      +'</div></div>';
+
+  } else if(curtab==='fl'){
+    var flies=o.flies.map(function(f){
+      return '<div class="fly-row"><span class="fly-label">'+f.l+'</span><span class="fly-val">'+f.v+'</span></div>';
+    }).join('');
+    var books=o.book.map(function(bk){
+      return '<div class="book-item"><span style="flex-shrink:0;font-size:18px">📌</span><span>'+bk+'</span></div>';
+    }).join('');
+    var hotelCards=o.hotels.map(function(h){
+      return '<div class="hotel-card">'
+        +'<div class="hotel-city-lbl">'+h.flag+' '+h.city+'</div>'
+        +'<span class="hotel-nights-chip">'+h.nights+' night'+(h.nights>1?'s':'')+'</span>'
+        +'<div class="hotel-name">'+h.name+'</div>'
+        +'<div class="hotel-price">'+h.price+'</div>'
+        +'<div class="hotel-loc">'+h.loc+'</div>'
+        +'<div class="hotel-why">'+h.why+'</div>'
+        +'<div class="hotel-book">🔗 '+h.book+'</div>'
+        +'</div>';
+    }).join('');
+    body='<div class="fly-wrap">'
+      +'<div><div class="col-hd">✈️ Flights + Transport</div>'+flies+'</div>'
+      +'<div><div class="col-hd">📌 Must Pre-Book (Do These Now)</div>'+books+'</div>'
+      +'</div>'
+      +'<div class="fly-hotel-wrap">'
+      +'<div class="col-hd">🏨 Where to Stay — Hotels per City</div>'
+      +'<div class="hotels-grid">'+hotelCards+'</div>'
+      +'</div>';
+
+  } else if(curtab==='rs'){
+    var allRisk=o.riskItems.map(function(r){return '<div class="risk-item">'+r+'</div>';}).join('');
+    body='<div style="padding:24px 28px;background:#fff"><div class="risk-bar risk-bar-'+o.riskClass+'" style="font-size:17px;padding:14px 18px">'+o.riskSummary+'</div>'
+      +'<div class="col-hd" style="margin-top:16px">Detailed Risk Breakdown</div>'
+      +allRisk+'</div>';
+  } else if(curtab==='bk'){
+    var bkCss='<style>'
+    +'.bk-w{padding:24px 28px;background:#fff}'
+    +'.bk-phase{margin-bottom:28px}'
+    +'.bk-phase-hd{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;padding:8px 14px;border-radius:8px;margin-bottom:12px}'
+    +'.ph1{background:#fee2e2;color:#991b1b}.ph2{background:#fef3c7;color:#92400e}'
+    +'.ph3{background:#dbeafe;color:#1e40af}.ph4{background:#f0fdf4;color:#166534}'
+    +'.ph5{background:#f3e8ff;color:#6b21a8}.ph6{background:#f3f4f6;color:#374151}'
+    +'.bk-item{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:14px 16px;margin-bottom:10px;display:grid;grid-template-columns:28px 1fr auto;gap:10px;align-items:start}'
+    +'.bk-num{font-size:13px;font-weight:800;color:#9ca3af;padding-top:1px}'
+    +'.bk-name{font-size:14px;font-weight:700;color:#111827;margin-bottom:3px}'
+    +'.bk-detail{font-size:12.5px;color:#6b7280;line-height:1.65}'
+    +'.bk-cost{font-size:13px;font-weight:800;color:#374151;white-space:nowrap;text-align:right}'
+    +'.bk-link{font-size:11.5px;color:#4f46e5;font-weight:700;margin-top:4px}'
+    +'.urgent{border-left:4px solid #ef4444}'
+    +'.bk-badge{display:inline-block;font-size:10px;font-weight:800;padding:1px 7px;border-radius:99px;margin-left:6px;vertical-align:middle}'
+    +'.bd-red{background:#fee2e2;color:#991b1b}'
+    +'.bd-grn{background:#d1fae5;color:#065f46}'
+    +'.bd-blu{background:#dbeafe;color:#1e40af}'
+    +'.bk-total{background:#111827;color:#fff;border-radius:12px;padding:20px 22px;margin-top:8px}'
+    +'.bk-total-row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #374151;font-size:13.5px}'
+    +'.bk-total-row:last-child{border-bottom:none;font-size:16px;font-weight:900;padding-top:12px}'
+    +'</style>';
+    body=bkCss
+    +'<div class="bk-w">'
+    +'<div style="font-size:22px;font-weight:800;color:#111827;margin-bottom:4px">📋 Book It Yourself — Complete Checklist</div>'
+    +'<div style="font-size:14px;color:#6b7280;margin-bottom:6px">Family of 3 · Rizwan, Zaibnish, Izyan (5) · Nov 9–18 · Zero surprises. Nothing missed. Safety first.</div>'
+    +'<div style="background:#fef9c3;border:1px solid #fcd34d;border-radius:10px;padding:12px 16px;font-size:13px;color:#92400e;margin-bottom:22px">'
+    +'⚠️ <strong>Book today:</strong> Parador de Granada and Alhambra tickets sell out months ahead. Everything else follows once those are secured.'
+    +'</div>'
+
+    +'<div class="bk-phase"><div class="bk-phase-hd ph1">🚨 Phase 1 — Book This Week (Sells Out First)</div>'
+    +'<div class="bk-item urgent"><div class="bk-num">1</div><div>'
+    +'<div class="bk-name">Parador de Granada <span class="bk-badge bd-red">BOOK NOW</span></div>'
+    +'<div class="bk-detail">Inside the Alhambra complex. Most unique hotel of the trip. Fills months ahead, especially for November.<br>'
+    +'Book: <a class="bk-link" href="https://www.parador.es" target="_blank">paradores.es</a> · Search &quot;Parador de Granada&quot; · Select Nov 13–15 · Family room or 2 rooms · Full board optional</div>'
+    +'</div><div class="bk-cost">~$260–340/night<br><small>2 nights</small></div></div>'
+
+    +'<div class="bk-item urgent"><div class="bk-num">2</div><div>'
+    +'<div class="bk-name">Alhambra Timed Entry Tickets <span class="bk-badge bd-red">BOOK NOW</span></div>'
+    +'<div class="bk-detail">Timed entry for Nasrid Palaces sells out 60+ days ahead. Parador guests can sometimes buy at the gate but do NOT rely on it — pre-book to guarantee.<br>'
+    +'Book: <a class="bk-link" href="https://www.alhambra-patronato.es" target="_blank">alhambra-patronato.es</a> · 3 tickets (Izyan free under 12) · 2-hour entry window — choose morning for fewer crowds · ~€14/adult</div>'
+    +'</div><div class="bk-cost">~$30 total<br><small>3 tickets</small></div></div>'
+
+    +'<div class="bk-item urgent"><div class="bk-num">3</div><div>'
+    +'<div class="bk-name">IAH → LIS Outbound Flights <span class="bk-badge bd-red">BOOK NOW</span></div>'
+    +'<div class="bk-detail">Depart Houston Nov 9, arrive Lisbon Nov 10. Best options: British Airways (IAH→LHR→LIS), KLM (IAH→AMS→LIS), Lufthansa (IAH→FRA→LIS). Check Google Flights to compare.<br>'
+    +'Book: <a class="bk-link" href="https://www.google.com/flights" target="_blank">google.com/flights</a> — set flexible +/- 1 day · Select economy · 3 passengers</div>'
+    +'</div><div class="bk-cost">~$1,800–2,400<br><small>3 people</small></div></div>'
+    +'</div>'
+
+    +'<div class="bk-phase"><div class="bk-phase-hd ph2">📅 Phase 2 — Book Within 2 Weeks (Hotels + Key Flights)</div>'
+    +'<div class="bk-item"><div class="bk-num">4</div><div>'
+    +'<div class="bk-name">Bairro Alto Hotel — Lisbon <span class="bk-badge bd-grn">Nov 10–12</span></div>'
+    +'<div class="bk-detail">Boutique 5★ in Chiado district. Walking distance to everything. Book direct for best rate.<br>'
+    +'Book: <a class="bk-link" href="https://www.bairroaltohotel.com" target="_blank">bairroaltohotel.com</a> · 2 nights · Superior or Deluxe room · Request high floor</div>'
+    +'</div><div class="bk-cost">~$220–320/night<br><small>2 nights</small></div></div>'
+
+    +'<div class="bk-item"><div class="bk-num">5</div><div>'
+    +'<div class="bk-name">EME Catedral Hotel — Seville <span class="bk-badge bd-grn">Nov 12–14</span></div>'
+    +'<div class="bk-detail">5★ with rooftop pool overlooking La Giralda. Unbeatable location. Book direct.<br>'
+    +'Book: <a class="bk-link" href="https://www.emecatedralhotel.com" target="_blank">emecatedralhotel.com</a> · 2 nights · Junior Suite or double room</div>'
+    +'</div><div class="bk-cost">~$180–250/night<br><small>2 nights</small></div></div>'
+
+    +'<div class="bk-item"><div class="bk-num">6</div><div>'
+    +'<div class="bk-name">Hôtel du Champ de Mars — Paris <span class="bk-badge bd-grn">Nov 16–18</span></div>'
+    +'<div class="bk-detail">Charming 7th arr hotel, steps from Eiffel Tower. Boutique, family-friendly.<br>'
+    +'Book: <a class="bk-link" href="https://www.hotel-champ-de-mars.com" target="_blank">hotel-champ-de-mars.com</a> · 2 nights · Family room if available</div>'
+    +'</div><div class="bk-cost">~$160–230/night<br><small>2 nights</small></div></div>'
+
+    +'<div class="bk-item"><div class="bk-num">7</div><div>'
+    +'<div class="bk-name">GRX → CDG Flight (Malaga hop) <span class="bk-badge bd-grn">Nov 16</span></div>'
+    +'<div class="bk-detail">Granada has limited flights. Bus to Malaga airport (AGP) then Vueling to Paris CDG. Depart GRX ~8am bus → AGP → CDG afternoon.<br>'
+    +'Book: <a class="bk-link" href="https://www.vueling.com" target="_blank">vueling.com</a> or easyJet · AGP→CDG · Nov 16 · 3 passengers · book luggage</div>'
+    +'</div><div class="bk-cost">~$240–450<br><small>3 people</small></div></div>'
+
+    +'<div class="bk-item"><div class="bk-num">8</div><div>'
+    +'<div class="bk-name">CDG → IAH Nonstop Return — Air France <span class="bk-badge bd-grn">Nov 18</span></div>'
+    +'<div class="bk-detail">Air France flies CDG→IAH nonstop (AF108 or similar, ~11h). Book early for best seats.<br>'
+    +'Book: <a class="bk-link" href="https://www.airfrance.com" target="_blank">airfrance.com</a> · CDG→IAH · Nov 18 · 3 passengers · Book seats together</div>'
+    +'</div><div class="bk-cost">~$1,200–1,800<br><small>3 people</small></div></div>'
+    +'</div>'
+
+    +'<div class="bk-phase"><div class="bk-phase-hd ph3">🎯 Phase 3 — Book 3–6 Weeks Out (Activities)</div>'
+    +'<div class="bk-item"><div class="bk-num">9</div><div>'
+    +'<div class="bk-name">Eiffel Tower — Summit Tickets <span class="bk-badge bd-blu">Nov 17</span></div>'
+    +'<div class="bk-detail">Pre-booking mandatory. Summit (3rd floor) for best views. Morning slot avoids clouds and queues.<br>'
+    +'Book: <a class="bk-link" href="https://www.toureiffel.paris" target="_blank">toureiffel.paris</a> · Summit by stairs+elevator · 2 adults + 1 child · ~€29/adult, €14.50 child (under 12)</div>'
+    +'</div><div class="bk-cost">~$80 total</div></div>'
+
+    +'<div class="bk-item"><div class="bk-num">10</div><div>'
+    +'<div class="bk-name">Disneyland Paris — 1-Day Tickets <span class="bk-badge bd-blu">Nov 17</span></div>'
+    +'<div class="bk-detail">Buy online for ~10–20% discount vs gate. Get 1-Day 1-Park (Disneyland Park, not Studios) for first visit with a 5-year-old. Take RER A from Paris city center (~35 min).<br>'
+    +'Book: <a class="bk-link" href="https://www.disneylandparis.com" target="_blank">disneylandparis.com</a> · 3 tickets · Nov 17 · Consider Premier Access for key rides (optional)</div>'
+    +'</div><div class="bk-cost">~$180–240<br><small>3 tickets</small></div></div>'
+
+    +'<div class="bk-item"><div class="bk-num">11</div><div>'
+    +'<div class="bk-name">Alcázar of Seville — Timed Entry <span class="bk-badge bd-blu">Nov 13</span></div>'
+    +'<div class="bk-detail">UNESCO palace, incredibly popular. Under 16 free. Pre-book to avoid 2hr queues.<br>'
+    +'Book: <a class="bk-link" href="https://www.alcazarsevilla.org" target="_blank">alcazarsevilla.org</a> · 2 adult tickets · Izyan free · ~€16/adult</div>'
+    +'</div><div class="bk-cost">~$35 total</div></div>'
+
+    +'<div class="bk-item"><div class="bk-num">12</div><div>'
+    +'<div class="bk-name">Jerónimos Monastery — Lisbon <span class="bk-badge bd-blu">Nov 11</span></div>'
+    +'<div class="bk-detail">UNESCO site. Pre-booking saves queue time. Izyan free under 12.<br>'
+    +'Book: <a class="bk-link" href="https://www.mosteiro-jeronimos.pt" target="_blank">mosteiro-jeronimos.pt</a> · 2 adults · ~€10/adult</div>'
+    +'</div><div class="bk-cost">~$22 total</div></div>'
+
+    +'<div class="bk-item"><div class="bk-num">13</div><div>'
+    +'<div class="bk-name">Notre Dame — Timed Entry (Free) <span class="bk-badge bd-blu">Nov 17</span></div>'
+    +'<div class="bk-detail">Reopened 2024. Entry free but timed slots required. Book as soon as available.<br>'
+    +'Book: <a class="bk-link" href="https://www.notredamedeparis.fr" target="_blank">notredamedeparis.fr</a> · Free · 3 slots</div>'
+    +'</div><div class="bk-cost">Free</div></div>'
+    +'</div>'
+
+    +'<div class="bk-phase"><div class="bk-phase-hd ph4">🚂 Phase 4 — Book 2–4 Weeks Out (Transport)</div>'
+    +'<div class="bk-item"><div class="bk-num">14</div><div>'
+    +'<div class="bk-name">Alfa Pendular Train: Lisbon → Seville <span class="bk-badge bd-grn">Nov 12</span></div>'
+    +'<div class="bk-detail">Depart Lisboa Oriente ~10:22am, arrive Sevilla-Santa Justa ~2:30pm. Scenic, comfortable, no luggage limits. Cheapest and most reliable LIS→SVQ link.<br>'
+    +'Book: <a class="bk-link" href="https://www.cp.pt" target="_blank">cp.pt</a> (Portugal trains) or <a class="bk-link" href="https://www.renfe.com" target="_blank">renfe.com</a> · 3 passengers · Select Alfa Pendular · 2nd class fine</div>'
+    +'</div><div class="bk-cost">~$90–130<br><small>3 people</small></div></div>'
+
+    +'<div class="bk-item"><div class="bk-num">15</div><div>'
+    +'<div class="bk-name">ALSA Bus: Seville → Granada <span class="bk-badge bd-grn">Nov 14</span></div>'
+    +'<div class="bk-detail">Depart Sevilla Prado de San Sebastián ~9am, arrive Granada ~2.5hrs. Comfortable, A/C. No train option on this route.<br>'
+    +'Book: <a class="bk-link" href="https://www.alsa.es" target="_blank">alsa.es</a> · 3 passengers · Nov 14 · 9am or 10am bus</div>'
+    +'</div><div class="bk-cost">~$50–70<br><small>3 people</small></div></div>'
+
+    +'<div class="bk-item"><div class="bk-num">16</div><div>'
+    +'<div class="bk-name">ALSA Bus: Granada → Malaga Airport (AGP) <span class="bk-badge bd-grn">Nov 16</span></div>'
+    +'<div class="bk-detail">Depart Granada Bus Station ~7am, arrive AGP ~9:30am (allow 2.5hrs + buffer for check-in). Book non-airport-express if cheaper — same route.<br>'
+    +'Book: <a class="bk-link" href="https://www.alsa.es" target="_blank">alsa.es</a> · 3 passengers · Nov 16 · 7am or earlier bus</div>'
+    +'</div><div class="bk-cost">~$30–50<br><small>3 people</small></div></div>'
+
+    +'<div class="bk-item"><div class="bk-num">17</div><div>'
+    +'<div class="bk-name">Flamenco Show — Seville <span class="bk-badge bd-grn">Nov 13 eve</span></div>'
+    +'<div class="bk-detail">Best options: Casa del Flamenco (Barrio Santa Cruz, 5-min walk from EME) or Tablao El Arenal. Intimate, authentic, family-friendly. Book 1-2 weeks out.<br>'
+    +'Book: <a class="bk-link" href="https://www.casadelflamenco.com" target="_blank">casadelflamenco.com</a> · 2 adult tickets · Izyan may be free or discounted · ~€20–25/adult · 7pm show</div>'
+    +'</div><div class="bk-cost">~$50–55<br><small>2 adults</small></div></div>'
+    +'</div>'
+
+    +'<div class="bk-phase"><div class="bk-phase-hd ph5">🚗 Ground Transport — Full Summary</div>'
+    +'<div class="bk-item"><div class="bk-num">A</div><div>'
+    +'<div class="bk-name">Lisbon Airport Arrival (Nov 10)</div>'
+    +'<div class="bk-detail"><strong>Aerobus</strong> (€4/person, 30 min to city center) or <strong>Bolt/Uber</strong> (~€20–30 to hotel). Bolt is cheaper than Lisbon taxis. Install Bolt app before trip.</div>'
+    +'</div><div class="bk-cost">~$20–30</div></div>'
+
+    +'<div class="bk-item"><div class="bk-num">B</div><div>'
+    +'<div class="bk-name">Lisbon City Travel (Nov 10–12)</div>'
+    +'<div class="bk-detail">Bolt/Uber for hotel-to-station rides. Tram 28 (~€3/person, pay on board) for sightseeing — fun for Izyan. Belém: Tram 15E or Bolt (~€12). Walk whenever under 20 min.</div>'
+    +'</div><div class="bk-cost">~$30–50</div></div>'
+
+    +'<div class="bk-item"><div class="bk-num">C</div><div>'
+    +'<div class="bk-name">Seville City Travel (Nov 12–14)</div>'
+    +'<div class="bk-detail">EME Catedral is central — most sights are walking distance. Bolt/Uber for airport pickup at start if needed. Budget ~€10–20/day for any taxis. Seville is very walkable with a stroller or toddler.</div>'
+    +'</div><div class="bk-cost">~$25–40</div></div>'
+
+    +'<div class="bk-item"><div class="bk-num">D</div><div>'
+    +'<div class="bk-name">Granada City Travel (Nov 14–16)</div>'
+    +'<div class="bk-detail">Staying at Parador = you walk 1 min to Nasrid Palaces. Taxi from bus station to Parador ~€12 (luggage). City bus or Bolt for Sacromonte/Albaicín (~€8). Mirador San Nicolás is walkable from Parador.</div>'
+    +'</div><div class="bk-cost">~$25–40</div></div>'
+
+    +'<div class="bk-item"><div class="bk-num">E</div><div>'
+    +'<div class="bk-name">Paris City Travel (Nov 16–18)</div>'
+    +'<div class="bk-detail"><strong>RER B:</strong> CDG airport → Gare du Nord (~€11.80/adult, Izyan free under 11) — then Metro/taxi to hotel. <strong>Metro:</strong> Buy Navigo Easy card or Paris Visite 3-day pass (€30/adult, unlimited Metro). <strong>RER A:</strong> Paris → Disneyland (~€8/person each way). <strong>Taxi:</strong> Hotel → CDG for Nov 18 departure — fixed rate €55–60 Left Bank. Book taxi night before.</div>'
+    +'</div><div class="bk-cost">~$120–180</div></div>'
+    +'</div>'
+
+    +'<div class="bk-phase"><div class="bk-phase-hd" style="background:#e0f2fe;color:#0369a1">📱 Apps to Install Before You Leave Houston</div>'+'<div class="bk-item"><div class="bk-num">→</div><div>'+'<div class="bk-name">Bolt <span class="bk-badge bd-blu">INSTALL NOW</span></div>'+'<div class="bk-detail">Europe&#39;s Uber — cheaper than taxis in Lisbon, Seville, and Granada. Download, add payment card, verify account before trip.<br>'+'<a class="bk-link" href="https://bolt.eu" target="_blank">bolt.eu</a> · Works in all 4 cities (Lisbon, Seville, Granada, Paris)</div>'+'</div><div class="bk-cost">Free</div></div>'+'<div class="bk-item"><div class="bk-num">→</div><div>'+'<div class="bk-name">Uber <span class="bk-badge bd-blu">INSTALL NOW</span></div>'+'<div class="bk-detail">Backup to Bolt. Works in all 4 cities. Good for Seville airport arrival and Paris. Add payment card before trip.</div>'+'</div><div class="bk-cost">Free</div></div>'+'<div class="bk-item"><div class="bk-num">→</div><div>'+'<div class="bk-name">Google Maps — Download Offline Maps <span class="bk-badge bd-blu">BEFORE TRIP</span></div>'+'<div class="bk-detail">Download offline: Lisbon, Seville, Granada, Paris. Works without data. Essential for walking between monuments, finding bus stops, navigating the Alhambra complex.</div>'+'</div><div class="bk-cost">Free</div></div>'+'<div class="bk-item"><div class="bk-num">→</div><div>'+'<div class="bk-name">CP Portugal App (Train Tickets) <span class="bk-badge bd-blu">INSTALL</span></div>'+'<div class="bk-detail">For your Lisbon → Seville Alfa Pendular train (Booking #14). Can book and show e-ticket on phone.<br>'+'<a class="bk-link" href="https://www.cp.pt" target="_blank">cp.pt</a></div>'+'</div><div class="bk-cost">Free</div></div>'+'<div class="bk-item"><div class="bk-num">→</div><div>'+'<div class="bk-name">ALSA App (Bus Tickets) <span class="bk-badge bd-blu">INSTALL</span></div>'+'<div class="bk-detail">For Seville → Granada and Granada → Malaga buses (Bookings #15 and #16). E-ticket on phone, no printing needed.<br>'+'<a class="bk-link" href="https://www.alsa.es" target="_blank">alsa.es</a></div>'+'</div><div class="bk-cost">Free</div></div>'+'<div class="bk-item"><div class="bk-num">→</div><div>'+'<div class="bk-name">Citymapper — Paris <span class="bk-badge bd-blu">INSTALL</span></div>'+'<div class="bk-detail">Best app for Paris Metro routing — shows real-time departures, disruptions, and fastest route. Better than Google Maps for Metro specifically.</div>'+'</div><div class="bk-cost">Free</div></div>'+'</div>'+'<div class="bk-phase"><div class="bk-phase-hd" style="background:#fce7f3;color:#9d174d">🚕 Transport to Pre-Book (Don&#39;t Wing These)</div>'+'<div class="bk-item"><div class="bk-num">T1</div><div>'+'<div class="bk-name">Paris CDG Departure Taxi (Nov 18) <span class="bk-badge bd-red">PRE-BOOK</span></div>'+'<div class="bk-detail">Book the night before (Nov 17 evening). Fixed rate from 7th arrondissement → CDG: ~€55–65. G7 Taxi is the most reliable Paris cab company.<br>'+'Book: <a class="bk-link" href="https://www.g7.fr" target="_blank">g7.fr</a> · Specify 7th arr pickup, CDG Terminal — check your Air France terminal · Book for 2.5hrs before flight</div>'+'</div><div class="bk-cost">~$65–75</div></div>'+'<div class="bk-item"><div class="bk-num">T2</div><div>'+'<div class="bk-name">Lisbon Airport → Hotel (Bolt/Uber, no pre-book needed)</div>'+'<div class="bk-detail">Open Bolt app at arrivals, request ride to Bairro Alto Hotel. ~20 min, ~€20–28. No pre-booking needed — Bolt is immediate. Have hotel address saved in Portuguese: <em>Praça Luís de Camões 2, 1200-243 Lisboa</em></div>'+'</div><div class="bk-cost">~$25–32</div></div>'+'<div class="bk-item"><div class="bk-num">T3</div><div>'+'<div class="bk-name">Granada Bus Station → Parador (Taxi, no pre-book)</div>'+'<div class="bk-detail">Taxi rank outside Granada Bus Station. ~€12–15 to Parador de Granada. Note: Parador is inside the Alhambra complex — tell driver &quot;Parador de Granada, la Alhambra&quot;. Have address: <em>Calle Real de la Alhambra s/n, 18009 Granada</em></div>'+'</div><div class="bk-cost">~$15</div></div>'+'<div class="bk-item"><div class="bk-num">T4</div><div>'+'<div class="bk-name">Paris RER B — CDG Airport → City (Nov 16)</div>'+'<div class="bk-detail">No pre-booking. Buy tickets at CDG airport RER B machines (accepts credit card, select English). ~€11.80/adult, Izyan free under 11. Take to Gare du Nord or Saint-Michel. Then Metro or Bolt to hotel.<br>'+'⚠️ Keep tickets until you exit — inspectors fine ticketless riders. Do not confuse RER B with CDGVAL airport shuttle (free, for terminal transfers only)</div>'+'</div><div class="bk-cost">~$26 (2 adults)</div></div>'+'<div class="bk-item"><div class="bk-num">T5</div><div>'+'<div class="bk-name">Paris Metro — Get Navigo Easy Card</div>'+'<div class="bk-detail">Buy Navigo Easy card at any Metro station (€2 card + load credit). Tap-and-go — better than buying single tickets. Alternatively: Paris Visite 3-day pass (~€30/adult) if you plan to use Metro 3+ times/day.<br>'+'Disneyland: Take RER A from Châtelet–Les Halles → Marne-la-Vallée/Chessy. ~35 min. ~€8/adult each way. Izyan free under 4, otherwise child fare ~€4.</div>'+'</div><div class="bk-cost">~$65 total</div></div>'+'<div class="bk-item"><div class="bk-num">T6</div><div>'+'<div class="bk-name">Seine River Cruise — Bateaux Mouches (Optional)</div>'+'<div class="bk-detail">Great for Izyan — 1hr cruise past Eiffel Tower. Can walk up on the day or pre-book for a set time slot.<br>'+'Book: <a class="bk-link" href="https://www.bateaux-mouches.fr" target="_blank">bateaux-mouches.fr</a> · ~€15/adult, ~€7 child · Evening cruise (7pm) is most scenic with tower lights</div>'+'</div><div class="bk-cost">~$40</div></div>'+'</div>'+'<div class="bk-phase"><div class="bk-phase-hd" style="background:#ecfdf5;color:#065f46">💶 Cash + Cards — All 3 Countries Use Euro</div>'+'<div class="bk-item"><div class="bk-num">$</div><div>'+'<div class="bk-name">Credit Card — What Works</div>'+'<div class="bk-detail">Visa and Mastercard accepted everywhere: hotels, restaurants, Uber, trains, museums, supermarkets. Amex hit-or-miss at smaller places.<br>'+'<strong>Use a card with zero foreign transaction fees:</strong> Chase Sapphire, Capital One Venture, Amex Gold, Charles Schwab debit. If your card charges 3% FX fees, switch before the trip — on $8k spend that&#39;s $240 wasted.<br>'+'✅ Notify your bank of travel dates + countries (Portugal, Spain, France) before departing</div>'+'</div><div class="bk-cost"></div></div>'+'<div class="bk-item"><div class="bk-num">€</div><div>'+'<div class="bk-name">How Much Cash to Bring</div>'+'<div class="bk-detail">You don&#39;t need much. Card is accepted almost everywhere now. Cash is useful for:<br>'+'• Tips: €1–2/bag for bellhops · €2–5 at restaurants (not mandatory in Europe) · €5–10 for local guides<br>'+'• Street food / small bakeries / markets that don&#39;t take card<br>'+'• Pastéis de Belém in Lisbon — can be cash only on busy days<br>'+'• Granada tapas bars — most take card, but carry €20 backup<br>'+'• <strong>Recommended: Bring €200–250 EUR total for the whole trip.</strong> That&#39;s roughly $220–275 USD. Get euros from your US bank or a fee-free ATM (Schwab, Capital One) on arrival — never exchange at the airport kiosk (terrible rates).</div>'+'</div><div class="bk-cost">~€200–250</div></div>'+'<div class="bk-item"><div class="bk-num">📱</div><div>'+'<div class="bk-name">Phone + Data — Get an eSIM</div>'+'<div class="bk-detail">Don&#39;t rely on your US carrier&#39;s international plan ($10/day × 10 days = $100). Buy an EU travel eSIM:<br>'+'• <strong>Airalo</strong> (airalo.com) — ~$15–20 for 10GB EU data · Install before departing · Works in Portugal, Spain, France<br>'+'• Alternatively: T-Mobile includes free EU data (slow, but works for maps/messaging)<br>'+'• Set Bolt, Uber, Citymapper to offline mode where possible · WhatsApp works on WiFi (hotels all have it)</div>'+'</div><div class="bk-cost">~$15–25</div></div>'+'</div>'+'<div class="bk-phase"><div class="bk-phase-hd ph6">💰 Full Cost Breakdown — No Surprises</div>'
+    +'<div class="bk-total">'
+    +'<div class="bk-total-row"><span>✈️ Flights (3 legs, 3 pax)</span><span>$3,240–4,650</span></div>'
+    +'<div class="bk-total-row"><span>🏨 Hotels (8 nights total)</span><span>$1,640–2,280</span></div>'
+    +'<div class="bk-total-row"><span>🚂 Trains + Buses</span><span>$170–250</span></div>'
+    +'<div class="bk-total-row"><span>🚖 Ground Transport (Uber/RER/Metro)</span><span>$200–320</span></div>'
+    +'<div class="bk-total-row"><span>🎟 Activities (Alhambra, Eiffel, Disney, museums)</span><span>$415–510</span></div>'
+    +'<div class="bk-total-row"><span>🍽 Food + Meals (est. $80–120/day × 9)</span><span>$720–1,080</span></div>'
+    +'<div class="bk-total-row"><span>🎭 Flamenco + Optional extras</span><span>$100–200</span></div>'
+    +'<div class="bk-total-row"><span style="color:#fbbf24">💰 TOTAL ESTIMATE</span><span style="color:#fbbf24">$6,485–9,290</span></div>'
+    +'</div>'
+    +'<div style="background:#f0fdf4;border:1px solid #86efac;border-radius:10px;padding:14px 18px;margin-top:16px;font-size:13px;color:#166534;line-height:1.8">'
+    +'💡 <strong>Save vs Narmin:</strong> ~$3,300–6,100 depending on flight deals. Use that savings to upgrade one hotel, do a cooking class, or just pocket it. Narmin&#39;s quote is $12,603.79 all-in — you can get the same (plus Disneyland and the Parador) for roughly $7k–9k DIY.'
+    +'</div>'
+    +'</div>'
+    +'</div>';
+  }
+  } else if(curtab==='pack'){
+    body='<div style="padding:24px 28px;background:#fff">'
+    +'<div style="font-size:22px;font-weight:800;color:#111827;margin-bottom:4px">🎒 Packing List</div>'
+    +'<div style="font-size:14px;color:#6b7280;margin-bottom:6px">Family of 3 · Rizwan, Zaibnish, Izyan (5) · Nov 9–18 · 10 days · 4 countries</div>'
+    +'<div style="background:#fef9c3;border:1px solid #fcd34d;border-radius:10px;padding:11px 16px;font-size:13px;color:#92400e;margin-bottom:20px">'
+    +'🌡 <strong>Weather:</strong> Lisbon 14–18°C · Seville 14–17°C · Granada 8–14°C (cold at dawn!) · Paris 6–12°C. Layers essential. Pack one proper warm jacket + rain layer.'
+    +'</div>'
+    +'<div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">'
+
+    // COLUMN 1
+    +'<div>'
+    +'<div style="font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;color:#4f46e5;background:#eef2ff;padding:6px 12px;border-radius:8px;margin-bottom:12px">📄 Documents — Everyone</div>'
+    +'<div style="background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:14px 16px;font-size:13.5px;line-height:2.1;margin-bottom:14px">'
+    +'☐ Passports — check valid 6+ months past Nov 18 2026<br>'
+    +'☐ Printed: flight confirmations (all 3 legs)<br>'
+    +'☐ Printed: hotel bookings (4 hotels)<br>'
+    +'☐ Printed: Alhambra tickets<br>'
+    +'☐ Printed: Eiffel Tower + Disneyland tickets<br>'
+    +'☐ Credit cards (2 different networks — Visa + MC)<br>'
+    +'☐ Travel insurance card + emergency number<br>'
+    +'☐ Izyan\'s birth certificate (if different last name to either parent)<br>'
+    +'☐ EHIC / Global Health Insurance Card (if eligible)<br>'
+    +'☐ Photo of all docs saved to cloud (Google Photos)'
+    +'</div>'
+
+    +'<div style="font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;color:#059669;background:#d1fae5;padding:6px 12px;border-radius:8px;margin-bottom:12px">👔 Clothing — Adults (each)</div>'
+    +'<div style="background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:14px 16px;font-size:13.5px;line-height:2.1;margin-bottom:14px">'
+    +'☐ 3× jeans / trousers<br>'
+    +'☐ 5–6× tops / shirts<br>'
+    +'☐ 2× light sweaters / knits<br>'
+    +'☐ 1× mid-layer fleece<br>'
+    +'☐ 1× warm jacket (windproof, packable)<br>'
+    +'☐ 1× rain jacket or poncho<br>'
+    +'☐ 2× smart-casual outfits (Paris dinner, Parador)<br>'
+    +'☐ 7× underwear + socks<br>'
+    +'☐ <strong>Comfortable walking shoes</strong> — broken in, NOT new. 15k+ steps/day.<br>'
+    +'☐ 1× nicer shoes for evenings<br>'
+    +'☐ Scarf (Paris is cold)<br>'
+    +'☐ Sunglasses<br>'
+    +'☐ Blister plasters / Compeed — buy before, not after'
+    +'</div>'
+
+    +'<div style="font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;color:#7c3aed;background:#ede9fe;padding:6px 12px;border-radius:8px;margin-bottom:12px">👦 Izyan (Age 5) Packing</div>'
+    +'<div style="background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:14px 16px;font-size:13.5px;line-height:2.1;margin-bottom:14px">'
+    +'☐ 6–7× pants + tops (pack extra — kids)<br>'
+    +'☐ 2× warm fleece / hoodie layers<br>'
+    +'☐ 1× proper warm jacket (Granada + Paris cold)<br>'
+    +'☐ 1× rain jacket<br>'
+    +'☐ Warm hat + gloves (Paris / Granada morning Alhambra)<br>'
+    +'☐ 7× underwear + socks (+ 2–3 pull-ups if needed at night)<br>'
+    +'☐ 2× pajamas<br>'
+    +'☐ <strong>Comfortable walking shoes — THE most important thing</strong><br>'
+    +'☐ Sandals / light shoes (Lisbon/Seville warmth)<br>'
+    +'☐ Tablet + downloaded shows (offline!) for flights<br>'
+    +'☐ Kid headphones<br>'
+    +'☐ Small backpack he carries himself (books him in, loves it)<br>'
+    +'☐ 2–3 favourite small toys<br>'
+    +'☐ Colouring book + crayons for restaurants<br>'
+    +'☐ His own water bottle'
+    +'</div>'
+    +'</div>'
+
+    // COLUMN 2
+    +'<div>'
+    +'<div style="font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;color:#b45309;background:#fef3c7;padding:6px 12px;border-radius:8px;margin-bottom:12px">⚡ Electronics</div>'
+    +'<div style="background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:14px 16px;font-size:13.5px;line-height:2.1;margin-bottom:14px">'
+    +'☐ <strong>EU plug adapters</strong> — Portugal + Spain + France all use Type C/E/F (same plug). Bring 2–3.<br>'
+    +'☐ Phone chargers (both phones)<br>'
+    +'☐ <strong>Portable power bank</strong> — essential for Disneyland + long days<br>'
+    +'☐ Tablet + charger for Izyan<br>'
+    +'☐ USB-C multi-port charger (charge everything at once from one plug)<br>'
+    +'☐ Earbuds / headphones<br>'
+    +'☐ Camera (phone is fine — optional)<br>'
+    +'☐ EU eSIM installed on phones before departure (see Book It tab)'
+    +'</div>'
+
+    +'<div style="font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;color:#dc2626;background:#fee2e2;padding:6px 12px;border-radius:8px;margin-bottom:12px">💊 Health + Safety</div>'
+    +'<div style="background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:14px 16px;font-size:13.5px;line-height:2.1;margin-bottom:14px">'
+    +'☐ Travel insurance confirmation (print + save to phone)<br>'
+    +'☐ Children\'s Tylenol / Advil (fever reducer — hard to find exact brand abroad)<br>'
+    +'☐ Any prescription meds — full supply + extra<br>'
+    +'☐ Antihistamines (kids + adults)<br>'
+    +'☐ Hand sanitizer<br>'
+    +'☐ Wet wipes (a lot — Izyan will need them daily)<br>'
+    +'☐ Small first aid kit: plasters, antiseptic, thermometer<br>'
+    +'☐ Sunscreen (SPF 30+, Lisbon and Seville still sunny in Nov)<br>'
+    +'☐ Motion sickness tablets (long bus rides SVQ→GRX, GRX→AGP)'
+    +'</div>'
+
+    +'<div style="font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;color:#0e7490;background:#cffafe;padding:6px 12px;border-radius:8px;margin-bottom:12px">🧳 Luggage Strategy</div>'
+    +'<div style="background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:14px 16px;font-size:13.5px;line-height:2.1;margin-bottom:14px">'
+    +'<strong>Recommended:</strong> 1 large checked bag (family clothes) + 1 carry-on each + personal bag<br><br>'
+    +'<strong>Why not all carry-on:</strong> ALSA buses have luggage limits, Alfa Pendular train is fine but tight overhead racks with 3 people<br><br>'
+    +'<strong>Pack light tip:</strong> Bring laundry pods — all 4 hotels have guest laundry or laundry service. Rewear jeans 2–3 times.<br><br>'
+    +'<strong>Parador Granada:</strong> Pack a separate small daypack — you\'ll walk from the hotel to the Alhambra complex so no car needed<br><br>'
+    +'<strong>Disneyland day:</strong> Small backpack with snacks, water, sunscreen, phone charger'
+    +'</div>'
+    +'</div>'
+
+    +'</div>'
+    +'</div>';
+
+  } else if(curtab==='food'){
+    body='<div style="padding:24px 28px;background:#fff">'
+    +'<div style="font-size:22px;font-weight:800;color:#111827;margin-bottom:4px">🍽 Food Guide</div>'
+    +'<div style="font-size:14px;color:#6b7280;margin-bottom:20px">Best bites per city — from Izyan-approved to memorable dinners. No tourist traps.</div>'
+    +'<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">'
+
+    // LISBON
+    +'<div style="background:#fff;border:1px solid #e5e7eb;border-radius:14px;overflow:hidden">'
+    +'<div style="background:#4f46e5;padding:14px 18px;color:#fff"><div style="font-size:18px;font-weight:800">🇵🇹 Lisbon</div><div style="font-size:12px;opacity:.8">Nov 10–12 · Mild, sunny, café culture</div></div>'
+    +'<div style="padding:16px 18px;font-size:13.5px;line-height:1.9">'
+    +'<strong>🥐 Pastéis de Belém</strong> — <em>Non-negotiable.</em> The original custard tart bakery, Belém district. Queue moves fast. Izyan will demolish 3. Hot from the oven, dust with cinnamon.<br><br>'
+    +'<strong>🏪 Time Out Market (Mercado da Ribeira)</strong> — Best lunch in Lisbon. 35+ food stalls, sit anywhere. Great for a family — everyone picks what they want. Cais do Sodré area.<br><br>'
+    +'<strong>🐟 Grilled Sardines in Alfama</strong> — Any restaurant on the steep lanes near Sé Cathedral. €8–12/plate. Classic Portugal.<br><br>'
+    +'<strong>🍷 Super Bock beer / Sagres</strong> — €1.50 at any café. Order a fino (small draught).<br><br>'
+    +'<strong>🍒 Ginjinha</strong> — Cherry liqueur, adults only. Shot glass at A Ginjinha bar near Rossio, €1.50. One of Lisbon\'s most iconic experiences.<br><br>'
+    +'<strong>🎵 Tasca do Chico</strong> — Fado + petiscos (Portuguese tapas). Intimate, authentic. Book 3–4 days ahead. Not for Izyan on a late night but worth it for adults if you can arrange.'
+    +'</div></div>'
+
+    // SEVILLE
+    +'<div style="background:#fff;border:1px solid #e5e7eb;border-radius:14px;overflow:hidden">'
+    +'<div style="background:#d97706;padding:14px 18px;color:#fff"><div style="font-size:18px;font-weight:800">🇪🇸 Seville</div><div style="font-size:12px;opacity:.8">Nov 12–14 · Warm, sunny, tapas paradise</div></div>'
+    +'<div style="padding:16px 18px;font-size:13.5px;line-height:1.9">'
+    +'<strong>🏪 Lonja del Barranco Market</strong> — Converted Eiffel-designed market on the river. 20+ stalls. Go for lunch or early dinner — the riverfront view is stunning.<br><br>'
+    +'<strong>🥘 Bar Álvaro / Casa Morales</strong> — Old-school tapas bar, standing room, jamón hanging from the ceiling. Order jamón, tortilla, salmorejo (cold tomato soup). €3–5/tapa.<br><br>'
+    +'<strong>🍳 Cervecería Giraldo</strong> — Near the Cathedral. Excellent tapas, fair prices for the location. Cold Cruzcampo beer.<br><br>'
+    +'<strong>🍫 Churros con chocolate</strong> — Any café. Izyan\'s dream meal. Order for breakfast. Café El Comercio or Café Bar Levíes.<br><br>'
+    +'<strong>🍊 Seville oranges</strong> — The trees lining the streets are the famous Seville oranges (too bitter to eat off the tree but the scent is magical). Buy fresh OJ everywhere.<br><br>'
+    +'<strong>💡 Budget tip:</strong> Tapas in Seville are bigger and cheaper than most of Spain. €15–20/person covers a full meal with drinks at most places.'
+    +'</div></div>'
+
+    // GRANADA
+    +'<div style="background:#fff;border:1px solid #e5e7eb;border-radius:14px;overflow:hidden">'
+    +'<div style="background:#065f46;padding:14px 18px;color:#fff"><div style="font-size:18px;font-weight:800">🇪🇸 Granada</div><div style="font-size:12px;opacity:.8">Nov 14–16 · Free tapas with every drink!</div></div>'
+    +'<div style="padding:16px 18px;font-size:13.5px;line-height:1.9">'
+    +'<strong>🆓 THE GRANADA RULE:</strong> Order any drink (beer, wine, agua) and you get a FREE tapa. This is uniquely Granada. The more you drink, the bigger/better the tapa gets at most bars.<br><br>'
+    +'<strong>🐟 Los Diamantes</strong> — Best fried fish and seafood tapas in Granada. Queue out the door (always worth it). Calle Navas, near Cathedral.<br><br>'
+    +'<strong>🍷 Bodegas Castañeda</strong> — Classic, atmospheric, barrels as tables, old wineskins on walls. Order vermouth + free tapa. Historic.<br><br>'
+    +'<strong>🌍 Bar Poe</strong> — International, relaxed vibe, great for families. Arabic and Spanish fusion tapas.<br><br>'
+    +'<strong>🏰 Parador de Granada Restaurant</strong> — Splurge dinner inside the Alhambra complex. Incredible setting. €40–60/person. Worth it once.<br><br>'
+    +'<strong>☕ Arab Tea Houses (teterías)</strong> — Albaicín district. Moroccan-style tea, pastries, cushion seating. Izyan will love sitting on cushions with mint tea.'
+    +'</div></div>'
+
+    // PARIS
+    +'<div style="background:#fff;border:1px solid #e5e7eb;border-radius:14px;overflow:hidden">'
+    +'<div style="background:#be123c;padding:14px 18px;color:#fff"><div style="font-size:18px;font-weight:800">🇫🇷 Paris</div><div style="font-size:12px;opacity:.8">Nov 16–18 · Chilly, cozy, world-class food</div></div>'
+    +'<div style="padding:16px 18px;font-size:13.5px;line-height:1.9">'
+    +'<strong>🥖 Rue Cler Market Street</strong> — 7th arrondissement, steps from your hotel. Best morning market in Paris. Buy fresh bread, cheese, fruit for a picnic breakfast near Eiffel Tower.<br><br>'
+    +'<strong>🥙 L\'As du Fallafel (Marais district)</strong> — Famous falafel wrap, €7–9. Izyan-approved. Queue but moves fast. Best lunch in Paris at this price.<br><br>'
+    +'<strong>🍪 Ladurée Macarons</strong> — Get a box. Izyan will choose the colourful ones. Champs-Élysées or Saint-Germain locations. ~€2.50/macaron.<br><br>'
+    +'<strong>☕ Café de Flore or Les Deux Magots</strong> — Saint-Germain. Iconic. Overpriced but worth sitting for one coffee. Croissant + café = €10. Atmosphere priceless.<br><br>'
+    +'<strong>🦁 Disneyland food tip:</strong> Eat a big breakfast at hotel before going. Snacks inside Disneyland are €6–10 each. Bring bars, fruit, and water in a backpack. Planet Hollywood near the park entrance is decent for lunch (book ahead).<br><br>'
+    +'<strong>🥐 Boulangeries:</strong> Grab breakfast at any local bakery — croissant (~€1.50), pain au chocolat (~€1.80). Infinitely better than hotel breakfast and Izyan will love picking.'
+    +'</div></div>'
+
+    +'</div>'
+    +'</div>';
+
+  } else if(curtab==='kid'){
+    body='<div style="padding:24px 28px;background:#fff">'
+    +'<div style="font-size:22px;font-weight:800;color:#111827;margin-bottom:4px">👦 Izyan\'s Guide — Age 5</div>'
+    +'<div style="font-size:14px;color:#6b7280;margin-bottom:6px">Every activity rated for a 5-year-old. Plus logistics tips to keep him happy and you sane.</div>'
+    +'<div style="background:#f0fdf4;border:1px solid #86efac;border-radius:10px;padding:12px 16px;font-size:13px;color:#166534;margin-bottom:20px">'
+    +'⭐ <strong>Rating system:</strong> ⭐ = he\'ll survive · ⭐⭐⭐ = he\'ll enjoy · ⭐⭐⭐⭐⭐ = he\'ll talk about it for months'
+    +'</div>'
+    +'<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">'
+
+    // LISBON RATINGS
+    +'<div style="background:#fff;border:1px solid #e5e7eb;border-radius:14px;overflow:hidden">'
+    +'<div style="background:#4f46e5;padding:12px 18px;color:#fff;font-size:16px;font-weight:800">🇵🇹 Lisbon</div>'
+    +'<div style="padding:14px 18px;font-size:13.5px">'
+    +'<div style="border-bottom:1px solid #f3f4f6;padding-bottom:10px;margin-bottom:10px"><strong>Tram 28</strong> ⭐⭐⭐⭐⭐<br><small style="color:#6b7280">Open windows, steep hills, historic trams. He\'ll want to ride it twice. Hold on tight!</small></div>'
+    +'<div style="border-bottom:1px solid #f3f4f6;padding-bottom:10px;margin-bottom:10px"><strong>Pastéis de Belém</strong> ⭐⭐⭐⭐⭐<br><small style="color:#6b7280">Warm custard tarts with sugar and cinnamon. Instant favourite. Get 6.</small></div>'
+    +'<div style="border-bottom:1px solid #f3f4f6;padding-bottom:10px;margin-bottom:10px"><strong>Belém Tower</strong> ⭐⭐⭐⭐<br><small style="color:#6b7280">It looks like a castle. He\'ll love it. Narrow spiral stairs = exciting for kids.</small></div>'
+    +'<div style="border-bottom:1px solid #f3f4f6;padding-bottom:10px;margin-bottom:10px"><strong>Time Out Market</strong> ⭐⭐⭐⭐<br><small style="color:#6b7280">He picks his own food. Win. Bring patience for the crowd.</small></div>'
+    +'<div style="border-bottom:1px solid #f3f4f6;padding-bottom:10px;margin-bottom:10px"><strong>Jerónimos Monastery</strong> ⭐⭐⭐<br><small style="color:#6b7280">Gorgeous but long for a 5yo. Keep it under 45 min, then go straight to pastéis.</small></div>'
+    +'<div><strong>Portas do Sol Viewpoint</strong> ⭐⭐⭐<br><small style="color:#6b7280">Wide open terrace with views. He can run around safely.</small></div>'
+    +'</div></div>'
+
+    // SEVILLE RATINGS
+    +'<div style="background:#fff;border:1px solid #e5e7eb;border-radius:14px;overflow:hidden">'
+    +'<div style="background:#d97706;padding:12px 18px;color:#fff;font-size:16px;font-weight:800">🇪🇸 Seville</div>'
+    +'<div style="padding:14px 18px;font-size:13.5px">'
+    +'<div style="border-bottom:1px solid #f3f4f6;padding-bottom:10px;margin-bottom:10px"><strong>Plaza de España</strong> ⭐⭐⭐⭐⭐<br><small style="color:#6b7280">Huge, open, coloured tiles, rowing boats on the moat. He can run freely. One of the best squares in Europe for kids.</small></div>'
+    +'<div style="border-bottom:1px solid #f3f4f6;padding-bottom:10px;margin-bottom:10px"><strong>Giralda Tower Climb</strong> ⭐⭐⭐⭐<br><small style="color:#6b7280">No stairs — ramps all the way up. Easy for kids. Great city views at top.</small></div>'
+    +'<div style="border-bottom:1px solid #f3f4f6;padding-bottom:10px;margin-bottom:10px"><strong>Alcázar of Seville</strong> ⭐⭐⭐⭐<br><small style="color:#6b7280">Real palace with gardens and fountains. Water features he can look at. Izyan free under 16.</small></div>'
+    +'<div style="border-bottom:1px solid #f3f4f6;padding-bottom:10px;margin-bottom:10px"><strong>Flamenco Show</strong> ⭐⭐⭐⭐<br><small style="color:#6b7280">Stomping, clapping, colourful dresses. 5-year-olds are usually transfixed. Choose a short show (45–60 min). Sit near the front.</small></div>'
+    +'<div><strong>Churros con chocolate</strong> ⭐⭐⭐⭐⭐<br><small style="color:#6b7280">Self-explanatory. Make it a morning treat.</small></div>'
+    +'</div></div>'
+
+    // GRANADA RATINGS
+    +'<div style="background:#fff;border:1px solid #e5e7eb;border-radius:14px;overflow:hidden">'
+    +'<div style="background:#065f46;padding:12px 18px;color:#fff;font-size:16px;font-weight:800">🇪🇸 Granada</div>'
+    +'<div style="padding:14px 18px;font-size:13.5px">'
+    +'<div style="border-bottom:1px solid #f3f4f6;padding-bottom:10px;margin-bottom:10px"><strong>Staying at the Parador</strong> ⭐⭐⭐⭐⭐<br><small style="color:#6b7280">Waking up inside a historic palace-hotel inside the Alhambra complex. He\'ll think he\'s in a real castle. Breakfast in the courtyard. Garden to explore.</small></div>'
+    +'<div style="border-bottom:1px solid #f3f4f6;padding-bottom:10px;margin-bottom:10px"><strong>Generalife Gardens</strong> ⭐⭐⭐⭐⭐<br><small style="color:#6b7280">Fountains, terraced gardens, open space. He can run. The water channels are fascinating for kids.</small></div>'
+    +'<div style="border-bottom:1px solid #f3f4f6;padding-bottom:10px;margin-bottom:10px"><strong>Nasrid Palaces (Alhambra)</strong> ⭐⭐⭐⭐<br><small style="color:#6b7280">Intricate carvings and tiles. He\'ll think it\'s magic. Keep the visit to 1.5hrs max — timed entry helps pace it.</small></div>'
+    +'<div style="border-bottom:1px solid #f3f4f6;padding-bottom:10px;margin-bottom:10px"><strong>Sacromonte Caves</strong> ⭐⭐⭐⭐⭐<br><small style="color:#6b7280">REAL caves people live in. 5-year-olds find this incredible. Optional flamenco in a cave here — raw and authentic.</small></div>'
+    +'<div><strong>Granada Tapas Trail</strong> ⭐⭐⭐⭐<br><small style="color:#6b7280">Free food with every drink. He gets his own plate. Budget-friendly and social.</small></div>'
+    +'</div></div>'
+
+    // PARIS RATINGS
+    +'<div style="background:#fff;border:1px solid #e5e7eb;border-radius:14px;overflow:hidden">'
+    +'<div style="background:#be123c;padding:12px 18px;color:#fff;font-size:16px;font-weight:800">🇫🇷 Paris</div>'
+    +'<div style="padding:14px 18px;font-size:13.5px">'
+    +'<div style="border-bottom:1px solid #f3f4f6;padding-bottom:10px;margin-bottom:10px"><strong>Disneyland Paris</strong> ⭐⭐⭐⭐⭐<br><small style="color:#6b7280">Peak experience for a 5yo. Arrive at park opening. First rides: Ratatouille, Buzz Lightyear Laser Blast, Pirates of Caribbean (mild). Avoid Big Thunder if he\'s nervous. He will crash hard on RER home — beautiful.</small></div>'
+    +'<div style="border-bottom:1px solid #f3f4f6;padding-bottom:10px;margin-bottom:10px"><strong>Eiffel Tower</strong> ⭐⭐⭐⭐⭐<br><small style="color:#6b7280">He will remember this forever. Go at dusk — the tower lights up at sunset. Summit views. Take a photo of his face when he sees it.</small></div>'
+    +'<div style="border-bottom:1px solid #f3f4f6;padding-bottom:10px;margin-bottom:10px"><strong>Seine River Cruise</strong> ⭐⭐⭐⭐⭐<br><small style="color:#6b7280">On a boat watching Paris from the water, Eiffel lit up. Izyan will love being on the water. Evening cruise is the best. 1 hour, he can move around the deck.</small></div>'
+    +'<div style="border-bottom:1px solid #f3f4f6;padding-bottom:10px;margin-bottom:10px"><strong>Ladurée Macarons</strong> ⭐⭐⭐⭐⭐<br><small style="color:#6b7280">He picks the colours. Pink. Purple. He eats them very seriously. Get a box of 6.</small></div>'
+    +'<div><strong>Notre Dame Cathedral</strong> ⭐⭐⭐<br><small style="color:#6b7280">Impressive from outside — the Rose windows inside are stunning. Keep it quick (30 min). Then ice cream nearby.</small></div>'
+    +'</div></div>'
+
+    +'</div>'
+
+    // LOGISTICS TIPS
+    +'<div style="background:#f8faff;border:1px solid #c7d2fe;border-radius:12px;padding:18px 20px;margin-top:20px;font-size:13.5px;line-height:1.9">'
+    +'<div style="font-size:14px;font-weight:800;color:#3730a3;margin-bottom:10px">🧠 Logistics Tips for Travelling with Izyan</div>'
+    +'<strong>Timing:</strong> Big activities in the morning when he\'s fresh. Avoid rushing him into major sights after 3pm — meltdown risk.<br>'
+    +'<strong>Snacks:</strong> Always have crackers, fruit, and a chocolate bar in the bag. Hunger = danger.<br>'
+    +'<strong>Nap strategy:</strong> Stroller or carrier for Paris streets. He can nap while you walk — save his energy for Disneyland.<br>'
+    +'<strong>Granada Alhambra timing:</strong> Book early morning slot (9am) — cooler, fewer crowds, he\'s fresh.<br>'
+    +'<strong>Disneyland plan:</strong> Rope drop (park open). Hit Ratatouille first. Buzz Lightyear second. Lunch in the park. Afternoon: character meets + carousel. Leave by 6pm before he crashes.<br>'
+    +'<strong>Flights:</strong> Download 3 new episodes of his favourite show. Don\'t start them until he\'s asked 3 times — then it feels like a treat.<br>'
+    +'<strong>Parador Granada:</strong> Let him explore the garden and courtyard freely — it\'s safe and enclosed. He\'ll run off energy before bed.'
+    +'</div>'
+    +'</div>';
+
+  } else if(curtab==='bdg'){
+    var bdgData=[
+      {day:1, date:'Sun Nov 9',  city:'Houston → Lisbon',  items:'Airport food, snacks, lounge', est:70},
+      {day:2, date:'Mon Nov 10', city:'Lisbon Day 1',       items:'Lunch + dinner, Bolt x2, Time Out Market', est:140},
+      {day:3, date:'Tue Nov 11', city:'Lisbon Day 2',       items:'Pastéis de Belém, Jerónimos (€22), Tram 28, dinner', est:130},
+      {day:4, date:'Wed Nov 12', city:'→ Seville',          items:'Train snacks, lunch on arrival, dinner', est:80},
+      {day:5, date:'Thu Nov 13', city:'Seville Day 1',      items:'Alcázar (€32), flamenco (~€55), lunch + dinner tapas', est:190},
+      {day:6, date:'Fri Nov 14', city:'→ Granada',          items:'Bus snacks, lunch, taxi to Parador, dinner tapas trail', est:80},
+      {day:7, date:'Sat Nov 15', city:'Granada — Alhambra', items:'Alhambra entry (~€42), lunch tapas, Parador dinner', est:120},
+      {day:8, date:'Sun Nov 16', city:'→ Paris',            items:'Bus snacks, airport lunch, RER B (€24), dinner', est:110},
+      {day:9, date:'Mon Nov 17', city:'Paris Day 1',        items:'Eiffel Summit (~€78), Disneyland (~€210), food, RER', est:360},
+      {day:10,date:'Tue Nov 18', city:'Paris → Houston',    items:'Louvre (~€44), lunch, CDG taxi (~€65), airport food', est:180},
+    ];
+    var rows=bdgData.map(function(d){
+      return '<tr>'
+        +'<td style="font-size:12px;color:#9ca3af;white-space:nowrap">Day '+d.day+'</td>'
+        +'<td style="font-size:12px;color:#374151;white-space:nowrap">'+d.date+'</td>'
+        +'<td style="font-size:12px;font-weight:700;color:#111827">'+d.city+'</td>'
+        +'<td style="font-size:12px;color:#6b7280">'+d.items+'</td>'
+        +'<td style="font-weight:800;color:#4f46e5;white-space:nowrap">$'+d.est+'</td>'
+        +'<td><input id="ba'+d.day+'" type="number" min="0" placeholder="$0" oninput="calcBdg()" '
+        +'style="width:80px;padding:4px 8px;border:1px solid #d1d5db;border-radius:6px;font-size:13px;font-weight:700"></td>'
+        +'<td id="bd'+d.day+'" style="font-weight:800;font-size:13px">—</td>'
+        +'</tr>';
+    }).join('');
+    var estTotal=bdgData.reduce(function(s,d){return s+d.est;},0);
+    body='<style>'
+    +'.bdg-tbl{width:100%;border-collapse:collapse;font-size:13px}'
+    +'.bdg-tbl th{background:#f3f4f6;padding:9px 12px;text-align:left;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:#6b7280}'
+    +'.bdg-tbl td{padding:9px 12px;border-bottom:1px solid #f3f4f6;vertical-align:middle}'
+    +'.bdg-sum{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}'
+    +'.bdg-card{border-radius:12px;padding:16px 18px;text-align:center}'
+    +'</style>'
+    +'<div style="padding:24px 28px;background:#fff">'
+    +'<div style="font-size:22px;font-weight:800;color:#111827;margin-bottom:4px">💰 Day-by-Day Budget Tracker</div>'
+    +'<div style="font-size:14px;color:#6b7280;margin-bottom:6px">Estimates pre-filled. Enter actual spend as you go. Pre-booked items (hotels/flights) excluded — those are fixed.</div>'
+    +'<div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:11px 16px;font-size:13px;color:#1e40af;margin-bottom:18px">'
+    +'💡 This tracker saves automatically in your browser. Open the file on any device and your data stays.'
+    +'</div>'
+    +'<table class="bdg-tbl"><thead><tr>'
+    +'<th>#</th><th>Date</th><th>Location</th><th>What\'s Included</th><th>Budget</th><th>Actual</th><th>+/−</th>'
+    +'</tr></thead><tbody>'+rows+'</tbody>'
+    +'<tfoot><tr style="border-top:2px solid #e5e7eb">'
+    +'<td colspan="4" style="padding:12px;font-weight:800;font-size:14px">TOTALS</td>'
+    +'<td style="padding:12px;font-weight:900;color:#4f46e5;font-size:15px">$'+estTotal+'</td>'
+    +'<td style="padding:12px"><span id="bdg-actual-total" style="font-weight:900;font-size:15px;color:#111827">$0</span></td>'
+    +'<td style="padding:12px"><span id="bdg-diff-total" style="font-weight:900;font-size:15px">—</span></td>'
+    +'</tr></tfoot></table>'
+    +'<div class="bdg-sum">'
+    +'<div class="bdg-card" style="background:#eff6ff;border:1px solid #bfdbfe"><div style="font-size:11px;font-weight:800;text-transform:uppercase;color:#3730a3;margin-bottom:6px">Estimated Total</div><div style="font-size:26px;font-weight:900;color:#4f46e5">$'+estTotal+'</div><div style="font-size:12px;color:#6b7280">Day costs only</div></div>'
+    +'<div class="bdg-card" style="background:#f0fdf4;border:1px solid #86efac"><div style="font-size:11px;font-weight:800;text-transform:uppercase;color:#166534;margin-bottom:6px">Actual Spent</div><div id="bdg-sum-actual" style="font-size:26px;font-weight:900;color:#15803d">$0</div><div style="font-size:12px;color:#6b7280">Days entered</div></div>'
+    +'<div class="bdg-card" style="background:#fafafa;border:1px solid #e5e7eb"><div style="font-size:11px;font-weight:800;text-transform:uppercase;color:#6b7280;margin-bottom:6px">Remaining Budget</div><div id="bdg-sum-rem" style="font-size:26px;font-weight:900;color:#374151">$'+estTotal+'</div><div style="font-size:12px;color:#6b7280">vs estimate</div></div>'
+    +'</div>'
+    +'<div style="margin-top:16px;background:#1f2937;border-radius:12px;padding:16px 18px;color:#fff;font-size:13px;line-height:1.8">'
+    +'<strong style="color:#fbbf24">💰 All-in estimated cost (including pre-booked):</strong> $6,485–9,290 · Flights ~$3,240–4,650 · Hotels ~$1,640–2,280 · Day expenses ~$'+estTotal+' · Trains + Buses ~$170–250 · Apps/eSIM ~$40'
+    +'</div>'
+    +'</div>';
+    setTimeout(function(){if(typeof loadBdg==="function")loadBdg();},50);
+
+
+  var ft='<div class="det-ft"><span class="ft-text">'+o.name+' · '+o.cities+' · Nov 2026 · '+o.nights+' · Family of 3 · Izyan age 5 </span>'
+    +'<button class="ft-btn" onclick="sendItinerary()">📅 Build Full Itinerary — '+o.name+'</button></div>';
+
+  document.getElementById('detail').innerHTML=hdr+strip+tabs+body+ft;
+}
+
+function sendItinerary(){
+  var o=opts.find(function(x){return x.n===sel;});
+  if(window.parent&&window.parent.postMessage){window.parent.postMessage({type:'sendPrompt',text:o.prompt},'*');}
+}
+function pick(n){sel=n;curtab='it';renderTiles();renderDetail();}
+function toggleAct(el){ el.classList.toggle('expanded'); }
+
+function calcBdg(){
+  var estData=[70,140,130,80,190,80,120,110,360,180];
+  var actTotal=0,estTotal=1280;
+  for(var i=1;i<=10;i++){
+    var el=document.getElementById('ba'+i);
+    var diff=document.getElementById('bd'+i);
+    if(el&&diff){
+      var v=parseFloat(el.value)||0;
+      if(el.value!==''){
+        actTotal+=v;
+        var d=v-estData[i-1];
+        diff.textContent=(d>=0?'+':'')+('$'+Math.abs(d));
+        diff.style.color=d>0?'#dc2626':'#16a34a';
+        localStorage.setItem('bdg'+i,el.value);
+      } else {
+        diff.textContent='—';diff.style.color='#9ca3af';
+      }
+    }
+  }
+  var rem=estTotal-actTotal;
+  var at=document.getElementById('bdg-actual-total');
+  var bt=document.getElementById('bdg-diff-total');
+  var sa=document.getElementById('bdg-sum-actual');
+  var sr=document.getElementById('bdg-sum-rem');
+  if(at)at.textContent='$'+actTotal.toFixed(0);
+  if(sa)sa.textContent='$'+actTotal.toFixed(0);
+  if(sr)sr.textContent=(rem>=0?'$'+rem.toFixed(0):'−$'+Math.abs(rem).toFixed(0));
+  if(sr)sr.style.color=rem>=0?'#15803d':'#dc2626';
+  if(bt){bt.textContent=(actTotal===0?'—':(actTotal>estTotal?'+$'+(actTotal-estTotal).toFixed(0):'−$'+(estTotal-actTotal).toFixed(0)));bt.style.color=actTotal>estTotal?'#dc2626':'#16a34a';}
+}
+function loadBdg(){
+  for(var i=1;i<=10;i++){
+    var v=localStorage.getItem('bdg'+i);
+    var el=document.getElementById('ba'+i);
+    if(v&&el){el.value=v;}
+  }
+  calcBdg();
+}
+
+function switchtab(t){curtab=t;renderDetail();}
+renderTiles();renderDetail();
+</script>
+</body>
+</html>
