@@ -438,7 +438,7 @@ footer{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);
   <section id="s-food"></section>
   <section id="s-izyan"></section>
   <footer>
-    <span>Prices verified August 2026 against airline sites and live Booking.com pages for these exact dates.</span>
+    <span>Prices verified against airline sites and live Booking.com pages for these exact dates.</span>
     <span>Checkboxes and budget entries save in this browser.</span>
   </footer>
 </div>
@@ -458,7 +458,6 @@ function save(k,v){ try{ localStorage.setItem("eu26_"+k, v); }catch(e){} }
 function load(k){ try{ return localStorage.getItem("eu26_"+k); }catch(e){ return null; } }
 
 /* ---------- helpers ---------- */
-function esc(s){ return String(s); }
 function dots(n,max){
   var h='<span class="dots">';
   for(var i=0;i<max;i++){ h += '<span class="dot'+(i<n?' f':'')+'"></span>'; }
@@ -473,10 +472,6 @@ function bkSearch(q,ci,co,aptOnly){
     +"&checkin="+ci+"&checkout="+co+"&"+PAX
     +"&nflt="+(aptOnly?"ht_id%3D201%3B":"")+"review_score%3D80"
     +"&order=bayesian_review_score";
-}
-function gflight(a,b,d){
-  return "https://www.google.com/travel/flights?q="
-    +encodeURIComponent("flights from "+a+" to "+b+" on "+d+" for 2 adults 1 child");
 }
 function kflight(a,b,d){
   return "https://www.kayak.com/flights/"+a+"-"+b+"/"+d+"/2adults/children-5";
