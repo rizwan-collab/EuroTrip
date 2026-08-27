@@ -1702,6 +1702,12 @@ function renderBooking(){
     + '</div>';
 }
 
+function toggleChk(el){
+  save(el.id, el.checked ? "1" : "0");
+  var w = document.getElementById("w-"+el.id);
+  if(w){ if(el.checked){ w.classList.add("done"); } else { w.classList.remove("done"); } }
+}
+
 function bkToggle(id){
   var el = document.getElementById("bk-"+id);
   var st = bkGet(id);
