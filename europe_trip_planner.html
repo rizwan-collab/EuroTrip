@@ -413,7 +413,7 @@ footer{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);
   <div class="hdr">
     <div>
       <div class="h-ttl">Portugal &middot; Spain &middot; France</div>
-      <div class="h-sub">Rizwan, Zaibnish and Izyan (5) &middot; departing Dallas DFW, or Houston for about $1,300 more</div>
+      <div class="h-sub">Rizwan, Zaibnish and Izyan (5) &middot; out of Houston IAH Nov 9 &middot; home into Dallas DFW Nov 19</div>
     </div>
     <div class="h-meta">
       <div class="h-m"><div class="h-m-l">Dates</div><div class="h-m-v">Nov 9&ndash;19, 2026</div></div>
@@ -580,8 +580,7 @@ function paintLive(){
 
 /* ==================================================================
    DAY BY DAY, HOUR BY HOUR
-   Matches the original Goway structure: Lisbon 2n, Seville 2n,
-   Granada 2n, Paris 2n. Nov 9 to 18 2026.
+   Lisbon 2n, Granada 2n, Seville 2n, Paris 3n. Nov 9 to 19 2026.
    Every choice point offers three options.
    ================================================================== */
 var PLAN = [
@@ -686,7 +685,7 @@ var PLAN = [
        u:"https://the.ismaili/ismaili-centre-lisbon", ul:"the.ismaili"},
       {n:"Getting there", d:"Metro Blue line to Laranjeiras, then five minutes on foot. Or Bolt from Chiado, about 8 euros and 15 minutes. Coming back at dinner time, allow 25 minutes.", p:"1.65 euros metro",
        u:"https://www.metrolisboa.pt/en/", ul:"metrolisboa.pt"},
-      {n:"If the timing slips", d:"Belem in the morning can overrun. If you are not out of the apartment by 15:30, push the Centre to Nov 10 instead and use this slot for a miradouro near home.", p:"&mdash;"}
+      {n:"If the timing slips", d:"Belem in the morning can overrun. If you are not out of the apartment by 15:30, drop the Centre and use this slot for a miradouro near home. There is no later Lisbon slot.", p:"&mdash;"}
     ]
   },
   food:{
@@ -1002,24 +1001,24 @@ var PLAN = [
 {
   n:11, date:"Thu Nov 19", wd:"Thursday", city:"Paris to Texas", tag:["p-n","Departure"],
   sum:"Breakfast and a taxi. Nothing else, and nothing needed.",
-  warn:"American departs CDG at 11:05 for Dallas. If you keep the Houston booking, Air France leaves 12:40. Either way there is no sightseeing this morning, which is exactly why the Eiffel was last night.",
+  warn:"Booked into <b>Dallas DFW</b>, not Houston. You left from IAH, so you land 240 miles from home and still have to close that gap. Sort it before you fly, not at the carousel.",
   sched:[
-    ["06:45","Breakfast, final check","Anything left on Rue Cler, or the apartment kitchen."],
-    ["07:30","Taxi to CDG","Regulated flat rate 65 euros from the Left Bank, about fifty minutes. For the Air France 12:40 you can leave at 09:20 instead."],
-    ["08:20","Arrive CDG","American uses Terminal 1, Air France Terminal 2E. Bag drop, security, passport control."],
-    ["11:05","American departs for Dallas","About 10h45 nonstop."],
-    ["14:50","Land DFW","Same calendar day. Collect the car."],
-    ["19:00","Home in Houston","Four hours on I-45, or stay near DFW if nobody wants to drive."]
+    ["06:45","Breakfast, final check","Anything left on Rue Cler, or the apartment kitchen. Bins out, keys where the host asked."],
+    ["07:30","Taxi to CDG","Regulated flat rate, 65 euros from the Left Bank, about fifty minutes. Book it the night before."],
+    ["08:20","Arrive CDG","American boards from Terminal 2A. Bag drop, security, then French exit passport control, which is the slow part."],
+    ["11:05","Depart CDG for Dallas","Confirm your own flight number and time. About 10h40 nonstop on a 787."],
+    ["14:50","Land DFW","Same calendar day, you gain seven hours. US immigration and customs, then re-check nothing &mdash; this is the end of the line."],
+    ["16:00","Close the 240 miles","Rental car, a Southwest hop DAL to HOU, or someone collecting you. Whichever you chose, have it booked before you leave for Paris."],
+    ["20:00","Home","Or a hotel near DFW if nobody wants to drive four hours after a transatlantic. No shame in that one."]
   ],
   transport:{
-    leg:"CDG to Texas", flight:true, note:"The airport choice is worth about $1,600 on this leg alone.",
+    leg:"CDG to DFW, then DFW to Houston", flight:true, note:"The flight is booked. What is not booked is the last 240 miles, and that is now the only open item on this day.",
     opts:[
-      {n:"American nonstop to Dallas", d:"$502 a person, departs 11:05, lands 14:50, about 10h45. Then four hours on I-45, or a hotel near DFW if you would rather not drive tired.", p:"$1,506 total", best:true,
-       u:"https://www.aa.com", ul:"aa.com"},
-      {n:"Air France nonstop to Houston", d:"$1,035 a person, departs 12:40, lands 16:50. No drive at the end, but you pay $1,600 for that.", p:"$3,105 total",
-       u:"https://wwws.airfrance.us", ul:"airfrance.us"},
-      {n:"One stop into Houston", d:"From $498 a person via Frankfurt or Newark, but it adds four to six hours and a connection on day eleven with a tired child.", p:"$1,492 total",
-       u:"https://www.kayak.com/flights/CDG-IAH/2026-11-19/2adults/children-5", ul:"Compare on Kayak"}
+      {n:"One-way rental, DFW to Houston", d:"Simplest if you have luggage and a child. Three to four hours on I-45. Book the one-way now, they get scarce and expensive close in. Drop at IAH and collect your own car in the same trip.", p:"$70 to $140", best:true,
+       u:"https://www.kayak.com/cars/Dallas-Fort-Worth-Airport,TX/2026-11-19/2026-11-20", ul:"Price a one-way rental"},
+      {n:"Southwest, DAL to HOU", d:"Fastest on paper but you land at DFW and Southwest flies from Love Field, so it is a transfer, a second check-in and a second security line at the end of a ten-hour flight. Hobby is also the wrong airport if your car is at IAH.", p:"$55 to $80 each",
+       u:"https://www.southwest.com", ul:"southwest.com"},
+      {n:"Someone collects you", d:"Free, and by a distance the kindest version of this day. If anyone offers, take it. Landing at 14:50 means they leave Houston around 11:00.", p:"Free"}
     ]
   }
 }
@@ -1077,19 +1076,19 @@ function renderItinerary(){
 
   return '<div class="s-h">Day by Day</div>'
     + '<div class="s-s">Eleven days, hour by hour, built on the original structure of two nights each in Lisbon, '
-    + 'Seville, Granada and Paris, with a third Paris night so Nov 16 is not a fourteen-hour day. '
+    + 'Granada, Seville and Paris, with a third Paris night so Nov 16 is not a fourteen-hour day. '
     + 'Every choice point gives you three options with live booking links. '
     + 'Where no flight exists on a route, it says so rather than pretending otherwise.</div>'
     + '<div class="g4 blk">'
     + '<div class="stat"><div class="st-l">Structure</div><div class="st-v">2+2+2+3</div><div class="st-n">Extra Paris night fixes the Nov 16 crush</div></div>'
-    + '<div class="stat"><div class="st-l">Options given</div><div class="st-v">66</div><div class="st-n">Three at each of 22 decision points</div></div>'
-    + '<div class="stat"><div class="st-l">Routes with no flight</div><div class="st-v">2</div><div class="st-n">Seville to Granada, Granada to Paris</div></div>'
+    + '<div class="stat"><div class="st-l">Options given</div><div class="st-v">70</div><div class="st-n">Across 23 decision points</div></div>'
+    + '<div class="stat"><div class="st-l">Routes with no flight</div><div class="st-v">1</div><div class="st-n">Granada to Seville, which is a train</div></div>'
     + '<div class="stat"><div class="st-l">Fixed-time bookings</div><div class="st-v">4</div><div class="st-n">Alhambra, Alcazar, flamenco, Disneyland</div></div>'
     + '</div>'
     + '<div class="note n-i"><span class="n-t">How to use this</span>'
     + 'The timings are the plan, not a rule. The three options under each heading are genuine alternatives at '
     + 'different price and effort levels, and the recommended one is marked. Two things are genuinely fixed: '
-    + 'the <b>09:00 Nasrid Palace slot on Sunday Nov 15</b> and the <b>08:00 coach on Monday Nov 16</b>. '
+    + 'the <b>09:00 Nasrid Palace slot on Friday Nov 13</b> and the <b>16:40 Seville to Paris flight on Monday Nov 16</b>. '
     + 'Everything else can move.</div>'
     + days;
 }
@@ -1157,22 +1156,26 @@ var LEGS = [
    a:"SVQ", b:"CDG", d:"2026-11-16",
    direct:"airfrance.us", durl:"https://wwws.airfrance.us"},
 
-  {no:"04", date:"Nov 19", route:"CDG to IAH or DFW", name:"Paris to Texas",
-   price:"$1,506&ndash;3,105", sub:"3 travellers, nonstop",
-   flag:["p-r","Biggest saving in the trip"],
-   headline:"$1,492",
-   headnote:"one-stop into Houston, adding four to six hours at the end of ten days.",
-   real:"$1,506 nonstop into Dallas, or $3,105 nonstop into Houston",
-   body:"This is the most expensive leg and the one where the airport choice matters. Priced like for like on "
-        +"Nov 19 for three travellers:<br><br>"
-        +"<b>CDG to IAH:</b> Air France is the only nonstop and charges <b>$1,035 a person, about $3,105</b>. "
-        +"Departs 12:40, lands 16:50.<br>"
-        +"<b>CDG to DFW:</b> American flies it nonstop at <b>$502 a person, about $1,506</b>. "
-        +"Departs 11:05, lands 14:50.<br><br>"
-        +"<b>The same journey costs $1,600 less into Dallas</b>, lands two hours earlier, and Air France's Houston "
-        +"monopoly is the entire reason. Net of the drive and parking you keep $1,230 to $1,340.<br><br>"
-        +"I originally quoted $1,200 to $1,800 here from a route-summary teaser fare. The Houston nonstop is "
-        +"nearly double that. The Dallas nonstop is roughly what I said, which is why it is worth the car.",
+  {no:"04", date:"Nov 19", route:"CDG to DFW", name:"Paris to Dallas",
+   price:"Booked", sub:"American, 3 travellers, nonstop",
+   flag:["p-g","Booked and confirmed"],
+   headline:"Done",
+   headnote:"and it was the right call. This one leg was worth about $1,600.",
+   real:"American nonstop CDG to DFW, roughly 10h40",
+   body:"Booked into <b>Dallas Fort Worth</b>, nonstop, departing CDG around <b>11:05</b> and landing "
+        +"<b>14:50</b> the same day. American boards from <b>Terminal 2A</b> at CDG. Confirm your exact flight "
+        +"number and departure time against your confirmation, since American runs more than one CDG to DFW "
+        +"rotation and the times shift by season.<br><br>"
+        +"<b>Why this was worth doing.</b> Air France holds the only nonstop into Houston and charges about "
+        +"$1,035 a person for it, roughly $3,105 for the three of you. American flies CDG to DFW nonstop at "
+        +"about $502 a person, roughly $1,506. Same day, same aircraft class, and it lands two hours earlier.<br><br>"
+        +"<b>The one thing this costs you.</b> You departed from <b>Houston</b> and you are landing in "
+        +"<b>Dallas</b>, 240 miles apart. That gap is real and it is the last unbooked item on this trip. A "
+        +"one-way rental is $70 to $140, Southwest DAL to HOU is $55 to $80 a person but flies from Love Field "
+        +"rather than DFW, and being collected is free. Whichever you pick, <b>sort it before you fly out on "
+        +"Nov 9</b>, not while standing at a carousel on the 19th.<br><br>"
+        +"<b>And check where your car is.</b> If it is in long-term parking at IAH, you cannot reach it from "
+        +"Dallas. Getting dropped at IAH on the way out makes this whole problem disappear.",
    a:"CDG", b:"DFW", d:"2026-11-19",
    direct:"aa.com", durl:"https://www.aa.com"}
 ];
@@ -1186,23 +1189,24 @@ var AIRPORTS = {
          +"One ticket, bags through, 1h41 at Dulles. This decides the row below too: <b>you now leave from "
          +"Houston</b>, so there is no drive to Dallas on the way out."},
     {leg:"Return Nov 19 from Paris",
-     iah:"$3,105", dfw:"$1,506", win:"dfw",
+     iah:"&mdash;", dfw:"Booked", win:"dfw",
      note:"Air France is the <b>only</b> nonstop into Houston and prices like it: $1,035 a person. American flies "
          +"CDG to DFW nonstop at <b>$502 a person</b>, departing 11:05 and landing 14:50. Earlier arrival, half the fare."},
-    {leg:"Flights subtotal, nonstop return",
-     iah:"$4,458", dfw:"$2,895", win:"dfw",
-     note:"Before positioning costs."},
+    {leg:"What the choice saved",
+     iah:"&mdash;", dfw:"About $1,600", win:"dfw",
+     note:"Air France wanted about $1,035 a person into Houston. American charged about $502 a person into "
+         +"Dallas for the same day and a nonstop that lands two hours earlier."},
     {leg:"Closing the gap on the way home",
      iah:"Included", dfw:"$110 to $240", win:"iah",
      note:"This got <b>cheaper for Dallas</b>, because the outbound drive is gone. If you fly home into DFW you "
          +"only have to cover it <b>one way</b>: a one-way rental is $70 to $140, or Southwest DAL to HOU is "
-         +"$55 to $80 a person. <b>The catch is your car.</b> Park at IAH for ten days and a Dallas landing means "
+         +"$55 to $80 a person. <b>The catch is your car.</b> Park at IAH for eleven days and a Dallas landing means "
          +"getting to Houston before you can collect it. Get dropped at IAH and this stays clean."},
-    {leg:"Net cost of the return",
-     iah:"$3,105", dfw:"$1,616 to $1,746", win:"dfw",
-     note:"<b>Flying home into Dallas still saves about $1,360 to $1,490</b>, and it saves more than it did "
-         +"before, because you are no longer driving up there to depart. The cost is landing 240 miles from "
-         +"home at the end of ten days with a tired five-year-old. That is a real cost and it is yours to weigh."}
+    {leg:"Net, after closing the gap",
+     iah:"&mdash;", dfw:"About $1,400 kept", win:"dfw",
+     note:"<b>Both legs are now booked and the decision is made.</b> The saving stands at roughly $1,600 less "
+         +"the $110 to $240 it costs to get from Dallas to Houston. What is left to do is book that last hop "
+         +"and make sure your car is not sitting at IAH where you cannot reach it."}
   ]
 };
 
@@ -1229,8 +1233,8 @@ function renderAirports(){
     + 'day, and it lands at 14:50 rather than 16:50.<br><br>'
     + 'Net of fuel and eleven days of parking you keep <b>$1,230 to $1,340</b>. The cost is an eight-hour round '
     + 'trip in the car, four hours of it on the day you land. That is the trade.<br><br>'
-    + '<b>What changed now the outbound is booked.</b> You fly out of Houston on Nov 9, so the four-hour drive to Dallas is off the table. If you still fly home into DFW you only pay to close the gap once, $110 to $240 rather than $225 to $335. The saving got bigger, not smaller.<br><br>'
-    + '<b>The thing that actually decides it is where your car is.</b> Park at IAH and a Dallas landing means a second journey before you can drive home. Get dropped at IAH and flying into DFW costs you nothing but the ride south.</div>'
+    + '<b>Both legs are booked, so this table is now history rather than a decision.</b> You leave Houston on Nov 9 and come home into Dallas on Nov 19. Taking Dallas over Houston on the return kept roughly $1,600, and because you are not driving up to depart, closing the gap only costs you once, $110 to $240.<br><br>'
+    + '<b>One thing genuinely still needs doing.</b> Book the Dallas to Houston hop before you leave, and check where your car will be. If it is parked at IAH you cannot reach it from DFW, so get dropped off instead and the problem disappears.</div>'
     + '<div class="leg-a" style="margin-bottom:26px">'
     + '<a class="btn btn-p" href="'+kflight("CDG","DFW","2026-11-19")+'" target="_blank" rel="noopener">Price Paris to DFW</a>'
     + '<a class="btn" href="'+kflight("CDG","IAH","2026-11-19")+'" target="_blank" rel="noopener">Compare Paris to IAH</a>'
@@ -1272,7 +1276,7 @@ function renderFlights(){
     + 'than the actual departure on your date.<br><br>'
     + 'Everything below is now a live search result for your dates and party size, with the headline fare and the '
     + 'realistic fare shown separately. <b>The Paris to Houston leg was the worst miss</b> &mdash; I said $1,200 to '
-    + '$1,800 and the nonstop is really about $2,973.</div>'
+    + '$1,800 and the Houston nonstop is really about $3,105.</div>'
     + '<div class="note n-i"><span class="n-t">Two rules that explain most fare surprises</span>'
     + '<b>Basic Economy is not a fare, it is a trap.</b> No checked bag, no seat selection, no changes. For three '
     + 'people on a transatlantic leg, add roughly $75 a person each way for a bag, and expect to pay for seats or '
@@ -1285,12 +1289,12 @@ function renderFlights(){
     + '<div class="tw tsc"><table><thead><tr><th>Approach</th><th>Texas to LIS</th><th>LIS to GRX</th>'
     + '<th>SVQ to CDG</th><th>CDG to Texas</th><th class="num">Total</th></tr></thead><tbody>'
     + '<tr><td><b>Cheapest viable</b><br><span style="font-size:11.5px;color:var(--mute)">One stop where it saves real money</span></td>'
-    + '<td>Booked</td><td>$80</td><td>$279</td><td>$1,492</td><td class="num" style="font-weight:600">$1,851 still to book</td></tr>'
+    + '<td>Booked</td><td>$80</td><td>$279</td><td>Booked</td><td class="num" style="font-weight:600">$359 still to book</td></tr>'
     + '<tr><td><b>Nonstop where possible</b><br><span style="font-size:11.5px;color:var(--mute)">Recommended with a five-year-old</span></td>'
-    + '<td>Booked</td><td>$249</td><td>$525</td><td>$1,506</td><td class="num" style="font-weight:600">$2,280 still to book</td></tr>'+ '<tr><td><b>Nonstop into Houston instead</b><br><span style="font-size:11.5px;color:var(--mute)">Air France holds the only nonstop</span></td>'+ '<td>Booked</td><td>$249</td><td>$525</td><td>$3,105</td><td class="num" style="font-weight:600">$3,879 still to book</td></tr>'
+    + '<td>Booked</td><td>$249</td><td>$525</td><td>Booked</td><td class="num" style="font-weight:600">$774 still to book</td></tr>'+ '<tr><td><b>Nonstop into Houston instead</b><br><span style="font-size:11.5px;color:var(--mute)">Air France holds the only nonstop</span></td>'+ '<td>Booked</td><td>$249</td><td>$525</td><td>$3,105</td><td class="num" style="font-weight:600">$3,879 still to book</td></tr>'
     + '</tbody></table></div>'
-    + '<div class="note n-w" style="margin-top:14px"><span class="n-t">The $1,800 question</span>'
-    + 'The gap is almost entirely the final leg, and the lever is the airport rather than the cabin. Flying home nonstop into <b>Dallas costs $1,506</b>; nonstop into <b>Houston costs $3,105</b>. Add $225 to $335 for the drive and parking and Dallas still keeps <b>$1,230 to $1,340</b> in your pocket for an eight-hour round trip in the car.</div></div>'
+    + '<div class="note n-g" style="margin-top:14px"><span class="n-t">Both transatlantic legs are now booked</span>'
+    + 'Out of Houston on United, home into Dallas on American. Taking Dallas on the return rather than the Air France Houston nonstop kept roughly <b>$1,600</b>. Only two flights are still open, Lisbon to Granada and Seville to Paris, and neither is urgent. Add $110 to $240 for the Dallas to Houston hop at the end.</div></div>'
     + '<div class="blk"><div class="blk-h">Ground transport between cities</div>'
     + '<div class="tw tsc"><table><thead><tr><th>Leg</th><th>Date</th><th>Mode</th><th>Time</th><th class="num">Cost, 3 people</th><th>Book</th></tr></thead><tbody>'
     + '<tr><td><b>Granada to Seville</b><br><span style="font-size:11.5px;color:var(--mute)">No flight, and none needed</span></td>'
@@ -1298,13 +1302,13 @@ function renderFlights(){
     + '<td><a href="https://www.renfe.com/es/en" target="_blank" rel="noopener">renfe.com</a></td></tr>'
         + '<tr><td><b>CDG to central Paris</b></td><td>Nov 16</td><td>RER B train</td><td>45min</td><td class="num">$38</td>'
     + '<td><a href="https://www.ratp.fr/en" target="_blank" rel="noopener">ratp.fr</a></td></tr>'
-    + '<tr><td><b>Paris to CDG</b></td><td>Nov 18</td><td>Taxi, regulated flat rate</td><td>50min</td><td class="num">65 euros</td>'
+    + '<tr><td><b>Paris to CDG</b></td><td>Nov 19</td><td>Taxi, regulated flat rate</td><td>50min</td><td class="num">65 euros</td>'
     + '<td>Any official rank</td></tr>'
     + '</tbody></table></div></div>'
-    + '<div class="note n-w"><span class="n-t">Nov 16 remains the day to get right</span>'
-    + 'Coach 1h45 to 2h20, then a 2h35 flight. Take the <b>08:00 coach</b> and book the Malaga departure for '
-    + '<b>13:00 or later</b>. ALSA runs fifteen direct services a day from 05:00, so an early coach is easy and '
-    + 'there is a fallback if you miss one. Do not book a morning flight out of Malaga.</div>';
+    + '<div class="note n-g"><span class="n-t">Nov 16 is no longer the day to worry about</span>'
+    + 'Reversing the Spanish cities removed the only unresolvable clash in this trip. There is no coach and no '
+    + 'Malaga. You have a slow morning in Seville, a twenty-minute taxi to SVQ at 14:00, the Air France nonstop '
+    + 'at 16:40, and you land at CDG at 19:15 in time for dinner.</div>';
 }
 
 /* ==================================================================
@@ -1439,7 +1443,7 @@ var BOOKINGS = [
    by:"2026-09-15", est:510,
    u:"https://www.united.com/en/us/manageres/mytrips", ul:"Manage booking on united.com"},
   {id:"ret", ph:2, t:"Return: Paris to Texas, Nov 19",
-   n:"The last flight to buy. American nonstop into Dallas about $1,506, Air France nonstop into Houston about $3,105. Dallas saves roughly $1,500, but you departed from IAH, so check where your car is before you commit.",
+   n:"Booked. American nonstop CDG to DFW, departing about 11:05 and landing 14:50 on Nov 19. Saved roughly $1,600 against the Air France nonstop into Houston. What is left: get from Dallas to Houston, and do not leave your car at IAH.",
    by:"2026-09-30", est:1506,
    u:"https://www.kayak.com/flights/CDG-DFW/2026-11-19/2adults/children-5", ul:"Price Paris to Dallas"},
   {id:"lis", ph:2, t:"Lisbon to Granada, Nov 12",
@@ -1464,9 +1468,13 @@ var BOOKINGS = [
    by:"2026-10-15", est:230,
    u:"https://www.booking.com/searchresults.html?ss=Santa%20Cruz%2C%20Seville&checkin=2026-11-14&checkout=2026-11-16&group_adults=2&group_children=1&age=5&no_rooms=1&nflt=ht_id%3D201%3Breview_score%3D80&order=bayesian_review_score", ul:"See Seville options"},
   {id:"hpar", ph:3, t:"Paris apartment, Nov 16 to 19",
-   n:"From $249 for two nights in the 7th, so budget about $375 for three. Skip the listing called Luxury apartments near the Eiffel Tower, it is a property in Nevers.",
+   n:"From $249 for all three nights in the 7th. Skip the listing called Luxury apartments near the Eiffel Tower, it is a property in Nevers.",
    by:"2026-10-15", est:375, dep:["dec"],
    u:"https://www.booking.com/searchresults.html?ss=Eiffel%20Tower%2C%20Paris&checkin=2026-11-16&checkout=2026-11-19&group_adults=2&group_children=1&age=5&no_rooms=1&nflt=ht_id%3D201%3Breview_score%3D80&order=bayesian_review_score", ul:"See Paris options"},
+  {id:"dfw2hou", ph:2, t:"Dallas to Houston on Nov 19, the last 240 miles",
+   n:"You depart from IAH and land at DFW, so this gap is real. One-way rental $70 to $140, or Southwest DAL to HOU $55 to $80 each, though that flies from Love Field not DFW. Being collected is free and much the kindest. Book it now, not on the day.",
+   by:"2026-10-15", est:140, dep:["ret"],
+   u:"https://www.kayak.com/cars/Dallas-Fort-Worth-Airport,TX/2026-11-19/2026-11-20", ul:"Price a one-way rental"},
   {id:"bus1", ph:3, t:"Granada to Seville, Nov 14",
    n:"Renfe Avant train, 2h45, 23.50 to 37.50 euros each. No flight on this route, and none needed.",
    by:"2026-10-20", est:95,
@@ -1506,7 +1514,7 @@ var BOOKINGS = [
    n:"Granada tapas bars, small cafes and taxis. Bank ATMs on arrival, never airport exchange counters.",
    by:"2026-11-07", est:0},
   {id:"apps", ph:5, t:"Download apps and offline maps",
-   n:"Bolt, Uber, Citymapper, ALSA, offline Google Maps for all four cities, plus three new shows on Izyan's tablet.",
+   n:"Bolt, Uber, Citymapper, Renfe, offline Google Maps for all four cities, plus three new shows on Izyan's tablet.",
    by:"2026-11-07", est:0},
   {id:"docs", ph:5, t:"Photograph and email all documents",
    n:"Passports, insurance, cards, all confirmations. Send to yourself and Zaibnish. Save 112 and the embassy numbers.",
@@ -1783,7 +1791,7 @@ function bkExport(){
    BUDGET
    ================================================================== */
 var BDG = [
-  {d:1, dt:"Mon Nov 9",  c:"Texas to Lisbon",     i:"Drive to DFW, parking, airport meals",            e:110},
+  {d:1, dt:"Mon Nov 9",  c:"Texas to Lisbon",     i:"Ride to IAH, parking, airport meals",            e:110},
   {d:2, dt:"Tue Nov 10", c:"Lisbon",               i:"Lunch and dinner, Bolt rides, Time Out Market",   e:140},
   {d:3, dt:"Wed Nov 11", c:"Lisbon",               i:"Pasteis de Belem, meals, tram fares",             e:120},
   {d:4, dt:"Thu Nov 12", c:"Lisbon to Granada",  i:"Airport transfers, Madrid connection meals",      e:120},
@@ -1799,7 +1807,7 @@ var BDG_TOTAL = BDG.reduce(function(s,x){ return s + x.e; }, 0);
 
 var COSTS = [
   ["Flights, all four legs", "$3,320", "$3,803", "Via Dallas and the reversed Spain order. Houston adds about $1,600 on the return"],
-  ["Accommodation, 8 nights", "$1,125", "$3,600", "Apartments at the low end, Parador at the high end"],
+  ["Accommodation, 9 nights", "$1,125", "$3,600", "Apartments at the low end, Parador at the high end"],
   ["Tickets and attractions", "$530", "$700", "Alhambra, Disneyland, Eiffel, Alcazar, flamenco, Jeronimos"],
   ["Intercity rail", "$75", "$115", "Granada to Seville. The Malaga coach is gone"],
   ["City transport", "$220", "$340", "Metros, taxis, RER, Bolt"],
@@ -1830,7 +1838,7 @@ function renderBudget(){
     + '<div class="s-s">Two layers. The all-in estimate covers everything including flights and rooms. '
     + 'The day tracker below covers only food, local transport and incidentals, so nothing is counted twice.</div>'
     + '<div class="g4 blk">'
-    + '<div class="stat"><div class="st-l">All-in estimate</div><div class="st-v">$5,900&ndash;10,400</div><div class="st-n">Three people, ten days</div></div>'
+    + '<div class="stat"><div class="st-l">All-in estimate</div><div class="st-v">$6,820&ndash;10,540</div><div class="st-n">Three people, eleven days</div></div>'
     + '<div class="stat"><div class="st-l">Narmin quoted</div><div class="st-v">$12,604</div><div class="st-n">Goway ref 1185612/1</div></div>'
     + '<div class="stat"><div class="st-l">You save</div><div class="st-v">$2,060&ndash;5,780</div><div class="st-n">And you add Disneyland</div></div>'
     + '<div class="stat"><div class="st-l">Actually committed</div><div class="st-v">$'+ bkStats().spent.toLocaleString() + '</div>'+ '<div class="st-n">From ' + bkStats().done + ' booked items on the checklist</div></div>'
@@ -1857,7 +1865,7 @@ function renderBudget(){
     + '<td class="num" style="font-weight:700" id="tot-v">&mdash;</td>'
     + '</tr></tfoot></table></div>'
     + '<div class="g3" style="margin-top:16px">'
-    + '<div class="stat"><div class="st-l">Planned</div><div class="st-v">$'+BDG_TOTAL+'</div><div class="st-n">Ten days</div></div>'
+    + '<div class="stat"><div class="st-l">Planned</div><div class="st-v">$'+BDG_TOTAL+'</div><div class="st-n">Eleven days</div></div>'
     + '<div class="stat"><div class="st-l">Spent so far</div><div class="st-v" id="sum-a">$0</div><div class="st-n">Days entered</div></div>'
     + '<div class="stat"><div class="st-l">Remaining</div><div class="st-v" id="sum-r">$'+BDG_TOTAL+'</div><div class="st-n">Against plan</div></div>'
     + '</div>'
@@ -1934,7 +1942,7 @@ function resetBudget(){
    ================================================================== */
 var PACK = [
   {h:"Documents", items:[
-    "Passports for all three, valid 6 months past Nov 18",
+    "Passports for all three, valid 6 months past Nov 19",
     "Printed flight confirmations, both tickets",
     "Printed apartment and hotel bookings, all four cities",
     "Printed Alhambra tickets with the 9am slot visible",
@@ -1990,7 +1998,7 @@ var PACK = [
     "Wet wipes. More than you think",
     "Small first aid kit with plasters, antiseptic and a thermometer",
     "Sunscreen. Lisbon and Seville are still sunny in November",
-    "Motion sickness tablets for the two coach legs"
+    "Motion sickness tablets for the Granada to Seville train"
   ]}
 ];
 
@@ -2178,8 +2186,7 @@ var CONFLICTS = [
    fix:"<b>Add one night in Paris.</b> Nov 16 becomes a pure travel day that ends with dinner and bed. "
       +"Disneyland stays on Tuesday. The Eiffel gets a proper slot on Wednesday Nov 18, when the tower is open "
       +"until midnight and you are not carrying a day of transit. You fly home Thursday Nov 19.<br><br>"
-      +"It also relaxes the coach: with nothing scheduled that evening you can take the 09:00 or 10:00 rather "
-      +"than the 08:00, which matters after the Alhambra day.",
+      +"There is no coach in this version at all &mdash; Seville to Paris is a nonstop.",
    cost:"About $310 &mdash; one more night in Paris plus one more day of food and transport."},
 
   {sev:"fixed", t:"The Eiffel summit could not happen on the departure morning",
@@ -2191,7 +2198,7 @@ var CONFLICTS = [
 
   {sev:"fixed", t:"Every day-of-week label was wrong by one",
    was:"Nov 9 shown as Sunday, Nov 15 as Saturday, and so on across all ten days.",
-   why:"Nov 9 2026 is a <b>Monday</b>. Booking.com confirmed it by returning \"Sat Nov 14 to Mon Nov 16\" for the "
+   why:"Nov 9 2026 is a <b>Monday</b>. Booking.com confirmed it by returning \"Thu Nov 12 to Sat Nov 14\" for the "
       +"Granada dates. Day of week drives museum closures, park crowds and coach timetables.",
    fix:"All labels corrected. Two things landed in your favour: <b>Disneyland falls on a Tuesday</b>, a genuine "
       +"low-crowd day, and <b>Belem is on a Wednesday</b>, which matters because Jeronimos and Belem Tower both "
@@ -2209,24 +2216,23 @@ var CONFLICTS = [
   {sev:"fixed", t:"Paris to Houston was priced from a teaser fare",
    was:"$1,200 to $1,800 for three.",
    why:"That came from a route-summary page, not a search for your date and party. A live search shows the "
-      +"nonstop at <b>$991 a person, about $2,973 for three</b>.",
+      +"nonstop at <b>$1,035 a person, about $3,105 for three</b>.",
    fix:"Corrected, and every leg now shows the headline fare and the realistic fare side by side. The one-stop "
-      +"alternative is about $1,587, so roughly <b>$1,400 buys the nonstop</b> &mdash; the single biggest lever "
+      +"alternative is about $1,492, so roughly <b>$1,600 buys the nonstop</b> &mdash; the single biggest lever "
       +"in the budget."},
 
   {sev:"watch", t:"Book the Alhambra slot before the Granada room",
    was:"",
    why:"Nasrid Palace entry is a hard timed slot with no re-entry, and it sells out two to three months ahead "
       +"even in November.",
-   fix:"Book the <b>09:00 slot for Sunday Nov 15 first</b>, then the room to match. Reverse that order and you "
+   fix:"Book the <b>09:00 slot for Friday Nov 13 first</b>, then the room to match. Reverse that order and you "
       +"can end up with a downtown apartment against an 08:30 slot, which is not recoverable."},
 
   {sev:"watch", t:"Ryanair bag fees can erase the Lisbon to Seville saving",
    was:"",
    why:"Live search: Ryanair <b>$80 total</b> on a late-night departure against TAP nonstop at <b>$249</b>. "
       +"Ryanair then charges roughly 30 euros per bag each way.",
-   fix:"Take <b>TAP</b>. With bags for three the gap nearly closes, the departure is civilised, and if your "
-      +"Atlantic leg is also TAP the bags check through from Houston on one ticket."},
+   fix:"Take <b>TAP</b>. With bags for three the gap nearly closes, the departure is civilised, "},
 
   {sev:"ok", t:"Disneyland on Nov 17 is clear",
    was:"",
@@ -2254,11 +2260,11 @@ var PLANCHOICE = {
      ]},
   b:{name:"One extra night in Paris", nights:"9 nights", days:"Nov 9 to 19", best:true,
      rows:[
-       ["Structure","Lisbon 2, Seville 2, Granada 2, Paris 3"],
-       ["Nov 16","Travel only. Land, check in, dinner, sleep. Coach can be 09:00 or 10:00."],
+       ["Structure","Lisbon 2, Granada 2, Seville 2, Paris 3"],
+       ["Nov 16","Travel only. Air France 16:40 nonstop SVQ to CDG, land 19:15, check in, dinner, sleep."],
        ["Nov 17","Disneyland, and it can overrun without consequence"],
        ["Nov 18","Paris properly: Rue Cler, Seine cruise, Eiffel summit in the evening"],
-       ["Nov 19","Relaxed morning, 12:40 flight home"],
+       ["Nov 19","Relaxed morning, 11:05 American nonstop home to Dallas"],
        ["Risk","None material. Every fixed booking still lands on the same date."],
        ["Cost","$6,820 to $10,540 via Dallas, about $310 more than eight nights"]
      ]}
@@ -2300,18 +2306,17 @@ function renderConflicts(){
   return '<div class="s-h">Conflicts, Resolved</div>'
     + '<div class="s-s">Nine checks across opening hours, day-of-week closures, transfer slack and booking order. '
     + 'Five were real problems and all five now have a fix rather than a warning.</div>'
-    + '<div class="note n-b"><span class="n-t">One decision resolves the last real conflict</span>'
-    + 'Everything works except <b>Nov 16</b>, which asks you to cross Spain, fly to France and climb the Eiffel '
-    + 'Tower in the same day, the day after the Alhambra. There is no way to rearrange it inside eight nights '
-    + 'because Nov 17 is Disneyland and Nov 18 has a midday flight.<br><br>'
-    + '<b>Adding one night in Paris fixes it completely</b> for about $310. Same four cities, same fixed '
-    + 'bookings, same dates for the Alhambra and Disneyland &mdash; you just fly home Thursday instead of Wednesday.</div>'
+    + '<div class="note n-g"><span class="n-t">The last real conflict is closed</span>'
+    + 'Nov 16 used to ask you to cross Spain, fly to France and climb the Eiffel Tower in one day, the day after '
+    + 'the Alhambra. Two changes fixed it and both are now locked in: the Spanish cities were reversed, so Nov 16 '
+    + 'is a nonstop rather than a coach, and <b>a ninth night was added in Paris</b> for about $310, which moved '
+    + 'the Eiffel to Wednesday Nov 18 and your flight home to Thursday Nov 19.<br><br>'
+    + 'Nothing below needs deciding. It is here so you can see what changed and why.</div>'
     + '<div class="g2 blk">'+planCard(PLANCHOICE.a)+planCard(PLANCHOICE.b)+'</div>'
-    + '<div class="note n-i"><span class="n-t">If the extra night is not possible</span>'
-    + 'Keep eight nights and drop the Eiffel summit from Nov 16. Do <b>Trocadero instead</b> &mdash; across the '
-    + 'river, the whole tower in frame, sparkling on the hour, free, no queue and no lift. Ten minutes on foot '
-    + 'from the 7th, and honestly the better photograph. Izyan sees the tower lit up without ninety minutes of '
-    + 'queueing at the end of a fourteen-hour day.</div>'
+    + '<div class="note n-i"><span class="n-t">A free alternative to the Eiffel summit, if he flags</span>'
+    + '<b>Trocadero.</b> Across the river, the whole tower in frame, sparkling on the hour, free, no queue and no '
+    + 'lift. Ten minutes on foot from the 7th, and honestly the better photograph. Keep it in your pocket for '
+    + 'Nov 18 in case ninety minutes of queueing is the wrong call that evening.</div>'
     + '<div class="g3 blk">'
     + '<div class="stat"><div class="st-l">Real problems found</div><div class="st-v">'+counts.fixed+'</div>'
     + '<div class="st-n">All five now resolved</div></div>'
@@ -2322,10 +2327,10 @@ function renderConflicts(){
     + '</div>'
     + items
     + '<div class="note n-g"><span class="n-t">Booking order, which prevents all of the above</span>'
-    + '<b>1.</b> Alhambra 09:00 slot, Sunday Nov 15. Everything else bends around it.<br>'
+    + '<b>1.</b> Alhambra 09:00 slot, Friday Nov 13. Everything else bends around it.<br>'
     + '<b>2.</b> Hotel America in Granada. Free cancellation to Nov 9, and only one room was left.<br>'
-    + '<b>3.</b> Decide eight nights or nine, because it changes your return flight date.<br>'
-    + '<b>4.</b> The two flight tickets, priced as multi-city.<br>'
+    + '<b>3.</b> Seats and checked bags on the United outbound. Basic Economy gave you neither.<br>'
+    + '<b>4.</b> The two intra-Europe flights, Lisbon to Granada and Seville to Paris.<br>'
     + '<b>5.</b> Remaining apartments. November is low season, you have room to compare.<br>'
     + '<b>6.</b> Disneyland, Eiffel, Alcazar, flamenco. Three to six weeks out is fine.</div>';
 }
@@ -2410,7 +2415,7 @@ function renderInsurance(){
     + '<div class="note n-b"><span class="n-t">The one number that justifies the whole line item</span>'
     + 'Your US health plan almost certainly does not cover you in Europe. An emergency medical evacuation home '
     + '<b>can exceed $100,000</b>, and that is the scenario insurance exists for &mdash; not lost bags. '
-    + 'On a trip costing $6,500 to $9,800 with a five-year-old, going uninsured is the only genuinely reckless '
+    + 'On a trip costing $6,820 to $10,540 with a five-year-old, going uninsured is the only genuinely reckless '
     + 'decision available to you.</div>'
     + '<div class="g4 blk">'
     + '<div class="stat"><div class="st-l">Typical cost</div><div class="st-v">4&ndash;10%</div><div class="st-n">Of insured trip cost</div></div>'
