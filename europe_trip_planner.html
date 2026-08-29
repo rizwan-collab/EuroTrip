@@ -741,12 +741,15 @@ var PLAN = [
 },
 {
   n:5, date:"Fri Nov 13", wd:"Friday", city:"Granada, the Alhambra", tag:["p-r","Fixed timing"],
-  sum:"The only unmovable booking of the trip. Everything else bends around the 09:00 Nasrid slot.",
-  warn:"Nasrid Palace entry is a timed slot with no re-entry and no grace period. Miss it and the ticket is void. Staying on the hill is what makes a 09:00 slot comfortable rather than a 07:00 alarm.",
+  sum:"The only unmovable booking of the trip. 09:00 Nasrid slot, at the gate for 08:00 as the Patronato asks.",
+  warn:"<b>The Patronato tells you to arrive one hour before your Nasrid slot, so the plan below builds in the full hour.</b> Entry is timed, with no re-entry and no grace period &mdash; miss it and the ticket is void. The complex itself opens at 08:30 in winter, so you will be at the gate before it opens. Staying inside the walls still helps: it is a five-minute walk rather than a climb from the city, and a QR e-ticket scans at the Puerta de la Justicia so you skip the Access Pavilion entirely.",
   sched:[
-    ["07:30","Breakfast at the hotel","Early. Do not skip it, lunch is a long way off."],
-    ["08:40","Walk to the gate","Five minutes from Hotel America on Real de la Alhambra. This is the whole point of staying here."],
-    ["09:00","Nasrid Palaces","Your timed slot. Carved plaster ceilings, the Court of the Lions, reflecting pools. Ninety minutes."],
+    ["07:00","Breakfast at the hotel","Early, and do not skip it. Lunch is a long way off."],
+    ["07:50","Walk to the Puerta de la Justicia","Five minutes from Hotel America on Real de la Alhambra. Five, not fifty &mdash; this is why you are paying to sleep inside the walls."],
+    ["08:00","At the gate, one hour before","<b>The Patronato asks for a full hour.</b> The complex opens at 08:30, so expect to wait a little. Have the QR codes open on your phone and passports in hand, they check ID against the names."],
+    ["08:30","Gates open, scan in","Straight through at the Puerta de la Justicia. No trip to the Access Pavilion with a QR ticket."],
+    ["08:45","Walk to the Nasrid entrance","Ten minutes at most, and you are early rather than running."],
+    ["09:00","Nasrid Palaces","Your timed slot, and a hard one. Carved plaster ceilings, the Court of the Lions, reflecting pools. Ninety minutes."],
     ["10:40","Alcazaba fortress","The military end. Ramparts, towers, and the whole city from the top."],
     ["11:40","Generalife gardens","Water channels, terraces, open space. The part where he can finally run."],
     ["12:45","Charles V Palace","Circular courtyard, free entry, five minutes, and it is on your way out."],
@@ -1261,7 +1264,7 @@ var STAY = [
      ["Rate","$436 for both nights, pay on arrival"],
      ["Cancel","Free until Nov 9 2026"],
      ["Stock","1 room left at this rate"],
-     ["Ticket pickup","<b>The catch.</b> You are 2 min from the Nasrid Palaces but <b>12 min (800m)</b> from the Access Pavilion on Av. del Generalife. Buy e-tickets that scan at the palace entrance, or leave at 08:30 for a 09:00 slot"],
+     ["Ticket entry","QR e-tickets scan at the Puerta de la Justicia, five minutes from the hotel, so you never go near the Access Pavilion 800m away. <b>The Patronato still asks you at the gate an hour before your slot</b>, and the complex opens 08:30 in winter &mdash; but a five-minute walk beats a climb from the city"],
      ["Season","The hotel closes for winter around Nov 18. Your Nov 12 to 14 stay is inside the open season, but do not push these dates later"]
    ]},
 
@@ -1350,7 +1353,7 @@ function renderStay(){
    ================================================================== */
 var BOOKINGS = [
   {id:"alh", ph:1, t:"Alhambra tickets, 09:00 slot Friday Nov 13",
-   n:"22.27 euros per adult, Izyan free under 12. Sells out two to three months ahead even in November. Nothing else can be planned around a slot you do not hold.",
+   n:"General ticket: Nasrid Palaces, Alcazaba and Generalife. 22.27 euros an adult, about 44.54 euros for the two of you. <b>Izyan is free under 12 but still needs his own named ticket, booked in the same transaction.</b> Names must match passports exactly, ID is checked at the gate. Buy the QR e-ticket, not a paper voucher. <b>The site asks you to arrive an hour before the Nasrid slot</b>, so a 09:00 slot means 08:00 at the gate.",
    by:"2026-09-15", est:48,
    u:"https://tickets.alhambra-patronato.es/en/", ul:"Book at the official Patronato site"},
   {id:"gra", ph:1, t:"Hotel America, Granada, Nov 12 to 14",
