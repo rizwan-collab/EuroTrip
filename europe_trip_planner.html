@@ -1088,13 +1088,13 @@ var CHECKED = "25 August 2026";
 var LEGS = [
   {no:"01", date:"Nov 9&ndash;10", route:"IAH to IAD to LIS", name:"Houston to Lisbon",
    price:"Booked", sub:"United, Basic Economy",
-   flag:["p-w","Seat still unassigned"],
+   flag:["p-g","Booked and paid"],
    itin:[
      ["UA 2388","Mon Nov 9","IAH 16:45 to IAD 20:49","3h04 &middot; Terminal C at Houston"],
      ["Connection","Mon Nov 9","1h41 at Washington Dulles","United to United, bag checked through to Lisbon"],
      ["UA 942","Mon Nov 9","IAD 22:30 to LIS 10:20","6h50 overnight &middot; arrives Tue Nov 10, Lisbon Terminal 1"]
    ],
-   seats:"Zaibnish 38A, Izyan 38B on the Houston leg. Zaibnish 53D, Izyan 53E on the Lisbon leg. <b>Rizwan has no seat on either.</b>",
+   seats:"Zaibnish 38A, Izyan 38B on the Houston leg. Zaibnish 53D, Izyan 53E on the Lisbon leg. Rizwan is assigned at check-in by choice. <b>Izyan is already beside Zaibnish on both legs</b>, which is the part that matters.",
    note:"Basic Economy includes no checked bag, so one was <b>bought separately for $90</b>. Each of you also gets a full carry-on plus a personal item on a transatlantic Basic Economy fare. Baggage is now covered on every leg &mdash; see the table below.",
    direct:"united.com", durl:"https://www.united.com/en/us/manageres/mytrips"},
 
@@ -1105,7 +1105,7 @@ var LEGS = [
      ["TP1136","Thu Nov 12","LIS 10:45 to AGP 13:00","1h15 direct &middot; Economy &middot; Spain is one hour ahead"],
      ["Coach","Thu Nov 12","Malaga to Granada","1h45 direct &middot; $66.12 for three &middot; departures 13:00, 14:00, 14:45, 15:45"]
    ],
-   seats:"All three assigned at check-in. Check in the moment the window opens if you want to sit together.",
+   seats:"All three assigned at check-in, as on the other legs.",
    note:"<b>One checked bag on this booking, and it is on Rizwan's ticket.</b> Zaibnish and Izyan have carry-on only, capped at 10kg each. Everyone gets a personal item.<br><br>No airline flies Lisbon to Granada, so the last stretch is on the ground. Priced live for Nov 12: train $175.55 with one change and three hours plus, coach $66.12 direct in 1h45.",
    direct:"alsa.com", durl:"https://www.alsa.com/en/airports/malaga-costa-del-sol"},
 
@@ -1146,7 +1146,7 @@ var LEGS = [
    itin:[
      ["AA 49","Thu Nov 19","CDG 11:05 to DFW 14:50","Nonstop &middot; Economy (B) &middot; lunch and a snack served"]
    ],
-   seats:"Not yet assigned. Pick them in Manage Your Trip before check-in opens.",
+   seats:"Assigned at check-in, left to the airline.",
    note:"Tickets were $147 each for you and Zaibnish, $111 for Izyan on the child fare, plus $374.83 of taxes and carrier fees per person. <b>One checked bag purchased, $87.</b> Paid on the Visa ending 4639.",
    direct:"aa.com", durl:"https://www.aa.com"}
 ];
@@ -1382,16 +1382,14 @@ var BOOKINGS = [
    n:"Nine nights, not eight. Nov 16 is now a pure travel day and the Eiffel Tower moves to Wednesday Nov 18. You fly home Thursday Nov 19. Costs about $310 and it is the single best $310 in this plan. Nothing to do here, it is already built into every date below.",
    by:"2026-09-20", est:310},
 
-  {id:"out", ph:1, t:"United outbound: pick your seat",
-   n:"Checked bag bought for $90, so that is done. What is left is your seat: Zaibnish is 38A then 53D, Izyan 38B then 53E, and you are unassigned on both legs. Basic Economy assigns whatever is left at check-in, which on a full 777 will not be that row.",
-   by:"2026-09-15", est:80,
-   u:"https://www.united.com/en/us/manageres/mytrips", ul:"Manage booking"},
-  {id:"ret", ph:1, t:"Return flight: paid, but pick your seats",
-   n:"AA 49, CDG 11:05 to DFW 14:50, confirmation DKHAMA, $1,616.49 paid. One checked bag bought for $87. Seats are not assigned yet, so choose them in Manage Your Trip rather than being split up at check-in.",
-   by:"2026-09-30", est:1616,
-   u:"https://www.aa.com", ul:"Manage your trip"},
+  {id:"out", ph:1, t:"United outbound: done",
+   n:"Flight $1,389, checked bag $90. Seats left to the airline by choice. Izyan is already next to Zaibnish on both legs, so nothing here needs action.",
+   by:"2026-09-15", est:0},
+  {id:"ret", ph:1, t:"Return flight: done",
+   n:"AA 49, CDG 11:05 to DFW 14:50, confirmation DKHAMA. $1,616.49 paid including an $87 checked bag. Seats left to the airline.",
+   by:"2026-09-30", est:1616},
   {id:"lis", ph:1, t:"Lisbon to Malaga, Nov 12: paid",
-   n:"TAP TP1136, 10:45 to 13:00, ref XIT7D7, $538.32. One checked bag, on your ticket. Zaibnish and Izyan are carry-on only at 10kg each, which is the tightest limit on the whole trip. Seats assigned at check-in, so check in early.",
+   n:"TAP TP1136, 10:45 to 13:00, ref XIT7D7, $538.32. One checked bag, on your ticket. Zaibnish and Izyan are carry-on only at 10kg each, which is the tightest limit on the whole trip.",
    by:"2026-10-01", est:538},
   {id:"agp", ph:2, t:"Seville to Paris, Nov 16: the last flight to buy",
    n:"Air France nonstop, 16:40 to 19:15 into CDG, $265 for all three priced live. Check the fare family: AF Light has no checked bag and you are carrying one. Transavia at 16:50 into Orly is $308 and also charges for bags. Vueling is $217 but lands 22:35, the wrong night. Avoid Ryanair, it lands at Beauvais 90 minutes out.",
