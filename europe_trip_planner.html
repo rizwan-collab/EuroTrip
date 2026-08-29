@@ -419,7 +419,7 @@ footer{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);
     <div class="h-meta">
       <div class="h-m"><div class="h-m-l">Dates</div><div class="h-m-v">Nov 9&ndash;19, 2026</div></div>
       <div class="h-m"><div class="h-m-l">Nights</div><div class="h-m-v">9</div></div>
-      <div class="h-m"><div class="h-m-l">Estimated</div><div class="h-m-v">$7,539&ndash;10,784</div></div>
+      <div class="h-m"><div class="h-m-l">Estimated</div><div class="h-m-v">$8,323&ndash;9,393</div></div>
     </div>
   </div>
 </header>
@@ -1243,18 +1243,26 @@ function renderFlights(){
 var STAY = [
   {city:"Lisbon", ci:"2026-11-10", co:"2026-11-12", q:"Chiado, Lisbon",
    anchor:"Time Out Market",
-   area:"Chiado and Baixa. Tram 28, Alfama and the Time Out Market all on foot.",
+   area:"Chiado, Baixa and Cais do Sodre. Your arrival afternoon is the flat riverside strip, so proximity to Cais do Sodre matters more than proximity to anything else.",
    opts:[
-     {n:"Residentas Aurea", s:"9.4", r:"1,569", rk:"Top pick", u:"1-bed apartment", d:"9 min", p:"$239", slug:"pt/residentas-aurea.html"},
-     {n:"The House on the Pink Street", s:"9.7", r:"413", rk:"2nd", u:"1-bed apartment", d:"2 min", p:"$245", slug:"pt/the-house-on-the-pink-street-in-lisbon.html"},
-     {n:"Chiado Camoes Apartments", s:"9.6", r:"366", rk:"3rd", u:"2-bed, family", d:"8 min", p:"$355", slug:"pt/chiado-camoes-apartments.html"}
-   ]},
+     {n:"The House on the Pink Street", s:"9.7", cl:"9.9", r:"419", rk:"Book this", u:"1-bed, sleeps 3, lift, staffed reception", d:"2 min", p:"$488", slug:"pt/the-house-on-the-pink-street-in-lisbon.html"},
+     {n:"Residentas Arco do Bandeira", s:"9.6", cl:"9.7", r:"1,524", rk:"2nd", u:"1-bed, 463 sq ft, crib available", d:"11 min", p:"$606", slug:"pt/residentas-arco-do-bandeira.html"},
+     {n:"Residentas Aurea", s:"9.4", cl:"9.7", r:"1,569", rk:"3rd", u:"1-bed apartment, Rua Aurea 72", d:"10 min", p:"$531", slug:"pt/residentas-aurea.html"}
+   ],
+   facts:[
+     ["Why this one","Highest cleanliness of anything checked in Lisbon at <b>9.9</b>, highest overall at 9.7, and the cheapest of the three. Two of 419 reviews score below 7"],
+     ["The catch, and it is managed","It sits at the west end of Pink Street, Lisbon's bar street. Reviewers are consistent: double glazing, shutters, and the property hands out earplugs. <b>Ask for floor 4 or 5 at booking.</b> Your nights are Tuesday and Wednesday in low season, which is not when that street is busy"],
+     ["Address","Travessa Corpo Santo 29, not Rua Nova do Carvalho as some listings say"],
+     ["Arrival day fit","Two to three minutes flat to Cais do Sodre and the Time Out Market, which is exactly where Nov 10 goes"],
+     ["Terms","Free cancellation to 11 Oct, <b>no prepayment</b>. Only 1 unit left"]
+   ],
+   scam:"<b>Chiado Camoes came off this list.</b> It was the most expensive of the three, and it carries an August 2026 review reporting bathroom mould and a smell through the flat, plus a January 2026 report that the management company sent someone to collect full card details including the CVV at check-in. Neither is proven, both are avoidable."},
 
   {city:"Granada", ci:"2026-11-12", co:"2026-11-14", q:"Alhambra, Granada", noApt:true,
    anchor:"Nasrid Palaces",
    area:"On the Alhambra hill. The only city where the address decides whether the 09:00 entry works.",
    opts:[
-     {n:"Hotel America", s:"8.5", r:"455", rk:"Book this", u:"Family room, 2+1 confirmed", d:"2 min", p:"$436", slug:"es/america-granada.html"}
+     {n:"Hotel America", s:"8.5", cl:"8.7", r:"455", rk:"Book this", u:"Family room, 2+1 confirmed", d:"5 min", p:"$436", slug:"es/america-granada.html"}
    ],
    facts:[
      ["Address","Calle Real de la Alhambra 53, inside the walls, beside the Palace of Charles V"],
@@ -1265,26 +1273,41 @@ var STAY = [
      ["Cancel","Free until Nov 9 2026"],
      ["Stock","1 room left at this rate"],
      ["Ticket entry","QR e-tickets scan at the Puerta de la Justicia, five minutes from the hotel, so you never go near the Access Pavilion 800m away. <b>The Patronato still asks you at the gate an hour before your slot</b>, and the complex opens 08:30 in winter &mdash; but a five-minute walk beats a climb from the city"],
-     ["Season","The hotel closes for winter around Nov 18. Your Nov 12 to 14 stay is inside the open season, but do not push these dates later"]
+     ["Season","The hotel closes for winter around Nov 18. Your Nov 12 to 14 stay is inside the open season, but do not push these dates later"],
+     ["Score in context","8.5 is the lowest score on this page and it does not matter. You are paying for one thing: being inside the walls on the morning of a timed entry"]
    ]},
 
   {city:"Seville", ci:"2026-11-14", co:"2026-11-16", q:"Santa Cruz, Seville",
    anchor:"Cathedral",
    area:"Santa Cruz. Alcazar, Giralda and the tapas bars are all walkable.",
-   scam:"Two Seville traps. <b>Casa Palacio del Abad</b> is Calle Abades 20 &mdash; do not book <i>Casa Palacio Museo</i>, which is 15 min away at Plaza del Museo. And <b>Suites Murillo</b> checks you in at Hotel Murillo, Calle Lope de Rueda 7, a 3 min walk from the apartment.",
    opts:[
-     {n:"Casa Palacio del Abad", s:"9.3", r:"145", rk:"Top pick", u:"Superior studio, Calle Abades 20", d:"4 min", p:"$201", slug:"es/magno-apartments-abades.html"},
-     {n:"Plaza Dona Elvira 7", s:"9.7", r:"115", rk:"2nd", u:"2-bed apartment", d:"5 min", p:"$231", slug:"es/apartamentos-en-la-plaza-dona-elvira-7.html"},
-     {n:"Suites Murillo Catedral", s:"9.3", r:"354", rk:"3rd", u:"Apartment, check in at Hotel Murillo", d:"5 min", p:"$285", slug:"es/suites-murillo-segovias.html"}
-   ]},
+     {n:"Suites Murillo Catedral", s:"9.3", cl:"9.6", r:"354", rk:"Book this", u:"Aparthotel, 24h desk at Hotel Murillo", d:"2 min", p:"$285", slug:"es/suites-murillo-segovias.html"},
+     {n:"Puerta Principe Luxury Apartments", s:"9.3", cl:"9.6", r:"404", rk:"2nd", u:"Apartment, staffed desk, lift", d:"4 min", p:"$300", slug:"es/puerta-principe-luxury-apartment.html"},
+     {n:"Plaza Dona Elvira 7", s:"9.7", cl:"9.7", r:"115", rk:"3rd", u:"2-bed, 65 sq m, no lift", d:"5 min", p:"$231", slug:"es/apartamentos-en-la-plaza-dona-elvira-7.html"}
+   ],
+   facts:[
+     ["The problem this solves","<b>Your coach arrives Plaza de Armas at 13:00 and nowhere lets you in that early.</b> Suites Murillo checks you in at Hotel Murillo on Calle Lope de Rueda, which has a <b>24-hour reception</b>. You drop bags at one, go to lunch, and collect the room later"],
+     ["The cost of that","Check-in is offsite. Reviewers describe a seven to ten minute walk over cobbles with luggage between the desk and the apartment. Staff guide you but do not always carry bags"],
+     ["Why not Dona Elvira","Best cleanliness of the three at 9.7 and the cheapest, but <b>check-in is 16:00 to 20:30 only</b>, there is no reception, and it is up stairs with no lift. Three hours with bags and a five-year-old before you can get in"],
+     ["Puerta Principe as the middle path","Staffed desk from 15:00, lift, dishwasher and washing machine, 400+ reviews at 9.6 cleanliness, and closer to the Alcazar than either. Two hours to kill rather than three"],
+     ["Departure","All three check out by 11:00 or 12:00 and your taxi to SVQ is at 14:00, so plan a morning bag drop whichever you pick"]
+   ],
+   scam:"<b>Two Seville name traps.</b> Casa Palacio del Abad is <i>Calle Abades 20</i> &mdash; do not book <i>Casa Palacio Museo</i>, a different building 15 minutes away at Plaza del Museo. It came off this list because its Booking score and cleanliness sub-score could not be verified at all, and its operator carries a documented pattern of service and deposit complaints across sibling properties."},
 
-  {city:"Paris", ci:"2026-11-16", co:"2026-11-19", q:"Eiffel Tower, Paris",
-   anchor:"Eiffel Tower",
-   area:"7th arrondissement, on the Rue Cler market street.",
+  {city:"Paris", ci:"2026-11-16", co:"2026-11-19", q:"Chatelet, Paris",
+   anchor:"Chatelet RER",
+   area:"Re-based from the 7th arrondissement to Chatelet. The reason is below and it is the single biggest hotel decision on this trip.",
    opts:[
-     {n:"NEW Eiffel Tour Splendid", s:"8.0", r:"290", rk:"Top pick", u:"1-bed apartment", d:"12 min", p:"$249", slug:"fr/new-eiffel-tour-splendid-2br-apt-in-paris.html"},
-     {n:"Spacious 2-Bed with Balcony", s:"8.0", r:"23", rk:"2nd", u:"2-bed, balcony", d:"12 min", p:"$259", slug:"fr/spacious-2-bedroom-apartment-with-balcony-in-paris.html"},
-     {n:"Residence Charles Floquet", s:"9.2", r:"1,135", rk:"3rd", u:"2-bed apartment", d:"5 min", p:"$498", slug:"fr/residence-charles-floquet.html"}
+     {n:"Hotel Britannique", s:"8.9", cl:"9.2", r:"1,229", rk:"Book this", u:"Triple room, 20 Avenue Victoria", d:"1 min", p:"$700&ndash;850", slug:"fr/britannique-paris.html"},
+     {n:"Relais du Louvre", s:"8.8", cl:"9.1", r:"930", rk:"2nd", u:"Quiet street behind the Louvre", d:"7 min", p:"$720&ndash;900", slug:"fr/relaisdulouvre.html"},
+     {n:"Residence Charles Floquet", s:"9.3", cl:"9.4", r:"1,135", rk:"If you stay in the 7th", u:"2-bed, 50m from the Eiffel Tower", d:"Eiffel 1 min", p:"$498", slug:"fr/residence-charles-floquet.html"}
+   ],
+   facts:[
+     ["The structural problem","<b>The 7th arrondissement has neither RER A nor RER B.</b> RER B is how you get in from CDG on Nov 16. RER A is how you reach Disneyland on Nov 17. Basing in the 7th makes you change trains on both of the only two days that carry luggage or a schedule"],
+     ["Why Chatelet","<b>Chatelet-Les Halles is the only station in Paris where RER A and RER B share a concourse.</b> CDG becomes a direct 35-minute ride with no change. Disneyland becomes a direct 40-minute ride with no change. That is roughly two hours of the Disney day handed back"],
+     ["What it costs you","The Eiffel evening on Nov 18 becomes a 30-minute metro hop instead of a walk. That happens once. The airport and the Disney run happen with a tired child and bags"],
+     ["Charles Floquet, if you overrule this","It is genuinely the nicest of the three and 50m from the tower. But two things: a <b>2,000 euro refundable deposit</b> on a card at arrival, and <b>check-in closes at 18:00</b>. You land CDG 19:15 and reach the 7th around 21:15. <b>That has to be pre-arranged in writing or you are locked out.</b> Extra beds are inflatable mattresses"],
+     ["Dropped from this list","<i>NEW Eiffel Tour Splendid</i> is in the <b>15th arrondissement</b>, not the 7th, scores 8.0 to 8.4, and carries an August 2026 review reporting a bed collapsing on the first night. <i>Spacious 2-Bedroom with Balcony</i> could not be verified to exist on any platform"]
    ],
    scam:"Skip <b>Luxury apartments near the Eiffel Tower</b>, $115 at 9.3. Its real Booking page is a chateau in Nevers, 250km away."}
 ];
@@ -1300,7 +1323,8 @@ function renderStay(){
       return '<div class="hrow"><div>'
         + '<div class="h-nm"><span class="sc">'+o.s+'</span>'+o.n
         + (o.rk?' <span class="pill '+(/Top|Book/.test(o.rk)?"p-g":"p-n")+'">'+o.rk+'</span>':'')+'</div>'
-        + '<div class="h-mt">'+o.u+' &middot; '+o.r+' reviews &middot; <b>'+o.d+'</b> to '+C.anchor+'</div></div>'
+        + '<div class="h-mt">'+o.u+' &middot; '+o.r+' reviews &middot; <b>'+o.d+'</b> to '+C.anchor
+        + (o.cl?' &middot; cleanliness <b>'+o.cl+'</b>':'')+'</div></div>'
         + '<div style="display:flex;align-items:center;gap:12px">'
         + '<div class="h-pr">'+o.p+'<span>'+N+' night'+(N>1?'s':'')+'</span></div>'
         + '<a class="btn btn-sm" href="'+bkHotel(o.slug,C.ci,C.co)+'" target="_blank" rel="noopener">Open</a>'
@@ -1333,8 +1357,15 @@ function renderStay(){
   }).join("");
 
   return '<div class="s-h">Where to Stay</div>'
-    + '<div class="s-s">Live Booking.com rates for your dates, 2 adults and a 5-year-old. '
-    + 'Price is the <b>total for the stay</b>, not per night. Walking times are approximate. '+staleBadge()+'</div>'
+    + '<div class="s-s">Re-verified live for your dates, 2 adults and a 5-year-old. Price is the '
+    + '<b>total for the stay</b>, not per night. Every property now shows its Booking.com <b>cleanliness '
+    + 'sub-score</b> separately, because that was your first priority. Walking times are approximate. '+staleBadge()+'</div>'
+    + '<div class="note n-w"><span class="n-t">What changed after re-checking</span>'
+    + 'Three of the twelve properties came off the list and one city moved. <b>Chiado Camoes</b> in Lisbon has a '
+    + 'recent mould report and a payment-security complaint. <b>Casa Palacio del Abad</b> in Seville could not be '
+    + 'score-verified at all. Two Paris listings were wrong: one is in the 15th rather than the 7th, the other '
+    + 'could not be found to exist. And <b>Paris moved from the 7th to Chatelet</b>, which is the one decision '
+    + 'here worth arguing about.</div>'
     + '<div class="note n-w"><span class="n-t">Book apartments, not hotels</span>'
     + 'European boutique hotels cap at <b>2 adults</b>, have <b>no extra beds</b>, and charge children as adults '
     + 'from age 3 or 4. A hotel listed at $300 a night means two rooms for you. Apartments take all three on one '
@@ -1357,7 +1388,7 @@ var BOOKINGS = [
    by:"2026-09-15", est:48,
    u:"https://tickets.alhambra-patronato.es/en/", ul:"Book at the official Patronato site"},
   {id:"gra", ph:1, t:"Hotel America, Granada, Nov 12 to 14",
-   n:"Family Room at $436 for both nights, 100 feet from the monument. Only one room was showing at that rate. Free cancellation until Nov 9.",
+   n:"Family Room at $436 for both nights, inside the Alhambra walls and a five-minute walk to the Puerta de la Justicia. <b>Only one room was showing at that rate, and cancellation is free until Nov 9</b>, so booking it costs nothing and protects the 08:00 gate time. Book straight after the Alhambra tickets.",
    by:"2026-09-15", est:436, dep:["alh"],
    u:"https://www.booking.com/hotel/es/america-granada.html?checkin=2026-11-12&checkout=2026-11-14&group_adults=2&group_children=1&age=5&no_rooms=1", ul:"Open Hotel America"},
   {id:"dec", ph:1, t:"Extra Paris night: locked in",
@@ -1381,18 +1412,18 @@ var BOOKINGS = [
    by:"2026-10-05", est:400, dep:["alh"],
    u:"https://www.squaremouth.com/resources/destinations/europe", ul:"Compare plans"},
 
-  {id:"hlis", ph:3, t:"Lisbon apartment, Nov 10 to 12",
-   n:"From $239 for both nights in Chiado. Apartments rather than hotels, because most boutique hotels here cap at two adults with no extra bed.",
-   by:"2026-10-15", est:265,
-   u:"https://www.booking.com/searchresults.html?ss=Chiado%2C%20Lisbon&checkin=2026-11-10&checkout=2026-11-12&group_adults=2&group_children=1&age=5&no_rooms=1&nflt=ht_id%3D201%3Breview_score%3D80&order=bayesian_review_score", ul:"See Lisbon options"},
-  {id:"hsev", ph:3, t:"Seville apartment, Nov 14 to 16",
-   n:"From $201 for both nights in Santa Cruz. Everything is on foot from there.",
-   by:"2026-10-15", est:230,
-   u:"https://www.booking.com/searchresults.html?ss=Santa%20Cruz%2C%20Seville&checkin=2026-11-14&checkout=2026-11-16&group_adults=2&group_children=1&age=5&no_rooms=1&nflt=ht_id%3D201%3Breview_score%3D80&order=bayesian_review_score", ul:"See Seville options"},
-  {id:"hpar", ph:3, t:"Paris apartment, Nov 16 to 19",
-   n:"From $249 for all three nights in the 7th. Skip the listing called Luxury apartments near the Eiffel Tower, it is a property in Nevers.",
-   by:"2026-10-15", est:375, dep:["dec"],
-   u:"https://www.booking.com/searchresults.html?ss=Eiffel%20Tower%2C%20Paris&checkin=2026-11-16&checkout=2026-11-19&group_adults=2&group_children=1&age=5&no_rooms=1&nflt=ht_id%3D201%3Breview_score%3D80&order=bayesian_review_score", ul:"See Paris options"},
+  {id:"hlis", ph:2, t:"Lisbon, Nov 10 to 12: The House on the Pink Street",
+   n:"$488 for both nights, free cancellation to 11 Oct and no prepayment. Cleanliness 9.9, the highest of anything checked in Lisbon, and two minutes flat from Cais do Sodre for your arrival afternoon. <b>Ask for floor 4 or 5</b> to sit above the Pink Street noise. Only 1 unit left.",
+   by:"2026-10-15", est:488,
+   u:"https://www.booking.com/hotel/pt/the-house-on-the-pink-street-in-lisbon.html?checkin=2026-11-10&checkout=2026-11-12&group_adults=2&group_children=1&age=5&no_rooms=1", ul:"Open the Pink Street"},
+  {id:"hsev", ph:2, t:"Seville, Nov 14 to 16: Suites Murillo Catedral",
+   n:"$285 for both nights, cleanliness 9.6, two minutes from the Cathedral. <b>Chosen for the arrival problem:</b> your coach lands 13:00 and nothing lets you in that early, but check-in is at Hotel Murillo which has a 24-hour desk, so you drop bags and go to lunch. The cost is a 7 to 10 minute cobbled walk between desk and apartment. Dona Elvira is cleaner and cheaper but has no reception and will not admit you before 16:00.",
+   by:"2026-10-15", est:285,
+   u:"https://www.booking.com/hotel/es/suites-murillo-segovias.html?checkin=2026-11-14&checkout=2026-11-16&group_adults=2&group_children=1&age=5&no_rooms=1", ul:"Open Suites Murillo"},
+  {id:"hpar", ph:2, t:"Paris, Nov 16 to 19: decide the base first",
+   n:"<b>This is the one hotel decision worth arguing about.</b> The 7th has neither RER A nor RER B, so both your CDG arrival and your Disneyland day need a change. Chatelet-Les Halles is the only station where both share a concourse: CDG direct in 35 min, Disneyland direct in 40. Hotel Britannique sits one minute from it, cleanliness 9.2, about $700 to $850 for three nights. If you overrule this and stay in the 7th, Residence Charles Floquet is the pick at $498 &mdash; but its check-in closes 18:00 and you land 19:15, so you must arrange late arrival in writing, and it holds a 2,000 euro deposit.",
+   by:"2026-10-15", est:775,
+   u:"https://www.booking.com/hotel/fr/britannique-paris.html?checkin=2026-11-16&checkout=2026-11-19&group_adults=2&group_children=1&age=5&no_rooms=1", ul:"Open Hotel Britannique"},
   {id:"bus1", ph:3, t:"Granada to Seville, Nov 14, ALSA coach",
    n:"Three hours direct, twelve a day, 12 to 30 euros each. Reserve seats online the night before. Not the train: the only direct Avant services in this direction are 06:22 and 18:17.",
    by:"2026-10-20", est:70,
@@ -1733,7 +1764,7 @@ var BDG_TOTAL = BDG.reduce(function(s,x){ return s + x.e; }, 0);
 
 var COSTS = [
   ["Flights and bags, all four legs", "$4,004", "$4,004", "<b>All paid.</b> United $1,389 plus a $90 bag, TAP $538, Air France $370, American $1,616 including its $87 bag"],
-  ["Accommodation, 9 nights", "$1,125", "$3,600", "Apartments at the low end, Parador at the high end"],
+  ["Accommodation, 9 nights", "$1,909", "$2,209", "The four picks: Lisbon $488, Granada $436, Seville $285, Paris $700 to $1,000 depending on the base"],
   ["Tickets and attractions", "$530", "$700", "Alhambra, Disneyland, Eiffel, Alcazar, flamenco, Castelo de Sao Jorge"],
   ["Intercity coach", "$110", "$160", "Malaga to Granada $66, Granada to Seville about $70. No rail on either"],
   ["City transport", "$220", "$340", "Metros, taxis, RER, Bolt"],
@@ -1764,9 +1795,9 @@ function renderBudget(){
     + '<div class="s-s">Two layers. The all-in estimate covers everything including flights and rooms. '
     + 'The day tracker below covers only food, local transport and incidentals, so nothing is counted twice.</div>'
     + '<div class="g4 blk">'
-    + '<div class="stat"><div class="st-l">All-in estimate</div><div class="st-v">$7,539&ndash;10,784</div><div class="st-n">Three people, eleven days, all flights paid</div></div>'
+    + '<div class="stat"><div class="st-l">All-in estimate</div><div class="st-v">$8,323&ndash;9,393</div><div class="st-n">Three people, eleven days. Flights paid, rooms now real picks rather than a range</div></div>'
     + '<div class="stat"><div class="st-l">Narmin quoted</div><div class="st-v">$12,604</div><div class="st-n">Goway ref 1185612/1</div></div>'
-    + '<div class="stat"><div class="st-l">You save</div><div class="st-v">$1,820&ndash;5,065</div><div class="st-n">Against Goway, and you add Disneyland</div></div>'
+    + '<div class="stat"><div class="st-l">You save</div><div class="st-v">$3,211&ndash;4,281</div><div class="st-n">Against Goway, and you add Disneyland</div></div>'
     + '<div class="stat"><div class="st-l">Actually committed</div><div class="st-v">$'+ bkStats().spent.toLocaleString() + '</div>'+ '<div class="st-n">From ' + bkStats().done + ' booked items on the checklist</div></div>'
     + '<div class="stat"><div class="st-l">Swing factor</div><div class="st-v">Granada</div><div class="st-n">Parador adds about $2,000</div></div>'
     + '</div>'
@@ -1775,7 +1806,7 @@ function renderBudget(){
     + '<tbody>'+costRows+'</tbody>'
     + '<tfoot><tr style="border-top:2px solid var(--line);background:var(--line2)">'
     + '<td style="font-weight:700">Total</td>'
-    + '<td class="num" style="font-weight:700;font-size:15px">$7,539 to $10,784</td></tr></tfoot>'
+    + '<td class="num" style="font-weight:700;font-size:15px">$8,323 to $9,393</td></tr></tfoot>'
     + '</table></div></div>'
     + '<div class="blk"><div class="blk-h">Day tracker &mdash; food, local transport, incidentals</div>'
     + '<div class="note n-i">Enter what you actually spend as the trip goes. Entries save in this browser, so '
@@ -2198,7 +2229,7 @@ var PLANCHOICE = {
        ["Nov 17","Disneyland, out by 18:00"],
        ["Nov 18","Rue Cler breakfast, 12:40 flight home"],
        ["Risk","Nov 16 is fourteen hours of movement ending at altitude. If Izyan flags, you lose the Eiffel entirely."],
-       ["Cost","About $7,229 to $10,474 via Dallas"]
+       ["Cost","About $8,013 to $9,083 via Dallas"]
      ]},
   b:{name:"One extra night in Paris", nights:"9 nights", days:"Nov 9 to 19", best:true,
      rows:[
@@ -2208,7 +2239,7 @@ var PLANCHOICE = {
        ["Nov 18","Paris properly: Rue Cler, Seine cruise, Eiffel summit in the evening"],
        ["Nov 19","Relaxed morning, 11:05 American nonstop home to Dallas"],
        ["Risk","None material. Every fixed booking still lands on the same date."],
-       ["Cost","About $7,539 to $10,784 via Dallas, roughly $310 more than eight nights"]
+       ["Cost","About $8,323 to $9,393 via Dallas, roughly $310 more than eight nights"]
      ]}
 };
 
@@ -2287,7 +2318,7 @@ var INSURE = {
      p:"$300 to $550",
      d:"Covers trip cancellation and interruption on your prepaid non-refundable costs, emergency medical, and "
       +"evacuation. Industry pricing is <b>4 to 10 percent of insured trip cost</b>; your non-refundable exposure "
-      +"is <b>$4,004 already</b>, every flight and bag paid, rising to roughly $6,400 to $8,900 once rooms and timed tickets are booked.<br><br>"
+      +"is <b>$4,004 already</b>, every flight and bag paid. Rooms add another $1,909 to $2,209 and the Alhambra is non-refundable, so expect roughly $6,400 once everything is held.<br><br>"
       +"<b>Look for a plan that covers children free.</b> Several insurers include one child under 18 per insured "
       +"adult at no cost, which with two adults makes Izyan free. That alone is worth $80 to $150.",
      u:"https://www.squaremouth.com/resources/destinations/europe", ul:"Compare on Squaremouth"},
@@ -2357,7 +2388,7 @@ function renderInsurance(){
     + '<div class="note n-b"><span class="n-t">The one number that justifies the whole line item</span>'
     + 'Your US health plan almost certainly does not cover you in Europe. An emergency medical evacuation home '
     + '<b>can exceed $100,000</b>, and that is the scenario insurance exists for &mdash; not lost bags. '
-    + 'On a trip costing $7,500 to $10,800 with a five-year-old, going uninsured is the only genuinely reckless '
+    + 'On a trip costing $8,300 to $9,400 with a five-year-old, going uninsured is the only genuinely reckless '
     + 'decision available to you.</div>'
     + '<div class="g4 blk">'
     + '<div class="stat"><div class="st-l">Typical cost</div><div class="st-v">4&ndash;10%</div><div class="st-n">Of insured trip cost</div></div>'
