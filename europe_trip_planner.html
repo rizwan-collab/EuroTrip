@@ -419,7 +419,7 @@ footer{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);
     <div class="h-meta">
       <div class="h-m"><div class="h-m-l">Dates</div><div class="h-m-v">Nov 9&ndash;19, 2026</div></div>
       <div class="h-m"><div class="h-m-l">Nights</div><div class="h-m-v">9</div></div>
-      <div class="h-m"><div class="h-m-l">Estimated</div><div class="h-m-v">$5,955&ndash;9,200</div></div>
+      <div class="h-m"><div class="h-m-l">Estimated</div><div class="h-m-v">$7,434&ndash;10,679</div></div>
     </div>
   </div>
 </header>
@@ -590,7 +590,7 @@ var PLAN = [
   sum:"United out of Houston at 16:45, connect at Dulles, overnight to Lisbon. Two things still need doing before you fly.",
   sched:[
     ["13:45","Leave for IAH","United departs Terminal C. Two hours is enough domestically, but on an international itinerary give it three."],
-    ["14:45","Bag drop, if you bought one","Basic Economy includes no checked bag. If you added one it goes straight through to Lisbon."],
+    ["14:45","Check the bag at Terminal C","The $90 bag you added goes straight through to Lisbon."],
     ["15:30","Security, then feed him","Real food now. The Dulles connection lands at dinner time and the Lisbon meal service is two hours after an 22:30 takeoff."],
     ["16:15","Boarding, UA 2388","Zaibnish 38A, Izyan 38B."],
     ["16:45","Depart IAH","Three hours four minutes to Washington."],
@@ -1088,14 +1088,14 @@ var CHECKED = "25 August 2026";
 var LEGS = [
   {no:"01", date:"Nov 9&ndash;10", route:"IAH to IAD to LIS", name:"Houston to Lisbon",
    price:"Booked", sub:"United, Basic Economy",
-   flag:["p-r","No bags, no seat"],
+   flag:["p-w","Seat still unassigned"],
    itin:[
      ["UA 2388","Mon Nov 9","IAH 16:45 to IAD 20:49","3h04 &middot; Terminal C at Houston"],
-     ["Connection","Mon Nov 9","1h41 at Washington Dulles","United to United, so anything checked goes through"],
+     ["Connection","Mon Nov 9","1h41 at Washington Dulles","United to United, bag checked through to Lisbon"],
      ["UA 942","Mon Nov 9","IAD 22:30 to LIS 10:20","6h50 overnight &middot; arrives Tue Nov 10, Lisbon Terminal 1"]
    ],
    seats:"Zaibnish 38A, Izyan 38B on the Houston leg. Zaibnish 53D, Izyan 53E on the Lisbon leg. <b>Rizwan has no seat on either.</b>",
-   note:"<b>Basic Economy, so no checked bag is included on this leg at all.</b> Transatlantic Basic Economy does give each of you a full carry-on plus a personal item, but if you want to check anything out of Houston you have to buy it. See the baggage table below, because this is the one thing across all three bookings that does not line up.",
+   note:"Basic Economy includes no checked bag, so one was <b>bought separately for $90</b>. Each of you also gets a full carry-on plus a personal item on a transatlantic Basic Economy fare. Baggage is now covered on every leg &mdash; see the table below.",
    direct:"united.com", durl:"https://www.united.com/en/us/manageres/mytrips"},
 
   {no:"02", date:"Nov 12", route:"LIS to AGP", name:"Lisbon to Malaga",
@@ -1196,7 +1196,7 @@ function renderFlights(){
     + '<div class="blk"><div class="blk-h">Baggage, and why it does not line up</div>'
     + '<div class="tw tsc"><table><thead><tr><th>Leg</th><th>Fare</th><th class="num">Checked bags</th><th>Carry-on</th></tr></thead><tbody>'
     + '<tr><td><b>IAH to LIS</b><br><span style="font-size:11.5px;color:var(--mute)">United, Nov 9</span></td>'
-    + '<td>Basic Economy</td><td class="num" style="color:var(--bad);font-weight:600">None</td>'
+    + '<td>Basic Economy</td><td class="num" style="color:var(--good);font-weight:600">1, bought for $90</td>'
     + '<td>1 carry-on + 1 personal item each</td></tr>'
     + '<tr><td><b>LIS to AGP</b><br><span style="font-size:11.5px;color:var(--mute)">TAP TP1136, Nov 12</span></td>'
     + '<td>Economy</td><td class="num">1, on your ticket</td>'
@@ -1208,22 +1208,22 @@ function renderFlights(){
     + '<div class="blk-h" style="margin-top:22px">Your plan: 3 backpacks, 1 carry-on, 1 checked bag</div>'
     + '<div class="tw tsc"><table><thead><tr><th>Leg</th><th>3 backpacks</th><th>1 carry-on</th><th>1 checked bag</th></tr></thead><tbody>'
     + '<tr><td><b>IAH to LIS</b> &middot; United</td><td>Fits, as personal items</td><td>Fits, 1 of 3</td>'
-    + '<td style="color:var(--bad);font-weight:600">Not included &mdash; buy it</td></tr>'
+    + '<td style="color:var(--good);font-weight:600">Covered, the $90 one</td></tr>'
     + '<tr><td><b>LIS to AGP</b> &middot; TAP</td><td>Fits, as personal items</td><td>Fits, but <b>10kg max</b></td>'
     + '<td style="color:var(--good);font-weight:600">Covered</td></tr>'
     + '<tr><td><b>CDG to DFW</b> &middot; American</td><td>Fits, as personal items</td><td>Fits, 1 of 3</td>'
     + '<td style="color:var(--good);font-weight:600">Covered, the $87 one</td></tr>'
     + '</tbody></table></div>'
-    + '<div class="note n-r" style="margin-top:14px"><span class="n-t">One gap, and it is $75 to $85</span>'
-    + 'Your five pieces fit inside the allowance on every leg. Each of you gets a carry-on and a personal item, '
-    + 'so three backpacks plus one carry-on uses four of six cabin slots and leaves you two spare &mdash; useful '
-    + 'if a backpack turns out too big to go under a seat.<br><br>'
-    + '<b>The only thing missing is the checked bag out of Houston.</b> United Basic Economy includes none, so '
-    + 'buy one in Manage Booking. Prepaid online it is roughly <b>$75 to $85</b> and cheaper than at the counter. '
-    + 'TAP and American already carry your checked bag, so this is a one-off, not a per-leg cost.<br><br>'
-    + '<b>The number to pack against is TAP\'s 10kg carry-on limit</b>, 25 x 40 x 55cm. It is the tightest on the '
-    + 'trip &mdash; United and American are more generous, so if the bag clears TAP it clears everything. Weigh it '
-    + 'at home rather than at Lisbon airport.</div></div>'
+    + '<div class="note n-g" style="margin-top:14px"><span class="n-t">Baggage is now settled end to end</span>'
+    + 'One checked bag travels the whole way: <b>$90 on United, included on TAP, $87 on American</b>. Your five '
+    + 'pieces fit inside the allowance on every leg. Each of you gets a carry-on and a personal item, so three '
+    + 'backpacks plus one carry-on uses four of six cabin slots and leaves two spare &mdash; useful if a backpack '
+    + 'turns out too big to go under a seat.<br><br>'
+    + '<b>The one number to pack against is TAP\'s 10kg carry-on limit</b>, 25 x 40 x 55cm. It is the tightest on '
+    + 'the trip &mdash; United and American are both more generous, so if the bag clears TAP it clears everything. '
+    + 'Weigh it at home rather than at Lisbon airport.<br><br>'
+    + '<b>Still to check:</b> the Seville to Paris fare. Air France Light carries no checked bag, so make sure '
+    + 'whatever you book on Nov 16 takes the bag with you.</div></div>'
     + '<div class="blk"><div class="blk-h">Ground transport between cities</div>'
     + '<div class="tw tsc"><table><thead><tr><th>Leg</th><th>Date</th><th>Mode</th><th>Time</th><th class="num">Cost, 3 people</th><th>Book</th></tr></thead><tbody>'
     + '<tr><td><b>Malaga airport to Granada</b><br><span style="font-size:11.5px;color:var(--mute)">Straight off the TAP flight, no stop in Malaga</span></td>'
@@ -1382,9 +1382,9 @@ var BOOKINGS = [
    n:"Nine nights, not eight. Nov 16 is now a pure travel day and the Eiffel Tower moves to Wednesday Nov 18. You fly home Thursday Nov 19. Costs about $310 and it is the single best $310 in this plan. Nothing to do here, it is already built into every date below.",
    by:"2026-09-20", est:310},
 
-  {id:"out", ph:1, t:"United outbound: buy a checked bag, and a seat",
-   n:"Basic Economy gave you neither. Zaibnish is 38A and 53D, Izyan 38B and 53E, and you have no seat on either leg. A checked bag is about $75 to $85 prepaid online and there is currently no checked bag on this booking at all. Do both in Manage Booking before check-in opens.",
-   by:"2026-09-15", est:170,
+  {id:"out", ph:1, t:"United outbound: pick your seat",
+   n:"Checked bag bought for $90, so that is done. What is left is your seat: Zaibnish is 38A then 53D, Izyan 38B then 53E, and you are unassigned on both legs. Basic Economy assigns whatever is left at check-in, which on a full 777 will not be that row.",
+   by:"2026-09-15", est:80,
    u:"https://www.united.com/en/us/manageres/mytrips", ul:"Manage booking"},
   {id:"ret", ph:1, t:"Return flight: paid, but pick your seats",
    n:"AA 49, CDG 11:05 to DFW 14:50, confirmation DKHAMA, $1,616.49 paid. One checked bag bought for $87. Seats are not assigned yet, so choose them in Manage Your Trip rather than being split up at check-in.",
@@ -1753,7 +1753,7 @@ var BDG = [
 var BDG_TOTAL = BDG.reduce(function(s,x){ return s + x.e; }, 0);
 
 var COSTS = [
-  ["Flights, three of four legs", "$2,420", "$2,420", "TAP $538 and American $1,616 paid, Seville to Paris $265 still to buy. <b>The United outbound is paid but its fare is not in this total.</b>"],
+  ["Flights and bags, all four legs", "$3,899", "$3,899", "United $1,389 plus a $90 bag, TAP $538, American $1,616 including its $87 bag. Only Seville to Paris left at $265"],
   ["Accommodation, 9 nights", "$1,125", "$3,600", "Apartments at the low end, Parador at the high end"],
   ["Tickets and attractions", "$530", "$700", "Alhambra, Disneyland, Eiffel, Alcazar, flamenco, Castelo de Sao Jorge"],
   ["Intercity coach", "$110", "$160", "Malaga to Granada $66, Granada to Seville about $70. No rail on either"],
@@ -1785,9 +1785,9 @@ function renderBudget(){
     + '<div class="s-s">Two layers. The all-in estimate covers everything including flights and rooms. '
     + 'The day tracker below covers only food, local transport and incidentals, so nothing is counted twice.</div>'
     + '<div class="g4 blk">'
-    + '<div class="stat"><div class="st-l">All-in estimate</div><div class="st-v">$5,955&ndash;9,200</div><div class="st-n">Three people, eleven days, excluding the United fare</div></div>'
+    + '<div class="stat"><div class="st-l">All-in estimate</div><div class="st-v">$7,434&ndash;10,679</div><div class="st-n">Three people, eleven days, every flight now counted</div></div>'
     + '<div class="stat"><div class="st-l">Narmin quoted</div><div class="st-v">$12,604</div><div class="st-n">Goway ref 1185612/1</div></div>'
-    + '<div class="stat"><div class="st-l">You save</div><div class="st-v">$3,400&ndash;6,650</div><div class="st-n">Before the United fare, and you add Disneyland</div></div>'
+    + '<div class="stat"><div class="st-l">You save</div><div class="st-v">$1,925&ndash;5,170</div><div class="st-n">Against Goway, and you add Disneyland</div></div>'
     + '<div class="stat"><div class="st-l">Actually committed</div><div class="st-v">$'+ bkStats().spent.toLocaleString() + '</div>'+ '<div class="st-n">From ' + bkStats().done + ' booked items on the checklist</div></div>'
     + '<div class="stat"><div class="st-l">Swing factor</div><div class="st-v">Granada</div><div class="st-n">Parador adds about $2,000</div></div>'
     + '</div>'
@@ -1796,7 +1796,7 @@ function renderBudget(){
     + '<tbody>'+costRows+'</tbody>'
     + '<tfoot><tr style="border-top:2px solid var(--line);background:var(--line2)">'
     + '<td style="font-weight:700">Total</td>'
-    + '<td class="num" style="font-weight:700;font-size:15px">$5,955 to $9,200</td></tr></tfoot>'
+    + '<td class="num" style="font-weight:700;font-size:15px">$7,434 to $10,679</td></tr></tfoot>'
     + '</table></div></div>'
     + '<div class="blk"><div class="blk-h">Day tracker &mdash; food, local transport, incidentals</div>'
     + '<div class="note n-i">Enter what you actually spend as the trip goes. Entries save in this browser, so '
@@ -2219,7 +2219,7 @@ var PLANCHOICE = {
        ["Nov 17","Disneyland, out by 18:00"],
        ["Nov 18","Rue Cler breakfast, 12:40 flight home"],
        ["Risk","Nov 16 is fourteen hours of movement ending at altitude. If Izyan flags, you lose the Eiffel entirely."],
-       ["Cost","About $5,645 to $8,890 via Dallas"]
+       ["Cost","About $7,124 to $10,369 via Dallas"]
      ]},
   b:{name:"One extra night in Paris", nights:"9 nights", days:"Nov 9 to 19", best:true,
      rows:[
@@ -2229,7 +2229,7 @@ var PLANCHOICE = {
        ["Nov 18","Paris properly: Rue Cler, Seine cruise, Eiffel summit in the evening"],
        ["Nov 19","Relaxed morning, 11:05 American nonstop home to Dallas"],
        ["Risk","None material. Every fixed booking still lands on the same date."],
-       ["Cost","About $5,955 to $9,200 via Dallas, roughly $310 more than eight nights"]
+       ["Cost","About $7,434 to $10,679 via Dallas, roughly $310 more than eight nights"]
      ]}
 };
 
@@ -2308,7 +2308,7 @@ var INSURE = {
      p:"$300 to $550",
      d:"Covers trip cancellation and interruption on your prepaid non-refundable costs, emergency medical, and "
       +"evacuation. Industry pricing is <b>4 to 10 percent of insured trip cost</b>; your non-refundable exposure "
-      +"is roughly $5,300 to $8,000 once flights, rooms and timed tickets are booked.<br><br>"
+      +"is <b>$3,634 already</b> in flights and bags, rising to roughly $6,000 to $8,500 once rooms and timed tickets are booked.<br><br>"
       +"<b>Look for a plan that covers children free.</b> Several insurers include one child under 18 per insured "
       +"adult at no cost, which with two adults makes Izyan free. That alone is worth $80 to $150.",
      u:"https://www.squaremouth.com/resources/destinations/europe", ul:"Compare on Squaremouth"},
@@ -2378,11 +2378,11 @@ function renderInsurance(){
     + '<div class="note n-b"><span class="n-t">The one number that justifies the whole line item</span>'
     + 'Your US health plan almost certainly does not cover you in Europe. An emergency medical evacuation home '
     + '<b>can exceed $100,000</b>, and that is the scenario insurance exists for &mdash; not lost bags. '
-    + 'On a trip costing $6,000 to $9,200 with a five-year-old, going uninsured is the only genuinely reckless '
+    + 'On a trip costing $7,400 to $10,700 with a five-year-old, going uninsured is the only genuinely reckless '
     + 'decision available to you.</div>'
     + '<div class="g4 blk">'
     + '<div class="stat"><div class="st-l">Typical cost</div><div class="st-v">4&ndash;10%</div><div class="st-n">Of insured trip cost</div></div>'
-    + '<div class="stat"><div class="st-l">Your exposure</div><div class="st-v">$5,300&ndash;8,000</div><div class="st-n">Prepaid non-refundable</div></div>'
+    + '<div class="stat"><div class="st-l">Your exposure</div><div class="st-v">$3,634 so far</div><div class="st-n">Non-refundable flights already paid</div></div>'
     + '<div class="stat"><div class="st-l">Expect to pay</div><div class="st-v">$300&ndash;550</div><div class="st-n">Comprehensive, family of three</div></div>'
     + '<div class="stat"><div class="st-l">Buy within</div><div class="st-v">14&ndash;21 days</div><div class="st-n">Of your first deposit</div></div>'
     + '</div>'
