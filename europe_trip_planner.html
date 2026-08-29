@@ -83,6 +83,7 @@ section.on{display:block}
   line-height:1.7;margin-bottom:20px;border:1px solid}
 .n-i{background:var(--brand-lt);border-color:#dbe6ff;color:#1c3f8f}
 .n-w{background:var(--warn-lt);border-color:#f6e4bf;color:#7a4a08}
+.n-r{background:var(--bad-lt);border-color:#f3c9c6;color:#7d1f1a}
 .n-b{background:var(--bad-lt);border-color:#fadad7;color:#8e1c17}
 .n-g{background:var(--good-lt);border-color:#c9ecdc;color:#08624a}
 .n-t{font-weight:600;display:block;margin-bottom:6px;font-size:13.5px}
@@ -704,7 +705,7 @@ var PLAN = [
     ["07:45","Breakfast, final pack","Bags by the door before you sit down. Nothing loose."],
     ["08:20","Bolt to LIS","Twenty-five minutes, budget 15 euros."],
     ["08:45","Bag drop and security","Two hours for a short hop with a checked bag. TAP flies from Terminal 1."],
-    ["10:45","Depart Lisbon, TP1136","TAP to Malaga, about 1h15 in the air. Economy fare, so a checked bag is included."],
+    ["10:45","Depart Lisbon, TP1136","TAP, 1h15 direct. Booking ref XIT7D7. One checked bag on the booking, on your ticket. Zaibnish and Izyan are carry-on only, 10kg each."],
     ["13:00","Land Malaga","Spain is an hour ahead, so you gain an hour on paper and lose it on the clock."],
     ["13:35","Bags, then Cercanias C1 to the station","<b>Check where your coach leaves from.</b> The $66 fares depart Malaga city bus station, next door to Maria Zambrano, not the airport. The C1 runs from inside the terminal, eight minutes, and Izyan is free. ALSA also sells an airport-direct coach on its own site if you would rather not move."],
     ["14:45","Coach to Granada","<b>Direct, 1h45, $66.12 for all three.</b> Confirmed afternoon departures on your date: 13:00, 14:00, 14:45, 15:45. Take the 14:45 so you are not rushing bags, and check you have the 1h45 service rather than the 2h15."],
@@ -1003,7 +1004,7 @@ var PLAN = [
     ["06:45","Breakfast, final check","Anything left on Rue Cler, or the apartment kitchen. Bins out, keys where the host asked."],
     ["07:30","Taxi to CDG","Regulated flat rate, 65 euros from the Left Bank, about fifty minutes. Book it the night before."],
     ["08:20","Arrive CDG","American boards from Terminal 2A. Bag drop, security, then French exit passport control, which is the slow part."],
-    ["11:05","Depart CDG for Dallas","Confirm your own flight number and time. About 10h40 nonstop on a 787."],
+    ["11:05","Depart CDG for Dallas","<b>AA 49</b>, confirmation DKHAMA. Nonstop, lunch and a snack served."],
     ["14:50","Land DFW","Same calendar day, you gain seven hours. US immigration and customs, then re-check nothing &mdash; this is the end of the line."],
     ["16:00","Onward to Houston","Pick up the rental and head south whenever you are ready."]
   ]
@@ -1086,37 +1087,46 @@ var CHECKED = "25 August 2026";
 
 var LEGS = [
   {no:"01", date:"Nov 9&ndash;10", route:"IAH to IAD to LIS", name:"Houston to Lisbon",
-   price:"Booked", sub:"United, one ticket",
-   flag:["p-g","Booked"],
+   price:"Booked", sub:"United, Basic Economy",
+   flag:["p-r","No bags, no seat"],
    itin:[
      ["UA 2388","Mon Nov 9","IAH 16:45 to IAD 20:49","3h04 &middot; Terminal C at Houston"],
      ["Connection","Mon Nov 9","1h41 at Washington Dulles","United to United, bags checked through"],
-     ["UA 942","Mon Nov 9","IAD 22:30 to LIS 10:20","6h50 overnight &middot; Boeing 777 &middot; arrives Tue Nov 10, Lisbon Terminal 1"]
+     ["UA 942","Mon Nov 9","IAD 22:30 to LIS 10:20","6h50 overnight &middot; arrives Tue Nov 10, Lisbon Terminal 1"]
    ],
-   seats:"Zaibnish 38A and Izyan 38B on the Houston leg, 53D and 53E on the Lisbon leg.",
+   seats:"Zaibnish 38A, Izyan 38B on the Houston leg. Zaibnish 53D, Izyan 53E on the Lisbon leg. <b>Rizwan has no seat on either.</b>",
+   note:"<b>Basic Economy, so no checked bag is included on this leg at all.</b> Transatlantic Basic Economy does give each of you a full carry-on plus a personal item, but if you want to check anything out of Houston you have to buy it. See the baggage table below, because this is the one thing across all three bookings that does not line up.",
    direct:"united.com", durl:"https://www.united.com/en/us/manageres/mytrips"},
 
   {no:"02", date:"Nov 12", route:"LIS to AGP", name:"Lisbon to Malaga",
-   price:"$538.32", sub:"TAP, paid",
+   price:"$538.32", sub:"TAP, paid &middot; ref XIT7D7",
    flag:["p-g","Booked"],
    itin:[
-     ["TP1136","Thu Nov 12","LIS 10:45 to AGP 13:00","1h15 &middot; Economy &middot; Spain is one hour ahead"],
+     ["TP1136","Thu Nov 12","LIS 10:45 to AGP 13:00","1h15 direct &middot; Economy &middot; Spain is one hour ahead"],
      ["Coach","Thu Nov 12","Malaga to Granada","1h45 direct &middot; $66.12 for three &middot; departures 13:00, 14:00, 14:45, 15:45"]
    ],
-   note:"No airline flies Lisbon to Granada, so the last stretch is on the ground. Priced live for Nov 12: train $175.55 with one change and three hours plus, coach $66.12 direct in 1h45. The coach wins outright.",
+   seats:"All three assigned at check-in. Check in the moment the window opens if you want to sit together.",
+   note:"<b>One checked bag on this booking, and it is on Rizwan's ticket.</b> Zaibnish and Izyan have carry-on only, capped at 10kg each. Everyone gets a personal item.<br><br>No airline flies Lisbon to Granada, so the last stretch is on the ground. Priced live for Nov 12: train $175.55 with one change and three hours plus, coach $66.12 direct in 1h45.",
    direct:"alsa.com", durl:"https://www.alsa.com/en/airports/malaga-costa-del-sol"},
 
   {no:"03", date:"Nov 16", route:"SVQ to CDG", name:"Seville to Paris",
-   price:"$558", sub:"3 travellers, nonstop",
-   flag:["p-g","This is why we reversed Spain"],
-   headline:"$195",
-   headnote:"on a budget carrier, but check which Paris airport before you book it.",
-   real:"$558 for the Air France nonstop into CDG",
-   body:"Direct and well served. <b>Air France</b> departs 16:40 and lands 19:15, 2h35. <b>Vueling</b> flies it "
-        +"17 times a week to CDG and Orly, <b>Transavia</b> 9 times a week to Orly and is the most punctual "
-        +"carrier on the route. Live search shows <b>nonstop from $186 a person</b>.<br><br>"
-        +"<b>One trap:</b> Ryanair flies Seville to Paris three times a week but lands at <b>Beauvais</b>, which "
-        +"is ninety minutes outside the city by coach. It is not a Paris airport in any useful sense.<br><br>"
+   price:"$265", sub:"3 travellers, nonstop",
+   flag:["p-w","The last one to book"],
+   headline:"$217",
+   headnote:"on Vueling, but it lands at 22:35 the night before Disneyland. Not worth the $48.",
+   real:"$265 for the Air France nonstop into CDG, 16:40 to 19:15",
+   body:"Priced live for Nov 16, two adults and a five-year-old, nonstop only:<br><br>"
+        +"<b>Air France 16:40 to 19:15, CDG, $265.</b> The pick.<br>"
+        +"<b>Transavia 16:50 to 19:20, Orly, $308.</b> Ten minutes later and $43 more.<br>"
+        +"<b>Vueling 20:00 to 22:35, Orly, $217.</b> Cheapest, but you reach the apartment near midnight the "
+        +"night before Disneyland.<br><br>"
+        +"<b>Orly or CDG barely matters.</b> Orly is closer to the Left Bank, Metro line 14 now runs direct from "
+        +"it into the centre in about 25 minutes, and the flat-rate taxi is roughly 36 euros against 65 from CDG. "
+        +"If the Orly flight were cheaper it would be a fine choice. <b>It is not the airport that decides this, "
+        +"it is the money:</b> Air France is $43 less and includes a checked bag, while Transavia is low-cost and "
+        +"charges for one. That gap is realistically over a hundred dollars for three of you.<br><br>"
+        +"<b>One trap:</b> Ryanair flies Seville to Paris but lands at <b>Beauvais</b>, ninety minutes outside "
+        +"the city by coach. It is not a Paris airport in any useful sense.<br><br>"
         +"<b>What this replaced:</b> the old plan had you on an 08:00 coach from Granada to Malaga the morning "
         +"after the Alhambra, then a flight you could not miss. This is a twenty-minute taxi and a direct flight, "
         +"and it costs about $33 more than the Malaga route once you drop the coach.",
@@ -1124,11 +1134,13 @@ var LEGS = [
    direct:"airfrance.us", durl:"https://wwws.airfrance.us"},
 
   {no:"04", date:"Nov 19", route:"CDG to DFW", name:"Paris to Dallas",
-   price:"Booked", sub:"American, nonstop",
+   price:"$1,616.49", sub:"American, paid &middot; ref DKHAMA",
    flag:["p-g","Booked"],
    itin:[
-     ["American","Thu Nov 19","CDG 11:05 to DFW 14:50","About 10h40 nonstop &middot; Terminal 2A at Paris"]
+     ["AA 49","Thu Nov 19","CDG 11:05 to DFW 14:50","Nonstop &middot; Economy (B) &middot; lunch and a snack served"]
    ],
+   seats:"Not yet assigned. Pick them in Manage Your Trip before check-in opens.",
+   note:"Tickets were $147 each for you and Zaibnish, $111 for Izyan on the child fare, plus $374.83 of taxes and carrier fees per person. <b>One checked bag purchased, $87.</b> Paid on the Visa ending 4639.",
    direct:"aa.com", durl:"https://www.aa.com"}
 ];
 
@@ -1175,6 +1187,33 @@ function renderFlights(){
     + '<span><b>Airfare cannot be live on this page.</b> No airline or aggregator exposes a free public '
     + 'price feed, so the figures for the two open legs are a dated snapshot, not a quote. '+staleBadge()+'</span></div>'
     + legs
+    + '<div class="blk"><div class="blk-h">Baggage, and why it does not line up</div>'
+    + '<div class="tw tsc"><table><thead><tr><th>Leg</th><th>Fare</th><th class="num">Checked bags</th><th>Carry-on</th></tr></thead><tbody>'
+    + '<tr><td><b>IAH to LIS</b><br><span style="font-size:11.5px;color:var(--mute)">United, Nov 9</span></td>'
+    + '<td>Basic Economy</td><td class="num" style="color:var(--bad);font-weight:600">None</td>'
+    + '<td>1 carry-on + 1 personal item each</td></tr>'
+    + '<tr><td><b>LIS to AGP</b><br><span style="font-size:11.5px;color:var(--mute)">TAP TP1136, Nov 12</span></td>'
+    + '<td>Economy</td><td class="num">1, on your ticket</td>'
+    + '<td>1 carry-on max <b>10kg</b> + 1 personal item each</td></tr>'
+    + '<tr><td><b>CDG to DFW</b><br><span style="font-size:11.5px;color:var(--mute)">AA 49, Nov 19</span></td>'
+    + '<td>Economy (B)</td><td class="num">1, bought for $87</td>'
+    + '<td>1 carry-on + 1 personal item each</td></tr>'
+    + '</tbody></table></div>'
+    + '<div class="note n-r" style="margin-top:14px"><span class="n-t">You currently have zero checked bags leaving Houston</span>'
+    + 'Three bookings, three different baggage rules, and the outbound is the weak one. Basic Economy includes '
+    + '<b>no checked bag at all</b>, so as it stands you fly to Europe for eleven days on carry-ons only. '
+    + 'The other two legs each carry exactly one checked bag, both on your ticket.<br><br>'
+    + '<b>Two ways to fix it, and they cost about the same.</b><br><br>'
+    + '<b>Buy a bag on United.</b> Roughly $75 to $85 for the first checked bag, prepaid online, cheaper than at '
+    + 'the counter. One bag gets your bulk across the Atlantic and matches what TAP and American already carry. '
+    + 'This is the simple answer.<br><br>'
+    + '<b>Or go carry-on only and stay disciplined.</b> Three carry-ons plus three personal items is genuinely '
+    + 'enough for eleven days in November if you use packing cubes and do one wash mid-trip. <b>The binding '
+    + 'constraint is TAP: 10kg per carry-on</b>, which is stricter than United or American and is the number to '
+    + 'pack against. Weigh them at home.<br><br>'
+    + '<b>If you want a second checked bag</b>, you would need to add it on all three bookings separately &mdash; '
+    + 'United, TAP and American each sell their own. Budget another $250 or so across the trip. With a '
+    + 'five-year-old and winter clothes, one checked bag plus disciplined carry-ons is the sweet spot.</div></div>'
     + '<div class="blk"><div class="blk-h">Ground transport between cities</div>'
     + '<div class="tw tsc"><table><thead><tr><th>Leg</th><th>Date</th><th>Mode</th><th>Time</th><th class="num">Cost, 3 people</th><th>Book</th></tr></thead><tbody>'
     + '<tr><td><b>Malaga airport to Granada</b><br><span style="font-size:11.5px;color:var(--mute)">Straight off the TAP flight, no stop in Malaga</span></td>'
@@ -1333,19 +1372,20 @@ var BOOKINGS = [
    n:"Nine nights, not eight. Nov 16 is now a pure travel day and the Eiffel Tower moves to Wednesday Nov 18. You fly home Thursday Nov 19. Costs about $310 and it is the single best $310 in this plan. Nothing to do here, it is already built into every date below.",
    by:"2026-09-20", est:310},
 
-  {id:"out", ph:1, t:"Seats on the United outbound",
-   n:"Basic Economy did not assign you one. Zaibnish and Izyan have seats, you do not. Sort it in Manage Booking if you want to sit together, and add checked bags at the same time.",
-   by:"2026-09-15", est:510,
+  {id:"out", ph:1, t:"United outbound: buy a checked bag, and a seat",
+   n:"Basic Economy gave you neither. Zaibnish is 38A and 53D, Izyan 38B and 53E, and you have no seat on either leg. A checked bag is about $75 to $85 prepaid online and there is currently no checked bag on this booking at all. Do both in Manage Booking before check-in opens.",
+   by:"2026-09-15", est:170,
    u:"https://www.united.com/en/us/manageres/mytrips", ul:"Manage booking"},
-  {id:"ret", ph:1, t:"Return flight, Paris to Dallas, Nov 19",
-   n:"Booked. American nonstop, CDG 11:05 to DFW 14:50.",
-   by:"2026-09-30", est:1506},
+  {id:"ret", ph:1, t:"Return flight: paid, but pick your seats",
+   n:"AA 49, CDG 11:05 to DFW 14:50, confirmation DKHAMA, $1,616.49 paid. One checked bag bought for $87. Seats are not assigned yet, so choose them in Manage Your Trip rather than being split up at check-in.",
+   by:"2026-09-30", est:1616,
+   u:"https://www.aa.com", ul:"Manage your trip"},
   {id:"lis", ph:1, t:"Lisbon to Malaga, Nov 12: paid",
-   n:"TAP TP1136, 10:45 to 13:00, Economy, $538.32 for the three of you. Bag included on this fare, unlike the United outbound.",
+   n:"TAP TP1136, 10:45 to 13:00, ref XIT7D7, $538.32. One checked bag, on your ticket. Zaibnish and Izyan are carry-on only at 10kg each, which is the tightest limit on the whole trip. Seats assigned at check-in, so check in early.",
    by:"2026-10-01", est:538},
-  {id:"agp", ph:2, t:"Seville to Paris, Nov 16",
-   n:"Air France nonstop 16:40 to 19:15, 2h35, about $558 for three. Vueling and Transavia also fly it. Avoid Ryanair here, it lands at Beauvais 90 minutes out.",
-   by:"2026-10-01", est:558,
+  {id:"agp", ph:2, t:"Seville to Paris, Nov 16: the last flight to buy",
+   n:"Air France nonstop, 16:40 to 19:15 into CDG, $265 for all three priced live. Transavia at 16:50 into Orly is $308 and charges extra for bags. Vueling is $217 but lands 22:35, which is the wrong night. Avoid Ryanair, it lands at Beauvais 90 minutes out.",
+   by:"2026-10-01", est:265,
    u:"https://www.kayak.com/flights/SVQ-CDG/2026-11-16/2adults/children-5", ul:"Price Seville to Paris"},
   {id:"ins", ph:2, t:"Travel insurance",
    n:"Buy within 14 to 21 days of your first deposit or you lose the pre-existing condition waiver. Check your credit card cover first.",
@@ -1703,7 +1743,7 @@ var BDG = [
 var BDG_TOTAL = BDG.reduce(function(s,x){ return s + x.e; }, 0);
 
 var COSTS = [
-  ["Flights, all four legs", "$3,320", "$3,803", "Three of four booked. Only Seville to Paris left, about $558"],
+  ["Flights, all four legs", "$2,420", "$2,420", "United, TAP $538 and American $1,616 all paid. Only Seville to Paris left, $265"],
   ["Accommodation, 9 nights", "$1,125", "$3,600", "Apartments at the low end, Parador at the high end"],
   ["Tickets and attractions", "$530", "$700", "Alhambra, Disneyland, Eiffel, Alcazar, flamenco, Castelo de Sao Jorge"],
   ["Intercity coach", "$110", "$160", "Malaga to Granada $66, Granada to Seville about $70. No rail on either"],
