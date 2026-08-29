@@ -699,18 +699,18 @@ var PLAN = [
 {
   n:4, date:"Thu Nov 12", wd:"Thursday", city:"Lisbon to Granada", tag:["p-w","Transfer day"],
   sum:"TAP to Malaga at 10:45, then the coach straight up to Granada. On the Alhambra hill by late afternoon.",
-  warn:"<b>Flight booked: TAP, Lisbon 10:45 to Malaga 13:00.</b> The coach is the safe default from here: sixteen a day, direct from outside arrivals, no timetable to match. It has you at the hotel around 16:45.<br><br><b>If you would rather take the train, check renfe.com first.</b> The direct Avant is 1h22 against the coach 1h45, but there are only about three a day and I could not verify the Nov 12 times from here. Match a landing to a departure with 90 minutes to spare, and if nothing lines up, take the coach.",
+  warn:"<b>Flight booked: TAP, Lisbon 10:45 to Malaga 13:00. Take the coach.</b> Checked live for your exact date and party: <b>train $175.55 with one change and three hours plus, coach $66.12 direct in 1h45</b>. The coach is a hundred and nine dollars cheaper and half the time. Nothing to think about. Izyan gets his train ride elsewhere, and there are three good ones.",
   sched:[
     ["07:45","Breakfast, final pack","Bags by the door before you sit down. Nothing loose."],
     ["08:20","Bolt to LIS","Twenty-five minutes, budget 15 euros."],
     ["08:45","Bag drop and security","Two hours for a short hop with a checked bag. TAP flies from Terminal 1."],
     ["10:45","Depart Lisbon","TAP to Malaga, about 1h15 in the air."],
     ["13:00","Land Malaga","Spain is an hour ahead, so you gain an hour on paper and lose it on the clock."],
-    ["13:35","Bags, then straight out to the coach","The ALSA stop is outside arrivals. You do not go into Malaga city at all."],
-    ["14:15","ALSA coach to Granada","Direct, about 1h45. Sixteen a day so nothing is tight, and there is a luggage hold underneath."],
-    ["16:00","Arrive Granada bus station","Roughly. Coaches run 1h45 to 2h20 depending on how many stops yours makes."],
-    ["16:20","Taxi up to the hotel","Fifteen minutes, about 12 euros. Do not walk the hill with bags."],
-    ["16:45","Check in","Hotel America is inside the Alhambra walls. Drop everything."],
+    ["13:35","Bags, then Cercanias C1 to the station","<b>Check where your coach leaves from.</b> The $66 fares depart Malaga city bus station, next door to Maria Zambrano, not the airport. The C1 runs from inside the terminal, eight minutes, and Izyan is free. ALSA also sells an airport-direct coach on its own site if you would rather not move."],
+    ["14:45","Coach to Granada","<b>Direct, 1h45, $66.12 for all three.</b> Confirmed afternoon departures on your date: 13:00, 14:00, 14:45, 15:45. Take the 14:45 so you are not rushing bags, and check you have the 1h45 service rather than the 2h15."],
+    ["16:30","Arrive Granada bus station","On the 1h45 service. Some runs take 2h15 or 2h30, so look at the duration before you book."],
+    ["16:50","Taxi up to the hotel","Fifteen minutes, about 12 euros. Do not walk the hill with bags."],
+    ["17:15","Check in","Hotel America is inside the Alhambra walls. Drop everything."],
     ["17:30","First look at the hill","Ten minutes to a terrace while there is still light. Sunset is about 18:10 in mid-November."],
     ["19:30","Granada tapas trail","Every drink comes with a free plate. Three bars is dinner for the three of you."],
     ["21:30","Taxi back up","Ten euros. The Alhambra is at 09:00 tomorrow, so do not push it."]
@@ -718,9 +718,9 @@ var PLAN = [
   transport:{
     leg:"Malaga airport to Granada", flight:false, note:"The flight is booked and lands 13:00. This is the only part of today still open, and it is a short list.",
     opts:[
-      {n:"ALSA coach, straight from arrivals", d:"Direct from outside the terminal to Granada bus station, about 1h45, sixteen a day. You never enter Malaga. Buy at the machine in arrivals or online the night before. Gets you to the hotel around 16:45 with the afternoon still usable.", p:"About 14 euros each", best:true,
+      {n:"Direct coach to Granada", d:"<b>$66.12 for all three, 1h45, no changes.</b> Confirmed live for Nov 12: departures at 13:00, 14:00, 14:45 and 15:45 through the afternoon. The 14:45 gives you time off the plane without rushing. Most of these leave from Malaga city bus station beside Maria Zambrano, eight minutes from the terminal on the Cercanias C1; ALSA also runs an airport-direct service on its own site.", p:"$66.12 total", best:true,
        u:"https://www.alsa.com/en/airports/malaga-costa-del-sol", ul:"ALSA from Malaga airport"},
-      {n:"The Avant train, if you want it", d:"<b>Check renfe.com before assuming a time.</b> The direct Avant is 1h22 and lovely, but Renfe runs only about three directs a day and adjusted Andalusian timetables in September 2026. Some sellers wrongly show this route as having no direct service at all. <b>The rule: find the direct Avant departures from Malaga Maria Zambrano on Nov 12, then make sure you land at least 90 minutes before one</b> &mdash; that covers bags plus the eight-minute Cercanias C1 from the terminal to the station. Izyan is 40 percent off on Renfe and free on the Cercanias.", p:"About 20 to 30 euros each",
+      {n:"The train, and why it is out", d:"Checked live on Nov 12 for two adults and a five-year-old: <b>every train option returns one change</b> at Antequera-Santa Ana and runs three hours or more, for <b>$175.55</b>. The direct 1h22 Avant that Renfe publicised is not bookable for your date. The coach is $66.12 and 1h45. Do not spend the afternoon chasing the train.", p:"$175.55, one change",
        u:"https://www.renfe.com/es/en", ul:"Check Renfe times"},
       {n:"Private transfer or taxi", d:"About 1h30 door to door and the only option that puts you at the hotel door rather than the bus station. Expensive for what it is, but worth knowing if the flight is badly delayed and the coaches have thinned out.", p:"150 to 200 euros total",
        u:"https://www.welcomepickups.com/", ul:"welcomepickups.com"}
@@ -904,7 +904,7 @@ var PLAN = [
 },
 {
   n:9, date:"Tue Nov 17", wd:"Tuesday", city:"Disneyland Paris", tag:["p-g","His day"],
-  sum:"Rope drop, the two rides that matter first, out before he breaks. Tuesday is a low-crowd day and the Christmas overlay is running.",
+  sum:"Rope drop, the two rides that matter first, out before he breaks. Tuesday is a low-crowd day, the Christmas overlay is running, and there is a steam train.",
   warn:"Both parks open at 09:30. Being at the gate at 09:15 rather than 10:30 is worth about two hours of queueing later.",
   sched:[
     ["07:00","Breakfast at the apartment","Eat properly. Park food is six to ten euros an item."],
@@ -917,7 +917,8 @@ var PLAN = [
     ["11:15","Character meet","Check the app for times. Mickey at Meet Mickey Mouse in Fantasyland."],
     ["12:15","Lunch in the park","Sit down for this one. He needs the break more than the food."],
     ["13:30","Fantasyland circuit","Carousel, It is a Small World, Peter Pan, Dumbo. Low intensity, high payoff."],
-    ["15:00","Pirates of the Caribbean","Mild, indoors, and a good rest for everyone."],
+    ["14:45","Disneyland Railroad","<b>A real steam train</b>, a full circuit of the park with a stop inside the Grand Canyon Diorama. Runs 11:45 to 17:00 in winter. Board at Main Street Station. This is his train ride."],
+    ["15:20","Pirates of the Caribbean","Mild, indoors, and a good rest for everyone."],
     ["16:00","Christmas parade","Disney Enchanted Christmas started Nov 7. Find a kerb twenty minutes early."],
     ["17:15","One last ride, then the shop","Let him choose both."],
     ["18:00","Leave the park","Before the closing crush and before he falls apart."],
@@ -958,6 +959,7 @@ var PLAN = [
     ["15:30","Luxembourg Gardens or Tuileries","Carousel, sailboats on the pond, room to run. Low effort, high payoff."],
     ["17:30","Seine cruise","An hour on the water as the light goes. He can move about the deck."],
     ["19:00","Dinner","Unhurried. Last proper meal of the trip."],
+    ["20:20","Metro line 6 to Bir-Hakeim","<b>Take line 6, not a taxi.</b> It runs above ground on a viaduct and crosses the Seine with the lit tower filling the window. Sit on the right. Costs a normal ticket and it is the best free thing in Paris."],
     ["20:45","Eiffel Tower summit","Lit up, city spread out, last lift 22:30. The moment he will remember."],
     ["22:15","Back, and pack tonight","So tomorrow morning is only breakfast and a taxi."]
   ],
@@ -1099,9 +1101,9 @@ var LEGS = [
    flag:["p-g","Booked"],
    itin:[
      ["TAP","Thu Nov 12","LIS 10:45 to AGP 13:00","About 1h15 in the air &middot; Spain is one hour ahead"],
-     ["ALSA coach","Thu Nov 12","Malaga airport to Granada","About 1h45 &middot; direct from outside arrivals, sixteen a day"]
+     ["Coach","Thu Nov 12","Malaga to Granada","1h45 direct &middot; $66.12 for three &middot; departures 13:00, 14:00, 14:45, 15:45"]
    ],
-   note:"No airline flies Lisbon to Granada, so the last stretch is on the ground. The coach is the default because it needs no timetable. The direct Avant is faster but runs only about three times a day &mdash; check renfe.com for Nov 12 before planning around it.",
+   note:"No airline flies Lisbon to Granada, so the last stretch is on the ground. Priced live for Nov 12: train $175.55 with one change and three hours plus, coach $66.12 direct in 1h45. The coach wins outright.",
    direct:"alsa.com", durl:"https://www.alsa.com/en/airports/malaga-costa-del-sol"},
 
   {no:"03", date:"Nov 16", route:"SVQ to CDG", name:"Seville to Paris",
@@ -1176,7 +1178,7 @@ function renderFlights(){
     + '<div class="blk"><div class="blk-h">Ground transport between cities</div>'
     + '<div class="tw tsc"><table><thead><tr><th>Leg</th><th>Date</th><th>Mode</th><th>Time</th><th class="num">Cost, 3 people</th><th>Book</th></tr></thead><tbody>'
     + '<tr><td><b>Malaga airport to Granada</b><br><span style="font-size:11.5px;color:var(--mute)">Straight off the TAP flight, no stop in Malaga</span></td>'
-    + '<td>Nov 12</td><td>ALSA direct coach</td><td>1h45</td><td class="num">$45&ndash;50</td>'
+    + '<td>Nov 12</td><td>Direct coach</td><td>1h45</td><td class="num">$66</td>'
     + '<td><a href="https://www.alsa.com/en/airports/malaga-costa-del-sol" target="_blank" rel="noopener">alsa.com</a></td></tr>'
     + '<tr><td><b>Granada to Seville</b><br><span style="font-size:11.5px;color:var(--mute)">Coach, because the train only runs 06:22 and 18:17</span></td>'
     + '<td>Nov 14</td><td>ALSA direct coach</td><td>3h00</td><td class="num">$40&ndash;95</td>'
@@ -1187,11 +1189,9 @@ function renderFlights(){
     + '<td>Any official rank</td></tr>'
     + '</tbody></table></div></div>'
     + '<div class="note n-i"><span class="n-t">Where the train actually wins, and where it does not</span>'
-    + '<b>Malaga to Granada on Nov 12: the coach is the safe default.</b> Sixteen a day, direct from outside '
-    + 'arrivals, about 1h45, and no timetable to match. The direct Avant is faster at 1h22 and a nicer ride, but '
-    + 'Renfe runs only about three a day, adjusted Andalusian times in September 2026, and some ticket sellers '
-    + 'wrongly show the route as having no direct service. <b>Verify on renfe.com before planning around a '
-    + 'train</b>, and land at least 90 minutes before whichever direct you pick.<br><br>'
+    + '<b>Malaga to Granada on Nov 12: the coach, and it is not close.</b> Priced live for your date and party: '
+    + '<b>train $175.55 with one change and over three hours, coach $66.12 direct in 1h45</b>. Every rail option '
+    + 'routes via Antequera-Santa Ana; the direct 1h22 Avant Renfe publicised is not bookable for Nov 12.<br><br>'
     + '<b>Granada to Seville on Nov 14: take the coach.</b> Only two direct Avant services exist in that '
     + 'direction, 06:22 and 18:17, and neither suits you. The coach runs twelve times a day and takes three '
     + 'hours. Going the other way round the train would win easily, which is one small argument for the '
@@ -1369,8 +1369,8 @@ var BOOKINGS = [
    by:"2026-10-20", est:70,
    u:"https://www.alsa.com/en/coach/granada-seville", ul:"Book ALSA"},
   {id:"avant", ph:3, t:"Malaga airport to Granada, Nov 12, ALSA coach",
-   n:"Direct from outside arrivals, about 1h45, roughly 14 euros each. Sixteen a day so you do not have to commit to a departure, but booking online the night before saves queueing at the machine with bags. Target the 14:00 to 14:30 departure off a 13:00 landing.",
-   by:"2026-11-10", est:45, dep:["lis"],
+   n:"$66.12 for all three, 1h45, no changes. Confirmed departures on Nov 12: 13:00, 14:00, 14:45, 15:45. Book the 14:45 and check the duration says 1h45, not 2h15. Note most fares leave from Malaga city bus station next to Maria Zambrano, eight minutes from the terminal on the Cercanias C1.",
+   by:"2026-11-10", est:66, dep:["lis"],
    u:"https://www.alsa.com/en/airports/malaga-costa-del-sol", ul:"Book ALSA"},
     {id:"dis", ph:4, t:"Disneyland Paris, Nov 17",
    n:"One day, two parks. You need the Studios for Ratatouille. About $330 to $430 for three in low season.",
@@ -2050,6 +2050,21 @@ function renderIzyan(){
   return '<div class="s-h">Izyan\'s Guide</div>'
     + '<div class="s-s">Every activity rated one to five dots from the perspective of a five-year-old, '
     + 'plus the logistics that keep the days working.</div>'
+    + '<div class="note n-g"><span class="n-t">Trains, since he likes them</span>'
+    + 'Four rides worth building the day around, and none of them cost more than a normal ticket.<br><br>'
+    + '<b>Tram 28, Lisbon, Wed Nov 11.</b> The best of the lot and already in the plan. A 1930s wooden tram '
+    + 'that grinds up through Graca and Alfama on street track, doors rattling, close enough to the buildings '
+    + 'to touch them. Board at Martim Moniz, the start of the line, or you will not get a seat.<br><br>'
+    + '<b>Disneyland Railroad, Tue Nov 17.</b> An actual steam locomotive doing a full circuit of the park, '
+    + 'including a stop inside the Grand Canyon Diorama. Runs 11:45 to 17:00 in winter. Board at Main Street '
+    + 'Station.<br><br>'
+    + '<b>Metro line 6 over the Seine, Wed Nov 18.</b> On the way to the Eiffel Tower. Line 6 climbs out of '
+    + 'the tunnel onto an elevated viaduct and crosses the river with the lit tower straight ahead. Sit on the '
+    + 'right between Passy and Bir-Hakeim.<br><br>'
+    + '<b>RER A to Disneyland, Tue Nov 17.</b> Double-decker. Go upstairs and get the front seats.<br><br>'
+    + 'The one that did not work out is Malaga to Granada. Renfe publicised a direct 1h22 Avant, but for '
+    + 'Nov 12 every option comes back with a change at Antequera and takes three hours, so you are on the coach '
+    + 'instead.</div>'
     + '<div class="note n-i"><span class="n-t">How to read the dots</span>'
     + '<span style="display:inline-block;margin-top:6px">'+dots(1,5)+' he will tolerate it &nbsp;&middot;&nbsp; '
     + dots(3,5)+' he will enjoy it &nbsp;&middot;&nbsp; '
