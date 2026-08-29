@@ -419,7 +419,7 @@ footer{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);
     <div class="h-meta">
       <div class="h-m"><div class="h-m-l">Dates</div><div class="h-m-v">Nov 9&ndash;19, 2026</div></div>
       <div class="h-m"><div class="h-m-l">Nights</div><div class="h-m-v">9</div></div>
-      <div class="h-m"><div class="h-m-l">Estimated</div><div class="h-m-v">$8,323&ndash;9,393</div></div>
+      <div class="h-m"><div class="h-m-l">Estimated</div><div class="h-m-v">$8,339&ndash;9,409</div></div>
     </div>
   </div>
 </header>
@@ -1262,19 +1262,19 @@ var STAY = [
    anchor:"Nasrid Palaces",
    area:"On the Alhambra hill. The only city where the address decides whether the 09:00 entry works.",
    opts:[
-     {n:"Hotel America", s:"8.5", cl:"8.7", r:"455", rk:"Book this", u:"Family room, 2+1 confirmed", d:"5 min", p:"$436", slug:"es/america-granada.html"}
+     {n:"Hotel America", s:"8.7", cl:"8.7", r:"363", rk:"Book this", u:"Family room, 2 adults + 1 child", d:"5 min", p:"$452", slug:"es/america-granada.html"}
    ],
    facts:[
      ["Address","Calle Real de la Alhambra 53, inside the walls, beside the Palace of Charles V"],
      ["Takes 3","Yes. Family Room, max 2 adults + 1 child. No extra bed needed"],
      ["Child rule","Charged as adults from 13 only"],
      ["Beds","215 sq ft, two twins. Extra bed 30 euros a night if you want it"],
-     ["Rate","$436 for both nights, pay on arrival"],
-     ["Cancel","Free until Nov 9 2026"],
+     ["Rate","<b>$452 for both nights</b>, $226 a night. Pay the property before arrival, so Booking holds a card but does not charge it"],
+     ["Cancel","<b>Free until Nov 7 2026</b>, fully refundable until then"],
      ["Stock","1 room left at this rate"],
      ["Ticket entry","QR e-tickets scan at the Puerta de la Justicia, five minutes from the hotel, so you never go near the Access Pavilion 800m away. <b>The Patronato still asks you at the gate an hour before your slot</b>, and the complex opens 08:30 in winter &mdash; but a five-minute walk beats a climb from the city"],
      ["Season","The hotel closes for winter around Nov 18. Your Nov 12 to 14 stay is inside the open season, but do not push these dates later"],
-     ["Score in context","8.5 is the lowest score on this page and it does not matter. You are paying for one thing: being inside the walls on the morning of a timed entry"]
+     ["Score in context","8.7 is the lowest score on this page and it does not matter. <b>Its location score is 9.7.</b> You are paying for one thing: being inside the walls on the morning of a timed entry"]
    ]},
 
   {city:"Seville", ci:"2026-11-14", co:"2026-11-16", q:"Santa Cruz, Seville",
@@ -1388,8 +1388,8 @@ var BOOKINGS = [
    by:"2026-09-15", est:48,
    u:"https://tickets.alhambra-patronato.es/en/", ul:"Book at the official Patronato site"},
   {id:"gra", ph:1, t:"Hotel America, Granada, Nov 12 to 14",
-   n:"Family Room at $436 for both nights, inside the Alhambra walls and a five-minute walk to the Puerta de la Justicia. <b>Only one room was showing at that rate, and cancellation is free until Nov 9</b>, so booking it costs nothing and protects the 08:00 gate time. Book straight after the Alhambra tickets.",
-   by:"2026-09-15", est:436, dep:["alh"],
+   n:"Family Room, <b>$452 for both nights</b> at $226 a night, inside the Alhambra walls and a five-minute walk to the Puerta de la Justicia. <b>One room left, free cancellation until Nov 7</b>, and you pay the property rather than Booking. Holding it costs nothing and protects the 08:00 gate time. Book straight after the Alhambra tickets.",
+   by:"2026-09-15", est:452, dep:["alh"],
    u:"https://www.booking.com/hotel/es/america-granada.html?checkin=2026-11-12&checkout=2026-11-14&group_adults=2&group_children=1&age=5&no_rooms=1", ul:"Open Hotel America"},
   {id:"dec", ph:1, t:"Extra Paris night: locked in",
    n:"Nine nights, not eight. Nov 16 is now a pure travel day and the Eiffel Tower moves to Wednesday Nov 18. You fly home Thursday Nov 19. Costs about $310 and it is the single best $310 in this plan. Nothing to do here, it is already built into every date below.",
@@ -1764,7 +1764,7 @@ var BDG_TOTAL = BDG.reduce(function(s,x){ return s + x.e; }, 0);
 
 var COSTS = [
   ["Flights and bags, all four legs", "$4,004", "$4,004", "<b>All paid.</b> United $1,389 plus a $90 bag, TAP $538, Air France $370, American $1,616 including its $87 bag"],
-  ["Accommodation, 9 nights", "$1,909", "$2,209", "The four picks: Lisbon $488, Granada $436, Seville $285, Paris $700 to $1,000 depending on the base"],
+  ["Accommodation, 9 nights", "$1,925", "$2,225", "The four picks: Lisbon $488, Granada $452, Seville $285, Paris $700 to $1,000 depending on the base"],
   ["Tickets and attractions", "$530", "$700", "Alhambra, Disneyland, Eiffel, Alcazar, flamenco, Castelo de Sao Jorge"],
   ["Intercity coach", "$110", "$160", "Malaga to Granada $66, Granada to Seville about $70. No rail on either"],
   ["City transport", "$220", "$340", "Metros, taxis, RER, Bolt"],
@@ -1795,9 +1795,9 @@ function renderBudget(){
     + '<div class="s-s">Two layers. The all-in estimate covers everything including flights and rooms. '
     + 'The day tracker below covers only food, local transport and incidentals, so nothing is counted twice.</div>'
     + '<div class="g4 blk">'
-    + '<div class="stat"><div class="st-l">All-in estimate</div><div class="st-v">$8,323&ndash;9,393</div><div class="st-n">Three people, eleven days. Flights paid, rooms now real picks rather than a range</div></div>'
+    + '<div class="stat"><div class="st-l">All-in estimate</div><div class="st-v">$8,339&ndash;9,409</div><div class="st-n">Three people, eleven days. Flights paid, rooms now real picks rather than a range</div></div>'
     + '<div class="stat"><div class="st-l">Narmin quoted</div><div class="st-v">$12,604</div><div class="st-n">Goway ref 1185612/1</div></div>'
-    + '<div class="stat"><div class="st-l">You save</div><div class="st-v">$3,211&ndash;4,281</div><div class="st-n">Against Goway, and you add Disneyland</div></div>'
+    + '<div class="stat"><div class="st-l">You save</div><div class="st-v">$3,195&ndash;4,265</div><div class="st-n">Against Goway, and you add Disneyland</div></div>'
     + '<div class="stat"><div class="st-l">Actually committed</div><div class="st-v">$'+ bkStats().spent.toLocaleString() + '</div>'+ '<div class="st-n">From ' + bkStats().done + ' booked items on the checklist</div></div>'
     + '<div class="stat"><div class="st-l">Swing factor</div><div class="st-v">Granada</div><div class="st-n">Parador adds about $2,000</div></div>'
     + '</div>'
@@ -1806,7 +1806,7 @@ function renderBudget(){
     + '<tbody>'+costRows+'</tbody>'
     + '<tfoot><tr style="border-top:2px solid var(--line);background:var(--line2)">'
     + '<td style="font-weight:700">Total</td>'
-    + '<td class="num" style="font-weight:700;font-size:15px">$8,323 to $9,393</td></tr></tfoot>'
+    + '<td class="num" style="font-weight:700;font-size:15px">$8,339 to $9,409</td></tr></tfoot>'
     + '</table></div></div>'
     + '<div class="blk"><div class="blk-h">Day tracker &mdash; food, local transport, incidentals</div>'
     + '<div class="note n-i">Enter what you actually spend as the trip goes. Entries save in this browser, so '
@@ -2197,7 +2197,7 @@ var CONFLICTS = [
       +"Alhambra\" while sitting on the valley floor &mdash; a 25 to 30 minute uphill walk to the gate, which "
       +"against a 09:00 timed slot means leaving at 08:05.",
    fix:"Reordered by real elevation and flagged on the page. <b>Hotel America</b> is now the lead at Real de la "
-      +"Alhambra 53, one hundred feet from the monument, family room for all three, <b>$436 for both nights</b> "
+      +"Alhambra 53, one hundred feet from the monument, family room for all three, <b>$452 for both nights</b> "
       +"against the Parador's $1,850 to $2,800."},
 
   {sev:"watch", t:"Book the Alhambra slot before the Granada room",
@@ -2229,7 +2229,7 @@ var PLANCHOICE = {
        ["Nov 17","Disneyland, out by 18:00"],
        ["Nov 18","Rue Cler breakfast, 12:40 flight home"],
        ["Risk","Nov 16 is fourteen hours of movement ending at altitude. If Izyan flags, you lose the Eiffel entirely."],
-       ["Cost","About $8,013 to $9,083 via Dallas"]
+       ["Cost","About $8,029 to $9,099 via Dallas"]
      ]},
   b:{name:"One extra night in Paris", nights:"9 nights", days:"Nov 9 to 19", best:true,
      rows:[
@@ -2239,7 +2239,7 @@ var PLANCHOICE = {
        ["Nov 18","Paris properly: Rue Cler, Seine cruise, Eiffel summit in the evening"],
        ["Nov 19","Relaxed morning, 11:05 American nonstop home to Dallas"],
        ["Risk","None material. Every fixed booking still lands on the same date."],
-       ["Cost","About $8,323 to $9,393 via Dallas, roughly $310 more than eight nights"]
+       ["Cost","About $8,339 to $9,409 via Dallas, roughly $310 more than eight nights"]
      ]}
 };
 
@@ -2318,7 +2318,7 @@ var INSURE = {
      p:"$300 to $550",
      d:"Covers trip cancellation and interruption on your prepaid non-refundable costs, emergency medical, and "
       +"evacuation. Industry pricing is <b>4 to 10 percent of insured trip cost</b>; your non-refundable exposure "
-      +"is <b>$4,004 already</b>, every flight and bag paid. Rooms add another $1,909 to $2,209 and the Alhambra is non-refundable, so expect roughly $6,400 once everything is held.<br><br>"
+      +"is <b>$4,004 already</b>, every flight and bag paid. Rooms add another $1,925 to $2,225 and the Alhambra is non-refundable, so expect roughly $6,400 once everything is held.<br><br>"
       +"<b>Look for a plan that covers children free.</b> Several insurers include one child under 18 per insured "
       +"adult at no cost, which with two adults makes Izyan free. That alone is worth $80 to $150.",
      u:"https://www.squaremouth.com/resources/destinations/europe", ul:"Compare on Squaremouth"},
