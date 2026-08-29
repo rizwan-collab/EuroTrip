@@ -419,7 +419,7 @@ footer{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);
     <div class="h-meta">
       <div class="h-m"><div class="h-m-l">Dates</div><div class="h-m-v">Nov 9&ndash;19, 2026</div></div>
       <div class="h-m"><div class="h-m-l">Nights</div><div class="h-m-v">9</div></div>
-      <div class="h-m"><div class="h-m-l">Estimated</div><div class="h-m-v">$6,820&ndash;10,540</div></div>
+      <div class="h-m"><div class="h-m-l">Estimated</div><div class="h-m-v">$5,955&ndash;9,200</div></div>
     </div>
   </div>
 </header>
@@ -589,8 +589,8 @@ var PLAN = [
   n:1, date:"Mon Nov 9", wd:"Monday", city:"Houston to Lisbon", tag:["p-g","Booked"],
   sum:"United out of Houston at 16:45, connect at Dulles, overnight to Lisbon. Two things still need doing before you fly.",
   sched:[
-    ["13:45","Leave for IAH","United departs Terminal C. Two hours is enough domestically, but you are checking bags onto an international itinerary, so give it three."],
-    ["14:45","Check bags at Terminal C","Bags go straight through to Lisbon."],
+    ["13:45","Leave for IAH","United departs Terminal C. Two hours is enough domestically, but on an international itinerary give it three."],
+    ["14:45","Bag drop, if you bought one","Basic Economy includes no checked bag. If you added one it goes straight through to Lisbon."],
     ["15:30","Security, then feed him","Real food now. The Dulles connection lands at dinner time and the Lisbon meal service is two hours after an 22:30 takeoff."],
     ["16:15","Boarding, UA 2388","Zaibnish 38A, Izyan 38B."],
     ["16:45","Depart IAH","Three hours four minutes to Washington."],
@@ -657,9 +657,9 @@ var PLAN = [
     ["14:45","Rest at the apartment","Ten minutes downhill from the cathedral. Genuine downtime before the afternoon."],
     ["15:40","Metro or Bolt to Laranjeiras","Blue line to Laranjeiras then a five-minute walk, or Bolt for about 8 euros. Allow 25 minutes door to door from Chiado."],
     ["16:00","Ismaili Centre, Lisbon","Av. Lusiada 1. Gardens, the courtyard and the prayer hall. Confirmed for today; exact time to be fixed two weeks out."],
-    ["17:30","Time in the gardens","Open, quiet and walled. One of the few genuinely calm outdoor spaces in the city, and easy on him after Belem."],
+    ["17:30","Time in the gardens","Open, quiet and walled. One of the few genuinely calm outdoor spaces in the city, and easy on him after the castle and Alfama."],
     ["19:15","Dinner","Back towards Chiado, or eat near Laranjeiras if the afternoon runs long."],
-    ["21:00","Pack for Granada","Bags by the door. Tomorrow is the LIS to GRX flight via Madrid, so nothing loose."]
+    ["21:00","Pack for Granada","Bags by the door. Tomorrow is the TAP flight to Malaga and the coach up to Granada."]
   ],
   activities:{
     label:"Morning on the hill, pick one",
@@ -755,7 +755,7 @@ var PLAN = [
     ["16:30","Sacromonte caves","Real cave houses on the hillside, still lived in. Big impression, twenty minutes of walking."],
     ["17:45","Mirador San Nicolas","Sunset over the Alhambra with the Sierra Nevada behind it. Free, and the locals gather here."],
     ["19:30","Dinner","More free tapas, or the Parador terrace if you want one splurge."],
-    ["21:30","Pack","Train to Seville tomorrow, but a civilised one."]
+    ["21:30","Pack","Coach to Seville tomorrow, and it leaves at a civilised hour."]
   ],
   activities:{
     label:"After the Alhambra, pick one",
@@ -782,7 +782,7 @@ var PLAN = [
 {
   n:6, date:"Sat Nov 14", wd:"Saturday", city:"Granada to Seville", tag:["p-b","Easy transfer"],
   sum:"Three hours on a direct coach and you are in Seville for a late lunch. No airport, no connection.",
-  warn:"<b>The train does not work in this direction.</b> Granada to Seville has only two direct Avant services a day, 06:22 and 18:17. The first needs a 05:30 alarm, the second lands you at 21:07 and costs you the day. Going the other way it would be perfect &mdash; Seville to Granada has four at civilised hours &mdash; but you are travelling this way, so take the coach.",
+  warn:"<b>The train does not work in this direction.</b> Granada to Seville has only two direct Avant services a day, 06:22 and 18:17. The first needs a 05:30 alarm, the second lands you at 21:02 and costs you the day. Going the other way it would be perfect &mdash; Seville to Granada has four at civilised hours &mdash; but you are travelling this way, so take the coach.",
   sched:[
     ["08:30","Breakfast, pack",""],
     ["09:30","Taxi down to the bus station","Fifteen minutes, about 12 euros."],
@@ -886,7 +886,7 @@ var PLAN = [
   transport:{
     leg:"SVQ to CDG", flight:true, note:"Direct and well served. This is the leg that makes the reversed order worth it.",
     opts:[
-      {n:"Air France nonstop to CDG", d:"Departs 16:40, lands 19:15, 2h35. Lands at the same terminal complex you fly home from, and connects to the RER B directly.", p:"$558 total", best:true,
+      {n:"Air France nonstop to CDG", d:"Departs 16:40, lands 19:15, 2h35. Lands at the same terminal complex you fly home from, and connects to the RER B directly.", p:"$265 total", best:true,
        u:"https://www.kayak.com/flights/SVQ-CDG/2026-11-16/2adults/children-5", ul:"Price this leg"},
       {n:"Vueling to CDG or Orly", d:"Seventeen nonstop flights a week. Often cheaper than Air France, but check which Paris airport &mdash; Orly means a different transfer.", p:"$195 to $440 total",
        u:"https://www.kayak.com/flights/SVQ-CDG/2026-11-16/2adults/children-5", ul:"Compare Vueling"},
@@ -1068,8 +1068,8 @@ function renderItinerary(){
     + 'Where no flight exists on a route, it says so rather than pretending otherwise.</div>'
     + '<div class="g4 blk">'
     + '<div class="stat"><div class="st-l">Structure</div><div class="st-v">2+2+2+3</div><div class="st-n">Extra Paris night fixes the Nov 16 crush</div></div>'
-    + '<div class="stat"><div class="st-l">Options given</div><div class="st-v">70</div><div class="st-n">Across 23 decision points</div></div>'
-    + '<div class="stat"><div class="st-l">Routes with no flight</div><div class="st-v">1</div><div class="st-n">Granada to Seville, which is a train</div></div>'
+    + '<div class="stat"><div class="st-l">Options given</div><div class="st-v">64</div><div class="st-n">Across 21 decision points</div></div>'
+    + '<div class="stat"><div class="st-l">Routes with no flight</div><div class="st-v">2</div><div class="st-n">Malaga to Granada and Granada to Seville, both coaches</div></div>'
     + '<div class="stat"><div class="st-l">Fixed-time bookings</div><div class="st-v">4</div><div class="st-n">Alhambra, Alcazar, flamenco, Disneyland</div></div>'
     + '</div>'
     + '<div class="note n-i"><span class="n-t">How to use this</span>'
@@ -1091,7 +1091,7 @@ var LEGS = [
    flag:["p-r","No bags, no seat"],
    itin:[
      ["UA 2388","Mon Nov 9","IAH 16:45 to IAD 20:49","3h04 &middot; Terminal C at Houston"],
-     ["Connection","Mon Nov 9","1h41 at Washington Dulles","United to United, bags checked through"],
+     ["Connection","Mon Nov 9","1h41 at Washington Dulles","United to United, so anything checked goes through"],
      ["UA 942","Mon Nov 9","IAD 22:30 to LIS 10:20","6h50 overnight &middot; arrives Tue Nov 10, Lisbon Terminal 1"]
    ],
    seats:"Zaibnish 38A, Izyan 38B on the Houston leg. Zaibnish 53D, Izyan 53E on the Lisbon leg. <b>Rizwan has no seat on either.</b>",
@@ -1187,12 +1187,11 @@ function renderFlights(){
   }).join("");
 
   return '<div class="s-h">Flights</div>'
-    + '<div class="s-s">Four legs. The two transatlantic ones are booked and shown as itinerary. '
-    + 'The two inside Europe are still open, and each has a one-click search with your dates and party '
-    + 'already set.</div>'
+    + '<div class="s-s">Four legs. Three are booked and shown as itinerary. Only Seville to Paris is still open, '
+    + 'and it has a one-click search with your dates and party already set.</div>'
     + '<div class="note n-i" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">'
     + '<span><b>Airfare cannot be live on this page.</b> No airline or aggregator exposes a free public '
-    + 'price feed, so the figures for the two open legs are a dated snapshot, not a quote. '+staleBadge()+'</span></div>'
+    + 'price feed, so the figure for the one open leg is a dated snapshot, not a quote. '+staleBadge()+'</span></div>'
     + legs
     + '<div class="blk"><div class="blk-h">Baggage, and why it does not line up</div>'
     + '<div class="tw tsc"><table><thead><tr><th>Leg</th><th>Fare</th><th class="num">Checked bags</th><th>Carry-on</th></tr></thead><tbody>'
@@ -1741,8 +1740,8 @@ function bkExport(){
 var BDG = [
   {d:1, dt:"Mon Nov 9",  c:"Texas to Lisbon",     i:"Ride to IAH, parking, airport meals",            e:110},
   {d:2, dt:"Tue Nov 10", c:"Lisbon",               i:"Lunch and dinner, Bolt rides, Time Out Market",   e:140},
-  {d:3, dt:"Wed Nov 11", c:"Lisbon",               i:"Pasteis de Belem, meals, tram fares",             e:120},
-  {d:4, dt:"Thu Nov 12", c:"Lisbon to Granada",  i:"Airport transfers, Madrid connection meals",      e:120},
+  {d:3, dt:"Wed Nov 11", c:"Lisbon",               i:"Castelo de Sao Jorge, meals, tram fares",             e:120},
+  {d:4, dt:"Thu Nov 12", c:"Lisbon to Granada",  i:"Airport transfers, coach to Granada, meals",      e:120},
   {d:5, dt:"Fri Nov 13", c:"Granada, Alhambra",  i:"Lunch tapas, Parador or hotel dinner",            e:150},
   {d:6, dt:"Sat Nov 14", c:"Granada to Seville", i:"Meals, taxis both ends, tapas dinner",            e:100},
   {d:7, dt:"Sun Nov 15", c:"Seville",            i:"Churros, long lunch, tapas dinner, taxis",        e:130},
@@ -1754,7 +1753,7 @@ var BDG = [
 var BDG_TOTAL = BDG.reduce(function(s,x){ return s + x.e; }, 0);
 
 var COSTS = [
-  ["Flights, all four legs", "$2,420", "$2,420", "United, TAP $538 and American $1,616 all paid. Only Seville to Paris left, $265"],
+  ["Flights, three of four legs", "$2,420", "$2,420", "TAP $538 and American $1,616 paid, Seville to Paris $265 still to buy. <b>The United outbound is paid but its fare is not in this total.</b>"],
   ["Accommodation, 9 nights", "$1,125", "$3,600", "Apartments at the low end, Parador at the high end"],
   ["Tickets and attractions", "$530", "$700", "Alhambra, Disneyland, Eiffel, Alcazar, flamenco, Castelo de Sao Jorge"],
   ["Intercity coach", "$110", "$160", "Malaga to Granada $66, Granada to Seville about $70. No rail on either"],
@@ -1786,9 +1785,9 @@ function renderBudget(){
     + '<div class="s-s">Two layers. The all-in estimate covers everything including flights and rooms. '
     + 'The day tracker below covers only food, local transport and incidentals, so nothing is counted twice.</div>'
     + '<div class="g4 blk">'
-    + '<div class="stat"><div class="st-l">All-in estimate</div><div class="st-v">$6,820&ndash;10,540</div><div class="st-n">Three people, eleven days</div></div>'
+    + '<div class="stat"><div class="st-l">All-in estimate</div><div class="st-v">$5,955&ndash;9,200</div><div class="st-n">Three people, eleven days, excluding the United fare</div></div>'
     + '<div class="stat"><div class="st-l">Narmin quoted</div><div class="st-v">$12,604</div><div class="st-n">Goway ref 1185612/1</div></div>'
-    + '<div class="stat"><div class="st-l">You save</div><div class="st-v">$2,060&ndash;5,780</div><div class="st-n">And you add Disneyland</div></div>'
+    + '<div class="stat"><div class="st-l">You save</div><div class="st-v">$3,400&ndash;6,650</div><div class="st-n">Before the United fare, and you add Disneyland</div></div>'
     + '<div class="stat"><div class="st-l">Actually committed</div><div class="st-v">$'+ bkStats().spent.toLocaleString() + '</div>'+ '<div class="st-n">From ' + bkStats().done + ' booked items on the checklist</div></div>'
     + '<div class="stat"><div class="st-l">Swing factor</div><div class="st-v">Granada</div><div class="st-n">Parador adds about $2,000</div></div>'
     + '</div>'
@@ -1797,7 +1796,7 @@ function renderBudget(){
     + '<tbody>'+costRows+'</tbody>'
     + '<tfoot><tr style="border-top:2px solid var(--line);background:var(--line2)">'
     + '<td style="font-weight:700">Total</td>'
-    + '<td class="num" style="font-weight:700;font-size:15px">$6,820 to $10,540</td></tr></tfoot>'
+    + '<td class="num" style="font-weight:700;font-size:15px">$5,955 to $9,200</td></tr></tfoot>'
     + '</table></div></div>'
     + '<div class="blk"><div class="blk-h">Day tracker &mdash; food, local transport, incidentals</div>'
     + '<div class="note n-i">Enter what you actually spend as the trip goes. Entries save in this browser, so '
@@ -1946,7 +1945,7 @@ var PACK = [
     "Wet wipes. More than you think",
     "Small first aid kit with plasters, antiseptic and a thermometer",
     "Sunscreen. Lisbon and Seville are still sunny in November",
-    "Motion sickness tablets for the Granada to Seville train"
+    "Motion sickness tablets for the Granada to Seville coach"
   ]}
 ];
 
@@ -2198,12 +2197,6 @@ var CONFLICTS = [
    fix:"Book the <b>09:00 slot for Friday Nov 13 first</b>, then the room to match. Reverse that order and you "
       +"can end up with a downtown apartment against an 08:30 slot, which is not recoverable."},
 
-  {sev:"watch", t:"Ryanair bag fees can erase the Lisbon to Seville saving",
-   was:"",
-   why:"Live search: Ryanair <b>$80 total</b> on a late-night departure against TAP nonstop at <b>$249</b>. "
-      +"Ryanair then charges roughly 30 euros per bag each way.",
-   fix:"Take <b>TAP</b>. With bags for three the gap nearly closes, the departure is civilised, "},
-
   {sev:"ok", t:"Disneyland on Nov 17 is clear",
    was:"",
    why:"Both parks open <b>09:30</b>. Nov 17 2026 is a Tuesday, a low-crowd day, and <b>Disney Enchanted "
@@ -2214,7 +2207,7 @@ var CONFLICTS = [
   {sev:"ok", t:"No museum closures affect the plan",
    was:"",
    why:"The risks were Jeronimos and Belem Tower on Mondays, and the Louvre on Tuesdays.",
-   fix:"Belem is Wednesday Nov 11, so both are open. The Louvre now fits on the added Paris day if you want it, "
+   fix:"Moot now. Belem came off the Nov 11 plan in favour of Castelo de Sao Jorge, which opens every day of the year bar two. The Louvre would fit on the added Paris day if you want it, "
       +"since Nov 18 is a Wednesday."}
 ];
 
@@ -2226,7 +2219,7 @@ var PLANCHOICE = {
        ["Nov 17","Disneyland, out by 18:00"],
        ["Nov 18","Rue Cler breakfast, 12:40 flight home"],
        ["Risk","Nov 16 is fourteen hours of movement ending at altitude. If Izyan flags, you lose the Eiffel entirely."],
-       ["Cost","$6,820 to $10,540 via Dallas"]
+       ["Cost","About $5,645 to $8,890 via Dallas"]
      ]},
   b:{name:"One extra night in Paris", nights:"9 nights", days:"Nov 9 to 19", best:true,
      rows:[
@@ -2236,7 +2229,7 @@ var PLANCHOICE = {
        ["Nov 18","Paris properly: Rue Cler, Seine cruise, Eiffel summit in the evening"],
        ["Nov 19","Relaxed morning, 11:05 American nonstop home to Dallas"],
        ["Risk","None material. Every fixed booking still lands on the same date."],
-       ["Cost","$6,820 to $10,540 via Dallas, about $310 more than eight nights"]
+       ["Cost","About $5,955 to $9,200 via Dallas, roughly $310 more than eight nights"]
      ]}
 };
 
@@ -2274,7 +2267,7 @@ function renderConflicts(){
   CONFLICTS.forEach(function(x){ counts[x.sev]++; });
 
   return '<div class="s-h">Conflicts, Resolved</div>'
-    + '<div class="s-s">Nine checks across opening hours, day-of-week closures, transfer slack and booking order. '
+    + '<div class="s-s">Eight checks across opening hours, day-of-week closures, transfer slack and booking order. '
     + 'Five were real problems and all five now have a fix rather than a warning.</div>'
     + '<div class="note n-g"><span class="n-t">The last real conflict is closed</span>'
     + 'Nov 16 used to ask you to cross Spain, fly to France and climb the Eiffel Tower in one day, the day after '
@@ -2300,7 +2293,7 @@ function renderConflicts(){
     + '<b>1.</b> Alhambra 09:00 slot, Friday Nov 13. Everything else bends around it.<br>'
     + '<b>2.</b> Hotel America in Granada. Free cancellation to Nov 9, and only one room was left.<br>'
     + '<b>3.</b> Seats and checked bags on the United outbound. Basic Economy gave you neither.<br>'
-    + '<b>4.</b> The two intra-Europe flights, Lisbon to Granada and Seville to Paris.<br>'
+    + '<b>4.</b> The last flight, Seville to Paris on Nov 16.<br>'
     + '<b>5.</b> Remaining apartments. November is low season, you have room to compare.<br>'
     + '<b>6.</b> Disneyland, Eiffel, Alcazar, flamenco. Three to six weeks out is fine.</div>';
 }
@@ -2385,7 +2378,7 @@ function renderInsurance(){
     + '<div class="note n-b"><span class="n-t">The one number that justifies the whole line item</span>'
     + 'Your US health plan almost certainly does not cover you in Europe. An emergency medical evacuation home '
     + '<b>can exceed $100,000</b>, and that is the scenario insurance exists for &mdash; not lost bags. '
-    + 'On a trip costing $6,820 to $10,540 with a five-year-old, going uninsured is the only genuinely reckless '
+    + 'On a trip costing $6,000 to $9,200 with a five-year-old, going uninsured is the only genuinely reckless '
     + 'decision available to you.</div>'
     + '<div class="g4 blk">'
     + '<div class="stat"><div class="st-l">Typical cost</div><div class="st-v">4&ndash;10%</div><div class="st-n">Of insured trip cost</div></div>'
