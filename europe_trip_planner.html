@@ -419,7 +419,7 @@ footer{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);
     <div class="h-meta">
       <div class="h-m"><div class="h-m-l">Dates</div><div class="h-m-v">Nov 9&ndash;19, 2026</div></div>
       <div class="h-m"><div class="h-m-l">Nights</div><div class="h-m-v">9</div></div>
-      <div class="h-m"><div class="h-m-l">Estimated</div><div class="h-m-v">$8,384&ndash;9,454</div></div>
+      <div class="h-m"><div class="h-m-l">Estimated</div><div class="h-m-v">$8,334&ndash;9,404</div></div>
     </div>
   </div>
 </header>
@@ -705,7 +705,7 @@ var PLAN = [
     ["07:45","Breakfast, final pack","Bags by the door before you sit down. Nothing loose."],
     ["08:20","Bolt to LIS","Twenty-five minutes, budget 15 euros."],
     ["08:45","Bag drop and security","Two hours for a short hop with a checked bag. TAP flies from Terminal 1."],
-    ["10:45","Depart Lisbon, TP1136","TAP, 1h15 direct. Booking ref XIT7D7. One checked bag on the booking, on your ticket. Zaibnish and Izyan are carry-on only, 10kg each."],
+    ["10:45","Depart Lisbon, TP1136","TAP, 1h15 direct. One checked bag on the booking, on your ticket. Zaibnish and Izyan are carry-on only, 10kg each."],
     ["13:00","Land Malaga","Spain is an hour ahead, so you gain an hour on paper and lose it on the clock."],
     ["13:35","Bags, then Cercanias C1 to the station","<b>Check where your coach leaves from.</b> The $66 fares depart Malaga city bus station, next door to Maria Zambrano, not the airport. The C1 runs from inside the terminal, eight minutes, and Izyan is free. ALSA also sells an airport-direct coach on its own site if you would rather not move."],
     ["14:45","Coach to Granada","<b>Direct, 1h45, $66.12 for all three.</b> Confirmed afternoon departures on your date: 13:00, 14:00, 14:45, 15:45. Take the 14:45 so you are not rushing bags, and check you have the 1h45 service rather than the 2h15."],
@@ -1008,7 +1008,7 @@ var PLAN = [
     ["06:45","Breakfast, final check","Anything left on Rue Cler, or the apartment kitchen. Bins out, keys where the host asked."],
     ["07:30","Taxi to CDG","Regulated flat rate, 65 euros from the Left Bank, about fifty minutes. Book it the night before."],
     ["08:20","Arrive CDG","American boards from Terminal 2A. Bag drop, security, then French exit passport control, which is the slow part."],
-    ["11:05","Depart CDG for Dallas","<b>AA 49</b>, confirmation DKHAMA. Nonstop, lunch and a snack served."],
+    ["11:05","Depart CDG for Dallas","<b>AA 49</b>. Nonstop, lunch and a snack served."],
     ["14:50","Land DFW","Same calendar day, you gain seven hours. US immigration and customs, then re-check nothing &mdash; this is the end of the line."],
     ["16:00","Onward to Houston","Pick up the rental and head south whenever you are ready."]
   ]
@@ -1103,7 +1103,7 @@ var LEGS = [
    direct:"united.com", durl:"https://www.united.com/en/us/manageres/mytrips"},
 
   {no:"02", date:"Nov 12", route:"LIS to AGP", name:"Lisbon to Malaga",
-   price:"$538.32", sub:"TAP, paid &middot; ref XIT7D7",
+   price:"$538.32", sub:"TAP, paid",
    flag:["p-g","Booked"],
    itin:[
      ["TP1136","Thu Nov 12","LIS 10:45 to AGP 13:00","1h15 direct &middot; Economy &middot; Spain is one hour ahead"],
@@ -1124,13 +1124,13 @@ var LEGS = [
    direct:"airfrance.us", durl:"https://wwws.airfrance.us"},
 
   {no:"04", date:"Nov 19", route:"CDG to DFW", name:"Paris to Dallas",
-   price:"$1,616.49", sub:"American, paid &middot; ref DKHAMA",
+   price:"$1,616.49", sub:"American, paid",
    flag:["p-g","Booked"],
    itin:[
      ["AA 49","Thu Nov 19","CDG 11:05 to DFW 14:50","Nonstop &middot; Economy (B) &middot; lunch and a snack served"]
    ],
    seats:"Assigned at check-in, left to the airline.",
-   note:"Tickets were $147 each for you and Zaibnish, $111 for Izyan on the child fare, plus $374.83 of taxes and carrier fees per person. <b>One checked bag purchased, $87.</b> Paid on the Visa ending 4639.",
+   note:"Tickets were $147 each for you and Zaibnish, $111 for Izyan on the child fare, plus $374.83 of taxes and carrier fees per person. <b>One checked bag purchased, $87.</b>",
    direct:"aa.com", durl:"https://www.aa.com"}
 ];
 
@@ -1262,7 +1262,7 @@ var STAY = [
    anchor:"Nasrid Palaces",
    area:"On the Alhambra hill. The only city where the address decides whether the 09:00 entry works.",
    opts:[
-     {n:"Hotel America", s:"8.7", cl:"8.7", r:"363", rk:"Booked", u:"Family room, 2 adults + 1 child", d:"5 min", p:"$497", slug:"es/america-granada.html"}
+     {n:"Hotel America", s:"8.7", cl:"8.7", r:"363", rk:"Booked and paid", u:"Family room, 2 adults + 1 child", d:"5 min", p:"$497", slug:"es/america-granada.html"}
    ],
    facts:[
      ["Address","Calle Real de la Alhambra 53, inside the walls, beside the Palace of Charles V"],
@@ -1385,12 +1385,12 @@ function renderStay(){
    upstream: add, edit and delete items directly on the page.
    ================================================================== */
 var BOOKINGS = [
-  {id:"alh", ph:1, t:"Alhambra tickets, 09:00 slot Friday Nov 13",
-   n:"General ticket: Nasrid Palaces, Alcazaba and Generalife. 22.27 euros an adult, about 44.54 euros for the two of you. <b>Izyan is free under 12 but still needs his own named ticket, booked in the same transaction.</b> Names must match passports exactly, ID is checked at the gate. Buy the QR e-ticket, not a paper voucher. <b>The site asks you to arrive an hour before the Nasrid slot</b>, so a 09:00 slot means 08:00 at the gate.",
+  {id:"alh", ph:1, t:"Alhambra tickets: booked, 09:00 Friday Nov 13",
+   n:"<b>Booked for 09:00 on 13 Nov 2026.</b> 21.64 euros an adult, 43.27 euros total, and Izyan is on it as a free minor aged 3 to 11. Tickets arrived as PDF and Passbook, so <b>load the Passbook version into Apple Wallet</b> and the QR is offline at the gate. <b>One thing to check on the PDF:</b> all three names must match passports, because ID is verified at entry.",
    by:"2026-09-15", est:48,
    u:"https://tickets.alhambra-patronato.es/en/", ul:"Book at the official Patronato site"},
   {id:"gra", ph:1, t:"Hotel America, Granada, Nov 12 to 14",
-   n:"Family Room, <b>$497.38 all in, 428 euros</b>, inside the Alhambra walls and a five-minute walk to the Puerta de la Justicia. The room page shows $452 before 10 percent Spanish IVA. Check in 14:00 to 21:00, check out 08:00 to 12:00, both of which fit. <b>Free cancellation until Nov 7</b>, pay the property rather than Booking.",
+   n:"<b>Booked.</b> Family Room, $497.38 all in at 428 euros, reserved with a Visa but paid to the property on arrival. Check in 14:00 to 21:00, check out 08:00 to 12:00, both of which fit. Free cancellation until Nov 7 if anything changes. The confirmation is in the email.",
    by:"2026-09-15", est:497, dep:["alh"],
    u:"https://www.booking.com/hotel/es/america-granada.html?checkin=2026-11-12&checkout=2026-11-14&group_adults=2&group_children=1&age=5&no_rooms=1", ul:"Open Hotel America"},
   {id:"dec", ph:1, t:"Extra Paris night: locked in",
@@ -1401,10 +1401,10 @@ var BOOKINGS = [
    n:"Flight $1,389, checked bag $90. Seats left to the airline by choice. Izyan is already next to Zaibnish on both legs, so nothing here needs action.",
    by:"2026-09-15", est:0},
   {id:"ret", ph:1, t:"Return flight: done",
-   n:"AA 49, CDG 11:05 to DFW 14:50, confirmation DKHAMA. $1,616.49 paid including an $87 checked bag. Seats left to the airline.",
+   n:"AA 49, CDG 11:05 to DFW 14:50. $1,616.49 paid including an $87 checked bag. Seats left to the airline.",
    by:"2026-09-30", est:1616},
   {id:"lis", ph:1, t:"Lisbon to Malaga, Nov 12: paid",
-   n:"TAP TP1136, 10:45 to 13:00, ref XIT7D7, $538.32. One checked bag, on your ticket. Zaibnish and Izyan are carry-on only at 10kg each, which is the tightest limit on the whole trip.",
+   n:"TAP TP1136, 10:45 to 13:00, $538.32. One checked bag, on your ticket. Zaibnish and Izyan are carry-on only at 10kg each, which is the tightest limit on the whole trip.",
    by:"2026-10-01", est:538},
   {id:"agp", ph:1, t:"Seville to Paris, Nov 16: done",
    n:"Air France nonstop, SVQ 16:40 to CDG 19:15, $369.80 paid. Fare stepped up off Light so the checked bag comes with you. All four flights are now booked.",
@@ -1767,7 +1767,7 @@ var BDG_TOTAL = BDG.reduce(function(s,x){ return s + x.e; }, 0);
 var COSTS = [
   ["Flights and bags, all four legs", "$4,004", "$4,004", "<b>All paid.</b> United $1,389 plus a $90 bag, TAP $538, Air France $370, American $1,616 including its $87 bag"],
   ["Accommodation, 9 nights", "$1,970", "$2,270", "The four picks: Lisbon $488, Granada $497 all in, Seville $285, Paris $700 to $1,000 depending on the base. <b>Spanish and Portuguese rates often quote before tax, so expect about 10 percent on top of a headline figure</b>"],
-  ["Tickets and attractions", "$530", "$700", "Alhambra, Disneyland, Eiffel, Alcazar, flamenco, Castelo de Sao Jorge"],
+  ["Tickets and attractions", "$480", "$650", "<b>Alhambra paid, 43.27 euros.</b> Still to buy: Disneyland, Eiffel, Alcazar, flamenco, Castelo de Sao Jorge"],
   ["Intercity coach", "$110", "$160", "Malaga to Granada $66, Granada to Seville about $70. No rail on either"],
   ["City transport", "$220", "$340", "Metros, taxis, RER, Bolt"],
   ["Daily food and incidentals", "$" + BDG_TOTAL, "$" + BDG_TOTAL, "Tracked day by day below"],
@@ -1797,9 +1797,9 @@ function renderBudget(){
     + '<div class="s-s">Two layers. The all-in estimate covers everything including flights and rooms. '
     + 'The day tracker below covers only food, local transport and incidentals, so nothing is counted twice.</div>'
     + '<div class="g4 blk">'
-    + '<div class="stat"><div class="st-l">All-in estimate</div><div class="st-v">$8,384&ndash;9,454</div><div class="st-n">Three people, eleven days. Flights paid, rooms now real picks rather than a range</div></div>'
+    + '<div class="stat"><div class="st-l">All-in estimate</div><div class="st-v">$8,334&ndash;9,404</div><div class="st-n">Three people, eleven days. Flights paid, rooms now real picks rather than a range</div></div>'
     + '<div class="stat"><div class="st-l">Narmin quoted</div><div class="st-v">$12,604</div><div class="st-n">Goway ref 1185612/1</div></div>'
-    + '<div class="stat"><div class="st-l">You save</div><div class="st-v">$3,150&ndash;4,220</div><div class="st-n">Against Goway, and you add Disneyland</div></div>'
+    + '<div class="stat"><div class="st-l">You save</div><div class="st-v">$3,200&ndash;4,270</div><div class="st-n">Against Goway, and you add Disneyland</div></div>'
     + '<div class="stat"><div class="st-l">Actually committed</div><div class="st-v">$'+ bkStats().spent.toLocaleString() + '</div>'+ '<div class="st-n">From ' + bkStats().done + ' booked items on the checklist</div></div>'
     + '<div class="stat"><div class="st-l">Swing factor</div><div class="st-v">Granada</div><div class="st-n">Parador adds about $2,000</div></div>'
     + '</div>'
@@ -1808,7 +1808,7 @@ function renderBudget(){
     + '<tbody>'+costRows+'</tbody>'
     + '<tfoot><tr style="border-top:2px solid var(--line);background:var(--line2)">'
     + '<td style="font-weight:700">Total</td>'
-    + '<td class="num" style="font-weight:700;font-size:15px">$8,384 to $9,454</td></tr></tfoot>'
+    + '<td class="num" style="font-weight:700;font-size:15px">$8,334 to $9,404</td></tr></tfoot>'
     + '</table></div></div>'
     + '<div class="blk"><div class="blk-h">Day tracker &mdash; food, local transport, incidentals</div>'
     + '<div class="note n-i">Enter what you actually spend as the trip goes. Entries save in this browser, so '
@@ -2231,7 +2231,7 @@ var PLANCHOICE = {
        ["Nov 17","Disneyland, out by 18:00"],
        ["Nov 18","Rue Cler breakfast, 12:40 flight home"],
        ["Risk","Nov 16 is fourteen hours of movement ending at altitude. If Izyan flags, you lose the Eiffel entirely."],
-       ["Cost","About $8,074 to $9,144 via Dallas"]
+       ["Cost","About $8,024 to $9,094 via Dallas"]
      ]},
   b:{name:"One extra night in Paris", nights:"9 nights", days:"Nov 9 to 19", best:true,
      rows:[
@@ -2241,7 +2241,7 @@ var PLANCHOICE = {
        ["Nov 18","Paris properly: Rue Cler, Seine cruise, Eiffel summit in the evening"],
        ["Nov 19","Relaxed morning, 11:05 American nonstop home to Dallas"],
        ["Risk","None material. Every fixed booking still lands on the same date."],
-       ["Cost","About $8,384 to $9,454 via Dallas, roughly $310 more than eight nights"]
+       ["Cost","About $8,334 to $9,404 via Dallas, roughly $310 more than eight nights"]
      ]}
 };
 
@@ -2320,7 +2320,7 @@ var INSURE = {
      p:"$300 to $550",
      d:"Covers trip cancellation and interruption on your prepaid non-refundable costs, emergency medical, and "
       +"evacuation. Industry pricing is <b>4 to 10 percent of insured trip cost</b>; your non-refundable exposure "
-      +"is <b>$4,004 already</b>, every flight and bag paid. Rooms add another $1,970 to $2,270 and the Alhambra is non-refundable, so expect roughly $6,400 once everything is held.<br><br>"
+      +"is <b>$4,551 already</b>: every flight and bag, the Granada room at $497, and the Alhambra tickets at 43.27 euros which cannot be refunded at all. Rooms still to book add another $1,473 to $1,773.<br><br>"
       +"<b>Look for a plan that covers children free.</b> Several insurers include one child under 18 per insured "
       +"adult at no cost, which with two adults makes Izyan free. That alone is worth $80 to $150.",
      u:"https://www.squaremouth.com/resources/destinations/europe", ul:"Compare on Squaremouth"},
@@ -2394,7 +2394,7 @@ function renderInsurance(){
     + 'decision available to you.</div>'
     + '<div class="g4 blk">'
     + '<div class="stat"><div class="st-l">Typical cost</div><div class="st-v">4&ndash;10%</div><div class="st-n">Of insured trip cost</div></div>'
-    + '<div class="stat"><div class="st-l">Your exposure</div><div class="st-v">$4,004 so far</div><div class="st-n">All four flights paid, non-refundable</div></div>'
+    + '<div class="stat"><div class="st-l">Your exposure</div><div class="st-v">$4,551 so far</div><div class="st-n">Flights, the Granada room and the Alhambra tickets</div></div>'
     + '<div class="stat"><div class="st-l">Expect to pay</div><div class="st-v">$300&ndash;550</div><div class="st-n">Comprehensive, family of three</div></div>'
     + '<div class="stat"><div class="st-l">Buy within</div><div class="st-v">14&ndash;21 days</div><div class="st-n">Of your first deposit</div></div>'
     + '</div>'
