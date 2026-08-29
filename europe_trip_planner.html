@@ -586,41 +586,45 @@ function paintLive(){
    ================================================================== */
 var PLAN = [
 {
-  n:1, date:"Mon Nov 9", wd:"Monday", city:"Texas to Lisbon", tag:["p-n","Travel day"],
-  sum:"Evening departure, overnight across the Atlantic. Nothing to plan beyond getting to the gate.",
+  n:1, date:"Mon Nov 9", wd:"Monday", city:"Houston to Lisbon", tag:["p-g","Booked"],
+  sum:"United out of Houston at 16:45, connect at Dulles, overnight to Lisbon. Two things still need doing before you fly.",
+  warn:"You are on <b>Basic Economy</b> and <b>Rizwan has no seat on either flight</b>. Zaibnish and Izyan are together, you are not with them. Fix both before check-in opens.",
   sched:[
-    ["11:00","Leave Houston for DFW","Four hours on I-45 plus a stop. Flying from IAH instead? Leave at 15:00 and ignore this line."],
-    ["15:30","Arrive DFW, park, check bags","Long-term parking is $12 to $25 a day. American uses Terminal D."],
-    ["17:30","Dinner airside","Feed him properly now. Airline meal service will be two hours after takeoff."],
-    ["18:30","Boarding","Aisle plus middle plus window in one row if you paid for seats."],
-    ["19:30","Departure","Sleep is the only job tonight. Screens off after the meal."]
+    ["13:45","Leave for IAH","United departs Terminal C. Two hours is enough domestically, but you are checking bags onto an international itinerary, so give it three."],
+    ["14:45","Check bags at Terminal C","Basic Economy has no free checked bag. Roughly $75 to $85 for the first one, per person, each way. Pay online beforehand, it is cheaper than at the counter."],
+    ["15:30","Security, then feed him","Real food now. The Dulles connection lands at dinner time and the Lisbon meal service is two hours after an 22:30 takeoff."],
+    ["16:15","Boarding, UA 2388","Zaibnish 38A, Izyan 38B. Sort your own seat before this moment."],
+    ["16:45","Depart IAH","Three hours four minutes to Washington."],
+    ["20:49","Land at IAD","1h41 to connect. United to United, bags go through, no re-clear. Walk to the C or D gates, use the AeroTrain if you are far out."],
+    ["21:15","Eat at the gate","Do not wander. UA 942 is the only Lisbon departure of the day."],
+    ["22:30","Depart IAD, UA 942","Boeing 777. Six hours fifty. Zaibnish 53D, Izyan 53E. Meal service, then screens off."],
+    ["Tue 10:20","Land at LIS","Terminal 1. You lose six hours overnight. Day 2 picks up here."]
   ],
   transport:{
-    leg:"Texas to LIS", flight:true, note:"No nonstop from either Texas airport. All options connect, and Dallas gives the better routings.",
+    leg:"IAH to IAD to LIS", flight:true, note:"Booked on United, one ticket, bags checked through to Lisbon. These three things are what is left.",
     opts:[
-      {n:"United plus TAP via Newark", d:"About 14h total. One connection, Star Alliance throughout, bags checked to Lisbon.", p:"$1,353 to $1,389", best:true,
-       u:"https://www.google.com/travel/flights?q=flights%20from%20IAH%20to%20LIS%20on%202026-11-09%20for%202%20adults%201%20child", ul:"Price this routing"},
-      {n:"Lufthansa via Frankfurt", d:"About 15h. Wider seats on the long leg, but a bigger airport to cross with a five-year-old.", p:"$1,360 to $1,450",
-       u:"https://www.google.com/travel/flights?q=flights%20from%20IAH%20to%20LIS%20on%202026-11-09%20for%202%20adults%201%20child", ul:"Price this routing"},
-      {n:"TAP via Lisbon on one ticket", d:"If you also fly TAP to Seville on Nov 12, putting both on one TAP ticket checks bags through from Houston.", p:"$1,380 to $1,500",
-       u:"https://www.flytap.com", ul:"flytap.com"}
+      {n:"Get yourself a seat", d:"Zaibnish is 38A and Izyan is 38B on the Houston leg, 53D and 53E on the Lisbon leg. You are unassigned on both, and Basic Economy assigns seats at check-in from whatever is left. On a full 777 that means you are nowhere near them. Buy a seat now or accept the row you get.", p:"Usually $20 to $60 a leg", best:true,
+       u:"https://www.united.com/en/us/manageres/mytrips", ul:"Manage booking on united.com"},
+      {n:"Pay for checked bags now", d:"Basic Economy on a transatlantic ticket gives you a full carry-on plus a personal item free, but no checked bag. First bag is about $75 to $85 a person each way. Prepaying online is cheaper than the airport counter.", p:"$450 to $510 for three, both ways",
+       u:"https://www.united.com/en/us/fly/travel/baggage.html", ul:"united.com baggage"},
+      {n:"Understand the 1h41 at Dulles", d:"One ticket, so United owns a misconnect and will rebook you. But UA 942 is the day's only Lisbon flight, so a delay costs a night rather than an hour. Do not leave the gate area at IAD.", p:"Watch it"}
     ]
   }
 },
 {
   n:2, date:"Tue Nov 10", wd:"Tuesday", city:"Lisbon", tag:["p-b","Arrival day"],
-  sum:"Land, stay outside in daylight, ride Tram 28, early night. Do not schedule anything that cannot be dropped.",
+  sum:"Land at 10:20, stay outside in daylight, ride Tram 28, early night. Do not schedule anything that cannot be dropped.",
   sched:[
-    ["09:30","Land at LIS","Arrival time depends on routing. Passport control 20 to 40 minutes."],
-    ["10:45","Bolt to Chiado","About 15 euros, 20 minutes. Cheaper and easier than the metro with luggage."],
-    ["11:15","Drop bags","Check-in is usually 15:00. Every option below holds luggage."],
-    ["12:00","Lunch","First real meal. Pick from the three below."],
-    ["13:30","Tram 28 from Martim Moniz","Board at the start of the line to get a seat. 40 minutes through Alfama."],
-    ["14:30","Alfama on foot","Downhill lanes, laundry lines, cats. Izyan sets the pace."],
-    ["15:15","Portas do Sol viewpoint","Flat terrace, safe for him to move. Coffee here."],
-    ["16:00","Se Cathedral","Twenty minutes inside. Do not push it on day one."],
-    ["16:45","Check in properly","Shower, unpack, let him decompress."],
-    ["19:00","Dinner","Early. Everyone is running on no sleep."],
+    ["10:20","Land at LIS, Terminal 1","UA 942, on time. Passport control 20 to 40 minutes, longer if two widebodies land together."],
+    ["11:20","Bolt to Chiado","About 15 euros, 20 minutes. Cheaper and far easier than the metro with luggage."],
+    ["11:50","Drop bags","Check-in is usually 15:00. Every option below holds luggage."],
+    ["12:30","Lunch","First real meal on the ground. Pick from the three below."],
+    ["14:00","Tram 28 from Martim Moniz","Board at the start of the line to get a seat. Forty minutes through Alfama."],
+    ["15:00","Alfama on foot","Downhill lanes, laundry lines, cats. Izyan sets the pace."],
+    ["15:45","Portas do Sol viewpoint","Flat terrace, safe for him to move. Coffee here."],
+    ["16:20","Se Cathedral","Twenty minutes inside. Drop this without guilt if he is done."],
+    ["16:50","Check in properly","Shower, unpack, let him decompress."],
+    ["19:00","Dinner","Early. Everyone is running on an aeroplane night."],
     ["20:30","Lights out","Resist the urge to do more. Tomorrow is the big Lisbon day."]
   ],
   activities:{
@@ -638,15 +642,16 @@ var PLAN = [
     opts:[
       {n:"Time Out Market", d:"Thirty-five stalls, everyone picks their own. Best possible first meal with a tired child. Cais do Sodre.", p:"12 to 20 euros each", best:true,
        u:"https://www.timeoutmarket.com/lisboa/en/", ul:"timeoutmarket.com"},
-      {n:"Tasca do Chico, Bairro Alto", d:"Petiscos and fado in a small room. Book ahead. Better as a dinner than a lunch.", p:"20 to 30 euros each",
-       u:"https://www.google.com/maps/search/Tasca+do+Chico+Lisbon", ul:"Find on Maps"},
-      {n:"Grilled sardines in Alfama", d:"Any restaurant on the lanes below the cathedral. Eight to twelve euros a plate, no booking, sit outside.", p:"10 to 18 euros each"}
+      {n:"O Velho Eurico, Mouraria", d:"The tasca locals send you to. Closed Mondays, so today works. Do not try dinner without a booking. Queue from 12.00 for the 12.30 lunch and you will get in.", p:"18 to 25 euros each",
+       u:"https://www.google.com/maps/search/O+Velho+Eurico+Lisbon", ul:"Find on Maps"},
+      {n:"Tasca Ze dos Cornos", d:"Roast pork, rice, no frills, a few euros a plate. Lunch only today, 11.30 to 17.00. Cash only, no cards, so carry notes.", p:"8 to 14 euros each",
+       u:"https://www.google.com/maps/search/Tasca+Ze+dos+Cornos+Lisbon", ul:"Find on Maps"}
     ]
   }
 },
 {
   n:3, date:"Wed Nov 11", wd:"Wednesday", city:"Lisbon", tag:["p-g","Full day"],
-  sum:"Belem in the morning while he is fresh, market lunch, quiet afternoon. Wednesday matters here.",
+  sum:"Belem in the morning while he is fresh, market lunch, then the Ismaili Centre at four. Wednesday matters here.",
   warn:"Jeronimos Monastery and Belem Tower both close on Mondays. Wednesday is safe, which is why Belem sits on this day.",
   sched:[
     ["08:00","Breakfast","Bakery near the apartment. Pastel de nata and coffee, about 3 euros."],
@@ -656,10 +661,12 @@ var PLAN = [
     ["11:15","Belem Tower or Discoveries Monument","Pick one, not both. The Tower reads as a castle to him; the Monument has a lift and a view."],
     ["12:30","Tram back to the centre","He will probably sleep on this."],
     ["13:15","Lunch","Time Out Market if you skipped it yesterday."],
-    ["14:45","Rest at the apartment","Genuine downtime. He needs it before four more travel days."],
-    ["16:30","Optional: Miradouro or LX Factory","Only if he woke up well. Otherwise stay in."],
-    ["19:00","Dinner","Last Lisbon meal. Somewhere close to bed."],
-    ["21:00","Pack for Seville","Bags by the door. The 09:00 airport run is easier if nothing is loose."]
+    ["14:45","Rest at the apartment","Genuine downtime, and it sets up the afternoon. Back out by 15:30."],
+    ["15:40","Metro or Bolt to Laranjeiras","Blue line to Laranjeiras then a five-minute walk, or Bolt for about 8 euros. Allow 25 minutes door to door from Chiado."],
+    ["16:00","Ismaili Centre, Lisbon","Av. Lusiada 1. Gardens, the courtyard and the prayer hall. Call ahead &mdash; access to parts of the building depends on the day and what is on."],
+    ["17:30","Time in the gardens","Open, quiet and walled. One of the few genuinely calm outdoor spaces in the city, and easy on him after Belem."],
+    ["19:15","Dinner","Back towards Chiado, or eat near Laranjeiras if the afternoon runs long."],
+    ["21:00","Pack for Granada","Bags by the door. Tomorrow is the LIS to GRX flight via Madrid, so nothing loose."]
   ],
   activities:{
     label:"Morning in Belem, pick one",
@@ -672,6 +679,16 @@ var PLAN = [
        u:"https://padraodosdescobrimentos.pt/en/", ul:"padraodosdescobrimentos.pt"}
     ]
   },
+  afternoon:{
+    label:"Afternoon, from 16:00",
+    opts:[
+      {n:"Ismaili Centre, Lisbon", d:"Av. Lusiada 1, Laranjeiras. Opened 1998, and since 2024 also the Seat of the Ismaili Imamat in Portugal. Islamic garden courtyard, fountains, and a prayer hall under a carved dome. Contact them before you go &mdash; it is a working centre, not a museum, and what you can see depends on the day.", p:"No charge", best:true,
+       u:"https://the.ismaili/ismaili-centre-lisbon", ul:"the.ismaili"},
+      {n:"Getting there", d:"Metro Blue line to Laranjeiras, then five minutes on foot. Or Bolt from Chiado, about 8 euros and 15 minutes. Coming back at dinner time, allow 25 minutes.", p:"1.65 euros metro",
+       u:"https://www.metrolisboa.pt/en/", ul:"metrolisboa.pt"},
+      {n:"If the timing slips", d:"Belem in the morning can overrun. If you are not out of the apartment by 15:30, push the Centre to Nov 10 instead and use this slot for a miradouro near home.", p:"&mdash;"}
+    ]
+  },
   food:{
     label:"Lisbon food, pick one",
     opts:[
@@ -679,8 +696,10 @@ var PLAN = [
        u:"https://pasteisdebelem.pt/en/", ul:"pasteisdebelem.pt"},
       {n:"Time Out Market", d:"If you did not go yesterday, go today. Thirty-five stalls under one roof.", p:"12 to 20 euros each",
        u:"https://www.timeoutmarket.com/lisboa/en/", ul:"timeoutmarket.com"},
-      {n:"LX Factory Sunday-style market", d:"Converted industrial complex under the bridge. Restaurants, a famous bookshop, street art. More adult, still fine for him.", p:"15 to 25 euros each",
-       u:"https://lxfactory.com/en/", ul:"lxfactory.com"}
+      {n:"LX Factory, and do it properly", d:"Converted print works under the bridge. Ler Devagar bookshop is inside, opens 12.00, three storeys of shelves with a bicycle suspended over them, free to walk in and he will stare. Landeau Chocolate is a minute away, 4.90 euros a slice. Cantina LX for lunch.", p:"15 to 25 euros each", best:false,
+       u:"https://lxfactory.com/en/", ul:"lxfactory.com"},
+      {n:"Manteigaria, Chiado", d:"The nata that argues with Belem. Sweeter, crisper base, and the bell rings when a fresh tray lands. Central, no queue worth worrying about, about 1.30 euros each.", p:"5 to 10 euros total",
+       u:"https://www.google.com/maps/search/Manteigaria+Chiado+Lisbon", ul:"Find on Maps"}
     ]
   }
 },
@@ -1041,6 +1060,7 @@ function renderItinerary(){
     }
     if(D.activities) blocks += optBlock(D.activities.label, D.activities);
     if(D.evening)    blocks += optBlock(D.evening.label, D.evening);
+    if(D.afternoon)  blocks += optBlock(D.afternoon.label, D.afternoon);
     if(D.food)       blocks += optBlock(D.food.label, D.food);
 
     return '<div class="card blk">'
@@ -1080,20 +1100,28 @@ function renderItinerary(){
 var CHECKED = "25 August 2026";
 
 var LEGS = [
-  {no:"01", date:"Nov 9", route:"DFW or IAH to LIS", name:"Texas to Lisbon",
-   price:"$1,350&ndash;1,400", sub:"3 travellers, one-way",
-   flag:["p-w","No nonstop exists"],
-   headline:"$981",
-   headnote:"but that routing is Atlanta, then Orlando, then London, then Lisbon. Three stops. Do not book it.",
-   real:"$1,350 to $1,400 for a sane one-stop, before bags",
-   body:"Live search returned <b>1,038 options</b>, cheapest one-stop at <b>$446 a person</b>. The headline "
-        +"$981 total connects four times. Realistic one-stop routings land at <b>$1,353 to $1,389 total</b> "
-        +"via Newark, Frankfurt or Heathrow. Watch the Heathrow options: the cheapest shows a "
-        +"<b>6h25 layover and 18h15 total</b>, which is a bad night with a five-year-old. "
-        +"All of these are <b>Basic Economy</b>, meaning no checked bag and no seat selection. "
-        +"Budget another <b>$75 a person each way</b> for a bag, or buy standard economy outright.<br><br><b>Dallas is the same price on this leg</b> and offers better connections: a 10h45 routing, and layovers of 1h04 at Dulles or 1h23 at Newark rather than 6h25 at Heathrow. See the airport comparison above.",
-   a:"DFW", b:"LIS", d:"2026-11-09",
-   direct:"flytap.com", durl:"https://www.flytap.com"},
+  {no:"01", date:"Nov 9&ndash;10", route:"IAH to IAD to LIS", name:"Houston to Lisbon",
+   price:"Booked", sub:"United, 3 travellers, one ticket",
+   flag:["p-g","Booked and confirmed"],
+   headline:"Done",
+   headnote:"nothing left to shop on this leg. Two things do still need doing, and both cost money.",
+   real:"UA 2388 then UA 942, Basic Economy, bags not included",
+   body:"<b>UA 2388 &mdash; IAH 16:45 to IAD 20:49</b>, Monday Nov 9. Three hours four minutes, Terminal C at Houston.<br>"
+        +"<b>UA 942 &mdash; IAD 22:30 to LIS 10:20</b>, overnight, Boeing 777, into Lisbon Terminal 1 on Tuesday Nov 10.<br>"
+        +"Connection at Dulles: <b>1h41</b>, United to United, bags through, no re-clear.<br><br>"
+        +"<b>You have no seat on either flight.</b> The reservation shows Zaibnish in 38A and Izyan in 38B on the "
+        +"Houston leg, and 53D and 53E on the Lisbon leg. Your name has no seat next to it on either. That is what "
+        +"Basic Economy does: it assigns you whatever is left at check-in. On a full 777 you will not be in that "
+        +"row. Buy a seat through Manage Booking, usually $20 to $60 a leg, and do it before check-in opens.<br><br>"
+        +"<b>You have no checked bag either.</b> Transatlantic Basic Economy does give you a full-size carry-on "
+        +"plus a personal item, which is better than the domestic version, but a checked bag is never included. "
+        +"First bag runs about <b>$75 to $85 a person each way</b>, so roughly <b>$450 to $510 for the three of you "
+        +"both directions</b>. Prepay online, the counter price is higher.<br><br>"
+        +"<b>One structural risk.</b> UA 942 is the only Lisbon departure Dulles has that day. If the Houston leg "
+        +"runs late you do not lose an hour, you lose a night. United will rebook and accommodate you because it "
+        +"is one ticket, but the plan below assumes you land Tuesday morning.",
+   a:"IAH", b:"LIS", d:"2026-11-09",
+   direct:"united.com", durl:"https://www.united.com/en/us/manageres/mytrips"},
 
   {no:"02", date:"Nov 12", route:"LIS to GRX", name:"Lisbon to Granada",
    price:"$280&ndash;420", sub:"3 travellers, one-way",
@@ -1153,10 +1181,10 @@ var LEGS = [
 var AIRPORTS = {
   rows:[
     {leg:"Outbound Nov 9 to Lisbon",
-     iah:"$1,353 to $1,389", dfw:"$1,353 to $1,389", win:"tie",
-     note:"Neither airport has a Lisbon nonstop. Same fares, but DFW returns a <b>10h45</b> routing and short "
-         +"layovers of 1h04 at Dulles or 1h23 at Newark. The cheapest Houston option carries a <b>6h25 Heathrow "
-         +"layover on an 18h15 total</b>."},
+     iah:"Booked", dfw:"&mdash;", win:"iah",
+     note:"Settled. <b>United 2388 IAH to IAD at 16:45, then UA 942 to Lisbon at 22:30</b>, landing 10:20 Tuesday. "
+         +"One ticket, bags through, 1h41 at Dulles. This decides the row below too: <b>you now leave from "
+         +"Houston</b>, so there is no drive to Dallas on the way out."},
     {leg:"Return Nov 19 from Paris",
      iah:"$3,105", dfw:"$1,506", win:"dfw",
      note:"Air France is the <b>only</b> nonstop into Houston and prices like it: $1,035 a person. American flies "
@@ -1164,13 +1192,17 @@ var AIRPORTS = {
     {leg:"Flights subtotal, nonstop return",
      iah:"$4,458", dfw:"$2,895", win:"dfw",
      note:"Before positioning costs."},
-    {leg:"Getting to and from the airport",
-     iah:"Included", dfw:"$225 to $335", win:"iah",
-     note:"About 240 miles each way. Driving is roughly $60 of fuel each way plus long-term parking at 12 to 25 "
-         +"dollars a day for eleven days. Southwest HOU to DAL is $300 to $480 for three return, which is worse."},
-    {leg:"Net cost",
-     iah:"$4,458", dfw:"$3,120 to $3,230", win:"dfw",
-     note:"<b>DFW saves roughly $1,230 to $1,340</b> after the drive and parking."}
+    {leg:"Closing the gap on the way home",
+     iah:"Included", dfw:"$110 to $240", win:"iah",
+     note:"This got <b>cheaper for Dallas</b>, because the outbound drive is gone. If you fly home into DFW you "
+         +"only have to cover it <b>one way</b>: a one-way rental is $70 to $140, or Southwest DAL to HOU is "
+         +"$55 to $80 a person. <b>The catch is your car.</b> Park at IAH for ten days and a Dallas landing means "
+         +"getting to Houston before you can collect it. Get dropped at IAH and this stays clean."},
+    {leg:"Net cost of the return",
+     iah:"$3,105", dfw:"$1,616 to $1,746", win:"dfw",
+     note:"<b>Flying home into Dallas still saves about $1,360 to $1,490</b>, and it saves more than it did "
+         +"before, because you are no longer driving up there to depart. The cost is landing 240 miles from "
+         +"home at the end of ten days with a tired five-year-old. That is a real cost and it is yours to weigh."}
   ]
 };
 
@@ -1197,13 +1229,10 @@ function renderAirports(){
     + 'day, and it lands at 14:50 rather than 16:50.<br><br>'
     + 'Net of fuel and eleven days of parking you keep <b>$1,230 to $1,340</b>. The cost is an eight-hour round '
     + 'trip in the car, four hours of it on the day you land. That is the trade.<br><br>'
-    + '<b>One caution:</b> if you drive up on Nov 9 for an evening departure, leave Houston by midday. '
-    + 'Four hours of I-45 then an overnight transatlantic with a five-year-old is a long day, so consider a hotel '
-    + 'near DFW the night before if the fare saving covers it, which it comfortably does.</div>'
+    + '<b>What changed now the outbound is booked.</b> You fly out of Houston on Nov 9, so the four-hour drive to Dallas is off the table. If you still fly home into DFW you only pay to close the gap once, $110 to $240 rather than $225 to $335. The saving got bigger, not smaller.<br><br>'
+    + '<b>The thing that actually decides it is where your car is.</b> Park at IAH and a Dallas landing means a second journey before you can drive home. Get dropped at IAH and flying into DFW costs you nothing but the ride south.</div>'
     + '<div class="leg-a" style="margin-bottom:26px">'
-    + '<a class="btn btn-p" href="'+kflight("DFW","LIS","2026-11-09")+'" target="_blank" rel="noopener">Price DFW to Lisbon</a>'
     + '<a class="btn btn-p" href="'+kflight("CDG","DFW","2026-11-19")+'" target="_blank" rel="noopener">Price Paris to DFW</a>'
-    + '<a class="btn" href="'+kflight("IAH","LIS","2026-11-09")+'" target="_blank" rel="noopener">Compare IAH to Lisbon</a>'
     + '<a class="btn" href="'+kflight("CDG","IAH","2026-11-19")+'" target="_blank" rel="noopener">Compare Paris to IAH</a>'
     + '</div></div>';
 }
@@ -1256,9 +1285,9 @@ function renderFlights(){
     + '<div class="tw tsc"><table><thead><tr><th>Approach</th><th>Texas to LIS</th><th>LIS to GRX</th>'
     + '<th>SVQ to CDG</th><th>CDG to Texas</th><th class="num">Total</th></tr></thead><tbody>'
     + '<tr><td><b>Cheapest viable</b><br><span style="font-size:11.5px;color:var(--mute)">One stop where it saves real money</span></td>'
-    + '<td>$1,353</td><td>$80</td><td>$279</td><td>$1,492</td><td class="num" style="font-weight:600">$3,204</td></tr>'
+    + '<td>Booked</td><td>$80</td><td>$279</td><td>$1,492</td><td class="num" style="font-weight:600">$1,851 still to book</td></tr>'
     + '<tr><td><b>Nonstop where possible</b><br><span style="font-size:11.5px;color:var(--mute)">Recommended with a five-year-old</span></td>'
-    + '<td>$1,389</td><td>$249</td><td>$525</td><td>$1,506</td><td class="num" style="font-weight:600">$3,669</td></tr>'+ '<tr><td><b>Nonstop into Houston instead</b><br><span style="font-size:11.5px;color:var(--mute)">Air France holds the only nonstop</span></td>'+ '<td>$1,389</td><td>$249</td><td>$525</td><td>$3,105</td><td class="num" style="font-weight:600">$5,268</td></tr>'
+    + '<td>Booked</td><td>$249</td><td>$525</td><td>$1,506</td><td class="num" style="font-weight:600">$2,280 still to book</td></tr>'+ '<tr><td><b>Nonstop into Houston instead</b><br><span style="font-size:11.5px;color:var(--mute)">Air France holds the only nonstop</span></td>'+ '<td>Booked</td><td>$249</td><td>$525</td><td>$3,105</td><td class="num" style="font-weight:600">$3,879 still to book</td></tr>'
     + '</tbody></table></div>'
     + '<div class="note n-w" style="margin-top:14px"><span class="n-t">The $1,800 question</span>'
     + 'The gap is almost entirely the final leg, and the lever is the airport rather than the cabin. Flying home nonstop into <b>Dallas costs $1,506</b>; nonstop into <b>Houston costs $3,105</b>. Add $225 to $335 for the drive and parking and Dallas still keeps <b>$1,230 to $1,340</b> in your pocket for an eight-hour round trip in the car.</div></div>'
@@ -1283,151 +1312,104 @@ function renderFlights(){
    ================================================================== */
 var STAY = [
   {city:"Lisbon", ci:"2026-11-10", co:"2026-11-12", q:"Chiado, Lisbon",
-   area:"Chiado and Baixa &mdash; walking distance to Tram 28, Alfama and the Time Out Market",
+   anchor:"Time Out Market",
+   area:"Chiado and Baixa. Tram 28, Alfama and the Time Out Market all on foot.",
    opts:[
-     {n:"Residentas Aurea", s:"9.5", r:"1,696", rk:"Top pick", u:"One-bedroom apartment", p:"$239", slug:"pt/residentas-aurea.html"},
-     {n:"The House on the Pink Street", s:"9.7", r:"413", rk:"Second choice", u:"One-bedroom apartment", p:"$245", slug:"pt/the-house-on-the-pink-street-in-lisbon.html"},
-     {n:"Chiado Camoes Apartments", s:"9.5", r:"379", rk:"Third choice", u:"Family two-bedroom", p:"$355", slug:"pt/chiado-camoes-apartments.html"}
-   
-   ],
-   warn:{t:"Bairro Alto Hotel &mdash; the one I mispriced",
-     b:"I originally quoted this at $260 to $380 a night. The real rate is <b>$610 to $790 a night, plus 120 euros "
-      +"a night for the extra bed</b> &mdash; roughly $1,700 for two nights. It is a genuinely lovely 5-star. It was "
-      +"just the wrong number from me.",
-     slug:"pt/bairro-alto.html"}},
-  {city:"Granada", ci:"2026-11-12", co:"2026-11-14", q:"Alhambra, Granada", noApt:true,
-   area:"On the Alhambra hill. This is the one city where the address decides whether the 9am entry works",
-   best:{t:"Hotel America", tag:["p-g","Three people confirmed"],
-     lead:"Yes, they take all three of you, and no extra bed is required.",
-     spec:[
-       ["Room","Family Room (2 Adults + 2 Children)"],
-       ["Occupancy","Max 2 adults plus 1 child &mdash; you fit exactly"],
-       ["Price","<b>$436 total</b>, and the rate line itself reads \"2 nights, 2 adults, 1 child\""],
-       ["Address","Real de la Alhambra 53 &mdash; same street as the Parador, 100 feet from the monument"],
-       ["Child age rule","Charged as adults from 13. Izyan is a child here"],
-       ["Cancellation","Free until Nov 9 2026, pay the property on arrival"],
-       ["Availability","<b>1 room left</b> at this rate"]
-     ],
-     tail:"<b>One thing to weigh:</b> 215 square feet with <b>two twin beds</b> and no double option. Izyan sharing "
-      +"a twin is tight. An extra bed is available on request at 30 euros a night, taking $436 to about $505. "
-      +"Request it at booking, not at check-in.<br><br>"
-      +"Free cancellation until November means you can lock this today and still change your mind for eleven months. "
-      +"Same five-minute walk to the Nasrid gate as the Parador, for <b>$436 against $1,850 to $2,800</b>.",
-     slug:"es/america-granada.html"},
-   opts:[
-     {n:"Aurea Washington Irving", s:"9.2", r:"3,218", rk:"Top pick", u:"Deluxe double or twin &middot; 0.2 mi, on the hill", p:"$310", slug:"es/aurea-washington-irving.html"},
-     {n:"La casa de La Alhambra", s:"9.0", r:"", rk:"Second choice", u:"0.2 mi, on the hill", p:"$313", slug:"es/la-casa-de-la-alhambra.html"},
-     {n:"Smart Suites Albaicin", s:"9.3", r:"5,614", rk:"Third choice", u:"Apartment &middot; Albaicin, uphill walk", p:"$142", slug:"es/smart-suites-albaicin.html"}
-   
-   ],
-   flag:{t:"The distance trap on this page",
-     b:"Booking.com measures <b>straight-line</b> distance to the monument, not walking distance to the ticket gate. "
-      +"Several properties show \"0.2 miles from Alhambra\" while sitting on the <b>valley floor</b> &mdash; Paseo de "
-      +"los Tristes and Plaza Nueva are a <b>25 to 30 minute uphill climb</b> to the entrance, or a taxi. "
-      +"For a 9am Nasrid Palace slot with a five-year-old that means leaving at 08:05 and arriving warm and grumpy. "
-      +"Anything below Aurea Washington Irving on this list is downhill from the Alhambra, whatever the number says."},
-   warn:{t:"Parador de Granada &mdash; read this before you book",
-     b:"I checked the live page for your exact dates and had three things wrong. Rooms are <b>$462 to $694 a night</b>, "
-      +"not $300 to $420. Every room is capped at <b>two adults</b> and the property states plainly that "
-      +"<b>there are no extra beds available</b>. And <b>children three and above are charged as adults</b>, so Izyan "
-      +"counts as a third adult. In practice you need <b>two rooms</b>, which is <b>$1,850 to $2,800 for two nights</b> "
-      +"plus 10 percent VAT. It is still the only way to walk to the Nasrid gate in five minutes at 8:45am while "
-      +"everyone else queues at the bottom of the hill &mdash; but it is a $2,000 decision, not a $700 one.",
-     slug:"es/parador-de-granada.html"}},
-  {city:"Seville", ci:"2026-11-14", co:"2026-11-16", q:"Santa Cruz, Seville",
-   area:"Santa Cruz and the Cathedral quarter &mdash; the Alcazar, Giralda and tapas bars are all on foot",
-   opts:[
-     {n:"Magno Collection Casa Palacio del Abad", s:"9.3", r:"145", rk:"Top pick", u:"Superior studio", p:"$201", slug:"es/magno-apartments-abades.html"},
-     {n:"Apartamentos Plaza Dona Elvira 7", s:"9.7", r:"138", rk:"Second choice", u:"Two-bedroom apartment", p:"$231", slug:"es/apartamentos-en-la-plaza-dona-elvira-7.html"},
-     {n:"Suites Murillo Catedral", s:"9.3", r:"345", rk:"Third choice", u:"Superior apartment, sleeps 3", p:"$285", slug:"es/suites-murillo-segovias.html"}
-   
-   ],
-   warn:{t:"EME Catedral Mercer",
-     b:"Rooftop pool facing the Giralda and a great hotel by any measure. But the rooms are doubles &mdash; you would "
-      +"need two of them, or one of the handful of family rooms, which sell out first. Worth pricing, not worth assuming.",
-     slug:"es/eme-catedral.html"}},
-  {city:"Paris", ci:"2026-11-16", co:"2026-11-19", q:"Eiffel Tower, Paris",
-   area:"7th arrondissement &mdash; the Rue Cler market street, walking distance to the Eiffel Tower",
-   opts:[
-     {n:"NEW Eiffel Tour! Splendid Apartments", s:"8.0", r:"290", rk:"Top pick", u:"One-bedroom apartment", p:"$249", slug:"fr/new-eiffel-tour-splendid-2br-apt-in-paris.html"},
-     {n:"Spacious 2-Bedroom with Balcony", s:"8.0", r:"23", rk:"Second choice", u:"Two-bedroom with balcony", p:"$259", slug:"fr/spacious-2-bedroom-apartment-with-balcony-in-paris.html"},
-     {n:"Residence Charles Floquet", s:"9.2", r:"864", rk:"Third choice", u:"Classic two-bedroom apartment", p:"$498", slug:"fr/residence-charles-floquet.html"}
-   
-   ],
-   flag:{t:"One listing I am deliberately leaving out",
-     b:"A result called <b>Luxury apartments near the Eiffel Tower</b> shows up at $115 with a 9.3 score, and it is "
-      +"tempting. Its actual Booking.com page is <b>chateau-de-sury-saint-jean-aux-amognes</b> &mdash; a property in "
-      +"Nevers, roughly 250km from Paris, using a Paris-sounding display name. If you see it, skip it. "
-      +"$249 is the real floor for a decent apartment in the 7th."},
-   warn:{t:"Hotel du Champ de Mars &mdash; also wrong",
-     b:"My earlier pick, and the same problem. Max two adults, <b>no extra beds</b>, children four and above charged as "
-      +"adults. For your three it quotes <b>$621</b> &mdash; more than every apartment listed above it, and six of those "
-      +"give Izyan his own room. A lovely hotel for a couple, not for a family of three.",
-     slug:"fr/du-champ-de-mars.html"}}
+     {n:"Residentas Aurea", s:"9.4", r:"1,569", rk:"Top pick", u:"1-bed apartment", d:"9 min", p:"$239", slug:"pt/residentas-aurea.html"},
+     {n:"The House on the Pink Street", s:"9.7", r:"413", rk:"2nd", u:"1-bed apartment", d:"2 min", p:"$245", slug:"pt/the-house-on-the-pink-street-in-lisbon.html"},
+     {n:"Chiado Camoes Apartments", s:"9.6", r:"366", rk:"3rd", u:"2-bed, family", d:"8 min", p:"$355", slug:"pt/chiado-camoes-apartments.html"}
+   ]},
 
+  {city:"Granada", ci:"2026-11-12", co:"2026-11-14", q:"Alhambra, Granada", noApt:true,
+   anchor:"Nasrid Palaces",
+   area:"On the Alhambra hill. The only city where the address decides whether the 09:00 entry works.",
+   opts:[
+     {n:"Hotel America", s:"8.5", r:"455", rk:"Book this", u:"Family room, 2+1 confirmed", d:"2 min", p:"$436", slug:"es/america-granada.html"}
+   ],
+   facts:[
+     ["Address","Calle Real de la Alhambra 53, inside the walls, beside the Palace of Charles V"],
+     ["Takes 3","Yes. Family Room, max 2 adults + 1 child. No extra bed needed"],
+     ["Child rule","Charged as adults from 13 only"],
+     ["Beds","215 sq ft, two twins. Extra bed 30 euros a night if you want it"],
+     ["Rate","$436 for both nights, pay on arrival"],
+     ["Cancel","Free until Nov 9 2026"],
+     ["Stock","1 room left at this rate"],
+     ["Ticket pickup","<b>The catch.</b> You are 2 min from the Nasrid Palaces but <b>12 min (800m)</b> from the Access Pavilion on Av. del Generalife. Buy e-tickets that scan at the palace entrance, or leave at 08:30 for a 09:00 slot"],
+     ["Season","The hotel closes for winter around Nov 18. Your Nov 12 to 14 stay is inside the open season, but do not push these dates later"]
+   ]},
+
+  {city:"Seville", ci:"2026-11-14", co:"2026-11-16", q:"Santa Cruz, Seville",
+   anchor:"Cathedral",
+   area:"Santa Cruz. Alcazar, Giralda and the tapas bars are all walkable.",
+   scam:"Two Seville traps. <b>Casa Palacio del Abad</b> is Calle Abades 20 &mdash; do not book <i>Casa Palacio Museo</i>, which is 15 min away at Plaza del Museo. And <b>Suites Murillo</b> checks you in at Hotel Murillo, Calle Lope de Rueda 7, a 3 min walk from the apartment.",
+   opts:[
+     {n:"Casa Palacio del Abad", s:"9.3", r:"145", rk:"Top pick", u:"Superior studio, Calle Abades 20", d:"4 min", p:"$201", slug:"es/magno-apartments-abades.html"},
+     {n:"Plaza Dona Elvira 7", s:"9.7", r:"115", rk:"2nd", u:"2-bed apartment", d:"5 min", p:"$231", slug:"es/apartamentos-en-la-plaza-dona-elvira-7.html"},
+     {n:"Suites Murillo Catedral", s:"9.3", r:"354", rk:"3rd", u:"Apartment, check in at Hotel Murillo", d:"5 min", p:"$285", slug:"es/suites-murillo-segovias.html"}
+   ]},
+
+  {city:"Paris", ci:"2026-11-16", co:"2026-11-19", q:"Eiffel Tower, Paris",
+   anchor:"Eiffel Tower",
+   area:"7th arrondissement, on the Rue Cler market street.",
+   opts:[
+     {n:"NEW Eiffel Tour Splendid", s:"8.0", r:"290", rk:"Top pick", u:"1-bed apartment", d:"12 min", p:"$249", slug:"fr/new-eiffel-tour-splendid-2br-apt-in-paris.html"},
+     {n:"Spacious 2-Bed with Balcony", s:"8.0", r:"23", rk:"2nd", u:"2-bed, balcony", d:"12 min", p:"$259", slug:"fr/spacious-2-bedroom-apartment-with-balcony-in-paris.html"},
+     {n:"Residence Charles Floquet", s:"9.2", r:"1,135", rk:"3rd", u:"2-bed apartment", d:"5 min", p:"$498", slug:"fr/residence-charles-floquet.html"}
+   ],
+   scam:"Skip <b>Luxury apartments near the Eiffel Tower</b>, $115 at 9.3. Its real Booking page is a chateau in Nevers, 250km away."}
 ];
+
+function nightsOf(ci,co){
+  return Math.round((new Date(co) - new Date(ci)) / 86400000);
+}
 
 function renderStay(){
   var cities = STAY.map(function(C){
+    var N = nightsOf(C.ci, C.co);
     var rows = C.opts.map(function(o){
       return '<div class="hrow"><div>'
         + '<div class="h-nm"><span class="sc">'+o.s+'</span>'+o.n
-        + (o.rk?' <span class="pill '+(o.rk==="Top pick"?"p-g":"p-n")+'">'+o.rk+'</span>':'')+'</div>'
-        + '<div class="h-mt">'+o.u+(o.r?' &middot; '+o.r+' reviews':'')+'</div></div>'
+        + (o.rk?' <span class="pill '+(/Top|Book/.test(o.rk)?"p-g":"p-n")+'">'+o.rk+'</span>':'')+'</div>'
+        + '<div class="h-mt">'+o.u+' &middot; '+o.r+' reviews &middot; <b>'+o.d+'</b> to '+C.anchor+'</div></div>'
         + '<div style="display:flex;align-items:center;gap:12px">'
-        + '<div class="h-pr">'+o.p+'<span>2 nights total</span></div>'
+        + '<div class="h-pr">'+o.p+'<span>'+N+' night'+(N>1?'s':'')+'</span></div>'
         + '<a class="btn btn-sm" href="'+bkHotel(o.slug,C.ci,C.co)+'" target="_blank" rel="noopener">Open</a>'
         + '</div></div>';
     }).join("");
 
-    var flagBox = C.flag
-      ? '<div class="panel p-warn"><div class="panel-t">'+C.flag.t+'</div>'
-        + '<div class="panel-b">'+C.flag.b+'</div></div>'
-      : '';
-
-    var bestBox = "";
-    if(C.best){
-      var sp = C.best.spec.map(function(r){ return '<dt>'+r[0]+'</dt><dd>'+r[1]+'</dd>'; }).join("");
-      bestBox = '<div class="panel p-good" style="border-top:0;border-bottom:1px solid var(--line)">'
-        + '<div class="panel-t">'+C.best.t+' <span class="pill '+C.best.tag[0]+'">'+C.best.tag[1]+'</span></div>'
-        + '<div class="panel-b">'+C.best.lead+'</div>'
-        + '<dl class="spec">'+sp+'</dl>'
-        + '<div class="panel-b" style="margin-top:15px">'+C.best.tail+'</div>'
-        + '<a class="btn btn-p" style="margin-top:14px" href="'+bkHotel(C.best.slug,C.ci,C.co)
-        + '" target="_blank" rel="noopener">Open Hotel America for your dates</a></div>';
+    var facts = "";
+    if(C.facts){
+      facts = '<dl class="spec" style="padding:14px 16px;border-bottom:1px solid var(--line2)">'
+        + C.facts.map(function(r){ return '<dt>'+r[0]+'</dt><dd>'+r[1]+'</dd>'; }).join("")
+        + '</dl>';
     }
+
+    var scam = C.scam
+      ? '<div class="panel p-bad"><div class="panel-b">'+C.scam+'</div></div>'
+      : '';
 
     return '<div class="card blk">'
       + '<div class="h-hd"><div class="h-city">'+C.city+'</div>'
-      + '<div class="h-dates">'+C.ci.slice(5).replace("-","/")+' to '+C.co.slice(5).replace("-","/")+' &middot; 3 nights</div></div>'
+      + '<div class="h-dates">'+C.ci.slice(5).replace("-","/")+' to '+C.co.slice(5).replace("-","/")
+      + ' &middot; '+N+' night'+(N>1?'s':'')+'</div></div>'
       + '<div class="h-area">'+C.area+'</div>'
-      + bestBox
       + rows
-      + flagBox
+      + facts
+      + scam
       + '<div class="panel" style="background:#fcfdfe">'
       + '<a class="btn btn-w" href="'+bkSearch(C.q,C.ci,C.co,!C.noApt)+'" target="_blank" rel="noopener">'
-      + 'See all options in '+C.city+' for these dates</a></div>'
-      + '<div class="panel p-bad"><div class="panel-t">'+C.warn.t+'</div>'
-      + '<div class="panel-b" style="margin-bottom:12px">'+C.warn.b+'</div>'
-      + '<a class="btn btn-sm" href="'+bkHotel(C.warn.slug,C.ci,C.co)+'" target="_blank" rel="noopener">Check live rates</a>'
-      + '</div></div>';
+      + 'See everything in '+C.city+'</a></div>'
+      + '</div>';
   }).join("");
 
   return '<div class="s-h">Where to Stay</div>'
-    + '<div class="s-s">Three ranked options per city, pulled from live Booking.com pages for your exact dates '
-    + 'with two adults and one child aged five. Prices are the <b>total for both nights</b>. '
-    + 'Every row opens the live page, so the rate you see on Booking is the rate that applies.</div>'
-    + '<div class="note n-i" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">'
-    + '<span><b>Room rates change daily and availability changes hourly.</b> Treat every number here as a '
-    + 'snapshot and click through before deciding. '+staleBadge()+'</span></div>'
-    + '<div class="note n-b"><span class="n-t">Why my earlier hotel numbers were wrong</span>'
-    + 'European boutique hotels cap rooms at <b>two adults</b>, most have <b>no extra beds available</b>, and they '
-    + 'charge children as adults from age <b>three or four</b>. Izyan is five. I quoted you double-occupancy rates '
-    + 'for a party of three, so a hotel listed at $300 a night was really two rooms at $600 &mdash; or could not take '
-    + 'you at all.<br><br><b>Apartments solve it.</b> One booking sleeps three, there is a kitchen, no extra-person fee, '
-    + 'and in Paris they came in cheaper than the hotel.</div>'
-    
-    + cities;
+    + '<div class="s-s">Live Booking.com rates for your dates, 2 adults and a 5-year-old. '
+    + 'Price is the <b>total for the stay</b>, not per night. Walking times are approximate. '+staleBadge()+'</div>'
+    + '<div class="note n-w"><span class="n-t">Book apartments, not hotels</span>'
+    + 'European boutique hotels cap at <b>2 adults</b>, have <b>no extra beds</b>, and charge children as adults '
+    + 'from age 3 or 4. A hotel listed at $300 a night means two rooms for you. Apartments take all three on one '
+    + 'booking, have a kitchen, and in Paris cost less.</div>'
+    + '<div class="g2">'+cities+'</div>';
 }
 
 /* ==================================================================
@@ -1448,17 +1430,17 @@ var BOOKINGS = [
    n:"Family Room at $436 for both nights, 100 feet from the monument. Only one room was showing at that rate. Free cancellation until Nov 9.",
    by:"2026-09-15", est:436, dep:["alh"],
    u:"https://www.booking.com/hotel/es/america-granada.html?checkin=2026-11-12&checkout=2026-11-14&group_adults=2&group_children=1&age=5&no_rooms=1", ul:"Open Hotel America"},
-  {id:"dec", ph:1, t:"Decide: nine nights or eight",
-   n:"Nine nights fixes the Nov 16 crush for about $310 and moves your return to Thursday Nov 19. This determines which return flight you buy.",
-   by:"2026-09-20", est:0},
+  {id:"dec", ph:1, t:"Extra Paris night: locked in",
+   n:"Nine nights, not eight. Nov 16 is now a pure travel day and the Eiffel Tower moves to Wednesday Nov 18. You fly home Thursday Nov 19. Costs about $310 and it is the single best $310 in this plan. Nothing to do here, it is already built into every date below.",
+   by:"2026-09-20", est:310},
 
-  {id:"out", ph:2, t:"Outbound: Texas to Lisbon, Nov 9",
-   n:"No nonstop from either airport. Dallas gives better routings at the same fare, around $1,353 to $1,389 for three. Watch for Basic Economy with no bag or seats.",
-   by:"2026-09-30", est:1370, dep:["dec"],
-   u:"https://www.kayak.com/flights/DFW-LIS/2026-11-09/2adults/children-5", ul:"Price DFW to Lisbon"},
+  {id:"out", ph:1, t:"Outbound flights: seats and bags",
+   n:"UA 2388 and UA 942 are booked, but Basic Economy gave you neither. You have no seat on either flight while Zaibnish and Izyan do. Buy seats ($20 to $60 a leg) and prepay checked bags ($75 to $85 a person each way). Do it before check-in opens or you fly apart from your family.",
+   by:"2026-09-15", est:510,
+   u:"https://www.united.com/en/us/manageres/mytrips", ul:"Manage booking on united.com"},
   {id:"ret", ph:2, t:"Return: Paris to Texas, Nov 19",
-   n:"American nonstop into Dallas is about $1,506. Air France nonstop into Houston is about $3,105 for the same journey. Worth roughly $1,600.",
-   by:"2026-09-30", est:1506, dep:["dec"],
+   n:"The last flight to buy. American nonstop into Dallas about $1,506, Air France nonstop into Houston about $3,105. Dallas saves roughly $1,500, but you departed from IAH, so check where your car is before you commit.",
+   by:"2026-09-30", est:1506,
    u:"https://www.kayak.com/flights/CDG-DFW/2026-11-19/2adults/children-5", ul:"Price Paris to Dallas"},
   {id:"lis", ph:2, t:"Lisbon to Granada, Nov 12",
    n:"No nonstop exists. Connects at Madrid. Take the 1h40 layover, not the 45-minute one, and avoid any listing marked self-transfer.",
@@ -2042,11 +2024,19 @@ function renderPacking(){
    ================================================================== */
 var FOOD = [
   {city:"Lisbon", note:"Mild, sunny, built around cafe culture", items:[
-    {n:"Pasteis de Belem", d:"The original custard tart bakery in Belem. Queue moves fast. Eat them warm with cinnamon. Izyan will finish three.", k:true},
-    {n:"Time Out Market", d:"Thirty-five food stalls under one roof near Cais do Sodre. Best family lunch in the city because everyone picks their own.", k:true},
-    {n:"Grilled sardines in Alfama", d:"Any restaurant on the lanes near Se Cathedral. Eight to twelve euros a plate."},
+    {n:"Pasteis de Belem", d:"The original 1837 bakery in Belem, and the recipe every other custard tart in Portugal copies. About 1.40 euros each. Queue moves fast, eat them warm with cinnamon. Izyan will finish three.", k:true, f:true},
+    {n:"Manteigaria", d:"The other half of the argument. Sweeter custard, more stable base, and the counter bell rings every time a fresh tray comes out. Branches in Chiado and inside Time Out Market, so no Belem trip needed. Do both and pick a side.", k:true, f:true},
+    {n:"Time Out Market", d:"Thirty-five food stalls under one roof near Cais do Sodre. Best family lunch in the city because everyone picks their own. Manteigaria has a counter inside.", k:true, f:true},
+    {n:"Landeau Chocolate, LX Factory", d:"One product, one secret recipe. Chocolate cake in layers of soft sponge and mousse under cocoa powder, about 4.90 euros a slice. Also a Chiado branch on Rua das Flores. This is the single best thing you can hand a five year old in Lisbon.", k:true, f:true},
+    {n:"Tasca Ze dos Cornos", d:"Cheap, loud, entirely local, roast pork and rice for a few euros a plate. Cash only, no cards. Open lunch Mon to Wed 11.30 to 17.00, dinner only Thu to Sat. Closed Sunday. Go at 12.30 on Tue Nov 10 or Wed Nov 11.", f:true},
+    {n:"O Velho Eurico", d:"The modern tasca everyone in Lisbon rates. Closed Mondays, so Tue Nov 10 or Wed Nov 11 only. It does not really take walk-ins at dinner. Either book weeks ahead or queue from 12.00 for the 12.30 lunch service, which actually works.", f:true},
+    {n:"Grilled sardines in Alfama", d:"Any restaurant on the lanes near Se Cathedral. Eight to twelve euros a plate, no booking, sit outside."},
+    {n:"Fabrica da Nata", d:"Third contender in the nata argument, branches on Praca dos Restauradores and Rua Augusta. Useful because it is central and open late when the other two are shut.", k:true, f:true},
     {n:"Ginjinha at A Ginjinha", d:"Cherry liqueur, one euro fifty a shot, standing at a hole-in-the-wall near Rossio. Adults only, two minutes, very Lisbon."},
-    {n:"Tasca do Chico", d:"Fado and petiscos in a small room. Book three or four days ahead. Late and intimate, so better for the two of you if you can arrange it."}
+    {n:"Tasca do Chico", d:"Fado and petiscos in a small room. Book three or four days ahead. Late and intimate, so better for the two of you if you can arrange it."},
+    {n:"A Tabacaria", d:"Tiny old tobacconist turned cocktail bar in Cais do Sodre. Twenty or so seats. Adults only and worth one evening if you get a sitter hour.", f:true},
+    {n:"Senhor Uva", d:"Natural wine and a mostly vegetarian kitchen in Campo de Ourique. Small, booked out fast, and the wine list is the reason to go.", f:true},
+    {n:"Heim Cafe", d:"Brunch in Santos, big plates, good coffee, relaxed enough for a child. Useful for the jetlagged first morning.", k:true, f:true}
   ]},
   {city:"Seville", note:"Warm, sunny, the best tapas value in Spain", items:[
     {n:"Lonja del Barranco", d:"Converted riverside market, twenty stalls, Eiffel-designed iron frame. Go for early dinner and sit by the water.", k:true},
@@ -2076,7 +2066,8 @@ function renderFood(){
     var items = C.items.map(function(x){
       return '<div style="padding:12px 16px;border-bottom:1px solid var(--line2)">'
         + '<div style="font-size:13.5px;font-weight:600;margin-bottom:3px">'+x.n
-        + (x.k?' <span class="pill p-g">Izyan will like this</span>':'')+'</div>'
+        + (x.k?' <span class="pill p-g">Izyan will like this</span>':'')
+        + (x.f?' <span class="pill p-b">Local tip</span>':'')+'</div>'
         + '<div style="font-size:12.5px;color:var(--mute);line-height:1.7">'+x.d+'</div></div>';
     }).join("");
     return '<div class="card blk">'
@@ -2087,6 +2078,11 @@ function renderFood(){
 
   return '<div class="s-h">Food</div>'
     + '<div class="s-s">What is actually worth eating in each city, with the child-friendly options marked.</div>'
+    + '<div class="note n-w"><span class="n-t">Lisbon closing days, check this before you walk anywhere</span>'
+    + 'The two best tascas on this list are both shut on the day you land. O Velho Eurico is closed Mondays. '
+    + 'Ze dos Cornos does lunch only Monday to Wednesday and takes cash, no cards. That leaves Tue Nov 10 and '
+    + 'Wed Nov 11 as your only real windows for either, and lunch is far easier than dinner at both. '
+    + 'You land Tue Nov 10 at 10:20, so your first meal can be either of them. Time Out Market and Heim Cafe need no booking at all.</div>'
     + '<div class="note n-g"><span class="n-t">Granada is the outlier and you should plan around it</span>'
     + 'It is the only city in Spain where every drink order comes with a free plate of food, and the plates get '
     + 'better as the evening goes on. Three bars on Calle Navas or Plaza Nueva is a full dinner for the three of you '
