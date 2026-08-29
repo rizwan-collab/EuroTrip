@@ -877,7 +877,7 @@ var PLAN = [
     ["12:30","Lunch in Seville","Better than anything you will get at the airport."],
     ["14:00","Taxi to SVQ","Twenty minutes, about 25 euros fixed."],
     ["14:40","Check in and security","Small airport, quick to move through."],
-    ["16:40","Depart Seville","Air France direct to CDG, 2h35. Vueling and Transavia also fly it."],
+    ["16:40","Depart Seville","Air France direct to CDG, 2h35. Check the fare includes your checked bag &mdash; AF Light does not."],
     ["19:15","Land CDG","France is the same time zone as Spain."],
     ["20:00","RER B into Paris","Forty-five minutes to Saint-Michel, then a short hop. 12 euros each."],
     ["21:00","Check in, 7th arrondissement",""],
@@ -1125,6 +1125,13 @@ var LEGS = [
         +"If the Orly flight were cheaper it would be a fine choice. <b>It is not the airport that decides this, "
         +"it is the money:</b> Air France is $43 less and includes a checked bag, while Transavia is low-cost and "
         +"charges for one. That gap is realistically over a hundred dollars for three of you.<br><br>"
+        +"<b>Check the fare family before you pay.</b> Air France sells short-haul as Light, Standard and Flex. "
+        +"<b>Light carries no checked bag.</b> At $88 a person this may well be Light, and you are travelling with "
+        +"one checked bag that has to come with you. Standard includes 23kg. Pay the difference at booking rather "
+        +"than at the gate.<br><br>"
+        +"<b>Timing checks out against the day.</b> Taxi at 14:00, at the airport 14:40, which is two hours before "
+        +"a Schengen departure from a small airport. Land 19:15, RER B at 20:00, checked in by 21:00, and "
+        +"Disneyland is the next morning.<br><br>"
         +"<b>One trap:</b> Ryanair flies Seville to Paris but lands at <b>Beauvais</b>, ninety minutes outside "
         +"the city by coach. It is not a Paris airport in any useful sense.<br><br>"
         +"<b>What this replaced:</b> the old plan had you on an 08:00 coach from Granada to Malaga the morning "
@@ -1199,21 +1206,25 @@ function renderFlights(){
     + '<td>Economy (B)</td><td class="num">1, bought for $87</td>'
     + '<td>1 carry-on + 1 personal item each</td></tr>'
     + '</tbody></table></div>'
-    + '<div class="note n-r" style="margin-top:14px"><span class="n-t">You currently have zero checked bags leaving Houston</span>'
-    + 'Three bookings, three different baggage rules, and the outbound is the weak one. Basic Economy includes '
-    + '<b>no checked bag at all</b>, so as it stands you fly to Europe for eleven days on carry-ons only. '
-    + 'The other two legs each carry exactly one checked bag, both on your ticket.<br><br>'
-    + '<b>Two ways to fix it, and they cost about the same.</b><br><br>'
-    + '<b>Buy a bag on United.</b> Roughly $75 to $85 for the first checked bag, prepaid online, cheaper than at '
-    + 'the counter. One bag gets your bulk across the Atlantic and matches what TAP and American already carry. '
-    + 'This is the simple answer.<br><br>'
-    + '<b>Or go carry-on only and stay disciplined.</b> Three carry-ons plus three personal items is genuinely '
-    + 'enough for eleven days in November if you use packing cubes and do one wash mid-trip. <b>The binding '
-    + 'constraint is TAP: 10kg per carry-on</b>, which is stricter than United or American and is the number to '
-    + 'pack against. Weigh them at home.<br><br>'
-    + '<b>If you want a second checked bag</b>, you would need to add it on all three bookings separately &mdash; '
-    + 'United, TAP and American each sell their own. Budget another $250 or so across the trip. With a '
-    + 'five-year-old and winter clothes, one checked bag plus disciplined carry-ons is the sweet spot.</div></div>'
+    + '<div class="blk-h" style="margin-top:22px">Your plan: 3 backpacks, 1 carry-on, 1 checked bag</div>'
+    + '<div class="tw tsc"><table><thead><tr><th>Leg</th><th>3 backpacks</th><th>1 carry-on</th><th>1 checked bag</th></tr></thead><tbody>'
+    + '<tr><td><b>IAH to LIS</b> &middot; United</td><td>Fits, as personal items</td><td>Fits, 1 of 3</td>'
+    + '<td style="color:var(--bad);font-weight:600">Not included &mdash; buy it</td></tr>'
+    + '<tr><td><b>LIS to AGP</b> &middot; TAP</td><td>Fits, as personal items</td><td>Fits, but <b>10kg max</b></td>'
+    + '<td style="color:var(--good);font-weight:600">Covered</td></tr>'
+    + '<tr><td><b>CDG to DFW</b> &middot; American</td><td>Fits, as personal items</td><td>Fits, 1 of 3</td>'
+    + '<td style="color:var(--good);font-weight:600">Covered, the $87 one</td></tr>'
+    + '</tbody></table></div>'
+    + '<div class="note n-r" style="margin-top:14px"><span class="n-t">One gap, and it is $75 to $85</span>'
+    + 'Your five pieces fit inside the allowance on every leg. Each of you gets a carry-on and a personal item, '
+    + 'so three backpacks plus one carry-on uses four of six cabin slots and leaves you two spare &mdash; useful '
+    + 'if a backpack turns out too big to go under a seat.<br><br>'
+    + '<b>The only thing missing is the checked bag out of Houston.</b> United Basic Economy includes none, so '
+    + 'buy one in Manage Booking. Prepaid online it is roughly <b>$75 to $85</b> and cheaper than at the counter. '
+    + 'TAP and American already carry your checked bag, so this is a one-off, not a per-leg cost.<br><br>'
+    + '<b>The number to pack against is TAP\'s 10kg carry-on limit</b>, 25 x 40 x 55cm. It is the tightest on the '
+    + 'trip &mdash; United and American are more generous, so if the bag clears TAP it clears everything. Weigh it '
+    + 'at home rather than at Lisbon airport.</div></div>'
     + '<div class="blk"><div class="blk-h">Ground transport between cities</div>'
     + '<div class="tw tsc"><table><thead><tr><th>Leg</th><th>Date</th><th>Mode</th><th>Time</th><th class="num">Cost, 3 people</th><th>Book</th></tr></thead><tbody>'
     + '<tr><td><b>Malaga airport to Granada</b><br><span style="font-size:11.5px;color:var(--mute)">Straight off the TAP flight, no stop in Malaga</span></td>'
@@ -1384,7 +1395,7 @@ var BOOKINGS = [
    n:"TAP TP1136, 10:45 to 13:00, ref XIT7D7, $538.32. One checked bag, on your ticket. Zaibnish and Izyan are carry-on only at 10kg each, which is the tightest limit on the whole trip. Seats assigned at check-in, so check in early.",
    by:"2026-10-01", est:538},
   {id:"agp", ph:2, t:"Seville to Paris, Nov 16: the last flight to buy",
-   n:"Air France nonstop, 16:40 to 19:15 into CDG, $265 for all three priced live. Transavia at 16:50 into Orly is $308 and charges extra for bags. Vueling is $217 but lands 22:35, which is the wrong night. Avoid Ryanair, it lands at Beauvais 90 minutes out.",
+   n:"Air France nonstop, 16:40 to 19:15 into CDG, $265 for all three priced live. Check the fare family: AF Light has no checked bag and you are carrying one. Transavia at 16:50 into Orly is $308 and also charges for bags. Vueling is $217 but lands 22:35, the wrong night. Avoid Ryanair, it lands at Beauvais 90 minutes out.",
    by:"2026-10-01", est:265,
    u:"https://www.kayak.com/flights/SVQ-CDG/2026-11-16/2adults/children-5", ul:"Price Seville to Paris"},
   {id:"ins", ph:2, t:"Travel insurance",
@@ -1958,7 +1969,7 @@ function renderPacking(){
     + 'Lisbon 14 to 18&deg;C. Seville 14 to 17&deg;C. Granada 8 to 14&deg;C and genuinely cold at the 9am Alhambra '
     + 'entry. Paris 6 to 12&deg;C. Layers rather than bulk, plus one proper warm jacket each and a rain layer.</div>'
     + '<div class="note n-i"><span class="n-t">Luggage plan</span>'
-    + 'One large checked bag for shared clothing, one carry-on each, one personal bag each. Bring laundry pods '
+    + '<b>Three backpacks, one carry-on, one checked bag.</b> That fits every leg, and the checked bag still needs buying on the United outbound. Bring laundry pods '
     + '&mdash; you can wash mid-trip and rewear jeans, which is the difference between one checked bag and two. '
     + 'For the Disneyland day, pack a small backpack with snacks, water and the power bank.</div>'
     + '<div class="g2">'+cols+'</div>';
