@@ -601,28 +601,30 @@ var PLAN = [
 },
 {
   n:2, date:"Tue Nov 10", wd:"Tuesday", city:"Lisbon", tag:["p-b","Arrival day"],
-  sum:"Land at 10:20, stay outside in daylight, ride Tram 28, early night. Do not schedule anything that cannot be dropped.",
+  sum:"Land at 10:20 and stay in one flat strip by the river all afternoon. Nothing today is more than fifteen minutes on foot.",
+  warn:"Everything on this day sits between Chiado, Cais do Sodre and Praca do Comercio. One Bolt from the airport and then you are walking, all of it flat and all of it beside the Tagus. The hill can wait for tomorrow.",
   sched:[
     ["10:20","Land at LIS, Terminal 1","UA 942, on time. Passport control 20 to 40 minutes, longer if two widebodies land together."],
     ["11:20","Bolt to Chiado","About 15 euros, 20 minutes. Cheaper and far easier than the metro with luggage."],
     ["11:50","Drop bags","Check-in is usually 15:00. Every option below holds luggage."],
-    ["12:30","Lunch","First real meal on the ground. Pick from the three below."],
-    ["14:00","Tram 28 from Martim Moniz","Board at the start of the line to get a seat. Forty minutes through Alfama."],
-    ["15:00","Alfama on foot","Downhill lanes, laundry lines, cats. Izyan sets the pace."],
-    ["15:45","Portas do Sol viewpoint","Flat terrace, safe for him to move. Coffee here."],
-    ["16:20","Se Cathedral","Twenty minutes inside. Drop this without guilt if he is done."],
-    ["16:50","Check in properly","Shower, unpack, let him decompress."],
+    ["12:30","Lunch at Time Out Market","Eight minutes downhill from Chiado, and it sits on the river at Cais do Sodre. Everyone picks their own, which buys you a calm first meal."],
+    ["14:00","Ribeira das Naus","Walk out of the market and you are on it. A flat promenade with stepped terraces down to the water, grass behind, and a kiosk. Let him run."],
+    ["15:00","Praca do Comercio","Ten minutes further east along the river. Enormous open square opening onto the Tagus on one side."],
+    ["15:45","Rua Augusta and Baixa","Flat pedestrian grid back towards Chiado. The arch is at the top of the square if he wants to climb something."],
+    ["16:30","Check in properly","Shower, unpack, let him decompress."],
     ["19:00","Dinner","Early. Everyone is running on an aeroplane night."],
     ["20:30","Lights out","Resist the urge to do more. Tomorrow is the big Lisbon day."]
   ],
   activities:{
-    label:"Afternoon anchor, pick one",
+    label:"Afternoon by the river, pick one",
+    note:"All three are in the same flat strip between Cais do Sodre and Praca do Comercio. You can do two of them without going anywhere.",
     opts:[
-      {n:"Tram 28 plus Alfama", d:"The classic and the right call on arrival day. Mostly sitting, no tickets needed, and he will ask to do it twice.", p:"3.20 euros per ride", best:true,
+      {n:"Ribeira das Naus and Praca do Comercio", d:"The old royal shipyards, now a stepped waterfront running to the great riverside square. Completely flat, wide, and the terraces go right down to the Tagus. The best possible first afternoon on no sleep, and it costs nothing.", p:"Free", best:true,
+       u:"https://www.visitlisboa.com/en/places/ribeira-das-naus", ul:"visitlisboa.com"},
+      {n:"Santa Justa Lift", d:"Neo-gothic iron elevator from Baixa up to a rooftop platform over the city. Two minutes of novelty and a good view, five minutes walk from the square. Queues can be long, and the walkway at the top is narrow.", p:"6 euros",
        u:"https://www.carris.pt/en/", ul:"carris.pt"},
-      {n:"Santa Justa Lift plus Baixa", d:"Less walking. Neo-gothic iron elevator to a rooftop view, then flat streets. Good if the flight was rough.", p:"6 euros",
-       u:"https://www.carris.pt/en/", ul:"carris.pt"},
-      {n:"Praca do Comercio plus riverfront", d:"Completely flat, wide open square on the Tagus. Zero effort, he can run. The lowest-risk option.", p:"Free"}
+      {n:"Rua Augusta Arch rooftop", d:"Lift most of the way up the triumphal arch at the head of Praca do Comercio, then a short stair to the terrace. Right where you already are, and much quieter than Santa Justa.", p:"5 euros adult, child free",
+       u:"https://www.visitlisboa.com/en/places/rua-augusta-arch", ul:"visitlisboa.com"}
     ]
   },
   food:{
@@ -639,32 +641,35 @@ var PLAN = [
 },
 {
   n:3, date:"Wed Nov 11", wd:"Wednesday", city:"Lisbon", tag:["p-g","Full day"],
-  sum:"Belem in the morning while he is fresh, market lunch, then the Ismaili Centre at four. Wednesday matters here.",
-  warn:"Jeronimos Monastery and Belem Tower both close on Mondays. Wednesday is safe, which is why Belem sits on this day.",
+  sum:"The castle first, then walk downhill through Alfama to the cathedral. Ismaili Centre in the afternoon.",
+  warn:"<b>Ismaili Centre is locked in for today, Wednesday Nov 11.</b> Not Tuesday, as agreed. Exact time to be confirmed about two weeks out; the plan below assumes late afternoon and everything before it is downhill and flexible.<br><br>Today is two zones and nothing else: the Castelo and Alfama hill in the morning, Laranjeiras in the afternoon. One metro ride between them.",
   sched:[
-    ["08:00","Breakfast","Bakery near the apartment. Pastel de nata and coffee, about 3 euros."],
-    ["09:00","Tram 15E to Belem","Twenty-five minutes from Praca da Figueira. Or Bolt for about 10 euros."],
-    ["09:30","Jeronimos Monastery","Opens 09:30. Pre-booked. Keep it to 45 minutes, the cloister is the part that matters."],
-    ["10:30","Pasteis de Belem","Two minutes away. Queue moves fast. Order six, eat them warm with cinnamon."],
-    ["11:15","Belem Tower or Discoveries Monument","Pick one, not both. The Tower reads as a castle to him; the Monument has a lift and a view."],
-    ["12:30","Tram back to the centre","He will probably sleep on this."],
-    ["13:15","Lunch","Time Out Market if you skipped it yesterday."],
-    ["14:45","Rest at the apartment","Genuine downtime, and it sets up the afternoon. Back out by 15:30."],
+    ["08:15","Breakfast","Manteigaria in Chiado is three minutes away. Pastel de nata straight from the oven, about 1.30 euros each."],
+    ["09:00","Metro to Martim Moniz","Green line, two stops from Baixa-Chiado. Ten minutes."],
+    ["09:20","Tram 28 from the start of the line","Board at Martim Moniz to actually get a seat. Twenty minutes climbing through Graca."],
+    ["09:45","Off at Largo Portas do Sol","Terrace view over Alfama and the river. Catch your breath here."],
+    ["10:00","Walk up to Castelo de Sao Jorge","Ten minutes uphill, and the only real climb today. Opens 09:00, closes 18:00 in November."],
+    ["10:15","The castle","Ramparts you can walk, old cannon, peacocks in the grounds and the best view in Lisbon. Give it ninety minutes."],
+    ["11:45","Walk down through Alfama","All downhill from here. Miradouro Santa Luzia, tiled lanes, laundry lines, cats. Izyan sets the pace."],
+    ["12:45","Se Cathedral","You arrive at its door at the bottom of the descent. Twenty minutes inside, or skip it."],
+    ["13:15","Lunch in Alfama","You are standing in it. Grilled sardines on the lanes below the cathedral."],
+    ["14:45","Rest at the apartment","Ten minutes downhill from the cathedral. Genuine downtime before the afternoon."],
     ["15:40","Metro or Bolt to Laranjeiras","Blue line to Laranjeiras then a five-minute walk, or Bolt for about 8 euros. Allow 25 minutes door to door from Chiado."],
-    ["16:00","Ismaili Centre, Lisbon","Av. Lusiada 1. Gardens, the courtyard and the prayer hall. Call ahead &mdash; access to parts of the building depends on the day and what is on."],
+    ["16:00","Ismaili Centre, Lisbon","Av. Lusiada 1. Gardens, the courtyard and the prayer hall. Confirmed for today; exact time to be fixed two weeks out."],
     ["17:30","Time in the gardens","Open, quiet and walled. One of the few genuinely calm outdoor spaces in the city, and easy on him after Belem."],
     ["19:15","Dinner","Back towards Chiado, or eat near Laranjeiras if the afternoon runs long."],
     ["21:00","Pack for Granada","Bags by the door. Tomorrow is the LIS to GRX flight via Madrid, so nothing loose."]
   ],
   activities:{
-    label:"Morning in Belem, pick one",
+    label:"Morning on the hill, pick one",
+    note:"The first two are the same walk. Tram 28 up, castle at the top, then everything is downhill through Alfama to the cathedral door. No transport needed between any of it.",
     opts:[
-      {n:"Jeronimos Monastery", d:"UNESCO listed, and the cloister is genuinely one of the best interiors in Europe. Izyan free under 12.", p:"18 euros adult, child free", best:true,
-       u:"https://www.patrimoniocultural.gov.pt/en/museus-e-monumentos/rede-portuguesa/m/mosteiro-dos-jeronimos/", ul:"Book official"},
-      {n:"Belem Tower", d:"Small riverside fort, narrow spiral stairs, reads as a castle to a child. Less impressive inside than the monastery.", p:"8 euros adult, child free",
-       u:"https://www.patrimoniocultural.gov.pt/en/museus-e-monumentos/rede-portuguesa/m/torre-de-belem/", ul:"Book official"},
-      {n:"Padrao dos Descobrimentos", d:"The Discoveries Monument. Lift to a rooftop over the Tagus, and the shortest visit of the three. Good if time is tight.", p:"10 euros adult, child free",
-       u:"https://padraodosdescobrimentos.pt/en/", ul:"padraodosdescobrimentos.pt"}
+      {n:"Castelo de Sao Jorge, then walk down through Alfama", d:"Moorish walls on the highest hill in the city. Ramparts he can walk, cannon he can touch, peacocks wandering the grounds, and a view over the whole Tagus. Open 09:00 to 18:00 in November, last entry 17:30. Then you walk down into Alfama rather than climbing up into it, which with a five-year-old is the whole trick.", p:"17 euros adult, <b>free under 12</b>", best:true,
+       u:"https://castelodesaojorge.pt/en/", ul:"castelodesaojorge.pt"},
+      {n:"Alfama and the viewpoints without the castle", d:"Tram 28 to Portas do Sol, then Santa Luzia, the lanes and the cathedral. Free, and takes half the time. Do this if the castle ticket feels steep or he woke up badly.", p:"Free, 3.20 euros for the tram",
+       u:"https://www.carris.pt/en/", ul:"carris.pt"},
+      {n:"Belem instead, if you want the monastery", d:"Jeronimos and the original Pasteis de Belem are genuinely worth a morning, but Belem is six kilometres west and it is a separate half-day. Taking it means dropping the castle and Alfama entirely, and you would still be back for the Ismaili Centre. Your call, but you cannot do both.", p:"18 euros adult, child free",
+       u:"https://www.patrimoniocultural.gov.pt/en/museus-e-monumentos/rede-portuguesa/m/mosteiro-dos-jeronimos/", ul:"Book Jeronimos"}
     ]
   },
   afternoon:{
@@ -674,20 +679,20 @@ var PLAN = [
        u:"https://the.ismaili/ismaili-centre-lisbon", ul:"the.ismaili"},
       {n:"Getting there", d:"Metro Blue line to Laranjeiras, then five minutes on foot. Or Bolt from Chiado, about 8 euros and 15 minutes. Coming back at dinner time, allow 25 minutes.", p:"1.65 euros metro",
        u:"https://www.metrolisboa.pt/en/", ul:"metrolisboa.pt"},
-      {n:"If the timing slips", d:"Belem in the morning can overrun. If you are not out of the apartment by 15:30, drop the Centre and use this slot for a miradouro near home. There is no later Lisbon slot.", p:"&mdash;"}
+      {n:"If the Centre confirms a different time", d:"You are pinning the exact hour about two weeks out. The morning is a downhill walk with no tickets after the castle, so it stretches or shrinks freely. An earlier slot means leaving Alfama after lunch; a later one means more time on the hill. Nothing else on this day is timed.", p:"&mdash;"}
     ]
   },
   food:{
-    label:"Lisbon food, pick one",
+    label:"Lunch and dinner, pick one each",
+    note:"Lunch happens in Alfama because that is where the morning walk drops you. Dinner is back near Chiado after the Ismaili Centre.",
     opts:[
-      {n:"Pasteis de Belem", d:"Not optional. The original 1837 bakery, and every other custard tart in Portugal is a copy of this one.", p:"1.40 euros each", best:true,
-       u:"https://pasteisdebelem.pt/en/", ul:"pasteisdebelem.pt"},
-      {n:"Time Out Market", d:"If you did not go yesterday, go today. Thirty-five stalls under one roof.", p:"12 to 20 euros each",
-       u:"https://www.timeoutmarket.com/lisboa/en/", ul:"timeoutmarket.com"},
-      {n:"LX Factory, and do it properly", d:"Converted print works under the bridge. Ler Devagar bookshop is inside, opens 12.00, three storeys of shelves with a bicycle suspended over them, free to walk in and he will stare. Landeau Chocolate is a minute away, 4.90 euros a slice. Cantina LX for lunch.", p:"15 to 25 euros each", best:false,
-       u:"https://lxfactory.com/en/", ul:"lxfactory.com"},
-      {n:"Manteigaria, Chiado", d:"The nata that argues with Belem. Sweeter, crisper base, and the bell rings when a fresh tray lands. Central, no queue worth worrying about, about 1.30 euros each.", p:"5 to 10 euros total",
-       u:"https://www.google.com/maps/search/Manteigaria+Chiado+Lisbon", ul:"Find on Maps"}
+      {n:"Manteigaria, Chiado, for breakfast", d:"Three minutes from the apartment and the reason you do not need the Belem trip for a nata. Sweeter custard, crisper base, and the bell rings every time a fresh tray comes out. Start the day here.", p:"About 1.30 euros each", best:true,
+       u:"https://www.google.com/maps/search/Manteigaria+Chiado+Lisbon", ul:"Find on Maps"},
+      {n:"Lunch in Alfama", d:"You come off the hill straight into it. Grilled sardines or a plate of the day on the lanes below the cathedral, eight to twelve euros, no booking, sit outside.", p:"10 to 18 euros each"},
+      {n:"Tasca Ze dos Cornos or O Velho Eurico", d:"Both are open on a Wednesday and both are a short walk from the bottom of Alfama. Ze dos Cornos does lunch only, closes 17.00, and takes cash. O Velho Eurico is worth queueing from 12.00 for.", p:"8 to 25 euros each",
+       u:"https://www.google.com/maps/search/O+Velho+Eurico+Lisbon", ul:"Find on Maps"},
+      {n:"Only if you swap the morning for Belem", d:"<b>Pasteis de Belem</b>, the original 1837 bakery, 1.40 euros each and worth the pilgrimage &mdash; but only if you have gone west for Jeronimos anyway. <b>LX Factory</b> with the Ler Devagar bookshop and Landeau Chocolate sits on the way back. Both mean giving up the castle.", p:"1.40 euros each",
+       u:"https://pasteisdebelem.pt/en/", ul:"pasteisdebelem.pt"}
     ]
   }
 },
@@ -1400,10 +1405,14 @@ var BOOKINGS = [
    n:"Museo del Baile Flamenco is the pick, 60 minutes, about $70 to $110 for three. Sit near the front.",
    by:"2026-10-25", est:90,
    u:"https://www.museodelbaileflamenco.com/en/", ul:"Book flamenco"},
-  {id:"jer", ph:4, t:"Jeronimos Monastery, Lisbon, Nov 11",
-   n:"About $40 for two adults, Izyan free. Closed Mondays, which is why Belem sits on a Wednesday.",
-   by:"2026-10-25", est:40,
-   u:"https://www.patrimoniocultural.gov.pt", ul:"Book Jeronimos"},
+  {id:"cast", ph:4, t:"Castelo de Sao Jorge, Lisbon, Nov 11",
+   n:"17 euros an adult and Izyan is free under 12, so about $37 for the three of you. Open 09:00 to 18:00 in November, last entry 17:30. Book online to skip the ticket queue, then walk downhill through Alfama afterwards.",
+   by:"2026-10-25", est:37,
+   u:"https://castelodesaojorge.pt/en/", ul:"Book the castle"},
+  {id:"isma", ph:4, t:"Ismaili Centre, Lisbon, Nov 11, confirm the time",
+   n:"Locked in for Wednesday Nov 11, not Tuesday. Av. Lusiada 1, Laranjeiras. Confirm the exact hour about two weeks before, then adjust the morning around it. Metro Blue line to Laranjeiras, or Bolt from Chiado for about 8 euros.",
+   by:"2026-10-28", est:0,
+   u:"https://the.ismaili/ismaili-centre-lisbon", ul:"the.ismaili"},
 
   {id:"pass", ph:5, t:"Check all three passports",
    n:"Must be valid at least six months past your return date. Renewals take weeks, so verify today rather than in October.",
@@ -2120,9 +2129,9 @@ var CONFLICTS = [
    was:"Nov 9 shown as Sunday, Nov 15 as Saturday, and so on across all ten days.",
    why:"Nov 9 2026 is a <b>Monday</b>. Booking.com confirmed it by returning \"Thu Nov 12 to Sat Nov 14\" for the "
       +"Granada dates. Day of week drives museum closures, park crowds and coach timetables.",
-   fix:"All labels corrected. Two things landed in your favour: <b>Disneyland falls on a Tuesday</b>, a genuine "
-      +"low-crowd day, and <b>Belem is on a Wednesday</b>, which matters because Jeronimos and Belem Tower both "
-      +"close on Mondays."},
+   fix:"All labels corrected. One landed in your favour: <b>Disneyland falls on a Tuesday</b>, a genuine "
+      +"low-crowd day. Castelo de Sao Jorge, which replaced Belem on Nov 11, is open every day of the year "
+      +"except Christmas and New Year, so the weekday does not matter there."},
 
   {sev:"fixed", t:"Granada apartments that read as close but sit at the bottom of the hill",
    was:"BiBo Plaza Nueva and Smart Suites Albaicin listed as hill options.",
