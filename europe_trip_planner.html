@@ -693,31 +693,32 @@ var PLAN = [
 },
 {
   n:4, date:"Thu Nov 12", wd:"Thursday", city:"Lisbon to Granada", tag:["p-w","Transfer day"],
-  sum:"The one connecting flight of the trip. Madrid, then Granada, and you are on the Alhambra hill by evening.",
-  warn:"There is no direct Lisbon to Granada flight &mdash; everything routes through Madrid. Take the 1h40 layover, not the 45-minute one, and do not book a listing marked self-transfer: if you misconnect on that, nobody owes you a rebooking.",
+  sum:"Lisbon to Granada. No nonstop exists, so you fly to Malaga and take the high-speed train up. The best train ride of the trip, and it is only 1h22.",
+  warn:"<b>Do not connect through Madrid the day before the Alhambra.</b> Madrid to Granada runs only two or three times a day. Misconnect and there is no same-day recovery, which means an unplanned night in Madrid and a forfeited 09:00 Alhambra slot. Fly to Malaga instead and finish on the ground: the 16:38 Avant is 1h22, and if the flight slips there are sixteen coaches a day as backup. A late flight costs you an hour, not the Alhambra.",
   sched:[
-    ["07:30","Breakfast, final pack",""],
-    ["08:30","Bolt to LIS","Twenty-five minutes, budget 15 euros."],
-    ["09:00","Check in and security","Two hours is right for a connecting itinerary with a checked bag."],
-    ["11:00","Depart Lisbon","About 1h20 to Madrid. Spain is one hour ahead."],
-    ["13:20","Madrid, connect","1h40 on the ground. Enough to walk it without running, and to feed him."],
-    ["15:00","Depart Madrid","About 1h10 down to Granada."],
-    ["16:10","Land Granada","Small airport. The bus into town is 20 to 30 minutes, or a taxi is about 30 euros."],
-    ["17:00","Taxi up to the hotel","Ten minutes, about 10 euros. Do not walk the hill with bags."],
-    ["17:30","Check in","Hotel America is inside the Alhambra walls. Drop everything."],
-    ["18:30","Walk out for the view","Ten minutes to a terrace. Get your bearings, nothing ambitious."],
+    ["08:30","Slow breakfast","No early start today. The flight is midday, so let him sleep in."],
+    ["09:45","Bolt to LIS","Twenty-five minutes, budget 15 euros."],
+    ["10:15","Check in and security","Two hours for a single short hop with a checked bag is comfortable."],
+    ["12:15","Depart Lisbon, TAP to Malaga","About 1h25. Spain is one hour ahead, so you land mid-afternoon."],
+    ["14:40","Land Malaga","Collect bags. Two ways out of here and you do not have to choose until you land."],
+    ["15:20","Cercanias C1 to the station","Eight minutes from inside the terminal to Malaga Maria Zambrano. Every twenty minutes, about 2 euros, and Izyan travels free."],
+    ["16:38","Avant to Granada","<b>1h22 on high-speed track.</b> Compulsory seat reservations so you sit together, and he can walk the aisle. Only three directs a day, so this is the one that fits."],
+    ["18:00","Arrive Granada","City-centre station, no airport transfer at the other end."],
+    ["18:20","Taxi up to the hotel","Fifteen minutes, about 12 euros. Do not walk the hill with bags."],
+    ["18:40","Check in","Hotel America is inside the Alhambra walls. Drop everything."],
+    ["19:10","Walk out for the view","Ten minutes to a terrace. Get your bearings, nothing ambitious."],
     ["20:00","Granada tapas trail","Every drink comes with a free plate. Three bars is dinner for the three of you."],
     ["22:00","Taxi back up","Ten euros. The Alhambra is at 09:00 tomorrow."]
   ],
   transport:{
-    leg:"LIS to GRX", flight:true, note:"No nonstop exists. Every option connects, almost always through Madrid.",
+    leg:"Lisbon to Granada", flight:true, note:"No airline flies Lisbon to Granada nonstop. Granada airport has twelve destinations in total, and Lisbon is not one of them. So you fly to a bigger airport nearby and finish on the ground.",
     opts:[
-      {n:"Iberia via Madrid, 1h40 layover", d:"About 4h15 door to door. Protected connection on one ticket, and the layover is long enough to walk it calmly with a five-year-old.", p:"$280 to $420 total", best:true,
-       u:"https://www.kayak.com/flights/LIS-GRX/2026-11-12/2adults/children-5", ul:"Price this leg"},
-      {n:"Via Madrid, 45-minute layover", d:"3h25 total and tempting, but 45 minutes at Barajas with a child and a checked bag is a bet. Miss it and your Alhambra morning is at risk.", p:"$280 to $360 total",
-       u:"https://www.kayak.com/flights/LIS-GRX/2026-11-12/2adults/children-5", ul:"Price this leg"},
-      {n:"Fly to Seville, then train", d:"LIS to SVQ direct in 1h05, then the Avant train across to Granada in 2h45. More total hours but no connection risk, and you see the countryside.", p:"$249 flight plus $95 rail",
-       u:"https://www.kayak.com/flights/LIS-SVQ/2026-11-12/2adults/children-5", ul:"Price the Seville route"}
+      {n:"TAP to Malaga, then the Avant train", d:"TP1136 departs 12:15, lands Malaga 14:40. Cercanias C1 runs eight minutes from inside the terminal to Maria Zambrano, then the <b>16:38 Avant reaches Granada in 1h22</b>. City centre to city centre, seats reserved, no security theatre. Izyan gets 40 percent off and rides the airport train free.", p:"About $250 flight plus 20 to 30 euros each", best:true,
+       u:"https://www.renfe.com/es/en", ul:"Check Renfe times"},
+      {n:"Same flight, ALSA bus instead", d:"Your fallback, and you can decide after you land. The coach goes direct from outside arrivals to Granada in about 1h45, <b>sixteen a day</b>. Slower and less comfortable than the train, but if the flight is late this is what saves the evening, because the next direct Avant after 16:38 is not until 20:20.", p:"About 14 euros each",
+       u:"https://www.alsa.com/en/airports/malaga-costa-del-sol", ul:"ALSA from Malaga airport"},
+      {n:"Iberia via Madrid", d:"Fastest on paper at about 4h15, and the only one-ticket option. But Madrid to Granada runs two or three times a day. Miss it and you are overnighting in Madrid and losing the Alhambra. Not worth ninety minutes the day before a timed entry.", p:"$280 to $420 total",
+       u:"https://www.kayak.com/flights/LIS-GRX/2026-11-12/2adults/children-5", ul:"Price the Madrid connection"}
     ]
   },
   food:{
@@ -774,12 +775,13 @@ var PLAN = [
 },
 {
   n:6, date:"Sat Nov 14", wd:"Saturday", city:"Granada to Seville", tag:["p-b","Easy transfer"],
-  sum:"Two hours forty-five on a high-speed train, and you are in Seville for a late lunch. No airport, no connection.",
+  sum:"Three hours on a direct coach and you are in Seville for a late lunch. No airport, no connection.",
+  warn:"<b>The train does not work in this direction.</b> Granada to Seville has only two direct Avant services a day, 06:22 and 18:17. The first needs a 05:30 alarm, the second lands you at 21:07 and costs you the day. Going the other way it would be perfect &mdash; Seville to Granada has four at civilised hours &mdash; but you are travelling this way, so take the coach.",
   sched:[
     ["08:30","Breakfast, pack",""],
-    ["09:30","Taxi down to the station","Ten minutes, about 10 euros."],
-    ["10:30","Renfe Avant to Seville","2h45 on high-speed track. Seats face tables, there is a toilet, and he can move about."],
-    ["13:15","Arrive Santa Justa","Ten minutes by taxi into Santa Cruz."],
+    ["09:30","Taxi down to the bus station","Fifteen minutes, about 12 euros."],
+    ["10:00","ALSA coach to Seville","Three hours, direct, and there are about twelve a day so nothing is tight. Reserve seats online the night before."],
+    ["13:00","Arrive Plaza de Armas","Ten minutes by taxi into Santa Cruz."],
     ["13:45","Check in","Santa Cruz apartments are usually flexible on an afternoon arrival."],
     ["14:30","Late lunch","You have earned a long one. Spain eats late anyway."],
     ["16:00","First walk through Santa Cruz","Orange trees, tiled lanes, the Giralda from below. No tickets, no plan."],
@@ -788,12 +790,12 @@ var PLAN = [
     ["20:30","Tapas dinner","Seville eats at 21:00. Going out at 20:30 gets you a table."]
   ],
   transport:{
-    leg:"Granada to Seville", flight:false, note:"No flight on this route, and none needed. The train is genuinely pleasant.",
+    leg:"Granada to Seville", flight:false, note:"No flight on this route and none needed. Three hours on the ground either way, and the coach is the one that leaves when you want it to.",
     opts:[
-      {n:"Renfe Avant train", d:"Two hours forty-five, four direct services a day, high-speed track. Book at the station or online. The clear pick.", p:"23.50 to 37.50 euros each", best:true,
-       u:"https://www.renfe.com/es/en", ul:"Book Renfe"},
-      {n:"ALSA coach", d:"Three hours, every three hours. Cheapest and perfectly comfortable, but no toilet stop unless the driver takes one.", p:"19 to 40 euros each",
-       u:"https://www.alsa.com/en/", ul:"Book ALSA"},
+      {n:"ALSA coach", d:"Three hours direct, about twelve a day, and the only option that leaves at a sane hour. Comfortable, cheap, and there is a toilet on board. The right call in this direction.", p:"12 to 30 euros each", best:true,
+       u:"https://www.alsa.com/en/coach/granada-seville", ul:"Book ALSA"},
+      {n:"Renfe Avant train, if you are early risers", d:"2h45 direct on high-speed track and genuinely nicer than the coach, but the only two directs are <b>06:22</b> and <b>18:17</b>. The 06:22 arrives 09:07 and buys you a whole extra day in Seville. Izyan is 40 percent off. Everything else on this route changes at Antequera and takes 3h40 or more.", p:"24 to 44 euros each",
+       u:"https://www.renfe.com/es/en", ul:"Check Renfe times"},
       {n:"Private transfer", d:"Two and a half hours door to door, and it collects you from the hotel on the hill rather than the station below.", p:"280 to 380 euros total",
        u:"https://www.welcomepickups.com/", ul:"welcomepickups.com"}
     ]
@@ -1087,22 +1089,32 @@ var LEGS = [
    seats:"Zaibnish 38A and Izyan 38B on the Houston leg, 53D and 53E on the Lisbon leg.",
    direct:"united.com", durl:"https://www.united.com/en/us/manageres/mytrips"},
 
-  {no:"02", date:"Nov 12", route:"LIS to GRX", name:"Lisbon to Granada",
-   price:"$280&ndash;420", sub:"3 travellers, one-way",
-   flag:["p-w","No nonstop, connects at Madrid"],
+  {no:"02", date:"Nov 12", route:"LIS to AGP, then rail", name:"Lisbon to Granada",
+   price:"$250&ndash;300", sub:"3 travellers, plus the Avant to Granada",
+   flag:["p-w","No nonstop exists"],
    headline:"$280",
-   headnote:"but the cheapest options carry a 45-minute Madrid layover, or are self-transfer with no protection.",
-   real:"$350 or so for a 1h40 layover on one protected ticket",
-   body:"There is no direct Lisbon to Granada service. Everything routes through <b>Madrid</b>, and the layover is "
-        +"the whole decision. Live search shows a <b>3h25 option with a 45-minute connection</b> and a "
-        +"<b>4h15 option with 1h40</b>. Take the second. Barajas is a large airport and 45 minutes with a "
-        +"five-year-old and a checked bag is a bet you do not need to make the day before the Alhambra.<br><br>"
-        +"<b>Avoid anything marked self-transfer.</b> One listing routes via Barcelona with a 10h20 layover, and "
-        +"another is two separate tickets &mdash; misconnect on those and nobody owes you a rebooking.<br><br>"
-        +"<b>Alternative worth pricing:</b> fly LIS to SVQ direct in 1h05 for $249, then take the Avant train "
-        +"across to Granada in 2h45 for about $95. Longer on paper, but no connection risk at all.",
-   a:"LIS", b:"GRX", d:"2026-11-12",
-   direct:"iberia.com", durl:"https://www.iberia.com"},
+   headnote:"for the Madrid connection, which is the fast option and also the one that can cost you the Alhambra.",
+   real:"About $250 to Malaga plus about 75 euros of rail, and nothing to misconnect",
+   body:"<b>No airline flies Lisbon to Granada.</b> Granada airport serves twelve destinations in total &mdash; "
+        +"Barcelona, Madrid, Palma, the Canaries and a handful of small routes. Lisbon is not among them and "
+        +"never has been. So you fly to a larger airport and finish the journey on the ground.<br><br>"
+        +"<b>The recommended way: TAP to Malaga, then the Avant.</b> TP1136 departs Lisbon 12:15 and lands "
+        +"Malaga 14:40. The Cercanias C1 runs from inside the terminal to Maria Zambrano in <b>eight minutes</b>, "
+        +"then the <b>16:38 Avant covers the 1h22 to Granada on high-speed track</b> and drops you in the city "
+        +"centre. Seat reservations are compulsory so you sit together, there is no security queue, and Izyan is "
+        +"<b>40 percent off</b> on Renfe and free on the airport train. You are at the hotel around 18:40.<br><br>"
+        +"<b>Your fallback is in the same building.</b> ALSA runs a direct coach from outside arrivals to Granada, "
+        +"about 1h45, <b>sixteen times a day</b>. Only three direct Avant services run daily and the next after "
+        +"16:38 is 20:20, so if the flight is late, walk to the coach instead. You do not have to decide until "
+        +"you land.<br><br>"
+        +"<b>Why not Madrid.</b> Iberia via Madrid is faster on paper, roughly 4h15 on a single protected ticket. "
+        +"But <b>Madrid to Granada operates only two or three times a day</b>. A misconnect there has no same-day "
+        +"recovery: you would overnight in Madrid and forfeit a 09:00 Alhambra slot that is non-refundable and "
+        +"sells out months ahead. That is a bad trade for ninety minutes.<br><br>"
+        +"<b>Seville also works</b> &mdash; nonstop in 1h05, then a direct coach in 3h00 with twenty-five a day. "
+        +"The catch is that the useful flight is the 07:25, which means waking a five-year-old at five.",
+   a:"LIS", b:"AGP", d:"2026-11-12",
+   direct:"flytap.com", durl:"https://www.flytap.com"},
 
   {no:"03", date:"Nov 16", route:"SVQ to CDG", name:"Seville to Paris",
    price:"$558", sub:"3 travellers, nonstop",
@@ -1127,7 +1139,6 @@ var LEGS = [
    itin:[
      ["American","Thu Nov 19","CDG 11:05 to DFW 14:50","About 10h40 nonstop &middot; Terminal 2A at Paris"]
    ],
-   note:"Confirm the flight number and exact departure time against your own confirmation.",
    direct:"aa.com", durl:"https://www.aa.com"}
 ];
 
@@ -1176,14 +1187,30 @@ function renderFlights(){
     + legs
     + '<div class="blk"><div class="blk-h">Ground transport between cities</div>'
     + '<div class="tw tsc"><table><thead><tr><th>Leg</th><th>Date</th><th>Mode</th><th>Time</th><th class="num">Cost, 3 people</th><th>Book</th></tr></thead><tbody>'
-    + '<tr><td><b>Granada to Seville</b><br><span style="font-size:11.5px;color:var(--mute)">No flight, and none needed</span></td>'
-    + '<td>Nov 14</td><td>Renfe Avant train</td><td>2h45</td><td class="num">$75&ndash;115</td>'
+    + '<tr><td><b>Malaga to Granada</b><br><span style="font-size:11.5px;color:var(--mute)">After the TAP flight from Lisbon</span></td>'
+    + '<td>Nov 12</td><td>Renfe Avant, 16:38</td><td>1h22</td><td class="num">$55&ndash;80</td>'
     + '<td><a href="https://www.renfe.com/es/en" target="_blank" rel="noopener">renfe.com</a></td></tr>'
+    + '<tr><td><b>Granada to Seville</b><br><span style="font-size:11.5px;color:var(--mute)">Coach, because the train only runs 06:22 and 18:17</span></td>'
+    + '<td>Nov 14</td><td>ALSA direct coach</td><td>3h00</td><td class="num">$40&ndash;95</td>'
+    + '<td><a href="https://www.alsa.com/en/coach/granada-seville" target="_blank" rel="noopener">alsa.com</a></td></tr>'
     + '<tr><td><b>CDG to central Paris</b></td><td>Nov 16</td><td>RER B train</td><td>45min</td><td class="num">$38</td>'
     + '<td><a href="https://www.ratp.fr/en" target="_blank" rel="noopener">ratp.fr</a></td></tr>'
     + '<tr><td><b>Paris to CDG</b></td><td>Nov 19</td><td>Taxi, regulated flat rate</td><td>50min</td><td class="num">65 euros</td>'
     + '<td>Any official rank</td></tr>'
     + '</tbody></table></div></div>'
+    + '<div class="note n-i"><span class="n-t">Where the train actually wins, and where it does not</span>'
+    + '<b>Malaga to Granada on Nov 12: take the train.</b> 1h22 direct Avant against 1h45 to 2h20 on the coach, '
+    + 'city centre to city centre, seats reserved so you sit together, and no security queue. Only three directs '
+    + 'a day, and the 16:38 lines up with your flight. Izyan is <b>40 percent off</b> on Renfe and free on the '
+    + 'airport Cercanias.<br><br>'
+    + '<b>Granada to Seville on Nov 14: take the coach.</b> Only two direct Avant services exist in that '
+    + 'direction, 06:22 and 18:17, and neither suits you. The coach runs twelve times a day and takes three '
+    + 'hours. Going the other way round the train would win easily, which is one small argument for the '
+    + 'reversed order and nowhere near enough to outweigh Nov 16.<br><br>'
+    + '<b>Lisbon into Spain by rail: do not.</b> There is no through train. Lisbon to Madrid takes ten to '
+    + 'eleven hours across three trains and two booking systems, one leg on a 1954 single-coach railcar with no '
+    + 'catering. The night train was cancelled permanently in 2020 and high-speed is not expected before about '
+    + '2030.</div>'
     + '<div class="note n-g"><span class="n-t">Nov 16 is not the day to worry about</span>'
     + 'Reversing the Spanish cities removed the only unresolvable clash in this trip. Slow morning in Seville, '
     + 'a twenty-minute taxi to SVQ at 14:00, the Air France nonstop at 16:40, landing CDG 19:15 in time for '
@@ -1324,10 +1351,10 @@ var BOOKINGS = [
   {id:"ret", ph:1, t:"Return flight, Paris to Dallas, Nov 19",
    n:"Booked. American nonstop, CDG 11:05 to DFW 14:50.",
    by:"2026-09-30", est:1506},
-  {id:"lis", ph:2, t:"Lisbon to Granada, Nov 12",
-   n:"No nonstop exists. Connects at Madrid. Take the 1h40 layover, not the 45-minute one, and avoid any listing marked self-transfer.",
-   by:"2026-10-01", est:350,
-   u:"https://www.kayak.com/flights/LIS-GRX/2026-11-12/2adults/children-5", ul:"Price Lisbon to Granada"},
+  {id:"lis", ph:2, t:"Lisbon to Granada, Nov 12, via Malaga",
+   n:"Book TAP LIS to Malaga, midday. Then the 16:38 Avant from Malaga Maria Zambrano to Granada, 1h22. Avoid the Madrid connection: Madrid to Granada runs 2 or 3 times daily and a misconnect costs you the Alhambra.",
+   by:"2026-10-01", est:300,
+   u:"https://www.kayak.com/flights/LIS-AGP/2026-11-12/2adults/children-5", ul:"Price Lisbon to Malaga"},
   {id:"agp", ph:2, t:"Seville to Paris, Nov 16",
    n:"Air France nonstop 16:40 to 19:15, 2h35, about $558 for three. Vueling and Transavia also fly it. Avoid Ryanair here, it lands at Beauvais 90 minutes out.",
    by:"2026-10-01", est:558,
@@ -1349,9 +1376,13 @@ var BOOKINGS = [
    n:"From $249 for all three nights in the 7th. Skip the listing called Luxury apartments near the Eiffel Tower, it is a property in Nevers.",
    by:"2026-10-15", est:375, dep:["dec"],
    u:"https://www.booking.com/searchresults.html?ss=Eiffel%20Tower%2C%20Paris&checkin=2026-11-16&checkout=2026-11-19&group_adults=2&group_children=1&age=5&no_rooms=1&nflt=ht_id%3D201%3Breview_score%3D80&order=bayesian_review_score", ul:"See Paris options"},
-  {id:"bus1", ph:3, t:"Granada to Seville, Nov 14",
-   n:"Renfe Avant train, 2h45, 23.50 to 37.50 euros each. No flight on this route, and none needed.",
-   by:"2026-10-20", est:95,
+  {id:"bus1", ph:3, t:"Granada to Seville, Nov 14, ALSA coach",
+   n:"Three hours direct, twelve a day, 12 to 30 euros each. Reserve seats online the night before. Not the train: the only direct Avant services in this direction are 06:22 and 18:17.",
+   by:"2026-10-20", est:70,
+   u:"https://www.alsa.com/en/coach/granada-seville", ul:"Book ALSA"},
+  {id:"avant", ph:3, t:"Malaga to Granada, Nov 12, Avant 16:38",
+   n:"1h22 direct. Book once your TAP flight is confirmed, since only three directs run each day and this is the one that fits. Izyan gets 40 percent off. The Cercanias C1 from the airport to the station is 8 minutes and he rides free.",
+   by:"2026-10-20", est:75, dep:["lis"],
    u:"https://www.renfe.com/es/en", ul:"Book Renfe"},
     {id:"dis", ph:4, t:"Disneyland Paris, Nov 17",
    n:"One day, two parks. You need the Studios for Ratatouille. About $330 to $430 for three in low season.",
@@ -2052,6 +2083,21 @@ function renderIzyan(){
    TIMING AND CONFLICTS
    ================================================================== */
 var CONFLICTS = [
+  {sev:"fixed", t:"Should Granada and Seville swap back?",
+   was:"The original Goway order was Lisbon, Seville, Granada, Paris.",
+   why:"Checked again in August 2026 now that both transatlantic flights are booked. The answer is no, and one "
+      +"fact decides it: <b>there is no nonstop from Granada to any Paris airport.</b> Vueling ran Granada to "
+      +"Orly seasonally and flew it for the last time on <b>22 October 2026</b>. Granada airport has twelve "
+      +"destinations and Paris is not one of them. Seville, by contrast, has <b>two Air France nonstops a day "
+      +"to CDG</b>, 2h35.",
+   fix:"<b>Keep Granada first, Seville second.</b> Leaving from Seville on Nov 16 is about 5h30 door to door "
+      +"and puts you in Paris before lunch. Leaving from Granada would be <b>8h30 to 8h50</b>, and would need "
+      +"either a 04:15 alarm for the Madrid connection or a coach to Malaga first. That is the wrong day to add "
+      +"three hours and a connection, because Nov 16 is when you move into the Paris base with Disneyland the "
+      +"next morning.<br><br>"
+      +"The trade is that the awkward leg moves to <b>Nov 12</b> instead, where there is far more slack and "
+      +"nothing timed at the other end."},
+
   {sev:"fixed", t:"Nov 16 tried to fit a coach, a flight and the Eiffel Tower into one day",
    was:"08:00 coach from Granada, 13:00 flight from Malaga, land CDG 15:35, check in 17:30, Eiffel summit 20:45.",
    why:"On paper it works. In practice that is fourteen hours of movement ending with a 276-metre tower at "
