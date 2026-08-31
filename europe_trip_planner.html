@@ -406,6 +406,30 @@ footer{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);
   .bk-add{padding:16px}
   .bk-prog{padding:14px 16px}
 }
+
+/* ---- spreadsheet view ---- */
+.vtog{display:flex;gap:0;margin:0 0 18px;border:1px solid var(--ln);border-radius:8px;overflow:hidden;width:fit-content}
+.vtog button{font:inherit;font-size:13px;font-weight:600;padding:9px 18px;border:0;background:var(--cd);color:var(--tx2);cursor:pointer;transition:.12s}
+.vtog button+button{border-left:1px solid var(--ln)}
+.vtog button.on{background:var(--ac);color:#fff}
+.gwrap{border:1px solid var(--ln);border-radius:10px;overflow:auto;max-height:74vh;background:var(--cd)}
+table.grid{border-collapse:separate;border-spacing:0;width:100%;font-size:12.5px;min-width:940px}
+table.grid th{position:sticky;top:0;z-index:3;background:#1f3864;color:#fff;font-weight:600;text-align:left;
+  padding:9px 10px;white-space:nowrap;font-size:11.5px;letter-spacing:.03em;text-transform:uppercase}
+table.grid td{padding:7px 10px;border-bottom:1px solid var(--ln);vertical-align:top;line-height:1.45}
+table.grid td.c{text-align:center;white-space:nowrap}
+table.grid tr.b0 td{background:var(--cd)}
+table.grid tr.b1 td{background:rgba(31,56,100,.055)}
+table.grid tr:hover td{background:rgba(31,56,100,.13)}
+table.grid td.tm{font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+table.grid td.act{font-weight:600}
+table.grid td.det{color:var(--tx2);font-size:12px}
+table.grid td.dz{border-top:2px solid var(--ac)}
+.gtag{display:inline-block;padding:2px 7px;border-radius:20px;font-size:10.5px;font-weight:700;white-space:nowrap}
+.gfil{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 12px}
+.gfil select,.gfil input{font:inherit;font-size:13px;padding:7px 10px;border:1px solid var(--ln);border-radius:7px;background:var(--cd);color:var(--tx)}
+.gfil .gc{font-size:12px;color:var(--tx2);margin-left:auto}
+@media(max-width:700px){table.grid{font-size:12px}table.grid td.det{display:none}table.grid th.det{display:none}}
 </style>
 </head>
 <body>
@@ -1035,7 +1059,83 @@ function optBlock(title, group, extra){
     + '<div class="opt-g">'+group.opts.map(optCard).join('')+'</div></div>';
 }
 
-function renderItinerary(){
+
+/* ---------- spreadsheet view of the itinerary ---------- */
+function gridRows(){
+  var out=[], band=-1, last=null;
+  PLAN.forEach(function(D){
+    if(D.city!==last){ band++; last=D.city; }
+    D.sched.forEach(function(s,ix){
+      out.push({day:D.n, date:D.date, wd:D.wd, city:D.city,
+                tagc:D.tag[0], tagt:D.tag[1], t:s[0], a:s[1], d:s[2]||"",
+                band:band%2, first:ix===0});
+    });
+  });
+  return out;
+}
+function renderGrid(){
+  var rows=gridRows();
+  var cities=[], days=[];
+  PLAN.forEach(function(D){ if(cities.indexOf(D.city)<0) cities.push(D.city);
+                            days.push(D.n+"|Day "+D.n+" - "+D.date); });
+  var h='<div class="gfil">'
+    + '<select id="gCity"><option value="">All cities</option>'
+    + cities.map(function(x){return '<option>'+x+'</option>';}).join('')+'</select>'
+    + '<select id="gDay"><option value="">All days</option>'
+    + days.map(function(x){var p=x.split("|");return '<option value="'+p[0]+'">'+p[1]+'</option>';}).join('')+'</select>'
+    + '<input id="gQ" type="search" placeholder="Search any word..." style="min-width:200px">'
+    + '<span class="gc" id="gCount"></span></div>';
+  h+='<div class="gwrap"><table class="grid"><thead><tr>'
+    + '<th>Day</th><th>Date</th><th>City</th><th>Status</th><th>Time</th><th>Activity</th><th class="det">Detail</th>'
+    + '</tr></thead><tbody id="gBody">'+gridBody(rows)+'</tbody></table></div>';
+  return h;
+}
+function gridBody(rows){
+  return rows.map(function(r){
+    return '<tr class="b'+r.band+'" data-city="'+r.city+'" data-day="'+r.day+'">'
+      + '<td class="c'+(r.first?' dz':'')+'">'+r.day+'</td>'
+      + '<td class="c'+(r.first?' dz':'')+'">'+r.date+'</td>'
+      + '<td'+(r.first?' class="dz"':'')+'>'+r.city+'</td>'
+      + '<td'+(r.first?' class="dz"':'')+'><span class="gtag '+r.tagc+'">'+r.tagt+'</span></td>'
+      + '<td class="tm'+(r.first?' dz':'')+'">'+r.t+'</td>'
+      + '<td class="act'+(r.first?' dz':'')+'">'+r.a+'</td>'
+      + '<td class="det'+(r.first?' dz':'')+'">'+r.d+'</td></tr>';
+  }).join('');
+}
+function gridFilter(){
+  var cy=(document.getElementById('gCity')||{}).value||'';
+  var dy=(document.getElementById('gDay')||{}).value||'';
+  var q=((document.getElementById('gQ')||{}).value||'').toLowerCase();
+  var trs=document.querySelectorAll('#gBody tr'), shown=0;
+  for(var i=0;i<trs.length;i++){
+    var tr=trs[i];
+    var ok=(!cy||tr.getAttribute('data-city')===cy)
+        && (!dy||tr.getAttribute('data-day')===dy)
+        && (!q||tr.textContent.toLowerCase().indexOf(q)>=0);
+    tr.style.display=ok?'':'none'; if(ok)shown++;
+  }
+  var cEl=document.getElementById('gCount');
+  if(cEl) cEl.textContent=shown+' of '+trs.length+' rows';
+}
+function wireGrid(){
+  ['gCity','gDay','gQ'].forEach(function(id){
+    var e=document.getElementById(id); if(!e)return;
+    e.addEventListener('change',gridFilter); e.addEventListener('input',gridFilter);
+  });
+  gridFilter();
+}
+function setItinView(v){
+  save('itinview',v);
+  var host=document.getElementById('itinBody');
+  var bC=document.getElementById('vbCards'), bG=document.getElementById('vbGrid');
+  if(!host) return;
+  if(v==='grid'){ host.innerHTML=renderGrid(); wireGrid();
+                  if(bG)bG.className='on'; if(bC)bC.className=''; }
+  else          { host.innerHTML=itinCards();
+                  if(bC)bC.className='on'; if(bG)bG.className=''; }
+}
+
+function itinCards(){
   var days = PLAN.map(function(D){
     var rows = D.sched.map(function(s){
       return '<div class="tl"><span class="tl-t">'+s[0]+'</span>'
@@ -1065,6 +1165,12 @@ function renderItinerary(){
       + '</div>';
   }).join('');
 
+  return days;
+}
+
+function renderItinerary(){
+  var saved = load('itinview') || 'cards';
+  setTimeout(function(){ setItinView(saved); }, 0);
   return '<div class="s-h">Day by Day</div>'
     + '<div class="s-s">Eleven days, hour by hour, built on the original structure of two nights each in Lisbon, '
     + 'Granada, Seville and Paris, with a third Paris night so Nov 16 is not a fourteen-hour day. '
@@ -1081,7 +1187,14 @@ function renderItinerary(){
     + 'different price and effort levels, and the recommended one is marked. Two things are genuinely fixed: '
     + 'the <b>09:00 Nasrid Palace slot on Friday Nov 13</b> and the <b>16:40 Seville to Paris flight on Monday Nov 16</b>. '
     + 'Everything else can move.</div>'
-    + days;
+    + '<div class="vtog">'
+    + '<button id="vbCards" class="on" onclick="setItinView(\'cards\')">Cards</button>'
+    + '<button id="vbGrid" onclick="setItinView(\'grid\')">Spreadsheet</button>'
+    + '</div>'
+    + '<div class="s-s" style="margin-top:-8px">Two ways to read the same eleven days. '
+    + '<b>Cards</b> gives you the full detail with booking links. <b>Spreadsheet</b> puts all 127 rows in one '
+    + 'filterable grid &mdash; pick a city or a day, or search any word. Your choice is remembered.</div>'
+    + '<div id="itinBody"></div>';
 }
 
 /* ==================================================================
