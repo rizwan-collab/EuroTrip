@@ -419,7 +419,7 @@ footer{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);
     <div class="h-meta">
       <div class="h-m"><div class="h-m-l">Dates</div><div class="h-m-v">Nov 9&ndash;19, 2026</div></div>
       <div class="h-m"><div class="h-m-l">Nights</div><div class="h-m-v">9</div></div>
-      <div class="h-m"><div class="h-m-l">Estimated</div><div class="h-m-v">$8,491&ndash;9,781</div></div>
+      <div class="h-m"><div class="h-m-l">Estimated</div><div class="h-m-v">$8,459&ndash;9,810</div></div>
     </div>
   </div>
 </header>
@@ -1241,22 +1241,27 @@ function renderFlights(){
    WHERE TO STAY  (live Booking.com data, Aug 2026)
    ================================================================== */
 var STAY = [
-  {city:"Lisbon", ci:"2026-11-10", co:"2026-11-12", q:"Chiado, Lisbon",
-   anchor:"Time Out Market",
-   area:"Chiado, Baixa and Cais do Sodre. Your arrival afternoon is the flat riverside strip, so proximity to Cais do Sodre matters more than proximity to anything else.",
+  {city:"Lisbon", ci:"2026-11-10", co:"2026-11-12", q:"Baixa, Lisbon",
+   anchor:"your 8 stops",
+   area:"<b>Re-ranked 30 Aug on walking distance, not on arrival-day convenience.</b> The earlier version put the Pink Street first because it is three minutes from the Time Out Market. That was one afternoon. Nov 11 has six stops and they are all on the Alfama side, so the correct centre of gravity is Baixa, not Cais do Sodre. Distances below are measured to all eight places you actually go.",
    opts:[
-     {n:"The House on the Pink Street", s:"9.7", cl:"9.9", r:"419", rk:"Book this", u:"1-bed, sleeps 3, lift, staffed reception", d:"2 min", p:"$488", slug:"pt/the-house-on-the-pink-street-in-lisbon.html"},
-     {n:"Residentas Arco do Bandeira", s:"9.6", cl:"9.7", r:"1,524", rk:"2nd", u:"1-bed, 463 sq ft, crib available", d:"11 min", p:"$606", slug:"pt/residentas-arco-do-bandeira.html"},
-     {n:"Residentas Aurea", s:"9.4", cl:"9.7", r:"1,569", rk:"3rd", u:"1-bed apartment, Rua Aurea 72", d:"10 min", p:"$531", slug:"pt/residentas-aurea.html"}
+     {n:"Residentas Arco do Bandeira", s:"9.6", cl:"9.7", r:"1,525", rk:"Book this", u:"1-bed apt, lift, luggage storage, 226 Rua dos Sapateiros", d:"8 min avg", p:"$517", slug:"pt/residentas-arco-do-bandeira.html"},
+     {n:"Madalena Hermitage", s:"9.1", cl:"9.4", r:"961", rk:"Value pick, 2 bedrooms", u:"2-bed apt, lift, Rua da Madalena 29", d:"8 min avg", p:"$456", slug:"pt/madalena-hermitage.html"},
+     {n:"The House on the Pink Street", s:"9.7", cl:"9.9", r:"419", rk:"Dropped, too far west", u:"1-bed, 431 sq ft, Travessa Corpo Santo 29", d:"14 min avg", p:"$465", slug:"pt/the-house-on-the-pink-street-in-lisbon.html"}
    ],
    facts:[
-     ["Why this one","Highest cleanliness of anything checked in Lisbon at <b>9.9</b>, highest overall at 9.7, and the cheapest of the three. Two of 419 reviews score below 7"],
-     ["The catch, and it is managed","It sits at the west end of Pink Street, Lisbon's bar street. Reviewers are consistent: double glazing, shutters, and the property hands out earplugs. <b>Ask for floor 4 or 5 at booking.</b> Your nights are Tuesday and Wednesday in low season, which is not when that street is busy"],
-     ["Address","Travessa Corpo Santo 29, not Rua Nova do Carvalho as some listings say"],
-     ["Arrival day fit","Two to three minutes flat to Cais do Sodre and the Time Out Market, which is exactly where Nov 10 goes"],
-     ["Terms","Free cancellation to 11 Oct, <b>no prepayment</b>. Only 1 unit left"]
+     ["<b>The distance test</b>","Total walking to all eight stops on the itinerary: <b>Arco do Bandeira 5.1 km. Madalena 5.2 km. Pink Street 8.6 km.</b> Average per stop: 8 min, 8 min, and 14 min. Stops more than a kilometre away: <b>Arco do Bandeira has none. Pink Street has four</b>"],
+     ["Why Arco do Bandeira wins","It is the only option with nothing beyond a kilometre. Martim Moniz 843m, Se 604m, Castelo 748m, Portas do Sol 921m, Praca do Comercio 487m, Ribeira das Naus 425m. The furthest thing you own is the Time Out Market at 970m, and that is also one metro stop"],
+     ["The metro detail","<b>100 m from Baixa-Chiado</b>, which is on the blue line. That is a direct ride to Laranjeiras for the Ismaili Centre with no change. Location scored <b>9.9</b>, the highest of anything on this trip"],
+     ["Rate and terms","$236 a night, $472 for two nights, plus 6 percent VAT and 4 euros per adult per night city tax. <b>About $517 all in.</b> Free cancellation to <b>Oct 11</b>, 2 units left. Do not take the $309 rate below it, which buys four extra weeks of flexibility for $146"],
+     ["Arrival gap is covered","You land 10:20 and check-in opens 16:00. Arco do Bandeira has <b>luggage storage and a concierge</b>, so bags go down and the riverside afternoon runs as planned"],
+     ["Madalena Hermitage, the real alternative","<b>$456 all in and it is a two-bedroom</b>, so Izyan gets his own room. Free cancellation all the way to <b>Oct 27</b>, the best terms of the three. Best placed for Nov 11 specifically: Se 292m, Castelo 354m, Portas do Sol 463m. Check-in 16:00 to 23:30"],
+     ["What Madalena costs you","Cleanliness 9.4 against 9.7. <b>Luggage storage is not listed</b>, which is a real gap against a five-hour-forty wait between landing and check-in &mdash; confirm bag drop with them before booking. Time Out Market is 1.4 km. Only 1 left"],
+     ["Why the Pink Street came off the top","Cleanliness 9.9 is still the best figure anywhere on this trip, and $465 is fair. But it sits at the western edge of the itinerary: 1,567m to Martim Moniz, 1,561m to the Castelo, 1,714m to Portas do Sol, 1,339m to the Se. That is 3.5 km of extra walking across two days to save $52"],
+     ["Transport, since it was asked","Lisbon fares are <b>flat regardless of distance</b> and transfers are free. Single ride 1.90 euros, or 1.72 with Zapping credit. <b>A 24-hour pass is 7.25 euros and covers Tram 28</b>, which alone is 3.20 euros onboard. Two passes on Nov 11 cover the whole day. Budget roughly 50 to 60 euros for all of Lisbon including airport taxis. <b>No Uber is needed at any point</b>"],
+     ["Note on the numbers","Hotel positions were measured to street addresses, so each carries about 150 m of uncertainty. That does not change the ranking &mdash; the Pink Street gap is 3.5 km"]
    ],
-   scam:"<b>Chiado Camoes came off this list.</b> It was the most expensive of the three, and it carries an August 2026 review reporting bathroom mould and a smell through the flat, plus a January 2026 report that the management company sent someone to collect full card details including the CVV at check-in. Neither is proven, both are avoidable."},
+   scam:"<b>Chiado Camoes came off this list.</b> It carries an August 2026 review reporting bathroom mould and a smell through the flat, plus a January 2026 report that the management company sent someone to collect full card details including the CVV at check-in. Neither is proven, both are avoidable. <b>Also treat the very cheap Chiado apartment listings with caution</b> &mdash; several in these searches had 1 to 5 reviews, which is not enough to judge anything."},
 
   {city:"Granada", ci:"2026-11-12", co:"2026-11-14", q:"Alhambra, Granada", noApt:true,
    anchor:"Nasrid Palaces",
@@ -1421,10 +1426,10 @@ var BOOKINGS = [
    by:"2026-10-05", est:400, dep:["alh"],
    u:"https://www.squaremouth.com/resources/destinations/europe", ul:"Compare plans"},
 
-  {id:"hlis", ph:2, t:"Lisbon, Nov 10 to 12: The House on the Pink Street",
-   n:"$488 for both nights, free cancellation to 11 Oct and no prepayment. Cleanliness 9.9, the highest of anything checked in Lisbon, and two minutes flat from Cais do Sodre for your arrival afternoon. <b>Ask for floor 4 or 5</b> to sit above the Pink Street noise. Only 1 unit left.",
-   by:"2026-10-15", est:488,
-   u:"https://www.booking.com/hotel/pt/the-house-on-the-pink-street-in-lisbon.html?checkin=2026-11-10&checkout=2026-11-12&group_adults=2&group_children=1&age=5&no_rooms=1", ul:"Open the Pink Street"},
+  {id:"hlis", ph:2, t:"Lisbon, Nov 10 to 12: Residentas Arco do Bandeira",
+   n:"<b>Re-ranked 30 Aug on walking distance. The Pink Street is no longer the pick.</b> Arco do Bandeira is the only Lisbon option with nothing more than a kilometre from any stop on the itinerary &mdash; 5.1 km of total walking against the Pink Street&#39;s 8.6 km. <b>About $517 all in</b>, cleanliness 9.7 across 1,525 reviews, location 9.9, 100 m from Baixa-Chiado for the direct blue line to the Ismaili Centre. Luggage storage covers the 10:20 landing against a 16:00 check-in. Free cancellation to Oct 11, 2 left. <b>Madalena Hermitage at $456 is the two-bedroom alternative</b> &mdash; cheaper, Izyan gets his own room, cancels to Oct 27, but no luggage storage listed.",
+   by:"2026-10-11", est:517,
+   u:"https://www.booking.com/hotel/pt/residentas-arco-do-bandeira.html?checkin=2026-11-10&checkout=2026-11-12&group_adults=2&group_children=1&age=5&no_rooms=1&selected_currency=USD", ul:"Open Arco do Bandeira"},
   {id:"hsev", ph:2, t:"Seville, Nov 14 to 16: Suites Murillo Catedral",
    n:"$285 for both nights, cleanliness 9.6, two minutes from the Cathedral. <b>Chosen for the arrival problem:</b> your coach lands 13:00 and nothing lets you in that early, but check-in is at Hotel Murillo which has a 24-hour desk, so you drop bags and go to lunch. The cost is a 7 to 10 minute cobbled walk between desk and apartment. Dona Elvira is cleaner and cheaper but has no reception and will not admit you before 16:00.",
    by:"2026-10-15", est:285,
@@ -1773,7 +1778,7 @@ var BDG_TOTAL = BDG.reduce(function(s,x){ return s + x.e; }, 0);
 
 var COSTS = [
   ["Flights and bags, all four legs", "$4,004", "$4,004", "<b>All paid.</b> United $1,389 plus a $90 bag, TAP $538, Air France $370, American $1,616 including its $87 bag"],
-  ["Accommodation, 9 nights", "$2,127", "$2,647", "Lisbon $488, Granada $497 <b>paid</b>, Seville $285, Paris $857 to $1,377 depending on the pick. <b>Paris was re-verified 30 Aug and came in far above the old estimate</b>. All Paris figures here already include the 10 percent VAT and city tax that Booking excludes"],
+  ["Accommodation, 9 nights", "$2,095", "$2,676", "Lisbon $456 to $517, Granada $497 <b>paid</b>, Seville $285, Paris $857 to $1,377. <b>Lisbon and Paris were both re-verified 30 Aug at your real occupancy.</b> Every figure here already includes the VAT and city tax that Booking excludes from its headline"],
   ["Tickets and attractions", "$480", "$650", "<b>Alhambra paid, 43.27 euros.</b> Still to buy: Disneyland, Eiffel, Alcazar, flamenco, Castelo de Sao Jorge"],
   ["Intercity coach", "$110", "$160", "Malaga to Granada $66, Granada to Seville about $70. No rail on either"],
   ["City transport", "$220", "$340", "Metros, taxis, RER, Bolt"],
@@ -1804,9 +1809,9 @@ function renderBudget(){
     + '<div class="s-s">Two layers. The all-in estimate covers everything including flights and rooms. '
     + 'The day tracker below covers only food, local transport and incidentals, so nothing is counted twice.</div>'
     + '<div class="g4 blk">'
-    + '<div class="stat"><div class="st-l">All-in estimate</div><div class="st-v">$8,491&ndash;9,781</div><div class="st-n">Three people, eleven days. Flights paid, rooms now real picks rather than a range</div></div>'
+    + '<div class="stat"><div class="st-l">All-in estimate</div><div class="st-v">$8,459&ndash;9,810</div><div class="st-n">Three people, eleven days. Flights paid, rooms now real picks rather than a range</div></div>'
     + '<div class="stat"><div class="st-l">Narmin quoted</div><div class="st-v">$12,604</div><div class="st-n">Goway ref 1185612/1</div></div>'
-    + '<div class="stat"><div class="st-l">You save</div><div class="st-v">$2,823&ndash;4,113</div><div class="st-n">Against Goway, and you add Disneyland</div></div>'
+    + '<div class="stat"><div class="st-l">You save</div><div class="st-v">$2,794&ndash;4,145</div><div class="st-n">Against Goway, and you add Disneyland</div></div>'
     + '<div class="stat"><div class="st-l">Actually committed</div><div class="st-v">$'+ bkStats().spent.toLocaleString() + '</div>'+ '<div class="st-n">From ' + bkStats().done + ' booked items on the checklist</div></div>'
     + '<div class="stat"><div class="st-l">Swing factor</div><div class="st-v">Granada</div><div class="st-n">Parador adds about $2,000</div></div>'
     + '</div>'
@@ -1815,7 +1820,7 @@ function renderBudget(){
     + '<tbody>'+costRows+'</tbody>'
     + '<tfoot><tr style="border-top:2px solid var(--line);background:var(--line2)">'
     + '<td style="font-weight:700">Total</td>'
-    + '<td class="num" style="font-weight:700;font-size:15px">$8,491 to $9,781</td></tr></tfoot>'
+    + '<td class="num" style="font-weight:700;font-size:15px">$8,459 to $9,810</td></tr></tfoot>'
     + '</table></div></div>'
     + '<div class="blk"><div class="blk-h">Day tracker &mdash; food, local transport, incidentals</div>'
     + '<div class="note n-i">Enter what you actually spend as the trip goes. Entries save in this browser, so '
@@ -2238,7 +2243,7 @@ var PLANCHOICE = {
        ["Nov 17","Disneyland, out by 18:00"],
        ["Nov 18","Rue Cler breakfast, 12:40 flight home"],
        ["Risk","Nov 16 is fourteen hours of movement ending at altitude. If Izyan flags, you lose the Eiffel entirely."],
-       ["Cost","About $8,181 to $9,471 via Dallas"]
+       ["Cost","About $8,149 to $9,500 via Dallas"]
      ]},
   b:{name:"One extra night in Paris", nights:"9 nights", days:"Nov 9 to 19", best:true,
      rows:[
@@ -2248,7 +2253,7 @@ var PLANCHOICE = {
        ["Nov 18","Paris properly: Rue Cler, Seine cruise, Eiffel summit in the evening"],
        ["Nov 19","Relaxed morning, 11:05 American nonstop home to Dallas"],
        ["Risk","None material. Every fixed booking still lands on the same date."],
-       ["Cost","About $8,491 to $9,781 via Dallas, roughly $310 more than eight nights"]
+       ["Cost","About $8,459 to $9,810 via Dallas, roughly $310 more than eight nights"]
      ]}
 };
 
