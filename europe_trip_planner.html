@@ -446,7 +446,7 @@ table.grid td.dz{border-top:2px solid var(--brand)}
     <div class="h-meta">
       <div class="h-m"><div class="h-m-l">Dates</div><div class="h-m-v">Nov 9&ndash;19, 2026</div></div>
       <div class="h-m"><div class="h-m-l">Nights</div><div class="h-m-v">9</div></div>
-      <div class="h-m"><div class="h-m-l">Estimated</div><div class="h-m-v">$8,459&ndash;9,810</div></div>
+      <div class="h-m"><div class="h-m-l">Estimated</div><div class="h-m-v">$8,608&ndash;9,910</div></div>
     </div>
   </div>
 </header>
@@ -1203,7 +1203,7 @@ function renderItinerary(){
 /* ==================================================================
    FLIGHTS
    ================================================================== */
-var CHECKED = "25 August 2026";
+var CHECKED = "9 September 2026";
 
 var LEGS = [
   {no:"01", date:"Nov 9&ndash;10", route:"IAH to IAD to LIS", name:"Houston to Lisbon",
@@ -1361,11 +1361,12 @@ var STAY = [
    anchor:"your 8 stops",
    area:"<b>Re-ranked 30 Aug on walking distance, not on arrival-day convenience.</b> The earlier version put the Pink Street first because it is three minutes from the Time Out Market. That was one afternoon. Nov 11 has six stops and they are all on the Alfama side, so the correct centre of gravity is Baixa, not Cais do Sodre. Distances below are measured to all eight places you actually go.",
    opts:[
-     {n:"Residentas Arco do Bandeira", s:"9.6", cl:"9.7", r:"1,525", rk:"Book this", u:"1-bed apt, lift, luggage storage, 226 Rua dos Sapateiros", d:"8 min avg", p:"$517", slug:"pt/residentas-arco-do-bandeira.html"},
-     {n:"Madalena Hermitage", s:"9.1", cl:"9.4", r:"961", rk:"Value pick, 2 bedrooms", u:"2-bed apt, lift, Rua da Madalena 29", d:"8 min avg", p:"$456", slug:"pt/madalena-hermitage.html"},
-     {n:"The House on the Pink Street", s:"9.7", cl:"9.9", r:"419", rk:"Dropped, too far west", u:"1-bed, 431 sq ft, Travessa Corpo Santo 29", d:"14 min avg", p:"$465", slug:"pt/the-house-on-the-pink-street-in-lisbon.html"}
+     {n:"Residentas Arco do Bandeira", s:"9.6", cl:"9.7", r:"1,526", rk:"Book this", u:"1-bed apt, lift, luggage storage, 226 Rua dos Sapateiros", d:"8 min avg", p:"$575", slug:"pt/residentas-arco-do-bandeira.html"},
+     {n:"Madalena Hermitage", s:"9.1", cl:"9.4", r:"959", rk:"GONE, sold out", u:"Was the 2-bed value pick at $456", d:"8 min avg", p:"Sold out", slug:"pt/madalena-hermitage.html"},
+     {n:"The House on the Pink Street", s:"9.7", cl:"9.9", r:"419", rk:"2nd, but 3.5 km more walking", u:"1-bed, 431 sq ft, Travessa Corpo Santo 29", d:"14 min avg", p:"$466", slug:"pt/the-house-on-the-pink-street-in-lisbon.html"}
    ],
    facts:[
+     ["<b>Refreshed live 9 Sep &mdash; what moved</b>","<b>Madalena Hermitage sold out.</b> It had 1 unit left on 30 Aug and the two-bedroom option at $456 is gone. <b>Arco do Bandeira rose from $517 to $575</b>, up $58 in ten days. <b>Pink Street held at $466.</b> So the gap between first and second choice widened from $52 to <b>$109</b> &mdash; still worth it for 3.5 km less walking, but it is no longer close to free"],
      ["<b>The distance test</b>","Total walking to all eight stops on the itinerary: <b>Arco do Bandeira 5.1 km. Madalena 5.2 km. Pink Street 8.6 km.</b> Average per stop: 8 min, 8 min, and 14 min. Stops more than a kilometre away: <b>Arco do Bandeira has none. Pink Street has four</b>"],
      ["Why Arco do Bandeira wins","It is the only option with nothing beyond a kilometre. Martim Moniz 843m, Se 604m, Castelo 748m, Portas do Sol 921m, Praca do Comercio 487m, Ribeira das Naus 425m. The furthest thing you own is the Time Out Market at 970m, and that is also one metro stop"],
      ["The metro detail","<b>100 m from Baixa-Chiado</b>, which is on the blue line. That is a direct ride to Laranjeiras for the Ismaili Centre with no change. Location scored <b>9.9</b>, the highest of anything on this trip"],
@@ -1404,11 +1405,19 @@ var STAY = [
    anchor:"Cathedral",
    area:"Santa Cruz. Alcazar, Giralda and the tapas bars are all walkable.",
    opts:[
-     {n:"Suites Murillo Catedral", s:"9.3", cl:"9.6", r:"354", rk:"Book this", u:"Aparthotel, 24h desk at Hotel Murillo", d:"2 min", p:"$285", slug:"es/suites-murillo-segovias.html"},
-     {n:"Puerta Principe Luxury Apartments", s:"9.3", cl:"9.6", r:"404", rk:"2nd", u:"Apartment, staffed desk, lift", d:"4 min", p:"$300", slug:"es/puerta-principe-luxury-apartment.html"},
-     {n:"Plaza Dona Elvira 7", s:"9.7", cl:"9.7", r:"115", rk:"3rd", u:"2-bed, 65 sq m, no lift", d:"5 min", p:"$231", slug:"es/apartamentos-en-la-plaza-dona-elvira-7.html"}
+     {n:"Suites Murillo Catedral", s:"9.3", cl:"9.7", r:"341", rk:"Book this if the bag drop matters", u:"Superior Apt, 420 sq ft, max 3, 24h desk", d:"10 min avg", p:"$603", slug:"es/suites-murillo-segovias.html"},
+     {n:"Iberflat San Gregorio", s:"9.0", cl:"9.4", r:"176", rk:"Best value, 2 bedrooms", u:"2-bed, 592 sq ft, lift, Calle San Gregorio 7", d:"10 min avg", p:"$424", slug:"es/iberflat-san-gregorio.html"},
+     {n:"Plaza Dona Elvira 7", s:"9.7", cl:"9.7", r:"115", rk:"3rd", u:"2-bed, 65 sq m, no lift, check-in 16:00 only", d:"10 min avg", p:"$231", slug:"es/apartamentos-en-la-plaza-dona-elvira-7.html"}
    ],
    facts:[
+     ["<b>Distance does not decide Seville</b>","Measured to all five stops &mdash; Alcazar, Cathedral, Santa Cruz, Plaza de Espana, Maria Luisa park. <b>Suites Murillo 3,852 m total. Dona Elvira 3,911 m. Iberflat 4,010 m. Overland Suites 4,752 m.</b> Average 10 to 12 minutes for every one of them. Unlike Lisbon, where the spread was 3.5 km, here it is 900 m. <b>Plaza de Espana and Maria Luisa park sit 1.2 to 1.9 km south of the old town and penalise every Santa Cruz hotel equally</b>, so pick on the arrival problem, not the map"],
+     ["<b>The whole decision, in one line</b>","Murillo costs <b>$179 more than Iberflat</b> and the only thing that money buys is a <b>24-hour desk</b> for the gap between your 13:00 coach and a 15:00 check-in. That is $179 for three hours of not carrying bags, once"],
+     ["Iberflat San Gregorio, verified 9 Sep","Calle San Gregorio 7. <b>Two-Bedroom, 592 sq ft, sleeps 2 adults + 1 child &mdash; Izyan gets his own room.</b> $385 plus 10 percent IVA, so <b>about $424 all in</b>. Cleanliness 9.4, lift, six minutes to the Alcazar, 300 m to the Cathedral. Free cancellation to <b>Nov 9</b>. <b>No 24-hour desk and no luggage storage listed.</b> Skip its one-bedroom at $330 despite the price &mdash; it lists a single full bed for all three of you"],
+     ["Correction to an earlier note","This page previously said the walk between the Murillo check-in desk and the apartment was 7 to 10 minutes. Measured, it is about <b>400 m, so 5 to 6 minutes</b>"],
+
+     ["<b>Correction, 9 Sep. This was wrong, not just stale</b>","This page showed Seville at <b>$285</b>. That figure never existed at your occupancy &mdash; it came from a two-adult search. <b>Only one room here takes three people</b>: the Superior Apartment, 420 sq ft, queen plus sofa bed, max 3. It is <b>$548 for two nights plus 10 percent Spanish IVA, so about $603 all in</b>, or <b>$499 if you take the non-refundable rate</b>. The Standard Apartment at $442 is <b>max 2 adults</b> and will not work"],
+     ["Still the right choice, for one reason","Cleanliness <b>9.7</b> across 341 reviews and a <b>24-hour desk at Hotel Murillo</b>. Your coach reaches Plaza de Armas at 13:00 and nothing in Santa Cruz admits you that early, so the bag drop is what makes the arrival day work at all"],
+     ["The cheapest tier, and why it is not here","Santa Cruz has apartments down at <b>$145 to $198</b> for both nights. They were checked and left off: <b>none has a staffed 24-hour desk</b>, so you would hold luggage until 15:00 or 16:00 on arrival day, and most carry fewer than 200 reviews. Dona Elvira is the honest budget entry at $231, but its check-in is <b>16:00 only</b> and there is no lift"],
      ["The problem this solves","<b>Your coach arrives Plaza de Armas at 13:00 and nowhere lets you in that early.</b> Suites Murillo checks you in at Hotel Murillo on Calle Lope de Rueda, which has a <b>24-hour reception</b>. You drop bags at one, go to lunch, and collect the room later"],
      ["The cost of that","Check-in is offsite. Reviewers describe a seven to ten minute walk over cobbles with luggage between the desk and the apartment. Staff guide you but do not always carry bags"],
      ["Why not Dona Elvira","Best cleanliness of the three at 9.7 and the cheapest, but <b>check-in is 16:00 to 20:30 only</b>, there is no reception, and it is up stairs with no lift. Three hours with bags and a five-year-old before you can get in"],
@@ -1421,14 +1430,15 @@ var STAY = [
    anchor:"Chatelet RER",
    area:"Six hotels re-checked live on 30 Aug at your exact occupancy, two adults and a five-year-old, three nights. <b>Every price below is all in</b> &mdash; it includes the 10 percent VAT and the city tax that Booking leaves out of the headline figure.",
    opts:[
-     {n:"Hotel Montpensier", s:"8.5", cl:"8.6", r:"3,072", rk:"Book this", u:"Triple, full + twin, 215 sq ft, breakfast $13pp", d:"10 min", p:"$1,055", slug:"fr/montpensier-paris.html"},
-     {n:"Bellevue et du Chariot d&#39;Or", s:"8.0", cl:"8.0", r:"4,543", rk:"Lean pick", u:"Triple, 3 twins, 183 sq ft, breakfast included", d:"9 min", p:"$857", slug:"fr/bellevue-et-du-chariot-d-39-or-paris2.html"},
+     {n:"Hotel Montpensier", s:"8.5", cl:"8.6", r:"3,072", rk:"Book this", u:"Triple, full + twin, 215 sq ft, breakfast $13pp", d:"10 min", p:"$1,101", slug:"fr/montpensier-paris.html"},
+     {n:"Bellevue et du Chariot d&#39;Or", s:"8.0", cl:"7.9", r:"4,543", rk:"Lean pick, cleanliness slipping", u:"Triple, 3 twins, 183 sq ft, breakfast included", d:"9 min", p:"$857", slug:"fr/bellevue-et-du-chariot-d-39-or-paris2.html"},
      {n:"Hotel Du Flaneur", s:"8.7", cl:"9.0", r:"511", rk:"3rd", u:"Triple, queen + sofa, 215 sq ft, 1 left", d:"12 min", p:"$1,169", slug:"fr/le-clery-paris.html"},
      {n:"Timhotel Palais Royal", s:"8.2", cl:"8.5", r:"1,144", rk:"4th", u:"Comfort Triple, 3 twins, no prepayment", d:"9 min", p:"$1,190", slug:"fr/timpalaisroyallouvre.html"},
      {n:"Hotel des Ducs D&#39;Anjou", s:"8.0", cl:"8.2", r:"1,387", rk:"5th", u:"Junior Suite, 172 sq ft, breakfast included", d:"4 min", p:"$1,250", slug:"fr/hoteldesducsdanjou.html"},
-     {n:"Hotel Britannique", s:"8.9", cl:"9.2", r:"700", rk:"Was the pick, now 6th", u:"Junior Suite, queen + sofa, 269 sq ft, 1 left", d:"1 min", p:"$1,377", slug:"fr/britannique-paris.html"}
+     {n:"Hotel Britannique", s:"8.9", cl:"9.2", r:"700", rk:"GONE for a family of three", u:"Junior Suite sold; only 2 connecting doubles remain", d:"1 min", p:"$2,366", slug:"fr/britannique-paris.html"}
    ],
    facts:[
+     ["<b>Refreshed live 9 Sep &mdash; what moved</b>","<b>Britannique is effectively gone.</b> The Junior Suite was the only room taking three people and it sold; the cheapest remaining option for a family is Two Connecting Double Rooms at <b>$2,366</b>. The 1-left warning on 30 Aug was real. <b>Montpensier rose $46 to about $1,101</b>, still refundable to Nov 14. <b>Bellevue held at $857 but its cleanliness slipped from 8.0 to 7.9</b>, which was already the lowest here and is now heading the wrong way. Du Flaneur, Timhotel and Ducs d&#39;Anjou were not re-checked this pass"],
      ["<b>Correction, and it matters</b>","This page previously showed Paris at $700 to $850 and Charles Floquet at $498. <b>Both figures were wrong.</b> They were never re-checked at two adults plus a child for these dates. There is no room in central Paris for three people at that price in November. The real floor for something clean is about $857"],
      ["Why Montpensier","12 rue de Richelieu, 1st arrondissement, beside the Palais Royal. Location rated <b>9.8</b>, cleanliness 8.6 across 3,072 reviews. $941 before tax, free cancellation to Nov 14, <b>nothing due until Nov 12</b>"],
      ["The reason it wins","<b>Its check-in runs 14:00 to midnight and that is confirmed.</b> You land CDG 19:15 and reach the hotel about 21:15. Every other hotel here shows only a start time with no stated close. That may well be fine, but after the Charles Floquet 18:00 cut-off it is not something to assume"],
@@ -1544,15 +1554,15 @@ var BOOKINGS = [
 
   {id:"hlis", ph:2, t:"Lisbon, Nov 10 to 12: Residentas Arco do Bandeira",
    n:"<b>Re-ranked 30 Aug on walking distance. The Pink Street is no longer the pick.</b> Arco do Bandeira is the only Lisbon option with nothing more than a kilometre from any stop on the itinerary &mdash; 5.1 km of total walking against the Pink Street&#39;s 8.6 km. <b>About $517 all in</b>, cleanliness 9.7 across 1,525 reviews, location 9.9, 100 m from Baixa-Chiado for the direct blue line to the Ismaili Centre. Luggage storage covers the 10:20 landing against a 16:00 check-in. Free cancellation to Oct 11, 2 left. <b>Madalena Hermitage at $456 is the two-bedroom alternative</b> &mdash; cheaper, Izyan gets his own room, cancels to Oct 27, but no luggage storage listed.",
-   by:"2026-10-11", est:517,
+   by:"2026-10-11", est:575,
    u:"https://www.booking.com/hotel/pt/residentas-arco-do-bandeira.html?checkin=2026-11-10&checkout=2026-11-12&group_adults=2&group_children=1&age=5&no_rooms=1&selected_currency=USD", ul:"Open Arco do Bandeira"},
   {id:"hsev", ph:2, t:"Seville, Nov 14 to 16: Suites Murillo Catedral",
-   n:"$285 for both nights, cleanliness 9.6, two minutes from the Cathedral. <b>Chosen for the arrival problem:</b> your coach lands 13:00 and nothing lets you in that early, but check-in is at Hotel Murillo which has a 24-hour desk, so you drop bags and go to lunch. The cost is a 7 to 10 minute cobbled walk between desk and apartment. Dona Elvira is cleaner and cheaper but has no reception and will not admit you before 16:00.",
-   by:"2026-10-15", est:285,
+   n:"<b>Two live options, both verified 9 Sep. This is a decision, not a default.</b><br><b>Iberflat San Gregorio, $424</b> &mdash; two bedrooms so Izyan gets his own room, 592 sq ft, cleanliness 9.4, lift, 6 min to the Alcazar. Cancels free to <b>Nov 9</b>. No 24-hour desk.<br><b>Suites Murillo, $603</b> &mdash; cleanliness 9.7, and a <b>24-hour desk</b> that solves the 13:00 arrival with luggage. Cancels to Nov 12.<br><b>The $179 difference buys the bag drop and nothing else.</b> Walking distance is within 160 m between them, so location is not a factor here.",
+   by:"2026-11-09", est:424,
    u:"https://www.booking.com/hotel/es/suites-murillo-segovias.html?checkin=2026-11-14&checkout=2026-11-16&group_adults=2&group_children=1&age=5&no_rooms=1", ul:"Open Suites Murillo"},
   {id:"hpar", ph:2, t:"Paris, Nov 16 to 19: decide the base first",
    n:"<b>Re-verified live 30 Aug at your occupancy. The old $700 to $850 figure was wrong and has been removed.</b> Six hotels compared on the Hotels tab. The pick is <b>Hotel Montpensier at about $1,055 all in</b>: 1st arrondissement, cleanliness 8.6 across 3,072 reviews, location 9.8, and the only one whose check-in window is confirmed to run to midnight, which your 21:15 arrival needs. Nothing due until Nov 12. <b>Bellevue et du Chariot d&#39;Or at $857 with breakfast included</b> is the lean alternative if price leads. Britannique is now sixth at $1,377.",
-   by:"2026-10-15", est:1055,
+   by:"2026-11-14", est:1101,
    u:"https://www.booking.com/hotel/fr/montpensier-paris.html?checkin=2026-11-16&checkout=2026-11-19&group_adults=2&group_children=1&age=5&no_rooms=1&selected_currency=USD", ul:"Open Hotel Montpensier"},
   {id:"bus1", ph:3, t:"Granada to Seville, Nov 14, ALSA coach",
    n:"Three hours direct, twelve a day, 12 to 30 euros each. Reserve seats online the night before. Not the train: the only direct Avant services in this direction are 06:22 and 18:17.",
@@ -1667,11 +1677,25 @@ function deadlineChip(b, done){
   return '<span class="pill p-n">by '+b.by.slice(5).replace("-","/")+'</span>';
 }
 
+function satBanner(){
+  return '<div class="note n-w" style="margin-bottom:18px"><span class="n-t">Saturday review &mdash; the six decisions that matter</span>'
+   + '<b>Everything below is priced live as of 9 September at two adults and a five-year-old, all in, including the taxes Booking hides.</b> '
+   + 'Two options vanished between 30 Aug and 9 Sep, so treat stock warnings as real.<br><br>'
+   + '<b>1. Lisbon.</b> Arco do Bandeira $575, or the Pink Street $466 and 3.5 km more walking across two days. Free to Oct 11.<br>'
+   + '<b>2. Seville.</b> Iberflat $424 with a second bedroom, or Suites Murillo $603 for a 24-hour bag drop. Free to Nov 9.<br>'
+   + '<b>3. Paris.</b> Montpensier $1,101, the only one with a confirmed check-in window covering your 21:15 arrival. Or Bellevue $857 with breakfast, cleanliness slipping to 7.9. Free to Nov 13 or 14.<br>'
+   + '<b>4. Travel insurance.</b> $4,551 is already non-refundable.<br>'
+   + '<b>5. Eiffel Tower.</b> Its booking window opens roughly 60 days out, so around 19 September for your 18 Nov evening. Summit slots go first.<br>'
+   + '<b>6. Disneyland, Alcazar, flamenco, Castelo.</b> Lower urgency, but the Alcazar is timed entry like the Alhambra.<br><br>'
+   + '<b>Five free checks worth doing the same morning:</b> Hotel America breakfast time against your 08:00 Alhambra gate; all three names on the Alhambra PDF matching passports; passports valid through about 19 Feb 2027; the Air France checked-bag allowance on Nov 16; and AA 49&#39;s departure terminal at CDG.</div>';
+}
+
 function renderBooking(){
   var s = bkStats();
   var list = bkAll();
   var pct = s.total ? Math.round(s.done / s.total * 100) : 0;
 
+  var SAT = satBanner();
   var phases = Object.keys(PHASES).map(function(p){
     var items = list.filter(function(b){ return (b.ph||6) === +p; });
     if(!items.length && +p === 6) items = [];
@@ -1756,6 +1780,7 @@ function renderBooking(){
     + s.overdue+'</div><div class="st-n">'+(s.blocked?s.blocked+' more waiting on prerequisites':'Nothing blocked')+'</div></div>'
     + '</div>'
     + nextCard
+    + SAT
     + phases
     + '<div class="blk"><div class="blk-h">Add your own item</div>'
     + '<div class="card bk-add">'
@@ -1894,7 +1919,7 @@ var BDG_TOTAL = BDG.reduce(function(s,x){ return s + x.e; }, 0);
 
 var COSTS = [
   ["Flights and bags, all four legs", "$4,004", "$4,004", "<b>All paid.</b> United $1,389 plus a $90 bag, TAP $538, Air France $370, American $1,616 including its $87 bag"],
-  ["Accommodation, 9 nights", "$2,095", "$2,676", "Lisbon $456 to $517, Granada $497 <b>paid</b>, Seville $285, Paris $857 to $1,377. <b>Lisbon and Paris were both re-verified 30 Aug at your real occupancy.</b> Every figure here already includes the VAT and city tax that Booking excludes from its headline"],
+  ["Accommodation, 9 nights", "$2,244", "$2,776", "<b>All re-verified live 9 Sep at 2 adults + 1 child.</b> Lisbon $466 to $575, Granada $497 <b>paid</b>, Seville $424 to $603, Paris $857 to $1,101. Two options vanished since 30 Aug and Seville turned out to be more than double what this page claimed. Every figure includes the VAT and city tax Booking excludes"],
   ["Tickets and attractions", "$480", "$650", "<b>Alhambra paid, 43.27 euros.</b> Still to buy: Disneyland, Eiffel, Alcazar, flamenco, Castelo de Sao Jorge"],
   ["Intercity coach", "$110", "$160", "Malaga to Granada $66, Granada to Seville about $70. No rail on either"],
   ["City transport", "$220", "$340", "Metros, taxis, RER, Bolt"],
@@ -1925,9 +1950,9 @@ function renderBudget(){
     + '<div class="s-s">Two layers. The all-in estimate covers everything including flights and rooms. '
     + 'The day tracker below covers only food, local transport and incidentals, so nothing is counted twice.</div>'
     + '<div class="g4 blk">'
-    + '<div class="stat"><div class="st-l">All-in estimate</div><div class="st-v">$8,459&ndash;9,810</div><div class="st-n">Three people, eleven days. Flights paid, rooms now real picks rather than a range</div></div>'
+    + '<div class="stat"><div class="st-l">All-in estimate</div><div class="st-v">$8,608&ndash;9,910</div><div class="st-n">Three people, eleven days. Flights paid, rooms now real picks rather than a range</div></div>'
     + '<div class="stat"><div class="st-l">Narmin quoted</div><div class="st-v">$12,604</div><div class="st-n">Goway ref 1185612/1</div></div>'
-    + '<div class="stat"><div class="st-l">You save</div><div class="st-v">$2,794&ndash;4,145</div><div class="st-n">Against Goway, and you add Disneyland</div></div>'
+    + '<div class="stat"><div class="st-l">You save</div><div class="st-v">$2,694&ndash;3,996</div><div class="st-n">Against Goway, and you add Disneyland</div></div>'
     + '<div class="stat"><div class="st-l">Actually committed</div><div class="st-v">$'+ bkStats().spent.toLocaleString() + '</div>'+ '<div class="st-n">From ' + bkStats().done + ' booked items on the checklist</div></div>'
     + '<div class="stat"><div class="st-l">Swing factor</div><div class="st-v">Granada</div><div class="st-n">Parador adds about $2,000</div></div>'
     + '</div>'
@@ -1936,7 +1961,7 @@ function renderBudget(){
     + '<tbody>'+costRows+'</tbody>'
     + '<tfoot><tr style="border-top:2px solid var(--line);background:var(--line2)">'
     + '<td style="font-weight:700">Total</td>'
-    + '<td class="num" style="font-weight:700;font-size:15px">$8,459 to $9,810</td></tr></tfoot>'
+    + '<td class="num" style="font-weight:700;font-size:15px">$8,608 to $9,910</td></tr></tfoot>'
     + '</table></div></div>'
     + '<div class="blk"><div class="blk-h">Day tracker &mdash; food, local transport, incidentals</div>'
     + '<div class="note n-i">Enter what you actually spend as the trip goes. Entries save in this browser, so '
@@ -2359,7 +2384,7 @@ var PLANCHOICE = {
        ["Nov 17","Disneyland, out by 18:00"],
        ["Nov 18","Rue Cler breakfast, 12:40 flight home"],
        ["Risk","Nov 16 is fourteen hours of movement ending at altitude. If Izyan flags, you lose the Eiffel entirely."],
-       ["Cost","About $8,149 to $9,500 via Dallas"]
+       ["Cost","About $8,298 to $9,600 via Dallas"]
      ]},
   b:{name:"One extra night in Paris", nights:"9 nights", days:"Nov 9 to 19", best:true,
      rows:[
@@ -2369,7 +2394,7 @@ var PLANCHOICE = {
        ["Nov 18","Paris properly: Rue Cler, Seine cruise, Eiffel summit in the evening"],
        ["Nov 19","Relaxed morning, 11:05 American nonstop home to Dallas"],
        ["Risk","None material. Every fixed booking still lands on the same date."],
-       ["Cost","About $8,459 to $9,810 via Dallas, roughly $310 more than eight nights"]
+       ["Cost","About $8,608 to $9,910 via Dallas, roughly $310 more than eight nights"]
      ]}
 };
 
