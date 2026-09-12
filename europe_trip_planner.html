@@ -1541,11 +1541,11 @@ function renderStay(){
    upstream: add, edit and delete items directly on the page.
    ================================================================== */
 var BOOKINGS = [
-  {id:"alh", ph:1, t:"Alhambra tickets: booked, 09:00 Friday Nov 13",
+  {id:"alh", ph:1, paid:1, t:"Alhambra tickets: booked, 09:00 Friday Nov 13",
    n:"<b>Booked for 09:00 on 13 Nov 2026.</b> 21.64 euros an adult, 43.27 euros total, and Izyan is on it as a free minor aged 3 to 11. Tickets arrived as PDF and Passbook, so <b>load the Passbook version into Apple Wallet</b> and the QR is offline at the gate. <b>One thing to check on the PDF:</b> all three names must match passports, because ID is verified at entry.",
    by:"2026-09-15", est:48,
    u:"https://tickets.alhambra-patronato.es/en/", ul:"Book at the official Patronato site"},
-  {id:"gra", ph:1, t:"Hotel America, Granada, Nov 12 to 14",
+  {id:"gra", ph:1, paid:1, t:"Hotel America, Granada, Nov 12 to 14",
    n:"<b>Booked.</b> Family Room, $497.38 all in at 428 euros, reserved with a Visa but paid to the property on arrival. Check in 14:00 to 21:00, check out 08:00 to 12:00, both of which fit. Free cancellation until Nov 7 if anything changes. The confirmation is in the email.",
    by:"2026-09-15", est:497, dep:["alh"],
    u:"https://www.booking.com/hotel/es/america-granada.html?checkin=2026-11-12&checkout=2026-11-14&group_adults=2&group_children=1&age=5&no_rooms=1", ul:"Open Hotel America"},
@@ -1553,16 +1553,16 @@ var BOOKINGS = [
    n:"Nine nights, not eight. Nov 16 is now a pure travel day and the Eiffel Tower moves to Wednesday Nov 18. You fly home Thursday Nov 19. Costs about $310 and it is the single best $310 in this plan. Nothing to do here, it is already built into every date below.",
    by:"2026-09-20", est:310},
 
-  {id:"out", ph:1, t:"United outbound: done",
+  {id:"out", ph:1, paid:1, t:"United outbound: done",
    n:"Flight $1,389, checked bag $90. Seats left to the airline by choice. Izyan is already next to Zaibnish on both legs, so nothing here needs action.",
-   by:"2026-09-15", est:0},
-  {id:"ret", ph:1, t:"Return flight: done",
+   by:"2026-09-15", est:1479},
+  {id:"ret", ph:1, paid:1, t:"Return flight: done",
    n:"AA 49, CDG 11:05 to DFW 14:50. $1,616.49 paid including an $87 checked bag. Seats left to the airline.",
    by:"2026-09-30", est:1616},
-  {id:"lis", ph:1, t:"Lisbon to Malaga, Nov 12: paid",
+  {id:"lis", ph:1, paid:1, t:"Lisbon to Malaga, Nov 12: paid",
    n:"TAP TP1136, 10:45 to 13:00, $538.32. One checked bag, on your ticket. Zaibnish and Izyan are carry-on only at 10kg each, which is the tightest limit on the whole trip.",
    by:"2026-10-01", est:538},
-  {id:"agp", ph:1, t:"Seville to Paris, Nov 16: done",
+  {id:"agp", ph:1, paid:1, t:"Seville to Paris, Nov 16: done",
    n:"Air France nonstop, SVQ 16:40 to CDG 19:15, $369.80 paid. Fare stepped up off Light so the checked bag comes with you. All four flights are now booked.",
    by:"2026-10-01", est:370},
   {id:"ins", ph:2, t:"Travel insurance",
@@ -1570,7 +1570,7 @@ var BOOKINGS = [
    by:"2026-10-05", est:400, dep:["alh"],
    u:"https://www.squaremouth.com/resources/destinations/europe", ul:"Compare plans"},
 
-  {id:"hlis", ph:2, t:"Lisbon, Nov 10 to 12: Residentas Arco do Bandeira",
+  {id:"hlis", ph:2, paid:1, t:"Lisbon, Nov 10 to 12: Residentas Arco do Bandeira, BOOKED",
    n:"<b>BOOKED 12 Sep. Confirmation 5540.272.809, PIN 6547.</b> One-Bedroom Apartment at 226 Rua dos Sapateiros, in Zaibnish&#39;s name. Check in <b>Tue 10 Nov from 16:00</b>, check out <b>Thu 12 Nov by 10:00</b>. <b>$582 all in</b> &mdash; $455 room, $81 cleaning fee, $27 VAT, $19 city tax. <b>Free cancellation only until 10 Oct 23:59</b>, then 415.16 euros. Dates cannot be changed. <b>Two open items: confirm Izyan is on the reservation, and chase the luggage-storage reply.</b>",
    by:"2026-10-10", est:582,
    u:"https://www.booking.com/hotel/pt/residentas-arco-do-bandeira.html?checkin=2026-11-10&checkout=2026-11-12&group_adults=2&group_children=1&age=5&no_rooms=1&selected_currency=USD", ul:"Open Arco do Bandeira"},
@@ -1578,7 +1578,7 @@ var BOOKINGS = [
    n:"<b>Three days before arrival, as the property requires.</b> Residentas Arco do Bandeira stores luggage free on the 2nd floor, opposite the lift, but it is <b>code entry and the codes are issued on request</b>. Ask for the access codes and your check-in instructions together. <b>Ask again about the free airport transfer at the same time.</b> Without the codes you are standing outside at 12:15 with a checked bag, a carry-on, three backpacks and a five-year-old, until 16:00.",
    by:"2026-11-07", est:0,
    u:"tel:+351960060061", ul:"Message the Residentas team"},
-  {id:"hsev", ph:2, t:"Seville, Nov 14 to 16: Suites Murillo Catedral",
+  {id:"hsev", ph:2, paid:1, t:"Seville, Nov 14 to 16: Iberflat San Gregorio, BOOKED",
    n:"<b>BOOKED 12 Sep. Confirmation 6795.767.661, PIN 7427.</b> Iberflat San Gregorio One-Bedroom, Calle San Gregorio 7, in Zaibnish&#39;s name. <b>Check in Sat 14 Nov from 15:00, check out Mon 16 Nov by 12:00.</b> <b>$330 all in</b> &mdash; $300 plus 10 percent VAT, no cleaning fee. <b>Izyan is correctly listed.</b> Free cancellation to <b>8 Nov 23:59</b>, then 284 euros. <b>Bring a credit card and photo ID: a 100 euro damage deposit is taken on arrival</b> and refunded within 7 days. The card is charged within 5 days of arrival. Phone +34 697 16 72 22.",
    by:"2026-11-08", est:330,
    u:"https://www.booking.com/hotel/es/suites-murillo-segovias.html?checkin=2026-11-14&checkout=2026-11-16&group_adults=2&group_children=1&age=5&no_rooms=1", ul:"Open Suites Murillo"},
@@ -1666,11 +1666,12 @@ function bkSet(id, st){ save("bk_"+id, JSON.stringify(st)); }
 
 function bkStats(){
   var list = bkAll();
-  var done=0, est=0, spent=0, doneEst=0, overdue=0, blocked=0;
+  var done=0, est=0, spent=0, doneEst=0, overdue=0, blocked=0, committed=0;
   var next=null, nextOverdue=null;
   list.forEach(function(b){
     var st = bkGet(b.id);
     est += (b.est||0);
+    if(b.paid) committed += (b.est||0);
     if(st.done){
       done++; doneEst += (b.est||0);
       if(typeof st.cost === "number") spent += st.cost;
@@ -1686,7 +1687,9 @@ function bkStats(){
     }
   });
   return {done:done, total:list.length, est:est, spent:spent, doneEst:doneEst,
-          overdue:overdue, blocked:blocked, next:nextOverdue || next};
+          overdue:overdue, blocked:blocked, committed:committed,
+          paidCount:list.filter(function(x){return x.paid;}).length,
+          next:nextOverdue || next};
 }
 
 function deadlineChip(b, done){
@@ -1975,7 +1978,7 @@ function renderBudget(){
     + '<div class="stat"><div class="st-l">All-in estimate</div><div class="st-v">$8,630&ndash;9,644</div><div class="st-n">Three people, eleven days. Flights paid, rooms now real picks rather than a range</div></div>'
     + '<div class="stat"><div class="st-l">Narmin quoted</div><div class="st-v">$12,604</div><div class="st-n">Goway ref 1185612/1</div></div>'
     + '<div class="stat"><div class="st-l">You save</div><div class="st-v">$2,960&ndash;3,974</div><div class="st-n">Against Goway, and you add Disneyland</div></div>'
-    + '<div class="stat"><div class="st-l">Actually committed</div><div class="st-v">$'+ bkStats().spent.toLocaleString() + '</div>'+ '<div class="st-n">From ' + bkStats().done + ' booked items on the checklist</div></div>'
+    + '<div class="stat"><div class="st-l">Actually committed</div><div class="st-v">$'+ bkStats().committed.toLocaleString() + '</div>'+ '<div class="st-n">' + bkStats().paidCount + ' items booked and paid: all four flights and bags, Granada, the Alhambra, Lisbon and Seville</div></div>'
     + '<div class="stat"><div class="st-l">Swing factor</div><div class="st-v">Granada</div><div class="st-n">Parador adds about $2,000</div></div>'
     + '</div>'
     + '<div class="blk"><div class="blk-h">All-in estimate by category</div>'
