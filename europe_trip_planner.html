@@ -433,6 +433,23 @@ table.grid td.dz{border-top:2px solid var(--brand)}
 .gfil select:focus,.gfil input:focus{outline:2px solid var(--brand);outline-offset:-1px}
 .gfil .gc{font-size:12px;color:var(--mute);margin-left:auto;font-variant-numeric:tabular-nums}
 @media(max-width:760px){table.grid{min-width:0;font-size:12px}table.grid td.det,table.grid th.det{display:none}.gfil .gc{margin-left:0;width:100%}}
+
+/* ---- collapsible notes ---- */
+details.acc{border-top:1px solid var(--line2)}
+details.acc:first-of-type{border-top:0}
+details.acc>summary{list-style:none;cursor:pointer;padding:11px 16px;font-size:13px;font-weight:600;
+  color:var(--ink);display:flex;align-items:center;gap:9px;transition:background .12s}
+details.acc>summary::-webkit-details-marker{display:none}
+details.acc>summary:hover{background:var(--brand-lt)}
+details.acc>summary::before{content:"";flex:none;width:6px;height:6px;border-right:1.6px solid var(--faint);
+  border-bottom:1.6px solid var(--faint);transform:rotate(-45deg);transition:transform .16s;margin-left:2px}
+details.acc[open]>summary::before{transform:rotate(45deg)}
+details.acc[open]>summary{color:var(--brand)}
+details.acc .acc-b{padding:0 16px 14px 33px;font-size:13px;line-height:1.6;color:var(--ink2)}
+.acc-grp{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:14px 16px}
+.acc-grp-h{padding:9px 14px;background:var(--line2);font-size:11px;font-weight:700;letter-spacing:.05em;
+  text-transform:uppercase;color:var(--mute);border-bottom:1px solid var(--line)}
+.acc-n{font-size:11px;color:var(--faint);font-weight:600;margin-left:auto}
 </style>
 </head>
 <body>
@@ -446,7 +463,7 @@ table.grid td.dz{border-top:2px solid var(--brand)}
     <div class="h-meta">
       <div class="h-m"><div class="h-m-l">Dates</div><div class="h-m-v">Nov 9&ndash;19, 2026</div></div>
       <div class="h-m"><div class="h-m-l">Nights</div><div class="h-m-v">9</div></div>
-      <div class="h-m"><div class="h-m-l">Estimated</div><div class="h-m-v">$8,630&ndash;9,644</div></div>
+      <div class="h-m"><div class="h-m-l">Estimated</div><div class="h-m-v">$9,151&ndash;9,921</div></div>
     </div>
   </div>
 </header>
@@ -1366,11 +1383,11 @@ var STAY = [
      {n:"The House on the Pink Street", s:"9.7", cl:"9.9", r:"419", rk:"GONE for three &mdash; now max 2 adults", u:"Family unit withdrawn; studios only", d:"14 min avg", p:"n/a", slug:"pt/the-house-on-the-pink-street-in-lisbon.html"}
    ],
    facts:[
-     ["<b>BOOKED 12 Sep &mdash; confirmation 5540.272.809</b>","Residentas Arco do Bandeira, <b>226 Rua dos Sapateiros, Santa Maria Maior, 1100-581</b>. Phone <b>+351 21 052 2188</b>, and the <b>Residentas team direct on +351 960 060 061</b> (mobile, so WhatsApp works). PIN <b>6547</b>. One-Bedroom Apartment, <b>check in Tue 10 Nov from 16:00, check out Thu 12 Nov by 10:00</b>. Booked in <b>Zaibnish&#39;s name</b>. <b>Changing the dates is not possible</b> on this rate"],
+     ["<b>BOOKED 12 Sep &mdash; confirmation in your email</b>","Residentas Arco do Bandeira, <b>226 Rua dos Sapateiros, Santa Maria Maior, 1100-581</b>. Phone <b>+351 21 052 2188</b>, and the <b>Residentas team direct on +351 960 060 061</b> (mobile, so WhatsApp works). One-Bedroom Apartment, <b>check in Tue 10 Nov from 16:00, check out Thu 12 Nov by 10:00</b>. Booked in <b>Zaibnish&#39;s name</b>. <b>Changing the dates is not possible</b> on this rate"],
      ["<b>What it actually cost, itemised</b>","Apartment <b>$455</b>, plus a <b>70 euro cleaning fee, $81</b>, plus 6 percent VAT <b>$27</b> on the room only, plus city tax <b>$19</b> at 4 euros per adult per night. <b>Total $582</b>, about 501 euros. <b>The cleaning fee is the bit that was never in the estimate</b> &mdash; Booking folds it into the headline total but does not show it as a line until checkout"],
      ["<b>Two things to action on this booking</b>","<b>1. Izyan is not on the reservation.</b> It reads &lsquo;Number of guests: 2 adults&rsquo; and prices &lsquo;for 2 guests&rsquo;, and the confirmation warns that supplements such as an extra bed are not in the total. The room sleeps 2 adults plus 1 child, so this is very likely a display quirk &mdash; but <b>confirm it with the property</b> rather than discover it at the door. <b>2. The free-cancellation date is 10 October, not 11.</b> Free until <b>10 Oct 23:59</b>; from <b>11 Oct 00:00</b> they charge <b>415.16 euros</b>"],
      ["<b>LUGGAGE: CONFIRMED by the property, 12 Sep</b>","<b>Complimentary luggage storage, and it is self-access.</b> It sits on the <b>2nd floor, in the room directly in front of the lift</b>. There is also a <b>guest lounge on the 2nd floor</b> and a <b>bathroom on the ground floor</b> &mdash; so the 12:15 arrival against a 16:00 check-in is fully solved, and you can sit down rather than kill four hours on your feet. They ask that you <b>close the storage door properly</b> after use"],
-     ["<b>ACTION &mdash; Saturday 7 November: request the access codes</b>","The storage is code-entry, and the property says to <b>request the access codes three days before arrival</b>, together with your check-in instructions. Arrival is Tue 10 Nov, so the request goes in on <b>Sat 7 Nov</b>. <b>Miss this and you arrive at a door you cannot open</b>, with the bags, at 12:15. Contact the <b>Residentas team on +351 960 060 061</b> (mobile, WhatsApp) or the property on +351 21 052 2188. Booking <b>5540.272.809</b>"],
+     ["<b>ACTION &mdash; Saturday 7 November: request the access codes</b>","The storage is code-entry, and the property says to <b>request the access codes three days before arrival</b>, together with your check-in instructions. Arrival is Tue 10 Nov, so the request goes in on <b>Sat 7 Nov</b>. <b>Miss this and you arrive at a door you cannot open</b>, with the bags, at 12:15. Contact the <b>Residentas team on +351 960 060 061</b> (mobile, WhatsApp) or the property on +351 21 052 2188. Have your Booking.com reference to hand."],
      ["Still unanswered","They confirmed the luggage but <b>did not answer whether the free private airport transfer applies</b> to your rate. Worth asking again when you request the codes &mdash; it is worth about 20 euros and removes the taxi queue with bags"],
      ["Still true about the property","No 24-hour desk. Check-in is private and by arrangement, and the listing requires you to give an expected arrival time in advance. GPS <b>N 038 42.767, W 09 8.335</b>. No parking. License RNET 9618"],
      ["<b>The distance test</b>","Total walking to all eight stops on the itinerary: <b>Arco do Bandeira 5.1 km. Madalena 5.2 km. Pink Street 8.6 km.</b> Average per stop: 8 min, 8 min, and 14 min. Stops more than a kilometre away: <b>Arco do Bandeira has none. Pink Street has four</b>"],
@@ -1398,7 +1415,7 @@ var STAY = [
      ["Child rule","Charged as adults from 13 only"],
      ["Beds","215 sq ft, two twins. Extra bed 30 euros a night if you want it"],
      ["Rate","<b>$497.38 for both nights, 428 euros</b>, taxes and fees included. The room page quotes $452 before Spanish IVA at 10 percent, so budget the higher number. Pay the property, not Booking"],
-     ["Cancel","<b>Free until Nov 7 2026</b>, fully refundable until then"],
+     ["Cancel","<b>Free until 6 Nov 23:59</b>. From <b>7 Nov 00:00</b> they charge <b>428 euros</b>. Booking&#39;s &lsquo;before November 7&rsquo; wording means the 6th is your last full day &mdash; the same off-by-one as Lisbon and Seville. <b>Card is charged within 5 days of arrival.</b> Booked in <b>Rizwan&#39;s name</b>, unlike the other three which are in Zaibnish&#39;s &mdash; bring both IDs"],
      ["Check in","14:00 to 21:00. You arrive about 17:15, comfortably inside it"],
      ["Check out","08:00 to 12:00. The Seville coach is at 10:00, so check out around 09:15"],
      ["Stock","1 room left at this rate"],
@@ -1418,7 +1435,7 @@ var STAY = [
    ],
    facts:[
      ["<b>Correction, 12 Sep. Dona Elvira is not $231</b>","This page showed Dona Elvira at <b>$231</b> and called it the budget entry. <b>That was a per-night figure recorded as if it were the stay total.</b> It is <b>$230 a night, so $459 for two nights, about $505 with 10 percent IVA</b> &mdash; which makes it <b>$83 more expensive than Iberflat, not cheaper</b>. Two other details here were also wrong: it <b>does</b> have a lift, and its check-in runs <b>16:00 to 20:30</b>, an hour worse than Iberflat against your 13:00 coach. What it genuinely wins on is cleanliness, 9.7 against 9.4"],
-     ["<b>BOOKED 12 Sep &mdash; confirmation 6795.767.661</b>","Iberflat San Gregorio, <b>Calle San Gregorio 7, 41004</b>. Phone <b>+34 697 16 72 22</b>. PIN <b>7427</b>. One-Bedroom Apartment in <b>Zaibnish&#39;s name</b>. <b>Check in Sat 14 Nov 15:00 to midnight, check out Mon 16 Nov 06:00 to 12:00.</b> GPS N 037 22.985, W 05 59.575. Licence A/SE/00590. <b>Changing the dates is not possible.</b> Lift to the upper floors"],
+     ["<b>BOOKED 12 Sep &mdash; confirmation in your email</b>","Iberflat San Gregorio, <b>Calle San Gregorio 7, 41004</b>. Phone <b>+34 697 16 72 22</b>. One-Bedroom Apartment in <b>Zaibnish&#39;s name</b>. <b>Check in Sat 14 Nov 15:00 to midnight, check out Mon 16 Nov 06:00 to 12:00.</b> GPS N 037 22.985, W 05 59.575. Licence A/SE/00590. <b>Changing the dates is not possible.</b> Lift to the upper floors"],
      ["<b>The price came in exactly as quoted &mdash; no hidden fee</b>","Apartment <b>$300</b> plus 10 percent VAT <b>$30</b> = <b>$330</b>, about 284 euros. <b>Unlike Lisbon there is no cleaning fee</b>, so the estimate held. You pay <b>the property in euros</b>, so the dollar figure moves with the rate and your card may add a foreign transaction fee"],
      ["<b>Izyan IS on this reservation</b>","It reads <b>&lsquo;2 adults, 1 child (5 years old)&rsquo;</b> and prices &lsquo;for 3 guests&rsquo;. That is the thing the Lisbon confirmation got wrong, and it is right here. No action needed"],
      ["<b>Three things Lisbon did not have</b>","<b>1. A 100 euro damage deposit, about $116</b>, taken by credit card on arrival and refunded within 7 days after an inspection. Budget the cash-flow even though you get it back. <b>2. Prepayment</b> &mdash; the full $330 is charged to your card <b>within 5 days of arrival</b>, so around 9 to 14 Nov. <b>3. Photo ID and a credit card are required at check-in</b>"],
@@ -1448,7 +1465,8 @@ var STAY = [
    anchor:"Chatelet RER",
    area:"Six hotels re-checked live on 30 Aug at your exact occupancy, two adults and a five-year-old, three nights. <b>Every price below is all in</b> &mdash; it includes the 10 percent VAT and the city tax that Booking leaves out of the headline figure.",
    opts:[
-     {n:"Hotel Montpensier", s:"8.5", cl:"8.6", r:"3,072", rk:"Book this", u:"Triple, full + twin, 215 sq ft, breakfast $13pp", d:"10 min", p:"$1,101", slug:"fr/montpensier-paris.html"},
+     {n:"Nestay Les Halles", s:"9.4", cl:"9.5", r:"1,156", rk:"BOOKED AND PAID", u:"355 sq ft apt, queen + sofa bed, kitchen, balcony", d:"2 min to Chatelet", p:"$1,378", slug:"fr/nestay-les-halles.html"},
+     {n:"Hotel Montpensier", s:"8.5", cl:"8.6", r:"3,072", rk:"Runner-up, 215 sq ft", u:"Triple, full + twin, breakfast $13pp", d:"13 min avg", p:"$993", slug:"fr/montpensier-paris.html"},
      {n:"Bellevue et du Chariot d&#39;Or", s:"8.0", cl:"7.9", r:"4,543", rk:"Lean pick, cleanliness slipping", u:"Triple, 3 twins, 183 sq ft, breakfast included", d:"9 min", p:"$857", slug:"fr/bellevue-et-du-chariot-d-39-or-paris2.html"},
      {n:"Hotel Du Flaneur", s:"8.7", cl:"9.0", r:"511", rk:"3rd", u:"Triple, queen + sofa, 215 sq ft, 1 left", d:"12 min", p:"$1,169", slug:"fr/le-clery-paris.html"},
      {n:"Timhotel Palais Royal", s:"8.2", cl:"8.5", r:"1,144", rk:"4th", u:"Comfort Triple, 3 twins, no prepayment", d:"9 min", p:"$1,190", slug:"fr/timpalaisroyallouvre.html"},
@@ -1456,6 +1474,12 @@ var STAY = [
      {n:"Hotel Britannique", s:"8.9", cl:"9.2", r:"700", rk:"GONE for a family of three", u:"Junior Suite sold; only 2 connecting doubles remain", d:"1 min", p:"$2,366", slug:"fr/britannique-paris.html"}
    ],
    facts:[
+     ["<b>BOOKED 12 Sep &mdash; confirmation in your email</b>","<b>Nestay Les Halles</b>, Deluxe One-Bedroom Apartment with Balcony and City View, <b>unit 201</b>. 7 Rue de la Cossonnerie, 1st arr, 75001. Phone <b>+33 1 42 33 97 51</b>. In <b>Zaibnish&#39;s name</b>, and it correctly reads <b>2 adults, 1 child (5 years old)</b>. <b>Check in Mon 16 Nov 16:00 to 23:30, check out Thu 19 Nov by 11:00.</b> GPS N 048 51.681, E 02 20.921. Lift. <b>No parking.</b> Non-refundable and dates cannot be changed"],
+     ["<b>What it cost &mdash; and one figure to confirm</b>","Apartment <b>$1,285</b> plus an <b>80 euro cleaning fee, $93</b> = <b>$1,378</b>, about 1,186 euros. <b>No VAT line appeared</b>, so the rate page&#39;s &lsquo;excluding VAT&rsquo; was already baked in &mdash; the estimate of $1,403 came in $25 high. <b>But the confirmation also says Booking.com paid $115.67 of this booking</b> and that the property invoice will show $1,378.08. <b>Check your card statement for the amount actually charged</b>: it may be about $1,262. Tell me which and the budget gets the real number"],
+     ["<b>ACTION &mdash; a rental agreement must be signed and returned</b>","The confirmation states guests <b>receive a rental agreement that must be signed and returned before arrival</b>. If it does not come, call the property on +33 1 42 33 97 51. <b>This is separate from the online check-in</b> and is easy to miss"],
+     ["<b>ACTION &mdash; online check-in before you fly</b>","There is <b>no front desk</b>. Online check-in requires <b>a valid ID number and credit card details</b> &mdash; the card is not charged, it guarantees the stay. <b>The door access codes only arrive once this is done.</b> Screenshot them so they work offline"],
+     ["Why this one won","Two of your three Paris mornings start before any hotel serves food &mdash; <b>07:00 on Disney day and 06:45 on departure day</b> &mdash; and the 18th has a 13:30 rest &lsquo;at the apartment&rsquo;. Only an apartment satisfies the plan as written. It is also <b>2 minutes from Chatelet-Les Halles</b>, the station used on three of four days, and <b>355 sq ft</b> against 161 to 269 for the hotel alternatives"],
+     ["One oddity in the amenity list","The listing says linen and towels are included, but the confirmation amenities also show <b>&lsquo;Towels/sheets (extra fee)&rsquo;</b>. Probably refers to mid-stay changes on a three-night booking. Worth a question at online check-in"],
      ["<b>Refreshed live 9 Sep &mdash; what moved</b>","<b>Britannique is effectively gone.</b> The Junior Suite was the only room taking three people and it sold; the cheapest remaining option for a family is Two Connecting Double Rooms at <b>$2,366</b>. The 1-left warning on 30 Aug was real. <b>Montpensier rose $46 to about $1,101</b>, still refundable to Nov 14. <b>Bellevue held at $857 but its cleanliness slipped from 8.0 to 7.9</b>, which was already the lowest here and is now heading the wrong way. Du Flaneur, Timhotel and Ducs d&#39;Anjou were not re-checked this pass"],
      ["<b>Correction, and it matters</b>","This page previously showed Paris at $700 to $850 and Charles Floquet at $498. <b>Both figures were wrong.</b> They were never re-checked at two adults plus a child for these dates. There is no room in central Paris for three people at that price in November. The real floor for something clean is about $857"],
      ["Why Montpensier","12 rue de Richelieu, 1st arrondissement, beside the Palais Royal. Location rated <b>9.8</b>, cleanliness 8.6 across 3,072 reviews. $941 before tax, free cancellation to Nov 14, <b>nothing due until Nov 12</b>"],
@@ -1491,13 +1515,28 @@ function renderStay(){
 
     var facts = "";
     if(C.facts){
-      facts = '<dl class="spec" style="padding:14px 16px;border-bottom:1px solid var(--line2)">'
-        + C.facts.map(function(r){ return '<dt>'+r[0]+'</dt><dd>'+r[1]+'</dd>'; }).join("")
-        + '</dl>';
+      var isCorr = function(r){ return /correction|was wrong|not the bargain|came off the top|wrongly ruled/i.test(r[0]+' '+r[1]); };
+      var live = C.facts.filter(function(r){ return !isCorr(r); });
+      var corr = C.facts.filter(isCorr);
+      var acc = function(r, open){
+        return '<details class="acc"'+(open?' open':'')+'><summary>'+r[0].replace(/<\/?b>/g,'')+'</summary>'
+             + '<div class="acc-b">'+r[1]+'</div></details>';
+      };
+      facts = '<div style="border-bottom:1px solid var(--line2)">'
+            + live.map(function(r,ix){ return acc(r, ix===0); }).join("")
+            + '</div>';
+      if(corr.length){
+        facts += '<div class="acc-grp"><div class="acc-grp-h">Corrections log'
+              + '<span class="acc-n" style="float:right">'+corr.length+'</span></div>'
+              + corr.map(function(r){ return acc(r,false); }).join("")
+              + '</div>';
+      }
     }
 
     var scam = C.scam
-      ? '<div class="panel p-bad"><div class="panel-b">'+C.scam+'</div></div>'
+      ? '<div class="acc-grp"><div class="acc-grp-h">Listings deliberately left off</div>'
+        + '<details class="acc"><summary>What was excluded, and why</summary>'
+        + '<div class="acc-b">'+C.scam+'</div></details></div>'
       : '';
 
     return '<div class="card blk">'
@@ -1518,16 +1557,23 @@ function renderStay(){
     + '<div class="s-s">Re-verified live for your dates, 2 adults and a 5-year-old. Price is the '
     + '<b>total for the stay</b>, not per night. Every property now shows its Booking.com <b>cleanliness '
     + 'sub-score</b> separately, because that was your first priority. Walking times are approximate. '+staleBadge()+'</div>'
-    + '<div class="note n-w"><span class="n-t">What changed after re-checking</span>'
-    + 'Three of the twelve properties came off the list and one city moved. <b>Chiado Camoes</b> in Lisbon has a '
-    + 'recent mould report and a payment-security complaint. <b>Casa Palacio del Abad</b> in Seville could not be '
-    + 'score-verified at all. Two Paris listings were wrong: one is in the 15th rather than the 7th, the other '
-    + 'could not be found to exist. And <b>Paris moved from the 7th to Chatelet</b>, which is the one decision '
-    + 'here worth arguing about.</div>'
-    + '<div class="note n-w"><span class="n-t">Book apartments, not hotels</span>'
+    + '<div class="note n-i"><span class="n-t">How to read this page</span>'
+    + 'Every price is the <b>total for the stay, all in</b> &mdash; VAT, city tax and any cleaning fee included. '
+    + 'Booking.com shows none of that until checkout, and its search results show <b>per-night</b> figures that look '
+    + 'like totals. <b>Always confirm against the itemised checkout page before paying.</b></div>'
+    + '<div class="acc-grp" style="margin:14px 0">'
+    + '<div class="acc-grp-h">Background</div>'
+    + '<details class="acc"><summary>Why apartments, not hotels</summary><div class="acc-b">'
     + 'European boutique hotels cap at <b>2 adults</b>, have <b>no extra beds</b>, and charge children as adults '
-    + 'from age 3 or 4. A hotel listed at $300 a night means two rooms for you. Apartments take all three on one '
-    + 'booking, have a kitchen, and in Paris cost less.</div>'
+    + 'from age 3 or 4. A hotel listed at $300 a night can mean two rooms for you. Apartments take all three on one '
+    + 'booking and have a kitchen &mdash; which matters on the two Paris mornings that start before any hotel serves food.'
+    + '</div></details>'
+    + '<details class="acc"><summary>Properties dropped during research</summary><div class="acc-b">'
+    + '<b>Chiado Camoes</b>, Lisbon &mdash; a mould report and a payment-security complaint. '
+    + '<b>Casa Palacio del Abad</b>, Seville &mdash; could not be score-verified. '
+    + '<b>NEW Eiffel Tour Splendid</b> &mdash; in the 15th, not the 7th. '
+    + '<b>Spacious 2-Bedroom with Balcony</b> &mdash; could not be verified to exist.'
+    + '</div></details></div>'
     + '<div class="g2">'+cities+'</div>';
 }
 
@@ -1571,7 +1617,7 @@ var BOOKINGS = [
    u:"https://www.squaremouth.com/resources/destinations/europe", ul:"Compare plans"},
 
   {id:"hlis", ph:2, paid:1, t:"Lisbon, Nov 10 to 12: Residentas Arco do Bandeira, BOOKED",
-   n:"<b>BOOKED 12 Sep. Confirmation 5540.272.809, PIN 6547.</b> One-Bedroom Apartment at 226 Rua dos Sapateiros, in Zaibnish&#39;s name. Check in <b>Tue 10 Nov from 16:00</b>, check out <b>Thu 12 Nov by 10:00</b>. <b>$582 all in</b> &mdash; $455 room, $81 cleaning fee, $27 VAT, $19 city tax. <b>Free cancellation only until 10 Oct 23:59</b>, then 415.16 euros. Dates cannot be changed. <b>Two open items: confirm Izyan is on the reservation, and chase the luggage-storage reply.</b>",
+   n:"<b>BOOKED 12 Sep. Confirmation and PIN are in your email and the confirmations folder.</b> One-Bedroom Apartment at 226 Rua dos Sapateiros, in Zaibnish&#39;s name. Check in <b>Tue 10 Nov from 16:00</b>, check out <b>Thu 12 Nov by 10:00</b>. <b>$582 all in</b> &mdash; $455 room, $81 cleaning fee, $27 VAT, $19 city tax. <b>Free cancellation only until 10 Oct 23:59</b>, then 415.16 euros. Dates cannot be changed. <b>Two open items: confirm Izyan is on the reservation, and chase the luggage-storage reply.</b>",
    by:"2026-10-10", est:582,
    u:"https://www.booking.com/hotel/pt/residentas-arco-do-bandeira.html?checkin=2026-11-10&checkout=2026-11-12&group_adults=2&group_children=1&age=5&no_rooms=1&selected_currency=USD", ul:"Open Arco do Bandeira"},
   {id:"lugcode", ph:5, t:"Sat 7 Nov: request the Lisbon luggage access codes",
@@ -1579,13 +1625,17 @@ var BOOKINGS = [
    by:"2026-11-07", est:0,
    u:"tel:+351960060061", ul:"Message the Residentas team"},
   {id:"hsev", ph:2, paid:1, t:"Seville, Nov 14 to 16: Iberflat San Gregorio, BOOKED",
-   n:"<b>BOOKED 12 Sep. Confirmation 6795.767.661, PIN 7427.</b> Iberflat San Gregorio One-Bedroom, Calle San Gregorio 7, in Zaibnish&#39;s name. <b>Check in Sat 14 Nov from 15:00, check out Mon 16 Nov by 12:00.</b> <b>$330 all in</b> &mdash; $300 plus 10 percent VAT, no cleaning fee. <b>Izyan is correctly listed.</b> Free cancellation to <b>8 Nov 23:59</b>, then 284 euros. <b>Bring a credit card and photo ID: a 100 euro damage deposit is taken on arrival</b> and refunded within 7 days. The card is charged within 5 days of arrival. Phone +34 697 16 72 22.",
+   n:"<b>BOOKED 12 Sep. Confirmation and PIN are in your email and the confirmations folder.</b> Iberflat San Gregorio One-Bedroom, Calle San Gregorio 7, in Zaibnish&#39;s name. <b>Check in Sat 14 Nov from 15:00, check out Mon 16 Nov by 12:00.</b> <b>$330 all in</b> &mdash; $300 plus 10 percent VAT, no cleaning fee. <b>Izyan is correctly listed.</b> Free cancellation to <b>8 Nov 23:59</b>, then 284 euros. <b>Bring a credit card and photo ID: a 100 euro damage deposit is taken on arrival</b> and refunded within 7 days. The card is charged within 5 days of arrival. Phone +34 697 16 72 22.",
    by:"2026-11-08", est:330,
    u:"https://www.booking.com/hotel/es/suites-murillo-segovias.html?checkin=2026-11-14&checkout=2026-11-16&group_adults=2&group_children=1&age=5&no_rooms=1", ul:"Open Suites Murillo"},
-  {id:"hpar", ph:2, t:"Paris, Nov 16 to 19: decide the base first",
-   n:"<b>Re-verified live 30 Aug at your occupancy. The old $700 to $850 figure was wrong and has been removed.</b> Six hotels compared on the Hotels tab. The pick is <b>Hotel Montpensier at about $1,055 all in</b>: 1st arrondissement, cleanliness 8.6 across 3,072 reviews, location 9.8, and the only one whose check-in window is confirmed to run to midnight, which your 21:15 arrival needs. Nothing due until Nov 12. <b>Bellevue et du Chariot d&#39;Or at $857 with breakfast included</b> is the lean alternative if price leads. Britannique is now sixth at $1,377.",
-   by:"2026-11-14", est:1101,
-   u:"https://www.booking.com/hotel/fr/montpensier-paris.html?checkin=2026-11-16&checkout=2026-11-19&group_adults=2&group_children=1&age=5&no_rooms=1&selected_currency=USD", ul:"Open Hotel Montpensier"},
+    {id:"hpar", ph:2, paid:1, t:"Paris, Nov 16 to 19: Nestay Les Halles, BOOKED",
+   n:"<b>BOOKED 12 Sep. Confirmation and PIN are in your email and the confirmations folder.</b> Nestay Les Halles, Deluxe One-Bedroom Apartment 201, 7 Rue de la Cossonnerie, 1st arr. 355 sq ft, queen plus sofa bed, balcony, full kitchen. In Zaibnish&#39;s name, <b>Izyan correctly listed</b>. <b>Check in Mon 16 Nov 16:00 to 23:30, check out Thu 19 Nov by 11:00.</b> <b>$1,378</b> &mdash; $1,285 plus an 80 euro cleaning fee, no VAT added. Non-refundable. <b>Two things still to do: sign and return the rental agreement, and complete online check-in to get the door codes.</b> Phone +33 1 42 33 97 51.",
+   by:"2026-09-12", est:1378,
+   u:"https://www.booking.com/hotel/fr/nestay-les-halles.html?checkin=2026-11-16&checkout=2026-11-19&group_adults=2&group_children=1&age=5&no_rooms=1&selected_currency=USD", ul:"Open Nestay Les Halles"},
+  {id:"nescode", ph:5, t:"Before you fly: complete Nestay online check-in",
+   n:"<b>Nestay has no front desk. Check-in is fully self-service and the access codes only arrive once you complete online check-in.</b> Do it as soon as the link appears, and screenshot the codes so they work offline. Without them you are on rue de la Cossonnerie at 21:15 with the bags and no way in. <b>Ask at the same time whether Paris city tax is collected on arrival</b> &mdash; the rate page did not show a city-tax line, so budget about $56 in case.",
+   by:"2026-11-09", est:0,
+   u:"https://secure.booking.com/", ul:"Booking.com account"},
   {id:"bus1", ph:3, t:"Granada to Seville, Nov 14, ALSA coach",
    n:"Three hours direct, twelve a day, 12 to 30 euros each. Reserve seats online the night before. Not the train: the only direct Avant services in this direction are 06:22 and 18:17.",
    by:"2026-10-20", est:70,
@@ -1703,16 +1753,36 @@ function deadlineChip(b, done){
 }
 
 function satBanner(){
-  return '<div class="note n-w" style="margin-bottom:18px"><span class="n-t">Saturday review &mdash; the six decisions that matter</span>'
-   + '<b>Everything below is priced live as of 9 September at two adults and a five-year-old, all in, including the taxes Booking hides.</b> '
-   + 'Two options vanished between 30 Aug and 9 Sep, so treat stock warnings as real.<br><br>'
-   + '<b>1. Lisbon. DONE</b> &mdash; Arco do Bandeira booked 12 Sep, $582 all in, confirmation 5540.272.809. Cancels free to <b>10 Oct</b>, not 11. Luggage storage confirmed free and self-access &mdash; <b>request the codes on Sat 7 Nov</b>.<br>'
-   + '<b>2. Seville. DONE</b> &mdash; Iberflat one-bedroom booked 12 Sep, <b>$330 all in</b>, confirmation 6795.767.661. Izyan correctly listed. Cancels free to <b>8 Nov</b>, not 9. Note the <b>100 euro deposit on arrival</b>.<br>'
-   + '<b>3. Paris.</b> Montpensier $1,101, the only one with a confirmed check-in window covering your 21:15 arrival. Or Bellevue $857 with breakfast, cleanliness slipping to 7.9. Free to Nov 13 or 14.<br>'
-   + '<b>4. Travel insurance.</b> Committed spend is now <b>$5,463</b> with Lisbon and Seville both booked.<br>'
-   + '<b>5. Eiffel Tower.</b> Its booking window opens roughly 60 days out, so around 19 September for your 18 Nov evening. Summit slots go first.<br>'
-   + '<b>6. Disneyland, Alcazar, flamenco, Castelo.</b> Lower urgency, but the Alcazar is timed entry like the Alhambra.<br><br>'
-   + '<b>Five free checks worth doing the same morning:</b> Hotel America breakfast time against your 08:00 Alhambra gate; all three names on the Alhambra PDF matching passports; passports valid through about 19 Feb 2027; the Air France checked-bag allowance on Nov 16; and AA 49&#39;s departure terminal at CDG.</div>';
+  var s = bkStats();
+  return '<div class="g4 blk" style="margin-bottom:18px">'
+   + '<div class="stat"><div class="st-l">Rooms booked</div><div class="st-v">4 of 4</div><div class="st-n">Lisbon, Granada, Seville, Paris</div></div>'
+   + '<div class="stat"><div class="st-l">Flights</div><div class="st-v">All paid</div><div class="st-n">Four legs, bags included</div></div>'
+   + '<div class="stat"><div class="st-l">Committed</div><div class="st-v">$'+s.committed.toLocaleString()+'</div><div class="st-n">Across '+s.paidCount+' paid items</div></div>'
+   + '<div class="stat"><div class="st-l">Still open</div><div class="st-v">Tickets</div><div class="st-n">Insurance, Disneyland, Eiffel, Alcazar, flamenco, Castelo</div></div>'
+   + '</div>'
+   + '<div class="note n-w" style="margin-bottom:14px"><span class="n-t">Why no confirmation numbers on this page</span>'   + 'This planner is published on a <b>public</b> GitHub Pages URL. A Booking.com reference plus its PIN is enough for anyone to view, change or cancel a reservation, so <b>none are stored here</b>. They live in your email and in the confirmations folder alongside the PDFs. Property names, addresses and public phone numbers are fine to keep.</div>'
+   + '<div class="acc-grp" style="margin:0 0 18px">'
+   + '<div class="acc-grp-h">What is left, in order of deadline</div>'
+   + '<details class="acc" open><summary>Sat 19 Sep &mdash; Eiffel Tower booking window opens</summary><div class="acc-b">'
+   + 'Tickets release <b>60 days ahead</b> for the lift, 40 for the stairs. Your date is 18 Nov, so the window opens <b>19 September</b>. '
+   + 'Summit slots go first. Izyan is in the 4 to 11 reduced band.</div></details>'
+   + '<details class="acc"><summary>Travel insurance &mdash; $'+s.committed.toLocaleString()+' now at risk</summary><div class="acc-b">'
+   + 'Every flight, all four rooms and the Alhambra tickets are non-refundable or past their cancellation date. '
+   + 'Industry pricing is 4 to 10 percent of insured trip cost.</div></details>'
+   + '<details class="acc"><summary>Timed tickets &mdash; Disneyland, Alcazar, flamenco, Castelo</summary><div class="acc-b">'
+   + 'The <b>Alcazar on 15 Nov is timed entry</b>, same as the Alhambra. Disneyland is dated and cheaper booked early. '
+   + 'Flamenco and the Castelo can wait to two or three weeks out.</div></details>'
+   + '<details class="acc"><summary>Free checks worth doing in one sitting</summary><div class="acc-b">'
+   + '<b>1.</b> Confirm Izyan is on the Lisbon reservation &mdash; it currently reads 2 adults. '
+   + '<b>2.</b> Check all three names on the Alhambra PDF match passports; ID is verified at the gate. '
+   + '<b>3.</b> Passports valid through about 19 Feb 2027. '
+   + '<b>4.</b> Air France checked-bag allowance on 16 Nov. '
+   + '<b>5.</b> AA 49 departure terminal at CDG.</div></details>'
+   + '<details class="acc"><summary>Two access codes you must request</summary><div class="acc-b">'
+   + '<b>Lisbon, Sat 7 Nov</b> &mdash; luggage-store codes from the Residentas team, +351 960 060 061. '
+   + '<b>Paris, before you fly</b> &mdash; complete Nestay online check-in to receive the door codes. '
+   + 'Neither property has a front desk. Screenshot both so they work offline.</div></details>'
+   + '</div>';
 }
 
 function renderBooking(){
@@ -1944,7 +2014,7 @@ var BDG_TOTAL = BDG.reduce(function(s,x){ return s + x.e; }, 0);
 
 var COSTS = [
   ["Flights and bags, all four legs", "$4,004", "$4,004", "<b>All paid.</b> United $1,389 plus a $90 bag, TAP $538, Air France $370, American $1,616 including its $87 bag"],
-  ["Accommodation, 9 nights", "$2,266", "$2,510", "<b>Three of four booked.</b> Lisbon <b>$582</b>, Granada <b>$497</b>, Seville <b>$330</b> &mdash; all actuals from confirmations. Only <b>Paris $857 to $1,101</b> remains an estimate. Lisbon carried a hidden 70 euro cleaning fee; <b>Seville had none and came in exactly at the quote</b>, so the fee is per-property, not a regional rule"],
+  ["Accommodation, 9 nights", "$2,787", "$2,787", "<b>All four booked. No estimates left.</b> Lisbon <b>$582</b>, Granada <b>$497</b>, Seville <b>$330</b>, Paris <b>$1,378</b>. Every figure is from a confirmation, not a quote. <b>Paris may settle about $116 lower</b> if Booking.com&#39;s contribution comes off your card &mdash; confirm against the statement"],
   ["Tickets and attractions", "$480", "$650", "<b>Alhambra paid, 43.27 euros.</b> Still to buy: Disneyland, Eiffel, Alcazar, flamenco, Castelo de Sao Jorge"],
   ["Intercity coach", "$110", "$160", "Malaga to Granada $66, Granada to Seville about $70. No rail on either"],
   ["City transport", "$220", "$340", "Metros, taxis, RER, Bolt"],
@@ -1975,9 +2045,9 @@ function renderBudget(){
     + '<div class="s-s">Two layers. The all-in estimate covers everything including flights and rooms. '
     + 'The day tracker below covers only food, local transport and incidentals, so nothing is counted twice.</div>'
     + '<div class="g4 blk">'
-    + '<div class="stat"><div class="st-l">All-in estimate</div><div class="st-v">$8,630&ndash;9,644</div><div class="st-n">Three people, eleven days. Flights paid, rooms now real picks rather than a range</div></div>'
+    + '<div class="stat"><div class="st-l">All-in estimate</div><div class="st-v">$9,151&ndash;9,921</div><div class="st-n">Three people, eleven days. Flights paid, rooms now real picks rather than a range</div></div>'
     + '<div class="stat"><div class="st-l">Narmin quoted</div><div class="st-v">$12,604</div><div class="st-n">Goway ref 1185612/1</div></div>'
-    + '<div class="stat"><div class="st-l">You save</div><div class="st-v">$2,960&ndash;3,974</div><div class="st-n">Against Goway, and you add Disneyland</div></div>'
+    + '<div class="stat"><div class="st-l">You save</div><div class="st-v">$2,683&ndash;3,453</div><div class="st-n">Against Goway, and you add Disneyland</div></div>'
     + '<div class="stat"><div class="st-l">Actually committed</div><div class="st-v">$'+ bkStats().committed.toLocaleString() + '</div>'+ '<div class="st-n">' + bkStats().paidCount + ' items booked and paid: all four flights and bags, Granada, the Alhambra, Lisbon and Seville</div></div>'
     + '<div class="stat"><div class="st-l">Swing factor</div><div class="st-v">Granada</div><div class="st-n">Parador adds about $2,000</div></div>'
     + '</div>'
@@ -1986,7 +2056,7 @@ function renderBudget(){
     + '<tbody>'+costRows+'</tbody>'
     + '<tfoot><tr style="border-top:2px solid var(--line);background:var(--line2)">'
     + '<td style="font-weight:700">Total</td>'
-    + '<td class="num" style="font-weight:700;font-size:15px">$8,630 to $9,644</td></tr></tfoot>'
+    + '<td class="num" style="font-weight:700;font-size:15px">$9,151 to $9,921</td></tr></tfoot>'
     + '</table></div></div>'
     + '<div class="blk"><div class="blk-h">Day tracker &mdash; food, local transport, incidentals</div>'
     + '<div class="note n-i">Enter what you actually spend as the trip goes. Entries save in this browser, so '
@@ -2409,7 +2479,7 @@ var PLANCHOICE = {
        ["Nov 17","Disneyland, out by 18:00"],
        ["Nov 18","Rue Cler breakfast, 12:40 flight home"],
        ["Risk","Nov 16 is fourteen hours of movement ending at altitude. If Izyan flags, you lose the Eiffel entirely."],
-       ["Cost","About $8,320 to $9,334 via Dallas"]
+       ["Cost","About $8,841 to $9,611 via Dallas"]
      ]},
   b:{name:"One extra night in Paris", nights:"9 nights", days:"Nov 9 to 19", best:true,
      rows:[
@@ -2419,7 +2489,7 @@ var PLANCHOICE = {
        ["Nov 18","Paris properly: Rue Cler, Seine cruise, Eiffel summit in the evening"],
        ["Nov 19","Relaxed morning, 11:05 American nonstop home to Dallas"],
        ["Risk","None material. Every fixed booking still lands on the same date."],
-       ["Cost","About $8,630 to $9,644 via Dallas, roughly $310 more than eight nights"]
+       ["Cost","About $9,151 to $9,921 via Dallas, roughly $310 more than eight nights"]
      ]}
 };
 
@@ -2498,7 +2568,7 @@ var INSURE = {
      p:"$300 to $550",
      d:"Covers trip cancellation and interruption on your prepaid non-refundable costs, emergency medical, and "
       +"evacuation. Industry pricing is <b>4 to 10 percent of insured trip cost</b>; your non-refundable exposure "
-      +"is <b>$5,463 once the cancellation dates pass</b>: every flight and bag, the Granada room at $497, the Alhambra tickets at 43.27 euros which cannot be refunded at all, the Lisbon room at $582 after 10 October, and the Seville room at $330 after 8 November. Only <b>Paris, $857 to $1,101</b>, is still uncommitted.<br><br>"
+      +"is <b>$6,841</b>: every flight and bag, all four rooms, and the Alhambra tickets. Paris at $1,378 is non-refundable from the moment it is booked; Lisbon locks on 10 October and Seville on 8 November. <b>There is nothing left to cancel.</b><br><br>"
       +"<b>Look for a plan that covers children free.</b> Several insurers include one child under 18 per insured "
       +"adult at no cost, which with two adults makes Izyan free. That alone is worth $80 to $150.",
      u:"https://www.squaremouth.com/resources/destinations/europe", ul:"Compare on Squaremouth"},
@@ -2572,7 +2642,7 @@ function renderInsurance(){
     + 'decision available to you.</div>'
     + '<div class="g4 blk">'
     + '<div class="stat"><div class="st-l">Typical cost</div><div class="st-v">4&ndash;10%</div><div class="st-n">Of insured trip cost</div></div>'
-    + '<div class="stat"><div class="st-l">Your exposure</div><div class="st-v">$5,463 committed</div><div class="st-n">Flights, Granada, the Alhambra, Lisbon and Seville</div></div>'
+    + '<div class="stat"><div class="st-l">Your exposure</div><div class="st-v">$6,841 committed</div><div class="st-n">All flights, all four rooms, the Alhambra</div></div>'
     + '<div class="stat"><div class="st-l">Expect to pay</div><div class="st-v">$300&ndash;550</div><div class="st-n">Comprehensive, family of three</div></div>'
     + '<div class="stat"><div class="st-l">Buy within</div><div class="st-v">14&ndash;21 days</div><div class="st-n">Of your first deposit</div></div>'
     + '</div>'
