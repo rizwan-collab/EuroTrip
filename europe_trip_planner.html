@@ -450,6 +450,16 @@ details.acc .acc-b{padding:0 16px 14px 33px;font-size:13px;line-height:1.6;color
 .acc-grp-h{padding:9px 14px;background:var(--line2);font-size:11px;font-weight:700;letter-spacing:.05em;
   text-transform:uppercase;color:var(--mute);border-bottom:1px solid var(--line)}
 .acc-n{font-size:11px;color:var(--faint);font-weight:600;margin-left:auto}
+
+/* ---- long notes collapse in place ---- */
+.note.fold>.n-t{cursor:pointer;display:flex;align-items:center;gap:8px;margin-bottom:0;user-select:none}
+.note.fold>.n-t::after{content:"";flex:none;width:6px;height:6px;margin-left:auto;
+  border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;opacity:.55;
+  transform:rotate(-45deg);transition:transform .16s}
+.note.fold.open>.n-t::after{transform:rotate(45deg)}
+.note.fold>.n-body{display:none;margin-top:9px}
+.note.fold.open>.n-body{display:block}
+.note.fold>.n-t .pk{font-size:11px;font-weight:600;opacity:.6;margin-left:6px}
 </style>
 </head>
 <body>
@@ -2676,6 +2686,34 @@ var RENDER = {
 };
 var built = {};
 
+
+/* ---- fold long notes on every tab, keeping the first line visible ---- */
+function foldNotes(scope){
+  var notes = (scope||document).querySelectorAll('.note');
+  for(var i=0;i<notes.length;i++){
+    var nt = notes[i];
+    if(nt.classList.contains('fold')) continue;
+    var title = nt.querySelector('.n-t');
+    if(!title) continue;
+    var rest = [];
+    var node = title.nextSibling;
+    while(node){ rest.push(node); node = node.nextSibling; }
+    var len = rest.reduce(function(a,x){ return a + (x.textContent||'').length; }, 0);
+    if(len < 260) continue;
+    var body = document.createElement('div');
+    body.className = 'n-body';
+    rest.forEach(function(x){ body.appendChild(x); });
+    nt.appendChild(body);
+    nt.classList.add('fold');
+    var words = len > 900 ? 'long' : '';
+    title.insertAdjacentHTML('beforeend', '<span class="pk">'+(words?words+' &middot; ':'')+'tap to open</span>');
+    title.addEventListener('click', function(e){
+      e.preventDefault();
+      this.parentNode.classList.toggle('open');
+    });
+  }
+}
+
 function show(key){
   var i, el;
   var navs = document.querySelectorAll(".nv");
@@ -2692,6 +2730,7 @@ function show(key){
     built[key] = true;
     if(key === "budget") loadBudget();
   }
+  foldNotes(el);
   el.classList.add("on");
   save("tab", key);
   window.scrollTo(0, 0);
