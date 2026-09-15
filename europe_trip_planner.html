@@ -543,7 +543,7 @@ function kflight(a,b,d){
    hotel fares, because no free no-key API exposes them. Those carry
    a verified date and a one-click link to the live search instead.
    ================================================================== */
-var VERIFIED_ON = "2026-09-09";
+var VERIFIED_ON = "2026-09-12";
 var TRIP_START  = "2026-11-09";
 var FX = { rate:null, updated:null, source:null };
 
@@ -938,7 +938,7 @@ var PLAN = [
     ["19:15","Land CDG, Terminal 2G","Same time zone as Spain, so no clock change."],
     ["19:50","Free shuttle N2 to Terminal 2F","<b>2G is a remote satellite and you cannot walk to the RER from it.</b> The N2 runs every eight minutes until 23:00. Five-minute ride, but you may wait ten for it to leave."],
     ["20:15","RER B into Paris","The station sits inside Terminal 2, a short walk from 2F. Forty-five minutes to Saint-Michel, then a short hop. 12 euros each."],
-    ["21:15","Check in, 7th arrondissement",""],
+    ["21:15","Check in at Nestay, Les Halles",""],
     ["21:45","Something quick nearby","Then bed. Disneyland gates open at 09:30."]
   ],
   transport:{
@@ -1011,7 +1011,7 @@ var PLAN = [
   n:10, date:"Wed Nov 18", wd:"Wednesday", city:"Paris", tag:["p-g","The day the extra night buys"],
   sum:"A real Paris day rather than a scramble. Market, river, and the Eiffel summit at night when it is worth doing.",
   sched:[
-    ["08:00","Rue Cler market breakfast","Two minutes away. Bread, cheese, fruit, coffee. The best twenty euros of the trip."],
+    ["08:00","Montorgueil market breakfast","<b>Rue Montorgueil, 5 minutes from Nestay.</b> Pedestrian market street: bakeries, cheesemongers, fruit stalls, cafes. Bread, cheese, fruit, coffee. <b>Replaces Rue Cler</b>, which is 3.5 km away in the 7th and was planned when Paris was going to be based there."],
     ["09:30","One morning sight","Options below. Keep it to one, he has done nine days."],
     ["12:00","Lunch","L&#39;As du Fallafel in the Marais if you want the best value meal in Paris."],
     ["13:30","Proper rest at the apartment","Two hours. Tonight runs late."],
@@ -1200,7 +1200,7 @@ function itinCards(){
 
 function renderItinerary(){
   var saved = load('itinview') || 'cards';
-  setTimeout(function(){ setItinView(saved); }, 0);
+  if(saved === 'grid') setTimeout(function(){ wireGrid(); }, 0);
   return '<div class="s-h">Day by Day</div>'
     + '<div class="s-s">Eleven days, hour by hour, built on the original structure of two nights each in Lisbon, '
     + 'Granada, Seville and Paris, with a third Paris night so Nov 16 is not a fourteen-hour day. '
@@ -1218,19 +1218,19 @@ function renderItinerary(){
     + 'the <b>09:00 Nasrid Palace slot on Friday Nov 13</b> and the <b>16:40 Seville to Paris flight on Monday Nov 16</b>. '
     + 'Everything else can move.</div>'
     + '<div class="vtog">'
-    + '<button id="vbCards" class="on" onclick="setItinView(\'cards\')">Cards</button>'
-    + '<button id="vbGrid" onclick="setItinView(\'grid\')">Spreadsheet</button>'
+    + '<button id="vbCards" class="' + (saved === 'grid' ? '' : 'on') + '" onclick="setItinView(\'cards\')">Cards</button>'
+    + '<button id="vbGrid" class="' + (saved === 'grid' ? 'on' : '') + '" onclick="setItinView(\'grid\')">Spreadsheet</button>'
     + '</div>'
     + '<div class="s-s" style="margin-top:-8px">Two ways to read the same eleven days. '
     + '<b>Cards</b> gives you the full detail with booking links. <b>Spreadsheet</b> puts all 127 rows in one '
     + 'filterable grid &mdash; pick a city or a day, or search any word. Your choice is remembered.</div>'
-    + '<div id="itinBody"></div>';
+    + '<div id="itinBody">' + (saved === 'grid' ? renderGrid() : itinCards()) + '</div>';
 }
 
 /* ==================================================================
    FLIGHTS
    ================================================================== */
-var CHECKED = "9 September 2026";
+var CHECKED = "12 September 2026";
 
 var LEGS = [
   {no:"01", date:"Nov 9&ndash;10", route:"IAH to IAD to LIS", name:"Houston to Lisbon",
@@ -2278,7 +2278,7 @@ var FOOD = [
     {n:"Arab tea houses in the Albaicin", d:"Mint tea and pastries on cushion seating. Izyan will love sitting on the floor.", k:true}
   ]},
   {city:"Paris", note:"Chilly, cosy, and the food is the point", items:[
-    {n:"Rue Cler market street", d:"Steps from the 7th arrondissement apartments. Buy bread, cheese and fruit in the morning and picnic near the Eiffel Tower.", k:true},
+    {n:"Rue Cler market street", d:"<b>Note: you are based at Les Halles, not the 7th.</b> Rue Cler is a 30 to 35 minute metro ride, so it is a detour rather than a breakfast stop. <b>Rue Montorgueil is 5 minutes from the apartment</b> and does the same job. Keep Rue Cler for the Eiffel evening if you want a picnic beforehand.", k:true},
     {n:"L'As du Fallafel, Marais", d:"Seven to nine euros for the best-value lunch in Paris. Izyan-approved. The queue moves.", k:true},
     {n:"Laduree macarons", d:"About two euros fifty each. Let Izyan pick the colours. He will take it very seriously.", k:true},
     {n:"Cafe de Flore or Les Deux Magots", d:"Saint-Germain. Overpriced coffee, priceless sitting. Ten euros for a croissant and a cafe."},
