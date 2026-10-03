@@ -473,7 +473,7 @@ details.acc .acc-b{padding:0 16px 14px 33px;font-size:13px;line-height:1.6;color
     <div class="h-meta">
       <div class="h-m"><div class="h-m-l">Dates</div><div class="h-m-v">Nov 9&ndash;19, 2026</div></div>
       <div class="h-m"><div class="h-m-l">Nights</div><div class="h-m-v">9</div></div>
-      <div class="h-m"><div class="h-m-l">Estimated</div><div class="h-m-v">$9,151&ndash;9,921</div></div>
+      <div class="h-m"><div class="h-m-l">Estimated</div><div class="h-m-v">$9,088&ndash;9,448</div></div>
     </div>
   </div>
 </header>
@@ -543,7 +543,7 @@ function kflight(a,b,d){
    hotel fares, because no free no-key API exposes them. Those carry
    a verified date and a one-click link to the live search instead.
    ================================================================== */
-var VERIFIED_ON = "2026-09-12";
+var VERIFIED_ON = "2026-10-03";
 var TRIP_START  = "2026-11-09";
 var FX = { rate:null, updated:null, source:null };
 
@@ -968,7 +968,7 @@ var PLAN = [
   sched:[
     ["07:00","Breakfast at the apartment","Eat properly. Park food is six to ten euros an item."],
     ["07:50","Leave, pack the day bag","Snacks, water, power bank, a warm layer. It is 6 to 12 degrees."],
-    ["08:10","RER A from central Paris","Forty minutes to Marne-la-Vallee Chessy. The station is at the park gates."],
+    ["08:10","RER A from Chatelet-Les Halles","Five minutes on foot from Nestay. Direct, about forty minutes, no change. <b>Board only trains marked Marne-la-Vallee Chessy</b>, not Boissy-Saint-Leger. About 5 euros an adult and 2.50 for Izyan, check the Bonjour RATP app. Skip Uber (45 to 60 minutes and 70 to 100 euros each way, and VTC drivers rarely carry a child seat) and the central-Paris coaches (third-party, fixed times from Opera or Trocadero). If he is finished on the way back, a G7 taxi is the legal no-car-seat option."],
     ["09:00","Arrive, bag check","Queue at the turnstiles before opening."],
     ["09:30","Gates open","Walk, do not run, but do not browse either."],
     ["09:40","Ratatouille, Walt Disney Studios","Trackless dark ride, no height limit, and the single best attraction for a five-year-old. Do it first."],
@@ -1600,36 +1600,36 @@ function renderStay(){
    upstream: add, edit and delete items directly on the page.
    ================================================================== */
 var BOOKINGS = [
-  {id:"alh", ph:1, paid:1, t:"Alhambra tickets: booked, 09:00 Friday Nov 13",
+  {id:"alh", done:1, cost:48.69, ph:1, paid:1, t:"Alhambra tickets: booked, 09:00 Friday Nov 13",
    n:"<b>Booked for 09:00 on 13 Nov 2026.</b> 21.64 euros an adult, 43.27 euros total, and Izyan is on it as a free minor aged 3 to 11. Tickets arrived as PDF and Passbook, so <b>load the Passbook version into Apple Wallet</b> and the QR is offline at the gate. <b>One thing to check on the PDF:</b> all three names must match passports, because ID is verified at entry.",
    by:"2026-09-15", est:48,
    u:"https://tickets.alhambra-patronato.es/en/", ul:"Book at the official Patronato site"},
-  {id:"gra", ph:1, paid:1, t:"Hotel America, Granada, Nov 12 to 14",
+  {id:"gra", done:1, cost:497.38, ph:1, paid:1, t:"Hotel America, Granada, Nov 12 to 14",
    n:"<b>Booked.</b> Family Room, $497.38 all in at 428 euros, reserved with a Visa but paid to the property on arrival. Check in 14:00 to 21:00, check out 08:00 to 12:00, both of which fit. Free cancellation until Nov 7 if anything changes. The confirmation is in the email.",
    by:"2026-09-15", est:497, dep:["alh"],
    u:"https://www.booking.com/hotel/es/america-granada.html?checkin=2026-11-12&checkout=2026-11-14&group_adults=2&group_children=1&age=5&no_rooms=1", ul:"Open Hotel America"},
-  {id:"dec", ph:1, t:"Extra Paris night: locked in",
+  {id:"dec", done:1, ph:1, t:"Extra Paris night: locked in",
    n:"Nine nights, not eight. Nov 16 is now a pure travel day and the Eiffel Tower moves to Wednesday Nov 18. You fly home Thursday Nov 19. Costs about $310 and it is the single best $310 in this plan. Nothing to do here, it is already built into every date below.",
    by:"2026-09-20", est:310},
 
-  {id:"out", ph:1, paid:1, t:"United outbound: done",
+  {id:"out", done:1, cost:1479, ph:1, paid:1, t:"United outbound: done",
    n:"Flight $1,389, checked bag $90. Seats left to the airline by choice. Izyan is already next to Zaibnish on both legs, so nothing here needs action.",
    by:"2026-09-15", est:1479},
-  {id:"ret", ph:1, paid:1, t:"Return flight: done",
+  {id:"ret", done:1, cost:1616.49, ph:1, paid:1, t:"Return flight: done",
    n:"AA 49, CDG 11:05 to DFW 14:50. $1,616.49 paid including an $87 checked bag. Seats left to the airline.",
    by:"2026-09-30", est:1616},
-  {id:"lis", ph:1, paid:1, t:"Lisbon to Malaga, Nov 12: paid",
+  {id:"lis", done:1, cost:538.32, ph:1, paid:1, t:"Lisbon to Malaga, Nov 12: paid",
    n:"TAP TP1136, 10:45 to 13:00, $538.32. One checked bag, on your ticket. Zaibnish and Izyan are carry-on only at 10kg each, which is the tightest limit on the whole trip.",
    by:"2026-10-01", est:538},
-  {id:"agp", ph:1, paid:1, t:"Seville to Paris, Nov 16: done",
+  {id:"agp", done:1, cost:369.8, ph:1, paid:1, t:"Seville to Paris, Nov 16: done",
    n:"Air France nonstop, SVQ 16:40 to CDG 19:15, $369.80 paid. Fare stepped up off Light so the checked bag comes with you. All four flights are now booked.",
    by:"2026-10-01", est:370},
-  {id:"ins", ph:2, t:"Travel insurance",
-   n:"Buy within 14 to 21 days of your first deposit or you lose the pre-existing condition waiver. Check your credit card cover first.",
-   by:"2026-10-05", est:400, dep:["alh"],
-   u:"https://www.squaremouth.com/resources/destinations/europe", ul:"Compare plans"},
+  {id:"ins", done:1, cost:77, ph:2, paid:1, t:"Travel insurance: Tin Leg Gold, BOUGHT",
+   n:"<b>Bought 3 Oct via Squaremouth, $77 for all three.</b> Medical and evacuation only, because the Chase Sapphire Preferred already covers cancellation, delay and baggage. <b>$500,000 emergency medical per person, primary, no deductible. $500,000 medical evacuation per person.</b> Covers 9 to 19 Nov, extends to 26 Nov if a covered delay keeps you there. Pre-existing conditions not covered. Free cancellation until 16 Oct. <b>Emergency assistance from abroad: +1 727-264-5657 (collect).</b> Policy number is on the PDF in the confirmations folder. Full details on the Insurance tab.",
+   by:"2026-10-05", est:77, dep:["alh"],
+   u:"tel:+17272645657", ul:"Call emergency assistance"},
 
-  {id:"hlis", ph:2, paid:1, t:"Lisbon, Nov 10 to 12: Residentas Arco do Bandeira, BOOKED",
+  {id:"hlis", done:1, cost:582, ph:2, paid:1, t:"Lisbon, Nov 10 to 12: Residentas Arco do Bandeira, BOOKED",
    n:"<b>BOOKED 12 Sep. Confirmation and PIN are in your email and the confirmations folder.</b> One-Bedroom Apartment at 226 Rua dos Sapateiros, in Zaibnish&#39;s name. Check in <b>Tue 10 Nov from 16:00</b>, check out <b>Thu 12 Nov by 10:00</b>. <b>$582 all in</b> &mdash; $455 room, $81 cleaning fee, $27 VAT, $19 city tax. <b>Free cancellation only until 10 Oct 23:59</b>, then 415.16 euros. Dates cannot be changed. <b>Two open items: confirm Izyan is on the reservation, and chase the luggage-storage reply.</b>",
    by:"2026-10-10", est:582,
    u:"https://www.booking.com/hotel/pt/residentas-arco-do-bandeira.html?checkin=2026-11-10&checkout=2026-11-12&group_adults=2&group_children=1&age=5&no_rooms=1&selected_currency=USD", ul:"Open Arco do Bandeira"},
@@ -1637,11 +1637,11 @@ var BOOKINGS = [
    n:"<b>Three days before arrival, as the property requires.</b> Residentas Arco do Bandeira stores luggage free on the 2nd floor, opposite the lift, but it is <b>code entry and the codes are issued on request</b>. Ask for the access codes and your check-in instructions together. <b>Ask again about the free airport transfer at the same time.</b> Without the codes you are standing outside at 12:15 with a checked bag, a carry-on, three backpacks and a five-year-old, until 16:00.",
    by:"2026-11-07", est:0,
    u:"tel:+351960060061", ul:"Message the Residentas team"},
-  {id:"hsev", ph:2, paid:1, t:"Seville, Nov 14 to 16: Iberflat San Gregorio, BOOKED",
+  {id:"hsev", done:1, cost:330, ph:2, paid:1, t:"Seville, Nov 14 to 16: Iberflat San Gregorio, BOOKED",
    n:"<b>BOOKED 12 Sep. Confirmation and PIN are in your email and the confirmations folder.</b> Iberflat San Gregorio One-Bedroom, Calle San Gregorio 7, in Zaibnish&#39;s name. <b>Check in Sat 14 Nov from 15:00, check out Mon 16 Nov by 12:00.</b> <b>$330 all in</b> &mdash; $300 plus 10 percent VAT, no cleaning fee. <b>Izyan is correctly listed.</b> Free cancellation to <b>8 Nov 23:59</b>, then 284 euros. <b>Bring a credit card and photo ID: a 100 euro damage deposit is taken on arrival</b> and refunded within 7 days. The card is charged within 5 days of arrival. Phone +34 697 16 72 22.",
    by:"2026-11-08", est:330,
    u:"https://www.booking.com/hotel/es/suites-murillo-segovias.html?checkin=2026-11-14&checkout=2026-11-16&group_adults=2&group_children=1&age=5&no_rooms=1", ul:"Open Suites Murillo"},
-    {id:"hpar", ph:2, paid:1, t:"Paris, Nov 16 to 19: Nestay Les Halles, BOOKED",
+    {id:"hpar", done:1, cost:1378, ph:2, paid:1, t:"Paris, Nov 16 to 19: Nestay Les Halles, BOOKED",
    n:"<b>BOOKED 12 Sep. Confirmation and PIN are in your email and the confirmations folder.</b> Nestay Les Halles, Deluxe One-Bedroom Apartment 201, 7 Rue de la Cossonnerie, 1st arr. 355 sq ft, queen plus sofa bed, balcony, full kitchen. In Zaibnish&#39;s name, <b>Izyan correctly listed</b>. <b>Check in Mon 16 Nov 16:00 to 23:30, check out Thu 19 Nov by 11:00.</b> <b>$1,378</b> &mdash; $1,285 plus an 80 euro cleaning fee, no VAT added. Non-refundable. <b>Two things still to do: sign and return the rental agreement, and complete online check-in to get the door codes.</b> Phone +33 1 42 33 97 51.",
    by:"2026-09-12", est:1378,
    u:"https://www.booking.com/hotel/fr/nestay-les-halles.html?checkin=2026-11-16&checkout=2026-11-19&group_adults=2&group_children=1&age=5&no_rooms=1&selected_currency=USD", ul:"Open Nestay Les Halles"},
@@ -1661,8 +1661,8 @@ var BOOKINGS = [
    n:"One day, two parks. You need the Studios for Ratatouille. About $330 to $430 for three in low season.",
    by:"2026-10-25", est:380, dep:["hpar"],
    u:"https://www.disneylandparis.com/en-usa/tickets/", ul:"Book Disneyland"},
-  {id:"eif", ph:4, t:"Eiffel Tower summit, Nov 18 evening",
-   n:"36.70 euros adult and 9.20 child aged 4 to 11, so 82.60 for three. The tower runs until midnight, last lift 22:30.",
+  {id:"eif", done:1, ph:4, t:"Eiffel Tower summit, Wed Nov 18, 09:30: booked",
+   n:"<b>Booked for the 09:30 daytime summit slot on 18 Nov</b>, matching the Day by Day plan. Izyan is on the 4 to 11 reduced band. Enter the price from the ticket once you check it; list price is 36.70 euros adult and 9.20 child, so about 82.60 for three. Be at security by 09:15.",
    by:"2026-10-25", est:92, dep:["dec"],
    u:"https://www.toureiffel.paris/en", ul:"Book the Eiffel Tower"},
   {id:"alc", ph:4, t:"Alcazar of Seville, Nov 15",
@@ -1682,7 +1682,7 @@ var BOOKINGS = [
    by:"2026-10-28", est:0,
    u:"https://the.ismaili/ismaili-centre-lisbon", ul:"the.ismaili"},
 
-  {id:"pass", ph:5, t:"Check all three passports",
+  {id:"pass", done:1, ph:5, t:"Check all three passports",
    n:"Must be valid at least six months past your return date. Renewals take weeks, so verify today rather than in October.",
    by:"2026-09-10", est:0},
   {id:"esim", ph:5, t:"eSIM for both phones",
@@ -1722,8 +1722,16 @@ function bkAll(){ return BOOKINGS.concat(bkCustom()); }
 
 /* ---------- per-item state ---------- */
 function bkGet(id){
-  try{ return JSON.parse(load("bk_"+id) || "null") || {done:false, cost:null}; }
-  catch(e){ return {done:false, cost:null}; }
+  var st;
+  try{ st = JSON.parse(load("bk_"+id) || "null") || {done:false, cost:null}; }
+  catch(e){ st = {done:false, cost:null}; }
+  /* status baked into the page so every device shows the same thing */
+  var b = BOOKINGS.filter(function(x){ return x.id === id; })[0];
+  if(b && b.done){
+    st.done = true;
+    if(typeof st.cost !== "number" && typeof b.cost === "number") st.cost = b.cost;
+  }
+  return st;
 }
 function bkSet(id, st){ save("bk_"+id, JSON.stringify(st)); }
 
@@ -2032,7 +2040,7 @@ var COSTS = [
   ["Intercity coach", "$110", "$160", "Malaga to Granada $66, Granada to Seville about $70. No rail on either"],
   ["City transport", "$220", "$340", "Metros, taxis, RER, Bolt"],
   ["Daily food and incidentals", "$" + BDG_TOTAL, "$" + BDG_TOTAL, "Tracked day by day below"],
-  ["Travel insurance", "$140", "$550", "Medical-only at the low end, comprehensive at the high end"],
+  ["Travel insurance", "$77", "$77", "<b>Bought.</b> Tin Leg Gold, medical and evacuation only, all three travellers"],
   ["eSIM and apps", "$20", "$40", "Two phones, eleven days"]
 ];
 
@@ -2058,10 +2066,10 @@ function renderBudget(){
     + '<div class="s-s">Two layers. The all-in estimate covers everything including flights and rooms. '
     + 'The day tracker below covers only food, local transport and incidentals, so nothing is counted twice.</div>'
     + '<div class="g4 blk">'
-    + '<div class="stat"><div class="st-l">All-in estimate</div><div class="st-v">$9,151&ndash;9,921</div><div class="st-n">Three people, eleven days. Flights paid, rooms now real picks rather than a range</div></div>'
+    + '<div class="stat"><div class="st-l">All-in estimate</div><div class="st-v">$9,088&ndash;9,448</div><div class="st-n">Three people, eleven days. Flights paid, rooms now real picks rather than a range</div></div>'
     + '<div class="stat"><div class="st-l">Narmin quoted</div><div class="st-v">$12,604</div><div class="st-n">Goway ref 1185612/1</div></div>'
-    + '<div class="stat"><div class="st-l">You save</div><div class="st-v">$2,683&ndash;3,453</div><div class="st-n">Against Goway, and you add Disneyland</div></div>'
-    + '<div class="stat"><div class="st-l">Actually committed</div><div class="st-v">$'+ bkStats().committed.toLocaleString() + '</div>'+ '<div class="st-n">' + bkStats().paidCount + ' items booked and paid: all four flights and bags, Granada, the Alhambra, Lisbon and Seville</div></div>'
+    + '<div class="stat"><div class="st-l">You save</div><div class="st-v">$3,156&ndash;3,516</div><div class="st-n">Against Goway, and you add Disneyland</div></div>'
+    + '<div class="stat"><div class="st-l">Actually committed</div><div class="st-v">$'+ bkStats().committed.toLocaleString() + '</div>'+ '<div class="st-n">' + bkStats().paidCount + ' items booked and paid: all four flights and bags, all four rooms, the Alhambra and insurance</div></div>'
     + '<div class="stat"><div class="st-l">Swing factor</div><div class="st-v">Granada</div><div class="st-n">Parador adds about $2,000</div></div>'
     + '</div>'
     + '<div class="blk"><div class="blk-h">All-in estimate by category</div>'
@@ -2069,7 +2077,7 @@ function renderBudget(){
     + '<tbody>'+costRows+'</tbody>'
     + '<tfoot><tr style="border-top:2px solid var(--line);background:var(--line2)">'
     + '<td style="font-weight:700">Total</td>'
-    + '<td class="num" style="font-weight:700;font-size:15px">$9,151 to $9,921</td></tr></tfoot>'
+    + '<td class="num" style="font-weight:700;font-size:15px">$9,088 to $9,448</td></tr></tfoot>'
     + '</table></div></div>'
     + '<div class="blk"><div class="blk-h">Day tracker &mdash; food, local transport, incidentals</div>'
     + '<div class="note n-i">Enter what you actually spend as the trip goes. Entries save in this browser, so '
@@ -2502,7 +2510,7 @@ var PLANCHOICE = {
        ["Nov 18","Paris properly: Rue Cler, Seine cruise, Eiffel summit in the evening"],
        ["Nov 19","Relaxed morning, 11:05 American nonstop home to Dallas"],
        ["Risk","None material. Every fixed booking still lands on the same date."],
-       ["Cost","About $9,151 to $9,921 via Dallas, roughly $310 more than eight nights"]
+       ["Cost","About $9,088 to $9,448 via Dallas, roughly $310 more than eight nights"]
      ]}
 };
 
@@ -2648,6 +2656,14 @@ function renderInsurance(){
   return '<div class="s-h">Insurance and Safety</div>'
     + '<div class="s-s">Three insurance routes at different price points, plus the numbers worth having in your '
     + 'phone before you leave.</div>'
+    + '<div class="note n-g"><span class="n-t">Covered: Tin Leg Gold, bought 3 Oct 2026, $77 for all three</span>'
+    + '<b>Rizwan, Zaibnish and Izyan Khalil Ali</b>, one policy, bought through Squaremouth. Policy number is on the PDF in the confirmations folder.<br>'
+    + '<b>Emergency medical:</b> $500,000 per person, primary, no deductible &middot; <b>Medical evacuation and repatriation:</b> $500,000 per person<br>'
+    + '<b>Travel delay</b> $500 per person after 6 hours &middot; <b>Missed connection</b> $500 after 3 hours &middot; <b>Baggage loss</b> $500 per person &middot; <b>Baggage delay</b> $200 after 24 hours<br>'
+    + '<b>Dates:</b> cover 9 to 19 Nov, auto-extends to 26 Nov for a covered delay or quarantine. <b>Not covered:</b> trip cancellation (the Chase Sapphire Preferred covers that), pre-existing conditions.<br>'
+    + '<b>Free cancellation until 16 Oct.</b><br><br>'
+    + '<b>Save these in both phones:</b> Emergency assistance outside the USA <a href="tel:+17272645657">+1 727-264-5657</a> (collect call) &middot; Inside the USA <a href="tel:+18449279265">844-927-9265</a> &middot; Claims and customer service <a href="tel:+18442401233">844-240-1233</a> &middot; Squaremouth <a href="tel:+18002400369">1-800-240-0369</a>. '
+    + 'If a hospital wants payment up front, call assistance first, then pay on the Sapphire Preferred and claim it back.</div>'
     + '<div class="note n-b"><span class="n-t">The one number that justifies the whole line item</span>'
     + 'Your US health plan almost certainly does not cover you in Europe. An emergency medical evacuation home '
     + '<b>can exceed $100,000</b>, and that is the scenario insurance exists for &mdash; not lost bags. '
@@ -2656,8 +2672,8 @@ function renderInsurance(){
     + '<div class="g4 blk">'
     + '<div class="stat"><div class="st-l">Typical cost</div><div class="st-v">4&ndash;10%</div><div class="st-n">Of insured trip cost</div></div>'
     + '<div class="stat"><div class="st-l">Your exposure</div><div class="st-v">$6,841 committed</div><div class="st-n">All flights, all four rooms, the Alhambra</div></div>'
-    + '<div class="stat"><div class="st-l">Expect to pay</div><div class="st-v">$300&ndash;550</div><div class="st-n">Comprehensive, family of three</div></div>'
-    + '<div class="stat"><div class="st-l">Buy within</div><div class="st-v">14&ndash;21 days</div><div class="st-n">Of your first deposit</div></div>'
+    + '<div class="stat"><div class="st-l">You paid</div><div class="st-v">$77</div><div class="st-n">Medical and evacuation, family of three</div></div>'
+    + '<div class="stat"><div class="st-l">Status</div><div class="st-v">Covered</div><div class="st-n">9 to 19 Nov, free cancel to 16 Oct</div></div>'
     + '</div>'
     + '<div class="blk"><div class="blk-h">Three ways to cover this trip</div>'+opts+'</div>'
     + '<div class="blk"><div class="blk-h">What to know before you buy</div>'
