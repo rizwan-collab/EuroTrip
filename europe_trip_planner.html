@@ -1657,9 +1657,9 @@ var BOOKINGS = [
    n:"$66.12 for all three, 1h45, no changes. Confirmed departures on Nov 12: 13:00, 14:00, 14:45, 15:45. Book the 14:45 and check the duration says 1h45, not 2h15. Note most fares leave from Malaga city bus station next to Maria Zambrano, eight minutes from the terminal on the Cercanias C1.",
    by:"2026-11-10", est:66, dep:["lis"],
    u:"https://www.alsa.com/en/airports/malaga-costa-del-sol", ul:"Book ALSA"},
-    {id:"dis", ph:4, t:"Disneyland Paris, Nov 17",
-   n:"One day, two parks. You need the Studios for Ratatouille. About $330 to $430 for three in low season.",
-   by:"2026-10-25", est:380, dep:["hpar"],
+    {id:"dis", done:1, cost:348.74, paid:1, ph:4, t:"Disneyland Paris, Tue Nov 17: BOOKED",
+   n:"<b>Booked 3 Oct, $348.74 for all three.</b> Dated 1 Day / 2 Park ticket, both parks, so Ratatouille is covered. Valid 17 Nov 2026. Zaibnish and Rizwan adult $118.12 each, Izyan child $112.50. In Zaibnish&#39;s name, paid on Visa. <b>Free cancellation until 3 days before (14 Nov).</b> Booking confirmation with ticket access comes in a separate email to Zaibnish; load the tickets into the Disneyland Paris app before you fly. RER A from Chatelet-Les Halles, leave 08:10.",
+   by:"2026-10-25", est:349, dep:["hpar"],
    u:"https://www.disneylandparis.com/en-usa/tickets/", ul:"Book Disneyland"},
   {id:"eif", done:1, ph:4, t:"Eiffel Tower summit, Wed Nov 18, 09:30: booked",
    n:"<b>Booked for the 09:30 daytime summit slot on 18 Nov</b>, matching the Day by Day plan. Izyan is on the 4 to 11 reduced band. Enter the price from the ticket once you check it; list price is 36.70 euros adult and 9.20 child, so about 82.60 for three. Be at security by 09:15.",
@@ -2036,7 +2036,7 @@ var BDG_TOTAL = BDG.reduce(function(s,x){ return s + x.e; }, 0);
 var COSTS = [
   ["Flights and bags, all four legs", "$4,004", "$4,004", "<b>All paid.</b> United $1,389 plus a $90 bag, TAP $538, Air France $370, American $1,616 including its $87 bag"],
   ["Accommodation, 9 nights", "$2,787", "$2,787", "<b>All four booked. No estimates left.</b> Lisbon <b>$582</b>, Granada <b>$497</b>, Seville <b>$330</b>, Paris <b>$1,378</b>. Every figure is from a confirmation, not a quote. <b>Paris may settle about $116 lower</b> if Booking.com&#39;s contribution comes off your card &mdash; confirm against the statement"],
-  ["Tickets and attractions", "$480", "$650", "<b>Alhambra paid, 43.27 euros.</b> Still to buy: Disneyland, Eiffel, Alcazar, flamenco, Castelo de Sao Jorge"],
+  ["Tickets and attractions", "$480", "$650", "<b>Paid: Alhambra 43.27 euros, Disneyland $348.74, Eiffel booked.</b> Still to buy: Alcazar, flamenco, Castelo de Sao Jorge"],
   ["Intercity coach", "$110", "$160", "Malaga to Granada $66, Granada to Seville about $70. No rail on either"],
   ["City transport", "$220", "$340", "Metros, taxis, RER, Bolt"],
   ["Daily food and incidentals", "$" + BDG_TOTAL, "$" + BDG_TOTAL, "Tracked day by day below"],
@@ -2069,7 +2069,7 @@ function renderBudget(){
     + '<div class="stat"><div class="st-l">All-in estimate</div><div class="st-v">$9,088&ndash;9,448</div><div class="st-n">Three people, eleven days. Flights paid, rooms now real picks rather than a range</div></div>'
     + '<div class="stat"><div class="st-l">Narmin quoted</div><div class="st-v">$12,604</div><div class="st-n">Goway ref 1185612/1</div></div>'
     + '<div class="stat"><div class="st-l">You save</div><div class="st-v">$3,156&ndash;3,516</div><div class="st-n">Against Goway, and you add Disneyland</div></div>'
-    + '<div class="stat"><div class="st-l">Actually committed</div><div class="st-v">$'+ bkStats().committed.toLocaleString() + '</div>'+ '<div class="st-n">' + bkStats().paidCount + ' items booked and paid: all four flights and bags, all four rooms, the Alhambra and insurance</div></div>'
+    + '<div class="stat"><div class="st-l">Actually committed</div><div class="st-v">$'+ bkStats().committed.toLocaleString() + '</div>'+ '<div class="st-n">' + bkStats().paidCount + ' items booked and paid: all four flights and bags, all four rooms, the Alhambra, Disneyland and insurance</div></div>'
     + '<div class="stat"><div class="st-l">Swing factor</div><div class="st-v">Granada</div><div class="st-n">Parador adds about $2,000</div></div>'
     + '</div>'
     + '<div class="blk"><div class="blk-h">All-in estimate by category</div>'
