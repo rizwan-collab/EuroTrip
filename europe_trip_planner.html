@@ -547,7 +547,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-10";
-var BUILD = "2026-10-10d";
+var BUILD = "2026-10-10f";
 var BUILD_LABEL = "Updated Oct 10";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -772,7 +772,7 @@ var PLAN = [
 {
   n:4, date:"Thu Nov 12", wd:"Thursday", city:"Lisbon to Granada", tag:["p-w","Transfer day"],
   sum:"TAP to Malaga at 10:45, lunch at the airport, then the 15:00 ALSA coach straight from the airport to Granada. At Hotel America by about 17:45.",
-  warn:"<b>Flight booked: TAP, Lisbon 10:45 to Malaga 13:00. Coach: ALSA 15:00 from Malaga Airport to Granada bus station, arrives 17:15, Basica fare 38.27 euros for all three.</b> Leaves from the airport itself, so no train transfer with bags, and two hours of buffer after landing. Checked live 10 Oct: there is no 14:45 departure. If the flight is badly late, the 16:00 from Malaga city station (arr 17:30) is the backup. <b>Luggage:</b> Basica allows 1 hold bag up to 20 kg per passenger plus a small overhead item; with a suitcase and three rolling carry-ons, add one extra bag (from 5 euros) at checkout. Izyan gets his big train ride two days later: the AVE from Cordoba to Seville on Nov 14.",
+  warn:"<b>Flight booked: TAP, Lisbon 10:45 to Malaga 13:00. Coach BOOKED: ALSA 15:00 from Malaga Airport to Granada bus station, arrives 17:15, seats 34, 33 and 30, 43.27 euros with the extra bag.</b> Leaves from the airport itself, so no train transfer with bags, and two hours of buffer after landing. Checked live 10 Oct: there is no 14:45 departure. If the flight is badly late, the 16:00 from Malaga city station (arr 17:30) is the backup. <b>Luggage:</b> Basica includes 3 hold bags and 3 small items for the three of you: the suitcase (keep it at or under 20 kg) and the roller go underneath, backpacks come on board. Extra bag already paid (5 euros), so you are covered even with a second roller. Izyan gets his big train ride two days later: the AVE from Cordoba to Seville on Nov 14.",
   sched:[
     ["07:45","Breakfast, final pack","Bags by the door before you sit down. Nothing loose."],
     ["08:20","Bolt to LIS","Twenty-five minutes, budget 15 euros."],
@@ -780,8 +780,8 @@ var PLAN = [
     ["10:45","Depart Lisbon, TP1136","TAP, 1h15 direct. One checked bag on the booking, on your ticket. Zaibnish and Izyan are carry-on only, 10kg each."],
     ["13:00","Land Malaga","Spain is an hour ahead, so you gain an hour on paper and lose it on the clock."],
     ["13:35","Bags, then lunch at the airport","No transfer needed: the coach leaves from Malaga Airport itself. Eat properly here."],
-    ["14:40","Find the ALSA coach stop","Outside arrivals at the airport bus stops. Have the ALSA tickets on your phone."],
-    ["15:00","ALSA coach to Granada","From Malaga Airport, 2h15, Basica fare 38.27 euros for all three. Changes allowed up to 7 days before; not refundable after."],
+    ["14:40","Find the ALSA coach stop","Outside arrivals at the airport bus stops. Stop is in front of the Arrivals exit, Terminal 3. Have the ALSA tickets on your phone and passports ready."],
+    ["15:00","ALSA coach to Granada","BOOKED. Bus 1, seats Rizwan 34, Zaibnish 33, Izyan 30. 2h15, one stop. Passports out: tickets are checked against your names. Free changes until Nov 5."],
     ["17:15","Arrive Granada bus station","Taxi rank outside."],
     ["17:25","Taxi up to the hotel","Fifteen minutes, about 12 to 15 euros. Do not walk the hill with bags."],
     ["17:45","Check in at Hotel America","Inside the Alhambra walls. Check-in runs until 21:00."],
@@ -792,7 +792,7 @@ var PLAN = [
   transport:{
     leg:"Malaga airport to Granada", flight:false, note:"Flight booked, lands 13:00. Coach chosen: 15:00 from the airport.",
     opts:[
-      {n:"ALSA 15:00, Malaga Airport to Granada", d:"<b>Departs 15:00 from Malaga Airport, arrives Granada bus station 17:15.</b> 2h15. Basica fare: 2 adults 28.24 euros + 1 child 10.03 euros = <b>38.27 euros</b>. Free changes up to 7 days before departure.", p:"38.27 euros for all three", best:true,
+      {n:"ALSA 15:00, Malaga Airport to Granada", d:"<b>Departs 15:00 from Malaga Airport, arrives Granada bus station 17:15.</b> 2h15. <b>BOOKED 10 Oct.</b> Seats 34, 33, 30. Fares 14.12 + 14.12 + 10.03 child, plus a 5 euro extra bag = <b>43.27 euros</b>. Free changes until Nov 5.", p:"BOOKED, 43.27 euros", best:true,
        u:"https://www.alsa.com/en", ul:"alsa.com"},
       {n:"Backup if the flight is late: 16:00 from Malaga city station", d:"Direct 1h30, arrives 17:30, about 26 euros for three. C1 train from the airport, 8 minutes.", p:"About 26 euros"}
     ]
@@ -1218,7 +1218,7 @@ function renderItinerary(){
     + '<div class="stat"><div class="st-l">Structure</div><div class="st-v">2+2+2+3</div><div class="st-n">Extra Paris night fixes the Nov 16 crush</div></div>'
     + '<div class="stat"><div class="st-l">Options given</div><div class="st-v">64</div><div class="st-n">Across 21 decision points</div></div>'
     + '<div class="stat"><div class="st-l">Routes with no flight</div><div class="st-v">2</div><div class="st-n">Malaga to Granada by coach, Granada to Seville by train</div></div>'
-    + '<div class="stat"><div class="st-l">Fixed-time bookings</div><div class="st-v">5</div><div class="st-n">Alhambra 09:00, Nov 14 trains, Cathedral 14:30, Disneyland, Eiffel 09:30</div></div>'
+    + '<div class="stat"><div class="st-l">Fixed-time bookings</div><div class="st-v">6</div><div class="st-n">Alhambra 09:00, Nov 12 coach 15:00, Nov 14 trains, Cathedral 14:30, Disneyland, Eiffel 09:30</div></div>'
     + '</div>'
     + '<div class="note n-i"><span class="n-t">How to use this</span>'
     + 'The timings are the plan, not a rule. The three options under each heading are genuine alternatives at '
@@ -1258,7 +1258,7 @@ var LEGS = [
    flag:["p-g","Booked"],
    itin:[
      ["TP1136","Thu Nov 12","LIS 10:45 to AGP 13:00","1h15 direct &middot; Economy &middot; Spain is one hour ahead"],
-     ["Coach","Thu Nov 12","Malaga Airport to Granada","ALSA 15:00 from the airport, arrives 17:15 &middot; 38.27 euros for three"]
+     ["Coach","Thu Nov 12","Malaga Airport to Granada","ALSA 15:00 from the airport, arrives 17:15 &middot; BOOKED, 43.27 euros with extra bag"]
    ],
    seats:"All three assigned at check-in, as on the other legs.",
    note:"<b>One checked bag on this booking, and it is on Rizwan's ticket.</b> Zaibnish and Izyan have carry-on only, capped at 10kg each. Everyone gets a personal item.<br><br>No airline flies Lisbon to Granada, so the last stretch is on the ground. Priced live for Nov 12: train $175.55 with one change and three hours plus, coach $66.12 direct in 1h45.",
@@ -1360,7 +1360,7 @@ function renderFlights(){
     + '<div class="blk"><div class="blk-h">Ground transport between cities</div>'
     + '<div class="tw tsc"><table><thead><tr><th>Leg</th><th>Date</th><th>Mode</th><th>Time</th><th class="num">Cost, 3 people</th><th>Book</th></tr></thead><tbody>'
     + '<tr><td><b>Malaga airport to Granada</b><br><span style="font-size:11.5px;color:var(--mute)">ALSA from the airport itself, no train transfer</span></td>'
-    + '<td>Nov 12</td><td>ALSA coach</td><td>15:00 to 17:15</td><td class="num">38.27 euros</td>'
+    + '<td>Nov 12</td><td>ALSA coach</td><td>15:00 to 17:15</td><td class="num">43.27 euros</td>'
     + '<td><a href="https://www.alsa.com/en/airports/malaga-costa-del-sol" target="_blank" rel="noopener">alsa.com</a></td></tr>'
     + '<tr><td><b>Granada to Seville</b><br><span style="font-size:11.5px;color:var(--mute)">Booked. Alvia to Cordoba, then the AVE</span></td>'
     + '<td>Nov 14</td><td>Train, 1 change at Cordoba</td><td>11:04 to 14:39</td><td class="num">$181.76 paid</td>'
@@ -1372,7 +1372,7 @@ function renderFlights(){
     + '</tbody></table></div></div>'
     + '<div class="note n-i"><span class="n-t">Where the train actually wins, and where it does not</span>'
     + '<b>Malaga to Granada on Nov 12: the coach, and it is not close.</b> Priced live for your date and party: '
-    + '<b>train $175.55 with one change and over three hours; chosen coach is ALSA 15:00 from the airport, 38.27 euros</b>. Every rail option '
+    + '<b>train $175.55 with one change and over three hours; booked coach is ALSA 15:00 from the airport, 43.27 euros</b>. Every rail option '
     + 'routes via Antequera-Santa Ana; the direct 1h22 Avant Renfe publicised is not bookable for Nov 12.<br><br>'
     + '<b>Granada to Seville on Nov 14: booked by train.</b> Alvia 02087 at 11:04 to Cordoba, then AVE 02120 '
     + 'at 13:46, arriving Sevilla-Santa Justa 14:39, $181.76 for three. Chosen over the 13:12 direct Avant so '
@@ -1662,10 +1662,10 @@ var BOOKINGS = [
    n:"<b>Booked 10 Oct on Trainline, $181.76 for all three</b> (2 adults $139.76 Basico, Izyan $42 Basico Nino). <b>Alvia 02087</b> Granada station 11:04 to Cordoba 12:36, 1h10 change, <b>AVE 02120</b> Cordoba 13:46 to Sevilla-Santa Justa 14:39. Seats reserved. Not changeable or refundable. Leave from the railway station on Av. de los Andaluces, not the bus station. Passports required. <b>Seats: Alvia coach 6, Rizwan 02C, Zaibnish 02D, Izyan 01D; AVE coach 3, Rizwan 03C, Zaibnish 03D, Izyan 04D</b> (Izyan one row apart on both, swap on board). Tickets total 154.50 euros. Access closes 2 minutes before departure. Renfe luggage rule: up to 3 bags per person, 25 kg combined, largest no bigger than 85 x 55 x 35 cm. PDF tickets in the confirmations folder.",
    by:"2026-10-20", est:182,
    u:"https://www.thetrainline.com/", ul:"Trainline bookings"},
-  {id:"avant", ph:3, t:"Malaga Airport to Granada, Thu Nov 12, ALSA 15:00 coach",
-   n:"<b>Chosen: ALSA 15:00 from Malaga Airport, arrives Granada bus station 17:15.</b> Basica fare, 38.27 euros for all three (2 adults 28.24, Izyan 10.03). No train transfer needed. Free changes up to 7 days before. Mark done once the ALSA confirmation arrives.",
-   by:"2026-11-10", est:43, dep:["lis"],
-   u:"https://www.alsa.com/en/airports/malaga-costa-del-sol", ul:"Book ALSA"},
+  {id:"avant", done:1, cost:50, paid:1, ph:3, t:"Malaga Airport to Granada, Thu Nov 12, ALSA 15:00 coach: BOOKED",
+   n:"<b>BOOKED 10 Oct.</b> ALSA 15:00 from Malaga Airport (stop in front of Arrivals, Terminal 3) to Granada bus station (Av. Juan Pablo II 33), arrives 17:15. Bus 1. <b>Seats: Rizwan 34, Zaibnish 33, Izyan 30.</b> Total <b>43.27 euros</b> (Rizwan 14.12, Zaibnish 14.12 + 5.00 extra bag, Izyan 10.03 child fare). Each ticket: 20 kg total, max 2 items, plus 1 paid extra bag up to 20 kg. Tickets are in your name: show them on your phone and <b>carry passports</b> (needed to prove the names and Izyan's child discount). Free changes until Nov 5. <b>Watch:</b> Izyan's seat 30 is not next to you; seat changes on the bus are not allowed, so pick a seat beside a parent in Manage booking (from 2.50 euros).",
+   by:"2026-11-10", est:0, dep:["lis"],
+   u:"https://www.alsa.com/en/", ul:"ALSA manage booking"},
     {id:"dis", done:1, cost:348.74, paid:1, ph:4, t:"Disneyland Paris, Tue Nov 17: BOOKED",
    n:"<b>Booked 3 Oct, $348.74 for all three.</b> Dated 1 Day / 2 Park ticket, both parks, so Ratatouille is covered. Valid 17 Nov 2026. Zaibnish and Rizwan adult $118.12 each, Izyan child $112.50. In Zaibnish&#39;s name, paid on Visa. <b>Free cancellation until 3 days before (14 Nov).</b> Booking confirmation with ticket access comes in a separate email to Zaibnish; load the tickets into the Disneyland Paris app before you fly. RER A from Chatelet-Les Halles, leave 08:10.",
    by:"2026-10-25", est:349, dep:["hpar"],
@@ -1696,10 +1696,8 @@ var BOOKINGS = [
    by:"2026-10-28", est:0,
    u:"https://the.ismaili/ismaili-centre-lisbon", ul:"the.ismaili"},
 
-  {id:"lug", ph:5, t:"Luggage plan: what we carry vs every leg's limit (confirm counts)",
-   n:"<b>What the bookings say you carry:</b> 1 large checked suitcase (on Rizwan), 3 carry-on bags (one each), 3 personal items. Keep the suitcase at or under <b>20 kg</b> and each carry-on at or under <b>10 kg</b>.<br><b>United IAH-IAD-LIS:</b> 1 checked bag paid, carry-on + personal item each. <b>TAP LIS-AGP:</b> 1 checked bag on Rizwan; Zaibnish and Izyan carry-on only, 10 kg each, the tightest limit. <b>ALSA AGP-Granada (Basica):</b> per passenger 1 hold bag up to 20 kg + 1 small item that fits overhead. Three tickets = three hold bags, but you have four rolling bags (suitcase + 3 carry-ons), so <b>add 1 extra bag at checkout, from 5 euros</b>, unless one carry-on is a soft bag that fits the overhead rack. <b>Renfe Nov 14:</b> up to 3 bags per person, 25 kg combined, largest 85 x 55 x 35 cm: fine. <b>Air France SVQ-CDG:</b> checked bag included in the fare. <b>AA CDG-DFW:</b> 1 checked bag paid ($87).",
-   by:"2026-11-05", est:6},
-  {id:"pass", done:1, ph:5, t:"Check all three passports",
+  {id:"lug", done:1, cost:0, ph:5, t:"Luggage plan confirmed: 1 checked suitcase, 1 roller, 3 backpacks", n:"<b>What you carry (confirmed 10 Oct):</b> 1 large checked suitcase (on Rizwan), up to 1 carry-on roller, 3 backpacks. This fits every leg. <b>Weight rules:</b> suitcase at or under <b>20 kg</b> (ALSA is the tightest; airlines allow 23), roller at or under <b>10 kg</b> (TAP), backpacks small enough to go under the seat or in the rack. United IAH-IAD-LIS: 1 checked bag paid, carry-on + personal item each. TAP LIS-AGP: 1 checked bag on Rizwan, carry-on 10 kg + personal item each. ALSA AGP-Granada: each ticket 20 kg total, max 2 items, <b>plus 1 extra bag already bought (5 euros, up to 20 kg)</b>; suitcase and roller go underneath, backpacks overhead (hold if they do not fit). Fully covered. Renfe Nov 14: up to 3 bags per person, 25 kg: fine. Air France SVQ-CDG: checked bag included. AA CDG-DFW: 1 checked bag paid ($87). Because the extra ALSA bag is paid, a second roller would also fit every leg.", by:"2026-11-05", est:0},
+    {id:"pass", done:1, ph:5, t:"Check all three passports",
    n:"Must be valid at least six months past your return date. Renewals take weeks, so verify today rather than in October.",
    by:"2026-09-10", est:0},
   {id:"esim", ph:5, t:"eSIM for both phones",
@@ -1796,13 +1794,11 @@ function satBanner(){
    + '<div class="stat"><div class="st-l">Rooms booked</div><div class="st-v">4 of 4</div><div class="st-n">Lisbon, Granada, Seville, Paris</div></div>'
    + '<div class="stat"><div class="st-l">Flights</div><div class="st-v">All paid</div><div class="st-n">Four legs, bags included</div></div>'
    + '<div class="stat"><div class="st-l">Committed</div><div class="st-v">$'+s.committed.toLocaleString()+'</div><div class="st-n">Across '+s.paidCount+' paid items</div></div>'
-   + '<div class="stat"><div class="st-l">Still open</div><div class="st-v">3 items</div><div class="st-n">Malaga to Granada coach, Ismaili Centre time, Castelo (gate)</div></div>'
+   + '<div class="stat"><div class="st-l">Still open</div><div class="st-v">2 items</div><div class="st-n">Ismaili Centre time, Castelo (gate)</div></div>'
    + '</div>'
    + '<div class="note n-w" style="margin-bottom:14px"><span class="n-t">Why no confirmation numbers on this page</span>'   + 'This planner is published on a <b>public</b> GitHub Pages URL. A Booking.com reference plus its PIN is enough for anyone to view, change or cancel a reservation, so <b>none are stored here</b>. They live in your email and in the confirmations folder alongside the PDFs. Property names, addresses and public phone numbers are fine to keep.</div>'
    + '<div class="acc-grp" style="margin:0 0 18px">'
    + '<div class="acc-grp-h">What is left, in order of deadline</div>'
-   + '<details class="acc" open><summary>By Nov 10 &mdash; Malaga airport to Granada coach, Thu Nov 12</summary><div class="acc-b">'
-   + '<b>ALSA 15:00 from Malaga Airport</b>, arrives Granada 17:15, Basica fare 38.27 euros for all three. Cart was filled 10 Oct; mark done once the confirmation arrives.</div></details>'
    + '<details class="acc"><summary>Late Oct &mdash; confirm the Ismaili Centre time, Wed Nov 11</summary><div class="acc-b">'
    + 'Planned for about 16:00. Once confirmed, the morning castle and Alfama walk bends around it.</div></details>'
    + '<details class="acc"><summary>Castelo de Sao Jorge, Wed Nov 11 &mdash; buy at the gate</summary><div class="acc-b">'
@@ -2047,7 +2043,7 @@ var COSTS = [
   ["Flights and bags, all four legs", "$4,004", "$4,004", "<b>All paid.</b> United $1,389 plus a $90 bag, TAP $538, Air France $370, American $1,616 including its $87 bag"],
   ["Accommodation, 9 nights", "$2,787", "$2,787", "<b>All four booked. No estimates left.</b> Lisbon <b>$582</b>, Granada <b>$497</b>, Seville <b>$330</b>, Paris <b>$1,378</b>. Every figure is from a confirmation, not a quote. <b>Paris may settle about $116 lower</b> if Booking.com&#39;s contribution comes off your card &mdash; confirm against the statement"],
   ["Tickets and attractions", "$480", "$650", "<b>Paid: Alhambra 43.27 euros, Disneyland $348.74, Eiffel 63 euros.</b> Cathedral 29 euros paid. Alcazar and flamenco show skipped. Castelo 34 euros at the gate"],
-  ["Intercity coach and train", "$225", "$225", "Malaga Airport to Granada coach 38.27 euros (ALSA 15:00); Granada to Seville train $181.76 (paid)"],
+  ["Intercity coach and train", "$232", "$232", "<b>Both paid.</b> Malaga Airport to Granada coach 43.27 euros, about $50 (ALSA 15:00, incl. extra bag); Granada to Seville train $181.76"],
   ["City transport", "$220", "$340", "Metros, taxis, RER, Bolt"],
   ["Daily food and incidentals", "$" + BDG_TOTAL, "$" + BDG_TOTAL, "Tracked day by day below"],
   ["Travel insurance", "$77", "$77", "<b>Bought.</b> Tin Leg Gold, medical and evacuation only, all three travellers"],
