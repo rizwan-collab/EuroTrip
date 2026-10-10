@@ -889,14 +889,10 @@ var PLAN = [
     ["22:00","Pack for Paris","Flight is mid-afternoon tomorrow, so this is unhurried."]
   ],
   activities:{
-    label:"Main morning sight, pick one",
+    label:"Main sight",
     opts:[
-      {n:"Royal Alcazar", d:"Working royal palace, Moorish courtyards, gardens with peacocks. Filmed as Dorne. Book the 09:30 slot.", p:"22 euros adult, under 16 free", best:true,
-       u:"https://www.alcazarsevilla.org/en/", ul:"alcazarsevilla.org"},
-      {n:"Cathedral plus Giralda", d:"Largest gothic cathedral in the world and Columbus's tomb. The tower is 35 ramps built for horses, so easy for a child.", p:"12 euros adult, under 14 free",
-       u:"https://www.catedraldesevilla.es/en/", ul:"catedraldesevilla.es"},
-      {n:"Setas de Sevilla rooftop", d:"The giant wooden lattice at Plaza de la Encarnacion. Walkway across the top, ten minutes, great views. The low-effort option.", p:"15 euros adult, child reduced",
-       u:"https://setasdesevilla.com/en/", ul:"setasdesevilla.com"}
+      {n:"BOOKED: Cathedral and Giralda, 14:30", d:"Booked for Sun 15 Nov, 14:30 entry at the Puerta del Lagarto, 29 euros for all three, includes El Salvador. Sundays the Cathedral opens to visitors only in the afternoon. Bring all three passports, shoulders covered, no hats.", p:"Paid", best:true},
+      {n:"Royal Alcazar: skipped", d:"Too close to the Alhambra two days earlier. The morning goes to Plaza de Espana instead.", p:"Not booked"}
     ]
   },
   evening:{
@@ -985,14 +981,10 @@ var PLAN = [
     ["21:00","Bed","Flight tomorrow."]
   ],
   activities:{
-    label:"Ticket type, pick one",
+    label:"Disneyland tickets",
     opts:[
-      {n:"One day, two parks", d:"Disneyland Park plus Walt Disney Studios. You need the Studios for Ratatouille, so this is the one to buy.", p:"100 to 130 adult, 95 to 122 child", best:true,
-       u:"https://www.disneylandparis.com/en-usa/tickets/", ul:"disneylandparis.com"},
-      {n:"One day, one park", d:"Cheaper, but if you pick Disneyland Park you lose Ratatouille and if you pick the Studios you lose Fantasyland. Not a real saving.", p:"70 to 105 adult",
-       u:"https://www.disneylandparis.com/en-usa/tickets/", ul:"disneylandparis.com"},
-      {n:"Skip Disneyland, do Paris instead", d:"If a full theme park day sounds like too much on your second day in Paris: Seine cruise, Luxembourg Gardens carousel, and the Natural History Museum gallery of skeletons. Cheaper and calmer.", p:"About 60 euros for three",
-       u:"https://www.bateauxparisiens.com/en.html", ul:"bateauxparisiens.com"}
+      {n:"BOOKED: One day, two parks", d:"Dated 1 Day / 2 Park ticket for Tue 17 Nov, both parks so Ratatouille is covered. $348.74 for all three, in Zaibnish&#39;s name. Free cancellation until 14 Nov. Load tickets into the Disneyland Paris app.", p:"$348.74, paid", best:true,
+       u:"https://www.disneylandparis.com/en-usa/", ul:"disneylandparis.com"}
     ]
   },
   food:{
@@ -1036,13 +1028,11 @@ var PLAN = [
     ]
   },
   evening:{
-    label:"Eiffel Tower, pick one",
+    label:"Eiffel Tower",
     opts:[
-      {n:"Summit by lift", d:"All the way to 276 metres, last lift 22:30. You are not flying tomorrow morning, which is what makes this sane.", p:"36.70 adult, 9.20 child 4 to 11", best:true,
+      {n:"BOOKED: Summit, stairs + lift, 09:30", d:"Wed 18 Nov at 09:30. Stairs to the 2nd floor (about 670 steps, rest at the 1st floor), then the lift to the summit. 63 euros for all three. E-tickets by email; bring Izyan&#39;s passport. Be at security by 09:15.", p:"63 euros, paid", best:true,
        u:"https://www.toureiffel.paris/en", ul:"toureiffel.paris"},
-      {n:"Second floor by lift", d:"Cheaper, the better photographic level, and you skip the second queue for the summit lift.", p:"23.50 adult, child reduced",
-       u:"https://www.toureiffel.paris/en", ul:"toureiffel.paris"},
-      {n:"Trocadero, no ticket", d:"Across the river, whole tower in frame, sparkling on the hour. Free, no queue, arguably the better photograph.", p:"Free"}
+      {n:"Trocadero at night, no ticket", d:"Still on the plan at 21:00 for the sparkle. Free.", p:"Free"}
     ]
   },
   food:{
@@ -2678,7 +2668,7 @@ function renderInsurance(){
     + '<div class="stat"><div class="st-l">You paid</div><div class="st-v">$77</div><div class="st-n">Medical and evacuation, family of three</div></div>'
     + '<div class="stat"><div class="st-l">Status</div><div class="st-v">Covered</div><div class="st-n">9 to 19 Nov, free cancel to 16 Oct</div></div>'
     + '</div>'
-    + '<div class="blk"><div class="blk-h">Three ways to cover this trip</div>'+opts+'</div>'
+    + '<div class="blk"><div class="blk-h">Options considered before booking (you bought Tin Leg Gold, see the green card above)</div>'+opts+'</div>'
     + '<div class="blk"><div class="blk-h">What to know before you buy</div>'
     + '<div class="card">'+facts+'</div></div>'
     + '<div class="note n-w"><span class="n-t">Check your credit card before buying anything</span>'
