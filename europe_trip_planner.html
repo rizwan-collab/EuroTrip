@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Europe 2026 &middot; Trip Planner</title>
 <style>
@@ -543,7 +546,22 @@ function kflight(a,b,d){
    hotel fares, because no free no-key API exposes them. Those carry
    a verified date and a one-click link to the live search instead.
    ================================================================== */
-var VERIFIED_ON = "2026-10-03";
+var VERIFIED_ON = "2026-10-10";
+var BUILD = "2026-10-10b";
+var BUILD_LABEL = "Updated Oct 10";
+/* Self-update: if this browser is showing a cached older copy, load the latest one. */
+(function(){
+  try{
+    fetch(location.pathname + "?b=" + Date.now(), {cache:"no-store"})
+      .then(function(r){ return r.text(); })
+      .then(function(t){
+        var m = t.match(/var BUILD = "([^"]+)"/);
+        if(m && m[1] !== BUILD && location.search.indexOf("v=" + m[1]) === -1){
+          location.replace(location.pathname + "?v=" + m[1] + location.hash);
+        }
+      }).catch(function(){});
+  }catch(e){}
+})();
 var TRIP_START  = "2026-11-09";
 var FX = { rate:null, updated:null, source:null };
 
@@ -565,7 +583,7 @@ function staleBadge(){
           : d === 1 ? "Verified yesterday"
           : "Verified " + d + " days ago";
   if(d > 45) txt += ", re-check";
-  return '<span class="pill ' + cls + '">' + txt + '</span>';
+  return '<span class="pill ' + cls + '">' + txt + '</span> <span class="pill p-n">' + BUILD_LABEL + '</span>';
 }
 
 function fxLine(){
@@ -876,7 +894,7 @@ var PLAN = [
 },
 {
   n:7, date:"Sun Nov 15", wd:"Sunday", city:"Seville", tag:["p-g","Full day"],
-  sum:"Plaza de Espana while it is empty, the Cathedral and Giralda when they open to visitors, flamenco in the evening. Alcazar skipped, the Alhambra covers it.",
+  sum:"Plaza de Espana while it is empty, the Cathedral and Giralda when they open to visitors, street flamenco if it is on. Alcazar skipped, the Alhambra covers it.",
   sched:[
     ["08:30","Breakfast","Churros con chocolate. He will remember this more than the palace."],
     ["09:30","Plaza de Espana and Maria Luisa park","Ten minutes on foot. Near empty on a Sunday morning. Rowing boats on the moat, tiled bridges, room to sprint. The single best place in Seville for a five-year-old. <b>Street flamenco:</b> dancers and guitarists often perform under the arches here. Free, tip 2 to 5 euros if he watches. Not scheduled, so catch it if it is on."],
@@ -1202,7 +1220,7 @@ function renderItinerary(){
     + '<div class="stat"><div class="st-l">Structure</div><div class="st-v">2+2+2+3</div><div class="st-n">Extra Paris night fixes the Nov 16 crush</div></div>'
     + '<div class="stat"><div class="st-l">Options given</div><div class="st-v">64</div><div class="st-n">Across 21 decision points</div></div>'
     + '<div class="stat"><div class="st-l">Routes with no flight</div><div class="st-v">2</div><div class="st-n">Malaga to Granada by coach, Granada to Seville by train</div></div>'
-    + '<div class="stat"><div class="st-l">Fixed-time bookings</div><div class="st-v">4</div><div class="st-n">Alhambra, Alcazar, flamenco, Disneyland</div></div>'
+    + '<div class="stat"><div class="st-l">Fixed-time bookings</div><div class="st-v">5</div><div class="st-n">Alhambra 09:00, Nov 14 trains, Cathedral 14:30, Disneyland, Eiffel 09:30</div></div>'
     + '</div>'
     + '<div class="note n-i"><span class="n-t">How to use this</span>'
     + 'The timings are the plan, not a rule. The three options under each heading are genuine alternatives at '
@@ -1386,7 +1404,7 @@ var STAY = [
    facts:[
      ["<b>BOOKED 12 Sep &mdash; confirmation in your email</b>","Residentas Arco do Bandeira, <b>226 Rua dos Sapateiros, Santa Maria Maior, 1100-581</b>. Phone <b>+351 21 052 2188</b>, and the <b>Residentas team direct on +351 960 060 061</b> (mobile, so WhatsApp works). One-Bedroom Apartment, <b>check in Tue 10 Nov from 16:00, check out Thu 12 Nov by 10:00</b>. Booked in <b>Zaibnish&#39;s name</b>. <b>Changing the dates is not possible</b> on this rate"],
      ["<b>What it actually cost, itemised</b>","Apartment <b>$455</b>, plus a <b>70 euro cleaning fee, $81</b>, plus 6 percent VAT <b>$27</b> on the room only, plus city tax <b>$19</b> at 4 euros per adult per night. <b>Total $582</b>, about 501 euros. <b>The cleaning fee is the bit that was never in the estimate</b> &mdash; Booking folds it into the headline total but does not show it as a line until checkout"],
-     ["<b>Two things to action on this booking</b>","<b>1. Izyan is not on the reservation.</b> It reads &lsquo;Number of guests: 2 adults&rsquo; and prices &lsquo;for 2 guests&rsquo;, and the confirmation warns that supplements such as an extra bed are not in the total. The room sleeps 2 adults plus 1 child, so this is very likely a display quirk &mdash; but <b>confirm it with the property</b> rather than discover it at the door. <b>2. The free-cancellation date is 10 October, not 11.</b> Free until <b>10 Oct 23:59</b>; from <b>11 Oct 00:00</b> they charge <b>415.16 euros</b>"],
+     ["<b>RESOLVED 10 Oct: Izyan is on the booking</b>","Booking.com now reads <b>2 adults, 1 child (5 years old)</b>, confirmed with the property on 10 Oct. Free cancellation ended 10 Oct, so the booking is locked in, which is fine."],
      ["<b>LUGGAGE: CONFIRMED by the property, 12 Sep</b>","<b>Complimentary luggage storage, and it is self-access.</b> It sits on the <b>2nd floor, in the room directly in front of the lift</b>. There is also a <b>guest lounge on the 2nd floor</b> and a <b>bathroom on the ground floor</b> &mdash; so the 12:15 arrival against a 16:00 check-in is fully solved, and you can sit down rather than kill four hours on your feet. They ask that you <b>close the storage door properly</b> after use"],
      ["<b>ACTION &mdash; Saturday 7 November: request the access codes</b>","The storage is code-entry, and the property says to <b>request the access codes three days before arrival</b>, together with your check-in instructions. Arrival is Tue 10 Nov, so the request goes in on <b>Sat 7 Nov</b>. <b>Miss this and you arrive at a door you cannot open</b>, with the bags, at 12:15. Contact the <b>Residentas team on +351 960 060 061</b> (mobile, WhatsApp) or the property on +351 21 052 2188. Have your Booking.com reference to hand."],
      ["Still unanswered","They confirmed the luggage but <b>did not answer whether the free private airport transfer applies</b> to your rate. Worth asking again when you request the codes &mdash; it is worth about 20 euros and removes the taxi queue with bags"],
@@ -1772,26 +1790,19 @@ function satBanner(){
    + '<div class="stat"><div class="st-l">Rooms booked</div><div class="st-v">4 of 4</div><div class="st-n">Lisbon, Granada, Seville, Paris</div></div>'
    + '<div class="stat"><div class="st-l">Flights</div><div class="st-v">All paid</div><div class="st-n">Four legs, bags included</div></div>'
    + '<div class="stat"><div class="st-l">Committed</div><div class="st-v">$'+s.committed.toLocaleString()+'</div><div class="st-n">Across '+s.paidCount+' paid items</div></div>'
-   + '<div class="stat"><div class="st-l">Still open</div><div class="st-v">Tickets</div><div class="st-n">Insurance, Disneyland, Eiffel, Alcazar, flamenco, Castelo</div></div>'
+   + '<div class="stat"><div class="st-l">Still open</div><div class="st-v">3 items</div><div class="st-n">Malaga to Granada coach, Ismaili Centre time, Castelo (gate)</div></div>'
    + '</div>'
    + '<div class="note n-w" style="margin-bottom:14px"><span class="n-t">Why no confirmation numbers on this page</span>'   + 'This planner is published on a <b>public</b> GitHub Pages URL. A Booking.com reference plus its PIN is enough for anyone to view, change or cancel a reservation, so <b>none are stored here</b>. They live in your email and in the confirmations folder alongside the PDFs. Property names, addresses and public phone numbers are fine to keep.</div>'
    + '<div class="acc-grp" style="margin:0 0 18px">'
    + '<div class="acc-grp-h">What is left, in order of deadline</div>'
-   + '<details class="acc" open><summary>Sat 19 Sep &mdash; Eiffel Tower booking window opens</summary><div class="acc-b">'
-   + 'Tickets release <b>60 days ahead</b> for the lift, 40 for the stairs. Your date is 18 Nov, so the window opens <b>19 September</b>. '
-   + 'Summit slots go first. Izyan is in the 4 to 11 reduced band.</div></details>'
-   + '<details class="acc"><summary>Travel insurance &mdash; $'+s.committed.toLocaleString()+' now at risk</summary><div class="acc-b">'
-   + 'Every flight, all four rooms and the Alhambra tickets are non-refundable or past their cancellation date. '
-   + 'Industry pricing is 4 to 10 percent of insured trip cost.</div></details>'
-   + '<details class="acc"><summary>Timed tickets &mdash; Disneyland, Alcazar, flamenco, Castelo</summary><div class="acc-b">'
-   + 'The <b>Alcazar on 15 Nov is timed entry</b>, same as the Alhambra. Disneyland is dated and cheaper booked early. '
-   + 'Flamenco and the Castelo can wait to two or three weeks out.</div></details>'
-   + '<details class="acc"><summary>Free checks worth doing in one sitting</summary><div class="acc-b">'
-   + '<b>1.</b> Confirm Izyan is on the Lisbon reservation &mdash; it currently reads 2 adults. '
-   + '<b>2.</b> Check all three names on the Alhambra PDF match passports; ID is verified at the gate. '
-   + '<b>3.</b> Passports valid through about 19 Feb 2027. '
-   + '<b>4.</b> Air France checked-bag allowance on 16 Nov. '
-   + '<b>5.</b> AA 49 departure terminal at CDG.</div></details>'
+   + '<details class="acc" open><summary>By Nov 10 &mdash; Malaga airport to Granada coach, Thu Nov 12</summary><div class="acc-b">'
+   + 'ALSA, the <b>14:45</b> departure, <b>1h45</b> service, about $66 for all three. Most fares leave from Malaga city bus station next to Maria Zambrano, 8 minutes on the C1 from the airport.</div></details>'
+   + '<details class="acc"><summary>Late Oct &mdash; confirm the Ismaili Centre time, Wed Nov 11</summary><div class="acc-b">'
+   + 'Planned for about 16:00. Once confirmed, the morning castle and Alfama walk bends around it.</div></details>'
+   + '<details class="acc"><summary>Castelo de Sao Jorge, Wed Nov 11 &mdash; buy at the gate</summary><div class="acc-b">'
+   + 'Online payment failed. 17 euros an adult, Izyan free, short November lines. Open 09:00 to 18:00.</div></details>'
+   + '<details class="acc"><summary>Done &mdash; everything else is booked</summary><div class="acc-b">'
+   + 'All four flights, all four rooms, travel insurance (Tin Leg Gold), Alhambra, Nov 14 trains, Seville Cathedral, Disneyland, Eiffel Tower. Izyan confirmed on the Lisbon booking. Street flamenco needs no booking.</div></details>'
    + '<details class="acc"><summary>Two access codes you must request</summary><div class="acc-b">'
    + '<b>Lisbon, Sat 7 Nov</b> &mdash; luggage-store codes from the Residentas team, +351 960 060 061. '
    + '<b>Paris, before you fly</b> &mdash; complete Nestay online check-in to receive the door codes. '
@@ -2029,7 +2040,7 @@ var BDG_TOTAL = BDG.reduce(function(s,x){ return s + x.e; }, 0);
 var COSTS = [
   ["Flights and bags, all four legs", "$4,004", "$4,004", "<b>All paid.</b> United $1,389 plus a $90 bag, TAP $538, Air France $370, American $1,616 including its $87 bag"],
   ["Accommodation, 9 nights", "$2,787", "$2,787", "<b>All four booked. No estimates left.</b> Lisbon <b>$582</b>, Granada <b>$497</b>, Seville <b>$330</b>, Paris <b>$1,378</b>. Every figure is from a confirmation, not a quote. <b>Paris may settle about $116 lower</b> if Booking.com&#39;s contribution comes off your card &mdash; confirm against the statement"],
-  ["Tickets and attractions", "$480", "$650", "<b>Paid: Alhambra 43.27 euros, Disneyland $348.74, Eiffel 63 euros.</b> Still to buy: Alcazar, flamenco, Castelo de Sao Jorge"],
+  ["Tickets and attractions", "$480", "$650", "<b>Paid: Alhambra 43.27 euros, Disneyland $348.74, Eiffel 63 euros.</b> Cathedral 29 euros paid. Alcazar and flamenco show skipped. Castelo 34 euros at the gate"],
   ["Intercity coach and train", "$248", "$248", "Malaga to Granada coach $66 (to book); Granada to Seville train $181.76 (paid)"],
   ["City transport", "$220", "$340", "Metros, taxis, RER, Bolt"],
   ["Daily food and incidentals", "$" + BDG_TOTAL, "$" + BDG_TOTAL, "Tracked day by day below"],
@@ -2338,8 +2349,8 @@ var KID = [
     {n:"Plaza de Espana", r:5, d:"Enormous, open, tiled, with rowing boats on the moat. One of the best squares in Europe for a child."},
     {n:"Churros con chocolate", r:5, d:"Self-explanatory. Morning treat."},
     {n:"Giralda tower", r:4, d:"Ramps the whole way up rather than stairs, so he can walk it himself."},
-    {n:"Alcazar", r:4, d:"Real palace, fountains and gardens, and he is free under sixteen."},
-    {n:"Flamenco show", r:4, d:"Stomping, clapping, bright dresses. Five-year-olds are usually transfixed. Pick a short show and sit close."}
+    {n:"Seville Cathedral and Giralda", r:4, d:"Booked Sun 15 Nov 14:30. He walks up the Giralda ramps himself."},
+    {n:"Street flamenco", r:4, d:"Stomping, clapping, bright dresses. Free under the arches at Plaza de Espana or in Triana at dusk. Watch five minutes or twenty."}
   ]},
   {city:"Granada", items:[
     {n:"Sacromonte cave houses", r:5, d:"People genuinely live in these caves. A five-year-old finds that remarkable."},
@@ -2569,7 +2580,7 @@ function renderConflicts(){
     + '<b>3.</b> Seats and checked bags on the United outbound. Basic Economy gave you neither.<br>'
     + '<b>4.</b> The last flight, Seville to Paris on Nov 16.<br>'
     + '<b>5.</b> Remaining apartments. November is low season, you have room to compare.<br>'
-    + '<b>6.</b> Disneyland, Eiffel, Alcazar, flamenco. Three to six weeks out is fine.</div>';
+    + '<b>6.</b> Disneyland and Eiffel, now booked. Alcazar and the flamenco show were dropped.</div>';
 }
 
 
@@ -2664,7 +2675,7 @@ function renderInsurance(){
     + 'decision available to you.</div>'
     + '<div class="g4 blk">'
     + '<div class="stat"><div class="st-l">Typical cost</div><div class="st-v">4&ndash;10%</div><div class="st-n">Of insured trip cost</div></div>'
-    + '<div class="stat"><div class="st-l">Your exposure</div><div class="st-v">$6,841 committed</div><div class="st-n">All flights, all four rooms, the Alhambra</div></div>'
+    + '<div class="stat"><div class="st-l">Your exposure</div><div class="st-v">$7,551 paid</div><div class="st-n">All flights, all four rooms, the Alhambra</div></div>'
     + '<div class="stat"><div class="st-l">You paid</div><div class="st-v">$77</div><div class="st-n">Medical and evacuation, family of three</div></div>'
     + '<div class="stat"><div class="st-l">Status</div><div class="st-v">Covered</div><div class="st-n">9 to 19 Nov, free cancel to 16 Oct</div></div>'
     + '</div>'
