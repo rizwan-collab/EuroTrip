@@ -754,7 +754,7 @@ var PLAN = [
 {
   n:4, date:"Thu Nov 12", wd:"Thursday", city:"Lisbon to Granada", tag:["p-w","Transfer day"],
   sum:"TAP to Malaga at 10:45, then the coach straight up to Granada. On the Alhambra hill by late afternoon.",
-  warn:"<b>Flight booked: TAP, Lisbon 10:45 to Malaga 13:00. Take the coach.</b> Checked live for your exact date and party: <b>train $175.55 with one change and three hours plus, coach $66.12 direct in 1h45</b>. The coach is a hundred and nine dollars cheaper and half the time. Nothing to think about. Izyan gets his train ride elsewhere, and there are three good ones.",
+  warn:"<b>Flight booked: TAP, Lisbon 10:45 to Malaga 13:00. Take the coach.</b> Checked live for your exact date and party: <b>train $175.55 with one change and three hours plus, coach $66.12 direct in 1h45</b>. The coach is a hundred and nine dollars cheaper and half the time. Nothing to think about. Izyan gets his big train ride two days later: the AVE from Cordoba to Seville on Nov 14.",
   sched:[
     ["07:45","Breakfast, final pack","Bags by the door before you sit down. Nothing loose."],
     ["08:20","Bolt to LIS","Twenty-five minutes, budget 15 euros."],
@@ -812,7 +812,7 @@ var PLAN = [
     ["16:30","Sacromonte caves","Real cave houses on the hillside, still lived in. Big impression, twenty minutes of walking."],
     ["17:45","Mirador San Nicolas","Sunset over the Alhambra with the Sierra Nevada behind it. Free, and the locals gather here."],
     ["19:30","Dinner","More free tapas, or the Parador terrace if you want one splurge."],
-    ["21:30","Pack","Coach to Seville tomorrow, and it leaves at a civilised hour."]
+    ["21:30","Pack","Train to Seville tomorrow at 11:04. Check out at 10:00, so bags by the door tonight."]
   ],
   activities:{
     label:"After the Alhambra, pick one",
@@ -837,30 +837,29 @@ var PLAN = [
   }
 },
 {
-  n:6, date:"Sat Nov 14", wd:"Saturday", city:"Granada to Seville", tag:["p-b","Easy transfer"],
-  sum:"Three hours on a direct coach and you are in Seville for a late lunch. No airport, no connection.",
-  warn:"<b>The train does not work in this direction.</b> Granada to Seville has only two direct Avant services a day, 06:22 and 18:17. The first needs a 05:30 alarm, the second lands you at 21:02 and costs you the day. Going the other way it would be perfect &mdash; Seville to Granada has four at civilised hours &mdash; but you are travelling this way, so take the coach.",
+  n:6, date:"Sat Nov 14", wd:"Saturday", city:"Granada to Seville", tag:["p-g","Train day"],
+  sum:"Two trains, one of them the 300 km/h AVE. Izyan&#39;s bullet-train day. Seville by 14:39, checked in at 15:00.",
+  warn:"<b>Booked: Alvia 02087 + AVE 02120, Trainline, $181.76 for all three (Basico fare, not changeable or refundable).</b> Leave from <b>Granada railway station</b> (Estacion de Granada, Av. de los Andaluces) &mdash; <b>not</b> the Estacion de Autobuses. One change at <b>Cordoba</b> with a 1h10 cushion. Bring all three passports; names and ID numbers are on the ticket.",
   sched:[
-    ["08:30","Breakfast, pack",""],
-    ["09:30","Taxi down to the bus station","Fifteen minutes, about 12 euros."],
-    ["10:00","ALSA coach to Seville","Three hours, direct, and there are about twelve a day so nothing is tight. Reserve seats online the night before."],
-    ["13:00","Arrive Plaza de Armas","Ten minutes by taxi into Santa Cruz."],
-    ["13:45","Check in","Santa Cruz apartments are usually flexible on an afternoon arrival."],
-    ["14:30","Late lunch","You have earned a long one. Spain eats late anyway."],
-    ["16:00","First walk through Santa Cruz","Orange trees, tiled lanes, the Giralda from below. No tickets, no plan."],
-    ["17:30","Plaza de Espana","Ten minutes on foot. He can run. Rowing boats on the moat until dusk."],
+    ["08:30","Breakfast at Hotel America, final pack","Unhurried. Bags by the door."],
+    ["10:00","Check out","Checkout window is 08:00 to 12:00."],
+    ["10:30","Taxi to Granada railway station","Av. de los Andaluces, about 15 minutes and 12 to 15 euros. Tell the driver estacion de tren, not autobuses."],
+    ["11:04","Alvia 02087 to Cordoba","1h32. Luggage racks and power sockets. Seats reserved."],
+    ["12:36","Arrive Cordoba, change trains","1h10 to the next train. Big modern station with cafes: early lunch or a snack here. Check the departures board for the AVE platform."],
+    ["13:46","AVE 02120 to Seville","The fast one: up to 300 km/h, bullet nose, cafe car, wifi. Let him watch the speed. 53 minutes."],
+    ["14:39","Arrive Sevilla-Santa Justa","Taxi rank outside, about 15 minutes and 10 to 12 euros to Calle San Gregorio 7."],
+    ["15:00","Check in at Iberflat San Gregorio","Check-in opens 15:00. You arrive almost exactly on time, no waiting with bags."],
+    ["15:45","Late lunch in Santa Cruz","Normal Seville lunch hour. Keep it relaxed."],
+    ["17:00","Walk Santa Cruz","Orange trees, tiled lanes, the Giralda from below. No tickets, no plan."],
+    ["17:45","Plaza de Espana","Ten minutes on foot. He can run. Rowing boats on the moat until dusk, sunset about 18:15."],
     ["19:00","Back, rest",""],
     ["20:30","Tapas dinner","Seville eats at 21:00. Going out at 20:30 gets you a table."]
   ],
   transport:{
-    leg:"Granada to Seville", flight:false, note:"No flight on this route and none needed. Three hours on the ground either way, and the coach is the one that leaves when you want it to.",
+    leg:"Granada to Seville", flight:false, note:"No flight on this route. Booked by train via Cordoba so Izyan gets the AVE.",
     opts:[
-      {n:"ALSA coach", d:"Three hours direct, about twelve a day, and the only option that leaves at a sane hour. Comfortable, cheap, and there is a toilet on board. The right call in this direction.", p:"12 to 30 euros each", best:true,
-       u:"https://www.alsa.com/en/coach/granada-seville", ul:"Book ALSA"},
-      {n:"Renfe Avant train, if you are early risers", d:"2h45 direct on high-speed track and genuinely nicer than the coach, but the only two directs are <b>06:22</b> and <b>18:17</b>. The 06:22 arrives 09:07 and buys you a whole extra day in Seville. Izyan is 40 percent off. Everything else on this route changes at Antequera and takes 3h40 or more.", p:"24 to 44 euros each",
-       u:"https://www.renfe.com/es/en", ul:"Check Renfe times"},
-      {n:"Private transfer", d:"Two and a half hours door to door, and it collects you from the hotel on the hill rather than the station below.", p:"280 to 380 euros total",
-       u:"https://www.welcomepickups.com/", ul:"welcomepickups.com"}
+      {n:"BOOKED: Alvia + AVE via Cordoba", d:"<b>11:04 Granada station to 12:36 Cordoba (Alvia 02087), then 13:46 Cordoba to 14:39 Sevilla-Santa Justa (AVE 02120).</b> 3h35 including a 1h10 change. Basico fare, seats reserved, luggage allowed. Not changeable or refundable.", p:"$181.76 for all three, paid", best:true,
+       u:"https://www.thetrainline.com/", ul:"Trainline bookings"}
     ]
   },
   food:{
@@ -1212,7 +1211,7 @@ function renderItinerary(){
     + '<div class="g4 blk">'
     + '<div class="stat"><div class="st-l">Structure</div><div class="st-v">2+2+2+3</div><div class="st-n">Extra Paris night fixes the Nov 16 crush</div></div>'
     + '<div class="stat"><div class="st-l">Options given</div><div class="st-v">64</div><div class="st-n">Across 21 decision points</div></div>'
-    + '<div class="stat"><div class="st-l">Routes with no flight</div><div class="st-v">2</div><div class="st-n">Malaga to Granada and Granada to Seville, both coaches</div></div>'
+    + '<div class="stat"><div class="st-l">Routes with no flight</div><div class="st-v">2</div><div class="st-n">Malaga to Granada by coach, Granada to Seville by train</div></div>'
     + '<div class="stat"><div class="st-l">Fixed-time bookings</div><div class="st-v">4</div><div class="st-n">Alhambra, Alcazar, flamenco, Disneyland</div></div>'
     + '</div>'
     + '<div class="note n-i"><span class="n-t">How to use this</span>'
@@ -1357,9 +1356,9 @@ function renderFlights(){
     + '<tr><td><b>Malaga airport to Granada</b><br><span style="font-size:11.5px;color:var(--mute)">Straight off the TAP flight, no stop in Malaga</span></td>'
     + '<td>Nov 12</td><td>Direct coach</td><td>1h45</td><td class="num">$66</td>'
     + '<td><a href="https://www.alsa.com/en/airports/malaga-costa-del-sol" target="_blank" rel="noopener">alsa.com</a></td></tr>'
-    + '<tr><td><b>Granada to Seville</b><br><span style="font-size:11.5px;color:var(--mute)">Coach, because the train only runs 06:22 and 18:17</span></td>'
-    + '<td>Nov 14</td><td>ALSA direct coach</td><td>3h00</td><td class="num">$40&ndash;95</td>'
-    + '<td><a href="https://www.alsa.com/en/coach/granada-seville" target="_blank" rel="noopener">alsa.com</a></td></tr>'
+    + '<tr><td><b>Granada to Seville</b><br><span style="font-size:11.5px;color:var(--mute)">Booked. Alvia to Cordoba, then the AVE</span></td>'
+    + '<td>Nov 14</td><td>Train, 1 change at Cordoba</td><td>11:04 to 14:39</td><td class="num">$181.76 paid</td>'
+    + '<td>Trainline</td></tr>'
     + '<tr><td><b>CDG to central Paris</b></td><td>Nov 16</td><td>RER B train</td><td>45min</td><td class="num">$38</td>'
     + '<td><a href="https://www.ratp.fr/en" target="_blank" rel="noopener">ratp.fr</a></td></tr>'
     + '<tr><td><b>Paris to CDG</b></td><td>Nov 19</td><td>Taxi, regulated flat rate</td><td>50min</td><td class="num">65 euros</td>'
@@ -1369,10 +1368,9 @@ function renderFlights(){
     + '<b>Malaga to Granada on Nov 12: the coach, and it is not close.</b> Priced live for your date and party: '
     + '<b>train $175.55 with one change and over three hours, coach $66.12 direct in 1h45</b>. Every rail option '
     + 'routes via Antequera-Santa Ana; the direct 1h22 Avant Renfe publicised is not bookable for Nov 12.<br><br>'
-    + '<b>Granada to Seville on Nov 14: take the coach.</b> Only two direct Avant services exist in that '
-    + 'direction, 06:22 and 18:17, and neither suits you. The coach runs twelve times a day and takes three '
-    + 'hours. Going the other way round the train would win easily, which is one small argument for the '
-    + 'reversed order and nowhere near enough to outweigh Nov 16.<br><br>'
+    + '<b>Granada to Seville on Nov 14: booked by train.</b> Alvia 02087 at 11:04 to Cordoba, then AVE 02120 '
+    + 'at 13:46, arriving Sevilla-Santa Justa 14:39, $181.76 for three. Chosen over the 13:12 direct Avant so '
+    + 'Izyan gets the 300 km/h AVE; the 1h10 change at Cordoba is relaxed, and arrival lines up with the 15:00 check-in.<br><br>'
     + '<b>Lisbon into Spain by rail: do not.</b> There is no through train. Lisbon to Madrid takes ten to '
     + 'eleven hours across three trains and two booking systems, one leg on a 1954 single-coach railcar with no '
     + 'catering. The night train was cancelled permanently in 2020 and high-speed is not expected before about '
@@ -1456,17 +1454,17 @@ var STAY = [
      ["Special requests lodged, awaiting reply","You asked about a complimentary shuttle from the ALSA station and whether they hold luggage from 13:00 until the 15:00 check-in. <b>No answer yet.</b> If they say no, it is two hours with the bags in Santa Cruz"],
      ["<b>The four real Seville numbers</b>","All in, both nights, 2 adults + 1 child, verified 12 Sep. <b>Iberflat one-bedroom $330. Iberflat two-bedroom $422. Dona Elvira two-bedroom $505. Suites Murillo Superior $603.</b> <b>Unlike Lisbon, none of these lists a cleaning fee</b> &mdash; only 10 percent IVA is excluded &mdash; but read the itemised total at checkout anyway, because Lisbon hid 70 euros there"],
      ["<b>Distance does not decide Seville</b>","Measured to all five stops &mdash; Alcazar, Cathedral, Santa Cruz, Plaza de Espana, Maria Luisa park. <b>Suites Murillo 3,852 m total. Dona Elvira 3,911 m. Iberflat 4,010 m. Overland Suites 4,752 m.</b> Average 10 to 12 minutes for every one of them. Unlike Lisbon, where the spread was 3.5 km, here it is 900 m. <b>Plaza de Espana and Maria Luisa park sit 1.2 to 1.9 km south of the old town and penalise every Santa Cruz hotel equally</b>, so pick on the arrival problem, not the map"],
-     ["<b>The whole decision, in one line</b>","Murillo costs <b>$179 more than Iberflat</b> and the only thing that money buys is a <b>24-hour desk</b> for the gap between your 13:00 coach and a 15:00 check-in. That is $179 for three hours of not carrying bags, once"],
+     ["<b>The whole decision, in one line</b>","Murillo costs <b>$179 more than Iberflat</b> and the only thing that money buys is a <b>24-hour desk</b> for the gap between a 13:00 coach and a 15:00 check-in. With the booked 14:39 train that gap is gone, so the extra $179 is no longer worth it"],
      ["<b>Correction, 12 Sep. The one-bedroom was wrongly ruled out</b>","This page said to skip the Iberflat one-bedroom because it &lsquo;lists a single full bed for all three of you&rsquo;. <b>That was wrong.</b> The actual configuration is <b>1 full bed in the bedroom plus 1 sofa bed in the living room</b>, and Booking rates it for <b>2 adults + 1 child</b>. It sleeps all three without anyone sharing. The claim came from reading part of the room row instead of all of it"],
      ["<b>Iberflat San Gregorio, the real comparison</b>","Calle San Gregorio 7. Cleanliness 9.4, lift, <b>check-in 15:00 to midnight</b>, six minutes to the Alcazar, 300 m to the Cathedral. Free cancellation to <b>Nov 9</b>. <b>One-bedroom: 431 sq ft, full bed + living-room sofa bed, $300 plus 10 percent IVA, about $330. Four units left.</b> <b>Two-bedroom: 592 sq ft, two full beds + sofa bed, $384 plus IVA, about $422. One unit left.</b> The extra $92 buys a door, 161 sq ft, and your living room back after Izyan goes down &mdash; a comfort call, not a requirement"],
      ["Note on the beds","A <b>full bed is a double at about 137 cm</b>, not a queen. Fine for two nights but snug. A crib is available on request in either unit"],
-     ["No 24-hour desk at Iberflat","Reception is daytime-staffed and speaks English and Spanish, but there is <b>no 24-hour desk and no luggage storage listed</b>. Your coach reaches Plaza de Armas at 13:00 and check-in opens 15:00, so budget <b>two hours with the bags</b>. Worth asking them to hold luggage on the morning of the 16th too &mdash; check-out is 12:00 and the airport taxi is not until 14:00"],
+     ["No 24-hour desk at Iberflat","Reception is daytime-staffed and speaks English and Spanish, but there is <b>no 24-hour desk and no luggage storage listed</b>. Your train reaches Santa Justa at 14:39 and check-in opens 15:00, so there is almost no wait with the bags. Worth asking them to hold luggage on the morning of the 16th too &mdash; check-out is 12:00 and the airport taxi is not until 14:00"],
      ["Correction to an earlier note","This page previously said the walk between the Murillo check-in desk and the apartment was 7 to 10 minutes. Measured, it is about <b>400 m, so 5 to 6 minutes</b>"],
 
      ["<b>Correction, 9 Sep. This was wrong, not just stale</b>","This page showed Seville at <b>$285</b>. That figure never existed at your occupancy &mdash; it came from a two-adult search. <b>Only one room here takes three people</b>: the Superior Apartment, 420 sq ft, queen plus sofa bed, max 3. It is <b>$548 for two nights plus 10 percent Spanish IVA, so about $603 all in</b>, or <b>$499 if you take the non-refundable rate</b>. The Standard Apartment at $442 is <b>max 2 adults</b> and will not work"],
-     ["Still the right choice, for one reason","Cleanliness <b>9.7</b> across 341 reviews and a <b>24-hour desk at Hotel Murillo</b>. Your coach reaches Plaza de Armas at 13:00 and nothing in Santa Cruz admits you that early, so the bag drop is what makes the arrival day work at all"],
+     ["Still the right choice, for one reason","Cleanliness <b>9.7</b> across 341 reviews and a <b>24-hour desk at Hotel Murillo</b>. This mattered for a 13:00 coach arrival; with the 14:39 train it no longer applies"],
      ["The cheapest tier, and why it is not here","Santa Cruz has apartments down at <b>$145 to $198</b> for both nights. They were checked and left off: <b>none has a staffed 24-hour desk</b>, so you would hold luggage until 15:00 or 16:00 on arrival day, and most carry fewer than 200 reviews. Dona Elvira is the honest budget entry at $231, but its check-in is <b>16:00 only</b> and there is no lift"],
-     ["The problem this solves","<b>Your coach arrives Plaza de Armas at 13:00 and nowhere lets you in that early.</b> Suites Murillo checks you in at Hotel Murillo on Calle Lope de Rueda, which has a <b>24-hour reception</b>. You drop bags at one, go to lunch, and collect the room later"],
+     ["The problem this solves","<b>Written for the old 13:00 coach arrival; the booked train arrives 14:39.</b> Suites Murillo checks you in at Hotel Murillo on Calle Lope de Rueda, which has a <b>24-hour reception</b>. You drop bags at one, go to lunch, and collect the room later"],
      ["The cost of that","Check-in is offsite. Reviewers describe a seven to ten minute walk over cobbles with luggage between the desk and the apartment. Staff guide you but do not always carry bags"],
      ["Why not Dona Elvira","Best cleanliness of the three at 9.7 and the cheapest, but <b>check-in is 16:00 to 20:30 only</b>, there is no reception, and it is up stairs with no lift. Three hours with bags and a five-year-old before you can get in"],
      ["Puerta Principe as the middle path","Staffed desk from 15:00, lift, dishwasher and washing machine, 400+ reviews at 9.6 cleanliness, and closer to the Alcazar than either. Two hours to kill rather than three"],
@@ -1649,10 +1647,10 @@ var BOOKINGS = [
    n:"<b>Nestay has no front desk. Check-in is fully self-service and the access codes only arrive once you complete online check-in.</b> Do it as soon as the link appears, and screenshot the codes so they work offline. Without them you are on rue de la Cossonnerie at 21:15 with the bags and no way in. <b>Ask at the same time whether Paris city tax is collected on arrival</b> &mdash; the rate page did not show a city-tax line, so budget about $56 in case.",
    by:"2026-11-09", est:0,
    u:"https://secure.booking.com/", ul:"Booking.com account"},
-  {id:"bus1", ph:3, t:"Granada to Seville, Nov 14, ALSA coach",
-   n:"Three hours direct, twelve a day, 12 to 30 euros each. Reserve seats online the night before. Not the train: the only direct Avant services in this direction are 06:22 and 18:17.",
-   by:"2026-10-20", est:70,
-   u:"https://www.alsa.com/en/coach/granada-seville", ul:"Book ALSA"},
+  {id:"bus1", done:1, cost:181.76, paid:1, ph:3, t:"Granada to Seville, Sat Nov 14: TRAIN BOOKED (11:04, AVE via Cordoba)",
+   n:"<b>Booked 10 Oct on Trainline, $181.76 for all three</b> (2 adults $139.76 Basico, Izyan $42 Basico Nino). <b>Alvia 02087</b> Granada station 11:04 to Cordoba 12:36, 1h10 change, <b>AVE 02120</b> Cordoba 13:46 to Sevilla-Santa Justa 14:39. Seats reserved. Not changeable or refundable. Leave from the railway station on Av. de los Andaluces, not the bus station. Passports required.",
+   by:"2026-10-20", est:182,
+   u:"https://www.thetrainline.com/", ul:"Trainline bookings"},
   {id:"avant", ph:3, t:"Malaga airport to Granada, Nov 12, ALSA coach",
    n:"$66.12 for all three, 1h45, no changes. Confirmed departures on Nov 12: 13:00, 14:00, 14:45, 15:45. Book the 14:45 and check the duration says 1h45, not 2h15. Note most fares leave from Malaga city bus station next to Maria Zambrano, eight minutes from the terminal on the Cercanias C1.",
    by:"2026-11-10", est:66, dep:["lis"],
@@ -2042,7 +2040,7 @@ var COSTS = [
   ["Flights and bags, all four legs", "$4,004", "$4,004", "<b>All paid.</b> United $1,389 plus a $90 bag, TAP $538, Air France $370, American $1,616 including its $87 bag"],
   ["Accommodation, 9 nights", "$2,787", "$2,787", "<b>All four booked. No estimates left.</b> Lisbon <b>$582</b>, Granada <b>$497</b>, Seville <b>$330</b>, Paris <b>$1,378</b>. Every figure is from a confirmation, not a quote. <b>Paris may settle about $116 lower</b> if Booking.com&#39;s contribution comes off your card &mdash; confirm against the statement"],
   ["Tickets and attractions", "$480", "$650", "<b>Paid: Alhambra 43.27 euros, Disneyland $348.74, Eiffel 63 euros.</b> Still to buy: Alcazar, flamenco, Castelo de Sao Jorge"],
-  ["Intercity coach", "$110", "$160", "Malaga to Granada $66, Granada to Seville about $70. No rail on either"],
+  ["Intercity coach and train", "$248", "$248", "Malaga to Granada coach $66 (to book); Granada to Seville train $181.76 (paid)"],
   ["City transport", "$220", "$340", "Metros, taxis, RER, Bolt"],
   ["Daily food and incidentals", "$" + BDG_TOTAL, "$" + BDG_TOTAL, "Tracked day by day below"],
   ["Travel insurance", "$77", "$77", "<b>Bought.</b> Tin Leg Gold, medical and evacuation only, all three travellers"],
@@ -2231,7 +2229,7 @@ var PACK = [
     "Wet wipes. More than you think",
     "Small first aid kit with plasters, antiseptic and a thermometer",
     "Sunscreen. Lisbon and Seville are still sunny in November",
-    "Motion sickness tablets for the Granada to Seville coach"
+    "Snacks for the Cordoba train change on Nov 14"
   ]}
 ];
 
