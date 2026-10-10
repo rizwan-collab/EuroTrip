@@ -547,7 +547,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-10";
-var BUILD = "2026-10-10b";
+var BUILD = "2026-10-10c";
 var BUILD_LABEL = "Updated Oct 10";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -679,7 +679,7 @@ var PLAN = [
   sched:[
     ["10:20","Land at LIS, Terminal 1","UA 942, on time. Passport control 20 to 40 minutes, longer if two widebodies land together."],
     ["11:20","Bolt to Chiado","About 15 euros, 20 minutes. Cheaper and far easier than the metro with luggage."],
-    ["11:50","Drop bags","<b>226 Rua dos Sapateiros.</b> Free luggage store on the <b>2nd floor, the room directly facing the lift</b>. It is <b>code entry</b> &mdash; codes requested 7 Nov. Guest lounge on the same floor, bathroom on the ground floor. Close the door properly after use. Check-in is not until 16:00. Address: Rua dos Sapateiros 226, 1100-581 Lisboa. Emergency line +351 211 450 297. WiFi: Residentas / unforgettable. Groceries: Pingo Doce Baixa or Continente Bom Dia Rossio."],
+    ["11:50","Drop bags","<b>226 Rua dos Sapateiros.</b> Free luggage store on the <b>2nd floor, the room directly facing the lift</b>. It is <b>code entry</b> &mdash; codes requested 7 Nov. Guest lounge on the same floor, bathroom on the ground floor. Close the door properly after use. Check-in is not until 16:00. Guest portal (check-in, codes): https://app.chargeautomation.com/securelink/cc87b60400 . Address: Rua dos Sapateiros 226, 1100-581 Lisboa. Emergency line +351 211 450 297. WiFi: Residentas / unforgettable. Groceries: Pingo Doce Baixa or Continente Bom Dia Rossio."],
     ["12:30","Lunch at Time Out Market","Eight minutes downhill from Chiado, and it sits on the river at Cais do Sodre. Everyone picks their own, which buys you a calm first meal."],
     ["14:00","Ribeira das Naus","Walk out of the market and you are on it. A flat promenade with stepped terraces down to the water, grass behind, and a kiosk. Let him run."],
     ["15:00","Praca do Comercio","Ten minutes further east along the river. Enormous open square opening onto the Tagus on one side."],
@@ -771,32 +771,30 @@ var PLAN = [
 },
 {
   n:4, date:"Thu Nov 12", wd:"Thursday", city:"Lisbon to Granada", tag:["p-w","Transfer day"],
-  sum:"TAP to Malaga at 10:45, then the coach straight up to Granada. On the Alhambra hill by late afternoon.",
-  warn:"<b>Flight booked: TAP, Lisbon 10:45 to Malaga 13:00. Take the coach.</b> Checked live for your exact date and party: <b>train $175.55 with one change and three hours plus, coach $66.12 direct in 1h45</b>. The coach is a hundred and nine dollars cheaper and half the time. Nothing to think about. Izyan gets his big train ride two days later: the AVE from Cordoba to Seville on Nov 14.",
+  sum:"TAP to Malaga at 10:45, lunch at the airport, then the 15:00 ALSA coach straight from the airport to Granada. At Hotel America by about 17:45.",
+  warn:"<b>Flight booked: TAP, Lisbon 10:45 to Malaga 13:00. Coach: ALSA 15:00 from Malaga Airport to Granada bus station, arrives 17:15, Basica fare 38.27 euros for all three.</b> Leaves from the airport itself, so no train transfer with bags, and two hours of buffer after landing. Checked live 10 Oct: there is no 14:45 departure. If the flight is badly late, the 16:00 from Malaga city station (arr 17:30) is the backup. Izyan gets his big train ride two days later: the AVE from Cordoba to Seville on Nov 14.",
   sched:[
     ["07:45","Breakfast, final pack","Bags by the door before you sit down. Nothing loose."],
     ["08:20","Bolt to LIS","Twenty-five minutes, budget 15 euros."],
     ["08:45","Bag drop and security","Two hours for a short hop with a checked bag. TAP flies from Terminal 1."],
     ["10:45","Depart Lisbon, TP1136","TAP, 1h15 direct. One checked bag on the booking, on your ticket. Zaibnish and Izyan are carry-on only, 10kg each."],
     ["13:00","Land Malaga","Spain is an hour ahead, so you gain an hour on paper and lose it on the clock."],
-    ["13:35","Bags, then Cercanias C1 to the station","<b>Check where your coach leaves from.</b> The $66 fares depart Malaga city bus station, next door to Maria Zambrano, not the airport. The C1 runs from inside the terminal, eight minutes, and Izyan is free. ALSA also sells an airport-direct coach on its own site if you would rather not move."],
-    ["14:45","Coach to Granada","<b>Direct, 1h45, $66.12 for all three.</b> Confirmed afternoon departures on your date: 13:00, 14:00, 14:45, 15:45. Take the 14:45 so you are not rushing bags, and check you have the 1h45 service rather than the 2h15."],
-    ["16:30","Arrive Granada bus station","On the 1h45 service. Some runs take 2h15 or 2h30, so look at the duration before you book."],
-    ["16:50","Taxi up to the hotel","Fifteen minutes, about 12 euros. Do not walk the hill with bags."],
-    ["17:15","Check in","Hotel America is inside the Alhambra walls. Drop everything."],
-    ["17:30","First look at the hill","Ten minutes to a terrace while there is still light. Sunset is about 18:10 in mid-November."],
+    ["13:35","Bags, then lunch at the airport","No transfer needed: the coach leaves from Malaga Airport itself. Eat properly here."],
+    ["14:40","Find the ALSA coach stop","Outside arrivals at the airport bus stops. Have the ALSA tickets on your phone."],
+    ["15:00","ALSA coach to Granada","From Malaga Airport, 2h15, Basica fare 38.27 euros for all three. Changes allowed up to 7 days before; not refundable after."],
+    ["17:15","Arrive Granada bus station","Taxi rank outside."],
+    ["17:25","Taxi up to the hotel","Fifteen minutes, about 12 to 15 euros. Do not walk the hill with bags."],
+    ["17:45","Check in at Hotel America","Inside the Alhambra walls. Check-in runs until 21:00."],
+    ["18:00","Quick look at the hill","Catch the last light; sunset is about 18:10 in mid-November."],
     ["19:30","Granada tapas trail","Every drink comes with a free plate. Three bars is dinner for the three of you."],
     ["21:30","Taxi back up","Ten euros. The Alhambra is at 09:00 tomorrow, so do not push it."]
   ],
   transport:{
-    leg:"Malaga airport to Granada", flight:false, note:"The flight is booked and lands 13:00. This is the only part of today still open, and it is a short list.",
+    leg:"Malaga airport to Granada", flight:false, note:"Flight booked, lands 13:00. Coach chosen: 15:00 from the airport.",
     opts:[
-      {n:"Direct coach to Granada", d:"<b>$66.12 for all three, 1h45, no changes.</b> Confirmed live for Nov 12: departures at 13:00, 14:00, 14:45 and 15:45 through the afternoon. The 14:45 gives you time off the plane without rushing. Most of these leave from Malaga city bus station beside Maria Zambrano, eight minutes from the terminal on the Cercanias C1; ALSA also runs an airport-direct service on its own site.", p:"$66.12 total", best:true,
-       u:"https://www.alsa.com/en/airports/malaga-costa-del-sol", ul:"ALSA from Malaga airport"},
-      {n:"The train, and why it is out", d:"Checked live on Nov 12 for two adults and a five-year-old: <b>every train option returns one change</b> at Antequera-Santa Ana and runs three hours or more, for <b>$175.55</b>. The direct 1h22 Avant that Renfe publicised is not bookable for your date. The coach is $66.12 and 1h45. Do not spend the afternoon chasing the train.", p:"$175.55, one change",
-       u:"https://www.renfe.com/es/en", ul:"Check Renfe times"},
-      {n:"Private transfer or taxi", d:"About 1h30 door to door and the only option that puts you at the hotel door rather than the bus station. Expensive for what it is, but worth knowing if the flight is badly delayed and the coaches have thinned out.", p:"150 to 200 euros total",
-       u:"https://www.welcomepickups.com/", ul:"welcomepickups.com"}
+      {n:"ALSA 15:00, Malaga Airport to Granada", d:"<b>Departs 15:00 from Malaga Airport, arrives Granada bus station 17:15.</b> 2h15. Basica fare: 2 adults 28.24 euros + 1 child 10.03 euros = <b>38.27 euros</b>. Free changes up to 7 days before departure.", p:"38.27 euros for all three", best:true,
+       u:"https://www.alsa.com/en", ul:"alsa.com"},
+      {n:"Backup if the flight is late: 16:00 from Malaga city station", d:"Direct 1h30, arrives 17:30, about 26 euros for three. C1 train from the airport, 8 minutes.", p:"About 26 euros"}
     ]
   },
   food:{
@@ -1260,7 +1258,7 @@ var LEGS = [
    flag:["p-g","Booked"],
    itin:[
      ["TP1136","Thu Nov 12","LIS 10:45 to AGP 13:00","1h15 direct &middot; Economy &middot; Spain is one hour ahead"],
-     ["Coach","Thu Nov 12","Malaga to Granada","1h45 direct &middot; $66.12 for three &middot; departures 13:00, 14:00, 14:45, 15:45"]
+     ["Coach","Thu Nov 12","Malaga Airport to Granada","ALSA 15:00 from the airport, arrives 17:15 &middot; 38.27 euros for three"]
    ],
    seats:"All three assigned at check-in, as on the other legs.",
    note:"<b>One checked bag on this booking, and it is on Rizwan's ticket.</b> Zaibnish and Izyan have carry-on only, capped at 10kg each. Everyone gets a personal item.<br><br>No airline flies Lisbon to Granada, so the last stretch is on the ground. Priced live for Nov 12: train $175.55 with one change and three hours plus, coach $66.12 direct in 1h45.",
@@ -1361,8 +1359,8 @@ function renderFlights(){
     + 'travels with you on Nov 16.</div></div>'
     + '<div class="blk"><div class="blk-h">Ground transport between cities</div>'
     + '<div class="tw tsc"><table><thead><tr><th>Leg</th><th>Date</th><th>Mode</th><th>Time</th><th class="num">Cost, 3 people</th><th>Book</th></tr></thead><tbody>'
-    + '<tr><td><b>Malaga airport to Granada</b><br><span style="font-size:11.5px;color:var(--mute)">Straight off the TAP flight, no stop in Malaga</span></td>'
-    + '<td>Nov 12</td><td>Direct coach</td><td>1h45</td><td class="num">$66</td>'
+    + '<tr><td><b>Malaga airport to Granada</b><br><span style="font-size:11.5px;color:var(--mute)">ALSA from the airport itself, no train transfer</span></td>'
+    + '<td>Nov 12</td><td>ALSA coach</td><td>15:00 to 17:15</td><td class="num">38.27 euros</td>'
     + '<td><a href="https://www.alsa.com/en/airports/malaga-costa-del-sol" target="_blank" rel="noopener">alsa.com</a></td></tr>'
     + '<tr><td><b>Granada to Seville</b><br><span style="font-size:11.5px;color:var(--mute)">Booked. Alvia to Cordoba, then the AVE</span></td>'
     + '<td>Nov 14</td><td>Train, 1 change at Cordoba</td><td>11:04 to 14:39</td><td class="num">$181.76 paid</td>'
@@ -1374,7 +1372,7 @@ function renderFlights(){
     + '</tbody></table></div></div>'
     + '<div class="note n-i"><span class="n-t">Where the train actually wins, and where it does not</span>'
     + '<b>Malaga to Granada on Nov 12: the coach, and it is not close.</b> Priced live for your date and party: '
-    + '<b>train $175.55 with one change and over three hours, coach $66.12 direct in 1h45</b>. Every rail option '
+    + '<b>train $175.55 with one change and over three hours; chosen coach is ALSA 15:00 from the airport, 38.27 euros</b>. Every rail option '
     + 'routes via Antequera-Santa Ana; the direct 1h22 Avant Renfe publicised is not bookable for Nov 12.<br><br>'
     + '<b>Granada to Seville on Nov 14: booked by train.</b> Alvia 02087 at 11:04 to Cordoba, then AVE 02120 '
     + 'at 13:46, arriving Sevilla-Santa Justa 14:39, $181.76 for three. Chosen over the 13:12 direct Avant so '
@@ -1402,6 +1400,7 @@ var STAY = [
      {n:"The House on the Pink Street", s:"9.7", cl:"9.9", r:"419", rk:"GONE for three &mdash; now max 2 adults", u:"Family unit withdrawn; studios only", d:"14 min avg", p:"n/a", slug:"pt/the-house-on-the-pink-street-in-lisbon.html"}
    ],
    facts:[
+     ["<b>LISBON APARTMENT &mdash; EVERYTHING IN ONE PLACE</b>","<b>Guest portal:</b> <a href=\"https://app.chargeautomation.com/securelink/cc87b60400\" target=\"_blank\" rel=\"noopener\">open the Residentas guest portal</a> (online check-in, arrival time, access codes).<br><b>Booking:</b> One-Bedroom Apartment, entire apartment, Booking.com, in Zaibnish&#39;s name. 2 adults + 1 child (5), Izyan confirmed 10 Oct. $582 all in. No meals, non-smoking.<br><b>Dates:</b> check in Tue 10 Nov from 16:00, check out Thu 12 Nov by 10:00.<br><b>Address:</b> 226 Rua dos Sapateiros, Santa Maria Maior, 1100-581 Lisboa.<br><b>Phones:</b> Residentas emergency <a href=\"tel:+351211450297\">+351 211 450 297</a> &middot; Residentas team mobile/WhatsApp <a href=\"tel:+351960060061\">+351 960 060 061</a> &middot; property <a href=\"tel:+351210522188\">+351 21 052 2188</a>.<br><b>Luggage:</b> free self-access room on the 2nd floor, directly facing the lift; code-entry. Request codes and check-in instructions on <b>Sat 7 Nov</b>. Early luggage drop on arrival day confirmed.<br><b>WiFi:</b> Residentas / unforgettable.<br><b>Groceries:</b> Pingo Doce Baixa, Continente Bom Dia Rossio.<br><b>Still to ask:</b> whether the free airport transfer applies to your rate."],
      ["<b>BOOKED 12 Sep &mdash; confirmation in your email</b>","Residentas Arco do Bandeira, <b>226 Rua dos Sapateiros, Santa Maria Maior, 1100-581</b>. Phone <b>+351 21 052 2188</b>, and the <b>Residentas team direct on +351 960 060 061</b> (mobile, so WhatsApp works). One-Bedroom Apartment, <b>check in Tue 10 Nov from 16:00, check out Thu 12 Nov by 10:00</b>. Booked in <b>Zaibnish&#39;s name</b>. <b>Changing the dates is not possible</b> on this rate"],
      ["<b>What it actually cost, itemised</b>","Apartment <b>$455</b>, plus a <b>70 euro cleaning fee, $81</b>, plus 6 percent VAT <b>$27</b> on the room only, plus city tax <b>$19</b> at 4 euros per adult per night. <b>Total $582</b>, about 501 euros. <b>The cleaning fee is the bit that was never in the estimate</b> &mdash; Booking folds it into the headline total but does not show it as a line until checkout"],
      ["<b>RESOLVED 10 Oct: Izyan is on the booking</b>","Booking.com now reads <b>2 adults, 1 child (5 years old)</b>, confirmed with the property on 10 Oct. Free cancellation ended 10 Oct, so the booking is locked in, which is fine."],
@@ -1636,7 +1635,7 @@ var BOOKINGS = [
    u:"tel:+17272645657", ul:"Call emergency assistance"},
 
   {id:"hlis", done:1, cost:582, ph:2, paid:1, t:"Lisbon, Nov 10 to 12: Residentas Arco do Bandeira, BOOKED",
-   n:"<b>BOOKED 12 Sep. Confirmation and PIN are in your email and the confirmations folder.</b> One-Bedroom Apartment at 226 Rua dos Sapateiros, in Zaibnish&#39;s name. Check in <b>Tue 10 Nov from 16:00</b>, check out <b>Thu 12 Nov by 10:00</b>. <b>$582 all in</b> &mdash; $455 room, $81 cleaning fee, $27 VAT, $19 city tax. <b>Free cancellation only until 10 Oct 23:59</b>, then 415.16 euros. Dates cannot be changed. <b><b>Booking.com confirms: One-Bedroom Apartment (entire apartment), 2 adults + 1 child (5 years old), 2 nights, guest name Zaibnish Ali, max capacity 4, no meals included, non-smoking. Check-in Tue 10 Nov from 16:00, check-out Thu 12 Nov until 10:00.</b> <b>Confirmed 10 Oct: Izyan is on the reservation, and early luggage-room use is OK; access code to be sent before arrival.</b> Free cancellation ended 10 Oct, so this booking is now locked in. <b>Apartment info:</b> Rua dos Sapateiros 226, 1100-581 Lisboa. Residentas emergency line <a href=\"tel:+351211450297\">+351 211 450 297</a>. Luggage room on the 2nd floor, code to be provided. WiFi: Residentas, password unforgettable. Nearest supermarkets: Pingo Doce Baixa, Continente Bom Dia Rossio.",
+   n:"<b>BOOKED 12 Sep. Confirmation and PIN are in your email and the confirmations folder.</b> One-Bedroom Apartment at 226 Rua dos Sapateiros, in Zaibnish&#39;s name. Check in <b>Tue 10 Nov from 16:00</b>, check out <b>Thu 12 Nov by 10:00</b>. <b>$582 all in</b> &mdash; $455 room, $81 cleaning fee, $27 VAT, $19 city tax. <b>Free cancellation only until 10 Oct 23:59</b>, then 415.16 euros. Dates cannot be changed. <b><b>Booking.com confirms: One-Bedroom Apartment (entire apartment), 2 adults + 1 child (5 years old), 2 nights, guest name Zaibnish Ali, max capacity 4, no meals included, non-smoking. Check-in Tue 10 Nov from 16:00, check-out Thu 12 Nov until 10:00.</b> <b>Confirmed 10 Oct: Izyan is on the reservation, and early luggage-room use is OK; access code to be sent before arrival.</b> Free cancellation ended 10 Oct, so this booking is now locked in. <b>Guest portal:</b> <a href=\"https://app.chargeautomation.com/securelink/cc87b60400\" target=\"_blank\" rel=\"noopener\">Residentas guest portal</a>. <b>Apartment info:</b> Rua dos Sapateiros 226, 1100-581 Lisboa. Residentas emergency line <a href=\"tel:+351211450297\">+351 211 450 297</a>. Luggage room on the 2nd floor, code to be provided. WiFi: Residentas, password unforgettable. Nearest supermarkets: Pingo Doce Baixa, Continente Bom Dia Rossio.",
    by:"2026-10-10", est:582,
    u:"https://www.booking.com/hotel/pt/residentas-arco-do-bandeira.html?checkin=2026-11-10&checkout=2026-11-12&group_adults=2&group_children=1&age=5&no_rooms=1&selected_currency=USD", ul:"Open Arco do Bandeira"},
   {id:"lugcode", ph:5, t:"Sat 7 Nov: request the Lisbon luggage access codes",
@@ -1659,9 +1658,9 @@ var BOOKINGS = [
    n:"<b>Booked 10 Oct on Trainline, $181.76 for all three</b> (2 adults $139.76 Basico, Izyan $42 Basico Nino). <b>Alvia 02087</b> Granada station 11:04 to Cordoba 12:36, 1h10 change, <b>AVE 02120</b> Cordoba 13:46 to Sevilla-Santa Justa 14:39. Seats reserved. Not changeable or refundable. Leave from the railway station on Av. de los Andaluces, not the bus station. Passports required. <b>Seats: Alvia coach 6, Rizwan 02C, Zaibnish 02D, Izyan 01D; AVE coach 3, Rizwan 03C, Zaibnish 03D, Izyan 04D</b> (Izyan one row apart on both, swap on board). Tickets total 154.50 euros. Access closes 2 minutes before departure. Renfe luggage rule: up to 3 bags per person, 25 kg combined, largest no bigger than 85 x 55 x 35 cm. PDF tickets in the confirmations folder.",
    by:"2026-10-20", est:182,
    u:"https://www.thetrainline.com/", ul:"Trainline bookings"},
-  {id:"avant", ph:3, t:"Malaga airport to Granada, Nov 12, ALSA coach",
-   n:"$66.12 for all three, 1h45, no changes. Confirmed departures on Nov 12: 13:00, 14:00, 14:45, 15:45. Book the 14:45 and check the duration says 1h45, not 2h15. Note most fares leave from Malaga city bus station next to Maria Zambrano, eight minutes from the terminal on the Cercanias C1.",
-   by:"2026-11-10", est:66, dep:["lis"],
+  {id:"avant", ph:3, t:"Malaga Airport to Granada, Thu Nov 12, ALSA 15:00 coach",
+   n:"<b>Chosen: ALSA 15:00 from Malaga Airport, arrives Granada bus station 17:15.</b> Basica fare, 38.27 euros for all three (2 adults 28.24, Izyan 10.03). No train transfer needed. Free changes up to 7 days before. Mark done once the ALSA confirmation arrives.",
+   by:"2026-11-10", est:43, dep:["lis"],
    u:"https://www.alsa.com/en/airports/malaga-costa-del-sol", ul:"Book ALSA"},
     {id:"dis", done:1, cost:348.74, paid:1, ph:4, t:"Disneyland Paris, Tue Nov 17: BOOKED",
    n:"<b>Booked 3 Oct, $348.74 for all three.</b> Dated 1 Day / 2 Park ticket, both parks, so Ratatouille is covered. Valid 17 Nov 2026. Zaibnish and Rizwan adult $118.12 each, Izyan child $112.50. In Zaibnish&#39;s name, paid on Visa. <b>Free cancellation until 3 days before (14 Nov).</b> Booking confirmation with ticket access comes in a separate email to Zaibnish; load the tickets into the Disneyland Paris app before you fly. RER A from Chatelet-Les Halles, leave 08:10.",
@@ -1796,7 +1795,7 @@ function satBanner(){
    + '<div class="acc-grp" style="margin:0 0 18px">'
    + '<div class="acc-grp-h">What is left, in order of deadline</div>'
    + '<details class="acc" open><summary>By Nov 10 &mdash; Malaga airport to Granada coach, Thu Nov 12</summary><div class="acc-b">'
-   + 'ALSA, the <b>14:45</b> departure, <b>1h45</b> service, about $66 for all three. Most fares leave from Malaga city bus station next to Maria Zambrano, 8 minutes on the C1 from the airport.</div></details>'
+   + '<b>ALSA 15:00 from Malaga Airport</b>, arrives Granada 17:15, Basica fare 38.27 euros for all three. Cart was filled 10 Oct; mark done once the confirmation arrives.</div></details>'
    + '<details class="acc"><summary>Late Oct &mdash; confirm the Ismaili Centre time, Wed Nov 11</summary><div class="acc-b">'
    + 'Planned for about 16:00. Once confirmed, the morning castle and Alfama walk bends around it.</div></details>'
    + '<details class="acc"><summary>Castelo de Sao Jorge, Wed Nov 11 &mdash; buy at the gate</summary><div class="acc-b">'
@@ -2041,7 +2040,7 @@ var COSTS = [
   ["Flights and bags, all four legs", "$4,004", "$4,004", "<b>All paid.</b> United $1,389 plus a $90 bag, TAP $538, Air France $370, American $1,616 including its $87 bag"],
   ["Accommodation, 9 nights", "$2,787", "$2,787", "<b>All four booked. No estimates left.</b> Lisbon <b>$582</b>, Granada <b>$497</b>, Seville <b>$330</b>, Paris <b>$1,378</b>. Every figure is from a confirmation, not a quote. <b>Paris may settle about $116 lower</b> if Booking.com&#39;s contribution comes off your card &mdash; confirm against the statement"],
   ["Tickets and attractions", "$480", "$650", "<b>Paid: Alhambra 43.27 euros, Disneyland $348.74, Eiffel 63 euros.</b> Cathedral 29 euros paid. Alcazar and flamenco show skipped. Castelo 34 euros at the gate"],
-  ["Intercity coach and train", "$248", "$248", "Malaga to Granada coach $66 (to book); Granada to Seville train $181.76 (paid)"],
+  ["Intercity coach and train", "$225", "$225", "Malaga Airport to Granada coach 38.27 euros (ALSA 15:00); Granada to Seville train $181.76 (paid)"],
   ["City transport", "$220", "$340", "Metros, taxis, RER, Bolt"],
   ["Daily food and incidentals", "$" + BDG_TOTAL, "$" + BDG_TOTAL, "Tracked day by day below"],
   ["Travel insurance", "$77", "$77", "<b>Bought.</b> Tin Leg Gold, medical and evacuation only, all three travellers"],
