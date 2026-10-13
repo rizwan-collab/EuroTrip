@@ -547,8 +547,8 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-10";
-var BUILD = "2026-10-10h";
-var BUILD_LABEL = "Updated Oct 10";
+var BUILD = "2026-10-13a";
+var BUILD_LABEL = "Updated Oct 13";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
   try{
@@ -1676,7 +1676,9 @@ var BOOKINGS = [
    n:"<b>Booked 3 Oct, 63 euros (about $71) for all three, on the Apple Card.</b> Ticket is <b>Top floor by stairs + lift</b>: you climb the stairs to the 2nd floor (about 670 steps, 30 to 45 minutes with breaks at the 1st floor), then take the lift to the summit. The lift-only 09:30 slot was sold out online. E-tickets arrive as PDF by email; save them to your phone. Bring Izyan&#39;s passport as proof of age. Be at security by 09:15.",
    by:"2026-10-05", est:71, dep:["dec"],
    u:"https://www.toureiffel.paris/en", ul:"Eiffel Tower site"},
-  {id:"photo", ph:4, t:"Family photo shoot: pick spot and photographer (open item)",
+  {id:"aseat", ph:4, t:"ALSA Nov 12: move Izyan next to a parent",
+   n:"Izyan has seat 30; Zaibnish 33, Rizwan 34. Seat changes on board are not allowed. alsa.com, Manage booking, reference 1g3kckz, Izyan's ticket, Change seat: pick a seat beside 33 or 34 (from 2.50 euros). Free changes until Nov 5.", by:"2026-11-05", est:3, u:"https://www.alsa.com/en/", ul:"ALSA manage booking"},
+    {id:"photo", ph:4, t:"Family photo shoot: pick spot and photographer (open item)",
    n:"<b>Alcazar skipped, too close to the Alhambra.</b> A trusted local photographer for a family shoot, anywhere good on the trip. Best fit: <b>Plaza de Espana, Seville, Sun 15 Nov around 09:00</b>, near empty and already on the plan. Alternatives: Trocadero, Paris, Wed 18 Nov around 08:15 before the 09:30 tower slot; Alfama or Ribeira das Naus, Lisbon. Roughly $225 to $325 for 30 to 60 minutes via Local Lens or Flytographer. Decide later.",
    by:"2026-10-25", est:275,
    u:"https://locallens.com/destinations/seville-spain/", ul:"Local Lens Seville"},
@@ -1798,17 +1800,25 @@ function satBanner(){
    + '<div class="stat"><div class="st-l">Rooms booked</div><div class="st-v">4 of 4</div><div class="st-n">Lisbon, Granada, Seville, Paris</div></div>'
    + '<div class="stat"><div class="st-l">Flights</div><div class="st-v">All paid</div><div class="st-n">Four legs, bags included</div></div>'
    + '<div class="stat"><div class="st-l">Committed</div><div class="st-v">$'+s.committed.toLocaleString()+'</div><div class="st-n">Across '+s.paidCount+' paid items</div></div>'
-   + '<div class="stat"><div class="st-l">Still open</div><div class="st-v">2 items</div><div class="st-n">Ismaili Centre time, Castelo (gate)</div></div>'
+   + '<div class="stat"><div class="st-l">Still open</div><div class="st-v">5 items</div><div class="st-n">eSIM, Izyan&#39;s coach seat, Seville luggage hold, Ismaili Centre time, Castelo (gate)</div></div>'
    + '</div>'
    + '<div class="note n-w" style="margin-bottom:14px"><span class="n-t">Why no confirmation numbers on this page</span>'   + 'This planner is published on a <b>public</b> GitHub Pages URL. A Booking.com reference plus its PIN is enough for anyone to view, change or cancel a reservation, so <b>none are stored here</b>. They live in your email and in the confirmations folder alongside the PDFs. Property names, addresses and public phone numbers are fine to keep.</div>'
    + '<div class="acc-grp" style="margin:0 0 18px">'
    + '<div class="acc-grp-h">What is left, in order of deadline</div>'
+   + '<details class="acc" open><summary>Mon Oct 12 &mdash; eSIM for Rizwan&#39;s phone</summary><div class="acc-b">'
+   + 'T-Mobile Simple Choice is 256 kbps abroad. Airalo Europe 10 GB / 30 days, about $20 to $26. Install now, switch on in Lisbon. Zaibnish&#39;s line is covered.</div></details>'
+   + '<details class="acc"><summary>Now &mdash; check for Tin Leg&#39;s own confirmation email</summary><div class="acc-b">'
+   + 'The Squaremouth summary says you may not be covered without the insurer&#39;s separate confirmation. Free cancellation ends Oct 16; you are keeping it.</div></details>'
+   + '<details class="acc"><summary>By Nov 5 &mdash; move Izyan next to a parent on the ALSA coach</summary><div class="acc-b">'
+   + 'Seat 30 vs your 33 and 34. Manage booking on alsa.com, from 2.50 euros. Changes are free until Nov 5.</div></details>'
+   + '<details class="acc"><summary>About Nov 10 &mdash; arrange the Seville luggage hold</summary><div class="acc-b">'
+   + 'Iberflat +34 955 515 541: housekeeper holds bags Mon Nov 16 from 12:00 checkout to about 13:45. No luggage room, so arrange it ahead.</div></details>'
    + '<details class="acc"><summary>Late Oct &mdash; confirm the Ismaili Centre time, Wed Nov 11</summary><div class="acc-b">'
    + 'Planned for about 16:00. Once confirmed, the morning castle and Alfama walk bends around it.</div></details>'
    + '<details class="acc"><summary>Castelo de Sao Jorge, Wed Nov 11 &mdash; buy at the gate</summary><div class="acc-b">'
    + 'Online payment failed. 17 euros an adult, Izyan free, short November lines. Open 09:00 to 18:00.</div></details>'
    + '<details class="acc"><summary>Done &mdash; everything else is booked</summary><div class="acc-b">'
-   + 'All four flights, all four rooms, travel insurance (Tin Leg Gold), Alhambra, Nov 14 trains, Seville Cathedral, Disneyland, Eiffel Tower. Izyan confirmed on the Lisbon booking. Street flamenco needs no booking.</div></details>'
+   + 'All four flights, all four rooms, travel insurance (Tin Leg Gold), Alhambra, Nov 12 ALSA coach (with extra bag), Nov 14 trains, Seville Cathedral, Disneyland, Eiffel Tower. Izyan confirmed on the Lisbon booking. Street flamenco needs no booking.</div></details>'
    + '<details class="acc"><summary>Two access codes you must request</summary><div class="acc-b">'
    + '<b>Lisbon, Sat 7 Nov</b> &mdash; luggage-store codes from the Residentas team, +351 960 060 061. '
    + '<b>Paris, before you fly</b> &mdash; complete Nestay online check-in to receive the door codes. '
