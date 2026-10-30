@@ -547,8 +547,8 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-10";
-var BUILD = "2026-10-13a";
-var BUILD_LABEL = "Updated Oct 13";
+var BUILD = "2026-10-29a";
+var BUILD_LABEL = "Updated Oct 29";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
   try{
@@ -714,8 +714,8 @@ var PLAN = [
 },
 {
   n:3, date:"Wed Nov 11", wd:"Wednesday", city:"Lisbon", tag:["p-g","Full day"],
-  sum:"The castle first, then walk downhill through Alfama to the cathedral. Ismaili Centre in the afternoon.",
-  warn:"<b>Ismaili Centre is locked in for today, Wednesday Nov 11.</b> Not Tuesday, as agreed. Exact time to be confirmed about two weeks out; the plan below assumes late afternoon and everything before it is downhill and flexible.<br><br>Today is two zones and nothing else: the Castelo and Alfama hill in the morning, Laranjeiras in the afternoon. One metro ride between them.",
+  sum:"The castle first, then walk downhill through Alfama to the cathedral. Rest, then the Ismaili Centre tour at 17:30 (confirmed).",
+  warn:"<b>Ismaili Centre is locked in for today, Wednesday Nov 11.</b> Not Tuesday, as agreed. <b>Tour CONFIRMED for 17:30.</b> Leave the apartment by 16:50 so you arrive by about 17:15. Sunset is around 17:15, so the gardens will be in dusk; see them on arrival. Modest dress for the prayer hall. Keep dinner simple: tomorrow is a 08:20 Bolt to the airport.<br><br>Today is two zones and nothing else: the Castelo and Alfama hill in the morning, Laranjeiras in the afternoon. One metro ride between them.",
   sched:[
     ["08:15","Breakfast","Manteigaria in Chiado is three minutes away. Pastel de nata straight from the oven, about 1.30 euros each."],
     ["09:00","Metro to Martim Moniz","Green line, two stops from Baixa-Chiado. Ten minutes."],
@@ -726,11 +726,11 @@ var PLAN = [
     ["11:45","Walk down through Alfama","All downhill from here. Miradouro Santa Luzia, tiled lanes, laundry lines, cats. Izyan sets the pace."],
     ["12:45","Se Cathedral","You arrive at its door at the bottom of the descent. Twenty minutes inside, or skip it."],
     ["13:15","Lunch in Alfama","You are standing in it. Grilled sardines on the lanes below the cathedral."],
-    ["14:45","Rest at the apartment","Ten minutes downhill from the cathedral. Genuine downtime before the afternoon."],
-    ["15:40","Metro or Bolt to Laranjeiras","Blue line to Laranjeiras then a five-minute walk, or Bolt for about 8 euros. Allow 25 minutes door to door from Chiado."],
-    ["16:00","Ismaili Centre, Lisbon","Av. Lusiada 1. Gardens, the courtyard and the prayer hall. Confirmed for today; exact time to be fixed two weeks out."],
-    ["17:30","Time in the gardens","Open, quiet and walled. One of the few genuinely calm outdoor spaces in the city, and easy on him after the castle and Alfama."],
-    ["19:15","Dinner","Back towards Chiado, or eat near Laranjeiras if the afternoon runs long."],
+    ["14:45","Rest at the apartment","Ten minutes downhill from the cathedral. Real downtime: nap for Izyan, start packing for tomorrow."],
+    ["16:30","Snack, change, get ready","Modest dress for the prayer hall. A snack for Izyan before the tour."],
+    ["16:50","Bolt to Laranjeiras","About 8 euros and 15 to 20 minutes at rush hour. Metro Blue line to Laranjeiras is the backup. Aim to arrive by 17:15."],
+    ["17:30","Ismaili Centre tour, CONFIRMED","Av. Lusiada 1. Courtyard, gardens and prayer hall. Sunset is about 17:15, so look at the gardens as you arrive."],
+    ["19:00","Dinner","Near Laranjeiras or back towards Chiado. Keep it simple; early start tomorrow."],
     ["21:00","Pack for Granada","Bags by the door. Tomorrow is the TAP flight to Malaga and the coach up to Granada."]
   ],
   activities:{
@@ -746,9 +746,9 @@ var PLAN = [
     ]
   },
   afternoon:{
-    label:"Afternoon, from 16:00",
+    label:"Afternoon, tour at 17:30",
     opts:[
-      {n:"Ismaili Centre, Lisbon", d:"Av. Lusiada 1, Laranjeiras. Opened 1998, and since 2024 also the Seat of the Ismaili Imamat in Portugal. Islamic garden courtyard, fountains, and a prayer hall under a carved dome. Contact them before you go &mdash; it is a working centre, not a museum, and what you can see depends on the day.", p:"No charge", best:true,
+      {n:"Ismaili Centre, Lisbon: tour CONFIRMED 17:30", d:"Av. Lusiada 1, Laranjeiras. Opened 1998, and since 2024 also the Seat of the Ismaili Imamat in Portugal. Islamic garden courtyard, fountains, and a prayer hall under a carved dome. Contact them before you go &mdash; it is a working centre, not a museum, and what you can see depends on the day.", p:"No charge", best:true,
        u:"https://the.ismaili/ismaili-centre-lisbon", ul:"the.ismaili"},
       {n:"Getting there", d:"Metro Blue line to Laranjeiras, then five minutes on foot. Or Bolt from Chiado, about 8 euros and 15 minutes. Coming back at dinner time, allow 25 minutes.", p:"1.65 euros metro",
        u:"https://www.metrolisboa.pt/en/", ul:"metrolisboa.pt"},
@@ -1220,7 +1220,7 @@ function renderItinerary(){
     + '<div class="stat"><div class="st-l">Structure</div><div class="st-v">2+2+2+3</div><div class="st-n">Extra Paris night fixes the Nov 16 crush</div></div>'
     + '<div class="stat"><div class="st-l">Options given</div><div class="st-v">64</div><div class="st-n">Across 21 decision points</div></div>'
     + '<div class="stat"><div class="st-l">Routes with no flight</div><div class="st-v">2</div><div class="st-n">Malaga to Granada by coach, Granada to Seville by train</div></div>'
-    + '<div class="stat"><div class="st-l">Fixed-time bookings</div><div class="st-v">6</div><div class="st-n">Alhambra 09:00, Nov 12 coach 15:00, Nov 14 trains, Cathedral 14:30, Disneyland, Eiffel 09:30</div></div>'
+    + '<div class="stat"><div class="st-l">Fixed-time bookings</div><div class="st-v">7</div><div class="st-n">Ismaili Centre Nov 11 17:30, Alhambra 09:00, Nov 12 coach 15:00, Nov 14 trains, Cathedral 14:30, Disneyland, Eiffel 09:30</div></div>'
     + '</div>'
     + '<div class="note n-i"><span class="n-t">How to use this</span>'
     + 'The timings are the plan, not a rule. The three options under each heading are genuine alternatives at '
@@ -1695,12 +1695,9 @@ var BOOKINGS = [
    n:"17 euros an adult and Izyan is free under 12, so about $37 for the three of you. Open 09:00 to 18:00 in November, last entry 17:30. Book online to skip the ticket queue, then walk downhill through Alfama afterwards.",
    by:"2026-10-25", est:37,
    u:"https://castelodesaojorge.pt/en/", ul:"Book the castle"},
-  {id:"isma", ph:4, t:"Ismaili Centre, Lisbon, Nov 11, confirm the time",
-   n:"Locked in for Wednesday Nov 11, not Tuesday. Av. Lusiada 1, Laranjeiras. Confirm the exact hour about two weeks before, then adjust the morning around it. Metro Blue line to Laranjeiras, or Bolt from Chiado for about 8 euros.",
-   by:"2026-10-28", est:0,
-   u:"https://the.ismaili/ismaili-centre-lisbon", ul:"the.ismaili"},
-
-  {id:"lug", done:1, cost:0, ph:5, t:"Luggage plan confirmed: 1 checked suitcase, 1 roller, 3 backpacks", n:"<b>What you carry (confirmed 10 Oct):</b> 1 large checked suitcase (on Rizwan), up to 1 carry-on roller, 3 backpacks. This fits every leg. <b>Weight rules:</b> suitcase at or under <b>20 kg</b> (ALSA is the tightest; airlines allow 23), roller at or under <b>10 kg</b> (TAP), backpacks small enough to go under the seat or in the rack. United IAH-IAD-LIS: 1 checked bag paid, carry-on + personal item each. TAP LIS-AGP: 1 checked bag on Rizwan, carry-on 10 kg + personal item each. ALSA AGP-Granada: each ticket 20 kg total, max 2 items, <b>plus 1 extra bag already bought (5 euros, up to 20 kg)</b>; suitcase and roller go underneath, backpacks overhead (hold if they do not fit). Fully covered. Renfe Nov 14: up to 3 bags per person, 25 kg: fine. Air France SVQ-CDG: checked bag included. AA CDG-DFW: 1 checked bag paid ($87). Because the extra ALSA bag is paid, a second roller would also fit every leg.", by:"2026-11-05", est:0},
+  {id:"isma", done:1, cost:0, ph:4, t:"Ismaili Centre, Lisbon, Wed Nov 11: tour CONFIRMED 17:30",
+   n:"Confirmed 29 Oct. Av. Lusiada 1, Laranjeiras. Leave the apartment by 16:50 (Bolt about 8 euros, or Metro Blue line to Laranjeiras). Modest dress.", by:"2026-10-28", est:0},
+    {id:"lug", done:1, cost:0, ph:5, t:"Luggage plan confirmed: 1 checked suitcase, 1 roller, 3 backpacks", n:"<b>What you carry (confirmed 10 Oct):</b> 1 large checked suitcase (on Rizwan), up to 1 carry-on roller, 3 backpacks. This fits every leg. <b>Weight rules:</b> suitcase at or under <b>20 kg</b> (ALSA is the tightest; airlines allow 23), roller at or under <b>10 kg</b> (TAP), backpacks small enough to go under the seat or in the rack. United IAH-IAD-LIS: 1 checked bag paid, carry-on + personal item each. TAP LIS-AGP: 1 checked bag on Rizwan, carry-on 10 kg + personal item each. ALSA AGP-Granada: each ticket 20 kg total, max 2 items, <b>plus 1 extra bag already bought (5 euros, up to 20 kg)</b>; suitcase and roller go underneath, backpacks overhead (hold if they do not fit). Fully covered. Renfe Nov 14: up to 3 bags per person, 25 kg: fine. Air France SVQ-CDG: checked bag included. AA CDG-DFW: 1 checked bag paid ($87). Because the extra ALSA bag is paid, a second roller would also fit every leg.", by:"2026-11-05", est:0},
     {id:"ibl", ph:5, t:"Seville: arrange the luggage hold with Iberflat for Nov 16",
    n:"Call or message Iberflat (<b>+34 955 515 541</b>), or use the guest portal, about Nov 10. Ask the housekeeper to hold your bags on <b>Mon Nov 16 from 12:00 (check-out) to about 13:45</b>, before the 14:00 taxi to the airport. They have no luggage room, so it must be arranged ahead.", by:"2026-11-10", est:0},
     {id:"pass", done:1, ph:5, t:"Check all three passports",
@@ -1800,7 +1797,7 @@ function satBanner(){
    + '<div class="stat"><div class="st-l">Rooms booked</div><div class="st-v">4 of 4</div><div class="st-n">Lisbon, Granada, Seville, Paris</div></div>'
    + '<div class="stat"><div class="st-l">Flights</div><div class="st-v">All paid</div><div class="st-n">Four legs, bags included</div></div>'
    + '<div class="stat"><div class="st-l">Committed</div><div class="st-v">$'+s.committed.toLocaleString()+'</div><div class="st-n">Across '+s.paidCount+' paid items</div></div>'
-   + '<div class="stat"><div class="st-l">Still open</div><div class="st-v">5 items</div><div class="st-n">eSIM, Izyan&#39;s coach seat, Seville luggage hold, Ismaili Centre time, Castelo (gate)</div></div>'
+   + '<div class="stat"><div class="st-l">Still open</div><div class="st-v">4 items</div><div class="st-n">eSIM, Izyan&#39;s coach seat, Seville luggage hold, Castelo (gate)</div></div>'
    + '</div>'
    + '<div class="note n-w" style="margin-bottom:14px"><span class="n-t">Why no confirmation numbers on this page</span>'   + 'This planner is published on a <b>public</b> GitHub Pages URL. A Booking.com reference plus its PIN is enough for anyone to view, change or cancel a reservation, so <b>none are stored here</b>. They live in your email and in the confirmations folder alongside the PDFs. Property names, addresses and public phone numbers are fine to keep.</div>'
    + '<div class="acc-grp" style="margin:0 0 18px">'
@@ -1813,12 +1810,10 @@ function satBanner(){
    + 'Seat 30 vs your 33 and 34. Manage booking on alsa.com, from 2.50 euros. Changes are free until Nov 5.</div></details>'
    + '<details class="acc"><summary>About Nov 10 &mdash; arrange the Seville luggage hold</summary><div class="acc-b">'
    + 'Iberflat +34 955 515 541: housekeeper holds bags Mon Nov 16 from 12:00 checkout to about 13:45. No luggage room, so arrange it ahead.</div></details>'
-   + '<details class="acc"><summary>Late Oct &mdash; confirm the Ismaili Centre time, Wed Nov 11</summary><div class="acc-b">'
-   + 'Planned for about 16:00. Once confirmed, the morning castle and Alfama walk bends around it.</div></details>'
    + '<details class="acc"><summary>Castelo de Sao Jorge, Wed Nov 11 &mdash; buy at the gate</summary><div class="acc-b">'
    + 'Online payment failed. 17 euros an adult, Izyan free, short November lines. Open 09:00 to 18:00.</div></details>'
    + '<details class="acc"><summary>Done &mdash; everything else is booked</summary><div class="acc-b">'
-   + 'All four flights, all four rooms, travel insurance (Tin Leg Gold), Alhambra, Nov 12 ALSA coach (with extra bag), Nov 14 trains, Seville Cathedral, Disneyland, Eiffel Tower. Izyan confirmed on the Lisbon booking. Street flamenco needs no booking.</div></details>'
+   + 'All four flights, all four rooms, travel insurance (Tin Leg Gold), Alhambra, Ismaili Centre tour (Nov 11, 17:30), Nov 12 ALSA coach (with extra bag), Nov 14 trains, Seville Cathedral, Disneyland, Eiffel Tower. Izyan confirmed on the Lisbon booking. Street flamenco needs no booking.</div></details>'
    + '<details class="acc"><summary>Two access codes you must request</summary><div class="acc-b">'
    + '<b>Lisbon, Sat 7 Nov</b> &mdash; luggage-store codes from the Residentas team, +351 960 060 061. '
    + '<b>Paris, before you fly</b> &mdash; complete Nestay online check-in to receive the door codes. '
