@@ -548,7 +548,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-10-31o";
+var BUILD = "2026-10-31p";
 var BUILD_LABEL = "Updated Oct 31";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -723,8 +723,10 @@ var PLAN = [
     ["09:20","Tram 28 from the start of the line","Board at Martim Moniz to actually get a seat. Twenty minutes climbing through Graca."],
     ["09:45","Off at Largo Portas do Sol","Terrace view over Alfama and the river. Catch your breath here."],
     ["10:00","Walk up to Castelo de Sao Jorge","Ten minutes uphill, and the only real climb today. Opens 09:00, closes 18:00 in November."],
-    ["10:15","The castle","Ramparts you can walk, old cannon, peacocks in the grounds and the best view in Lisbon. Give it ninety minutes."],
-    ["11:45","Walk down through Alfama","All downhill from here. Miradouro Santa Luzia, tiled lanes, laundry lines, cats. Izyan sets the pace."],
+    ["10:15","The castle","Ramparts you can walk, old cannon, peacocks in the grounds and the best view in Lisbon. <b>Leave by 11:25.</b>"],
+    ["11:25","Walk down to Largo Portas do Sol","About 10 minutes downhill. Arrive by 11:40."],
+    ["11:45","FAMILY PHOTOSHOOT, Lisbon - booked","<b>GetYourGuide, 15 minutes, Lisbon Photoshoots.</b> Meet by the St. Vincent statue, Largo Portas do Sol. Photographer +351 912 237 740. $60.51, charged Nov 8; free cancel until Nov 10 11:45."],
+    ["12:00","Walk down through Alfama","All downhill from here. Miradouro Santa Luzia, tiled lanes, laundry lines, cats. Izyan sets the pace."],
     ["12:45","Se Cathedral","You arrive at its door at the bottom of the descent. Twenty minutes inside, or skip it."],
     ["13:15","Lunch in Alfama","You are standing in it. Grilled sardines on the lanes below the cathedral."],
     ["14:45","Rest at the apartment","Ten minutes downhill from the cathedral. Real downtime: nap for Izyan, start packing for tomorrow."],
@@ -1222,7 +1224,7 @@ function renderItinerary(){
     + '<div class="stat"><div class="st-l">Structure</div><div class="st-v">2+2+2+3</div><div class="st-n">Extra Paris night fixes the Nov 16 crush</div></div>'
     + '<div class="stat"><div class="st-l">Options given</div><div class="st-v">64</div><div class="st-n">Across 21 decision points</div></div>'
     + '<div class="stat"><div class="st-l">Routes with no flight</div><div class="st-v">2</div><div class="st-n">Malaga to Granada by coach, Granada to Seville by train</div></div>'
-    + '<div class="stat"><div class="st-l">Fixed-time bookings</div><div class="st-v">8</div><div class="st-n">Photoshoot Nov 18 12:00, Ismaili Centre Nov 11 17:30, Alhambra 09:00, Nov 12 coach 15:00, Nov 14 trains, Cathedral 14:30, Disneyland, Eiffel 09:30</div></div>'
+    + '<div class="stat"><div class="st-l">Fixed-time bookings</div><div class="st-v">9</div><div class="st-n">Lisbon photoshoot Nov 11 11:45, Paris photoshoot Nov 18 12:00, Ismaili Centre Nov 11 17:30, Alhambra 09:00, Nov 12 coach 15:00, Nov 14 trains, Cathedral 14:30, Disneyland, Eiffel 09:30</div></div>'
     + '</div>'
     + '<div class="note n-i"><span class="n-t">How to use this</span>'
     + 'The timings are the plan, not a rule. The three options under each heading are genuine alternatives at '
@@ -1685,6 +1687,7 @@ var BOOKINGS = [
     {id:"dview", ph:6, t:"Optional: simpler Day by Day view",
    n:"The Day by Day is too dense. Build a simpler at-a-glance view: one line per stop, times, and what is booked. To tackle closer to the trip.",
    by:"2026-11-08", est:0},
+  {id:"lphoto", done:1, cost:60.51, ph:4, t:"Lisbon photoshoot, Wed Nov 11, 11:45: BOOKED", n:"Largo Portas do Sol, by the St. Vincent statue. Arrive 11:40. $60.51 charged Nov 8; free cancel until Nov 10 11:45.", by:"2026-11-08", est:0},
   {id:"cat", done:1, cost:32.63, paid:1, ph:4, t:"Seville Cathedral and Giralda, Sun Nov 15, 14:30: BOOKED",
    n:"<b>Booked 3 Oct, 29 euros (26 plus 3 fee) for all three, in Zaibnish&#39;s name.</b> Includes the Church of El Salvador. Entry Puerta del Lagarto, be there by 14:20; no entry outside the time, non-refundable, no date change. <b>Bring all three passports</b>, the numbers are on the ticket. Shoulders covered, no caps or hats. Voucher PDF in the confirmations folder.",
    by:"2026-10-25", est:33},
@@ -2882,6 +2885,7 @@ function renderIzyan(){
 var CODES = [
   {d:"Nov 9", w:"United, IAH-IAD-LIS (UA 2388 / UA 942)", s:"https://www.united.com", m:"George Bush Intercontinental Airport Terminal C Houston", x:"Mon Nov 9: UA 2388 IAH 16:45 (Terminal C) to IAD 20:49; UA 942 IAD 22:30 to LIS 10:20 Tue, Terminal 1. Seats: Zaibnish 38A, Izyan 38B (leg 1); 53D, 53E (leg 2); Rizwan at check-in. 1 checked bag paid ($90). Check in online Sun Nov 8.", c:"<b>United confirmation FHF2RK</b>. Bag purchase confirmed Aug 26", l:"https://www.united.com/en/us/manageres/mytrips", ln:"United trips"},
   {d:"Nov 10-12", w:"Lisbon: Residentas Arco do Bandeira, 226 Rua dos Sapateiros", s:"https://www.booking.com/hotel/pt/residentas-arco-do-bandeira.html", m:"Rua dos Sapateiros 226, 1100-581 Lisboa", x:"Check in Tue Nov 10 from 16:00 (early bag drop OK), check out Thu Nov 12 by 10:00. One-Bedroom Apartment. Luggage room 2nd floor opposite the lift: message for codes by Sat Nov 7. WiFi Residentas / unforgettable. $582 paid.", c:"Booking.com, Zaibnish. Guest portal links below. Phones +351 211 450 297 (emergency) / +351 960 060 061 (team, WhatsApp)", l:"https://app.chargeautomation.com/guest-portal-new/4884290?signature=3a5639e028c8f6344a011f98381285d52d2929cede526a6a1bd4426a1fd501d5&source=email", ln:"Guest portal (new)", l2:"https://app.chargeautomation.com/securelink/cc87b60400", ln2:"Guest portal (check-in link)"},
+  {d:"Nov 11", w:"Photoshoot, Lisbon, Largo Portas do Sol 11:45 (arrive 11:40)", s:"https://www.getyourguide.com", m:"Largo Portas do Sol, 1100-411 Lisboa", x:"15 minutes (Flash), 3 people, English. Meet by the St. Vincent statue. Provider Lisbon Photoshoots +351 912 237 740. $60.51, card charged automatically Nov 8. Free cancellation until Nov 10 11:45.", c:"<b>GetYourGuide GYGX7M4H3VHX</b> &middot; PIN Hg+ABBek (Zaibnish)", l:"https://www.getyourguide.com", ln:"GetYourGuide"},
   {d:"Nov 12", w:"TAP TP1136, Lisbon to Malaga 10:45", s:"https://www.flytap.com", m:"Lisbon Airport Terminal 1", x:"Thu Nov 12: LIS 10:45 to AGP 13:00 (Spain +1 hour). 1 checked bag on Rizwan; carry-ons 10 kg max. Seats at check-in.", c:"Booking code: send it to add here", l:"https://www.flytap.com/en-us/manage-booking", ln:"TAP manage booking"},
   {d:"Nov 12", w:"ALSA coach, Malaga Airport 15:00 to Granada 17:15", s:"https://www.alsa.com/en/airports/malaga-costa-del-sol", m:"Malaga Airport Terminal 3 bus stop", x:"Stop in front of Arrivals, Terminal 3, Malaga Airport. Arrives Granada bus station, Av. Juan Pablo II 33. Each ticket 20 kg / 2 items + 1 extra bag paid. Show tickets on phone, carry passports. Free changes until Nov 5.", c:"<b>Booking ref 1g3kckz</b>. Tickets 203-2-999-16065343-1 (Rizwan, seat 34), 16065342-1 (Zaibnish, seat 33, + extra bag), 16065344-1 (Izyan, seat 30)", l:"https://www.alsa.com/en/", ln:"alsa.com"},
   {d:"Nov 12-14", w:"Granada: Hotel America", s:"https://www.booking.com/hotel/es/america-granada.html", m:"Hotel America, Real de la Alhambra 53, Granada", x:"Real de la Alhambra 53, inside the Alhambra walls. Thu Nov 12 to Sat Nov 14. Reception until 21:00. $497.38.", c:"Booking.com confirmation: send it to add here", l:"https://secure.booking.com/myreservations.html", ln:"Booking.com trips"},
