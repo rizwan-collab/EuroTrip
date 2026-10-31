@@ -548,7 +548,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-10-31k";
+var BUILD = "2026-10-31l";
 var BUILD_LABEL = "Updated Oct 31";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -2719,7 +2719,7 @@ function renderInsurance(){
 TABS = [
   ["itinerary","Day by Day"], ["codes","Bookings & Codes"], ["flights","Flights"], ["stay","Hotels"],
   ["booking","Checklist"], ["insurance","Insurance & Safety"], ["budget","Budget"],
-  ["packing","Packing"], ["food","Food"], ["izyan","Izyan's Guide"]
+  ["packing","Packing"], ["izyan","Izyan's Guide"]
 ];
 function shortTxt(h, max){
   var s = String(h||'').replace(/<br\s*\/?>/gi,' ').replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim();
@@ -2749,9 +2749,9 @@ function renderItinerary(){
     return '<div class="card blk">'
       + '<div class="dh"><div><div class="dh-d">Day '+D.n+' &middot; '+D.date+'</div>'
       + '<div class="dh-c">'+D.city+'</div></div></div>'
-      + '<div class="tl-wrap">'+rows+'</div></div>';
+      + '<div class="tl-wrap">'+rows+'</div>' + choicesBlock(D.n) + '</div>';
   }).join('');
-  return simpleHead('Day by Day', 'Times are a guide; bold items are booked or fixed. '+staleBadge()) + days;
+  return simpleHead('Day by Day', 'Times are a guide; bold items are booked. Under each day, tap a meal or activity to see 4 options and pick one (saved in this browser). '+staleBadge()) + days;
 }
 
 function renderFlights(){
@@ -2925,6 +2925,185 @@ function renderCodes(){
     + '<div class="blk"><div class="blk-h">Private transfers (replace Bolt and taxis)</div>'
     + '<div class="tw tsc"><table><thead><tr><th>When</th><th>Route</th><th>What</th><th class="num">Approx.</th><th></th></tr></thead><tbody>'+tr+'</tbody></table></div>'
     + '<div class="s-s" style="margin-top:8px">Ask for a child seat for Izyan on every booking. Prices are approximate; confirm before paying. Short in-city rides stay on Bolt or taxi.</div></div>';
+}
+
+/* ---- Pick-one choices per day (31 Oct). Built for: no pork, no bar-style places, Izyan picky + loves sweets + early dinners,
+        casual/quick meals, 1-2 special dinners, familiar comfort food, kid-first + iconic sights ---- */
+var CHOICES = {
+ 2: [
+  {s:"Lunch", t:"~12:30", o:[
+   {n:"Time Out Market (Cais do Sodre)", why:"Everyone picks their own stall, so Izyan gets plain food and you get local. Fast, casual, 10 min by tram/Bolt."},
+   {n:"Casa Portuguesa do Pastel de Bacalhau (Rua Augusta)", why:"Lisbon classic cod-and-cheese pastry, 3 min from the apartment. Quick bite before the room is ready."},
+   {n:"Honorato burgers (Baixa/Chiado)", why:"Safe, familiar burgers and fries for Izyan after an overnight flight. Order beef or chicken."},
+   {n:"Forno d'Oro pizza (Rato)", why:"Proper Neapolitan pizza, plain margherita for him. Sit-down but relaxed."}]},
+  {s:"Afternoon activity", t:"~15:00", o:[
+   {n:"Oceanario de Lisboa", best:1, why:"Top pick for a 5-year-old: huge central tank, sharks, otters, indoors. Iconic. 25 min by metro or car."},
+   {n:"Elevador de Santa Justa + Carmo viewpoint", why:"Short iron-lift ride he will love and a big city view, 5 min from the apartment. Low effort after the flight."},
+   {n:"Ribeira das Naus riverside + Arco da Rua Augusta", why:"Flat walk to the river, room to run, climb the arch for the Praca do Comercio view."},
+   {n:"Rest day at the apartment", why:"Overnight flight with a 5-year-old. A nap now buys a good evening and a strong Nov 11."}]},
+  {s:"Dinner (aim 18:30)", t:"18:30", o:[
+   {n:"Jesus e Goes (Goan, Rua de Sao Jose)", why:"Familiar comfort food: Goan curries, rice, samosas. Small and friendly; book or go early."},
+   {n:"Time Out Market again", why:"Easiest early dinner in Lisbon; plain options for Izyan, no wait for a table."},
+   {n:"Santini gelato after any dinner (Chiado)", why:"Lisbon's famous gelato, 5 min away. The sweet reward Izyan will remember."},
+   {n:"Zambeze (Mouraria, view terrace)", why:"Special-dinner option: Portuguese-Mozambican food with a castle-hill view. Grilled chicken works for him."}]}
+ ],
+ 3: [
+  {s:"Breakfast", t:"08:15", o:[
+   {n:"Manteigaria (Chiado)", best:1, why:"Best pastel de nata in the city, warm from the oven, 3 min away. Sweet win for Izyan."},
+   {n:"Confeitaria Nacional (Praca da Figueira)", why:"Historic bakery since 1829, sit-down, toasts and juices for a plain breakfast."},
+   {n:"Fabrica da Nata (Restauradores)", why:"Nata plus simple sandwiches, quick and on the way to the metro."},
+   {n:"Apartment breakfast", why:"Pingo Doce is next door: yogurt, fruit, bread. Calm start before the castle climb."}]},
+  {s:"Lunch (Alfama)", t:"13:15", o:[
+   {n:"Grilled chicken or fish at a tasca below the Se", why:"Simple plates, no pork needed, right where the downhill walk ends."},
+   {n:"Pasteis de bacalhau + soup at a cafe on Largo de Santo Antonio", why:"Quick and light so the 14:45 rest happens on time."},
+   {n:"Time Out Market (metro from Baixa)", why:"If Izyan is tired of new food, the market guarantees pizza or burgers."},
+   {n:"Landeau chocolate cake (Chiado) as dessert", why:"Famous Lisbon chocolate cake, a treat on the way back to rest."}]},
+  {s:"Dinner after the Ismaili Centre", t:"19:00", o:[
+   {n:"Indian/Nepali near Laranjeiras or Martim Moniz", best:1, why:"Familiar comfort food after the Jamatkhana tour, early opening, no bar."},
+   {n:"Jesus e Goes (if you skipped it Nov 10)", why:"Goan home-style food, easy for Izyan with rice and mild curry."},
+   {n:"Pizza near the apartment", why:"Quickest early dinner; you pack for the 08:20 airport car tomorrow."},
+   {n:"Takeaway to the apartment", why:"Lowest effort night before a travel day."}]}
+ ],
+ 4: [
+  {s:"Dinner in Granada", t:"19:30", o:[
+   {n:"Arrayanes (Moroccan, Albaicin)", best:1, why:"Moroccan, no alcohol served, tagines and couscous: comfort food that fits your preferences. Taxi down and back."},
+   {n:"Parador de Granada restaurant (inside the Alhambra)", why:"Walking distance from Hotel America, no hill with a tired child, plain options on the menu."},
+   {n:"Pizza or pasta near Plaza Nueva", why:"Familiar food for Izyan, opens earlier than Spanish restaurants."},
+   {n:"Hotel America dining room", why:"Easiest after a flight plus a 2-hour coach; ask at check-in if they serve dinner."}]}
+ ],
+ 5: [
+  {s:"Breakfast", t:"07:45", o:[
+   {n:"Hotel America breakfast", best:1, why:"You are inside the Alhambra walls; zero travel before the 09:00 palace slot."},
+   {n:"Parador de Granada cafe", why:"Two minutes away, sit-down, hot chocolate for Izyan."},
+   {n:"Snacks from the room + early coffee", why:"Fastest if he wakes late; the slot is fixed."},
+   {n:"Cafe Futbol churros (Plaza Mariana Pineda) - only if no time pressure", why:"Granada's famous churros and chocolate, but it is downtown; better as an afternoon treat."}]},
+  {s:"Lunch", t:"13:00", o:[
+   {n:"Teterias on Calle Calderería Nueva", why:"Moroccan tea houses: mint tea, pastries, simple plates. Casual, no bar."},
+   {n:"Arrayanes (if not done)", why:"Moroccan comfort food, alcohol-free."},
+   {n:"Pizza/pasta near Plaza Nueva", why:"Safe for Izyan after a big morning."},
+   {n:"Parador terrace", why:"Stay up the hill and rest; no taxi needed."}]},
+  {s:"Afternoon activity", t:"15:30", o:[
+   {n:"Parque de las Ciencias (science museum)", best:1, why:"The best kid attraction in Granada: hands-on halls, planetarium, butterfly house. Taxi 15 min."},
+   {n:"Mirador de San Nicolas at sunset", why:"The iconic Alhambra view; go 17:00 for sunset around 18:00."},
+   {n:"Cafe Futbol churros + Plaza Nueva stroll", why:"Sweet treat, short walk, low effort."},
+   {n:"Rest at the hotel", why:"The palace morning is long; a nap keeps dinner happy."}]},
+  {s:"Dinner", t:"19:30", o:[
+   {n:"El Huerto de Juan Ranas (San Nicolas)", best:1, why:"Special dinner with the lit Alhambra across the valley. Go early for a window table."},
+   {n:"Carmen de Aben Humeya (Albaicin)", why:"Alternative special dinner with a garden view of the Alhambra."},
+   {n:"Arrayanes", why:"Moroccan, alcohol-free, comfort food."},
+   {n:"Pizza near Plaza Nueva", why:"Familiar and early before the train day."}]}
+ ],
+ 6: [
+  {s:"Breakfast", t:"08:30", o:[
+   {n:"Hotel America breakfast", best:1, why:"Simplest with bags and a 10:30 taxi to the station."},
+   {n:"Cafe Futbol churros", why:"Last chance for Granada churros if you leave the hotel a bit earlier."},
+   {n:"Station cafe snacks", why:"Buy pastries for the train."},
+   {n:"Parador cafe", why:"Close, calm, hot chocolate."}]},
+  {s:"Dinner in Seville", t:"19:30", o:[
+   {n:"Pizza or Italian in Santa Cruz", best:1, why:"Opens earlier than tapas places; familiar food after a travel day."},
+   {n:"El Pinton (sit-down, near the Cathedral)", why:"Modern Andalusian restaurant, not a bar; grilled options for Izyan."},
+   {n:"Lonja del Barranco food hall (by the river)", why:"Everyone picks their own, casual, near the Triana bridge."},
+   {n:"Rayas gelato after dinner", why:"Seville's best gelato, a sweet win."}]}
+ ],
+ 7: [
+  {s:"Breakfast", t:"08:30", o:[
+   {n:"Churros at Bar El Comercio", best:1, why:"Classic Seville churros and thick chocolate since 1904. Izyan will love it."},
+   {n:"Confiteria La Campana", why:"Historic pastry shop, sit-down, sweets and toast."},
+   {n:"Apartment breakfast", why:"Quick start before Plaza de Espana at 09:30."},
+   {n:"Cafe near the Cathedral", why:"Simple toast and juice, no walking detour."}]},
+  {s:"Morning activity", t:"09:30", o:[
+   {n:"Plaza de Espana + rowboat on the canal", best:1, why:"Iconic and kid-first: rowing under the bridges, tiled benches for every province. Best family-photo spot too."},
+   {n:"Maria Luisa Park pedal car (quadricycle)", why:"He rides up front; ducks and pigeons at Plaza de America."},
+   {n:"Setas de Sevilla rooftop walkway", why:"Giant wooden 'mushrooms' with a skywalk; fun shapes for a 5-year-old."},
+   {n:"Guadalquivir river cruise (1 hour)", why:"Sit-down sightseeing, boats are always a hit."}]},
+  {s:"Lunch", t:"12:30", o:[
+   {n:"Lonja del Barranco food hall", best:1, why:"Casual, everyone chooses, near the river."},
+   {n:"Pizza/pasta near the Cathedral", why:"Safe and quick before the 14:30 Cathedral slot."},
+   {n:"El Pinton", why:"Sit-down, grilled dishes, close to the Cathedral."},
+   {n:"Rayas gelato as dessert", why:"Sweet reward before the Giralda climb."}]},
+  {s:"Dinner", t:"19:30", o:[
+   {n:"Indian or Moroccan in the centre", best:1, why:"Familiar comfort food, opens early, no bar."},
+   {n:"Lonja del Barranco", why:"Easy and casual if he is tired."},
+   {n:"Italian in Santa Cruz", why:"Plain pasta and pizza, early tables."},
+   {n:"Street flamenco on Calle Betis, then dinner in Triana", why:"Free street flamenco at dusk; pick a restaurant, not a bar."}]}
+ ],
+ 8: [
+  {s:"Breakfast", t:"09:00", o:[
+   {n:"Churros at Bar El Comercio (second round)", best:1, why:"He will ask for it again."},
+   {n:"Confiteria La Campana", why:"Pastries and a slow morning."},
+   {n:"Apartment breakfast", why:"Pack and check out by 12:00."},
+   {n:"Cafe in Santa Cruz", why:"Simple and close."}]},
+  {s:"Lunch in Seville", t:"12:30", o:[
+   {n:"Pizza/Italian near the apartment", best:1, why:"Fast and familiar before the 14:00 airport car."},
+   {n:"Lonja del Barranco", why:"Casual, last Spanish meal."},
+   {n:"El Pinton", why:"Sit-down if you want a proper last lunch."},
+   {n:"Rayas gelato for the road", why:"Sweet send-off."}]},
+  {s:"Dinner in Paris (late arrival)", t:"21:00", o:[
+   {n:"Crepes near Les Halles", best:1, why:"Quick, sweet or savoury, Izyan-friendly, 5 min from Nestay."},
+   {n:"L'As du Fallafel (Marais, 15 min walk)", why:"Famous falafel, no pork, comfort food. Check it is open that evening."},
+   {n:"Supermarket dinner at the apartment", why:"Carrefour Express or Franprix nearby; easiest after a travel day."},
+   {n:"Bakery sandwiches from Rue Montorgueil", why:"Simple and close; bed early for Disneyland."}]}
+ ],
+ 9: [
+  {s:"Lunch at Disneyland", t:"12:00", o:[
+   {n:"Pizzeria Bella Notte (Fantasyland)", best:1, why:"Pizza and pasta: safe for Izyan, quick service."},
+   {n:"Plaza Gardens buffet (Main Street)", why:"Buffet means everyone finds something; book a slot in the app."},
+   {n:"Agrabah Cafe (Adventureland)", why:"Middle Eastern buffet: comfort food for you, plain options for him."},
+   {n:"Quick-service snacks between rides", why:"Maximises ride time on a low-crowd Tuesday."}]},
+  {s:"Dinner", t:"19:45", o:[
+   {n:"Crepes or bakery near Nestay", best:1, why:"He will be asleep on his feet; close and quick."},
+   {n:"Disney Village restaurant before the RER", why:"Eat before leaving the park area."},
+   {n:"Supermarket dinner at the apartment", why:"Lowest effort after a full park day."},
+   {n:"Indian takeaway (Passage Brady area)", why:"Familiar comfort food, delivered or picked up."}]}
+ ],
+ 10: [
+  {s:"Breakfast", t:"07:45", o:[
+   {n:"Stohrer (Rue Montorgueil)", best:1, why:"Oldest pastry shop in Paris, 5 min away. Croissants and sweets for Izyan."},
+   {n:"Bakery + market fruit on Rue Montorgueil", why:"Quick, eat on the way to the metro."},
+   {n:"Angelina (Rue de Rivoli) - famous hot chocolate", why:"Iconic, but sit-down and slower; better as an afternoon treat."},
+   {n:"Apartment breakfast", why:"Fastest before the 09:30 Eiffel slot."}]},
+  {s:"Lunch", t:"12:30", o:[
+   {n:"Picnic on the Champ de Mars after the photoshoot", best:1, why:"He runs on the lawn; buy sandwiches near Bir-Hakeim."},
+   {n:"L'As du Fallafel (Marais)", why:"Famous falafel, comfort food, no pork."},
+   {n:"Breizh Cafe crepes (Marais)", why:"Top crepes in Paris; sweet ones for Izyan."},
+   {n:"Le Relais de l'Entrecote", why:"Simple steak and fries; one dish, no ordering stress."}]},
+  {s:"Afternoon activity", t:"15:30", o:[
+   {n:"Jardin du Luxembourg: sailboats + playground + carousel", best:1, why:"Kid-first classic: he pushes toy sailboats on the pond."},
+   {n:"Tuileries carousel + gardens", why:"Iconic, near the Louvre, close to Nestay."},
+   {n:"Seine cruise at dusk (17:30)", why:"Sit-down sightseeing as the city lights up."},
+   {n:"Jardin d'Acclimatation", why:"Small amusement park with rides, only if he still has energy after Disney."}]},
+  {s:"Special dinner", t:"19:00", o:[
+   {n:"Le Train Bleu (Gare de Lyon)", best:1, why:"Special last dinner in a stunning Belle Epoque station restaurant; trains outside for Izyan."},
+   {n:"Bouillon Chartier", why:"Historic, cheap, fast, open early; classic Paris experience."},
+   {n:"Indian at Passage Brady", why:"Familiar comfort food for the last night."},
+   {n:"Italian near Les Halles", why:"Easy early dinner before the 21:00 sparkle at Trocadero."}]}
+ ],
+ 11: [
+  {s:"Breakfast", t:"06:45", o:[
+   {n:"Bakery on Rue Montorgueil", best:1, why:"Croissants to go before the 07:30 airport car."},
+   {n:"Apartment breakfast", why:"Use up the groceries."},
+   {n:"Eat at CDG Terminal 2A", why:"Paul bakery after security."},
+   {n:"Snacks for the plane", why:"Long flight; pack Izyan's favourites."}]}
+ ]
+};
+function pickKey(d,s){ return 'pick_'+d+'_'+s.replace(/\W+/g,''); }
+function choosePick(d,s,i){ save(pickKey(d,s), String(i)); built.itinerary=false; show('itinerary'); }
+function choicesBlock(n){
+  var list = CHOICES[n]; if(!list) return '';
+  return '<div style="border-top:1px solid var(--line2)">' + list.map(function(c){
+    var picked = load(pickKey(n,c.s));
+    var pi = picked===null ? -1 : +picked;
+    var label = pi>=0 ? c.o[pi].n : 'tap to choose';
+    var opts = c.o.map(function(o,i){
+      var on = i===pi;
+      return '<div style="padding:9px 12px;margin:6px 0;border:1px solid '+(on?'var(--good)':'var(--line)')+';border-radius:8px;background:'+(on?'var(--good-lt)':'var(--card)')+'">'
+        + '<div style="font-weight:600;font-size:13.5px">'+o.n+(o.best?' <span class="pill p-g">Suggested</span>':'')+'</div>'
+        + '<div style="font-size:12.5px;color:var(--mute);margin:3px 0 6px">Why: '+o.why+'</div>'
+        + '<button class="btn btn-sm'+(on?' btn-p':'')+'" onclick="choosePick('+n+',\''+c.s.replace(/'/g,"\\'")+'\','+i+')">'+(on?'Picked':'Pick this')+'</button></div>';
+    }).join('');
+    return '<details class="acc"><summary><span style="color:var(--mute);margin-right:6px">'+c.t+'</span><b>'+c.s+':</b> '+(pi>=0?'&#10003; '+label:'<span style="color:var(--brand)">'+label+'</span>')+'</summary>'
+      + '<div class="acc-b">'+opts+'</div></details>';
+  }).join('') + '</div>';
 }
 
 var RENDER = {
