@@ -547,8 +547,8 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-10";
-var BUILD = "2026-10-29a";
-var BUILD_LABEL = "Updated Oct 29";
+var BUILD = "2026-10-31a";
+var BUILD_LABEL = "Updated Oct 31";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
   try{
@@ -1024,8 +1024,10 @@ var PLAN = [
     ["08:35","Metro to Bir-Hakeim","<b>Chatelet, line 1 to Charles de Gaulle-Etoile, then line 6.</b> About 30 to 35 minutes door to tower. <b>Line 6 runs above ground and crosses the Seine with the tower filling the window</b> - sit on the right."],
     ["09:15","Arrive, security","Bag check before the lifts. Allow the full 15 minutes."],
     ["09:30","EIFFEL TOWER - booked, stairs + lift","<b>Booked, 63 euros for three.</b> Stairs to the 2nd floor (about 670 steps, rest at the 1st floor, 30 to 45 minutes with Izyan), then the lift to the summit. Daytime ascent, so you get the view. E-tickets on your phone, Izyan&#39;s passport for proof of age."],
-    ["12:00","Champ de Mars, photos from below","Down and out, then the classic shot from the lawn. He can run."],
-    ["12:45","Lunch","L&#39;As du Fallafel in the Marais if you want the best value meal in Paris."],
+    ["11:30","Leave the summit, head down","<b>Hard stop.</b> Summit lift queues can run long; start down by 11:30 so you reach the bridge in time."],
+    ["11:55","Walk to Pont de Bir-Hakeim","About 10 minutes from the tower base along the Seine. Meet in the middle of the bridge by the Joan of Arc horse statue. Photographer contacts you on WhatsApp."],
+    ["12:00","FAMILY PHOTOSHOOT - booked","<b>GetYourGuide, 15 minutes, 5 edited photos, private for up to 4. $39.21, in Zaibnish&#39;s name.</b> Booking reference and PIN in the GetYourGuide app. If you are running late, message the photographer on WhatsApp right away."],
+    ["12:30","Lunch","Near the tower or Passy, or L&#39;As du Fallafel in the Marais on the way back (35 minutes). Champ de Mars lawn for Izyan to run first if he needs it."],
     ["13:30","Proper rest at the apartment","Two hours. Tonight runs late."],
     ["15:30","Luxembourg Gardens or Tuileries","Carousel, sailboats on the pond, room to run. Low effort, high payoff."],
     ["17:30","Seine cruise","An hour on the water as the light goes. He can move about the deck."],
@@ -1220,7 +1222,7 @@ function renderItinerary(){
     + '<div class="stat"><div class="st-l">Structure</div><div class="st-v">2+2+2+3</div><div class="st-n">Extra Paris night fixes the Nov 16 crush</div></div>'
     + '<div class="stat"><div class="st-l">Options given</div><div class="st-v">64</div><div class="st-n">Across 21 decision points</div></div>'
     + '<div class="stat"><div class="st-l">Routes with no flight</div><div class="st-v">2</div><div class="st-n">Malaga to Granada by coach, Granada to Seville by train</div></div>'
-    + '<div class="stat"><div class="st-l">Fixed-time bookings</div><div class="st-v">7</div><div class="st-n">Ismaili Centre Nov 11 17:30, Alhambra 09:00, Nov 12 coach 15:00, Nov 14 trains, Cathedral 14:30, Disneyland, Eiffel 09:30</div></div>'
+    + '<div class="stat"><div class="st-l">Fixed-time bookings</div><div class="st-v">8</div><div class="st-n">Photoshoot Nov 18 12:00, Ismaili Centre Nov 11 17:30, Alhambra 09:00, Nov 12 coach 15:00, Nov 14 trains, Cathedral 14:30, Disneyland, Eiffel 09:30</div></div>'
     + '</div>'
     + '<div class="note n-i"><span class="n-t">How to use this</span>'
     + 'The timings are the plan, not a rule. The three options under each heading are genuine alternatives at '
@@ -1636,7 +1638,7 @@ var BOOKINGS = [
    n:"Air France nonstop, SVQ 16:40 to CDG 19:15, $369.80 paid. Fare stepped up off Light so the checked bag comes with you. All four flights are now booked.",
    by:"2026-10-01", est:370},
   {id:"ins", done:1, cost:77, ph:2, paid:1, t:"Travel insurance: Tin Leg Gold, BOUGHT",
-   n:"<b>Bought 3 Oct via Squaremouth, $77 for all three.</b> Medical and evacuation only, because the Chase Sapphire Preferred already covers cancellation, delay and baggage. <b>$500,000 emergency medical per person, primary, no deductible. $500,000 medical evacuation per person.</b> Covers 9 to 19 Nov, extends to 26 Nov if a covered delay keeps you there. Pre-existing conditions not covered. Free cancellation until 16 Oct. <b>Emergency assistance from abroad: +1 727-264-5657 (collect).</b> Policy number is on the PDF in the confirmations folder. Full details on the Insurance tab.",
+   n:"<b>Bought 3 Oct via Squaremouth, $77 for all three. Tin Leg&#39;s own Confirmation of Coverage received (underwriter Starr Indemnity), so cover is confirmed.</b> <b>In an emergency call Tin Leg Assistance first: +1 727-264-5657 (collect) or emergency@tinleg.com. They must be told before any non-emergency hospital stay, within 48 hours of an emergency admission, and before any surgery.</b> Medical and evacuation only, because the Chase Sapphire Preferred already covers cancellation, delay and baggage. <b>$500,000 emergency medical per person, primary, no deductible. $500,000 medical evacuation per person.</b> Covers 9 to 19 Nov, extends to 26 Nov if a covered delay keeps you there. Pre-existing conditions not covered. Free cancellation until 16 Oct. <b>Emergency assistance from abroad: +1 727-264-5657 (collect).</b> Policy number is on the PDF in the confirmations folder. Full details on the Insurance tab.",
    by:"2026-10-05", est:77, dep:["alh"],
    u:"tel:+17272645657", ul:"Call emergency assistance"},
 
@@ -1678,11 +1680,9 @@ var BOOKINGS = [
    u:"https://www.toureiffel.paris/en", ul:"Eiffel Tower site"},
   {id:"aseat", ph:4, t:"ALSA Nov 12: move Izyan next to a parent",
    n:"Izyan has seat 30; Zaibnish 33, Rizwan 34. Seat changes on board are not allowed. alsa.com, Manage booking, reference 1g3kckz, Izyan's ticket, Change seat: pick a seat beside 33 or 34 (from 2.50 euros). Free changes until Nov 5.", by:"2026-11-05", est:3, u:"https://www.alsa.com/en/", ul:"ALSA manage booking"},
-    {id:"photo", ph:4, t:"Family photo shoot: pick spot and photographer (open item)",
-   n:"<b>Alcazar skipped, too close to the Alhambra.</b> A trusted local photographer for a family shoot, anywhere good on the trip. Best fit: <b>Plaza de Espana, Seville, Sun 15 Nov around 09:00</b>, near empty and already on the plan. Alternatives: Trocadero, Paris, Wed 18 Nov around 08:15 before the 09:30 tower slot; Alfama or Ribeira das Naus, Lisbon. Roughly $225 to $325 for 30 to 60 minutes via Local Lens or Flytographer. Decide later.",
-   by:"2026-10-25", est:275,
-   u:"https://locallens.com/destinations/seville-spain/", ul:"Local Lens Seville"},
-  {id:"dview", ph:6, t:"Review: simpler Day by Day view (open item)",
+    {id:"photo", done:1, cost:39.21, paid:1, ph:4, t:"Family photo shoot: BOOKED, Wed Nov 18, 12:00, Eiffel Tower",
+   n:"<b>Booked via GetYourGuide, in Zaibnish&#39;s name.</b> Private Eiffel Tower street photoshoot, 15 minutes, 5 photos, group up to 4, English. <b>Meet 11:55 in the middle of Pont de Bir-Hakeim</b> by the Joan of Arc statue (75015); the photographer contacts you on WhatsApp. $39.21. Booking reference and PIN are in the GetYourGuide app, kept off this public page. Leave the Eiffel summit by 11:30.", by:"2026-10-25", est:0},
+    {id:"dview", ph:6, t:"Review: simpler Day by Day view (open item)",
    n:"The Day by Day is too dense. Build a simpler at-a-glance view: one line per stop, times, and what is booked. To tackle closer to the trip.",
    by:"2026-10-31", est:0},
   {id:"cat", done:1, cost:32.63, paid:1, ph:4, t:"Seville Cathedral and Giralda, Sun Nov 15, 14:30: BOOKED",
@@ -1707,8 +1707,8 @@ var BOOKINGS = [
    n:"<b>Checked 10 Oct:</b> Rizwan is on T-Mobile Simple Choice, which gives only 256 kbps data abroad and charges $0.50 a minute for calls. Zaibnish's line is covered. <b>Plan:</b> Airalo Europe (Eurolink) 10 GB / 30 days, about $20 to $26. Install it over wifi and leave it off; on Nov 10 in Lisbon switch it on with roaming, make it the data line, keep T-Mobile on for texts and wifi calling. Use WhatsApp for calls.",
    by:"2026-10-12", est:25,
    u:"https://www.airalo.com", ul:"Get an eSIM"},
-  {id:"card", ph:5, t:"Notify both card issuers",
-   n:"Portugal, Spain and France. Two cards on different networks, and store both loss-report numbers in your phone.",
+  {id:"card", done:1, ph:5, t:"Card travel notices: not needed",
+   n:"<b>Checked 31 Oct:</b> Chase says travel notices are no longer needed; its fraud system recognises travel. Apple Card does not take travel notices either. Still carry two cards on different networks and save both loss-report numbers in your phone.",
    by:"2026-11-05", est:0},
   {id:"cash", ph:5, t:"Plan 200 to 250 euros cash",
    n:"Granada tapas bars, small cafes and taxis. Bank ATMs on arrival, never airport exchange counters.",
@@ -1804,8 +1804,6 @@ function satBanner(){
    + '<div class="acc-grp-h">What is left, in order of deadline</div>'
    + '<details class="acc" open><summary>Mon Oct 12 &mdash; eSIM for Rizwan&#39;s phone</summary><div class="acc-b">'
    + 'T-Mobile Simple Choice is 256 kbps abroad. Airalo Europe 10 GB / 30 days, about $20 to $26. Install now, switch on in Lisbon. Zaibnish&#39;s line is covered.</div></details>'
-   + '<details class="acc"><summary>Now &mdash; check for Tin Leg&#39;s own confirmation email</summary><div class="acc-b">'
-   + 'The Squaremouth summary says you may not be covered without the insurer&#39;s separate confirmation. Free cancellation ends Oct 16; you are keeping it.</div></details>'
    + '<details class="acc"><summary>By Nov 5 &mdash; move Izyan next to a parent on the ALSA coach</summary><div class="acc-b">'
    + 'Seat 30 vs your 33 and 34. Manage booking on alsa.com, from 2.50 euros. Changes are free until Nov 5.</div></details>'
    + '<details class="acc"><summary>About Nov 10 &mdash; arrange the Seville luggage hold</summary><div class="acc-b">'
@@ -1813,7 +1811,7 @@ function satBanner(){
    + '<details class="acc"><summary>Castelo de Sao Jorge, Wed Nov 11 &mdash; buy at the gate</summary><div class="acc-b">'
    + 'Online payment failed. 17 euros an adult, Izyan free, short November lines. Open 09:00 to 18:00.</div></details>'
    + '<details class="acc"><summary>Done &mdash; everything else is booked</summary><div class="acc-b">'
-   + 'All four flights, all four rooms, travel insurance (Tin Leg Gold), Alhambra, Ismaili Centre tour (Nov 11, 17:30), Nov 12 ALSA coach (with extra bag), Nov 14 trains, Seville Cathedral, Disneyland, Eiffel Tower. Izyan confirmed on the Lisbon booking. Street flamenco needs no booking.</div></details>'
+   + 'All four flights, all four rooms, travel insurance (Tin Leg Gold), Alhambra, Ismaili Centre tour (Nov 11, 17:30), Nov 12 ALSA coach (with extra bag), Nov 14 trains, Seville Cathedral, Disneyland, Eiffel Tower, family photoshoot (Nov 18, 12:00). Izyan confirmed on the Lisbon booking. Street flamenco needs no booking.</div></details>'
    + '<details class="acc"><summary>Two access codes you must request</summary><div class="acc-b">'
    + '<b>Lisbon, Sat 7 Nov</b> &mdash; luggage-store codes from the Residentas team, +351 960 060 061. '
    + '<b>Paris, before you fly</b> &mdash; complete Nestay online check-in to receive the door codes. '
@@ -2051,7 +2049,7 @@ var BDG_TOTAL = BDG.reduce(function(s,x){ return s + x.e; }, 0);
 var COSTS = [
   ["Flights and bags, all four legs", "$4,004", "$4,004", "<b>All paid.</b> United $1,389 plus a $90 bag, TAP $538, Air France $370, American $1,616 including its $87 bag"],
   ["Accommodation, 9 nights", "$2,787", "$2,787", "<b>All four booked. No estimates left.</b> Lisbon <b>$582</b>, Granada <b>$497</b>, Seville <b>$330</b>, Paris <b>$1,378</b>. Every figure is from a confirmation, not a quote. <b>Paris may settle about $116 lower</b> if Booking.com&#39;s contribution comes off your card &mdash; confirm against the statement"],
-  ["Tickets and attractions", "$480", "$650", "<b>Paid: Alhambra 43.27 euros, Disneyland $348.74, Eiffel 63 euros.</b> Cathedral 29 euros paid. Alcazar and flamenco show skipped. Castelo 34 euros at the gate"],
+  ["Tickets and attractions", "$480", "$650", "<b>Paid: Alhambra 43.27 euros, Disneyland $348.74, Eiffel 63 euros.</b> Cathedral 29 euros paid. Eiffel photoshoot $39.21 paid. Alcazar and flamenco show skipped. Castelo 34 euros at the gate"],
   ["Intercity coach and train", "$232", "$232", "<b>Both paid.</b> Malaga Airport to Granada coach 43.27 euros, about $50 (ALSA 15:00, incl. extra bag); Granada to Seville train $181.76"],
   ["City transport", "$220", "$340", "Metros, taxis, RER, Bolt"],
   ["Daily food and incidentals", "$" + BDG_TOTAL, "$" + BDG_TOTAL, "Tracked day by day below"],
