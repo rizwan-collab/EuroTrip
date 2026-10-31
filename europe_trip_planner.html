@@ -547,7 +547,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-10";
-var BUILD = "2026-10-31a";
+var BUILD = "2026-10-31b";
 var BUILD_LABEL = "Updated Oct 31";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -1716,8 +1716,8 @@ var BOOKINGS = [
   {id:"apps", ph:5, t:"Download apps and offline maps",
    n:"Bolt, Uber, Citymapper, Renfe, offline Google Maps for all four cities, plus three new shows on Izyan's tablet.",
    by:"2026-11-07", est:0},
-  {id:"docs", ph:5, t:"Photograph and email all documents",
-   n:"Passports, insurance, cards, all confirmations. Send to yourself and Zaibnish. Save 112 and the embassy numbers.",
+  {id:"docs", ph:5, t:"Documents: passports and insurance saved privately; finish the rest",
+   n:"<b>Done 31 Oct:</b> all three passport scans and the Tin Leg documents are in a private Google Drive folder (button on the Booking Checklist tab). <b>Still to do:</b> share the folder with Zaibnish, save offline copies on both phones, add card loss-report numbers, 112 and the US embassy numbers.",
    by:"2026-11-07", est:0}
 ];
 
@@ -1799,6 +1799,7 @@ function satBanner(){
    + '<div class="stat"><div class="st-l">Committed</div><div class="st-v">$'+s.committed.toLocaleString()+'</div><div class="st-n">Across '+s.paidCount+' paid items</div></div>'
    + '<div class="stat"><div class="st-l">Still open</div><div class="st-v">4 items</div><div class="st-n">eSIM, Izyan&#39;s coach seat, Seville luggage hold, Castelo (gate)</div></div>'
    + '</div>'
+   + '<div class="note n-g" style="margin-bottom:14px"><span class="n-t">Passports &amp; insurance documents (private)</span>'   + 'All three passport scans and the Tin Leg policy documents are in a <b>private Google Drive folder</b> that only opens when you are signed in as rizwan@swagprint.com. '   + '<a class="btn btn-p" href="https://drive.google.com/drive/folders/1DOcW20QwsuDA3ThgDWjzwOOnXIh940XN" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px">Open passports &amp; insurance folder</a>'   + '<br><span style="font-size:12px">Share it with Zaibnish from Drive. Also keep offline copies on both phones for no-signal moments.</span></div>'
    + '<div class="note n-w" style="margin-bottom:14px"><span class="n-t">Why no confirmation numbers on this page</span>'   + 'This planner is published on a <b>public</b> GitHub Pages URL. A Booking.com reference plus its PIN is enough for anyone to view, change or cancel a reservation, so <b>none are stored here</b>. They live in your email and in the confirmations folder alongside the PDFs. Property names, addresses and public phone numbers are fine to keep.</div>'
    + '<div class="acc-grp" style="margin:0 0 18px">'
    + '<div class="acc-grp-h">What is left, in order of deadline</div>'
