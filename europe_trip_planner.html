@@ -548,7 +548,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-10-31l";
+var BUILD = "2026-10-31n";
 var BUILD_LABEL = "Updated Oct 31";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -1698,6 +1698,7 @@ var BOOKINGS = [
   {id:"isma", done:1, cost:0, ph:4, t:"Ismaili Centre, Lisbon, Wed Nov 11: tour CONFIRMED 17:30",
    n:"Confirmed 29 Oct. Av. Lusiada 1, Laranjeiras. Leave the apartment by 16:50 (Bolt about 8 euros, or Metro Blue line to Laranjeiras). Modest dress.", by:"2026-10-28", est:0},
     {id:"lug", done:1, cost:0, ph:5, t:"Luggage plan confirmed: 1 checked suitcase, 1 roller, 3 backpacks", n:"<b>What you carry (confirmed 10 Oct):</b> 1 large checked suitcase (on Rizwan), up to 1 carry-on roller, 3 backpacks. This fits every leg. <b>Weight rules:</b> suitcase at or under <b>20 kg</b> (ALSA is the tightest; airlines allow 23), roller at or under <b>10 kg</b> (TAP), backpacks small enough to go under the seat or in the rack. United IAH-IAD-LIS: 1 checked bag paid, carry-on + personal item each. TAP LIS-AGP: 1 checked bag on Rizwan, carry-on 10 kg + personal item each. ALSA AGP-Granada: each ticket 20 kg total, max 2 items, <b>plus 1 extra bag already bought (5 euros, up to 20 kg)</b>; suitcase and roller go underneath, backpacks overhead (hold if they do not fit). Fully covered. Renfe Nov 14: up to 3 bags per person, 25 kg: fine. Air France SVQ-CDG: checked bag included. AA CDG-DFW: 1 checked bag paid ($87). Because the extra ALSA bag is paid, a second roller would also fit every leg.", by:"2026-11-05", est:0},
+    {id:"pjk", ph:5, t:"Paris Jamatkhana: confirm address and evening time (planned Wed Nov 18)", n:"Get the address and evening prayer time from the Paris Jamat or your Ismaili Volunteers contacts. Planned for Wed Nov 18 around 18:30; alternatives are on the Nov 18 card in Day by Day.", by:"2026-11-07", est:0},
     {id:"ibl", ph:5, t:"Seville: arrange the luggage hold with Iberflat for Nov 16",
    n:"Call or message Iberflat (<b>+34 955 515 541</b>), or use the guest portal, about Nov 10. Ask the housekeeper to hold your bags on <b>Mon Nov 16 from 12:00 (check-out) to about 13:45</b>, before the 14:00 taxi to the airport. They have no luggage room, so it must be arranged ahead.", by:"2026-11-10", est:0},
     {id:"pass", done:1, ph:5, t:"Check all three passports",
@@ -2932,158 +2933,163 @@ function renderCodes(){
 var CHOICES = {
  2: [
   {s:"Lunch", t:"~12:30", o:[
-   {n:"Time Out Market (Cais do Sodre)", why:"Everyone picks their own stall, so Izyan gets plain food and you get local. Fast, casual, 10 min by tram/Bolt."},
-   {n:"Casa Portuguesa do Pastel de Bacalhau (Rua Augusta)", why:"Lisbon classic cod-and-cheese pastry, 3 min from the apartment. Quick bite before the room is ready."},
-   {n:"Honorato burgers (Baixa/Chiado)", why:"Safe, familiar burgers and fries for Izyan after an overnight flight. Order beef or chicken."},
-   {n:"Forno d'Oro pizza (Rato)", why:"Proper Neapolitan pizza, plain margherita for him. Sit-down but relaxed."}]},
+   {n:"Time Out Market (Cais do Sodre)", a:"Av. 24 de Julho 49, Lisbon", h:"Tram 15E / Bolt 10 min from the apartment", why:"Everyone picks their own stall, so Izyan gets plain food and you get local. Fast, casual, 10 min by tram/Bolt."},
+   {n:"Casa Portuguesa do Pastel de Bacalhau (Rua Augusta)", a:"Rua Augusta 106, Lisbon", h:"Walk 3 min", why:"Lisbon classic cod-and-cheese pastry, 3 min from the apartment. Quick bite before the room is ready."},
+   {n:"Pizzaria Lisboa (Chiado)", a:"Rua Duques de Braganca 5, Lisbon", h:"Walk 12 min (uphill) or Bolt 5 min", why:"Relaxed pizzeria by chef Jose Avillez; plain pizza for Izyan after the overnight flight."},
+   {n:"Forno d'Oro pizza (Rato)", a:"Rua Tenente Ferreira Durao 51, Lisbon", h:"Bolt 12 min", why:"Proper Neapolitan pizza, plain margherita for him. Sit-down but relaxed."}]},
   {s:"Afternoon activity", t:"~15:00", o:[
-   {n:"Oceanario de Lisboa", best:1, why:"Top pick for a 5-year-old: huge central tank, sharks, otters, indoors. Iconic. 25 min by metro or car."},
-   {n:"Elevador de Santa Justa + Carmo viewpoint", why:"Short iron-lift ride he will love and a big city view, 5 min from the apartment. Low effort after the flight."},
-   {n:"Ribeira das Naus riverside + Arco da Rua Augusta", why:"Flat walk to the river, room to run, climb the arch for the Praca do Comercio view."},
-   {n:"Rest day at the apartment", why:"Overnight flight with a 5-year-old. A nap now buys a good evening and a strong Nov 11."}]},
+   {n:"Oceanario de Lisboa", a:"Esplanada Dom Carlos I, Parque das Nacoes", h:"Metro Red line or car 25 min", best:1, why:"Top pick for a 5-year-old: huge central tank, sharks, otters, indoors. Iconic. 25 min by metro or car."},
+   {n:"Elevador de Santa Justa + Carmo viewpoint", a:"Rua do Ouro / Rua de Santa Justa, Lisbon", h:"Walk 4 min", why:"Short iron-lift ride he will love and a big city view, 5 min from the apartment. Low effort after the flight."},
+   {n:"Ribeira das Naus riverside + Arco da Rua Augusta", a:"Rua Augusta 2, Praca do Comercio", h:"Walk 8 min", why:"Flat walk to the river, room to run, climb the arch for the Praca do Comercio view."},
+   {n:"Rest day at the apartment", a:"226 Rua dos Sapateiros", h:"At the apartment", why:"Overnight flight with a 5-year-old. A nap now buys a good evening and a strong Nov 11."}]},
   {s:"Dinner (aim 18:30)", t:"18:30", o:[
-   {n:"Jesus e Goes (Goan, Rua de Sao Jose)", why:"Familiar comfort food: Goan curries, rice, samosas. Small and friendly; book or go early."},
-   {n:"Time Out Market again", why:"Easiest early dinner in Lisbon; plain options for Izyan, no wait for a table."},
-   {n:"Santini gelato after any dinner (Chiado)", why:"Lisbon's famous gelato, 5 min away. The sweet reward Izyan will remember."},
-   {n:"Zambeze (Mouraria, view terrace)", why:"Special-dinner option: Portuguese-Mozambican food with a castle-hill view. Grilled chicken works for him."}]}
+   {n:"Jesus e Goes (Goan, Rua de Sao Jose)", a:"Rua de Sao Jose 23, Lisbon", h:"Walk 12 min", why:"Familiar comfort food: Goan curries, rice, samosas. Small and friendly; book or go early."},
+   {n:"Time Out Market again", a:"Av. 24 de Julho 49, Lisbon", h:"Tram / Bolt 10 min", why:"Easiest early dinner in Lisbon; plain options for Izyan, no wait for a table."},
+   {n:"Santini gelato after any dinner (Chiado)", a:"Rua do Carmo 9, Lisbon", h:"Walk 6 min", why:"Lisbon's famous gelato, 5 min away. The sweet reward Izyan will remember."},
+   {n:"Zambeze (Mouraria, view terrace)", a:"Calcada Marques de Tancos (Mercado Chao do Loureiro), Lisbon", h:"Walk 10 min uphill or the free lift from Rua dos Fanqueiros", why:"Special-dinner option: Portuguese-Mozambican food with a castle-hill view. Grilled chicken works for him."}]}
  ],
  3: [
   {s:"Breakfast", t:"08:15", o:[
-   {n:"Manteigaria (Chiado)", best:1, why:"Best pastel de nata in the city, warm from the oven, 3 min away. Sweet win for Izyan."},
-   {n:"Confeitaria Nacional (Praca da Figueira)", why:"Historic bakery since 1829, sit-down, toasts and juices for a plain breakfast."},
-   {n:"Fabrica da Nata (Restauradores)", why:"Nata plus simple sandwiches, quick and on the way to the metro."},
-   {n:"Apartment breakfast", why:"Pingo Doce is next door: yogurt, fruit, bread. Calm start before the castle climb."}]},
+   {n:"Manteigaria (Chiado)", a:"Rua do Loreto 2, Lisbon", h:"Walk 10 min", best:1, why:"Best pastel de nata in the city, warm from the oven, 3 min away. Sweet win for Izyan."},
+   {n:"Confeitaria Nacional (Praca da Figueira)", a:"Praca da Figueira 18B, Lisbon", h:"Walk 4 min", why:"Historic bakery since 1829, sit-down, toasts and juices for a plain breakfast."},
+   {n:"Fabrica da Nata (Restauradores)", a:"Praca dos Restauradores 62, Lisbon", h:"Walk 7 min", why:"Nata plus simple sandwiches, quick and on the way to the metro."},
+   {n:"Apartment breakfast", a:"At the apartment", h:"No travel", why:"Pingo Doce is next door: yogurt, fruit, bread. Calm start before the castle climb."}]},
   {s:"Lunch (Alfama)", t:"13:15", o:[
-   {n:"Grilled chicken or fish at a tasca below the Se", why:"Simple plates, no pork needed, right where the downhill walk ends."},
-   {n:"Pasteis de bacalhau + soup at a cafe on Largo de Santo Antonio", why:"Quick and light so the 14:45 rest happens on time."},
-   {n:"Time Out Market (metro from Baixa)", why:"If Izyan is tired of new food, the market guarantees pizza or burgers."},
-   {n:"Landeau chocolate cake (Chiado) as dessert", why:"Famous Lisbon chocolate cake, a treat on the way back to rest."}]},
+   {n:"Grilled chicken or fish at a tasca below the Se", a:"Around Rua de Sao Joao da Praca, Alfama", h:"You are already there (end of the walk)", why:"Simple plates, no pork needed, right where the downhill walk ends."},
+   {n:"Pasteis de bacalhau + soup at a cafe on Largo de Santo Antonio", a:"Largo de Santo Antonio da Se, Lisbon", h:"Walk 2 min from the cathedral", why:"Quick and light so the 14:45 rest happens on time."},
+   {n:"Time Out Market (metro from Baixa)", a:"Av. 24 de Julho 49, Lisbon", h:"Metro / Bolt 10 min", why:"If Izyan is tired of new food, the market guarantees pizza or burgers."},
+   {n:"Landeau chocolate cake (Chiado) as dessert", a:"Rua das Flores 70, Lisbon", h:"Walk 12 min", why:"Famous Lisbon chocolate cake, a treat on the way back to rest."}]},
   {s:"Dinner after the Ismaili Centre", t:"19:00", o:[
-   {n:"Indian/Nepali near Laranjeiras or Martim Moniz", best:1, why:"Familiar comfort food after the Jamatkhana tour, early opening, no bar."},
-   {n:"Jesus e Goes (if you skipped it Nov 10)", why:"Goan home-style food, easy for Izyan with rice and mild curry."},
-   {n:"Pizza near the apartment", why:"Quickest early dinner; you pack for the 08:20 airport car tomorrow."},
-   {n:"Takeaway to the apartment", why:"Lowest effort night before a travel day."}]}
+   {n:"Indian/Nepali near Laranjeiras or Martim Moniz", a:"Martim Moniz / Rua do Benformoso area", h:"Metro or Bolt 10 min from the Ismaili Centre", best:1, why:"Familiar comfort food after the Jamatkhana tour, early opening, no bar."},
+   {n:"Jesus e Goes (if you skipped it Nov 10)", a:"Rua de Sao Jose 23, Lisbon", h:"Bolt 12 min from Laranjeiras", why:"Goan home-style food, easy for Izyan with rice and mild curry."},
+   {n:"Pizza near the apartment", a:"Baixa, near Rua dos Sapateiros", h:"Walk 5 min", why:"Quickest early dinner; you pack for the 08:20 airport car tomorrow."},
+   {n:"Takeaway to the apartment", a:"226 Rua dos Sapateiros", h:"Delivery", why:"Lowest effort night before a travel day."}]}
  ],
  4: [
   {s:"Dinner in Granada", t:"19:30", o:[
-   {n:"Arrayanes (Moroccan, Albaicin)", best:1, why:"Moroccan, no alcohol served, tagines and couscous: comfort food that fits your preferences. Taxi down and back."},
-   {n:"Parador de Granada restaurant (inside the Alhambra)", why:"Walking distance from Hotel America, no hill with a tired child, plain options on the menu."},
-   {n:"Pizza or pasta near Plaza Nueva", why:"Familiar food for Izyan, opens earlier than Spanish restaurants."},
-   {n:"Hotel America dining room", why:"Easiest after a flight plus a 2-hour coach; ask at check-in if they serve dinner."}]}
+   {n:"Arrayanes (Moroccan, Albaicin)", a:"Cuesta Maranas 4, Granada", h:"Taxi 10 min from Hotel America", best:1, why:"Moroccan, no alcohol served, tagines and couscous: comfort food that fits your preferences. Taxi down and back."},
+   {n:"Parador de Granada restaurant (inside the Alhambra)", a:"Real de la Alhambra s/n, Granada", h:"Walk 3 min", why:"Walking distance from Hotel America, no hill with a tired child, plain options on the menu."},
+   {n:"Pizza or pasta near Plaza Nueva", a:"Plaza Nueva, Granada", h:"Alhambra minibus C30/C32 or taxi 10 min", why:"Familiar food for Izyan, opens earlier than Spanish restaurants."},
+   {n:"Hotel America dining room", a:"Real de la Alhambra 53, Granada", h:"In the hotel", why:"Easiest after a flight plus a 2-hour coach; ask at check-in if they serve dinner."}]}
  ],
  5: [
   {s:"Breakfast", t:"07:45", o:[
-   {n:"Hotel America breakfast", best:1, why:"You are inside the Alhambra walls; zero travel before the 09:00 palace slot."},
-   {n:"Parador de Granada cafe", why:"Two minutes away, sit-down, hot chocolate for Izyan."},
-   {n:"Snacks from the room + early coffee", why:"Fastest if he wakes late; the slot is fixed."},
-   {n:"Cafe Futbol churros (Plaza Mariana Pineda) - only if no time pressure", why:"Granada's famous churros and chocolate, but it is downtown; better as an afternoon treat."}]},
+   {n:"Hotel America breakfast", a:"Real de la Alhambra 53, Granada", h:"In the hotel", best:1, why:"You are inside the Alhambra walls; zero travel before the 09:00 palace slot."},
+   {n:"Parador de Granada cafe", a:"Real de la Alhambra s/n, Granada", h:"Walk 3 min", why:"Two minutes away, sit-down, hot chocolate for Izyan."},
+   {n:"Snacks from the room + early coffee", a:"Hotel America", h:"No travel", why:"Fastest if he wakes late; the slot is fixed."},
+   {n:"Cafe Futbol churros (Plaza Mariana Pineda) - only if no time pressure", a:"Plaza de Mariana Pineda 6, Granada", h:"Taxi 10 min", why:"Granada's famous churros and chocolate, but it is downtown; better as an afternoon treat."}]},
   {s:"Lunch", t:"13:00", o:[
-   {n:"Teterias on Calle Calderería Nueva", why:"Moroccan tea houses: mint tea, pastries, simple plates. Casual, no bar."},
-   {n:"Arrayanes (if not done)", why:"Moroccan comfort food, alcohol-free."},
-   {n:"Pizza/pasta near Plaza Nueva", why:"Safe for Izyan after a big morning."},
-   {n:"Parador terrace", why:"Stay up the hill and rest; no taxi needed."}]},
+   {n:"Teterias on Calle Calderería Nueva", a:"Calle Calderería Nueva, Albaicin", h:"Minibus/taxi 10 min, then walk 3 min", why:"Moroccan tea houses: mint tea, pastries, simple plates. Casual, no bar."},
+   {n:"Arrayanes (if not done)", a:"Cuesta Maranas 4, Granada", h:"Taxi 10 min", why:"Moroccan comfort food, alcohol-free."},
+   {n:"Pizza/pasta near Plaza Nueva", a:"Plaza Nueva, Granada", h:"Minibus/taxi 10 min", why:"Safe for Izyan after a big morning."},
+   {n:"Parador terrace", a:"Real de la Alhambra s/n", h:"Walk 3 min", why:"Stay up the hill and rest; no taxi needed."}]},
   {s:"Afternoon activity", t:"15:30", o:[
-   {n:"Parque de las Ciencias (science museum)", best:1, why:"The best kid attraction in Granada: hands-on halls, planetarium, butterfly house. Taxi 15 min."},
-   {n:"Mirador de San Nicolas at sunset", why:"The iconic Alhambra view; go 17:00 for sunset around 18:00."},
-   {n:"Cafe Futbol churros + Plaza Nueva stroll", why:"Sweet treat, short walk, low effort."},
-   {n:"Rest at the hotel", why:"The palace morning is long; a nap keeps dinner happy."}]},
+   {n:"Parque de las Ciencias (science museum)", a:"Av. de la Ciencia s/n, Granada", h:"Taxi 15 min", best:1, why:"The best kid attraction in Granada: hands-on halls, planetarium, butterfly house. Taxi 15 min."},
+   {n:"Mirador de San Nicolas at sunset", a:"Plaza de San Nicolas, Albaicin", h:"Taxi 12 min or minibus C31/C32", why:"The iconic Alhambra view; go 17:00 for sunset around 18:00."},
+   {n:"Cafe Futbol churros + Plaza Nueva stroll", a:"Plaza de Mariana Pineda 6, Granada", h:"Taxi 10 min", why:"Sweet treat, short walk, low effort."},
+   {n:"Rest at the hotel", a:"Hotel America", h:"No travel", why:"The palace morning is long; a nap keeps dinner happy."}]},
   {s:"Dinner", t:"19:30", o:[
-   {n:"El Huerto de Juan Ranas (San Nicolas)", best:1, why:"Special dinner with the lit Alhambra across the valley. Go early for a window table."},
-   {n:"Carmen de Aben Humeya (Albaicin)", why:"Alternative special dinner with a garden view of the Alhambra."},
-   {n:"Arrayanes", why:"Moroccan, alcohol-free, comfort food."},
-   {n:"Pizza near Plaza Nueva", why:"Familiar and early before the train day."}]}
+   {n:"El Huerto de Juan Ranas (San Nicolas)", a:"Calle de Atarazana 8, Albaicin", h:"Taxi 12 min", best:1, why:"Special dinner with the lit Alhambra across the valley. Go early for a window table."},
+   {n:"Carmen de Aben Humeya (Albaicin)", a:"Cuesta de las Tomasas 12, Albaicin", h:"Taxi 12 min", why:"Alternative special dinner with a garden view of the Alhambra."},
+   {n:"Arrayanes", a:"Cuesta Maranas 4, Granada", h:"Taxi 10 min", why:"Moroccan, alcohol-free, comfort food."},
+   {n:"Pizza near Plaza Nueva", a:"Plaza Nueva, Granada", h:"Taxi 10 min", why:"Familiar and early before the train day."}]}
  ],
  6: [
   {s:"Breakfast", t:"08:30", o:[
-   {n:"Hotel America breakfast", best:1, why:"Simplest with bags and a 10:30 taxi to the station."},
-   {n:"Cafe Futbol churros", why:"Last chance for Granada churros if you leave the hotel a bit earlier."},
-   {n:"Station cafe snacks", why:"Buy pastries for the train."},
-   {n:"Parador cafe", why:"Close, calm, hot chocolate."}]},
+   {n:"Hotel America breakfast", a:"Real de la Alhambra 53, Granada", h:"In the hotel", best:1, why:"Simplest with bags and a 10:30 taxi to the station."},
+   {n:"Cafe Futbol churros", a:"Plaza de Mariana Pineda 6, Granada", h:"Taxi 10 min (do it before checkout)", why:"Last chance for Granada churros if you leave the hotel a bit earlier."},
+   {n:"Station cafe snacks", a:"Granada railway station, Av. de los Andaluces", h:"At the station", why:"Buy pastries for the train."},
+   {n:"Parador cafe", a:"Real de la Alhambra s/n", h:"Walk 3 min", why:"Close, calm, hot chocolate."}]},
   {s:"Dinner in Seville", t:"19:30", o:[
-   {n:"Pizza or Italian in Santa Cruz", best:1, why:"Opens earlier than tapas places; familiar food after a travel day."},
-   {n:"El Pinton (sit-down, near the Cathedral)", why:"Modern Andalusian restaurant, not a bar; grilled options for Izyan."},
-   {n:"Lonja del Barranco food hall (by the river)", why:"Everyone picks their own, casual, near the Triana bridge."},
-   {n:"Rayas gelato after dinner", why:"Seville's best gelato, a sweet win."}]}
+   {n:"Pizza or Italian in Santa Cruz", a:"Santa Cruz quarter, Seville", h:"Walk 5 min from Iberflat", best:1, why:"Opens earlier than tapas places; familiar food after a travel day."},
+   {n:"El Pinton (sit-down, near the Cathedral)", a:"Calle Francos 42, Seville", h:"Walk 6 min", why:"Modern Andalusian restaurant, not a bar; grilled options for Izyan."},
+   {n:"Lonja del Barranco food hall (by the river)", a:"Calle Arjona s/n, Seville", h:"Walk 15 min or taxi 5 min", why:"Everyone picks their own, casual, near the Triana bridge."},
+   {n:"Rayas gelato after dinner", a:"Calle Almirante Apodaca 1, Seville", h:"Walk 15 min", why:"Seville's best gelato, a sweet win."}]}
  ],
  7: [
   {s:"Breakfast", t:"08:30", o:[
-   {n:"Churros at Bar El Comercio", best:1, why:"Classic Seville churros and thick chocolate since 1904. Izyan will love it."},
-   {n:"Confiteria La Campana", why:"Historic pastry shop, sit-down, sweets and toast."},
-   {n:"Apartment breakfast", why:"Quick start before Plaza de Espana at 09:30."},
-   {n:"Cafe near the Cathedral", why:"Simple toast and juice, no walking detour."}]},
+   {n:"Churros at Bar El Comercio", a:"Calle Lineros 9, Seville", h:"Walk 8 min", best:1, why:"Classic Seville churros and thick chocolate since 1904. Izyan will love it."},
+   {n:"Confiteria La Campana", a:"Calle Sierpes 1, Seville", h:"Walk 12 min", why:"Historic pastry shop, sit-down, sweets and toast."},
+   {n:"Apartment breakfast", a:"At the apartment", h:"No travel", why:"Quick start before Plaza de Espana at 09:30."},
+   {n:"Cafe near the Cathedral", a:"Around Avenida de la Constitucion", h:"Walk 5 min", why:"Simple toast and juice, no walking detour."}]},
   {s:"Morning activity", t:"09:30", o:[
-   {n:"Plaza de Espana + rowboat on the canal", best:1, why:"Iconic and kid-first: rowing under the bridges, tiled benches for every province. Best family-photo spot too."},
-   {n:"Maria Luisa Park pedal car (quadricycle)", why:"He rides up front; ducks and pigeons at Plaza de America."},
-   {n:"Setas de Sevilla rooftop walkway", why:"Giant wooden 'mushrooms' with a skywalk; fun shapes for a 5-year-old."},
-   {n:"Guadalquivir river cruise (1 hour)", why:"Sit-down sightseeing, boats are always a hit."}]},
+   {n:"Plaza de Espana + rowboat on the canal", a:"Av. de Isabel la Catolica, Seville", h:"Walk 20 min or taxi 7 min", best:1, why:"Iconic and kid-first: rowing under the bridges, tiled benches for every province. Best family-photo spot too."},
+   {n:"Maria Luisa Park pedal car (quadricycle)", a:"Parque de Maria Luisa, Seville", h:"Walk 20 min or taxi 7 min", why:"He rides up front; ducks and pigeons at Plaza de America."},
+   {n:"Setas de Sevilla rooftop walkway", a:"Plaza de la Encarnacion, Seville", h:"Walk 15 min", why:"Giant wooden 'mushrooms' with a skywalk; fun shapes for a 5-year-old."},
+   {n:"Guadalquivir river cruise (1 hour)", a:"Paseo de Cristobal Colon, by the Torre del Oro", h:"Walk 12 min", why:"Sit-down sightseeing, boats are always a hit."}]},
   {s:"Lunch", t:"12:30", o:[
-   {n:"Lonja del Barranco food hall", best:1, why:"Casual, everyone chooses, near the river."},
-   {n:"Pizza/pasta near the Cathedral", why:"Safe and quick before the 14:30 Cathedral slot."},
-   {n:"El Pinton", why:"Sit-down, grilled dishes, close to the Cathedral."},
-   {n:"Rayas gelato as dessert", why:"Sweet reward before the Giralda climb."}]},
+   {n:"Lonja del Barranco food hall", a:"Calle Arjona s/n, Seville", h:"Walk 15 min / taxi 5 min", best:1, why:"Casual, everyone chooses, near the river."},
+   {n:"Pizza/pasta near the Cathedral", a:"Around the Cathedral", h:"Walk 5 min", why:"Safe and quick before the 14:30 Cathedral slot."},
+   {n:"El Pinton", a:"Calle Francos 42, Seville", h:"Walk 6 min", why:"Sit-down, grilled dishes, close to the Cathedral."},
+   {n:"Rayas gelato as dessert", a:"Calle Almirante Apodaca 1, Seville", h:"Walk 15 min", why:"Sweet reward before the Giralda climb."}]},
   {s:"Dinner", t:"19:30", o:[
-   {n:"Indian or Moroccan in the centre", best:1, why:"Familiar comfort food, opens early, no bar."},
-   {n:"Lonja del Barranco", why:"Easy and casual if he is tired."},
-   {n:"Italian in Santa Cruz", why:"Plain pasta and pizza, early tables."},
-   {n:"Street flamenco on Calle Betis, then dinner in Triana", why:"Free street flamenco at dusk; pick a restaurant, not a bar."}]}
+   {n:"Indian or Moroccan in the centre", a:"Centro / Alfalfa area, Seville", h:"Walk 10 to 15 min", best:1, why:"Familiar comfort food, opens early, no bar."},
+   {n:"Lonja del Barranco", a:"Calle Arjona s/n, Seville", h:"Walk 15 min / taxi 5 min", why:"Easy and casual if he is tired."},
+   {n:"Italian in Santa Cruz", a:"Santa Cruz quarter", h:"Walk 5 min", why:"Plain pasta and pizza, early tables."},
+   {n:"Street flamenco on Calle Betis, then dinner in Triana", a:"Calle Betis, Triana", h:"Walk 20 min or taxi 8 min", why:"Free street flamenco at dusk; pick a restaurant, not a bar."}]}
  ],
  8: [
   {s:"Breakfast", t:"09:00", o:[
-   {n:"Churros at Bar El Comercio (second round)", best:1, why:"He will ask for it again."},
-   {n:"Confiteria La Campana", why:"Pastries and a slow morning."},
-   {n:"Apartment breakfast", why:"Pack and check out by 12:00."},
-   {n:"Cafe in Santa Cruz", why:"Simple and close."}]},
+   {n:"Churros at Bar El Comercio (second round)", a:"Calle Lineros 9, Seville", h:"Walk 8 min", best:1, why:"He will ask for it again."},
+   {n:"Confiteria La Campana", a:"Calle Sierpes 1, Seville", h:"Walk 12 min", why:"Pastries and a slow morning."},
+   {n:"Apartment breakfast", a:"At the apartment", h:"No travel", why:"Pack and check out by 12:00."},
+   {n:"Cafe in Santa Cruz", a:"Santa Cruz quarter", h:"Walk 3 min", why:"Simple and close."}]},
   {s:"Lunch in Seville", t:"12:30", o:[
-   {n:"Pizza/Italian near the apartment", best:1, why:"Fast and familiar before the 14:00 airport car."},
-   {n:"Lonja del Barranco", why:"Casual, last Spanish meal."},
-   {n:"El Pinton", why:"Sit-down if you want a proper last lunch."},
-   {n:"Rayas gelato for the road", why:"Sweet send-off."}]},
+   {n:"Pizza/Italian near the apartment", a:"Santa Cruz, near Calle San Gregorio", h:"Walk 5 min", best:1, why:"Fast and familiar before the 14:00 airport car."},
+   {n:"Lonja del Barranco", a:"Calle Arjona s/n, Seville", h:"Walk 15 min / taxi 5 min", why:"Casual, last Spanish meal."},
+   {n:"El Pinton", a:"Calle Francos 42, Seville", h:"Walk 6 min", why:"Sit-down if you want a proper last lunch."},
+   {n:"Rayas gelato for the road", a:"Calle Almirante Apodaca 1, Seville", h:"Walk 15 min", why:"Sweet send-off."}]},
   {s:"Dinner in Paris (late arrival)", t:"21:00", o:[
-   {n:"Crepes near Les Halles", best:1, why:"Quick, sweet or savoury, Izyan-friendly, 5 min from Nestay."},
-   {n:"L'As du Fallafel (Marais, 15 min walk)", why:"Famous falafel, no pork, comfort food. Check it is open that evening."},
-   {n:"Supermarket dinner at the apartment", why:"Carrefour Express or Franprix nearby; easiest after a travel day."},
-   {n:"Bakery sandwiches from Rue Montorgueil", why:"Simple and close; bed early for Disneyland."}]}
+   {n:"Crepes near Les Halles", a:"Rue Montorgueil / Les Halles", h:"Walk 5 min from Nestay", best:1, why:"Quick, sweet or savoury, Izyan-friendly, 5 min from Nestay."},
+   {n:"L'As du Fallafel (Marais, 15 min walk)", a:"34 Rue des Rosiers, 75004 Paris", h:"Walk 15 min", why:"Famous falafel, no pork, comfort food. Check it is open that evening."},
+   {n:"Supermarket dinner at the apartment", a:"Carrefour Express, 77 Rue Rambuteau", h:"Walk 3 min", why:"Carrefour Express or Franprix nearby; easiest after a travel day."},
+   {n:"Bakery sandwiches from Rue Montorgueil", a:"Rue Montorgueil, 75002", h:"Walk 4 min", why:"Simple and close; bed early for Disneyland."}]}
  ],
  9: [
   {s:"Lunch at Disneyland", t:"12:00", o:[
-   {n:"Pizzeria Bella Notte (Fantasyland)", best:1, why:"Pizza and pasta: safe for Izyan, quick service."},
-   {n:"Plaza Gardens buffet (Main Street)", why:"Buffet means everyone finds something; book a slot in the app."},
-   {n:"Agrabah Cafe (Adventureland)", why:"Middle Eastern buffet: comfort food for you, plain options for him."},
-   {n:"Quick-service snacks between rides", why:"Maximises ride time on a low-crowd Tuesday."}]},
+   {n:"Pizzeria Bella Notte (Fantasyland)", a:"Fantasyland, Disneyland Park", h:"In the park", best:1, why:"Pizza and pasta: safe for Izyan, quick service."},
+   {n:"Plaza Gardens buffet (Main Street)", a:"Main Street U.S.A., Disneyland Park", h:"In the park", why:"Buffet means everyone finds something; book a slot in the app."},
+   {n:"Agrabah Cafe (Adventureland)", a:"Adventureland, Disneyland Park", h:"In the park", why:"Middle Eastern buffet: comfort food for you, plain options for him."},
+   {n:"Quick-service snacks between rides", a:"Both parks", h:"In the park", why:"Maximises ride time on a low-crowd Tuesday."}]},
   {s:"Dinner", t:"19:45", o:[
-   {n:"Crepes or bakery near Nestay", best:1, why:"He will be asleep on his feet; close and quick."},
-   {n:"Disney Village restaurant before the RER", why:"Eat before leaving the park area."},
-   {n:"Supermarket dinner at the apartment", why:"Lowest effort after a full park day."},
-   {n:"Indian takeaway (Passage Brady area)", why:"Familiar comfort food, delivered or picked up."}]}
+   {n:"Crepes or bakery near Nestay", a:"Rue Montorgueil / Les Halles", h:"Walk 5 min", best:1, why:"He will be asleep on his feet; close and quick."},
+   {n:"Disney Village restaurant before the RER", a:"Disney Village, Marne-la-Vallee", h:"Walk 5 min from the park gates", why:"Eat before leaving the park area."},
+   {n:"Supermarket dinner at the apartment", a:"Carrefour Express, 77 Rue Rambuteau", h:"Walk 3 min", why:"Lowest effort after a full park day."},
+   {n:"Indian takeaway (Passage Brady area)", a:"Passage Brady, 46 Rue du Faubourg Saint-Denis", h:"Delivery or metro 10 min", why:"Familiar comfort food, delivered or picked up."}]}
  ],
  10: [
   {s:"Breakfast", t:"07:45", o:[
-   {n:"Stohrer (Rue Montorgueil)", best:1, why:"Oldest pastry shop in Paris, 5 min away. Croissants and sweets for Izyan."},
-   {n:"Bakery + market fruit on Rue Montorgueil", why:"Quick, eat on the way to the metro."},
-   {n:"Angelina (Rue de Rivoli) - famous hot chocolate", why:"Iconic, but sit-down and slower; better as an afternoon treat."},
-   {n:"Apartment breakfast", why:"Fastest before the 09:30 Eiffel slot."}]},
+   {n:"Stohrer (Rue Montorgueil)", a:"51 Rue Montorgueil, 75002 Paris", h:"Walk 4 min", best:1, why:"Oldest pastry shop in Paris, 5 min away. Croissants and sweets for Izyan."},
+   {n:"Bakery + market fruit on Rue Montorgueil", a:"Rue Montorgueil, 75002", h:"Walk 4 min", why:"Quick, eat on the way to the metro."},
+   {n:"Angelina (Rue de Rivoli) - famous hot chocolate", a:"226 Rue de Rivoli, 75001 Paris", h:"Walk 20 min / metro 10 min", why:"Iconic, but sit-down and slower; better as an afternoon treat."},
+   {n:"Apartment breakfast", a:"At the apartment", h:"No travel", why:"Fastest before the 09:30 Eiffel slot."}]},
   {s:"Lunch", t:"12:30", o:[
-   {n:"Picnic on the Champ de Mars after the photoshoot", best:1, why:"He runs on the lawn; buy sandwiches near Bir-Hakeim."},
-   {n:"L'As du Fallafel (Marais)", why:"Famous falafel, comfort food, no pork."},
-   {n:"Breizh Cafe crepes (Marais)", why:"Top crepes in Paris; sweet ones for Izyan."},
-   {n:"Le Relais de l'Entrecote", why:"Simple steak and fries; one dish, no ordering stress."}]},
+   {n:"Picnic on the Champ de Mars after the photoshoot", a:"Champ de Mars, 75007", h:"Walk 10 min from Pont de Bir-Hakeim", best:1, why:"He runs on the lawn; buy sandwiches near Bir-Hakeim."},
+   {n:"L'As du Fallafel (Marais)", a:"34 Rue des Rosiers, 75004 Paris", h:"Metro 30 min from the Eiffel Tower", why:"Famous falafel, comfort food, no pork."},
+   {n:"Breizh Cafe crepes (Marais)", a:"109 Rue Vieille du Temple, 75003 Paris", h:"Metro 30 min from the Eiffel Tower", why:"Top crepes in Paris; sweet ones for Izyan."},
+   {n:"Le Relais de l'Entrecote", a:"20 Rue Saint-Benoit, 75006 Paris", h:"Metro 20 min", why:"Simple steak and fries; one dish, no ordering stress."}]},
   {s:"Afternoon activity", t:"15:30", o:[
-   {n:"Jardin du Luxembourg: sailboats + playground + carousel", best:1, why:"Kid-first classic: he pushes toy sailboats on the pond."},
-   {n:"Tuileries carousel + gardens", why:"Iconic, near the Louvre, close to Nestay."},
-   {n:"Seine cruise at dusk (17:30)", why:"Sit-down sightseeing as the city lights up."},
-   {n:"Jardin d'Acclimatation", why:"Small amusement park with rides, only if he still has energy after Disney."}]},
+   {n:"Jardin du Luxembourg: sailboats + playground + carousel", a:"Jardin du Luxembourg, 75006", h:"Metro/RER 15 min from Nestay", best:1, why:"Kid-first classic: he pushes toy sailboats on the pond."},
+   {n:"Tuileries carousel + gardens", a:"Jardin des Tuileries, 75001", h:"Walk 15 min from Nestay", why:"Iconic, near the Louvre, close to Nestay."},
+   {n:"Seine cruise at dusk (17:30)", a:"Vedettes du Pont Neuf, Square du Vert-Galant", h:"Walk 12 min from Nestay", why:"Sit-down sightseeing as the city lights up."},
+   {n:"Jardin d'Acclimatation", a:"Bois de Boulogne, 75116", h:"Metro line 1 to Les Sablons, 30 min", why:"Small amusement park with rides, only if he still has energy after Disney."}]},
+  {s:"Paris Jamatkhana (evening)", t:"~18:30", o:[
+   {n:"Paris Jamatkhana for evening prayers", a:"Address to confirm with the Paris Jamat (not published online)", h:"Metro or private car, about 20 to 30 min", best:1, why:"Your request: attend Jamatkhana in Paris. Nov 18 evening is the only free evening (Nov 16 late arrival, Nov 17 Disneyland). Dinner after, then the 21:00 tower sparkle if Izyan is awake."},
+   {n:"Jamatkhana on Mon Nov 16 instead", a:"Address to confirm", h:"From CDG, private van could drop you there first", why:"Only if the evening prayer time works with the 19:15 landing; tight with bags and a tired child."},
+   {n:"Jamatkhana on Tue Nov 17 after Disneyland", a:"Address to confirm", h:"RER A back by 19:00", why:"Possible, but Izyan will be exhausted after the parks."},
+   {n:"Skip in Paris (Lisbon Ismaili Centre on Nov 11 covers it)", a:"Ismaili Centre Lisbon, Av. Lusiada 1", h:"Already booked, 17:30 tour", why:"Keeps the last Paris evening free."}]},
   {s:"Special dinner", t:"19:00", o:[
-   {n:"Le Train Bleu (Gare de Lyon)", best:1, why:"Special last dinner in a stunning Belle Epoque station restaurant; trains outside for Izyan."},
-   {n:"Bouillon Chartier", why:"Historic, cheap, fast, open early; classic Paris experience."},
-   {n:"Indian at Passage Brady", why:"Familiar comfort food for the last night."},
-   {n:"Italian near Les Halles", why:"Easy early dinner before the 21:00 sparkle at Trocadero."}]}
+   {n:"Le Train Bleu (Gare de Lyon)", a:"Place Louis-Armand, Gare de Lyon, 75012", h:"RER A 5 min from Chatelet", best:1, why:"Special last dinner in a stunning Belle Epoque station restaurant; trains outside for Izyan."},
+   {n:"Bouillon Chartier", a:"7 Rue du Faubourg Montmartre, 75009", h:"Metro 10 min", why:"Historic, cheap, fast, open early; classic Paris experience."},
+   {n:"Indian at Passage Brady", a:"46 Rue du Faubourg Saint-Denis, 75010", h:"Metro 10 min", why:"Familiar comfort food for the last night."},
+   {n:"Italian near Les Halles", a:"Les Halles / Rue Montorgueil", h:"Walk 5 min", why:"Easy early dinner before the 21:00 sparkle at Trocadero."}]}
  ],
  11: [
   {s:"Breakfast", t:"06:45", o:[
-   {n:"Bakery on Rue Montorgueil", best:1, why:"Croissants to go before the 07:30 airport car."},
-   {n:"Apartment breakfast", why:"Use up the groceries."},
-   {n:"Eat at CDG Terminal 2A", why:"Paul bakery after security."},
-   {n:"Snacks for the plane", why:"Long flight; pack Izyan's favourites."}]}
+   {n:"Bakery on Rue Montorgueil", a:"Rue Montorgueil, 75002", h:"Walk 4 min", best:1, why:"Croissants to go before the 07:30 airport car."},
+   {n:"Apartment breakfast", a:"At the apartment", h:"No travel", why:"Use up the groceries."},
+   {n:"Eat at CDG Terminal 2A", a:"CDG Terminal 2A, after security", h:"At the airport", why:"Paul bakery after security."},
+   {n:"Snacks for the plane", a:"Carrefour Express, 77 Rue Rambuteau", h:"Buy the night before", why:"Long flight; pack Izyan's favourites."}]}
  ]
 };
 function pickKey(d,s){ return 'pick_'+d+'_'+s.replace(/\W+/g,''); }
@@ -3098,7 +3104,7 @@ function choicesBlock(n){
       var on = i===pi;
       return '<div style="padding:9px 12px;margin:6px 0;border:1px solid '+(on?'var(--good)':'var(--line)')+';border-radius:8px;background:'+(on?'var(--good-lt)':'var(--card)')+'">'
         + '<div style="font-weight:600;font-size:13.5px">'+o.n+(o.best?' <span class="pill p-g">Suggested</span>':'')+'</div>'
-        + '<div style="font-size:12.5px;color:var(--mute);margin:3px 0 6px">Why: '+o.why+'</div>'
+        + (o.a?'<div style="font-size:12.5px;margin-top:3px">&#128205; '+o.a+' &middot; <b>'+o.h+'</b> <a href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(o.a)+'" target="_blank" rel="noopener">Map</a></div>':'')+ '<div style="font-size:12.5px;color:var(--mute);margin:3px 0 6px">Why: '+o.why+'</div>'
         + '<button class="btn btn-sm'+(on?' btn-p':'')+'" onclick="choosePick('+n+',\''+c.s.replace(/'/g,"\\'")+'\','+i+')">'+(on?'Picked':'Pick this')+'</button></div>';
     }).join('');
     return '<details class="acc"><summary><span style="color:var(--mute);margin-right:6px">'+c.t+'</span><b>'+c.s+':</b> '+(pi>=0?'&#10003; '+label:'<span style="color:var(--brand)">'+label+'</span>')+'</summary>'
