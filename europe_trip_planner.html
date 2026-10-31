@@ -486,6 +486,7 @@ details.acc .acc-b{padding:0 16px 14px 33px;font-size:13px;line-height:1.6;color
 
 <div class="wrap">
   <section id="s-itinerary"></section>
+  <section id="s-codes"></section>
   <section id="s-flights"></section>
   <section id="s-stay"></section>
   <section id="s-conflicts"></section>
@@ -547,7 +548,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-10-31e";
+var BUILD = "2026-10-31g";
 var BUILD_LABEL = "Updated Oct 31";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -678,7 +679,7 @@ var PLAN = [
   warn:"Everything on this day sits between Chiado, Cais do Sodre and Praca do Comercio. One Bolt from the airport and then you are walking, all of it flat and all of it beside the Tagus. The hill can wait for tomorrow.",
   sched:[
     ["10:20","Land at LIS, Terminal 1","UA 942, on time. Passport control 20 to 40 minutes, longer if two widebodies land together."],
-    ["11:20","Bolt to Chiado","About 15 euros, 20 minutes. Cheaper and far easier than the metro with luggage."],
+    ["11:20","PRIVATE CAR to the apartment (pre-book)","Driver meets you in arrivals with a child seat. About 25 euros, 20 minutes. Bolt is the backup."],
     ["11:50","Drop bags","<b>226 Rua dos Sapateiros.</b> Free luggage store on the <b>2nd floor, the room directly facing the lift</b>. It is <b>code entry</b> &mdash; codes requested 7 Nov. Guest lounge on the same floor, bathroom on the ground floor. Close the door properly after use. Check-in is not until 16:00. Guest portal (check-in, codes): https://app.chargeautomation.com/securelink/cc87b60400 . Address: Rua dos Sapateiros 226, 1100-581 Lisboa. Emergency line +351 211 450 297. WiFi: Residentas / unforgettable. Groceries: Pingo Doce Baixa or Continente Bom Dia Rossio."],
     ["12:30","Lunch at Time Out Market","Eight minutes downhill from Chiado, and it sits on the river at Cais do Sodre. Everyone picks their own, which buys you a calm first meal."],
     ["14:00","Ribeira das Naus","Walk out of the market and you are on it. A flat promenade with stepped terraces down to the water, grass behind, and a kiosk. Let him run."],
@@ -775,7 +776,7 @@ var PLAN = [
   warn:"<b>Flight booked: TAP, Lisbon 10:45 to Malaga 13:00. Coach BOOKED: ALSA 15:00 from Malaga Airport to Granada bus station, arrives 17:15, seats 34, 33 and 30, 43.27 euros with the extra bag.</b> Leaves from the airport itself, so no train transfer with bags, and two hours of buffer after landing. Checked live 10 Oct: there is no 14:45 departure. If the flight is badly late, the 16:00 from Malaga city station (arr 17:30) is the backup. <b>Luggage:</b> Basica includes 3 hold bags and 3 small items for the three of you: the suitcase (keep it at or under 20 kg) and the roller go underneath, backpacks come on board. Extra bag already paid (5 euros), so you are covered even with a second roller. Izyan gets his big train ride two days later: the AVE from Cordoba to Seville on Nov 14.",
   sched:[
     ["07:45","Breakfast, final pack","Bags by the door before you sit down. Nothing loose."],
-    ["08:20","Bolt to LIS","Twenty-five minutes, budget 15 euros."],
+    ["08:20","PRIVATE CAR to LIS (pre-book)","Pickup at the apartment, child seat. About 25 euros, 25 minutes. Bolt is the backup."],
     ["08:45","Bag drop and security","Two hours for a short hop with a checked bag. TAP flies from Terminal 1."],
     ["10:45","Depart Lisbon, TP1136","TAP, 1h15 direct. One checked bag on the booking, on your ticket. Zaibnish and Izyan are carry-on only, 10kg each."],
     ["13:00","Land Malaga","Spain is an hour ahead, so you gain an hour on paper and lose it on the clock."],
@@ -945,14 +946,13 @@ var PLAN = [
     ["11:45","Check out, bags to the housekeeper","Check-out is by 12:00. Iberflat has no luggage room; the housekeeper holds bags only if you arranged it a few days ahead (+34 955 515 541)."],
     ["12:30","Lunch in Seville","Better than anything you will get at the airport."],
     ["13:45","Collect the bags","Back at Calle San Gregorio 7 for the suitcase, roller and backpacks."],
-    ["14:00","Taxi to SVQ","Twenty minutes, about 25 euros fixed."],
+    ["14:00","PRIVATE CAR to SVQ (pre-book)","Pickup at Calle San Gregorio 7 after collecting the bags, child seat. About 50 euros. Official taxi 26 to 29 euros is the backup."],
     ["14:40","Check in and security","Small airport, quick to move through."],
     ["16:40","Depart Seville","Air France, booked and paid. Direct to CDG, 2h35, and the fare carries your checked bag."],
     ["19:15","Land CDG, Terminal 2G","Same time zone as Spain, so no clock change."],
-    ["19:50","Free shuttle N2 to Terminal 2F","<b>2G is a remote satellite and you cannot walk to the RER from it.</b> The N2 runs every eight minutes until 23:00. Five-minute ride, but you may wait ten for it to leave."],
-    ["20:15","RER B into Paris","The station sits inside Terminal 2, a short walk from 2F. Forty-five minutes to Saint-Michel, then a short hop. 12 euros each."],
-    ["21:15","Check in at Nestay, Les Halles",""],
-    ["21:45","Something quick nearby","Then bed. Disneyland gates open at 09:30."]
+    ["19:45","PRIVATE VAN to Nestay (pre-book)","Driver meets you at Terminal 2G arrivals, so no shuttle or RER. Van fits all 5 bags, child seat free. About 130 euros, 45 minutes. Backup: shuttle N2 to 2F, then RER B."],
+    ["20:45","Check in at Nestay, Les Halles","7 Rue de la Cossonnerie. Door codes come from the online check-in."],
+    ["21:15","Something quick nearby","Then bed. Disneyland gates open at 09:30."]
   ],
   transport:{
     leg:"SVQ to CDG", flight:true, note:"Direct and well served. This is the leg that makes the reversed order worth it.",
@@ -981,7 +981,7 @@ var PLAN = [
   sched:[
     ["07:00","Breakfast at the apartment","Eat properly. Park food is six to ten euros an item."],
     ["07:50","Leave, pack the day bag","Snacks, water, power bank, a warm layer. It is 6 to 12 degrees."],
-    ["08:10","RER A from Chatelet-Les Halles","Five minutes on foot from Nestay. Direct, about forty minutes, no change. <b>Board only trains marked Marne-la-Vallee Chessy</b>, not Boissy-Saint-Leger. About 5 euros an adult and 2.50 for Izyan, check the Bonjour RATP app. Skip Uber (45 to 60 minutes and 70 to 100 euros each way, and VTC drivers rarely carry a child seat) and the central-Paris coaches (third-party, fixed times from Opera or Trocadero). If he is finished on the way back, a G7 taxi is the legal no-car-seat option."],
+    ["08:10","RER A from Chatelet-Les Halles (or private car, optional)","Private car about 45 minutes door to gate if you book one. Five minutes on foot from Nestay. Direct, about forty minutes, no change. <b>Board only trains marked Marne-la-Vallee Chessy</b>, not Boissy-Saint-Leger. About 5 euros an adult and 2.50 for Izyan, check the Bonjour RATP app. Skip Uber (45 to 60 minutes and 70 to 100 euros each way, and VTC drivers rarely carry a child seat) and the central-Paris coaches (third-party, fixed times from Opera or Trocadero). If he is finished on the way back, a G7 taxi is the legal no-car-seat option."],
     ["09:00","Arrive, bag check","Queue at the turnstiles before opening."],
     ["09:30","Gates open","Walk, do not run, but do not browse either."],
     ["09:40","Ratatouille, Walt Disney Studios","Trackless dark ride, no height limit, and the single best attraction for a five-year-old. Do it first."],
@@ -994,7 +994,7 @@ var PLAN = [
     ["16:00","Christmas parade","Disney Enchanted Christmas started Nov 7. Find a kerb twenty minutes early."],
     ["17:15","One last ride, then the shop","Let him choose both."],
     ["18:00","Leave the park","Before the closing crush and before he falls apart."],
-    ["19:00","Back in Paris","He sleeps on the RER. Carry him the last stretch."],
+    ["19:00","Back in Paris","RER A, or the private car if booked. He will sleep either way."],
     ["19:45","Dinner near the apartment","Simple and close."],
     ["21:00","Bed","Flight tomorrow."]
   ],
@@ -1072,7 +1072,7 @@ var PLAN = [
   sum:"Breakfast and a taxi. Nothing else, and nothing needed.",
   sched:[
     ["06:45","Breakfast, final check","Anything left on Rue Cler, or the apartment kitchen. Bins out, keys where the host asked."],
-    ["07:30","Taxi to CDG","Regulated flat rate, 65 euros from the Left Bank, about fifty minutes. Book it the night before."],
+    ["07:30","PRIVATE CAR to CDG (pre-book)","Pickup at Nestay, child seat, all bags. About 80 to 130 euros, 50 minutes. Backup: flat-rate taxi, 65 euros."],
     ["08:20","Arrive CDG","American boards from Terminal 2A. Bag drop, security, then French exit passport control, which is the slow part."],
     ["11:05","Depart CDG for Dallas","<b>AA 49</b>. Nonstop, lunch and a snack served."],
     ["14:50","Land DFW","Same calendar day, you gain seven hours. US immigration and customs, then re-check nothing &mdash; this is the end of the line."],
@@ -2717,7 +2717,7 @@ function renderInsurance(){
    SIMPLE VIEW (31 Oct): facts only. Overrides the long renderers above.
    ================================================================== */
 TABS = [
-  ["itinerary","Day by Day"], ["flights","Flights"], ["stay","Where to Stay"],
+  ["itinerary","Day by Day"], ["codes","Bookings & Codes"], ["flights","Flights"], ["stay","Hotels"],
   ["booking","Checklist"], ["insurance","Insurance & Safety"], ["budget","Budget"],
   ["packing","Packing"], ["food","Food"], ["izyan","Izyan's Guide"]
 ];
@@ -2796,7 +2796,7 @@ function renderStay(){
         + '<div class="h-mt">'+booked.u+'</div></div><div class="h-pr">'+booked.p+'</div></div>':'')
       + acc + '</div>';
   }).join('');
-  return simpleHead('Where to Stay', 'All four booked. Address, phones, check-in, codes, nearest ER and groceries under each.')
+  return simpleHead('Hotels', 'All four booked. Address, phones, check-in times, codes to request, nearest ER and groceries.')
     + '<div class="g2">'+cards+'</div>';
 }
 
@@ -2876,11 +2876,59 @@ function renderIzyan(){
   return simpleHead("Izyan's Guide", 'What he will enjoy most in each city.') + '<div class="g2">'+cards+'</div>';
 }
 
+
+/* ---- Bookings & Codes tab (31 Oct): all confirmation codes and links in one place ---- */
+var CODES = [
+  {d:"Nov 9", w:"United, IAH-IAD-LIS (UA 2388 / UA 942)", x:"Mon Nov 9: UA 2388 IAH 16:45 (Terminal C) to IAD 20:49; UA 942 IAD 22:30 to LIS 10:20 Tue, Terminal 1. Seats: Zaibnish 38A, Izyan 38B (leg 1); 53D, 53E (leg 2); Rizwan at check-in. 1 checked bag paid ($90). Check in online Sun Nov 8.", c:"Confirmation code: in the United app (send it to add here)", l:"https://www.united.com/en/us/manageres/mytrips", ln:"United trips"},
+  {d:"Nov 10-12", w:"Lisbon: Residentas Arco do Bandeira, 226 Rua dos Sapateiros", x:"Check in Tue Nov 10 from 16:00 (early bag drop OK), check out Thu Nov 12 by 10:00. One-Bedroom Apartment. Luggage room 2nd floor opposite the lift: message for codes by Sat Nov 7. WiFi Residentas / unforgettable. $582 paid.", c:"Booking.com, Zaibnish. Guest portal links below. Phones +351 211 450 297 (emergency) / +351 960 060 061 (team, WhatsApp)", l:"https://app.chargeautomation.com/guest-portal-new/4884290?signature=3a5639e028c8f6344a011f98381285d52d2929cede526a6a1bd4426a1fd501d5&source=email", ln:"Guest portal (new)", l2:"https://app.chargeautomation.com/securelink/cc87b60400", ln2:"Guest portal (check-in link)"},
+  {d:"Nov 12", w:"TAP TP1136, Lisbon to Malaga 10:45", x:"Thu Nov 12: LIS 10:45 to AGP 13:00 (Spain +1 hour). 1 checked bag on Rizwan; carry-ons 10 kg max. Seats at check-in.", c:"Booking code: send it to add here", l:"https://www.flytap.com/en-us/manage-booking", ln:"TAP manage booking"},
+  {d:"Nov 12", w:"ALSA coach, Malaga Airport 15:00 to Granada 17:15", x:"Stop in front of Arrivals, Terminal 3, Malaga Airport. Arrives Granada bus station, Av. Juan Pablo II 33. Each ticket 20 kg / 2 items + 1 extra bag paid. Show tickets on phone, carry passports. Free changes until Nov 5.", c:"<b>Booking ref 1g3kckz</b>. Tickets 203-2-999-16065343-1 (Rizwan, seat 34), 16065342-1 (Zaibnish, seat 33, + extra bag), 16065344-1 (Izyan, seat 30)", l:"https://www.alsa.com/en/", ln:"alsa.com"},
+  {d:"Nov 12-14", w:"Granada: Hotel America", x:"Real de la Alhambra 53, inside the Alhambra walls. Thu Nov 12 to Sat Nov 14. Reception until 21:00. $497.38.", c:"Booking.com confirmation: send it to add here", l:"https://secure.booking.com/myreservations.html", ln:"Booking.com trips"},
+  {d:"Nov 13", w:"Alhambra, 09:00 Nasrid Palaces", x:"Fri Nov 13, Nasrid Palaces 09:00 slot; be at the gate 15 minutes early with passports. Hotel America is a short walk.", c:"Ticket code: send it to add here", l:"https://tickets.alhambra-patronato.es/en/", ln:"Alhambra tickets"},
+  {d:"Nov 14", w:"Train: Alvia 11:04 Granada to Cordoba, AVE 13:46 to Seville", x:"Sat Nov 14. Taxi to Granada railway station (Av. de los Andaluces) at 10:30. Change at Cordoba (1h10). Arrive Sevilla-Santa Justa 14:39, taxi to the apartment. $181.76.", c:"<b>Renfe localizador 2FKGY4</b> (Trainline). Seats: Alvia coach 6 R 02C, Z 02D, I 01D; AVE coach 3 R 03C, Z 03D, I 04D. Tickets 7213702113134 (R), 7213702113126 (Z), 7213702113142 (I)", l:"https://www.thetrainline.com/my-account/bookings", ln:"Trainline bookings"},
+  {d:"Nov 14-16", w:"Seville: Iberflat San Gregorio, Calle San Gregorio 7", x:"Check in Sat Nov 14 15:00 to midnight, check out Mon Nov 16 by 12:00. Housekeeper holds bags Nov 16 if arranged ahead. $330. Bring credit card and photo ID.", c:"Booking.com confirmation: send it to add here. Phones +34 697 16 72 22 / office +34 955 515 541", l:"https://secure.booking.com/myreservations.html", ln:"Booking.com trips"},
+  {d:"Nov 15", w:"Seville Cathedral + Giralda, 14:30", x:"Sun Nov 15, 14:30 entry, Giralda first. Includes Church of El Salvador. 26 euros paid.", c:"<b>Purchase ref 262INA5EXR</b> &middot; Reservation ref CMK2NVE7 &middot; Puerta del Lagarto &middot; bring passports", l:"https://www.catedraldesevilla.es", ln:"catedraldesevilla.es"},
+  {d:"Nov 16", w:"Air France AF 1547, Seville 16:40 to CDG 19:15", x:"Mon Nov 16: SVQ 16:40 to CDG 19:15, Terminal 2G, operated by HOP. Checked bag included. $369.80.", c:"Booking reference: send it to add here", l:"https://wwws.airfrance.us/en/my-reservations", ln:"Air France bookings"},
+  {d:"Nov 16-19", w:"Paris: Nestay Les Halles, 7 Rue de la Cossonnerie, Apt 201", x:"Check in Mon Nov 16 (late arrival ~20:45), check out Thu Nov 19. Queen + sofa bed, kitchen, balcony. Complete online check-in and the rental agreement before you fly. $1,378.", c:"Booking.com confirmation: send it to add here. Door codes come after online check-in", l:"https://secure.booking.com/myreservations.html", ln:"Booking.com trips"},
+  {d:"Nov 17", w:"Disneyland Paris, 1 Day / 2 Parks", x:"Tue Nov 17, both parks, gates 09:30. $348.74 paid. Show tickets in the Disneyland app or email.", c:"<b>Booking number 36558845</b> (Zaibnish). Cancel until 3 days before", l:"https://www.disneylandparis.com/en-us/", ln:"disneylandparis.com"},
+  {d:"Nov 18", w:"Eiffel Tower, 09:30, top by stairs + lift", x:"Wed Nov 18, 09:30, stairs to 2nd floor then lift to the top. Security 15 minutes before. Leave the summit by 11:30 for the photoshoot.", c:"Order number: in the e-ticket email (send it to add here). 63 euros", l:"https://www.toureiffel.paris/en", ln:"toureiffel.paris"},
+  {d:"Nov 18", w:"Photoshoot, Pont de Bir-Hakeim 12:00 (meet 11:55)", x:"15 minutes, 5 edited photos, private for up to 4, English. Photographer contacts you on WhatsApp. $39.21.", c:"<b>GetYourGuide GYG32LWHX6LH</b> &middot; PIN UwUy5dXc (Zaibnish)", l:"https://www.getyourguide.com/booking/4DPVMOPHIG9OUME5OL3SSWDYGWSALB83", ln:"GetYourGuide booking"},
+  {d:"Nov 19", w:"American AA 49, CDG 11:05 to DFW", x:"Thu Nov 19: CDG 11:05 (Terminal 2A) to DFW 14:50. 1 checked bag paid ($87). Private car from Nestay 07:30.", c:"Record locator: send it to add here", l:"https://www.aa.com/reservation/view/find-your-trip", ln:"AA trips"},
+  {d:"Nov 9-19", w:"Travel insurance: Tin Leg Gold", x:"Medical $500k pp primary, evacuation $500k pp, no deductible. Delay, baggage and missed-connection cover. Call before non-emergency hospital stays, within 48 h of an emergency admission, before surgery.", c:"<b>Policy 53-TLG-8A2-882A3</b> &middot; Emergency +1 727-264-5657 (collect) &middot; emergency@tinleg.com", l:"https://www.tinleg.com/report-claim", ln:"Tin Leg claims"}
+];
+var TRANSFERS = [
+  ["Tue Nov 10, ~11:15","Lisbon airport to apartment","Private car, child seat","~25 euros","https://www.welcomepickups.com/lisbon/airport-transfer/"],
+  ["Thu Nov 12, 08:20","Apartment to Lisbon airport","Private car, child seat","~25 euros","https://www.welcomepickups.com/lisbon/airport-transfer/"],
+  ["Thu Nov 12, 15:00","Malaga Airport to Granada","Keep the booked ALSA coach (private car ~95 to 110 euros)","Booked","https://www.alsa.com/en/"],
+  ["Mon Nov 16, 14:00","Seville apartment to SVQ","Private car, child seat","~50 euros","https://www.welcomepickups.com/seville/"],
+  ["Mon Nov 16, 19:45","CDG T2G to Nestay","Private van (5 bags), child seat free","~130 euros","https://www.parisdrivip.com/en/"],
+  ["Tue Nov 17","Nestay to Disneyland and back","Optional private car","price on request","https://www.parisdrivip.com/en/"],
+  ["Thu Nov 19, 07:30","Nestay to CDG","Private car or van, child seat","~80 to 130 euros","https://www.parisdrivip.com/en/"]
+];
+function renderCodes(){
+  var rows = CODES.map(function(x){
+    return '<details class="acc"><summary><span style="color:var(--mute);font-weight:600;margin-right:8px">'+x.d+'</span>'+x.w+'</summary>'
+      + '<div class="acc-b"><div style="margin-bottom:6px">'+x.c+'</div>'
+      + (x.x?'<div style="margin-bottom:8px;color:var(--mute)">'+x.x+'</div>':'')
+      + '<a class="btn btn-sm" href="'+x.l+'" target="_blank" rel="noopener">'+x.ln+'</a>'
+      + (x.l2?' <a class="btn btn-sm" href="'+x.l2+'" target="_blank" rel="noopener">'+x.ln2+'</a>':'')+'</div></details>';
+  }).join('');
+  var tr = TRANSFERS.map(function(r){
+    return '<tr><td><b>'+r[0]+'</b></td><td>'+r[1]+'</td><td>'+r[2]+'</td><td class="num">'+r[3]+'</td>'
+      + '<td><a href="'+r[4]+'" target="_blank" rel="noopener">Book</a></td></tr>';
+  }).join('');
+  return simpleHead('Bookings & Codes', 'Tap any booking to open its details, codes and links. Passport scans are in the private Drive folder (Checklist tab).')
+    + '<div class="card blk">'+rows+'</div>'
+    + '<div class="blk"><div class="blk-h">Private transfers (replace Bolt and taxis)</div>'
+    + '<div class="tw tsc"><table><thead><tr><th>When</th><th>Route</th><th>What</th><th class="num">Approx.</th><th></th></tr></thead><tbody>'+tr+'</tbody></table></div>'
+    + '<div class="s-s" style="margin-top:8px">Ask for a child seat for Izyan on every booking. Prices are approximate; confirm before paying. Short in-city rides stay on Bolt or taxi.</div></div>';
+}
+
 var RENDER = {
   itinerary: renderItinerary, flights: renderFlights, stay: renderStay,
   conflicts: renderConflicts, insurance: renderInsurance,
   booking: renderBooking, budget: renderBudget, packing: renderPacking,
-  food: renderFood, izyan: renderIzyan
+  food: renderFood, izyan: renderIzyan, codes: renderCodes
 };
 var built = {};
 
