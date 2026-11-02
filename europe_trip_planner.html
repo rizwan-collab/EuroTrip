@@ -548,7 +548,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-10-31r";
+var BUILD = "2026-10-31s";
 var BUILD_LABEL = "Updated Oct 31";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -778,7 +778,7 @@ var PLAN = [
   warn:"<b>Flight booked: TAP, Lisbon 10:45 to Malaga 13:00. Coach BOOKED: ALSA 15:00 from Malaga Airport to Granada bus station, arrives 17:15, seats 34, 33 and 30, 43.27 euros with the extra bag.</b> Leaves from the airport itself, so no train transfer with bags, and two hours of buffer after landing. Checked live 10 Oct: there is no 14:45 departure. If the flight is badly late, the 16:00 from Malaga city station (arr 17:30) is the backup. <b>Luggage:</b> Basica includes 3 hold bags and 3 small items for the three of you: the suitcase (keep it at or under 20 kg) and the roller go underneath, backpacks come on board. Extra bag already paid (5 euros), so you are covered even with a second roller. Izyan gets his big train ride two days later: the AVE from Cordoba to Seville on Nov 14.",
   sched:[
     ["07:45","Breakfast, final pack","Bags by the door before you sit down. Nothing loose."],
-    ["08:20","PRIVATE CAR to LIS (pre-book)","Pickup at the apartment, child seat. About 25 euros, 25 minutes. Bolt is the backup."],
+    ["08:20","Bolt XL to LIS","Book Bolt XL (room for 5 bags) from the apartment. About 15 to 25 euros, 25 minutes."],
     ["08:45","Bag drop and security","Two hours for a short hop with a checked bag. TAP flies from Terminal 1."],
     ["10:45","Depart Lisbon, TP1136","TAP, 1h15 direct. One checked bag on the booking, on your ticket. Zaibnish and Izyan are carry-on only, 10kg each."],
     ["13:00","Land Malaga","Spain is an hour ahead, so you gain an hour on paper and lose it on the clock."],
@@ -948,7 +948,7 @@ var PLAN = [
     ["11:45","Check out, bags to the housekeeper","Check-out is by 12:00. Iberflat has no luggage room; the housekeeper holds bags only if you arranged it a few days ahead (+34 955 515 541)."],
     ["12:30","Lunch in Seville","Better than anything you will get at the airport."],
     ["13:45","Collect the bags","Back at Calle San Gregorio 7 for the suitcase, roller and backpacks."],
-    ["14:00","PRIVATE CAR to SVQ (pre-book)","Pickup at Calle San Gregorio 7 after collecting the bags, child seat. About 50 euros. Official taxi 26 to 29 euros is the backup."],
+    ["14:00","Taxi or Uber/Bolt to SVQ","Official taxi from Puerta de Jerez rank, fixed 26 to 29 euros, about 20 minutes. Collect bags from the housekeeper first."],
     ["14:40","Check in and security","Small airport, quick to move through."],
     ["16:40","Depart Seville","Air France, booked and paid. Direct to CDG, 2h35, and the fare carries your checked bag."],
     ["19:15","Land CDG, Terminal 2G","Same time zone as Spain, so no clock change."],
@@ -1074,7 +1074,7 @@ var PLAN = [
   sum:"Breakfast and a taxi. Nothing else, and nothing needed.",
   sched:[
     ["06:45","Breakfast, final check","Anything left on Rue Cler, or the apartment kitchen. Bins out, keys where the host asked."],
-    ["07:30","PRIVATE CAR to CDG (pre-book)","Pickup at Nestay, child seat, all bags. About 80 to 130 euros, 50 minutes. Backup: flat-rate taxi, 65 euros."],
+    ["07:30","Official taxi to CDG","Flat fare 56 euros from the Right Bank (Nestay is Right Bank), about 50 minutes. Taxi rank on Rue de Rivoli or book G7 the night before."],
     ["08:20","Arrive CDG","American boards from Terminal 2A. Bag drop, security, then French exit passport control, which is the slow part."],
     ["11:05","Depart CDG for Dallas","<b>AA 49</b>. Nonstop, lunch and a snack served."],
     ["14:50","Land DFW","Same calendar day, you gain seven hours. US immigration and customs, then re-check nothing &mdash; this is the end of the line."],
@@ -1373,7 +1373,7 @@ function renderFlights(){
     + '<td>Trainline</td></tr>'
     + '<tr><td><b>CDG to central Paris</b></td><td>Nov 16</td><td>RER B train</td><td>45min</td><td class="num">$38</td>'
     + '<td><a href="https://www.ratp.fr/en" target="_blank" rel="noopener">ratp.fr</a></td></tr>'
-    + '<tr><td><b>Paris to CDG</b></td><td>Nov 19</td><td>Taxi, regulated flat rate</td><td>50min</td><td class="num">65 euros</td>'
+    + '<tr><td><b>Paris to CDG</b></td><td>Nov 19</td><td>Taxi, regulated flat rate</td><td>50min</td><td class="num">56 euros</td>'
     + '<td>Any official rank</td></tr>'
     + '</tbody></table></div></div>'
     + '<div class="note n-i"><span class="n-t">Where the train actually wins, and where it does not</span>'
@@ -2049,7 +2049,7 @@ var BDG = [
   {d:8, dt:"Mon Nov 16", c:"Seville to Paris",   i:"Lunch in Seville, taxi, RER B, dinner",           e:110},
   {d:9, dt:"Tue Nov 17", c:"Disneyland Paris",     i:"Park food, RER A, snacks",                        e:130},
   {d:10,dt:"Wed Nov 18", c:"Paris",             i:"Market breakfast, lunch, Seine cruise, dinner",   e:160},
-  {d:11,dt:"Thu Nov 19", c:"Paris to Texas",    i:"Breakfast, CDG taxi at 65 euros, drive home",     e:120}
+  {d:11,dt:"Thu Nov 19", c:"Paris to Texas",    i:"Breakfast, CDG taxi at 56 euros, drive home",     e:120}
 ];
 var BDG_TOTAL = BDG.reduce(function(s,x){ return s + x.e; }, 0);
 
@@ -2774,7 +2774,7 @@ function renderFlights(){
     + '<tr><td>Nov 12</td><td>Malaga Airport to Granada</td><td><b>ALSA coach, booked</b> (seats 34, 33, 30)</td><td>15:00 to 17:15</td></tr>'
     + '<tr><td>Nov 14</td><td>Granada to Seville</td><td><b>Train, booked</b> (change at Cordoba)</td><td>11:04 to 14:39</td></tr>'
     + '<tr><td>Nov 16</td><td>CDG to Paris</td><td>Shuttle N2 to 2F, then RER B</td><td>About 1h15</td></tr>'
-    + '<tr><td>Nov 19</td><td>Paris to CDG</td><td>Taxi, flat 65 euros</td><td>About 50 min</td></tr>'
+    + '<tr><td>Nov 19</td><td>Paris to CDG</td><td>Taxi, flat 56 euros</td><td>About 50 min</td></tr>'
     + '</tbody></table></div></div>';
   var bags = '<div class="blk"><div class="blk-h">Bags</div>'
     + '<div class="note n-g">1 checked suitcase (paid on every flight), 1 roller, 3 backpacks. '
@@ -2902,13 +2902,14 @@ var CODES = [
   {d:"Nov 9-19", w:"Travel insurance: Tin Leg Gold", s:"https://www.tinleg.com", x:"Medical $500k pp primary, evacuation $500k pp, no deductible. Delay, baggage and missed-connection cover. Call before non-emergency hospital stays, within 48 h of an emergency admission, before surgery.", c:"<b>Policy 53-TLG-8A2-882A3</b> &middot; Emergency +1 727-264-5657 (collect) &middot; emergency@tinleg.com", l:"https://www.tinleg.com/report-claim", ln:"Tin Leg claims"}
 ];
 var TRANSFERS = [
-  ["Tue Nov 10, ~11:15","Lisbon airport to apartment","Private car, child seat","~25 euros","https://www.welcomepickups.com/lisbon/airport-transfer/"],
-  ["Thu Nov 12, 08:20","Apartment to Lisbon airport","Private car, child seat","~25 euros","https://www.welcomepickups.com/lisbon/airport-transfer/"],
-  ["Thu Nov 12, 15:00","Malaga Airport to Granada","Keep the booked ALSA coach (private car ~95 to 110 euros)","Booked","https://www.alsa.com/en/"],
-  ["Mon Nov 16, 14:00","Seville apartment to SVQ","Private car, child seat","~50 euros","https://www.welcomepickups.com/seville/"],
-  ["Mon Nov 16, 19:45","CDG T2G to Nestay","Private van (5 bags), child seat free","~130 euros","https://www.parisdrivip.com/en/"],
-  ["Tue Nov 17","Nestay to Disneyland and back","Optional private car","price on request","https://www.parisdrivip.com/en/"],
-  ["Thu Nov 19, 07:30","Nestay to CDG","Private car or van, child seat","~80 to 130 euros","https://www.parisdrivip.com/en/"]
+  ["Tue Nov 10, ~11:15","Lisbon airport to apartment","<b>PRIVATE</b> car, English-speaking driver, child seat, meet in arrivals","~25 to 45 euros","https://www.welcomepickups.com/lisbon/airport-transfer/"],
+  ["Thu Nov 12, 08:20","Apartment to Lisbon airport","Bolt XL (5 bags)","~15 to 25 euros","https://bolt.eu"],
+  ["Thu Nov 12, 15:00","Malaga Airport to Granada","ALSA coach (booked)","43.27 euros paid","https://www.alsa.com/en/"],
+  ["Thu Nov 12 / Sat Nov 14","Granada bus station to hotel; hotel to train station","Taxi","~12 to 15 euros each","https://www.google.com/maps/search/?api=1&query=taxi+Granada"],
+  ["Sat Nov 14, 14:39","Santa Justa station to apartment","Taxi","~10 to 12 euros","https://www.google.com/maps/search/?api=1&query=Sevilla+Santa+Justa+taxi"],
+  ["Mon Nov 16, 14:00","Seville apartment to SVQ","Official taxi or Uber/Bolt","26 to 29 euros","https://www.google.com/maps/search/?api=1&query=Puerta+de+Jerez+taxi+Sevilla"],
+  ["Mon Nov 16, 19:45","CDG T2G to Nestay","<b>PRIVATE</b> van (5 bags), English-speaking driver, child seat free","~130 euros","https://www.parisdrivip.com/en/"],
+  ["Thu Nov 19, 07:30","Nestay to CDG","Official taxi, flat fare (Right Bank)","56 euros","https://www.g7.fr/en"]
 ];
 function renderCodes(){
   var rows = CODES.map(function(x){
@@ -2927,9 +2928,9 @@ function renderCodes(){
   return simpleHead('Bookings & Codes', 'Tap any booking to open its details, codes and links.')
     + '<div class="note n-g" style="margin-bottom:14px"><span class="n-t">Passports &amp; insurance documents</span>Scans of all three passports and the Tin Leg policy. Opens when signed in as rizwan@swagprint.com. <a class="btn btn-p" href="https://drive.google.com/drive/folders/1DOcW20QwsuDA3ThgDWjzwOOnXIh940XN" target="_blank" rel="noopener" style="display:inline-block;margin-top:6px">Open passports folder</a></div>'
     + '<div class="card blk">'+rows+'</div>'
-    + '<div class="blk"><div class="blk-h">Private transfers (replace Bolt and taxis)</div>'
+    + '<div class="blk"><div class="blk-h">Transfers plan (hybrid): private for the two arrivals, Bolt/taxi for the rest</div>'
     + '<div class="tw tsc"><table><thead><tr><th>When</th><th>Route</th><th>What</th><th class="num">Approx.</th><th></th></tr></thead><tbody>'+tr+'</tbody></table></div>'
-    + '<div class="s-s" style="margin-top:8px">Ask for a child seat for Izyan on every booking. Prices are approximate; confirm before paying. Short in-city rides stay on Bolt or taxi.</div></div>';
+    + '<div class="s-s" style="margin-top:8px">Ask for a child seat for Izyan on every booking. Prices are approximate; confirm before paying. Private cars only for the Lisbon and Paris arrivals; all transfers together about 270 to 330 euros.</div></div>';
 }
 
 /* ---- Pick-one choices per day (31 Oct). Built for: no pork, no bar-style places, Izyan picky + loves sweets + early dinners,
