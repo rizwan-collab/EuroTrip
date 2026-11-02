@@ -5,7 +5,10 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0b1220">
+<meta name="apple-mobile-web-app-title" content="EuroTrip">
+<meta name="format-detection" content="telephone=no">
 <title>Europe 2026 &middot; Trip Planner</title>
 <style>
 :root{
@@ -463,6 +466,89 @@ details.acc .acc-b{padding:0 16px 14px 33px;font-size:13px;line-height:1.6;color
 .note.fold>.n-body{display:none;margin-top:9px}
 .note.fold.open>.n-body{display:block}
 .note.fold>.n-t .pk{font-size:11px;font-weight:600;opacity:.6;margin-left:6px}
+
+/* ==================== MOBILE POLISH (trip use) ==================== */
+.daybar{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;
+  position:sticky;top:var(--navh,46px);z-index:40;background:rgba(251,252,253,.96);backdrop-filter:blur(10px);
+  margin:0 -16px 16px;padding:8px 16px;border-bottom:1px solid var(--line)}
+.daybar::-webkit-scrollbar{display:none}
+.dchip{flex:none;font:inherit;font-size:13px;font-weight:600;padding:8px 12px;min-height:40px;border-radius:20px;
+  border:1px solid var(--line);background:var(--card);color:var(--ink2);cursor:pointer;white-space:nowrap}
+.dchip.today{background:var(--brand);border-color:var(--brand);color:#fff}
+.dchip.past{color:var(--faint)}
+.card.isToday{border-color:var(--brand);box-shadow:0 0 0 3px rgba(29,78,216,.12)}
+.daycard{scroll-margin-top:calc(var(--navh,46px) + 64px)}
+.totop{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:60;width:48px;height:48px;
+  border-radius:50%;border:0;background:var(--ink);color:#fff;font-size:20px;box-shadow:0 4px 14px rgba(0,0,0,.25);
+  display:none;cursor:pointer}
+.totop.on{display:block}
+.chrow{display:flex;gap:8px;margin-top:6px}
+.chrow .btn{flex:1}
+nav{position:sticky}
+@media(max-width:880px){
+  body{font-size:15px}
+  header{padding:16px 0 14px}
+  .hdr{gap:10px}
+  .h-ttl{font-size:20px}
+  .h-sub{font-size:13px}
+  .h-meta,.h-meta[class]{grid-template-columns:repeat(3,1fr)}
+  .h-meta>div:last-child{grid-column:auto}
+  .h-m-l{font-size:10.5px}
+  .h-m-v{font-size:14px}
+  .livebar{font-size:12px}
+  .wrap{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
+  nav::after{content:"";position:absolute;right:0;top:0;bottom:1px;width:28px;pointer-events:none;
+    background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.95))}
+  .nv{padding:14px 13px;font-size:14px;min-height:46px}
+  .s-s{font-size:14.5px}
+  .blk-h{font-size:12px}
+  .pill{font-size:11.5px;padding:3px 9px}
+  .dh-d{font-size:12px}
+  .dh-c{font-size:17.5px}
+  .tl{padding:9px 16px;gap:12px}
+  .tl-t{font-size:13px;min-width:48px}
+  .tl-w{font-size:15px}
+  .tl-n{font-size:13.5px}
+  .btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center;font-size:14px;padding:10px 14px;vertical-align:middle}
+  .btn-sm{min-height:42px;font-size:13.5px;padding:9px 13px;margin:3px 0}
+  details.acc>summary{padding:14px 16px;font-size:15px;min-height:50px;line-height:1.4}
+  details.acc .acc-b{padding:0 16px 16px 16px;font-size:14.5px}
+  .acc-n{font-size:12px}
+  .acc-grp{margin:12px}
+  .acc-grp-h{font-size:12px}
+  .note{font-size:14.5px}
+  .n-t,.panel-t{font-size:15px}
+  .panel-b,.leg-d,.d-l{font-size:14.5px}
+  .leg-n,.h-mt,.h-area,.h-dates{font-size:13.5px}
+  .h-nm{font-size:15px}
+  .spec{font-size:14.5px}
+  .spec dt{font-size:11.5px}
+  .st-l{font-size:11px} .st-n{font-size:12.5px}
+  .chk{gap:14px;padding:14px 16px}
+  .chk input,.bk-main input{width:24px;height:24px;margin-top:0}
+  .chk-t,.bk-t{font-size:15px}
+  .chk-n,.bk-n{font-size:13.5px}
+  .opt-n{font-size:14.5px} .opt-d,.opt-p{font-size:13.5px}
+  table{font-size:14px}
+  th{font-size:11.5px}
+  input,select,textarea{font-size:16px!important}
+  a[href^="tel:"]{display:inline-block;padding:7px 0;font-weight:600}
+  footer{font-size:12.5px}
+  table.stack thead{display:none}
+  table.stack,table.stack tbody,table.stack tr,table.stack td{display:block;width:100%}
+  table.stack tr{padding:12px 14px;border-bottom:1px solid var(--line)}
+  table.stack tbody tr:last-child{border-bottom:0}
+  table.stack td{display:flex;gap:12px;padding:3px 0;border:0;text-align:left;white-space:normal}
+  table.stack td::before{content:attr(data-label);flex:none;width:78px;font-size:11.5px;font-weight:600;
+    text-transform:uppercase;letter-spacing:.06em;color:var(--faint);padding-top:3px}
+  table.stack td[data-label=""]::before{display:none}
+  table.stack td a{display:inline-flex;align-items:center;min-height:42px;font-weight:600}
+  .tsc{overflow-x:visible}
+  [style*="font-size:11px"],[style*="font-size:11.5px"],[style*="font-size:12px"],[style*="font-size:12.5px"]{font-size:14px!important}
+  .chk-t a,.acc-b a:not(.btn),.note a:not(.btn),.panel-b a{display:inline-block;padding:6px 0}
+  .pk{font-size:12px!important}
+  .livebar .pill{display:none}
+}
 </style>
 </head>
 <body>
@@ -548,7 +634,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-10-31s";
+var BUILD = "2026-11-02a";
 var BUILD_LABEL = "Updated Oct 31";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -2750,12 +2836,17 @@ function renderItinerary(){
         + '<span class="tl-w">'+(isBooked?'<b>'+s[1]+'</b>':s[1])
         + (s[2]?'<span class="tl-n">'+shortTxt(s[2],140)+'</span>':'')+'</span></div>';
     }).join('');
-    return '<div class="card blk">'
+    return '<div class="card blk daycard" id="day-'+D.n+'" data-dt="'+D.date+'">'
       + '<div class="dh"><div><div class="dh-d">Day '+D.n+' &middot; '+D.date+'</div>'
       + '<div class="dh-c">'+D.city+'</div></div></div>'
       + '<div class="tl-wrap">'+rows+'</div>' + choicesBlock(D.n) + '</div>';
   }).join('');
-  return simpleHead('Day by Day', 'Times are a guide; bold items are booked. Under each day, tap a meal or activity to see 4 options and pick one (saved in this browser). '+staleBadge()) + days;
+  var tn = todayN();
+  var chips = '<div class="daybar">' + PLAN.map(function(D){
+    var c = D.n===tn ? ' today' : (tn && D.n<tn ? ' past' : '');
+    return '<button class="dchip'+c+'" onclick="jumpDay('+D.n+')">'+(D.n===tn?'Today · ':'')+D.date.replace(/^(\w+) Nov /,'$1 ')+'</button>';
+  }).join('') + '</div>';
+  return simpleHead('Day by Day', 'Times are a guide; bold items are booked. Tap a meal or activity to see 4 options and pick one (saved on this phone).') + chips + days;
 }
 
 function renderFlights(){
@@ -2806,7 +2897,8 @@ function renderStay(){
 
 function renderInsurance(){
   var em = EMERGENCY.rows.map(function(r){
-    return '<tr><td><b>'+r[0]+'</b></td><td style="white-space:nowrap">'+r[1]+'</td></tr>';
+    var v = /^[+0-9][0-9 ]{2,}$/.test(r[1]) ? '<a href="tel:'+r[1].replace(/ /g,'')+'" style="white-space:nowrap">'+r[1]+'</a>' : r[1];
+    return '<tr><td><b>'+r[0]+'</b></td><td>'+v+'</td></tr>';
   }).join('');
   return simpleHead('Insurance & Safety')
     + '<div class="note n-g"><span class="n-t">Tin Leg Gold &middot; all three of you &middot; Nov 9 to 19</span>'
@@ -2913,7 +3005,7 @@ var TRANSFERS = [
 ];
 function renderCodes(){
   var rows = CODES.map(function(x){
-    return '<details class="acc"><summary><span style="color:var(--mute);font-weight:600;margin-right:8px">'+x.d+'</span>'+x.w+'</summary>'
+    return '<details class="acc"><summary><span style="color:var(--mute);font-weight:600;margin-right:8px;white-space:nowrap">'+x.d+'</span>'+x.w+'</summary>'
       + '<div class="acc-b"><div style="margin-bottom:6px">'+x.c+'</div>'
       + (x.x?'<div style="margin-bottom:8px;color:var(--mute)">'+x.x+'</div>':'')
       + '<a class="btn btn-sm" href="'+x.l+'" target="_blank" rel="noopener">'+x.ln+'</a>'
@@ -2923,13 +3015,13 @@ function renderCodes(){
   }).join('');
   var tr = TRANSFERS.map(function(r){
     return '<tr><td><b>'+r[0]+'</b></td><td>'+r[1]+'</td><td>'+r[2]+'</td><td class="num">'+r[3]+'</td>'
-      + '<td><a href="'+r[4]+'" target="_blank" rel="noopener">Book</a></td></tr>';
+      + '<td><a href="'+r[4]+'" target="_blank" rel="noopener">Open</a></td></tr>';
   }).join('');
   return simpleHead('Bookings & Codes', 'Tap any booking to open its details, codes and links.')
     + '<div class="note n-g" style="margin-bottom:14px"><span class="n-t">Passports &amp; insurance documents</span>Scans of all three passports and the Tin Leg policy. Opens when signed in as rizwan@swagprint.com. <a class="btn btn-p" href="https://drive.google.com/drive/folders/1DOcW20QwsuDA3ThgDWjzwOOnXIh940XN" target="_blank" rel="noopener" style="display:inline-block;margin-top:6px">Open passports folder</a></div>'
     + '<div class="card blk">'+rows+'</div>'
     + '<div class="blk"><div class="blk-h">Transfers plan (hybrid): private for the two arrivals, Bolt/taxi for the rest</div>'
-    + '<div class="tw tsc"><table><thead><tr><th>When</th><th>Route</th><th>What</th><th class="num">Approx.</th><th></th></tr></thead><tbody>'+tr+'</tbody></table></div>'
+    + '<div class="tw tsc"><table class="stack"><thead><tr><th>When</th><th>Route</th><th>What</th><th class="num">Approx.</th><th></th></tr></thead><tbody>'+tr+'</tbody></table></div>'
     + '<div class="s-s" style="margin-top:8px">Ask for a child seat for Izyan on every booking. Prices are approximate; confirm before paying. Private cars only for the Lisbon and Paris arrivals; all transfers together about 270 to 330 euros.</div></div>';
 }
 
@@ -3098,7 +3190,28 @@ var CHOICES = {
  ]
 };
 function pickKey(d,s){ return 'pick_'+d+'_'+s.replace(/\W+/g,''); }
-function choosePick(d,s,i){ save(pickKey(d,s), String(i)); built.itinerary=false; show('itinerary'); }
+function choosePick(d,s,i){
+  save(pickKey(d,s), String(i));
+  var el = document.getElementById('s-itinerary'), y = window.scrollY;
+  el.innerHTML = RENDER.itinerary(); foldNotes(el);
+  window.scrollTo(0, y); centerChip();
+  var card = document.getElementById('day-'+d);
+  if(card){ var sm = [].slice.call(card.querySelectorAll('details.acc>summary')).filter(function(x){ return x.textContent.indexOf(s+':')>-1; })[0];
+    if(sm){ var r = sm.getBoundingClientRect(); if(r.top < 60 || r.bottom > window.innerHeight) sm.scrollIntoView({block:'center'}); } }
+}
+function todayN(){
+  var t = new Date(); if(t.getFullYear()!==2026 || t.getMonth()!==10) return 0;
+  var n = t.getDate() - 8; return (n>=1 && n<=11) ? n : 0;
+}
+function centerChip(){ var t=document.querySelector('.dchip.today'); if(t){ var b=t.parentElement; b.scrollLeft = t.offsetLeft - (b.clientWidth - t.offsetWidth)/2; } }
+function jumpDay(n){ var c = document.getElementById('day-'+n); if(c) c.scrollIntoView({behavior:'smooth', block:'start'}); }
+function mobPolish(el){
+  [].forEach.call(el.querySelectorAll('table.stack'), function(t){
+    var hs = [].map.call(t.querySelectorAll('thead th'), function(h){ return h.textContent.trim(); });
+    [].forEach.call(t.querySelectorAll('tbody tr'), function(tr){ [].forEach.call(tr.children, function(td,i){ td.setAttribute('data-label', hs[i]||''); }); });
+  });
+  var tn = todayN(), tc = el.querySelector('#day-'+tn); if(tc) tc.classList.add('isToday');
+}
 function choicesBlock(n){
   var list = CHOICES[n]; if(!list) return '';
   return '<div style="border-top:1px solid var(--line2)">' + list.map(function(c){
@@ -3108,9 +3221,10 @@ function choicesBlock(n){
     var opts = c.o.map(function(o,i){
       var on = i===pi;
       return '<div style="padding:9px 12px;margin:6px 0;border:1px solid '+(on?'var(--good)':'var(--line)')+';border-radius:8px;background:'+(on?'var(--good-lt)':'var(--card)')+'">'
-        + '<div style="font-weight:600;font-size:13.5px">'+o.n+(o.best?' <span class="pill p-g">Suggested</span>':'')+(o.local?' <span class="pill p-b">Local favourite</span>':'')+'</div>'
-        + (o.a?'<div style="font-size:12.5px;margin-top:3px">&#128205; '+o.a+' &middot; <b>'+o.h+'</b> <a href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(o.a)+'" target="_blank" rel="noopener">Map</a></div>':'')+ '<div style="font-size:12.5px;color:var(--mute);margin:3px 0 6px">Why: '+o.why+'</div>'
-        + '<button class="btn btn-sm'+(on?' btn-p':'')+'" onclick="choosePick('+n+',\''+c.s.replace(/'/g,"\\'")+'\','+i+')">'+(on?'Picked':'Pick this')+'</button></div>';
+        + '<div style="font-weight:600;font-size:15px">'+o.n+(o.best?' <span class="pill p-g">Suggested</span>':'')+(o.local?' <span class="pill p-b">Local favourite</span>':'')+'</div>'
+        + (o.a?'<div style="font-size:14px;margin-top:4px">&#128205; '+o.a+' &middot; <b>'+o.h+'</b></div>':'')+ '<div style="font-size:14px;color:var(--mute);margin:4px 0 6px">Why: '+o.why+'</div>'
+        + '<div class="chrow"><button class="btn btn-sm'+(on?' btn-p':'')+'" onclick="choosePick('+n+',\''+c.s.replace(/'/g,"\\'")+'\','+i+')">'+(on?'&#10003; Picked':'Pick this')+'</button>'
+        + (o.a?'<a class="btn btn-sm" href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(o.a)+'" target="_blank" rel="noopener">Map</a>':'')+'</div></div>';
     }).join('');
     return '<details class="acc"><summary><span style="color:var(--mute);margin-right:6px">'+c.t+'</span><b>'+c.s+':</b> '+(pi>=0?'&#10003; '+label:'<span style="color:var(--brand)">'+label+'</span>')+'</summary>'
       + '<div class="acc-b">'+opts+'</div></details>';
@@ -3170,11 +3284,18 @@ function show(key){
     if(key === "budget") loadBudget();
   }
   foldNotes(el);
+  mobPolish(el);
   el.classList.add("on");
   save("tab", key);
   window.scrollTo(0, 0);
   paintLive();
+  var nb = document.querySelector('.nv.on'), nv = document.getElementById('nav');
+  if(nb && nv){ nv.scrollLeft = nb.offsetLeft - (nv.clientWidth - nb.offsetWidth)/2; }
+  centerChip();
+  document.documentElement.style.setProperty('--navh', (document.querySelector('nav').offsetHeight||46)+'px');
+  if(key === 'itinerary' && todayN() > 1 && !show._jumped){ show._jumped = true; setTimeout(function(){ var c=document.getElementById('day-'+todayN()); if(c) c.scrollIntoView({block:'start'}); }, 60); }
 }
+window.addEventListener('scroll', function(){ var b = document.getElementById('totop'); if(b) b.classList.toggle('on', window.scrollY > 900); }, {passive:true});
 
 (function init(){
   var nav = document.getElementById("nav");
@@ -3191,5 +3312,6 @@ function show(key){
   loadFX();
 })();
 </script>
+<button class="totop" id="totop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
 </body>
 </html>
