@@ -634,8 +634,8 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-02a";
-var BUILD_LABEL = "Updated Oct 31";
+var BUILD = "2026-11-02b";
+var BUILD_LABEL = "Updated Nov 2";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
   try{
@@ -3313,5 +3313,11 @@ window.addEventListener('scroll', function(){ var b = document.getElementById('t
 })();
 </script>
 <button class="totop" id="totop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
+<div id="offpill" style="display:none;position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom));z-index:61;background:#a1620a;color:#fff;font-size:13px;font-weight:600;padding:8px 14px;border-radius:20px;box-shadow:0 4px 14px rgba(0,0,0,.2)">Offline &middot; showing saved copy</div>
+<script>
+if('serviceWorker' in navigator){ window.addEventListener('load', function(){ navigator.serviceWorker.register('sw.js').catch(function(){}); }); }
+function offPill(){ var b=document.getElementById('offpill'); if(b) b.style.display = navigator.onLine ? 'none' : 'block'; }
+window.addEventListener('online', offPill); window.addEventListener('offline', offPill); offPill();
+</script>
 </body>
 </html>
