@@ -652,7 +652,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-04a";
+var BUILD = "2026-11-04b";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -3298,8 +3298,8 @@ function wxFetch(force){
 }
 function wxDay(k, iso){
   if(!WX || !WX.d[k]) return null;
-  var D = WX.d[k].daily, i = D.time.indexOf(iso); if(i<0) return null;
-  var r = {code:D.weather_code[i], hi:Math.round(D.temperature_2m_max[i]), lo:Math.round(D.temperature_2m_min[i]),
+  var D = WX.d[k].daily, i = D.time.indexOf(iso); if(i<0 || D.temperature_2m_max[i]===null) return null;
+  var r = {code:D.weather_code[i], hi:(D.temperature_2m_max[i]===null?null:Math.round(D.temperature_2m_max[i])), lo:Math.round(D.temperature_2m_min[i]),
     pop:D.precipitation_probability_max[i], mm:D.precipitation_sum[i], wind:Math.round(D.wind_speed_10m_max[i]),
     rise:(D.sunrise[i]||'').slice(11,16), set:(D.sunset[i]||'').slice(11,16), win:''};
   var H = WX.d[k].hourly;
@@ -3325,7 +3325,7 @@ function wxLine(k, iso){
   if(!r) return '<div class="wx-r"><span class="wx-c">'+L.n+'</span><span class="wx-v wx-dim">Forecast not out yet &middot; typical '+L.norm+'&deg;F</span></div>';
   var ic = wxIcon(r.code), tip = wxTips(r);
   return '<div class="wx-r"><span class="wx-c">'+L.n+'</span><span class="wx-v"><span class="wx-i">'+ic[0]+'</span><b>'+r.hi+'&deg;</b> / '+r.lo+'&deg;F &middot; '+ic[1]
-    + ' &middot; '+r.pop+'% chance of rain'+(r.win?', mostly '+r.win:'')+' &middot; wind '+r.wind+' mph'
+    + (r.pop===null||r.pop===undefined ? (r.mm>0.02?' &middot; rain possible':'') : ' &middot; '+r.pop+'% chance of rain'+(r.win?', mostly '+r.win:''))+' &middot; wind '+r.wind+' mph'
     + (tip?'<span class="wx-t">'+tip+'</span>':'')+'</span></div>';
 }
 function wxAge(){
@@ -3354,7 +3354,7 @@ function wxPaint(){
       var k = WX_DAY[D.n][WX_DAY[D.n].length-1], r = wxDay(k, wxIso(D.n)), L = WX_LOC[k];
       if(!r) return '<tr><td><b>'+D.date.replace(/^(\w+) Nov /,'$1 ')+'</b></td><td>'+L.n+'</td><td colspan="2" class="wx-dim">typical '+L.norm+'&deg;F</td></tr>';
       var ic = wxIcon(r.code);
-      return '<tr onclick="jumpDay('+D.n+')"><td><b>'+D.date.replace(/^(\w+) Nov /,'$1 ')+'</b></td><td>'+L.n+'</td><td style="white-space:nowrap">'+ic[0]+' <b>'+r.hi+'&deg;</b>/'+r.lo+'&deg;</td><td style="white-space:nowrap">'+(r.pop>=50?'<b style="color:var(--bad)">'+r.pop+'%</b>':r.pop+'%')+'</td></tr>';
+      return '<tr onclick="jumpDay('+D.n+')"><td><b>'+D.date.replace(/^(\w+) Nov /,'$1 ')+'</b></td><td>'+L.n+'</td><td style="white-space:nowrap">'+ic[0]+' <b>'+r.hi+'&deg;</b>/'+r.lo+'&deg;</td><td style="white-space:nowrap">'+(r.pop===null||r.pop===undefined?'&ndash;':r.pop>=50?'<b style="color:var(--bad)">'+r.pop+'%</b>':r.pop+'%')+'</td></tr>';
     }).join('');
   }
 }
