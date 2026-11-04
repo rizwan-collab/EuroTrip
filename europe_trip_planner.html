@@ -549,6 +549,24 @@ nav{position:sticky}
   .pk{font-size:12px!important}
   .livebar .pill{display:none}
 }
+
+/* ---- weather ---- */
+.wx{padding:8px 16px;border-bottom:1px solid var(--line2);background:#f7faff}
+.wx:empty{display:none}
+.wx-r{display:flex;gap:10px;align-items:baseline;padding:3px 0;font-size:13.5px;line-height:1.45}
+.wx-c{flex:none;width:78px;font-weight:600;color:var(--ink2);font-size:12.5px}
+.wx-v{color:var(--ink2)}
+.wx-i{margin-right:4px}
+.wx-t{display:block;color:var(--warn);font-weight:600;font-size:12.5px;margin-top:1px}
+.wx-dim{color:var(--mute);font-size:12.5px}
+.wxbox>summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:15px}
+.wxbox>summary::-webkit-details-marker{display:none}
+.wx-now{background:var(--brand-lt);color:#1c3f8f;border-radius:8px;padding:9px 12px;margin:4px 0 10px;font-size:14px}
+.wx-tb{font-size:14px}
+.wx-tb th{padding:8px 8px}
+.wx-tb td{padding:9px 8px}
+.wx-tb tbody tr{cursor:pointer}
+@media(max-width:880px){ .wx-r{font-size:14px} .wx-t{font-size:13px} }
 </style>
 </head>
 <body>
@@ -634,8 +652,8 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-02b";
-var BUILD_LABEL = "Updated Nov 2";
+var BUILD = "2026-11-04a";
+var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
   try{
@@ -2839,6 +2857,7 @@ function renderItinerary(){
     return '<div class="card blk daycard" id="day-'+D.n+'" data-dt="'+D.date+'">'
       + '<div class="dh"><div><div class="dh-d">Day '+D.n+' &middot; '+D.date+'</div>'
       + '<div class="dh-c">'+D.city+'</div></div></div>'
+      + '<div class="wx" id="wx-'+D.n+'"></div>'
       + '<div class="tl-wrap">'+rows+'</div>' + choicesBlock(D.n) + '</div>';
   }).join('');
   var tn = todayN();
@@ -2846,7 +2865,7 @@ function renderItinerary(){
     var c = D.n===tn ? ' today' : (tn && D.n<tn ? ' past' : '');
     return '<button class="dchip'+c+'" onclick="jumpDay('+D.n+')">'+(D.n===tn?'Today · ':'')+D.date.replace(/^(\w+) Nov /,'$1 ')+'</button>';
   }).join('') + '</div>';
-  return simpleHead('Day by Day', 'Times are a guide; bold items are booked. Tap a meal or activity to see 4 options and pick one (saved on this phone).') + chips + days;
+  return simpleHead('Day by Day', 'Times are a guide; bold items are booked. Tap a meal or activity to see 4 options and pick one (saved on this phone).') + chips + wxBlock() + days;
 }
 
 function renderFlights(){
@@ -3194,7 +3213,7 @@ function choosePick(d,s,i){
   save(pickKey(d,s), String(i));
   var el = document.getElementById('s-itinerary'), y = window.scrollY;
   el.innerHTML = RENDER.itinerary(); foldNotes(el);
-  window.scrollTo(0, y); centerChip();
+  window.scrollTo(0, y); centerChip(); wxPaint();
   var card = document.getElementById('day-'+d);
   if(card){ var sm = [].slice.call(card.querySelectorAll('details.acc>summary')).filter(function(x){ return x.textContent.indexOf(s+':')>-1; })[0];
     if(sm){ var r = sm.getBoundingClientRect(); if(r.top < 60 || r.bottom > window.innerHeight) sm.scrollIntoView({block:'center'}); } }
@@ -3229,6 +3248,121 @@ function choicesBlock(n){
     return '<details class="acc"><summary><span style="color:var(--mute);margin-right:6px">'+c.t+'</span><b>'+c.s+':</b> '+(pi>=0?'&#10003; '+label:'<span style="color:var(--brand)">'+label+'</span>')+'</summary>'
       + '<div class="acc-b">'+opts+'</div></details>';
   }).join('') + '</div>';
+}
+
+
+/* ===== Live weather (Open-Meteo, no key). Cached on the phone so it shows offline. ===== */
+var WX_LOC = {
+  hou:{n:'Houston', lat:29.99, lon:-95.34, norm:'58 to 74'},
+  lis:{n:'Lisbon', lat:38.711, lon:-9.137, norm:'57 to 64'},
+  gra:{n:'Granada', lat:37.176, lon:-3.590, norm:'46 to 57'},
+  sev:{n:'Seville', lat:37.389, lon:-5.985, norm:'57 to 63'},
+  par:{n:'Paris', lat:48.857, lon:2.352, norm:'43 to 54'},
+  dlp:{n:'Disneyland', lat:48.872, lon:2.776, norm:'42 to 53'},
+  dfw:{n:'Dallas', lat:32.900, lon:-97.040, norm:'50 to 68'}
+};
+var WX_KEYS = ['hou','lis','gra','sev','par','dlp','dfw'];
+var WX_DAY = {1:['hou'],2:['lis'],3:['lis'],4:['lis','gra'],5:['gra'],6:['gra','sev'],7:['sev'],8:['sev','par'],9:['dlp'],10:['par'],11:['par','dfw']};
+var WX = null;
+function wxIso(n){ var d = 8 + n; return '2026-11-' + (d<10?'0':'') + d; }
+function wxIcon(c){
+  if(c===0) return ['&#9728;&#65039;','Sunny'];
+  if(c<=2) return ['&#9925;','Partly cloudy'];
+  if(c===3) return ['&#9729;&#65039;','Cloudy'];
+  if(c===45||c===48) return ['&#127787;&#65039;','Fog'];
+  if(c>=51&&c<=57) return ['&#127782;&#65039;','Drizzle'];
+  if((c>=61&&c<=67)||(c>=80&&c<=82)) return ['&#127783;&#65039;','Rain'];
+  if((c>=71&&c<=77)||c===85||c===86) return ['&#10052;&#65039;','Snow'];
+  if(c>=95) return ['&#9928;&#65039;','Storms'];
+  return ['&#127777;&#65039;',''];
+}
+function wxLoad(){ try{ var j = JSON.parse(localStorage.getItem('eu26_wx')||'null'); if(j && j.d) WX = j; }catch(e){} }
+function wxFetch(force){
+  wxLoad();
+  if(!force && WX && (Date.now() - WX.t) < 60*60*1000){ wxPaint(); return; }
+  var L = WX_KEYS.map(function(k){ return WX_LOC[k]; });
+  var url = 'https://api.open-meteo.com/v1/forecast?latitude=' + L.map(function(x){return x.lat;}).join(',')
+    + '&longitude=' + L.map(function(x){return x.lon;}).join(',')
+    + '&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,precipitation_sum,wind_speed_10m_max,sunrise,sunset'
+    + '&hourly=precipitation_probability&current=temperature_2m,apparent_temperature,weather_code'
+    + '&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=auto&forecast_days=16';
+  fetch(url).then(function(r){ return r.json(); }).then(function(j){
+    if(!Array.isArray(j)) j = [j];
+    if(!j[0] || !j[0].daily) throw 0;
+    var d = {};
+    WX_KEYS.forEach(function(k,i){ var x = j[i]; d[k] = {daily:x.daily, hourly:x.hourly, cur:x.current}; });
+    WX = {t:Date.now(), d:d};
+    try{ localStorage.setItem('eu26_wx', JSON.stringify(WX)); }catch(e){}
+    wxPaint();
+  }).catch(function(){ wxPaint(); });
+}
+function wxDay(k, iso){
+  if(!WX || !WX.d[k]) return null;
+  var D = WX.d[k].daily, i = D.time.indexOf(iso); if(i<0) return null;
+  var r = {code:D.weather_code[i], hi:Math.round(D.temperature_2m_max[i]), lo:Math.round(D.temperature_2m_min[i]),
+    pop:D.precipitation_probability_max[i], mm:D.precipitation_sum[i], wind:Math.round(D.wind_speed_10m_max[i]),
+    rise:(D.sunrise[i]||'').slice(11,16), set:(D.sunset[i]||'').slice(11,16), win:''};
+  var H = WX.d[k].hourly;
+  if(H && r.pop >= 40){
+    var hrs = [];
+    for(var h=0; h<H.time.length; h++){ if(H.time[h].slice(0,10)===iso){ var hr = +H.time[h].slice(11,13); if(hr>=8 && hr<=21 && H.precipitation_probability[h]>=50) hrs.push(hr); } }
+    if(hrs.length) r.win = (hrs[0]<10?'0':'')+hrs[0]+':00 to '+(hrs[hrs.length-1]+1)+':00';
+  }
+  return r;
+}
+function wxTips(r){
+  var t = [];
+  if(r.pop >= 50) t.push('umbrella / rain layer');
+  else if(r.pop >= 30) t.push('pack the rain layer');
+  if(r.lo <= 45) t.push('warm jacket, hat for Izyan');
+  else if(r.lo <= 52) t.push('jacket for mornings');
+  if(r.wind >= 20) t.push('windy');
+  if(r.hi >= 75) t.push('light layers');
+  return t.join(' · ');
+}
+function wxLine(k, iso){
+  var L = WX_LOC[k], r = wxDay(k, iso);
+  if(!r) return '<div class="wx-r"><span class="wx-c">'+L.n+'</span><span class="wx-v wx-dim">Forecast not out yet &middot; typical '+L.norm+'&deg;F</span></div>';
+  var ic = wxIcon(r.code), tip = wxTips(r);
+  return '<div class="wx-r"><span class="wx-c">'+L.n+'</span><span class="wx-v"><span class="wx-i">'+ic[0]+'</span><b>'+r.hi+'&deg;</b> / '+r.lo+'&deg;F &middot; '+ic[1]
+    + ' &middot; '+r.pop+'% chance of rain'+(r.win?', mostly '+r.win:'')+' &middot; wind '+r.wind+' mph'
+    + (tip?'<span class="wx-t">'+tip+'</span>':'')+'</span></div>';
+}
+function wxAge(){
+  if(!WX) return 'Not loaded yet. Needs signal once.';
+  var m = Math.round((Date.now()-WX.t)/60000);
+  return 'Updated ' + (m<1?'just now':m<60?m+' min ago':Math.round(m/60)+' h ago') + (navigator.onLine?'':' (offline, last saved)');
+}
+function wxPaint(){
+  for(var n=1; n<=11; n++){
+    var el = document.getElementById('wx-'+n); if(!el) continue;
+    el.innerHTML = WX_DAY[n].map(function(k){ return wxLine(k, wxIso(n)); }).join('');
+  }
+  var a = document.getElementById('wx-age'); if(a) a.textContent = wxAge();
+  var nw = document.getElementById('wx-now');
+  if(nw){
+    var tn = todayN(), k = tn ? WX_DAY[tn][WX_DAY[tn].length-1] : null;
+    if(k && WX && WX.d[k] && WX.d[k].cur){
+      var c = WX.d[k].cur, ic = wxIcon(c.weather_code);
+      nw.style.display = 'block';
+      nw.innerHTML = '<b>Now in '+WX_LOC[k].n+':</b> '+ic[0]+' '+Math.round(c.temperature_2m)+'&deg;F, feels '+Math.round(c.apparent_temperature)+'&deg;F &middot; '+ic[1];
+    } else nw.style.display = 'none';
+  }
+  var tb = document.getElementById('wx-tbl');
+  if(tb){
+    tb.innerHTML = PLAN.map(function(D){
+      var k = WX_DAY[D.n][WX_DAY[D.n].length-1], r = wxDay(k, wxIso(D.n)), L = WX_LOC[k];
+      if(!r) return '<tr><td><b>'+D.date.replace(/^(\w+) Nov /,'$1 ')+'</b></td><td>'+L.n+'</td><td colspan="2" class="wx-dim">typical '+L.norm+'&deg;F</td></tr>';
+      var ic = wxIcon(r.code);
+      return '<tr onclick="jumpDay('+D.n+')"><td><b>'+D.date.replace(/^(\w+) Nov /,'$1 ')+'</b></td><td>'+L.n+'</td><td style="white-space:nowrap">'+ic[0]+' <b>'+r.hi+'&deg;</b>/'+r.lo+'&deg;</td><td style="white-space:nowrap">'+(r.pop>=50?'<b style="color:var(--bad)">'+r.pop+'%</b>':r.pop+'%')+'</td></tr>';
+    }).join('');
+  }
+}
+function wxBlock(){
+  return '<details class="card blk wxbox" id="wxbox"><summary><span>&#127780;&#65039; <b>Weather, all 11 days</b></span><span class="wx-dim" id="wx-age"></span></summary>'
+    + '<div style="padding:4px 14px 12px"><div id="wx-now" class="wx-now" style="display:none"></div>'
+    + '<table class="wx-tb"><thead><tr><th>Day</th><th>Where</th><th>High/Low</th><th>Rain</th></tr></thead><tbody id="wx-tbl"></tbody></table>'
+    + '<div class="wx-dim" style="margin-top:8px">Live forecast (Open-Meteo), refreshes hourly when there is signal. Tap a row to jump to that day. <button class="btn btn-sm" onclick="wxFetch(true)">Refresh</button></div></div></details>';
 }
 
 var RENDER = {
@@ -3285,6 +3419,7 @@ function show(key){
   }
   foldNotes(el);
   mobPolish(el);
+  if(key === 'itinerary') wxPaint();
   el.classList.add("on");
   save("tab", key);
   window.scrollTo(0, 0);
@@ -3310,6 +3445,9 @@ window.addEventListener('scroll', function(){ var b = document.getElementById('t
   for(var j = 0; j < TABS.length; j++){ if(TABS[j][0] === last) valid = true; }
   show(valid ? last : "itinerary");
   loadFX();
+  wxFetch();
+  setInterval(function(){ wxFetch(); }, 30*60*1000);
+  window.addEventListener('online', function(){ wxFetch(true); });
 })();
 </script>
 <button class="totop" id="totop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
