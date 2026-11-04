@@ -652,7 +652,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-04b";
+var BUILD = "2026-11-04d";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -1135,11 +1135,13 @@ var PLAN = [
     ["12:00","FAMILY PHOTOSHOOT - booked","<b>GetYourGuide, 15 minutes, 5 edited photos, private for up to 4. $39.21, in Zaibnish&#39;s name.</b> Booking reference and PIN in the GetYourGuide app. If you are running late, message the photographer on WhatsApp right away."],
     ["12:30","Lunch","Near the tower or Passy, or L&#39;As du Fallafel in the Marais on the way back (35 minutes). Champ de Mars lawn for Izyan to run first if he needs it."],
     ["13:30","Proper rest at the apartment","Two hours. Tonight runs late."],
-    ["15:30","Luxembourg Gardens or Tuileries","Carousel, sailboats on the pond, room to run. Low effort, high payoff."],
-    ["17:30","Seine cruise","An hour on the water as the light goes. He can move about the deck."],
-    ["19:00","Dinner","Unhurried. Last proper meal of the trip."],
-    ["20:45","Trocadero for the lit tower","<b>Metro 6 to Trocadero, not Bir-Hakeim.</b> The terrace at Place du Trocadero is the postcard view, straight down the Pont d'Iena at the tower. Free, and open all night."],
-    ["21:00","The sparkle - 5 minutes, on the hour","<b>Twenty thousand bulbs, five minutes, every hour after dark.</b> You cannot see this from on the tower, which is exactly why the ascent moved to the morning. Izyan will remember this more than the lift."],
+    ["15:00","Luxembourg Gardens or Tuileries","Carousel, sailboats on the pond, room to run. Keep it to an hour."],
+    ["16:00","Seine cruise","An hour on the water. Sunset is about 17:10, so you catch the light going."],
+    ["17:15","Back to the apartment, warm up and change","Coats on for the evening; lows near freezing."],
+    ["18:00","Leave for Paris Jamatkhana","Address and time to confirm with the Paris Jamat by Sat Nov 7. Metro or Bolt, 20 to 30 min."],
+    ["18:30","PARIS JAMATKHANA - evening prayers (time to confirm)","Your request. Nov 18 is the only free Paris evening."],
+    ["20:00","Dinner","Near the Jamatkhana or back at Les Halles. Last proper meal of the trip."],
+    ["22:00","Optional: Trocadero for the sparkle","<b>Metro 6 to Trocadero.</b> Five minutes of lights on the hour. Skip it if Izyan is done."],
     ["22:15","Back, and pack tonight","So tomorrow morning is only breakfast and a taxi."]
   ],
   activities:{
@@ -2310,24 +2312,24 @@ var PACK = [
     "Two light sweaters",
     "One mid-layer fleece",
     "One warm windproof jacket, packable",
-    "One rain jacket or poncho",
+    "Hooded rain jacket. Lisbon and Granada are forecast wet",
     "Two smart-casual outfits for Paris dinners",
     "Seven sets of underwear and socks",
     "Broken-in walking shoes, not new ones. You will do 15,000 steps a day",
     "One pair of nicer shoes",
-    "Scarf. Paris is cold in November",
+    "Scarf, warm hat and gloves. Paris lows near freezing",
     "Blister plasters. Buy them before, not after"
   ]},
   {h:"Clothing, Izyan", items:[
     "Six or seven sets of trousers and tops. Pack extra",
     "Two warm fleece or hoodie layers",
-    "One proper warm jacket for Granada mornings and Paris",
+    "Winter coat, not just a fleece, for Paris and Disneyland (lows near 33&deg;F)",
     "One rain jacket",
-    "Warm hat and gloves for the 9am Alhambra entry",
+    "Warm hat and gloves for the Alhambra morning and all of Paris",
     "Seven sets of underwear and socks",
     "Two pairs of pyjamas",
     "Comfortable walking shoes. The single most important item you pack",
-    "Light shoes or sandals for Lisbon and Seville",
+    "Light shoes for Seville",
     "Small backpack he carries himself",
     "Two or three favourite small toys",
     "Colouring book and crayons for restaurants",
@@ -2351,6 +2353,14 @@ var PACK = [
     "Small first aid kit with plasters, antiseptic and a thermometer",
     "Sunscreen. Lisbon and Seville are still sunny in November",
     "Snacks for the Cordoba train change on Nov 14"
+  ]},
+  {h:"Cold and rain (Nov 4 forecast)", items:[
+    "Compact umbrella, one per adult",
+    "Water-resistant shoes for everyone. Lisbon cobbles are slippery when wet",
+    "Thermal top and leggings for Izyan for Disneyland",
+    "Spare socks in the day bag on wet days",
+    "Rain covers or plastic bags for the backpacks",
+    "Hand warmers for the Disneyland day"
   ]}
 ];
 
@@ -2370,8 +2380,8 @@ function renderPacking(){
   return '<div class="s-h">Packing</div>'
     + '<div class="s-s">Ticked items save in this browser, so you and Zaibnish can each work through your own copy.</div>'
     + '<div class="note n-w"><span class="n-t">Temperatures you are packing for</span>'
-    + 'Lisbon 57 to 64&deg;F. Seville 57 to 63&deg;F. Granada 46 to 57&deg;F and genuinely cold at the 9am Alhambra '
-    + 'entry. Paris 43 to 54&deg;F. Layers rather than bulk, plus one proper warm jacket each and a rain layer.</div>'
+    + 'Forecast as of Nov 4: Lisbon 59 to 66&deg;F, rain likely both days. Granada 49 to 63&deg;F, wet. Seville 52 to 69&deg;F, dry. '
+    + 'Paris and Disneyland 33 to 51&deg;F. Layers, a hooded rain jacket and a winter coat each. Live forecast: Day by Day, Weather.</div>'
     + '<div class="note n-i"><span class="n-t">Luggage plan</span>'
     + '<b>Three backpacks, one carry-on, one checked bag.</b> That fits every leg, and the checked bag still needs buying on the United outbound. Bring laundry pods '
     + '&mdash; you can wash mid-trip and rewear jeans, which is the difference between one checked bag and two. '
@@ -3184,21 +3194,21 @@ var CHOICES = {
    {n:"L'As du Fallafel (Marais)", a:"34 Rue des Rosiers, 75004 Paris", h:"Metro 30 min from the Eiffel Tower", why:"Famous falafel, comfort food, no pork."},
    {n:"Breizh Cafe crepes (Marais)", a:"109 Rue Vieille du Temple, 75003 Paris", h:"Metro 30 min from the Eiffel Tower", local:1, why:"Top crepes in Paris; sweet ones for Izyan."},
    {n:"Le Relais de l'Entrecote", a:"20 Rue Saint-Benoit, 75006 Paris", h:"Metro 20 min", why:"Simple steak and fries; one dish, no ordering stress."}]},
-  {s:"Afternoon activity", t:"15:30", o:[
+  {s:"Afternoon activity", t:"15:00", o:[
    {n:"Jardin du Luxembourg: sailboats + playground + carousel", a:"Jardin du Luxembourg, 75006", h:"Metro/RER 15 min from Nestay", best:1, local:1, why:"Kid-first classic: he pushes toy sailboats on the pond."},
    {n:"Tuileries carousel + gardens", a:"Jardin des Tuileries, 75001", h:"Walk 15 min from Nestay", why:"Iconic, near the Louvre, close to Nestay."},
-   {n:"Seine cruise at dusk (17:30)", a:"Vedettes du Pont Neuf, Square du Vert-Galant", h:"Walk 12 min from Nestay", why:"Sit-down sightseeing as the city lights up."},
+   {n:"Seine cruise (16:00)", a:"Vedettes du Pont Neuf, Square du Vert-Galant", h:"Walk 12 min from Nestay", why:"Sit-down sightseeing as the city lights up."},
    {n:"Jardin d'Acclimatation", a:"Bois de Boulogne, 75116", h:"Metro line 1 to Les Sablons, 30 min", why:"Small amusement park with rides, only if he still has energy after Disney."}]},
   {s:"Paris Jamatkhana (evening)", t:"~18:30", o:[
-   {n:"Paris Jamatkhana for evening prayers", a:"Address to confirm with the Paris Jamat (not published online)", h:"Metro or private car, about 20 to 30 min", best:1, why:"Your request: attend Jamatkhana in Paris. Nov 18 evening is the only free evening (Nov 16 late arrival, Nov 17 Disneyland). Dinner after, then the 21:00 tower sparkle if Izyan is awake."},
+   {n:"Paris Jamatkhana for evening prayers", a:"Address to confirm with the Paris Jamat (not published online)", h:"Metro or private car, about 20 to 30 min", best:1, why:"Your request: attend Jamatkhana in Paris. Nov 18 evening is the only free evening (Nov 16 late arrival, Nov 17 Disneyland). Dinner after, then the 22:00 tower sparkle if Izyan is awake."},
    {n:"Jamatkhana on Mon Nov 16 instead", a:"Address to confirm", h:"From CDG, private van could drop you there first", why:"Only if the evening prayer time works with the 19:15 landing; tight with bags and a tired child."},
    {n:"Jamatkhana on Tue Nov 17 after Disneyland", a:"Address to confirm", h:"RER A back by 19:00", why:"Possible, but Izyan will be exhausted after the parks."},
    {n:"Skip in Paris (Lisbon Ismaili Centre on Nov 11 covers it)", a:"Ismaili Centre Lisbon, Av. Lusiada 1", h:"Already booked, 17:30 tour", why:"Keeps the last Paris evening free."}]},
-  {s:"Special dinner", t:"19:00", o:[
+  {s:"Special dinner", t:"20:00", o:[
    {n:"Le Train Bleu (Gare de Lyon)", a:"Place Louis-Armand, Gare de Lyon, 75012", h:"RER A 5 min from Chatelet", best:1, why:"Special last dinner in a stunning Belle Epoque station restaurant; trains outside for Izyan."},
    {n:"Bouillon Chartier", a:"7 Rue du Faubourg Montmartre, 75009", h:"Metro 10 min", local:1, why:"Historic, cheap, fast, open early; classic Paris experience."},
    {n:"Indian at Passage Brady", a:"46 Rue du Faubourg Saint-Denis, 75010", h:"Metro 10 min", why:"Familiar comfort food for the last night."},
-   {n:"Italian near Les Halles", a:"Les Halles / Rue Montorgueil", h:"Walk 5 min", why:"Easy early dinner before the 21:00 sparkle at Trocadero."}]}
+   {n:"Italian near Les Halles", a:"Les Halles / Rue Montorgueil", h:"Walk 5 min", why:"Easy dinner close to the apartment before the 22:00 sparkle."}]}
  ],
  11: [
   {s:"Breakfast", t:"06:45", o:[
