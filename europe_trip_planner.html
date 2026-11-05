@@ -652,7 +652,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-05h";
+var BUILD = "2026-11-05i";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -1086,23 +1086,27 @@ var PLAN = [
   warn:"Both parks open at 09:30. Being at the gate at 09:15 rather than 10:30 is worth about two hours of queueing later.",
   sched:[
     ["07:00","Breakfast at the apartment","Eat properly. Park food is six to ten euros an item."],
-    ["07:50","Leave, pack the day bag","Snacks, water, power bank, a warm layer. It is 43 to 54&deg;F."],
-    ["08:10","RER A from Chatelet-Les Halles (or private car, optional)","Private car about 45 minutes door to gate if you book one. Five minutes on foot from Nestay. Direct, about forty minutes, no change. <b>Board only trains marked Marne-la-Vallee Chessy</b>, not Boissy-Saint-Leger. About 5 euros an adult and 2.50 for Izyan, check the Bonjour RATP app. Skip Uber (45 to 60 minutes and 70 to 100 euros each way, and VTC drivers rarely carry a child seat) and the central-Paris coaches (third-party, fixed times from Opera or Trocadero). If he is finished on the way back, a G7 taxi is the legal no-car-seat option."],
-    ["09:00","Arrive, bag check","Queue at the turnstiles before opening."],
-    ["09:30","Gates open","Walk, do not run, but do not browse either."],
-    ["09:40","Frozen Ever After, World of Frozen (Disney Adventure World)","The newest ride, so the queue builds fast. Walk straight here from the gates."],
-    ["10:30","Ratatouille, Disney Adventure World","Trackless dark ride, no height limit. Then cross to Disneyland Park."],
-    ["11:15","Disneyland Park: Buzz Lightyear, then a character meet","Buzz Lightyear Laser Blast first, then Meet Mickey Mouse in Fantasyland. Check the app for times."],
-    ["12:15","Lunch in the park","Sit down for this one. He needs the break more than the food."],
-    ["13:30","Fantasyland circuit","Carousel, It is a Small World, Peter Pan, Dumbo. Low intensity, high payoff."],
-    ["14:45","Disneyland Railroad","<b>A real steam train</b>, a full circuit of the park with a stop inside the Grand Canyon Diorama. Runs 11:45 to 17:00 in winter. Board at Main Street Station. This is his train ride."],
-    ["15:20","Pirates of the Caribbean","Mild, indoors, and a good rest for everyone."],
-    ["16:00","Christmas parade","Disney Enchanted Christmas started Nov 7. Find a kerb twenty minutes early."],
-    ["17:15","One last ride, then the shop","Let him choose both."],
-    ["18:00","Leave the park","Before the closing crush and before he falls apart."],
-    ["19:00","Back in Paris","RER A, or the private car if booked. He will sleep either way."],
-    ["19:45","Dinner near the apartment","Simple and close."],
-    ["21:00","Bed","Flight tomorrow."]
+    ["07:45","Leave, pack the day bag","Snacks, water, power bank, winter coats, hats and gloves. Lows near freezing, and you are out until about 22:00."],
+    ["08:00","RER A from Chatelet-Les Halles to Marne-la-Vallee-Chessy","Five minutes on foot from Nestay. Direct, about 40 minutes."],
+    ["08:50","Arrive, bag check, Disney Adventure World gate","Queue at the Adventure World turnstiles, not Disneyland Park. Hours: Disneyland Park 09:30 to 19:00, Adventure World 09:30 to 22:00 (confirm in the app)."],
+    ["09:30","Gates open: straight to World of Frozen","Once your ticket scans, join the free virtual queue for A Royal Encounter with Elsa and Anna in the Disneyland Paris app. Spots are limited."],
+    ["09:40","Frozen Ever After","No height limit. Some dark parts and a small drop. Paid Premier Access is the backup if the queue is long."],
+    ["10:15","Raiponce Tangled Spin, Adventure Way","Gentle spinning gondolas under the lanterns. No height limit."],
+    ["10:40","Ratatouille","Trackless ride, no height limit. The best ride in the park for a five-year-old."],
+    ["11:10","Toy Story Playland and Cars","Slinky Dog Zigzag Spin, Toy Soldiers Parachute Drop (81 cm, he fits), Cars Road Trip. Skip Tower of Terror (too scary at five); Crush's Coaster is closed for works."],
+    ["11:45","Walk to Disneyland Park","Two minutes across the plaza; same ticket."],
+    ["12:00","Lunch, Disneyland Park","Sit down for this one. He needs the break more than the food."],
+    ["13:00","Fantasyland","Peter Pan's Flight first (longest queue), then It's a Small World, Dumbo, Mad Hatter's Tea Cups, Casey Jr, the carousel."],
+    ["14:30","Big Thunder Mountain","102 cm minimum; at 109 cm he fits. A fun family coaster; ride with an adult."],
+    ["15:15","Pirates of the Caribbean","Indoors, mild, and a rest for everyone."],
+    ["16:00","Christmas parade, Main Street","Check the app for today's time and find a kerb 20 minutes early."],
+    ["16:45","Discoveryland","Buzz Lightyear Laser Blast, Star Tours (102 cm, he fits), Autopia with an adult."],
+    ["17:45","Character meet or the steam train","Meet Mickey in Fantasyland if times work, or a Disneyland Railroad loop to sit down."],
+    ["18:30","Main Street shops","Disneyland Park closes at 19:00."],
+    ["19:00","Dinner","In Adventure World or Disney Village. Book Bistrot Chez Remy in the app if you want a sit-down."],
+    ["20:00","Back in Adventure World: favourite re-rides","Second goes on Frozen, Ratatouille or Slinky Dog. <b>Exit option:</b> if he is done, leave now and you are home by about 21:00."],
+    ["21:30","Disney Cascade of Lights, Adventure Bay","The night show on the lake. Check the app for the exact time and stand by the water 15 minutes early."],
+    ["22:00","RER A back to Paris","About 40 minutes; in bed by 23:00. Eiffel Tower is 09:30 tomorrow, so lay out clothes before you leave in the morning."],
   ],
   activities:{
     label:"Disneyland tickets",
@@ -2150,7 +2154,7 @@ var BDG = [
   {d:6, dt:"Sat Nov 14", c:"Granada to Seville", i:"Meals, taxis both ends, tapas dinner",            e:100},
   {d:7, dt:"Sun Nov 15", c:"Seville",            i:"Churros, long lunch, tapas dinner, taxis",        e:130},
   {d:8, dt:"Mon Nov 16", c:"Seville to Paris",   i:"Lunch in Seville, taxi to SVQ (26 to 29 euros), dinner (CDG taxi paid)", e:110},
-  {d:9, dt:"Tue Nov 17", c:"Disneyland Paris",     i:"Park food, RER A, snacks",                        e:130},
+  {d:9, dt:"Tue Nov 17", c:"Disneyland Paris",     i:"Lunch and dinner in the parks, snacks, RER A both ways", e:170},
   {d:10,dt:"Wed Nov 18", c:"Paris",             i:"Market breakfast, lunch, Seine cruise, dinner",   e:160},
   {d:11,dt:"Thu Nov 19", c:"Paris to Texas",    i:"Breakfast, airport food, drive home (CDG taxi paid)", e:100}
 ];
@@ -3217,11 +3221,11 @@ var CHOICES = {
    {n:"Plaza Gardens buffet (Main Street)", a:"Main Street U.S.A., Disneyland Park", h:"In the park", why:"Buffet means everyone finds something; book a slot in the app."},
    {n:"Agrabah Cafe (Adventureland)", a:"Adventureland, Disneyland Park", h:"In the park", why:"Middle Eastern buffet: comfort food for you, plain options for him."},
    {n:"Bistrot Chez Remy (Disney Adventure World)", a:"Disney Adventure World, Ratatouille area", h:"In the park (book in the app)", local:1, why:"Only at Disneyland Paris: a French bistro shrunk to rat size from Ratatouille. Steak or chicken and fries; Izyan will love the giant props."}]},
-  {s:"Dinner", t:"19:45", o:[
-   {n:"Crepes or bakery near Nestay", a:"Rue Montorgueil / Les Halles", h:"Walk 5 min", best:1, local:1, why:"He will be asleep on his feet; close and quick."},
-   {n:"Disney Village restaurant before the RER", a:"Disney Village, Marne-la-Vallee", h:"Walk 5 min from the park gates", why:"Eat before leaving the park area."},
-   {n:"Supermarket dinner at the apartment", a:"Carrefour Express, 77 Rue Rambuteau", h:"Walk 3 min", why:"Lowest effort after a full park day."},
-   {n:"Indian takeaway (Passage Brady area)", a:"Passage Brady, 46 Rue du Faubourg Saint-Denis", h:"Delivery or metro 10 min", why:"Familiar comfort food, delivered or picked up."}]}
+  {s:"Dinner", t:"19:00", o:[
+   {n:"Bistrot Chez Remy (Disney Adventure World)", a:"Disney Adventure World, Ratatouille area", h:"In the park (book in the app)", best:1, local:1, why:"Only at Disneyland Paris: a rat-sized French bistro from Ratatouille. Sit down and warm up before the night show."},
+   {n:"Quick service in Disney Adventure World", a:"Disney Adventure World", h:"In the park", why:"Fastest option so you stay near the lake for the show."},
+   {n:"Disney Village counter service", a:"Disney Village, Marne-la-Vallee", h:"Walk 5 min from the gates", why:"Plain, familiar food for Izyan; easy re-entry with your ticket."},
+   {n:"Leave early: dinner near Nestay", a:"Rue Montorgueil / Les Halles", h:"RER A 40 min, then walk", why:"If he is done after Disneyland Park, skip the show and eat close to home."}]}
  ],
  10: [
   {s:"Breakfast", t:"07:45", o:[
