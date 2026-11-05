@@ -661,7 +661,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-05q";
+var BUILD = "2026-11-05t";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -1147,15 +1147,15 @@ var PLAN = [
     ["11:30","Leave the summit, head down","<b>Hard stop.</b> Summit lift queues can run long; start down by 11:30 so you reach the bridge in time."],
     ["11:55","Walk to Pont de Bir-Hakeim","About 10 minutes from the tower base along the Seine. Meet in the middle of the bridge by the Joan of Arc horse statue. Photographer contacts you on WhatsApp."],
     ["12:00","FAMILY PHOTOSHOOT - booked","<b>GetYourGuide, 15 minutes, 5 edited photos, private for up to 4. $39.21, in Zaibnish&#39;s name.</b> Booking reference and PIN in the GetYourGuide app. If you are running late, message the photographer on WhatsApp right away."],
-    ["12:30","Lunch","Near the tower or Passy, or L&#39;As du Fallafel in the Marais on the way back (35 minutes). Champ de Mars lawn for Izyan to run first if he needs it."],
-    ["13:30","Proper rest at the apartment","Two hours. Tonight runs late."],
-    ["15:00","Luxembourg Gardens or Tuileries","Carousel, sailboats on the pond, room to run. Keep it to an hour."],
-    ["16:00","Seine cruise","An hour on the water. Sunset is about 17:10, so you catch the light going."],
+    ["12:30","Lunch near the tower","Near the Champ de Mars, so you are close to the bus stop. Let Izyan run on the lawn first."],
+    ["13:30","TOOTBUS double-decker from the Tour Eiffel stop","Hop-on hop-off bus: Trocadero, Champs-Elysees, Concorde, Orsay, then hop off at the Louvre. About 1 h 45. Sit downstairs or in the covered front if it is cold; Izyan can nap. About 94 euros for the three of you (37 adult, 20 child). Buy online the day before. Last buses leave around 5:00 PM in November."],
+    ["15:15","Hop off at the Louvre, walk to Pont Neuf","Ten minutes on foot along the river."],
+    ["16:00","Seine cruise, Vedettes du Pont Neuf","One hour with a live English guide. Square du Vert-Galant at Pont Neuf. 15 euros adult, 7 euros child online (2 euros more each at the boat). Sunset is about 5:10 PM."],
     ["17:15","Back to the apartment, warm up and change","Coats on for the evening; lows near freezing."],
-    ["18:50","Metro to Paris Jamatkhana","Lines 4 then 6 to Cambronne, or Bolt. About 30 min. 55 rue de la Croix Nivert, 75015."],
-    ["19:30","PARIS JAMATKHANA - evening Du'a (Wednesday to confirm)","55 rue de la Croix Nivert, 75015. Listed times: Fri and Sat 19:30, Sun 19:00. Confirm Wednesday with the Rosny Mukhi, +33 1 43 51 09 46."],
+    ["18:45","Metro to Paris Jamatkhana","Line 14 from Chatelet to Madeleine, then line 8 to Commerce, about 35 min. Or Bolt, about 25 min."],
+    ["19:30","PARIS JAMATKHANA - evening Du'a, CONFIRMED","55 rue de la Croix Nivert, 75015. Open every day, Du'a at 7:30 PM (confirmed by the Paris Jamat). Nearest metro: Commerce (line 8)."],
     ["20:45","Dinner on rue du Commerce","Five minutes' walk from the Jamatkhana. Last proper meal of the trip."],
-    ["22:00","Optional: Trocadero for the sparkle","<b>Metro 6 from Cambronne to Trocadero, 10 min.</b> Five minutes of lights on the hour. Skip it if Izyan is done."],
+    ["22:00","Optional: Trocadero for the sparkle","<b>Line 8 to La Motte-Picquet, then line 6 to Trocadero, about 15 min.</b> Five minutes of lights on the hour. Skip it if Izyan is done."],
     ["22:15","Back, and pack tonight","So tomorrow morning is only breakfast and a taxi."]
   ],
   activities:{
@@ -1818,7 +1818,8 @@ var BOOKINGS = [
   {id:"isma", done:1, cost:0, ph:4, t:"Ismaili Centre, Lisbon, Wed Nov 11: tour CONFIRMED 17:30",
    n:"Confirmed 29 Oct. Av. Lusiada 1, Laranjeiras. Leave the apartment by 16:50 (Bolt about 8 euros, or Metro Blue line to Laranjeiras). Modest dress.", by:"2026-10-28", est:0},
     {id:"lug", done:1, cost:0, ph:5, t:"Luggage plan confirmed: 1 checked suitcase, 1 roller, 3 backpacks", n:"<b>What you carry (confirmed 10 Oct):</b> 1 large checked suitcase (on Rizwan), up to 1 carry-on roller, 3 backpacks. This fits every leg. <b>Weight rules:</b> suitcase at or under <b>20 kg</b> (ALSA is the tightest; airlines allow 23), roller at or under <b>10 kg</b> (TAP), backpacks small enough to go under the seat or in the rack. United IAH-IAD-LIS: 1 checked bag paid, carry-on + personal item each. TAP LIS-AGP: 1 checked bag on Rizwan, carry-on 10 kg + personal item each. ALSA AGP-Granada: each ticket 20 kg total, max 2 items, <b>plus 1 extra bag already bought (5 euros, up to 20 kg)</b>; suitcase and roller go underneath, backpacks overhead (hold if they do not fit). Fully covered. Renfe Nov 14: up to 3 bags per person, 25 kg: fine. Air France SVQ-CDG: checked bag included. AA CDG-DFW: 1 checked bag paid ($87). Because the extra ALSA bag is paid, a second roller would also fit every leg.", by:"2026-11-05", est:0},
-    {id:"pjk", ph:5, t:"Paris Jamatkhana: confirm there is a Wednesday evening Du'a (Nov 18, planned 19:30)", n:"Weekdays are not on the listed schedule (Fri and Sat 19:30, Sun 19:00). Call or WhatsApp the Rosny Mukhi, Alijah Rajab Jiva, +33 1 43 51 09 46. Jamatkhana: 55 rue de la Croix Nivert, 75015.", by:"2026-11-07", est:0, u:"tel:+33143510946", ul:"Call the Rosny Mukhi"},
+    {id:"pjk", done:1, ph:5, t:"Paris Jamatkhana: CONFIRMED, daily Du'a 7:30 PM (planned Wed Nov 18)", n:"55 rue de la Croix Nivert, 75015, metro Commerce. Open every day. Reply to the Mukhi with your names.", by:"2026-11-07", est:0},
+    {id:"bus", ph:6, t:"Tue Nov 17 evening: buy Tootbus and Seine cruise tickets online for Wed Nov 18", n:"Tootbus Paris 1-day, 2 adults + 1 child, about 94 euros. Vedettes du Pont Neuf 4:00 PM cruise, 15 euros adult, 7 euros child online. Check the weather first.", by:"2026-11-17", est:0, u:"https://www.tootbus.com/en/paris/home", ul:"Tootbus Paris"},
     {id:"ibl", ph:5, t:"Seville: arrange the luggage hold with Iberflat for Nov 16",
    n:"Call or message Iberflat (<b>+34 955 515 541</b>), or use the guest portal, about Nov 10. Ask the housekeeper to hold your bags on <b>Mon Nov 16 from 12:00 (check-out) to about 13:45</b>, before the 14:00 taxi to the airport. They have no luggage room, so it must be arranged ahead.", by:"2026-11-10", est:0},
     {id:"pass", done:1, ph:5, t:"Check all three passports",
@@ -2073,6 +2074,8 @@ function bkToggle(id){
   show("booking");
 }
 
+function bkUndo(id){ var st = bkGet(id); st.done = false; st.cost = null; bkSet(id, st); built.booking = false; built.budget = false; show('booking'); }
+
 function bkCost(id){
   var el = document.getElementById("bkc-"+id);
   var st = bkGet(id);
@@ -2165,7 +2168,7 @@ var BDG = [
   {d:7, dt:"Sun Nov 15", c:"Seville",            i:"Churros, long lunch, tapas dinner, taxis",        e:130},
   {d:8, dt:"Mon Nov 16", c:"Seville to Paris",   i:"Lunch in Seville, taxi to SVQ (26 to 29 euros), dinner (CDG taxi paid)", e:110},
   {d:9, dt:"Tue Nov 17", c:"Disneyland Paris",     i:"Lunch and dinner in the parks, snacks, RER A both ways", e:170},
-  {d:10,dt:"Wed Nov 18", c:"Paris",             i:"Market breakfast, lunch, Seine cruise, dinner",   e:160},
+  {d:10,dt:"Wed Nov 18", c:"Paris",             i:"Market breakfast, lunch, Tootbus (~94 euros), Seine cruise (~37 euros), metro, dinner", e:310},
   {d:11,dt:"Thu Nov 19", c:"Paris to Texas",    i:"Breakfast, airport food, drive home (CDG taxi paid)", e:100}
 ];
 var BDG_TOTAL = BDG.reduce(function(s,x){ return s + x.e; }, 0);
@@ -2969,7 +2972,8 @@ function renderBooking(){
       + '</span></label>';
   }).join('');
   var doneRows = done.map(function(b){
-    return '<div style="padding:7px 16px;border-bottom:1px solid var(--line2);font-size:13px">&#10003; '+b.t.replace(/:\s*BOOKED.*$|,\s*BOOKED$/i,'')+'</div>';
+    return '<div style="padding:7px 16px;border-bottom:1px solid var(--line2);font-size:13px;display:flex;justify-content:space-between;align-items:center;gap:10px"><span>&#10003; '+b.t.replace(/:\s*BOOKED.*$|,\s*BOOKED$/i,'')+'</span>'
+      + (b.done ? '' : '<button class="btn btn-sm" style="flex:none" onclick="bkUndo(\''+b.id+'\')">Undo</button>') + '</div>';
   }).join('');
   var docs = '<div class="note n-g" style="margin-bottom:14px"><span class="n-t">Passports &amp; insurance documents (private)</span>'
     + 'Opens only when signed in as rizwan@swagprint.com. '
@@ -3249,18 +3253,13 @@ var CHOICES = {
    {n:"L'As du Fallafel (Marais)", a:"34 Rue des Rosiers, 75004 Paris", h:"Metro 30 min from the Eiffel Tower", why:"Famous falafel, comfort food, no pork."},
    {n:"Breizh Cafe crepes (Marais)", a:"109 Rue Vieille du Temple, 75003 Paris", h:"Metro 30 min from the Eiffel Tower", local:1, why:"Top crepes in Paris; sweet ones for Izyan."},
    {n:"Le Relais de l'Entrecote", a:"20 Rue Saint-Benoit, 75006 Paris", h:"Metro 20 min", why:"Simple steak and fries; one dish, no ordering stress."}]},
-  {s:"Afternoon activity", t:"15:00", o:[
-   {n:"Jardin du Luxembourg: sailboats + playground + carousel", a:"Jardin du Luxembourg, 75006", h:"Metro/RER 15 min from Nestay", best:1, local:1, why:"Kid-first classic: he pushes toy sailboats on the pond."},
-   {n:"Tuileries carousel + gardens", a:"Jardin des Tuileries, 75001", h:"Walk 15 min from Nestay", why:"Iconic, near the Louvre, close to Nestay."},
-   {n:"Seine cruise (16:00)", a:"Vedettes du Pont Neuf, Square du Vert-Galant", h:"Walk 12 min from Nestay", why:"Sit-down sightseeing as the city lights up."},
-   {n:"Jardin d'Acclimatation", a:"Bois de Boulogne, 75116", h:"Metro line 1 to Les Sablons, 30 min", why:"Small amusement park with rides, only if he still has energy after Disney."}]},
   {s:"Paris Jamatkhana (evening)", t:"19:30", o:[
-   {n:"Paris Jamatkhana for evening prayers", a:"55 rue de la Croix Nivert, 75015 Paris", h:"Metro lines 4 + 6 to Cambronne or Bolt, about 30 min", best:1, why:"Your request: attend Jamatkhana in Paris. Nov 18 evening is the only free evening (Nov 16 late arrival, Nov 17 Disneyland). Dinner on rue du Commerce after, then the 22:00 tower sparkle if Izyan is awake."},
+   {n:"Paris Jamatkhana for evening prayers", a:"55 rue de la Croix Nivert, 75015 Paris", h:"Metro 14 then 8 to Commerce, or Bolt, about 30 min", best:1, why:"Your request: attend Jamatkhana in Paris. Nov 18 evening is the only free evening (Nov 16 late arrival, Nov 17 Disneyland). Dinner on rue du Commerce after, then the 22:00 tower sparkle if Izyan is awake."},
    {n:"Jamatkhana on Mon Nov 16 instead", a:"55 rue de la Croix Nivert, 75015 Paris", h:"From CDG, the booked taxi could drop you there first", why:"Only if the evening prayer time works with the 19:15 landing; tight with bags and a tired child."},
    {n:"Jamatkhana on Tue Nov 17 after Disneyland", a:"55 rue de la Croix Nivert, 75015 Paris", h:"RER A back by 19:00", why:"Possible, but Izyan will be exhausted after the parks."},
    {n:"Skip in Paris (Lisbon Ismaili Centre on Nov 11 covers it)", a:"Ismaili Centre Lisbon, Av. Lusiada 1", h:"Already booked, 17:30 tour", why:"Keeps the last Paris evening free."}]},
-  {s:"Special dinner", t:"20:00", o:[
-   {n:"Le Train Bleu (Gare de Lyon)", a:"Place Louis-Armand, Gare de Lyon, 75012", h:"RER A 5 min from Chatelet", best:1, why:"Special last dinner in a stunning Belle Epoque station restaurant; trains outside for Izyan."},
+  {s:"Special dinner", t:"20:45", o:[
+   {n:"Dinner on rue du Commerce (15th)", a:"Rue du Commerce, 75015 Paris", h:"Walk 5 min from the Jamatkhana", best:1, local:1, why:"A real Parisian neighbourhood street of cafes and brasseries right by the Jamatkhana; no extra travel after Du'a."},
    {n:"Bouillon Chartier", a:"7 Rue du Faubourg Montmartre, 75009", h:"Metro 10 min", local:1, why:"Historic, cheap, fast, open early; classic Paris experience."},
    {n:"Indian at Passage Brady", a:"46 Rue du Faubourg Saint-Denis, 75010", h:"Metro 10 min", why:"Familiar comfort food for the last night."},
    {n:"Italian near Les Halles", a:"Les Halles / Rue Montorgueil", h:"Walk 5 min", why:"Easy dinner close to the apartment before the 22:00 sparkle."}]}
