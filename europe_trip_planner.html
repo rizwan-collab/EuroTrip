@@ -652,7 +652,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-05m";
+var BUILD = "2026-11-05n";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -2869,7 +2869,7 @@ function renderItinerary(){
       + '<div class="dh"><div><div class="dh-d">Day '+D.n+' &middot; '+D.date+'</div>'
       + '<div class="dh-c">'+D.city+'</div></div></div>'
       + '<div class="wx" id="wx-'+D.n+'"></div>'
-      + '<div class="tl-wrap">'+rows+'</div>' + choicesBlock(D.n) + '</div>';
+      + '<div class="tl-wrap">'+rows+'</div>' + (D.n===9 ? '<div style="border-top:1px solid var(--line)">'+dlBlock()+'</div>' : '') + choicesBlock(D.n) + '</div>';
   }).join('');
   var tn = todayN();
   var chips = '<div class="daybar">' + PLAN.map(function(D){
@@ -3433,6 +3433,67 @@ function time12(el){
   var w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null), n, list = [];
   while((n = w.nextNode())){ if(/\d:\d\d/.test(n.nodeValue) && !/\d:\d\d (AM|PM)/.test(n.nodeValue)) list.push(n); }
   list.forEach(function(t){ t.nodeValue = to12(t.nodeValue); });
+}
+
+
+/* ---- Disneyland day checklist (Nov 17), in walking order ---- */
+var DL = [
+  {h:"Disney Adventure World, morning", cp:"Checkpoint: leave for Disneyland Park by 12:15 PM. Running late? Skip the Bonus items here.", it:[
+    ["af","M","Frozen Ever After","Straight from the gates. Premier Access only if over 45 min."],
+    ["ae","M","Elsa & Anna meet (virtual queue)","Join in the app when your ticket scans; go when your slot comes up."],
+    ["ar","M","Ratatouille","No height limit."],
+    ["at","S","Raiponce Tangled Spin","Gentle spinning gondolas."],
+    ["as","S","Slinky Dog Zigzag Spin","Toy Story Playland."],
+    ["ac","S","Cars Road Trip","Next to Toy Story Playland."],
+    ["ap","B","Toy Soldiers Parachute Drop","81 cm minimum; he fits."]]},
+  {h:"Disneyland Park: Discoveryland", cp:"Checkpoint: in Fantasyland by 2:15 PM. Running late? Skip the Bonus items here.", it:[
+    ["dl","S","Early lunch, Cafe Hyperion",""],
+    ["db","M","Buzz Lightyear Laser Blast",""],
+    ["ds","S","Star Tours","102 cm minimum; he fits."],
+    ["da","B","Autopia","Drive with an adult."],
+    ["do","B","Orbitron","Only if under 20 min."]]},
+  {h:"Fantasyland and the castle", cp:"Checkpoint: at the parade spot (by It's a Small World) 15 min before the parade. Running late? Skip Pinocchio, Storybook boats and Tea Cups.", it:[
+    ["fp","M","Peter Pan's Flight","Longest queue. Premier Access only if over 45 min."],
+    ["fm","M","Meet Mickey Mouse","Allow 30 to 45 min."],
+    ["fc","M","Sleeping Beauty Castle: gallery and dragon","Free, no queue, 15 min."],
+    ["fd","S","Dumbo",""],
+    ["fi","B","Pinocchio",""],
+    ["fx","M","Christmas parade","Watch from the Fantasyland end; time in the app."],
+    ["fk","M","Casey Jr. circus train","Next to the parade spot."],
+    ["fw","S","It's a Small World",""],
+    ["fs","B","Storybook boats",""],
+    ["ft","B","Mad Hatter's Tea Cups",""]]},
+  {h:"Frontierland, Adventureland, Main Street", cp:"Checkpoint: Disneyland Park closes at 7:00 PM. After 6:15 PM, do only the Must items.", it:[
+    ["bt","B","Big Thunder Mountain","He fits. Watch a train first, then decide."],
+    ["pa","M","Le Passage Enchante d'Aladdin","Walk-through, no queue, 10 min."],
+    ["pi","S","Pirates of the Caribbean","Indoors, mild."],
+    ["pa2","B","Adventure Isle","Caves, bridges, pirate ship."],
+    ["ms","M","Castle photo on Main Street",""]]},
+  {h:"Disney Adventure World, evening", cp:"Exit option at 8:00 PM if Izyan is tired. Otherwise stay for the show.", it:[
+    ["ed","M","Dinner (Bistrot Chez Remy or quick service)",""],
+    ["ef","S","Flying Carpets Over Agrabah","Aladdin."],
+    ["eq","S","Spider-Man W.E.B. Adventure","No height limit."],
+    ["er","B","Cars Quatre Roues Rallye",""],
+    ["ea","B","A Celebration in Arendelle or Mickey and the Magician","Only if there is a late show."],
+    ["ex","B","Second go on his favourite",""],
+    ["el","S","Disney Cascade of Lights","Night show on the lake; time in the app."]]}
+];
+var DLP = {M:['p-r','Must'], S:['p-b','Should'], B:['p-n','Bonus']};
+function dlToggle(id, on){ save('dl_'+id, on?'1':'0'); var c=document.getElementById('dlc'); if(c) c.textContent=dlCount(); }
+function dlCount(){ var t=0,d=0; DL.forEach(function(g){ g.it.forEach(function(x){ t++; if(load('dl_'+x[0])==='1') d++; }); }); return d+' of '+t+' done'; }
+function dlBlock(){
+  var body = DL.map(function(g){
+    return '<div class="acc-grp"><div class="acc-grp-h">'+g.h+'</div>'
+      + g.it.map(function(x){
+          var on = load('dl_'+x[0])==='1', p = DLP[x[1]];
+          return '<label class="chk'+(on?' done':'')+'"><input type="checkbox"'+(on?' checked':'')+' onchange="dlToggle(\''+x[0]+'\',this.checked);this.parentNode.classList.toggle(\'done\',this.checked)">'
+            + '<span class="chk-t"><span class="pill '+p[0]+'">'+p[1]+'</span> <b>'+x[2]+'</b>'+(x[3]?'<span class="chk-n">'+x[3]+'</span>':'')+'</span></label>';
+        }).join('')
+      + '<div style="padding:10px 14px;font-size:13.5px;color:var(--warn);font-weight:600;background:var(--warn-lt)">'+g.cp+'</div></div>';
+  }).join('');
+  return '<details class="acc" open><summary><b>Ride checklist</b> <span class="acc-n" id="dlc">'+dlCount()+'</span></summary>'
+    + '<div style="padding:4px 16px 2px;font-size:14px;color:var(--ink2)"><b>Quiet day:</b> do everything in order. <b>Running behind:</b> drop <span class="pill p-n">Bonus</span> first, then <span class="pill p-b">Should</span>. Never drop <span class="pill p-r">Must</span>.</div>'
+    + body + '</details>';
 }
 
 var RENDER = {
