@@ -652,7 +652,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-05o";
+var BUILD = "2026-11-05p";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -1099,11 +1099,11 @@ var PLAN = [
     ["11:55","Early lunch: Cafe Hyperion, Discoveryland","Quick service, plain food he will eat, and you are eating before the 12:30 lunch rush."],
     ["12:30","Discoveryland","Buzz Lightyear Laser Blast, Star Tours (102 cm, he fits), Autopia with an adult. Orbitron if the wait is under 20 minutes."],
     ["13:45","Fantasyland part 1: Peter Pan, Meet Mickey, castle","Peter Pan's Flight first. <b>Meet Mickey Mouse</b> (must do; allow 30 to 45 minutes). Dumbo, Pinocchio, then <b>Sleeping Beauty Castle</b>: the upstairs stained-glass gallery and the dragon in the cave underneath, both free with no queue."],
-    ["15:45","Christmas parade from the Fantasyland end","The route starts near It's a Small World, so watch it there. Check the app for today's time and take your spot 15 minutes early."],
+    ["15:45","Christmas parade, if it runs","Not on Disney's Nov 17 list yet. If the app shows it, watch from the Fantasyland end near It's a Small World. If not, use the time for Alice's Curious Labyrinth and the Carrousel."],
     ["16:15","Fantasyland part 2, right by the parade spot","It's a Small World, <b>Casey Jr. circus train</b>, the Storybook boats, Mad Hatter's Tea Cups."],
     ["17:15","Frontierland: Big Thunder Mountain (decide in line)","He fits (102 cm minimum, he is 109 cm). Watch one train go round first; if he is unsure, skip it and go straight to Adventureland."],
     ["17:45","Adventureland: Pirates, Aladdin, Adventure Isle","Pirates of the Caribbean (indoors, mild). <b>Le Passage Enchante d'Aladdin</b>: a short walk-through, no queue. Adventure Isle: caves, bridges and a pirate ship."],
-    ["18:35","Main Street: castle photo and shops","Disneyland Park closes at 7:00 PM. Leave by 6:55 PM."],
+    ["18:35","Main Street: castle photo, Disney Tales of Magic","Hours confirmed by Disney: Disneyland Park 9:30 AM to 7:00 PM, Adventure World 9:30 AM to 10:00 PM. The castle show is on the Nov 17 list; check its time in the app."],
     ["19:00","Dinner, Disney Adventure World","Book Bistrot Chez Remy in the app, or quick service so you stay near the lake."],
     ["20:00","Adventure World evening","<b>Flying Carpets Over Agrabah</b> (Aladdin's flying carpets), Cars Road Trip, Toy Soldiers Parachute Drop, Cars Quatre Roues Rallye, Hero Training Center if your slot is now, a second go on <b>Spider-Man</b>, A Celebration in Arendelle or Mickey and the Magician if there is a late show, then a second go on his favourite. Expect busier queues once Disneyland Park closes. <b>Exit option:</b> if he is done, leave now and you are home by about 21:00."],
     ["21:30","Disney Cascade of Lights, Adventure Bay","The night show on the lake. Check the app for the exact time and stand by the water 15 minutes early."],
@@ -3441,45 +3441,61 @@ function time12(el){
 var DL = [
   {h:"Disney Adventure World, morning", cp:"Checkpoint: leave for Disneyland Park by 12:15 PM. Running late? Skip the Bonus items here.", it:[
     ["af","M","Frozen Ever After","Straight from the gates. Premier Access only if over 45 min."],
-    ["ae","M","Elsa & Anna meet (virtual queue)","Join in the app when your ticket scans; go when your slot comes up."],
+    ["ae","M","Elsa & Anna meet (virtual queue)","Join in the app at entry. Not on Disney's Nov 17 list yet; check the app that morning."],
+    ["ah","M","Hero Training Center (virtual queue)","Marvel meet: Spider-Man, Iron Man or Captain Marvel. Not on Disney's Nov 17 list yet; check the app."],
     ["ar","M","Ratatouille","No height limit."],
-    ["ah","M","Hero Training Center (virtual queue)","Marvel meet: Spider-Man, Iron Man or Captain Marvel. Join in the app at entry; go when your slot comes up."],
     ["aw","M","Spider-Man W.E.B. Adventure","Avengers Campus, next to Ratatouille. No height limit."],
     ["at","S","Raiponce Tangled Spin","Gentle spinning gondolas."],
-    ["as","S","Slinky Dog Zigzag Spin","Toy Story Playland."]]},
+    ["as","S","Slinky Dog Zigzag Spin","Toy Story Playland."],
+    ["aj","B","Meet Jessie, Woody or a Toy Story friend","Worlds of Pixar, by Toy Story Playland."],
+    ["ak","B","Disney Princess Cavalcade","Daytime princess procession on Adventure Way; watch if it passes."]]},
   {h:"Disneyland Park: Discoveryland", cp:"Checkpoint: in Fantasyland by 2:15 PM. Running late? Skip the Bonus items here.", it:[
     ["dl","S","Early lunch, Cafe Hyperion",""],
     ["db","M","Buzz Lightyear Laser Blast",""],
+    ["dp","S","Mickey's PhilharMagic","3D show with Mickey, Donald and friends. Sit-down, about 15 min."],
     ["ds","S","Star Tours","102 cm minimum; he fits."],
     ["da","B","Autopia","Drive with an adult."],
+    ["dn","B","Les Mysteres du Nautilus","Walk through Captain Nemo's submarine, no queue."],
     ["do","B","Orbitron","Only if under 20 min."]]},
-  {h:"Fantasyland and the castle", cp:"Checkpoint: at the parade spot (by It's a Small World) 15 min before the parade. Running late? Skip Pinocchio, Storybook boats and Tea Cups.", it:[
+  {h:"Fantasyland and the castle", cp:"Checkpoint: by 4:15 PM, be on Fantasyland part 2. Running late? Skip Pinocchio, Storybook boats, Tea Cups, Carrousel and Snow White.", it:[
     ["fp","M","Peter Pan's Flight","Longest queue. Premier Access only if over 45 min."],
     ["fm","M","Meet Mickey Mouse","Allow 30 to 45 min."],
     ["fc","M","Sleeping Beauty Castle: gallery and dragon","Free, no queue, 15 min."],
     ["fd","S","Dumbo",""],
+    ["fa","S","Alice's Curious Labyrinth","Hedge maze up to the Queen of Hearts' castle. He will love getting lost."],
     ["fi","B","Pinocchio",""],
-    ["fx","M","Christmas parade","Watch from the Fantasyland end; time in the app."],
-    ["fk","M","Casey Jr. circus train","Next to the parade spot."],
+    ["fx","S","Christmas parade","Not on Disney's Nov 17 list yet. If it runs, watch from the Fantasyland end; time in the app."],
+    ["fk","M","Casey Jr. circus train",""],
     ["fw","S","It's a Small World",""],
     ["fs","B","Storybook boats",""],
-    ["ft","B","Mad Hatter's Tea Cups",""]]},
+    ["ft","B","Mad Hatter's Tea Cups",""],
+    ["fl","B","Le Carrousel de Lancelot","The carousel behind the castle."],
+    ["fb","B","Snow White (Blanche-Neige)","Short dark ride; the witch can scare little ones."]]},
   {h:"Frontierland, Adventureland, Main Street", cp:"Checkpoint: Disneyland Park closes at 7:00 PM. After 6:15 PM, do only the Must items.", it:[
     ["bt","B","Big Thunder Mountain","He fits. Watch a train first, then decide."],
+    ["bp","B","Frontierland Playground","Let him run for 10 minutes."],
+    ["br","B","Thunder Mesa Riverboat","Gentle paddle steamer around Big Thunder."],
+    ["bl","B","The Lion King: Rhythms of the Pride Lands","Frontierland show; only if a time fits."],
     ["pa","M","Le Passage Enchante d'Aladdin","Walk-through, no queue, 10 min."],
     ["pi","S","Pirates of the Caribbean","Indoors, mild."],
     ["pa2","B","Adventure Isle","Caves, bridges, pirate ship."],
-    ["ms","M","Castle photo on Main Street",""]]},
+    ["pb","B","Pirates' Beach or La Cabane des Robinson","Pirate playground or the Swiss Family treehouse."],
+    ["ms","M","Castle photo on Main Street",""],
+    ["mt","S","Disney Tales of Magic (castle show)","On Disney's Nov 17 list; check the time in the app. Watch it if it is before you leave the park."],
+    ["mr","B","Disneyland Railroad","Steam train from Main Street Station; a sit-down."]]},
   {h:"Disney Adventure World, evening", cp:"Exit option at 8:00 PM if Izyan is tired. Otherwise stay for the show.", it:[
-    ["ed","M","Dinner (Bistrot Chez Remy or quick service)",""],
+    ["ed","M","Dinner (Bistrot Chez Remy, Stark Factory or PYM Kitchen)",""],
     ["ef","S","Flying Carpets Over Agrabah","Aladdin."],
     ["ec","S","Cars Road Trip",""],
+    ["ey","S","Animation Academy","Learn to draw a Disney character. Check times in the app."],
+    ["es","S","Stitch Live!","Izyan can talk to Stitch. Check times."],
+    ["em","S","Mickey and the Magician","Indoor show with Mickey and the Genie. Check times."],
     ["ap","B","Toy Soldiers Parachute Drop","81 cm minimum; he fits."],
     ["eq","B","Spider-Man again","If he loved it in the morning."],
     ["er","B","Cars Quatre Roues Rallye",""],
-    ["ea","B","A Celebration in Arendelle or Mickey and the Magician","Only if there is a late show."],
+    ["eo","B","Minnie's Dream Factory or TOGETHER: a Pixar Musical Adventure","Only if a show time fits."],
     ["ex","B","Second go on his favourite",""],
-    ["el","S","Disney Cascade of Lights","Night show on the lake; time in the app."]]}
+    ["el","S","Disney Cascade of Lights","Night show on the lake, just before 10:00 PM close."]]}
 ];
 var DLP = {M:['p-r','Must'], S:['p-b','Should'], B:['p-n','Bonus']};
 function dlToggle(id, on){ save('dl_'+id, on?'1':'0'); var c=document.getElementById('dlc'); if(c) c.textContent=dlCount(); }
