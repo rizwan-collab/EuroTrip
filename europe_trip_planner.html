@@ -652,7 +652,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-05i";
+var BUILD = "2026-11-05j";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -1093,18 +1093,17 @@ var PLAN = [
     ["09:40","Frozen Ever After","No height limit. Some dark parts and a small drop. Paid Premier Access is the backup if the queue is long."],
     ["10:15","Raiponce Tangled Spin, Adventure Way","Gentle spinning gondolas under the lanterns. No height limit."],
     ["10:40","Ratatouille","Trackless ride, no height limit. The best ride in the park for a five-year-old."],
-    ["11:10","Toy Story Playland and Cars","Slinky Dog Zigzag Spin, Toy Soldiers Parachute Drop (81 cm, he fits), Cars Road Trip. Skip Tower of Terror (too scary at five); Crush's Coaster is closed for works."],
-    ["11:45","Walk to Disneyland Park","Two minutes across the plaza; same ticket."],
-    ["12:00","Lunch, Disneyland Park","Sit down for this one. He needs the break more than the food."],
-    ["13:00","Fantasyland","Peter Pan's Flight first (longest queue), then It's a Small World, Dumbo, Mad Hatter's Tea Cups, Casey Jr, the carousel."],
-    ["14:30","Big Thunder Mountain","102 cm minimum; at 109 cm he fits. A fun family coaster; ride with an adult."],
-    ["15:15","Pirates of the Caribbean","Indoors, mild, and a rest for everyone."],
-    ["16:00","Christmas parade, Main Street","Check the app for today's time and find a kerb 20 minutes early."],
-    ["16:45","Discoveryland","Buzz Lightyear Laser Blast, Star Tours (102 cm, he fits), Autopia with an adult."],
-    ["17:45","Character meet or the steam train","Meet Mickey in Fantasyland if times work, or a Disneyland Railroad loop to sit down."],
-    ["18:30","Main Street shops","Disneyland Park closes at 19:00."],
-    ["19:00","Dinner","In Adventure World or Disney Village. Book Bistrot Chez Remy in the app if you want a sit-down."],
-    ["20:00","Back in Adventure World: favourite re-rides","Second goes on Frozen, Ratatouille or Slinky Dog. <b>Exit option:</b> if he is done, leave now and you are home by about 21:00."],
+    ["11:10","Toy Story Playland, then Cars Road Trip","Slinky Dog Zigzag Spin and Toy Soldiers Parachute Drop (81 cm, he fits) side by side, then Cars Road Trip next door. Skip Tower of Terror (too scary at five); Crush's Coaster is closed for works."],
+    ["11:45","Walk to Disneyland Park, go right to Discoveryland","Two minutes across the plaza; same ticket. Do the park as one loop so you never double back: Discoveryland, Fantasyland, Frontierland, Adventureland, Main Street."],
+    ["11:55","Early lunch: Cafe Hyperion, Discoveryland","Quick service, plain food he will eat, and you are eating before the 12:30 lunch rush."],
+    ["12:30","Discoveryland","Buzz Lightyear Laser Blast, Star Tours (102 cm, he fits), Autopia with an adult. Orbitron if the wait is under 20 minutes."],
+    ["13:45","Fantasyland","Peter Pan's Flight (longest queue in the park; paid Premier Access if it is over 45 minutes), Dumbo, Casey Jr, the Storybook boats, It's a Small World, Pinocchio, Mad Hatter's Tea Cups, and the dragon in the cave under the castle."],
+    ["15:45","Christmas parade from the Fantasyland end","The route starts near It's a Small World, so watch it there instead of crossing to Main Street. Check the app for today's time and take your spot 15 minutes early."],
+    ["16:30","Frontierland: Big Thunder Mountain","102 cm minimum; at 109 cm he fits. A fun family coaster; ride with an adult."],
+    ["17:15","Adventureland: Pirates of the Caribbean, Adventure Isle","Pirates is indoors and mild. Adventure Isle is a free walk through caves, bridges and a pirate ship."],
+    ["18:15","Main Street: castle photo and shops","Disneyland Park closes at 19:00. Leave by 18:50."],
+    ["19:00","Dinner, Disney Adventure World","Book Bistrot Chez Remy in the app, or quick service so you stay near the lake."],
+    ["20:00","Adventure World evening","Flying Carpets Over Agrabah, Cars Quatre Roues Rallye, Spider-Man W.E.B. Adventure (no height limit), Mickey and the Magician if there is a late show, then a second go on his favourite. Expect busier queues once Disneyland Park closes. <b>Exit option:</b> if he is done, leave now and you are home by about 21:00."],
     ["21:30","Disney Cascade of Lights, Adventure Bay","The night show on the lake. Check the app for the exact time and stand by the water 15 minutes early."],
     ["22:00","RER A back to Paris","About 40 minutes; in bed by 23:00. Eiffel Tower is 09:30 tomorrow, so lay out clothes before you leave in the morning."],
   ],
@@ -3216,11 +3215,11 @@ var CHOICES = {
    {n:"Bakery sandwiches from Rue Montorgueil", a:"Rue Montorgueil, 75002", h:"Walk 4 min", why:"Simple and close; bed early for Disneyland."}]}
  ],
  9: [
-  {s:"Lunch at Disneyland", t:"12:00", o:[
-   {n:"Pizzeria Bella Notte (Fantasyland)", a:"Fantasyland, Disneyland Park", h:"In the park", best:1, why:"Pizza and pasta: safe for Izyan, quick service."},
+  {s:"Lunch at Disneyland", t:"11:55", o:[
+   {n:"Cafe Hyperion (Discoveryland)", a:"Disneyland Park, Discoveryland", h:"Up Main Street and to the right, 5 min", best:1, why:"Quick, plain food he will eat, and it keeps the afternoon loop starting in Discoveryland."},
+   {n:"Pizzeria Bella Notte (Fantasyland)", a:"Fantasyland, Disneyland Park", h:"In the park", why:"Pizza and pasta: safe for Izyan, quick service."},
    {n:"Plaza Gardens buffet (Main Street)", a:"Main Street U.S.A., Disneyland Park", h:"In the park", why:"Buffet means everyone finds something; book a slot in the app."},
-   {n:"Agrabah Cafe (Adventureland)", a:"Adventureland, Disneyland Park", h:"In the park", why:"Middle Eastern buffet: comfort food for you, plain options for him."},
-   {n:"Bistrot Chez Remy (Disney Adventure World)", a:"Disney Adventure World, Ratatouille area", h:"In the park (book in the app)", local:1, why:"Only at Disneyland Paris: a French bistro shrunk to rat size from Ratatouille. Steak or chicken and fries; Izyan will love the giant props."}]},
+   {n:"Agrabah Cafe (Adventureland)", a:"Adventureland, Disneyland Park", h:"In the park", why:"Middle Eastern buffet: comfort food for you, plain options for him."}]},
   {s:"Dinner", t:"19:00", o:[
    {n:"Bistrot Chez Remy (Disney Adventure World)", a:"Disney Adventure World, Ratatouille area", h:"In the park (book in the app)", best:1, local:1, why:"Only at Disneyland Paris: a rat-sized French bistro from Ratatouille. Sit down and warm up before the night show."},
    {n:"Quick service in Disney Adventure World", a:"Disney Adventure World", h:"In the park", why:"Fastest option so you stay near the lake for the show."},
