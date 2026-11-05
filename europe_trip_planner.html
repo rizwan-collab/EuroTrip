@@ -152,7 +152,7 @@ tbody tr:last-child td{border-bottom:0}
 .tl-wrap{padding:6px 0}
 .tl{display:flex;gap:14px;padding:8px 18px;align-items:baseline}
 .tl:hover{background:#fcfdfe}
-.tl-t{font-size:11.5px;font-weight:600;color:var(--brand);
+.tl-t{font-size:11.5px;font-weight:600;color:var(--brand);min-width:70px;
   font-variant-numeric:tabular-nums;min-width:44px;flex-shrink:0}
 .tl-w{font-size:13px;color:var(--ink);line-height:1.5}
 .tl-n{display:block;font-size:11.5px;color:var(--mute);
@@ -506,7 +506,7 @@ nav{position:sticky}
   .dh-d{font-size:12px}
   .dh-c{font-size:17.5px}
   .tl{padding:9px 16px;gap:12px}
-  .tl-t{font-size:13px;min-width:48px}
+  .tl-t{font-size:13px;min-width:70px;max-width:74px}
   .tl-w{font-size:15px}
   .tl-n{font-size:13.5px}
   .btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center;font-size:14px;padding:10px 14px;vertical-align:middle}
@@ -652,7 +652,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-05j";
+var BUILD = "2026-11-05k";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -1097,7 +1097,7 @@ var PLAN = [
     ["11:45","Walk to Disneyland Park, go right to Discoveryland","Two minutes across the plaza; same ticket. Do the park as one loop so you never double back: Discoveryland, Fantasyland, Frontierland, Adventureland, Main Street."],
     ["11:55","Early lunch: Cafe Hyperion, Discoveryland","Quick service, plain food he will eat, and you are eating before the 12:30 lunch rush."],
     ["12:30","Discoveryland","Buzz Lightyear Laser Blast, Star Tours (102 cm, he fits), Autopia with an adult. Orbitron if the wait is under 20 minutes."],
-    ["13:45","Fantasyland","Peter Pan's Flight (longest queue in the park; paid Premier Access if it is over 45 minutes), Dumbo, Casey Jr, the Storybook boats, It's a Small World, Pinocchio, Mad Hatter's Tea Cups, and the dragon in the cave under the castle."],
+    ["13:45","Fantasyland","Peter Pan's Flight (longest queue in the park; paid Premier Access if it is over 45 minutes), Dumbo, <b>Casey Jr. circus train</b> (Casey Jr. &ndash; le Petit Train du Cirque), the Storybook boats, It's a Small World, Pinocchio, Mad Hatter's Tea Cups, and the dragon in the cave under the castle."],
     ["15:45","Christmas parade from the Fantasyland end","The route starts near It's a Small World, so watch it there instead of crossing to Main Street. Check the app for today's time and take your spot 15 minutes early."],
     ["16:30","Frontierland: Big Thunder Mountain","102 cm minimum; at 109 cm he fits. A fun family coaster; ride with an adult."],
     ["17:15","Adventureland: Pirates of the Caribbean, Adventure Isle","Pirates is indoors and mild. Adventure Isle is a free walk through caves, bridges and a pirate ship."],
@@ -3266,7 +3266,7 @@ function choosePick(d,s,i){
   save(pickKey(d,s), String(i));
   var el = document.getElementById('s-itinerary'), y = window.scrollY;
   el.innerHTML = RENDER.itinerary(); foldNotes(el);
-  window.scrollTo(0, y); centerChip(); wxPaint();
+  window.scrollTo(0, y); centerChip(); wxPaint(); time12(el);
   var card = document.getElementById('day-'+d);
   if(card){ var sm = [].slice.call(card.querySelectorAll('details.acc>summary')).filter(function(x){ return x.textContent.indexOf(s+':')>-1; })[0];
     if(sm){ var r = sm.getBoundingClientRect(); if(r.top < 60 || r.bottom > window.innerHeight) sm.scrollIntoView({block:'center'}); } }
@@ -3401,6 +3401,7 @@ function wxPaint(){
       nw.innerHTML = '<b>Now in '+WX_LOC[k].n+':</b> '+ic[0]+' '+Math.round(c.temperature_2m)+'&deg;F, feels '+Math.round(c.apparent_temperature)+'&deg;F &middot; '+ic[1];
     } else nw.style.display = 'none';
   }
+  for(var q=1;q<=11;q++) time12(document.getElementById('wx-'+q));
   var tb = document.getElementById('wx-tbl');
   if(tb){
     tb.innerHTML = PLAN.map(function(D){
@@ -3416,6 +3417,21 @@ function wxBlock(){
     + '<div style="padding:4px 14px 12px"><div id="wx-now" class="wx-now" style="display:none"></div>'
     + '<table class="wx-tb"><thead><tr><th>Day</th><th>Where</th><th>High/Low</th><th>Rain</th></tr></thead><tbody id="wx-tbl"></tbody></table>'
     + '<div class="wx-dim" style="margin-top:8px">Live forecast (Open-Meteo), refreshes hourly when there is signal. Tap a row to jump to that day. <button class="btn btn-sm" onclick="wxFetch(true)">Refresh</button></div></div></details>';
+}
+
+
+/* ---- 12-hour clock for everything shown ---- */
+function to12(str){
+  return String(str).replace(/\b([01]?\d|2[0-3]):([0-5]\d)\b/g, function(m,h,mm){
+    h = +h; var ap = h < 12 ? 'AM' : 'PM'; var hh = h % 12; if(hh === 0) hh = 12;
+    return hh + ':' + mm + ' ' + ap;
+  });
+}
+function time12(el){
+  if(!el) return;
+  var w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null), n, list = [];
+  while((n = w.nextNode())){ if(/\d:\d\d/.test(n.nodeValue) && !/\d:\d\d (AM|PM)/.test(n.nodeValue)) list.push(n); }
+  list.forEach(function(t){ t.nodeValue = to12(t.nodeValue); });
 }
 
 var RENDER = {
@@ -3473,6 +3489,7 @@ function show(key){
   foldNotes(el);
   mobPolish(el);
   if(key === 'itinerary') wxPaint();
+  time12(el);
   el.classList.add("on");
   save("tab", key);
   window.scrollTo(0, 0);
