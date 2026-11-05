@@ -652,7 +652,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-05k";
+var BUILD = "2026-11-05l";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -1097,13 +1097,13 @@ var PLAN = [
     ["11:45","Walk to Disneyland Park, go right to Discoveryland","Two minutes across the plaza; same ticket. Do the park as one loop so you never double back: Discoveryland, Fantasyland, Frontierland, Adventureland, Main Street."],
     ["11:55","Early lunch: Cafe Hyperion, Discoveryland","Quick service, plain food he will eat, and you are eating before the 12:30 lunch rush."],
     ["12:30","Discoveryland","Buzz Lightyear Laser Blast, Star Tours (102 cm, he fits), Autopia with an adult. Orbitron if the wait is under 20 minutes."],
-    ["13:45","Fantasyland","Peter Pan's Flight (longest queue in the park; paid Premier Access if it is over 45 minutes), Dumbo, <b>Casey Jr. circus train</b> (Casey Jr. &ndash; le Petit Train du Cirque), the Storybook boats, It's a Small World, Pinocchio, Mad Hatter's Tea Cups, and the dragon in the cave under the castle."],
+    ["13:45","Fantasyland and Sleeping Beauty Castle","Peter Pan's Flight first (longest queue; paid Premier Access if over 45 minutes). Then Dumbo, <b>Casey Jr. circus train</b>, the Storybook boats, It's a Small World, Pinocchio and Mad Hatter's Tea Cups. <b>Sleeping Beauty Castle:</b> the upstairs gallery tells the story in stained glass and tapestries, and the dragon sleeps in the cave underneath. Both free, no queue."],
     ["15:45","Christmas parade from the Fantasyland end","The route starts near It's a Small World, so watch it there instead of crossing to Main Street. Check the app for today's time and take your spot 15 minutes early."],
     ["16:30","Frontierland: Big Thunder Mountain","102 cm minimum; at 109 cm he fits. A fun family coaster; ride with an adult."],
-    ["17:15","Adventureland: Pirates of the Caribbean, Adventure Isle","Pirates is indoors and mild. Adventure Isle is a free walk through caves, bridges and a pirate ship."],
+    ["17:15","Adventureland: Pirates, Aladdin, Adventure Isle","Pirates of the Caribbean (indoors, mild). <b>Le Passage Enchante d'Aladdin</b>: a short walk-through of Aladdin scenes, no queue. Adventure Isle: caves, bridges and a pirate ship to explore."],
     ["18:15","Main Street: castle photo and shops","Disneyland Park closes at 19:00. Leave by 18:50."],
     ["19:00","Dinner, Disney Adventure World","Book Bistrot Chez Remy in the app, or quick service so you stay near the lake."],
-    ["20:00","Adventure World evening","Flying Carpets Over Agrabah, Cars Quatre Roues Rallye, Spider-Man W.E.B. Adventure (no height limit), Mickey and the Magician if there is a late show, then a second go on his favourite. Expect busier queues once Disneyland Park closes. <b>Exit option:</b> if he is done, leave now and you are home by about 21:00."],
+    ["20:00","Adventure World evening","<b>Flying Carpets Over Agrabah</b> (Aladdin's flying carpets), Cars Quatre Roues Rallye, Spider-Man W.E.B. Adventure (no height limit), Mickey and the Magician if there is a late show, then a second go on his favourite. Expect busier queues once Disneyland Park closes. <b>Exit option:</b> if he is done, leave now and you are home by about 21:00."],
     ["21:30","Disney Cascade of Lights, Adventure Bay","The night show on the lake. Check the app for the exact time and stand by the water 15 minutes early."],
     ["22:00","RER A back to Paris","About 40 minutes; in bed by 23:00. Eiffel Tower is 09:30 tomorrow, so lay out clothes before you leave in the morning."],
   ],
@@ -2862,7 +2862,7 @@ function renderItinerary(){
       var isBooked = /BOOKED|CONFIRMED|booked/.test(s[1]);
       return '<div class="tl"><span class="tl-t">'+s[0]+'</span>'
         + '<span class="tl-w">'+(isBooked?'<b>'+s[1]+'</b>':s[1])
-        + (s[2]?'<span class="tl-n">'+shortTxt(s[2],140)+'</span>':'')+'</span></div>';
+        + (s[2]?'<span class="tl-n">'+s[2]+'</span>':'')+'</span></div>';
     }).join('');
     return '<div class="card blk daycard" id="day-'+D.n+'" data-dt="'+D.date+'">'
       + '<div class="dh"><div><div class="dh-d">Day '+D.n+' &middot; '+D.date+'</div>'
