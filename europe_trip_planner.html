@@ -567,6 +567,15 @@ nav{position:sticky}
 .wx-tb td{padding:9px 8px}
 .wx-tb tbody tr{cursor:pointer}
 @media(max-width:880px){ .wx-r{font-size:14px} .wx-t{font-size:13px} }
+
+.tlc{background:linear-gradient(135deg,#0b1220,#1d3a8a);color:#fff;border-radius:14px;padding:16px 18px;margin-bottom:12px;box-shadow:0 4px 14px rgba(11,18,32,.18)}
+.tlc-h{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#a9b8d8;font-weight:700;display:flex;justify-content:space-between;gap:8px}
+.tlc-h span{color:#fff}
+.tlc-n{font-size:21px;font-weight:700;margin:6px 0 10px}
+.tlc-r{display:flex;justify-content:space-between;gap:12px;padding:5px 0;border-top:1px solid rgba(255,255,255,.12);font-size:14px}
+.tlc-r span{color:#a9b8d8;flex:none}
+.tlc-r b{text-align:right;font-weight:600}
+.tlc a{color:#fff;text-decoration:underline}
 </style>
 </head>
 <body>
@@ -652,7 +661,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-05p";
+var BUILD = "2026-11-05q";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -2940,6 +2949,7 @@ function renderInsurance(){
     + '<b>Not covered:</b> trip cancellation (Chase Sapphire covers that), pre-existing conditions.<br>'
     + '<b>Claims:</b> tinleg.com/report-claim &middot; <a href="tel:+17272605012">+1 727-260-5012</a> (collect, from abroad) &middot; <a href="tel:+18442401233">844-240-1233</a> (US) &middot; claims@tinleg.com<br>'
     + '<b>Policy 53-TLG-8A2-882A3</b> &middot; account access code 56F20 &middot; documents in the private Drive folder (Checklist tab).</div>'
+    + '<div class="blk"><div class="blk-h">Insurance ID cards &middot; show these at a hospital, clinic or pharmacy</div>'+tinCards()+'</div>'
     + '<div class="blk"><div class="blk-h">Numbers to save in both phones</div>'
     + '<div class="tw tsc"><table><tbody>'+em+'</tbody></table></div></div>';
 }
@@ -3513,6 +3523,23 @@ function dlBlock(){
   return '<details class="acc" open><summary><b>Ride checklist</b> <span class="acc-n" id="dlc">'+dlCount()+'</span></summary>'
     + '<div style="padding:4px 16px 2px;font-size:14px;color:var(--ink2)"><b>Quiet day:</b> do everything in order. <b>Running behind:</b> drop <span class="pill p-n">Bonus</span> first, then <span class="pill p-b">Should</span>. Never drop <span class="pill p-r">Must</span>.</div>'
     + body + '</details>';
+}
+
+
+/* ---- Tin Leg wallet ID cards (from the policy PDF; no dates of birth) ---- */
+function tinCards(){
+  return ['Rizwan Ali','Zaibnish Ali','Izyan Khalil Ali'].map(function(n){
+    return '<div class="tlc"><div class="tlc-h">Travel Insurance ID Card <span>Tin Leg Gold</span></div>'
+      + '<div class="tlc-n">'+n+'</div>'
+      + '<div class="tlc-r"><span>Policy number</span><b>53-TLG-8A2-882A3</b></div>'
+      + '<div class="tlc-r"><span>Coverage</span><b>Nov 9 to Nov 19, 2026</b></div>'
+      + '<div class="tlc-r"><span>Underwriter</span><b>Starr Indemnity &amp; Liability Company</b></div>'
+      + '<div class="tlc-r"><span>24h help, outside USA</span><b><a href="tel:+17272645657">+1 727-264-5657</a> (collect)</b></div>'
+      + '<div class="tlc-r"><span>24h help, inside USA</span><b><a href="tel:+18449279265">844-927-9265</a></b></div>'
+      + '<div class="tlc-r"><span>Claims</span><b><a href="tel:+18442401233">844-240-1233</a> &middot; claims@tinleg.com</b></div>'
+      + '<div class="tlc-r"><span>Emergency email</span><b>emergency@tinleg.com</b></div>'
+      + '</div>';
+  }).join('');
 }
 
 var RENDER = {
