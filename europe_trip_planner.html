@@ -580,7 +580,7 @@ nav{position:sticky}
     <div class="h-meta">
       <div class="h-m"><div class="h-m-l">Dates</div><div class="h-m-v">Nov 9&ndash;19, 2026</div></div>
       <div class="h-m"><div class="h-m-l">Nights</div><div class="h-m-v">9</div></div>
-      <div class="h-m"><div class="h-m-l">Estimated</div><div class="h-m-v">$9,088&ndash;9,448</div></div>
+      <div class="h-m"><div class="h-m-l">All-in</div><div class="h-m-v" id="hdr-allin">$9,226&ndash;9,679</div></div>
     </div>
   </div>
 </header>
@@ -652,7 +652,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-05f";
+var BUILD = "2026-11-05h";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -1056,7 +1056,7 @@ var PLAN = [
     ["14:40","Check in and security","Small airport, quick to move through."],
     ["16:40","Depart Seville","Air France, booked and paid. Direct to CDG, 2h35, and the fare carries your checked bag."],
     ["19:15","Land CDG, Terminal 2G","Same time zone as Spain, so no clock change."],
-    ["19:15","TAXI TO NESTAY - BOOKED (Booking.com 334368205)","Sixt Ride, standard car, booster seat. Driver waits 45 min from 19:15. Add flight AF 1547 in the Booking.com booking so they track delays. About 45 min to Nestay. Backup: shuttle N2 to 2F, then RER B."],
+    ["19:15","TAXI TO NESTAY - BOOKED (Booking.com 334368205)","Sixt Ride, standard car, booster seat. Flight AF 1547 is on the booking, so they track delays; driver waits 45 min. About 45 min to Nestay. Backup: shuttle N2 to 2F, then RER B."],
     ["20:45","Check in at Nestay, Les Halles","7 Rue de la Cossonnerie. Door codes come from the online check-in."],
     ["21:15","Something quick nearby","Then bed. Disneyland gates open at 09:30."]
   ],
@@ -2143,16 +2143,16 @@ function bkExport(){
    ================================================================== */
 var BDG = [
   {d:1, dt:"Mon Nov 9",  c:"Texas to Lisbon",     i:"Ride to IAH, parking, airport meals",            e:110},
-  {d:2, dt:"Tue Nov 10", c:"Lisbon",               i:"Lunch and dinner, Bolt rides, Time Out Market",   e:140},
+  {d:2, dt:"Tue Nov 10", c:"Lisbon",               i:"Lunch and dinner, Time Out Market, metro (airport taxi paid)", e:130},
   {d:3, dt:"Wed Nov 11", c:"Lisbon",               i:"Castelo de Sao Jorge, meals, tram fares",             e:120},
-  {d:4, dt:"Thu Nov 12", c:"Lisbon to Granada",  i:"Airport transfers, coach to Granada, meals",      e:120},
+  {d:4, dt:"Thu Nov 12", c:"Lisbon to Granada",  i:"Meals, taxi from Granada bus station (airport taxi and coach are paid)", e:100},
   {d:5, dt:"Fri Nov 13", c:"Granada, Alhambra",  i:"Lunch tapas, Parador or hotel dinner",            e:150},
   {d:6, dt:"Sat Nov 14", c:"Granada to Seville", i:"Meals, taxis both ends, tapas dinner",            e:100},
   {d:7, dt:"Sun Nov 15", c:"Seville",            i:"Churros, long lunch, tapas dinner, taxis",        e:130},
-  {d:8, dt:"Mon Nov 16", c:"Seville to Paris",   i:"Lunch in Seville, taxi, RER B, dinner",           e:110},
+  {d:8, dt:"Mon Nov 16", c:"Seville to Paris",   i:"Lunch in Seville, taxi to SVQ (26 to 29 euros), dinner (CDG taxi paid)", e:110},
   {d:9, dt:"Tue Nov 17", c:"Disneyland Paris",     i:"Park food, RER A, snacks",                        e:130},
   {d:10,dt:"Wed Nov 18", c:"Paris",             i:"Market breakfast, lunch, Seine cruise, dinner",   e:160},
-  {d:11,dt:"Thu Nov 19", c:"Paris to Texas",    i:"Breakfast, booked taxi to CDG ($62.25), drive home",     e:120}
+  {d:11,dt:"Thu Nov 19", c:"Paris to Texas",    i:"Breakfast, airport food, drive home (CDG taxi paid)", e:100}
 ];
 var BDG_TOTAL = BDG.reduce(function(s,x){ return s + x.e; }, 0);
 
@@ -2965,13 +2965,51 @@ function renderBooking(){
     + '<div class="blk"><div class="blk-h">Done ('+done.length+')</div><div class="card">'+doneRows+'</div></div>';
 }
 
+var PAID = [
+  ["Flights and bags", [["United IAH-IAD-LIS + $90 bag",1479],["American CDG-DFW incl. $87 bag",1616.49],["TAP Lisbon-Malaga",538.32],["Air France Seville-Paris",369.80]]],
+  ["Places to stay, 9 nights", [["Lisbon, Residentas (2 nights)",582],["Granada, Hotel America (2)",497.38],["Seville, Iberflat (2)",330],["Paris, Nestay (3)",1378]]],
+  ["Tickets and tours", [["Disneyland, 1 day / 2 parks",348.74],["Eiffel Tower",70.89],["Lisbon photoshoot",60.51],["Alhambra",48.69],["Paris photoshoot",39.21],["Seville Cathedral",32.63]]],
+  ["Coach and train", [["Granada to Seville train",181.76],["ALSA Malaga Airport to Granada (43.27 euros)",50]]],
+  ["Airport taxis (Booking.com)", [["CDG to Nestay, Nov 16",68.66],["Nestay to CDG, Nov 19",62.25],["Apartment to Lisbon airport, Nov 12",16.97],["Lisbon airport to apartment, Nov 10",15.42]]],
+  ["Travel insurance", [["Tin Leg Gold, all three",77]]]
+];
+var TOSPEND = [
+  ["Food, local transport, small extras", BDG_TOTAL, Math.round(BDG_TOTAL*1.3/10)*10, "Day-by-day plan below; high end allows 30% extra"],
+  ["Phone data (eSIM or T-Mobile pass)", 22, 75, "Decision paused"]
+];
+function usd(n){ return '$' + n.toLocaleString('en-US',{minimumFractionDigits:2, maximumFractionDigits:2}); }
+function usd0(n){ return '$' + Math.round(n).toLocaleString('en-US'); }
+function budgetTotals(){
+  var paid = 0; PAID.forEach(function(g){ g[1].forEach(function(x){ paid += x[1]; }); });
+  var lo = 0, hi = 0; TOSPEND.forEach(function(x){ lo += x[1]; hi += x[2]; });
+  return {paid:Math.round(paid*100)/100, lo:lo, hi:hi, allLo:paid+lo, allHi:paid+hi};
+}
 function renderBudget(){
-  var rows = COSTS.map(function(c){
-    var amt = c[1]===c[2] ? c[1] : c[1]+' to '+c[2];
-    return '<tr><td><b>'+c[0]+'</b></td><td class="num">'+amt+'</td><td style="font-size:12.5px;color:var(--mute)">'+shortTxt(c[3],110)+'</td></tr>';
+  var T = budgetTotals();
+  var paidRows = PAID.map(function(g){
+    var sub = g[1].reduce(function(a,x){ return a + x[1]; }, 0);
+    return '<tr style="background:var(--line2)"><td><b>'+g[0]+'</b></td><td class="num"><b>'+usd(sub)+'</b></td></tr>'
+      + g[1].map(function(x){ return '<tr><td style="padding-left:22px;color:var(--ink2)">'+x[0]+'</td><td class="num">'+usd(x[1])+'</td></tr>'; }).join('');
   }).join('');
-  return simpleHead('Budget', 'Paid amounts are from confirmations; the rest are estimates.')
-    + '<div class="tw tsc"><table><thead><tr><th>Category</th><th class="num">Amount</th><th>Notes</th></tr></thead><tbody>'+rows+'</tbody></table></div>';
+  var spendRows = TOSPEND.map(function(x){
+    return '<tr><td><b>'+x[0]+'</b><br><span style="font-size:12.5px;color:var(--mute)">'+x[3]+'</span></td><td class="num">'+usd0(x[1])+' to '+usd0(x[2])+'</td></tr>';
+  }).join('');
+  var dayRows = BDG.map(function(x){
+    return '<tr><td><b>'+x.dt+'</b><br><span style="font-size:12.5px;color:var(--mute)">'+x.c+'</span></td><td style="font-size:13px;color:var(--ink2)">'+x.i+'</td><td class="num">$'+x.e+'</td></tr>';
+  }).join('');
+  return simpleHead('Budget', 'Paid amounts are from confirmations. Euro charges are shown at the US-dollar amount recorded; your card statement may differ by a few dollars.')
+    + '<div class="g4 blk">'
+    + '<div class="stat"><div class="st-l">Paid so far</div><div class="st-v">'+usd0(T.paid)+'</div><div class="st-n">'+usd(T.paid)+' exactly</div></div>'
+    + '<div class="stat"><div class="st-l">Still to spend</div><div class="st-v">'+usd0(T.lo)+'&ndash;'+usd0(T.hi).slice(1)+'</div><div class="st-n">Food, local transport, data</div></div>'
+    + '<div class="stat"><div class="st-l">All-in</div><div class="st-v">'+usd0(T.allLo)+'&ndash;'+usd0(T.allHi).slice(1)+'</div><div class="st-n">Three people, Nov 9 to 19</div></div>'
+    + '<div class="stat"><div class="st-l">Goway quote</div><div class="st-v">$12,604</div><div class="st-n">You save '+usd0(12604-T.allHi)+'&ndash;'+usd0(12604-T.allLo).slice(1)+'</div></div>'
+    + '</div>'
+    + '<div class="blk"><div class="blk-h">Paid</div><div class="tw tsc"><table><tbody>'+paidRows+'</tbody>'
+    + '<tfoot><tr style="border-top:2px solid var(--line)"><td style="font-weight:700">Total paid</td><td class="num" style="font-weight:700">'+usd(T.paid)+'</td></tr></tfoot></table></div></div>'
+    + '<div class="blk"><div class="blk-h">Still to spend (estimates)</div><div class="tw tsc"><table><tbody>'+spendRows+'</tbody>'
+    + '<tfoot><tr style="border-top:2px solid var(--line)"><td style="font-weight:700">Total still to spend</td><td class="num" style="font-weight:700">'+usd0(T.lo)+' to '+usd0(T.hi)+'</td></tr></tfoot></table></div></div>'
+    + '<div class="blk"><div class="blk-h">Day by day: food, local transport, small extras</div><div class="tw tsc"><table><tbody>'+dayRows+'</tbody>'
+    + '<tfoot><tr style="border-top:2px solid var(--line)"><td colspan="2" style="font-weight:700">Total</td><td class="num" style="font-weight:700">$'+BDG_TOTAL.toLocaleString()+'</td></tr></tfoot></table></div></div>';
 }
 function loadBudget(){}
 
@@ -3015,7 +3053,7 @@ var CODES = [
   {d:"Nov 14-16", w:"Seville: Iberflat San Gregorio, Calle San Gregorio 7", s:"https://www.booking.com/hotel/es/iberflat-san-gregorio.html", m:"Calle San Gregorio 7, 41004 Sevilla", x:"Check in Sat Nov 14 15:00 to midnight, check out Mon Nov 16 by 12:00. Housekeeper holds bags Nov 16 if arranged ahead. $330. Bring credit card and photo ID.", c:"<b>Booking.com confirmation 6795.767.661 &middot; PIN 7427</b> (Zaibnish). $330. Phones +34 697 16 72 22 / office +34 955 515 541", l:"https://secure.booking.com/myreservations.html", ln:"Booking.com trips"},
   {d:"Nov 15", w:"Seville Cathedral + Giralda, 14:30", s:"https://www.catedraldesevilla.es/en", m:"Puerta del Lagarto, Catedral de Sevilla", x:"Sun Nov 15, 14:30 entry, Giralda first. Includes Church of El Salvador. 26 euros paid.", c:"<b>Purchase ref 262INA5EXR</b> &middot; Reservation ref CMK2NVE7 &middot; Puerta del Lagarto &middot; bring passports", l:"https://www.catedraldesevilla.es", ln:"catedraldesevilla.es"},
   {d:"Nov 16", w:"Air France AF 1547, Seville 16:40 to CDG 19:15", s:"https://wwws.airfrance.us", m:"Seville Airport SVQ", x:"Mon Nov 16: SVQ 16:40 to CDG 19:15, Terminal 2G, operated by HOP. Checked bag included. $369.80.", c:"<b>Air France booking reference XKLUAY</b>. Check in on airfrance.us or the app with XKLUAY + surname ALI", l:"https://wwws.airfrance.us/en/my-reservations", ln:"Air France bookings"},
-  {d:"Nov 16", w:"Taxi CDG to Nestay, 19:15 (Booking.com)", s:"https://www.booking.com/taxi/", m:"Paris Charles de Gaulle Terminal 2G", x:"Mon Nov 16, pick-up 19:15 at CDG (AF 1547 lands 19:15, Terminal 2G), to Nestay Les Halles, 7 Rue de la Cossonnerie. Sixt Ride, ride ID 333619553, standard car, max 3 passengers, 1 booster seat. Driver waits 45 minutes. No flight number on the booking yet: add AF 1547. In Zaibnish's name. Booking.com Rides support +44 191 743 1903.", c:"<b>Booking reference 334368205</b>. $68.66 paid. Free cancellation until Mon Nov 16, 17:15 Paris time", l:"https://www.booking.com/taxi/", ln:"Booking.com rides"},
+  {d:"Nov 16", w:"Taxi CDG to Nestay, 19:15 (Booking.com)", s:"https://www.booking.com/taxi/", m:"Paris Charles de Gaulle Terminal 2G", x:"Mon Nov 16, pick-up 19:15 at CDG (AF 1547 lands 19:15, Terminal 2G), to Nestay Les Halles, 7 Rue de la Cossonnerie. Sixt Ride, ride ID 333619553, standard car, max 3 passengers, 1 booster seat. Driver waits 45 minutes. Flight AF 1547 added to the booking, so pick-up follows the actual landing. In Zaibnish's name. Booking.com Rides support +44 191 743 1903.", c:"<b>Booking reference 334368205</b>. $68.66 paid. Free cancellation until Mon Nov 16, 17:15 Paris time", l:"https://www.booking.com/taxi/", ln:"Booking.com rides"},
   {d:"Nov 16-19", w:"Paris: Nestay Les Halles, 7 Rue de la Cossonnerie, Apt 201", s:"https://www.booking.com/hotel/fr/nestay-les-halles.html", m:"7 Rue de la Cossonnerie, 75001 Paris", x:"Check in Mon Nov 16 (late arrival ~20:45), check out Thu Nov 19. Queen + sofa bed, kitchen, balcony. Complete online check-in and the rental agreement before you fly. $1,378.", c:"<b>Booking.com confirmation 5879.065.220 &middot; PIN 5503</b> (Zaibnish). Phone +33 1 42 33 97 51. Check-in 16:00 to 23:30 (you arrive ~20:45), check-out by 11:00. Door codes come after online check-in. $1,378", l:"https://secure.booking.com/myreservations.html", ln:"Booking.com trips"},
   {d:"Nov 17", w:"Disneyland Paris, 1 Day / 2 Parks", s:"https://www.disneylandparis.com/en-us/", m:"Disneyland Park, Chessy", x:"Tue Nov 17, both parks, gates 09:30. $348.74 paid. Show tickets in the Disneyland app or email.", c:"<b>Booking number 36558845</b> (Zaibnish). Cancel until 3 days before (by Sat Nov 14). $118.12 per adult, $112.50 Izyan", l:"https://www.disneylandparis.com/en-us/", ln:"disneylandparis.com"},
   {d:"Nov 18", w:"Eiffel Tower, 09:30, top by stairs + lift", s:"https://www.toureiffel.paris/en", m:"Tour Eiffel, Paris", x:"Wed Nov 18, 09:30, stairs to 2nd floor then lift to the top. Security 15 minutes before. Leave the summit by 11:30 for the photoshoot.", c:"<b>Order 262010714380</b> (paid Oct 3, Zaibnish). Ticket QR codes 341262010206102779, 341262010206102892, 341262010206102989 (2 adults + 1 child). 63 euros paid. Use the PDF tickets from the email; do not rely on a phone wallet", l:"https://www.toureiffel.paris/en", ln:"toureiffel.paris"},
@@ -3439,6 +3477,7 @@ function show(key){
   var nb = document.querySelector('.nv.on'), nv = document.getElementById('nav');
   if(nb && nv){ nv.scrollLeft = nb.offsetLeft - (nv.clientWidth - nb.offsetWidth)/2; }
   centerChip();
+  var hA=document.getElementById('hdr-allin'); if(hA){ var bT=budgetTotals(); hA.innerHTML=usd0(bT.allLo)+'&ndash;'+usd0(bT.allHi).slice(1); }
   document.documentElement.style.setProperty('--navh', (document.querySelector('nav').offsetHeight||46)+'px');
   if(key === 'itinerary' && todayN() > 1 && !show._jumped){ show._jumped = true; setTimeout(function(){ var c=document.getElementById('day-'+todayN()); if(c) c.scrollIntoView({block:'start'}); }, 60); }
 }
