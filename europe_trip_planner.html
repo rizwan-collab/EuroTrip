@@ -652,7 +652,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-04d";
+var BUILD = "2026-11-04e";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -1138,10 +1138,10 @@ var PLAN = [
     ["15:00","Luxembourg Gardens or Tuileries","Carousel, sailboats on the pond, room to run. Keep it to an hour."],
     ["16:00","Seine cruise","An hour on the water. Sunset is about 17:10, so you catch the light going."],
     ["17:15","Back to the apartment, warm up and change","Coats on for the evening; lows near freezing."],
-    ["18:00","Leave for Paris Jamatkhana","Address and time to confirm with the Paris Jamat by Sat Nov 7. Metro or Bolt, 20 to 30 min."],
-    ["18:30","PARIS JAMATKHANA - evening prayers (time to confirm)","Your request. Nov 18 is the only free Paris evening."],
-    ["20:00","Dinner","Near the Jamatkhana or back at Les Halles. Last proper meal of the trip."],
-    ["22:00","Optional: Trocadero for the sparkle","<b>Metro 6 to Trocadero.</b> Five minutes of lights on the hour. Skip it if Izyan is done."],
+    ["18:50","Metro to Paris Jamatkhana","Lines 4 then 6 to Cambronne, or Bolt. About 30 min. 55 rue de la Croix Nivert, 75015."],
+    ["19:30","PARIS JAMATKHANA - evening Du'a (Wednesday to confirm)","55 rue de la Croix Nivert, 75015. Listed times: Fri and Sat 19:30, Sun 19:00. Confirm Wednesday with the Rosny Mukhi, +33 1 43 51 09 46."],
+    ["20:45","Dinner on rue du Commerce","Five minutes' walk from the Jamatkhana. Last proper meal of the trip."],
+    ["22:00","Optional: Trocadero for the sparkle","<b>Metro 6 from Cambronne to Trocadero, 10 min.</b> Five minutes of lights on the hour. Skip it if Izyan is done."],
     ["22:15","Back, and pack tonight","So tomorrow morning is only breakfast and a taxi."]
   ],
   activities:{
@@ -1790,9 +1790,6 @@ var BOOKINGS = [
    n:"Decided 31 Oct to keep the seats as booked: Rizwan 34, Zaibnish 33, Izyan 30 (one row ahead). ALSA does not allow seat changes on board, so if Izyan needs a parent beside him, ask the driver at boarding or politely ask the passenger next to him to swap before departure.", by:"2026-11-05", est:0},
     {id:"photo", done:1, cost:39.21, paid:1, ph:4, t:"Family photo shoot: BOOKED, Wed Nov 18, 12:00, Eiffel Tower",
    n:"<b>Booked via GetYourGuide, in Zaibnish&#39;s name.</b> Private Eiffel Tower street photoshoot, 15 minutes, 5 photos, group up to 4, English. <b>Meet 11:55 in the middle of Pont de Bir-Hakeim</b> by the Joan of Arc statue (75015); the photographer contacts you on WhatsApp. $39.21. Booking reference and PIN are in the GetYourGuide app, kept off this public page. Leave the Eiffel summit by 11:30.", by:"2026-10-25", est:0},
-    {id:"dview", ph:6, t:"Optional: simpler Day by Day view",
-   n:"The Day by Day is too dense. Build a simpler at-a-glance view: one line per stop, times, and what is booked. To tackle closer to the trip.",
-   by:"2026-11-08", est:0},
   {id:"lphoto", done:1, cost:60.51, ph:4, t:"Lisbon photoshoot, Wed Nov 11, 11:45: BOOKED", n:"Largo Portas do Sol, by the St. Vincent statue. Arrive 11:40. $60.51 charged Nov 8; free cancel until Nov 10 11:45.", by:"2026-11-08", est:0},
   {id:"cat", done:1, cost:32.63, paid:1, ph:4, t:"Seville Cathedral and Giralda, Sun Nov 15, 14:30: BOOKED",
    n:"<b>Booked 3 Oct, 29 euros (26 plus 3 fee) for all three, in Zaibnish&#39;s name.</b> Includes the Church of El Salvador. Entry Puerta del Lagarto, be there by 14:20; no entry outside the time, non-refundable, no date change. <b>Bring all three passports</b>, the numbers are on the ticket. Shoulders covered, no caps or hats. Voucher PDF in the confirmations folder.",
@@ -1807,7 +1804,7 @@ var BOOKINGS = [
   {id:"isma", done:1, cost:0, ph:4, t:"Ismaili Centre, Lisbon, Wed Nov 11: tour CONFIRMED 17:30",
    n:"Confirmed 29 Oct. Av. Lusiada 1, Laranjeiras. Leave the apartment by 16:50 (Bolt about 8 euros, or Metro Blue line to Laranjeiras). Modest dress.", by:"2026-10-28", est:0},
     {id:"lug", done:1, cost:0, ph:5, t:"Luggage plan confirmed: 1 checked suitcase, 1 roller, 3 backpacks", n:"<b>What you carry (confirmed 10 Oct):</b> 1 large checked suitcase (on Rizwan), up to 1 carry-on roller, 3 backpacks. This fits every leg. <b>Weight rules:</b> suitcase at or under <b>20 kg</b> (ALSA is the tightest; airlines allow 23), roller at or under <b>10 kg</b> (TAP), backpacks small enough to go under the seat or in the rack. United IAH-IAD-LIS: 1 checked bag paid, carry-on + personal item each. TAP LIS-AGP: 1 checked bag on Rizwan, carry-on 10 kg + personal item each. ALSA AGP-Granada: each ticket 20 kg total, max 2 items, <b>plus 1 extra bag already bought (5 euros, up to 20 kg)</b>; suitcase and roller go underneath, backpacks overhead (hold if they do not fit). Fully covered. Renfe Nov 14: up to 3 bags per person, 25 kg: fine. Air France SVQ-CDG: checked bag included. AA CDG-DFW: 1 checked bag paid ($87). Because the extra ALSA bag is paid, a second roller would also fit every leg.", by:"2026-11-05", est:0},
-    {id:"pjk", ph:5, t:"Paris Jamatkhana: confirm address and evening time (planned Wed Nov 18)", n:"Get the address and evening prayer time from the Paris Jamat or your Ismaili Volunteers contacts. Planned for Wed Nov 18 around 18:30; alternatives are on the Nov 18 card in Day by Day.", by:"2026-11-07", est:0},
+    {id:"pjk", ph:5, t:"Paris Jamatkhana: confirm there is a Wednesday evening Du'a (Nov 18, planned 19:30)", n:"Weekdays are not on the listed schedule (Fri and Sat 19:30, Sun 19:00). Call or WhatsApp the Rosny Mukhi, Alijah Rajab Jiva, +33 1 43 51 09 46. Jamatkhana: 55 rue de la Croix Nivert, 75015.", by:"2026-11-07", est:0, u:"tel:+33143510946", ul:"Call the Rosny Mukhi"},
     {id:"ibl", ph:5, t:"Seville: arrange the luggage hold with Iberflat for Nov 16",
    n:"Call or message Iberflat (<b>+34 955 515 541</b>), or use the guest portal, about Nov 10. Ask the housekeeper to hold your bags on <b>Mon Nov 16 from 12:00 (check-out) to about 13:45</b>, before the 14:00 taxi to the airport. They have no luggage room, so it must be arranged ahead.", by:"2026-11-10", est:0},
     {id:"pass", done:1, ph:5, t:"Check all three passports",
@@ -2383,7 +2380,7 @@ function renderPacking(){
     + 'Forecast as of Nov 4: Lisbon 59 to 66&deg;F, rain likely both days. Granada 49 to 63&deg;F, wet. Seville 52 to 69&deg;F, dry. '
     + 'Paris and Disneyland 33 to 51&deg;F. Layers, a hooded rain jacket and a winter coat each. Live forecast: Day by Day, Weather.</div>'
     + '<div class="note n-i"><span class="n-t">Luggage plan</span>'
-    + '<b>Three backpacks, one carry-on, one checked bag.</b> That fits every leg, and the checked bag still needs buying on the United outbound. Bring laundry pods '
+    + '<b>Three backpacks, one carry-on, one checked bag.</b> That fits every leg; the United checked bag is paid ($90). Bring laundry pods '
     + '&mdash; you can wash mid-trip and rewear jeans, which is the difference between one checked bag and two. '
     + 'For the Disneyland day, pack a small backpack with snacks, water and the power bank.</div>'
     + '<div class="g2">'+cols+'</div>';
@@ -3199,10 +3196,10 @@ var CHOICES = {
    {n:"Tuileries carousel + gardens", a:"Jardin des Tuileries, 75001", h:"Walk 15 min from Nestay", why:"Iconic, near the Louvre, close to Nestay."},
    {n:"Seine cruise (16:00)", a:"Vedettes du Pont Neuf, Square du Vert-Galant", h:"Walk 12 min from Nestay", why:"Sit-down sightseeing as the city lights up."},
    {n:"Jardin d'Acclimatation", a:"Bois de Boulogne, 75116", h:"Metro line 1 to Les Sablons, 30 min", why:"Small amusement park with rides, only if he still has energy after Disney."}]},
-  {s:"Paris Jamatkhana (evening)", t:"~18:30", o:[
-   {n:"Paris Jamatkhana for evening prayers", a:"Address to confirm with the Paris Jamat (not published online)", h:"Metro or private car, about 20 to 30 min", best:1, why:"Your request: attend Jamatkhana in Paris. Nov 18 evening is the only free evening (Nov 16 late arrival, Nov 17 Disneyland). Dinner after, then the 22:00 tower sparkle if Izyan is awake."},
-   {n:"Jamatkhana on Mon Nov 16 instead", a:"Address to confirm", h:"From CDG, private van could drop you there first", why:"Only if the evening prayer time works with the 19:15 landing; tight with bags and a tired child."},
-   {n:"Jamatkhana on Tue Nov 17 after Disneyland", a:"Address to confirm", h:"RER A back by 19:00", why:"Possible, but Izyan will be exhausted after the parks."},
+  {s:"Paris Jamatkhana (evening)", t:"19:30", o:[
+   {n:"Paris Jamatkhana for evening prayers", a:"55 rue de la Croix Nivert, 75015 Paris", h:"Metro lines 4 + 6 to Cambronne or Bolt, about 30 min", best:1, why:"Your request: attend Jamatkhana in Paris. Nov 18 evening is the only free evening (Nov 16 late arrival, Nov 17 Disneyland). Dinner on rue du Commerce after, then the 22:00 tower sparkle if Izyan is awake."},
+   {n:"Jamatkhana on Mon Nov 16 instead", a:"55 rue de la Croix Nivert, 75015 Paris", h:"From CDG, private van could drop you there first", why:"Only if the evening prayer time works with the 19:15 landing; tight with bags and a tired child."},
+   {n:"Jamatkhana on Tue Nov 17 after Disneyland", a:"55 rue de la Croix Nivert, 75015 Paris", h:"RER A back by 19:00", why:"Possible, but Izyan will be exhausted after the parks."},
    {n:"Skip in Paris (Lisbon Ismaili Centre on Nov 11 covers it)", a:"Ismaili Centre Lisbon, Av. Lusiada 1", h:"Already booked, 17:30 tour", why:"Keeps the last Paris evening free."}]},
   {s:"Special dinner", t:"20:00", o:[
    {n:"Le Train Bleu (Gare de Lyon)", a:"Place Louis-Armand, Gare de Lyon, 75012", h:"RER A 5 min from Chatelet", best:1, why:"Special last dinner in a stunning Belle Epoque station restaurant; trains outside for Izyan."},
