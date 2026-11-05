@@ -652,7 +652,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-05n";
+var BUILD = "2026-11-05o";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -1089,11 +1089,12 @@ var PLAN = [
     ["07:45","Leave, pack the day bag","Snacks, water, power bank, winter coats, hats and gloves. Lows near freezing, and you are out until about 22:00."],
     ["08:00","RER A from Chatelet-Les Halles to Marne-la-Vallee-Chessy","Five minutes on foot from Nestay. Direct, about 40 minutes."],
     ["08:50","Arrive, bag check, Disney Adventure World gate","Queue at the Adventure World turnstiles, not Disneyland Park. <b>Rule for the day:</b> pay for Premier Access only if a queue is over 45 minutes. Hours: Disneyland Park 09:30 to 19:00, Adventure World 09:30 to 22:00 (confirm in the app)."],
-    ["09:30","Gates open: straight to World of Frozen","Once your ticket scans, join the free virtual queue for <b>A Royal Encounter with Elsa and Anna</b> in the Disneyland Paris app (must do; spots are limited). Go whenever your slot comes up, even if it moves the plan around."],
+    ["09:30","Gates open: straight to World of Frozen","Once your ticket scans, join the free virtual queues in the Disneyland Paris app for <b>A Royal Encounter with Elsa and Anna</b> and the <b>Hero Training Center</b> (Spider-Man, Iron Man or Captain Marvel). Both are must-dos with limited spots. If the app only allows one at a time, do Elsa and Anna first. Go whenever a slot comes up, even if it moves the plan around."],
     ["09:40","Frozen Ever After","No height limit. Some dark parts and a small drop. Paid Premier Access is the backup if the queue is long."],
     ["10:15","Raiponce Tangled Spin, Adventure Way","Gentle spinning gondolas under the lanterns. No height limit."],
     ["10:40","Ratatouille","Trackless ride, no height limit. The best ride in the park for a five-year-old."],
-    ["11:10","Toy Story Playland, then Cars Road Trip","Slinky Dog Zigzag Spin and Toy Soldiers Parachute Drop (81 cm, he fits) side by side, then Cars Road Trip next door. Skip Tower of Terror (too scary at five); Crush's Coaster is closed for works."],
+    ["11:10","Avengers Campus: Spider-Man W.E.B. Adventure","Marvel, next to Ratatouille. No height limit: he slings webs with his hands and gets a score. Watch for heroes on the rooftops. Skip Avengers Flight Force (120 cm; he is 109 cm)."],
+    ["11:35","Toy Story Playland: Slinky Dog","Then head out. Cars Road Trip and Toy Soldiers move to the evening, when Adventure World is open late."],
     ["11:45","Walk to Disneyland Park, go right to Discoveryland","Two minutes across the plaza; same ticket. Do the park as one loop so you never double back: Discoveryland, Fantasyland, Frontierland, Adventureland, Main Street."],
     ["11:55","Early lunch: Cafe Hyperion, Discoveryland","Quick service, plain food he will eat, and you are eating before the 12:30 lunch rush."],
     ["12:30","Discoveryland","Buzz Lightyear Laser Blast, Star Tours (102 cm, he fits), Autopia with an adult. Orbitron if the wait is under 20 minutes."],
@@ -1104,7 +1105,7 @@ var PLAN = [
     ["17:45","Adventureland: Pirates, Aladdin, Adventure Isle","Pirates of the Caribbean (indoors, mild). <b>Le Passage Enchante d'Aladdin</b>: a short walk-through, no queue. Adventure Isle: caves, bridges and a pirate ship."],
     ["18:35","Main Street: castle photo and shops","Disneyland Park closes at 7:00 PM. Leave by 6:55 PM."],
     ["19:00","Dinner, Disney Adventure World","Book Bistrot Chez Remy in the app, or quick service so you stay near the lake."],
-    ["20:00","Adventure World evening","<b>Flying Carpets Over Agrabah</b> (Aladdin's flying carpets), Cars Quatre Roues Rallye, <b>Spider-Man W.E.B. Adventure</b> (no height limit), A Celebration in Arendelle or Mickey and the Magician if there is a late show, then a second go on his favourite. Expect busier queues once Disneyland Park closes. <b>Exit option:</b> if he is done, leave now and you are home by about 21:00."],
+    ["20:00","Adventure World evening","<b>Flying Carpets Over Agrabah</b> (Aladdin's flying carpets), Cars Road Trip, Toy Soldiers Parachute Drop, Cars Quatre Roues Rallye, Hero Training Center if your slot is now, a second go on <b>Spider-Man</b>, A Celebration in Arendelle or Mickey and the Magician if there is a late show, then a second go on his favourite. Expect busier queues once Disneyland Park closes. <b>Exit option:</b> if he is done, leave now and you are home by about 21:00."],
     ["21:30","Disney Cascade of Lights, Adventure Bay","The night show on the lake. Check the app for the exact time and stand by the water 15 minutes early."],
     ["22:00","RER A back to Paris","About 40 minutes; in bed by 23:00. Eiffel Tower is 09:30 tomorrow, so lay out clothes before you leave in the morning."],
   ],
@@ -3223,8 +3224,8 @@ var CHOICES = {
    {n:"Agrabah Cafe (Adventureland)", a:"Adventureland, Disneyland Park", h:"In the park", why:"Middle Eastern buffet: comfort food for you, plain options for him."}]},
   {s:"Dinner", t:"19:00", o:[
    {n:"Bistrot Chez Remy (Disney Adventure World)", a:"Disney Adventure World, Ratatouille area", h:"In the park (book in the app)", best:1, local:1, why:"Only at Disneyland Paris: a rat-sized French bistro from Ratatouille. Sit down and warm up before the night show."},
-   {n:"Quick service in Disney Adventure World", a:"Disney Adventure World", h:"In the park", why:"Fastest option so you stay near the lake for the show."},
-   {n:"Disney Village counter service", a:"Disney Village, Marne-la-Vallee", h:"Walk 5 min from the gates", why:"Plain, familiar food for Izyan; easy re-entry with your ticket."},
+   {n:"Stark Factory (Avengers Campus)", a:"Disney Adventure World, Avengers Campus", h:"In the park", why:"Marvel quick service: pizza and pasta under a Hulkbuster suit. Plain food for him, close to the lake for the show."},
+   {n:"PYM Kitchen buffet (Avengers Campus)", a:"Disney Adventure World, Avengers Campus", h:"In the park (book in the app)", why:"Marvel buffet where food comes giant or tiny; everyone picks their own."},
    {n:"Leave early: dinner near Nestay", a:"Rue Montorgueil / Les Halles", h:"RER A 40 min, then walk", why:"If he is done after Disneyland Park, skip the show and eat close to home."}]}
  ],
  10: [
@@ -3442,10 +3443,10 @@ var DL = [
     ["af","M","Frozen Ever After","Straight from the gates. Premier Access only if over 45 min."],
     ["ae","M","Elsa & Anna meet (virtual queue)","Join in the app when your ticket scans; go when your slot comes up."],
     ["ar","M","Ratatouille","No height limit."],
+    ["ah","M","Hero Training Center (virtual queue)","Marvel meet: Spider-Man, Iron Man or Captain Marvel. Join in the app at entry; go when your slot comes up."],
+    ["aw","M","Spider-Man W.E.B. Adventure","Avengers Campus, next to Ratatouille. No height limit."],
     ["at","S","Raiponce Tangled Spin","Gentle spinning gondolas."],
-    ["as","S","Slinky Dog Zigzag Spin","Toy Story Playland."],
-    ["ac","S","Cars Road Trip","Next to Toy Story Playland."],
-    ["ap","B","Toy Soldiers Parachute Drop","81 cm minimum; he fits."]]},
+    ["as","S","Slinky Dog Zigzag Spin","Toy Story Playland."]]},
   {h:"Disneyland Park: Discoveryland", cp:"Checkpoint: in Fantasyland by 2:15 PM. Running late? Skip the Bonus items here.", it:[
     ["dl","S","Early lunch, Cafe Hyperion",""],
     ["db","M","Buzz Lightyear Laser Blast",""],
@@ -3472,7 +3473,9 @@ var DL = [
   {h:"Disney Adventure World, evening", cp:"Exit option at 8:00 PM if Izyan is tired. Otherwise stay for the show.", it:[
     ["ed","M","Dinner (Bistrot Chez Remy or quick service)",""],
     ["ef","S","Flying Carpets Over Agrabah","Aladdin."],
-    ["eq","S","Spider-Man W.E.B. Adventure","No height limit."],
+    ["ec","S","Cars Road Trip",""],
+    ["ap","B","Toy Soldiers Parachute Drop","81 cm minimum; he fits."],
+    ["eq","B","Spider-Man again","If he loved it in the morning."],
     ["er","B","Cars Quatre Roues Rallye",""],
     ["ea","B","A Celebration in Arendelle or Mickey and the Magician","Only if there is a late show."],
     ["ex","B","Second go on his favourite",""],
