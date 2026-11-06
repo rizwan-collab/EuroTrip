@@ -661,7 +661,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-05t";
+var BUILD = "2026-11-05u";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -2907,12 +2907,15 @@ function renderFlights(){
     + '<div class="tw tsc"><table><thead><tr><th>Date</th><th>Leg</th><th>How</th><th>Time</th></tr></thead><tbody>'
     + '<tr><td>Nov 12</td><td>Malaga Airport to Granada</td><td><b>ALSA coach, booked</b> (seats 34, 33, 30)</td><td>15:00 to 17:15</td></tr>'
     + '<tr><td>Nov 14</td><td>Granada to Seville</td><td><b>Train, booked</b> (change at Cordoba)</td><td>11:04 to 14:39</td></tr>'
-    + '<tr><td>Nov 16</td><td>CDG to Paris</td><td>Shuttle N2 to 2F, then RER B</td><td>About 1h15</td></tr>'
+    + '<tr><td>Nov 16</td><td>CDG to Paris</td><td>Taxi, booked ($68.66)</td><td>About 45 min</td></tr>'
     + '<tr><td>Nov 19</td><td>Paris to CDG</td><td>Taxi, booked ($62.25)</td><td>About 50 min</td></tr>'
     + '</tbody></table></div></div>';
   var bags = '<div class="blk"><div class="blk-h">Bags</div>'
-    + '<div class="note n-g">1 checked suitcase (paid on every flight), 1 roller, 3 backpacks. '
-    + 'Keep the suitcase <b>20 kg / 44 lbs</b> or less (ALSA) and the roller <b>10 kg / 22 lbs</b> or less (TAP).</div></div>';
+    + '<div class="note n-g"><b>Your bags:</b> 1 checked suitcase (40 lbs, paid on every flight), 1 roller, 1 duffle, 1 backpack for Izyan. That is one cabin bag each, plus a small personal item each (purse, small bag).<br>'
+    + '<b>United, Nov 9:</b> Basic Economy. Carry-on allowed on the Lisbon flight; check the United app shows it for the Houston to Dulles leg too.<br>'
+    + '<b>TAP, Nov 12:</b> cabin bags <b>10 kg / 22 lbs</b> each. <b>ALSA coach:</b> suitcase <b>20 kg / 44 lbs</b> or less.<br>'
+    + '<b>Air France, Nov 16:</b> cabin bag plus personal item <b>12 kg / 26 lbs combined</b> per person.<br>'
+    + '<b>American, Nov 19:</b> 1 carry-on plus 1 personal item each; confirm in the American app.</div></div>';
   return simpleHead('Flights', 'All four flights booked and paid.') + legs + bags + ground;
 }
 
@@ -3078,7 +3081,7 @@ var CODES = [
   {d:"Nov 18", w:"Eiffel Tower, 09:30, top by stairs + lift", s:"https://www.toureiffel.paris/en", m:"Tour Eiffel, Paris", x:"Wed Nov 18, 09:30, stairs to 2nd floor then lift to the top. Security 15 minutes before. Leave the summit by 11:30 for the photoshoot.", c:"<b>Order 262010714380</b> (paid Oct 3, Zaibnish). Ticket QR codes 341262010206102779, 341262010206102892, 341262010206102989 (2 adults + 1 child). 63 euros paid. Use the PDF tickets from the email; do not rely on a phone wallet", l:"https://www.toureiffel.paris/en", ln:"toureiffel.paris"},
   {d:"Nov 18", w:"Photoshoot, Pont de Bir-Hakeim 12:00 (meet 11:55)", s:"https://www.getyourguide.com", m:"Pont de Bir-Hakeim, 75015 Paris", x:"15 minutes, 5 edited photos, private for up to 4, English. Photographer contacts you on WhatsApp. $39.21.", c:"<b>GetYourGuide GYG32LWHX6LH</b> &middot; PIN UwUy5dXc (Zaibnish)", l:"https://www.getyourguide.com/booking/4DPVMOPHIG9OUME5OL3SSWDYGWSALB83", ln:"GetYourGuide booking"},
   {d:"Nov 19", w:"Taxi Nestay to CDG, 07:30 (Booking.com)", s:"https://www.booking.com/taxi/", m:"7 Rue de la Cossonnerie, 75001 Paris", x:"Thu Nov 19, pick-up 07:30 at Nestay Les Halles, to CDG (Terminal 2A for AA 49). Provider VYCAB, ride ID 472196241, standard car, max 3 passengers, 1 booster seat. Driver waits 15 minutes. Booked in Zaibnish's name. Booking.com Rides support +44 191 743 1903, taxi.support@booking.com.", c:"<b>Booking reference 334368205</b>. $62.25 paid. Free cancellation until Wed Nov 18, 19:30 Paris time", l:"https://www.booking.com/taxi/", ln:"Booking.com rides"},
-  {d:"Nov 19", w:"American AA 49, CDG 11:05 to DFW", s:"https://www.aa.com", m:"Paris Charles de Gaulle Terminal 2A", x:"Thu Nov 19: CDG 11:05 (Terminal 2A) to DFW 14:50. 1 checked bag paid ($87). Private car from Nestay 07:30.", c:"<b>American confirmation DKHAMA</b>. Basic Economy: seats at check-in", l:"https://www.aa.com/reservation/view/find-your-trip", ln:"AA trips"},
+  {d:"Nov 19", w:"American AA 49, CDG 11:05 to DFW", s:"https://www.aa.com", m:"Paris Charles de Gaulle Terminal 2A", x:"Thu Nov 19: CDG 11:05 (Terminal 2A) to DFW 14:50. 1 checked bag paid ($87). Booked taxi from Nestay at 7:30 AM.", c:"<b>American confirmation DKHAMA</b>. Basic Economy: seats at check-in", l:"https://www.aa.com/reservation/view/find-your-trip", ln:"AA trips"},
   {d:"Nov 9-19", w:"Travel insurance: Tin Leg Gold", s:"https://www.tinleg.com", x:"Medical $500k pp primary, evacuation $500k pp, no deductible. Delay, baggage and missed-connection cover. Call before non-emergency hospital stays, within 48 h of an emergency admission, before surgery.", c:"<b>Policy 53-TLG-8A2-882A3</b> &middot; Account access code 56F20 &middot; Emergency +1 727-264-5657 (collect) &middot; Claims from abroad +1 727-260-5012 (collect) &middot; emergency@tinleg.com", l:"https://www.tinleg.com/report-claim", ln:"Tin Leg claims"}
 ];
 var TRANSFERS = [
