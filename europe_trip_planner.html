@@ -662,7 +662,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-09e";
+var BUILD = "2026-11-09g";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -970,17 +970,15 @@ var PLAN = [
   }
 },
 {
-  n:6, date:"Sat Nov 14", wd:"Saturday", city:"Granada to Seville", tag:["p-g","Train day"],
-  sum:"Two trains, one of them the 300 km/h AVE. Izyan&#39;s bullet-train day. Seville by 14:39, checked in at 15:00.",
-  warn:"<b>Booked: Alvia 02087 + AVE 02120, Trainline, $181.76 for all three (Basico fare, not changeable or refundable).</b> Leave from <b>Granada railway station</b> (Estacion de Granada, Av. de los Andaluces) &mdash; <b>not</b> the Estacion de Autobuses. One change at <b>Cordoba</b> with a 1h10 cushion. Bring all three passports; names and ID numbers are on the ticket.",
+  n:6, date:"Sat Nov 14", wd:"Saturday", city:"Granada to Seville", tag:["p-g","Bus day"],
+  sum:"Direct ALSA bus, 3 hours, no change. Seville by 14:00, checked in at 15:00.",
+  warn:"<b>Renfe cancelled the trains (high-speed line closed); refunded. Replacement BOOKED: ALSA 11:00 Granada bus station to Seville Plaza de Armas, arrives 14:00, ref 1gvje7u, 84.12 euros, Flexible fare (free changes up to 48h before), 1 extra bag.</b> Leave from the <b>Estacion de Autobuses</b>, Av. Juan Pablo II 33 &mdash; <b>not</b> the railway station. Seats: Zaibnish 5, Rizwan 6, Izyan 8. Tickets in Zaibnish&#39;s email. Bring all three passports.",
   sched:[
     ["08:30","Breakfast at Hotel America, final pack","Unhurried. Bags by the door."],
     ["10:00","Check out","Checkout window is 08:00 to 12:00."],
-    ["10:30","Taxi to Granada railway station","Av. de los Andaluces, about 15 minutes and 12 to 15 euros. Tell the driver estacion de tren, not autobuses."],
-    ["11:04","Alvia 02087 to Cordoba","<b>Coach 6: Rizwan 02C, Zaibnish 02D, Izyan 01D</b> (Izyan is one row ahead; ask a neighbour to swap). Doors close 2 minutes before departure and there is a bag scan, so be on the platform by 10:45. 1h32."],
-    ["12:36","Arrive Cordoba-Julio Anguita, change trains","1h10 to the next train. Big modern station with cafes: early lunch or a snack here. Check the departures board for the AVE 02120 platform and go through the bag scan again by 13:25."],
-    ["13:46","AVE 02120 to Seville","<b>Coach 3: Rizwan 03C, Zaibnish 03D, Izyan 04D</b> (again one row apart; swap on board). The fast one: up to 300 km/h, bullet nose, cafe car, wifi. 53 minutes."],
-    ["14:39","Arrive Sevilla-Santa Justa","Taxi rank outside, about 15 minutes and 10 to 12 euros to Calle San Gregorio 7."],
+    ["10:15","Taxi to Granada bus station","Estacion de Autobuses, Av. Juan Pablo II 33. About 15 minutes and 12 to 15 euros. Ask the hotel to call it. Tell the driver estacion de autobuses, not tren."],
+    ["11:00","ALSA BUS TO SEVILLE - BOOKED (ref 1gvje7u)","Direct, 3 hours, no stops. <b>Seats: Zaibnish 5, Rizwan 6, Izyan 8</b> (ALSA says no seat swaps, so ask the driver or the passenger in 7 politely). Be at the bay by 10:40; big bags in the hold (1 extra bag paid). Tickets on your phone (also <a href=\"https://drive.google.com/file/d/1XgpwP-9QMufm9JB0hYmdYskH_OJUPxsh/view\" target=\"_blank\">PDF in your private Drive</a>), passports out."],
+    ["14:00","Arrive Seville, Plaza de Armas bus station","Taxi rank outside, about 5 to 10 minutes and 8 to 10 euros to Calle San Gregorio 7. Coffee nearby if you are early for the 15:00 check-in."],
     ["15:00","Check in at Iberflat San Gregorio","Check-in opens 15:00. You arrive almost exactly on time, no waiting with bags."],
     ["15:45","Late lunch in Santa Cruz","Normal Seville lunch hour. Keep it relaxed."],
     ["17:00","Walk Santa Cruz","Orange trees, tiled lanes, the Giralda from below. No tickets, no plan."],
@@ -989,10 +987,10 @@ var PLAN = [
     ["20:30","Tapas dinner","Seville eats at 21:00. Going out at 20:30 gets you a table."]
   ],
   transport:{
-    leg:"Granada to Seville", flight:false, note:"No flight on this route. Booked by train via Cordoba so Izyan gets the AVE.",
+    leg:"Granada to Seville", flight:false, note:"No flight on this route. Trains cancelled by Renfe (refunded); booked the direct ALSA bus instead.",
     opts:[
-      {n:"BOOKED: Alvia + AVE via Cordoba", d:"<b>11:04 Granada station to 12:36 Cordoba (Alvia 02087), then 13:46 Cordoba to 14:39 Sevilla-Santa Justa (AVE 02120).</b> 3h35 including a 1h10 change. Basico fare, seats reserved, luggage allowed. Not changeable or refundable.", p:"$181.76 for all three, paid", best:true,
-       u:"https://www.thetrainline.com/", ul:"Trainline bookings"}
+      {n:"BOOKED: ALSA bus 11:00, direct", d:"<b>11:00 Granada bus station to 14:00 Seville Plaza de Armas.</b> 3 hours, no change. Ref 1gvje7u. Seats Zaibnish 5, Rizwan 6, Izyan 8. Flexible fare, 1 extra bag.", p:"84.12 euros for all three, paid", best:true,
+       u:"https://drive.google.com/file/d/1XgpwP-9QMufm9JB0hYmdYskH_OJUPxsh/view", ul:"Bus tickets (PDF)"}
     ]
   },
   food:{
@@ -1345,7 +1343,7 @@ function renderItinerary(){
     + '<div class="stat"><div class="st-l">Structure</div><div class="st-v">2+2+2+3</div><div class="st-n">Extra Paris night fixes the Nov 16 crush</div></div>'
     + '<div class="stat"><div class="st-l">Options given</div><div class="st-v">64</div><div class="st-n">Across 21 decision points</div></div>'
     + '<div class="stat"><div class="st-l">Routes with no flight</div><div class="st-v">2</div><div class="st-n">Malaga to Granada by coach, Granada to Seville by train</div></div>'
-    + '<div class="stat"><div class="st-l">Fixed-time bookings</div><div class="st-v">9</div><div class="st-n">Lisbon photoshoot Nov 11 11:45, Paris photoshoot Nov 18 12:00, Ismaili Centre Nov 11 17:30, Alhambra 09:00, Nov 12 coach 15:00, Nov 14 trains, Cathedral 14:30, Disneyland, Eiffel 09:30</div></div>'
+    + '<div class="stat"><div class="st-l">Fixed-time bookings</div><div class="st-v">9</div><div class="st-n">Lisbon photoshoot Nov 11 11:45, Paris photoshoot Nov 18 12:00, Ismaili Centre Nov 11 17:30, Alhambra 09:00, Nov 12 coach 15:00, Nov 14 bus 11:00, Cathedral 14:30, Disneyland, Eiffel 09:30</div></div>'
     + '</div>'
     + '<div class="note n-i"><span class="n-t">How to use this</span>'
     + 'The timings are the plan, not a rule. The three options under each heading are genuine alternatives at '
@@ -1489,9 +1487,9 @@ function renderFlights(){
     + '<tr><td><b>Malaga airport to Granada</b><br><span style="font-size:11.5px;color:var(--mute)">ALSA from the airport itself, no train transfer</span></td>'
     + '<td>Nov 12</td><td>ALSA coach</td><td>15:00 to 17:15</td><td class="num">43.27 euros</td>'
     + '<td><a href="https://www.alsa.com/en/airports/malaga-costa-del-sol" target="_blank" rel="noopener">alsa.com</a></td></tr>'
-    + '<tr><td><b>Granada to Seville</b><br><span style="font-size:11.5px;color:var(--mute)">Booked. Alvia to Cordoba, then the AVE</span></td>'
-    + '<td>Nov 14</td><td>Train, 1 change at Cordoba</td><td>11:04 to 14:39</td><td class="num">$181.76 paid</td>'
-    + '<td>Trainline</td></tr>'
+    + '<tr><td><b>Granada to Seville</b><br><span style="font-size:11.5px;color:var(--mute)">Booked. ALSA bus, direct (trains cancelled)</span></td>'
+    + '<td>Nov 14</td><td>Bus, direct</td><td>11:00 to 14:00</td><td class="num">84.12 euros paid</td>'
+    + '<td>ALSA</td></tr>'
     + '<tr><td><b>CDG to central Paris</b></td><td>Nov 16</td><td>RER B train</td><td>45min</td><td class="num">$38</td>'
     + '<td><a href="https://www.ratp.fr/en" target="_blank" rel="noopener">ratp.fr</a></td></tr>'
     + '<tr><td><b>Paris to CDG</b></td><td>Nov 19</td><td>Taxi, booked (Booking.com)</td><td>50min</td><td class="num">$62.25</td>'
@@ -1501,9 +1499,9 @@ function renderFlights(){
     + '<b>Malaga to Granada on Nov 12: the coach, and it is not close.</b> Priced live for your date and party: '
     + '<b>train $175.55 with one change and over three hours; booked coach is ALSA 15:00 from the airport, 43.27 euros</b>. Every rail option '
     + 'routes via Antequera-Santa Ana; the direct 1h22 Avant Renfe publicised is not bookable for Nov 12.<br><br>'
-    + '<b>Granada to Seville on Nov 14: booked by train.</b> Alvia 02087 at 11:04 to Cordoba, then AVE 02120 '
-    + 'at 13:46, arriving Sevilla-Santa Justa 14:39, $181.76 for three. Chosen over the 13:12 direct Avant so '
-    + 'Izyan gets the 300 km/h AVE; the 1h10 change at Cordoba is relaxed, and arrival lines up with the 15:00 check-in.<br><br>'
+    + '<b>Granada to Seville on Nov 14: ALSA bus, booked.</b> Renfe cancelled the trains after the high-speed line closed (refunded). '
+    + 'Direct ALSA 11:00 from Granada bus station, arriving Seville Plaza de Armas 14:00, ref 1gvje7u, 84.12 euros for three. '
+    + 'Arrival still lines up with the 15:00 check-in.<br><br>'
     + '<b>Lisbon into Spain by rail: do not.</b> There is no through train. Lisbon to Madrid takes ten to '
     + 'eleven hours across three trains and two booking systems, one leg on a 1954 single-coach railcar with no '
     + 'catering. The night train was cancelled permanently in 2020 and high-speed is not expected before about '
@@ -1783,10 +1781,10 @@ var BOOKINGS = [
    n:"<b>Nestay has no front desk. Check-in is fully self-service and the access codes only arrive once you complete online check-in.</b> Do it as soon as the link appears, and screenshot the codes so they work offline. Without them you are on rue de la Cossonnerie at 21:15 with the bags and no way in. <b>Ask at the same time whether Paris city tax is collected on arrival</b> &mdash; the rate page did not show a city-tax line, so budget about $56 in case.",
    by:"2026-11-09", est:0,
    u:"https://secure.booking.com/", ul:"Booking.com account"},
-  {id:"bus1", done:1, cost:181.76, paid:1, ph:3, t:"Granada to Seville, Sat Nov 14: TRAIN BOOKED (11:04, AVE via Cordoba)",
-   n:"<b>Booked 10 Oct on Trainline, $181.76 for all three</b> (2 adults $139.76 Basico, Izyan $42 Basico Nino). <b>Alvia 02087</b> Granada station 11:04 to Cordoba 12:36, 1h10 change, <b>AVE 02120</b> Cordoba 13:46 to Sevilla-Santa Justa 14:39. Seats reserved. Not changeable or refundable. Leave from the railway station on Av. de los Andaluces, not the bus station. Passports required. <b>Seats: Alvia coach 6, Rizwan 02C, Zaibnish 02D, Izyan 01D; AVE coach 3, Rizwan 03C, Zaibnish 03D, Izyan 04D</b> (Izyan one row apart on both, swap on board). Tickets total 154.50 euros. Access closes 2 minutes before departure. Renfe luggage rule: up to 3 bags per person, 25 kg combined, largest no bigger than 85 x 55 x 35 cm. PDF tickets in the confirmations folder.",
-   by:"2026-10-20", est:182,
-   u:"https://www.thetrainline.com/", ul:"Trainline bookings"},
+  {id:"bus1", done:1, cost:97, paid:1, ph:3, t:"Granada to Seville, Sat Nov 14: ALSA BUS BOOKED (11:00, direct)",
+   n:"<b>Train cancelled by Renfe and refunded (Trainline 2FKGY4).</b> <b>Replacement booked Nov 9: ALSA ref 1gvje7u, 84.12 euros (about $97)</b>, in Zaibnish&#39;s name. 11:00 Granada bus station (Av. Juan Pablo II 33) to 14:00 Seville Plaza de Armas, direct. Seats Zaibnish 5, Rizwan 6, Izyan 8. Flexible fare: free changes up to 48h before. Bags: 25 kg and 2 items per person plus 1 extra bag paid. Passports required.",
+   by:"2026-11-09", est:97,
+   u:"https://www.alsa.com/en/", ul:"ALSA"},
   {id:"avant", done:1, cost:50, paid:1, ph:3, t:"Malaga Airport to Granada, Thu Nov 12, ALSA 15:00 coach: BOOKED",
    n:"<b>BOOKED 10 Oct.</b> ALSA 15:00 from Malaga Airport (stop in front of Arrivals, Terminal 3) to Granada bus station (Av. Juan Pablo II 33), arrives 17:15. Bus 1. <b>Seats: Rizwan 34, Zaibnish 33, Izyan 30.</b> Total <b>43.27 euros</b> (Rizwan 14.12, Zaibnish 14.12 + 5.00 extra bag, Izyan 10.03 child fare). Each ticket: 20 kg total, max 2 items, plus 1 paid extra bag up to 20 kg. Tickets are in your name: show them on your phone and <b>carry passports</b> (needed to prove the names and Izyan's child discount). Free changes until Nov 5. Seats kept as booked (Izyan one row ahead); ask the driver at boarding if you want him beside a parent.",
    by:"2026-11-10", est:0, dep:["lis"],
@@ -1936,7 +1934,7 @@ function satBanner(){
    + '<details class="acc"><summary>Castelo de Sao Jorge, Wed Nov 11 &mdash; buy at the gate</summary><div class="acc-b">'
    + 'Online payment failed. 17 euros an adult, Izyan free, short November lines. Open 09:00 to 18:00.</div></details>'
    + '<details class="acc"><summary>Done &mdash; everything else is booked</summary><div class="acc-b">'
-   + 'All four flights, all four rooms, travel insurance (Tin Leg Gold), Alhambra, Ismaili Centre tour (Nov 11, 17:30), Nov 12 ALSA coach (with extra bag), Nov 14 trains, Seville Cathedral, Disneyland, Eiffel Tower, family photoshoot (Nov 18, 12:00). Izyan confirmed on the Lisbon booking. Street flamenco needs no booking.</div></details>'
+   + 'All four flights, all four rooms, travel insurance (Tin Leg Gold), Alhambra, Ismaili Centre tour (Nov 11, 17:30), Nov 12 ALSA coach (with extra bag), Nov 14 ALSA bus (with extra bag), Seville Cathedral, Disneyland, Eiffel Tower, family photoshoot (Nov 18, 12:00). Izyan confirmed on the Lisbon booking. Street flamenco needs no booking.</div></details>'
    + '<details class="acc"><summary>Two access codes you must request</summary><div class="acc-b">'
    + '<b>Lisbon, Sat 7 Nov</b> &mdash; luggage-store codes from the Residentas team, +351 960 060 061. '
    + '<b>Paris</b> &mdash; Nestay online check-in is done; watch the Nestay guest app and email for the door codes before Nov 16 and screenshot them. '
@@ -2177,7 +2175,7 @@ var COSTS = [
   ["Flights and bags, all four legs", "$4,004", "$4,004", "<b>All paid.</b> United $1,389 plus a $90 bag, TAP $538, Air France $370, American $1,616 including its $87 bag"],
   ["Accommodation, 9 nights", "$2,787", "$2,787", "<b>All four booked. No estimates left.</b> Lisbon <b>$582</b>, Granada <b>$497</b>, Seville <b>$330</b>, Paris <b>$1,378</b>. Every figure is from a confirmation, not a quote. <b>Paris may settle about $116 lower</b> if Booking.com&#39;s contribution comes off your card &mdash; confirm against the statement"],
   ["Tickets and attractions", "$480", "$650", "<b>Paid: Alhambra 43.27 euros, Disneyland $348.74, Eiffel 63 euros.</b> Cathedral 29 euros paid. Eiffel photoshoot $39.21 paid. Alcazar and flamenco show skipped. Castelo 34 euros at the gate"],
-  ["Intercity coach and train", "$232", "$232", "<b>Both paid.</b> Malaga Airport to Granada coach 43.27 euros, about $50 (ALSA 15:00, incl. extra bag); Granada to Seville train $181.76"],
+  ["Intercity coaches", "$147", "$147", "<b>Both paid.</b> Malaga Airport to Granada coach 43.27 euros, about $50 (ALSA 15:00, incl. extra bag); Granada to Seville ALSA bus 84.12 euros, about $97 (train cancelled and refunded)"],
   ["City transport", "$220", "$340", "Metros, taxis, RER, Bolt"],
   ["Daily food and incidentals", "$" + BDG_TOTAL, "$" + BDG_TOTAL, "Tracked day by day below"],
   ["Travel insurance", "$77", "$77", "<b>Bought.</b> Tin Leg Gold, medical and evacuation only, all three travellers"],
@@ -2906,7 +2904,7 @@ function renderFlights(){
   var ground = '<div class="blk"><div class="blk-h">Ground transport between cities</div>'
     + '<div class="tw tsc"><table><thead><tr><th>Date</th><th>Leg</th><th>How</th><th>Time</th></tr></thead><tbody>'
     + '<tr><td>Nov 12</td><td>Malaga Airport to Granada</td><td><b>ALSA coach, booked</b> (seats 34, 33, 30)</td><td>15:00 to 17:15</td></tr>'
-    + '<tr><td>Nov 14</td><td>Granada to Seville</td><td><b>Train, booked</b> (change at Cordoba)</td><td>11:04 to 14:39</td></tr>'
+    + '<tr><td>Nov 14</td><td>Granada to Seville</td><td><b>ALSA bus, booked</b> (direct)</td><td>11:00 to 14:00</td></tr>'
     + '<tr><td>Nov 16</td><td>CDG to Paris</td><td>Taxi, booked ($68.66)</td><td>About 45 min</td></tr>'
     + '<tr><td>Nov 19</td><td>Paris to CDG</td><td>Taxi, booked ($62.25)</td><td>About 50 min</td></tr>'
     + '</tbody></table></div></div>';
@@ -2984,14 +2982,42 @@ function renderBooking(){
   return simpleHead('Checklist', done.length+' of '+list.length+' done. Tick items as you finish them (saved in this browser).')
     + docs
     + '<div class="blk"><div class="blk-h">To do ('+open.length+')</div><div class="card">'+(openRows||'<div style="padding:14px">All done.</div>')+'</div></div>'
+    + afterBlock()
     + '<div class="blk"><div class="blk-h">Done ('+done.length+')</div><div class="card">'+doneRows+'</div></div>';
+}
+
+/* ---------- After the trip: refunds, deposits, claims ---------- */
+var AFTER = [
+  {id:"trainrefund", t:"Train refund: Trainline 2FKGY4 (Granada to Seville)", by:"2026-11-30", n:"Check the card for about $181.76 back, both legs and all three tickets. If it has not landed by Nov 30, chase Trainline. If they will not pay, open a Chase dispute (chargeback): Renfe cancelled the train (email of Nov 9)."},
+  {id:"ibdeposit", t:"Seville deposit: Iberflat 100 euros back", by:"2026-11-23", n:"Damage deposit taken on arrival Nov 14, refunded within 7 days. Chase Iberflat (+34 955 515 541) if it is still held after Nov 23."},
+  {id:"holds", t:"Card holds released (Nestay, hotels, car services)", by:"2026-11-30", n:"Check for any pre-authorisations still sitting on the Chase card, and whether Nestay charged Paris city tax."},
+  {id:"lphotorefund", t:"Lisbon photoshoot: refund or photos", by:"2026-11-25", n:"If you cancelled, confirm the $60.51 GetYourGuide refund. If you moved it, confirm the photos arrived."},
+  {id:"pphotos", t:"Paris photoshoot: 5 edited photos received", by:"2026-11-28", n:"GetYourGuide, Nov 18. Message the photographer on WhatsApp if nothing arrives within about a week."},
+  {id:"statement", t:"Match the Chase statement to the budget", by:"2026-12-05", n:"Look for duplicates (check the Alhambra 43.27 euro charge) and anything unexpected. Dispute anything wrong with Chase."},
+  {id:"claims", t:"Insurance claims, if anything went wrong", by:"2026-12-15", n:"Delays, lost or late bags, medical: Tin Leg (tinleg.com/report-claim, 844-240-1233) and Chase Sapphire travel protection. Keep every receipt and the airline delay notices."},
+  {id:"miles", t:"Miles posted to MileagePlus NCY24132", by:"2026-12-05", n:"United flights Nov 9. Request missing credit on united.com if they have not posted."},
+  {id:"datapass", t:"Turn off any international data pass or eSIM", by:"2026-11-20", n:"So nothing renews after you are home."}
+];
+function afGet(id){ try { return localStorage.getItem('eu26_after_'+id) === '1'; } catch(e){ return false; } }
+function afToggle(id){ try { localStorage.setItem('eu26_after_'+id, afGet(id) ? '0' : '1'); } catch(e){} built.booking = false; show('booking'); }
+function afterBlock(){
+  var n = AFTER.filter(function(a){ return afGet(a.id); }).length;
+  var rows = AFTER.map(function(a){
+    var d = afGet(a.id);
+    return '<label class="chk" style="align-items:flex-start'+(d?';opacity:.55':'')+'">'
+      + '<input type="checkbox" '+(d?'checked ':'')+'onchange="afToggle(\''+a.id+'\')">'
+      + '<span class="chk-t"><b>'+(d?'<s>'+a.t+'</s>':a.t)+'</b>'
+      + (a.by?' <span class="pill p-n">by '+fmtDay(a.by)+'</span>':'')
+      + '<br><span style="font-size:12.5px;color:var(--mute)">'+a.n+'</span></span></label>';
+  }).join('');
+  return '<div class="blk"><div class="blk-h">After the trip ('+n+' of '+AFTER.length+' done)</div><div class="card">'+rows+'</div></div>';
 }
 
 var PAID = [
   ["Flights and bags", [["United IAH-IAD-LIS + $90 bag",1479],["American CDG-DFW incl. $87 bag",1616.49],["TAP Lisbon-Malaga",538.32],["Air France Seville-Paris",369.80]]],
   ["Places to stay, 9 nights", [["Lisbon, Residentas (2 nights)",582],["Granada, Hotel America (2)",497.38],["Seville, Iberflat (2)",330],["Paris, Nestay (3)",1378]]],
   ["Tickets and tours", [["Disneyland, 1 day / 2 parks",348.74],["Eiffel Tower",70.89],["Lisbon photoshoot",60.51],["Alhambra",48.69],["Paris photoshoot",39.21],["Seville Cathedral",32.63]]],
-  ["Coach and train", [["Granada to Seville train",181.76],["ALSA Malaga Airport to Granada (43.27 euros)",50]]],
+  ["Coaches", [["ALSA Granada to Seville (84.12 euros)",97],["ALSA Malaga Airport to Granada (43.27 euros)",50]]],
   ["Airport taxis (Booking.com)", [["CDG to Nestay, Nov 16",68.66],["Nestay to CDG, Nov 19",62.25],["Apartment to Lisbon airport, Nov 12",16.97],["Lisbon airport to apartment, Nov 10",15.42]]],
   ["Travel insurance", [["Tin Leg Gold, all three",77]]]
 ];
@@ -3071,8 +3097,8 @@ var CODES = [
   {d:"Nov 12", w:"ALSA coach, Malaga Airport 15:00 to Granada 17:15", s:"https://www.alsa.com/en/airports/malaga-costa-del-sol", m:"Malaga Airport Terminal 3 bus stop", x:"Stop in front of Arrivals, Terminal 3, Malaga Airport. Arrives Granada bus station, Av. Juan Pablo II 33. Each ticket 20 kg / 2 items + 1 extra bag paid. Show tickets on phone, carry passports. Free changes until Nov 5.", c:"<b>Booking ref 1g3kckz</b>. Tickets 203-2-999-16065343-1 (Rizwan, seat 34), 16065342-1 (Zaibnish, seat 33, + extra bag), 16065344-1 (Izyan, seat 30)", l:"https://www.alsa.com/en/", ln:"alsa.com"},
   {d:"Nov 12-14", w:"Granada: Hotel America", s:"https://www.booking.com/hotel/es/america-granada.html", m:"Hotel America, Real de la Alhambra 53, Granada", x:"Real de la Alhambra 53, inside the Alhambra walls. Thu Nov 12 to Sat Nov 14. Reception until 21:00. $497.38.", c:"<b>Booking.com confirmation 6318667433 &middot; PIN 3533</b> (Rizwan). Free cancellation until Nov 6, 23:59 CET", l:"https://secure.booking.com/myreservations.html", ln:"Booking.com trips"},
   {d:"Nov 13", w:"Alhambra, 09:00 Nasrid Palaces", s:"https://www.alhambra-patronato.es/en", m:"Alhambra ticket office, Granada", x:"Fri Nov 13, Nasrid Palaces 09:00 slot; be at the gate 15 minutes early with passports. Hotel America is a short walk.", c:"<b>Alhambra order 2140590MUECH</b> (Zaibnish). 2 adults + 1 child, 13/11/2026 09:00. 43.27 euros. PDF and Passbook tickets attached to the email; bring passports", l:"https://tickets.alhambra-patronato.es/en/", ln:"Alhambra tickets"},
-  {d:"Nov 14", w:"Train: Alvia 11:04 Granada to Cordoba, AVE 13:46 to Seville", s:"https://www.renfe.com/es/en", m:"Estacion de tren Granada, Av. de los Andaluces", x:"Sat Nov 14. Taxi to Granada railway station (Av. de los Andaluces) at 10:30. Change at Cordoba (1h10). Arrive Sevilla-Santa Justa 14:39, taxi to the apartment. $181.76.", c:"<b>Renfe localizador 2FKGY4</b> (Trainline). Seats: Alvia coach 6 R 02C, Z 02D, I 01D; AVE coach 3 R 03C, Z 03D, I 04D. Tickets 7213702113134 (R), 7213702113126 (Z), 7213702113142 (I)", l:"https://www.thetrainline.com/my-account/bookings", ln:"Trainline bookings"},
-  {d:"Nov 14-16", w:"Seville: Iberflat San Gregorio, Calle San Gregorio 7", s:"https://www.booking.com/hotel/es/iberflat-san-gregorio.html", m:"Calle San Gregorio 7, 41004 Sevilla", x:"Check in Sat Nov 14 15:00 to midnight, check out Mon Nov 16 by 12:00. Housekeeper holds bags Nov 16 if arranged ahead. $330. Bring credit card and photo ID.", c:"<b>Booking.com confirmation 6795.767.661 &middot; PIN 7427</b> (Zaibnish). $330. Phones +34 697 16 72 22 / office +34 955 515 541<br><b>Online check-in done Nov 9</b> (Rizwan + Zaibnish) &middot; Iberflat ref <b>82035</b> &middot; <b>Apt 09, 2nd floor</b>. Izyan not on the forms: confirm with Iberflat if a minor form is needed.", l:"https://secure.booking.com/myreservations.html", ln:"Booking.com trips"},
+  {d:"Nov 14", w:"ALSA bus 11:00 Granada to Seville (direct)", s:"https://www.alsa.com/en/", m:"Estacion de Autobuses de Granada, Avenida Juan Pablo II 33", x:"Sat Nov 14. Taxi to Granada bus station at 10:15. Arrive Seville Plaza de Armas bus station 14:00, taxi to the apartment. 84.12 euros. Train cancelled by Renfe and refunded.", c:"<b>ALSA booking ref 1gvje7u</b> (Zaibnish). Seats: Zaibnish 5, Rizwan 6, Izyan 8. 1 extra bag paid. Flexible: free changes up to 48h before", l:"https://drive.google.com/file/d/1XgpwP-9QMufm9JB0hYmdYskH_OJUPxsh/view", ln:"Bus tickets (PDF)", l2:"https://www.alsa.com/en/", ln2:"ALSA"},
+  {d:"Nov 14-16", w:"Seville: Iberflat San Gregorio, Calle San Gregorio 7", s:"https://www.booking.com/hotel/es/iberflat-san-gregorio.html", m:"Calle San Gregorio 7, 41004 Sevilla", x:"Check in Sat Nov 14 15:00 to midnight, check out Mon Nov 16 by 12:00. Housekeeper holds bags Nov 16 if arranged ahead. $330. Bring credit card and photo ID.", c:"<b>Booking.com confirmation 6795.767.661 &middot; PIN 7427</b> (Zaibnish). $330. Phones +34 697 16 72 22 / office +34 955 515 541<br><b>Online check-in done Nov 9</b> (Rizwan + Zaibnish) &middot; Iberflat ref <b>82035</b> &middot; <b>Apt 09, 2nd floor</b>. Izyan not on the forms: confirm with Iberflat if a minor form is needed.", l:"https://secure.booking.com/myreservations.html", ln:"Booking.com trips", l2:"https://drive.google.com/drive/folders/1DOcW20QwsuDA3ThgDWjzwOOnXIh940XN", ln2:"Check-in forms (private)"},
   {d:"Nov 15", w:"Seville Cathedral + Giralda, 14:30", s:"https://www.catedraldesevilla.es/en", m:"Puerta del Lagarto, Catedral de Sevilla", x:"Sun Nov 15, 14:30 entry, Giralda first. Includes Church of El Salvador. 26 euros paid.", c:"<b>Purchase ref 262INA5EXR</b> &middot; Reservation ref CMK2NVE7 &middot; Puerta del Lagarto &middot; bring passports", l:"https://www.catedraldesevilla.es", ln:"catedraldesevilla.es"},
   {d:"Nov 16", w:"Air France AF 1547, Seville 16:40 to CDG 19:15", s:"https://wwws.airfrance.us", m:"Seville Airport SVQ", x:"Mon Nov 16: SVQ 16:40 to CDG 19:15, Terminal 2G, operated by HOP. Checked bag included. $369.80.", c:"<b>Air France booking reference XKLUAY</b>. Check in on airfrance.us or the app with XKLUAY + surname ALI", l:"https://wwws.airfrance.us/en/my-reservations", ln:"Air France bookings"},
   {d:"Nov 16", w:"Taxi CDG to Nestay, 19:15 (Booking.com)", s:"https://www.booking.com/taxi/", m:"Paris Charles de Gaulle Terminal 2G", x:"Mon Nov 16, pick-up 19:15 at CDG (AF 1547 lands 19:15, Terminal 2G), to Nestay Les Halles, 7 Rue de la Cossonnerie. Sixt Ride, ride ID 333619553, standard car, max 3 passengers, 1 booster seat. Driver waits 45 minutes. Flight AF 1547 added to the booking, so pick-up follows the actual landing. In Zaibnish's name. Booking.com Rides support +44 191 743 1903.", c:"<b>Booking reference 334368205</b>. $68.66 paid. Free cancellation until Mon Nov 16, 17:15 Paris time", l:"https://www.booking.com/taxi/", ln:"Booking.com rides"},
@@ -3088,8 +3114,8 @@ var TRANSFERS = [
   ["Tue Nov 10, on landing","Lisbon airport to apartment","<b>BOOKED</b>: Booking.com taxi 808933912, Heycars, child seat, tracks UA 942","$15.42 paid","https://www.booking.com/taxi/"],
   ["Thu Nov 12, 08:15","Apartment to Lisbon airport","<b>BOOKED</b>: Booking.com taxi 808933912, World Transfer, child seat","$16.97 paid","https://www.booking.com/taxi/"],
   ["Thu Nov 12, 15:00","Malaga Airport to Granada","ALSA coach (booked)","43.27 euros paid","https://www.alsa.com/en/"],
-  ["Thu Nov 12 / Sat Nov 14","Granada bus station to hotel; hotel to train station","Taxi","~12 to 15 euros each","https://www.google.com/maps/search/?api=1&query=taxi+Granada"],
-  ["Sat Nov 14, 14:39","Santa Justa station to apartment","Taxi","~10 to 12 euros","https://www.google.com/maps/search/?api=1&query=Sevilla+Santa+Justa+taxi"],
+  ["Thu Nov 12 / Sat Nov 14","Granada bus station to hotel; hotel to bus station (Nov 14, 10:15)","Taxi","~12 to 15 euros each","https://www.google.com/maps/search/?api=1&query=taxi+Granada"],
+  ["Sat Nov 14, 14:00","Plaza de Armas bus station to apartment","Taxi","~8 to 10 euros","https://www.google.com/maps/search/?api=1&query=Estacion+Plaza+de+Armas+Sevilla"],
   ["Mon Nov 16, 14:00","Seville apartment to SVQ","Official taxi or Uber/Bolt","26 to 29 euros","https://www.google.com/maps/search/?api=1&query=Puerta+de+Jerez+taxi+Sevilla"],
   ["Mon Nov 16, 19:15","CDG T2G to Nestay","<b>BOOKED</b>: Booking.com taxi 334368205, Sixt Ride, booster seat","$68.66 paid","https://www.booking.com/taxi/"],
   ["Thu Nov 19, 07:30","Nestay to CDG","<b>BOOKED</b>: Booking.com taxi 334368205, VYCAB, booster seat","$62.25 paid","https://www.booking.com/taxi/"]
