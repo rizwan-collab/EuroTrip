@@ -662,7 +662,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-09d";
+var BUILD = "2026-11-09e";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -1818,7 +1818,7 @@ var BOOKINGS = [
    n:"Confirmed 29 Oct. Av. Lusiada 1, Laranjeiras. Leave the apartment by 16:50 (Bolt about 8 euros, or Metro Blue line to Laranjeiras). Modest dress.", by:"2026-10-28", est:0},
     {id:"lug", done:1, cost:0, ph:5, t:"Luggage plan confirmed: 1 checked suitcase, 1 roller, 3 backpacks", n:"<b>What you carry (confirmed 10 Oct):</b> 1 large checked suitcase (on Rizwan), up to 1 carry-on roller, 3 backpacks. This fits every leg. <b>Weight rules:</b> suitcase at or under <b>20 kg</b> (ALSA is the tightest; airlines allow 23), roller at or under <b>10 kg</b> (TAP), backpacks small enough to go under the seat or in the rack. United IAH-IAD-LIS: 1 checked bag paid, carry-on + personal item each. TAP LIS-AGP: 1 checked bag on Rizwan, carry-on 10 kg + personal item each. ALSA AGP-Granada: each ticket 20 kg total, max 2 items, <b>plus 1 extra bag already bought (5 euros, up to 20 kg)</b>; suitcase and roller go underneath, backpacks overhead (hold if they do not fit). Fully covered. Renfe Nov 14: up to 3 bags per person, 25 kg: fine. Air France SVQ-CDG: checked bag included. AA CDG-DFW: 1 checked bag paid ($87). Because the extra ALSA bag is paid, a second roller would also fit every leg.", by:"2026-11-05", est:0},
     {id:"pjk", done:1, ph:5, t:"Paris Jamatkhana: CONFIRMED, daily Du'a 7:30 PM (planned Wed Nov 18)", n:"55 rue de la Croix Nivert, 75015, metro Commerce. Open every day. Reply to the Mukhi with your names.", by:"2026-11-07", est:0},
-    {id:"lphotowx", ph:5, t:"Tue Nov 10, by 11:45 AM: check Wed forecast for the Lisbon photoshoot", n:"Free cancellation ends Tue Nov 10 at 11:45 AM. If heavy rain is forecast for Wed late morning, cancel or ask to move it. Rain plans are on each day card.", by:"2026-11-10", est:0},
+    {id:"lphotowx", ph:5, t:"TODAY before you fly: move or cancel the Lisbon photoshoot (rain Wed 11 AM to 2 PM)", n:"Forecast Nov 9: 100 percent rain Wed 11 AM to 2 PM, easing after 3 PM. WhatsApp the photographer (+351 912 237 740) to move to Wed 4:00 PM. If not possible, cancel in GetYourGuide before Tue 11:45 AM Lisbon time (5:45 AM Houston) for the $60.51 refund. Tomorrow at 11:45 AM you will be in passport control.", by:"2026-11-09", est:0},
     {id:"bus", ph:6, t:"Tue Nov 17 evening: buy Tootbus and Seine cruise tickets online for Wed Nov 18", n:"Tootbus Paris 1-day, 2 adults + 1 child, about 94 euros. Vedettes du Pont Neuf 4:00 PM cruise, 15 euros adult, 7 euros child online. Check the weather first.", by:"2026-11-17", est:0, u:"https://www.tootbus.com/en/paris/home", ul:"Tootbus Paris"},
     {id:"ibl", ph:5, t:"Seville: arrange the luggage hold with Iberflat for Nov 16",
    n:"Call or message Iberflat (<b>+34 955 515 541</b>), or use the guest portal, about Nov 10. Ask the housekeeper to hold your bags on <b>Mon Nov 16 from 12:00 (check-out) to about 13:45</b>, before the 14:00 taxi to the airport. They have no luggage room, so it must be arranged ahead.", by:"2026-11-10", est:0},
@@ -3558,9 +3558,12 @@ var RAIN = {
     ["Oceanario de Lisboa","One of Europe's best aquariums; the giant central tank is the highlight. Open daily 10 AM to 8 PM (last entry 7 PM). 25 euros adult, 15 euros child (3 to 12). Allow 2 to 2.5 hours. Metro Green line to Alameda, then Red line to Oriente, about 30 min. Book online on the day.","Oceanario de Lisboa"],
     ["Pavilhao do Conhecimento","Hands-on science centre next to the Oceanario. Tue to Fri 10 AM to 6 PM (last entry 5:30 PM). About 11 euros adult, 8 euros child. Do both in one trip.","Pavilhao do Conhecimento Lisboa"]]},
   3: {d:"Castelo, the photoshoot and the Alfama walk", s:[
-    ["Photoshoot decision","Free cancellation ends Tue Nov 10 at 11:45 AM. Check the forecast then: if heavy rain is forecast for Wed late morning, cancel or message the photographer to move it.",""],
+    ["Photoshoot decision","<b>Forecast (Nov 9): steady rain Wed 11 AM to 2 PM, easing after 3 PM.</b> Ask the photographer (+351 912 237 740, WhatsApp) to move to Wed 4:00 PM; leave by 4:20 PM for the Ismaili Centre. If they cannot move it, cancel before Tue 11:45 AM for a refund. You will be in passport control then, so decide before you fly.",""],
     ["Museu da Marioneta (Puppet Museum)","Puppets from around the world, with occasional shows. Tue to Sun 10 AM to 6 PM. 5 euros adult, under 13 free. Tram 25 or 28 to Santos, about 15 min.","Museu da Marioneta Lisboa"],
     ["Oceanario + Pavilhao do Conhecimento","If you did not go on Tuesday: same details as Tue. Back by 4:30 PM for the Ismaili Centre tour, which stays as planned.","Oceanario de Lisboa"]]},
+  4: {d:"Evening look at the hill and the tapas walk", s:[
+    ["Skip the hill walk","Rest at Hotel America instead; the courtyard restaurant is right there if nobody wants to go out.",""],
+    ["Taxi to the bars","Taxi down to Bodegas Castaneda and stay put; it is all indoors. Taxi back up, about 10 euros each way.","Bodegas Castaneda Granada"]]},
   5: {d:"Afternoon (Sacromonte caves, Mirador San Nicolas)", s:[
     ["Alhambra stays","The 9 AM Nasrid Palaces ticket is fixed and mostly indoors. Go with rain jackets; skip the Generalife gardens if it pours.",""],
     ["Parque de las Ciencias","Granada's huge interactive science park, with a planetarium and a tropical butterfly house. Fri 10 AM to 7 PM. 10 euros adult, 8 euros under 18, under 3 free; planetarium extra. Allow 3 to 4 hours. Taxi about 15 min from the hotel, or bus 5 or 21.","Parque de las Ciencias Granada"]]},
@@ -3571,6 +3574,9 @@ var RAIN = {
     ["Acuario de Sevilla (morning)","Sun 10 AM to 7 PM. Same details as Saturday.","Acuario de Sevilla"],
     ["Flamenco indoors (evening)","Museo del Baile Flamenco shows at 5 PM, 7 PM and 8:45 PM. About 25 euros adult, 12 euros child (6 to 12). Izyan is 5, so check the child policy when booking. Book online.","Museo del Baile Flamenco Sevilla"],
     ["Cathedral stays","Your 2:30 PM ticket is indoors. No change.",""]]},
+  8: {d:"Last walk through Santa Cruz", s:[
+    ["Long lunch indoors","Swap the walk for an early lunch at Lonja del Barranco, the covered food hall by the river. Taxi about 5 min.","Lonja del Barranco Sevilla"],
+    ["Go to the airport early","Collect bags from the housekeeper at 1:30 PM and take the taxi rank at Puerta de Jerez; SVQ is small and dry.",""]]},
   9: {d:"Queues, the parade and the night show", s:[
     ["Bring ponchos","Buy ponchos before you go (park ones cost more). Rides keep running in rain; the parade and Cascade of Lights can be cancelled in heavy rain.",""],
     ["Lean on the indoor list","Frozen Ever After, Ratatouille, Spider-Man, Mickey's PhilharMagic, Pirates, It's a Small World, Buzz Lightyear, Stitch Live!, Animation Academy, Mickey and the Magician. Queues for outdoor rides like Dumbo get shorter in rain.",""]]},
