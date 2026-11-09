@@ -1,0 +1,34 @@
+name: Drive sync loop
+# Watches the "EuroTrip Hub Sync" Drive folder every 3 minutes for about 5.5 hours,
+# then restarts itself. The logic lives in .sync/sync.sh. The schedule is only a backup.
+on:
+  schedule:
+    - cron: '7 */3 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+concurrency: drive-loop
+jobs:
+  loop:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - name: Watch Drive and publish
+        env:
+          FOLDER: 1fFECJ8kPrnu70t-xlB6JGoh5_KoiK8jh
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          END=$(( $(date +%s) + 330*60 ))
+          while [ "$(date +%s)" -lt "$END" ]; do
+            git pull -q --rebase origin main || git reset -q --hard origin/main
+            bash .sync/sync.sh || { echo "::warning::Sync attempt failed, will retry"; git reset -q --hard origin/main || true; }
+            sleep 180
+          done
+      - name: Restart the loop
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run drive-loop.yml --ref main -R "$GITHUB_REPOSITORY"
