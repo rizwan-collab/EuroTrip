@@ -3,7 +3,7 @@ name: Drive sync
 # (pNNNN.patch = git diff, fNNNN.b64 = base64 tar.gz of full files) and publishes them.
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '4,19,34,49 * * * *'
   workflow_dispatch:
 permissions:
   contents: write
