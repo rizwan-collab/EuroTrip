@@ -668,7 +668,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-10h";
+var BUILD = "2026-11-10i";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -840,7 +840,7 @@ var PLAN = [
 {
   n:3, date:"Wed Nov 11", wd:"Wednesday", city:"Lisbon", tag:["p-g","Full day"],
   sum:"Easy Lisbon day: breakfast, the Oceanario through the rain, lunch, nap, then the Ismaili Centre tour at 5:30 PM and an early dinner. No train today.",
-  warn:"<b>Ismaili Centre tour CONFIRMED for 5:30 PM today.</b> Leave the apartment by 4:50 PM. Modest dress for the prayer hall. <b>Book tonight:</b> Oceanario 10:30 AM slot on tickets.oceanario.pt, code ONLINE10. <b>Forecast:</b> heavy rain 11 AM to 4 PM, so you are indoors for all of it. Izyan's fast train is off for Lisbon; look for one in Spain or Paris. Keep dinner early: tomorrow's airport taxi is at 8:15 AM (be downstairs 8:10).",
+  warn:"<b>Ismaili Centre tour CONFIRMED for 5:30 PM today.</b> Leave the apartment by 4:50 PM. Modest dress for the prayer hall. <b>Pay in euros, never USD:</b> when a card machine asks, pick EUR; the USD option adds a 3 to 7 percent markup. <b>Book tonight:</b> Oceanario 10:30 AM slot on tickets.oceanario.pt, code ONLINE10. <b>Forecast:</b> heavy rain 11 AM to 4 PM, so you are indoors for all of it. Izyan's fast train is off for Lisbon; look for one in Spain or Paris. Keep dinner early: tomorrow's airport taxi is at 8:15 AM (be downstairs 8:10).",
   sched:[
     ["08:00","Breakfast","Manteigaria in Chiado (3 min) for a hot nata, or Confeitaria Nacional on Praca da Figueira. No rush today."],
     ["09:45","Metro to Oriente","Walk 5 min to Baixa-Chiado. Green line to Alameda, then Red line to Oriente, about 30 minutes. Izyan (5) needs his own ticket: buy reloadable Navegante cards at the machine, or tap a contactless card per person."],
@@ -853,7 +853,7 @@ var PLAN = [
     ["17:30","Ismaili Centre tour, CONFIRMED","Av. Lusiada 1. Courtyard, gardens and prayer hall."],
     ["19:00","Early dinner","Pick below. Bolt back towards Baixa; nothing late."],
     ["20:30","Pack for Granada","Bags by the door. Tomorrow: 8:15 AM taxi to the airport (be downstairs 8:10), TAP 10:45 AM to Malaga, ALSA 3:00 PM coach to Granada."],
-    ["--","Lisbon photoshoot: TBD","Waiting on the photographer. Today is too wet; if they cannot do Tuesday about 5:30 PM, ask GetYourGuide for a weather refund in the app."]
+    ["--","Lisbon photoshoot: cancelled","GetYourGuide refund of $60.51 is pending on the card (Nov 10). Nothing to do today."]
   ],
   afternoon:{
     label:"Afternoon, tour at 5:30 PM",
@@ -1773,7 +1773,7 @@ var BOOKINGS = [
    n:"<b>Nestay has no front desk. Check-in is fully self-service and the access codes only arrive once you complete online check-in.</b> Do it as soon as the link appears, and screenshot the codes so they work offline. Without them you are on rue de la Cossonnerie at 21:15 with the bags and no way in. <b>Ask at the same time whether Paris city tax is collected on arrival</b> &mdash; the rate page did not show a city-tax line, so budget about $56 in case.",
    by:"2026-11-09", est:0,
    u:"https://secure.booking.com/", ul:"Booking.com account"},
-  {id:"bus1", done:1, cost:97, paid:1, ph:3, t:"Granada to Seville, Sat Nov 14: ALSA BUS BOOKED (11:00, direct)",
+  {id:"bus1", done:1, cost:94.52, paid:1, ph:3, t:"Granada to Seville, Sat Nov 14: ALSA BUS BOOKED (11:00, direct)",
    n:"<b>Train cancelled by Renfe and refunded (Trainline 2FKGY4).</b> <b>Replacement booked Nov 9: ALSA ref 1gvje7u, 84.12 euros (about $97)</b>, in Zaibnish&#39;s name. 11:00 Granada bus station (Av. Juan Pablo II 33) to 14:00 Seville Plaza de Armas, direct. Seats Zaibnish 5, Rizwan 6, Izyan 8. Flexible fare: free changes up to 48h before. Bags: 25 kg and 2 items per person plus 1 extra bag paid. Passports required.",
    by:"2026-11-09", est:97,
    u:"https://www.alsa.com/en/", ul:"ALSA"},
@@ -1793,7 +1793,7 @@ var BOOKINGS = [
    n:"Decided 31 Oct to keep the seats as booked: Rizwan 34, Zaibnish 33, Izyan 30 (one row ahead). ALSA does not allow seat changes on board, so if Izyan needs a parent beside him, ask the driver at boarding or politely ask the passenger next to him to swap before departure.", by:"2026-11-05", est:0},
     {id:"photo", done:1, cost:39.21, paid:1, ph:4, t:"Family photo shoot: BOOKED, Wed Nov 18, 12:00, Eiffel Tower",
    n:"<b>Booked via GetYourGuide, in Zaibnish&#39;s name.</b> Private Eiffel Tower street photoshoot, 15 minutes, 5 photos, group up to 4, English. <b>Meet 11:55 in the middle of Pont de Bir-Hakeim</b> by the Joan of Arc statue (75015); the photographer contacts you on WhatsApp. $39.21. Booking reference and PIN are in the GetYourGuide app, kept off this public page. Leave the Eiffel summit by 11:30.", by:"2026-10-25", est:0},
-  {id:"lphoto", done:1, cost:60.51, ph:4, t:"Lisbon photoshoot, Wed Nov 11, 11:45: BOOKED", n:"Largo Portas do Sol, by the St. Vincent statue. Arrive 11:40. $60.51 charged Nov 8; free cancel until Nov 10 11:45.", by:"2026-11-08", est:0},
+  {id:"lphoto", done:1, cost:0, ph:4, t:"Lisbon photoshoot: CANCELLED, $60.51 refund pending", n:"GetYourGuide credit of $60.51 showed as pending on Nov 10. Was: Largo Portas do Sol, by the St. Vincent statue. Arrive 11:40. $60.51 charged Nov 8; free cancel until Nov 10 11:45.", by:"2026-11-08", est:0},
   {id:"cat", done:1, cost:32.63, paid:1, ph:4, t:"Seville Cathedral and Giralda, Sun Nov 15, 14:30: BOOKED",
    n:"<b>Booked 3 Oct, 29 euros (26 plus 3 fee) for all three, in Zaibnish&#39;s name.</b> Includes the Church of El Salvador. Entry Puerta del Lagarto, be there by 14:20; no entry outside the time, non-refundable, no date change. <b>Bring all three passports</b>, the numbers are on the ticket. Shoulders covered, no caps or hats. Voucher PDF in the confirmations folder.",
    by:"2026-10-25", est:33},
@@ -2150,9 +2150,9 @@ function bkExport(){
    BUDGET
    ================================================================== */
 var BDG = [
-  {d:1, dt:"Mon Nov 9",  c:"Texas to Lisbon",     i:"Ride to IAH, parking (airport food $35 is now in Paid)", e:75},
-  {d:2, dt:"Tue Nov 10", c:"Lisbon",               i:"Lunch and dinner, Time Out Market, metro (airport taxi paid)", e:130},
-  {d:3, dt:"Wed Nov 11", c:"Lisbon",               i:"Castelo de Sao Jorge, meals, tram fares",             e:120},
+  {d:1, dt:"Mon Nov 9",  c:"Texas to Lisbon",     i:"Ride to IAH, parking (airport food is in Paid)", e:75},
+  {d:2, dt:"Tue Nov 10", c:"Lisbon",               i:"Dinner tonight only (the day's spends so far are in Paid)", e:40},
+  {d:3, dt:"Wed Nov 11", c:"Lisbon",               i:"Oceanario (about 70 euros), meals, metro, Bolt to the Ismaili Centre", e:180},
   {d:4, dt:"Thu Nov 12", c:"Lisbon to Granada",  i:"Meals, taxi from Granada bus station (airport taxi and coach are paid)", e:100},
   {d:5, dt:"Fri Nov 13", c:"Granada, Alhambra",  i:"Lunch tapas, Parador or hotel dinner",            e:150},
   {d:6, dt:"Sat Nov 14", c:"Granada to Seville", i:"Meals, taxis both ends, tapas dinner",            e:100},
@@ -2168,7 +2168,7 @@ var COSTS = [
   ["Flights and bags, all four legs", "$4,004", "$4,004", "<b>All paid.</b> United $1,389 plus a $90 bag, TAP $538, Air France $370, American $1,616 including its $87 bag"],
   ["Accommodation, 9 nights", "$2,787", "$2,787", "<b>All four booked. No estimates left.</b> Lisbon <b>$582</b>, Granada <b>$497</b>, Seville <b>$330</b>, Paris <b>$1,378</b>. Every figure is from a confirmation, not a quote. <b>Paris may settle about $116 lower</b> if Booking.com&#39;s contribution comes off your card &mdash; confirm against the statement"],
   ["Tickets and attractions", "$480", "$650", "<b>Paid: Alhambra 43.27 euros, Disneyland $348.74, Eiffel 63 euros.</b> Cathedral 29 euros paid. Eiffel photoshoot $39.21 paid. Alcazar and flamenco show skipped. Castelo 34 euros at the gate"],
-  ["Intercity coaches", "$147", "$147", "<b>Both paid.</b> Malaga Airport to Granada coach 43.27 euros, about $50 (ALSA 15:00, incl. extra bag); Granada to Seville ALSA bus 84.12 euros, about $97 (train cancelled and refunded)"],
+  ["Intercity coaches", "$147", "$147", "<b>Both paid.</b> Malaga Airport to Granada coach 43.27 euros, about $50 (ALSA 15:00, incl. extra bag); Granada to Seville ALSA bus 84.12 euros, $94.52 on the card (train cancelled and refunded)"],
   ["City transport", "$220", "$340", "Metros, taxis, RER, Bolt"],
   ["Daily food and incidentals", "$" + BDG_TOTAL, "$" + BDG_TOTAL, "Tracked day by day below"],
   ["Travel insurance", "$77", "$77", "<b>Bought.</b> Tin Leg Gold, medical and evacuation only, all three travellers"],
@@ -2993,7 +2993,7 @@ function actToggle(k){
 
 /* ---------- Decide on landing: everything ready, exact steps ---------- */
 var DECIDE = [
-  {id:"d_photo", t:"1. Lisbon photoshoot &mdash; TBD, waiting on the photographer (ask for today about 5:30 PM at Portas do Sol)", n:"Forecast: steady rain Wed 11 AM to 2 PM. <b>Move:</b> WhatsApp +351 912 237 740: &ldquo;Hi, we have your 15-min family shoot Wed Nov 11 at 11:45 at Portas do Sol. Heavy rain is forecast late morning. Could we move it to 4:00 PM the same day? Thank you, Rizwan Ali.&rdquo; <b>Cancel:</b> GetYourGuide app &rarr; Bookings &rarr; Lisbon photoshoot &rarr; Cancel booking &rarr; full refund $60.51. You land 10:20 AM and will be in passport control near the deadline, so do it in the queue."},
+  {id:"d_photo", done:1, t:"1. Lisbon photoshoot &mdash; cancelled, $60.51 refund pending (Nov 10)", n:"Closed. Old notes: Forecast: steady rain Wed 11 AM to 2 PM. <b>Move:</b> WhatsApp +351 912 237 740: &ldquo;Hi, we have your 15-min family shoot Wed Nov 11 at 11:45 at Portas do Sol. Heavy rain is forecast late morning. Could we move it to 4:00 PM the same day? Thank you, Rizwan Ali.&rdquo; <b>Cancel:</b> GetYourGuide app &rarr; Bookings &rarr; Lisbon photoshoot &rarr; Cancel booking &rarr; full refund $60.51. You land 10:20 AM and will be in passport control near the deadline, so do it in the queue."},
   {id:"d_train", t:"2. Izyan's fast train &mdash; skipped in Lisbon", n:"Not doing the Santarem train on Wednesday. Look for a fast-train ride in Granada, Seville or Paris instead."},
   {id:"d_early", t:"3. Lisbon early check-in (optional) &mdash; decide on landing", n:"Residentas Priority Arrival Access opens the apartment from 2:00 PM instead of 4:00 PM. Paid add-on; link is in Zaibnish's Residentas email (Your access codes). Worth it after the overnight flight and rain. Bags can go in the luggage room on the 2nd floor either way."},
   {id:"d_home", t:"4. Nov 19 DFW to home &mdash; rental or flight", n:"<b>Rental (planned):</b> National, Nissan Rogue or similar, DFW Rental Car Center 4:00 PM Thu Nov 19 &rarr; Sugar Land Regional Airport (SGR) by noon Nov 20, about $106 + booster seat. Free cancellation up to 48 hours before, so cancel by Tue Nov 17 4:00 PM if you switch. <b>Flight instead:</b> AA DFW 6:05 PM &rarr; IAH 7:23 PM, or AA 6:19 PM &rarr; Hobby 7:40 PM, about $716 for three plus a checked bag. Not earlier than 6 PM: you land 2:50 PM and clear immigration first."},
@@ -3020,7 +3020,7 @@ var AFTER = [
   {id:"trainrefund", t:"Train refund: Trainline 2FKGY4 (Granada to Seville)", by:"2026-11-30", n:"Check the card for about $181.76 back, both legs and all three tickets. If it has not landed by Nov 30, chase Trainline. If they will not pay, open a Chase dispute (chargeback): Renfe cancelled the train (email of Nov 9)."},
   {id:"ibdeposit", t:"Seville deposit: Iberflat 100 euros back", by:"2026-11-23", n:"Damage deposit taken on arrival Nov 14, refunded within 7 days. Chase Iberflat (+34 955 515 541) if it is still held after Nov 23."},
   {id:"holds", t:"Card holds released (Nestay, hotels, car services)", by:"2026-11-30", n:"Check for any pre-authorisations still sitting on the Chase card, and whether Nestay charged Paris city tax."},
-  {id:"lphotorefund", t:"Lisbon photoshoot: refund or photos", by:"2026-11-25", n:"If you cancelled, confirm the $60.51 GetYourGuide refund. If you moved it, confirm the photos arrived."},
+  {id:"lphotorefund", t:"Lisbon photoshoot: refund or photos", by:"2026-11-25", n:"Cancelled. $60.51 GetYourGuide credit pending since Nov 10; confirm it posts to the Chase Sapphire."},
   {id:"pphotos", t:"Paris photoshoot: 5 edited photos received", by:"2026-11-28", n:"GetYourGuide, Nov 18. Message the photographer on WhatsApp if nothing arrives within about a week."},
   {id:"statement", t:"Match the Chase statement to the budget", by:"2026-12-05", n:"Look for duplicates (check the Alhambra 43.27 euro charge) and anything unexpected. Dispute anything wrong with Chase."},
   {id:"claims", t:"Insurance claims, if anything went wrong", by:"2026-12-15", n:"Delays, lost or late bags, medical: Tin Leg (tinleg.com/report-claim, 844-240-1233) and Chase Sapphire travel protection. Keep every receipt and the airline delay notices."},
@@ -3045,11 +3045,12 @@ function afterBlock(){
 var PAID = [
   ["Flights and bags", [["United IAH-IAD-LIS + $90 bag",1479],["American CDG-DFW incl. $87 bag",1616.49],["TAP Lisbon-Malaga",538.32],["Air France Seville-Paris",369.80]]],
   ["Places to stay, 9 nights", [["Lisbon, Residentas (2 nights)",582],["Granada, Hotel America (2)",497.38],["Seville, Iberflat (2)",330],["Paris, Nestay (3)",1378]]],
-  ["Tickets and tours", [["Disneyland, 1 day / 2 parks",348.74],["Eiffel Tower",70.89],["Lisbon photoshoot",60.51],["Alhambra",48.69],["Paris photoshoot",39.21],["Seville Cathedral",32.63]]],
-  ["Coaches", [["ALSA Granada to Seville (84.12 euros)",97],["ALSA Malaga Airport to Granada (43.27 euros)",50]]],
+  ["Tickets and tours", [["Disneyland, 1 day / 2 parks",348.74],["Eiffel Tower",70.89],["Lisbon photoshoot (cancelled, $60.51 refund pending)",0],["Alhambra",48.69],["Paris photoshoot",39.21],["Seville Cathedral",32.63]]],
+  ["Coaches", [["ALSA Granada to Seville (84.12 euros, card $94.52)",94.52],["ALSA Malaga Airport to Granada (43.27 euros)",50]]],
   ["Airport taxis (Booking.com)", [["CDG to Nestay, Nov 16",68.66],["Nestay to CDG, Nov 19",62.25],["Apartment to Lisbon airport, Nov 12",16.97],["Lisbon airport to apartment, Nov 10",15.42]]],
   ["Travel insurance", [["Tin Leg Gold, all three",77]]],
-  ["Spent on the road", [["T-Mobile international plan (Rizwan)",75],["Houston airport food, Nov 9",35]]]
+  ["Spent on the road", [["T-Mobile international plan (Rizwan)",75],["Velvet Taco, Houston airport, Nov 9 (Zaibnish)",37.73]]],
+  ["Lisbon, Tue Nov 10", [["Sidhu Tours (Zaibnish)",224.54],["Henrique Sa Pessoa (Zaibnish)",17.65],["Pizzeria Romana (Zaibnish)",13.47],["Crush Doughnuts (Zaibnish)",11.74],["Loja Candy Lisa (Zaibnish)",6.75],["Sabores d'Avila (Zaibnish)",6.68],["Bolt (Zaibnish)",3.63],["Rest Smokin (Zaibnish)",2.53],["Food, 21 euros (Rizwan)",23.56],["Food, 17 euros (Rizwan)",19.07]]]
 ];
 var TOSPEND = [
   ["Food, local transport, small extras", BDG_TOTAL, Math.round(BDG_TOTAL*1.3/10)*10, "Day-by-day plan below; high end allows 30% extra. Actual spends move to Paid as you send them."]
