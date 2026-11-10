@@ -150,6 +150,12 @@ tbody tr:last-child td{border-bottom:0}
 .dh-s{font-size:12.5px;color:var(--mute);padding:12px 18px;
   line-height:1.62;border-bottom:1px solid var(--line2)}
 .tl-wrap{padding:6px 0}
+.tl-ck{flex:none;align-self:flex-start;width:28px;height:28px;margin-top:-2px;border:1.5px solid var(--line);border-radius:50%;background:transparent;color:transparent;font-size:14px;font-weight:700;line-height:1;cursor:pointer;padding:0}
+.tl .tl-w{flex:1;min-width:0;overflow-wrap:anywhere}
+.tl.tl-done{opacity:.4}
+.tl.tl-done .tl-w{text-decoration:line-through}
+.tl.tl-done .tl-n{display:none}
+.tl.tl-done .tl-ck{background:var(--brand);border-color:var(--brand);color:#fff}
 .tl{display:flex;gap:14px;padding:8px 18px;align-items:baseline}
 .tl:hover{background:#fcfdfe}
 .tl-t{font-size:11.5px;font-weight:600;color:var(--brand);min-width:70px;
@@ -662,7 +668,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-09i";
+var BUILD = "2026-11-09j";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -2873,9 +2879,11 @@ function renderItinerary(){
   var days = PLAN.map(function(D){
     var rows = D.sched.map(function(s){
       var isBooked = /BOOKED|CONFIRMED|booked/.test(s[1]);
-      return '<div class="tl"><span class="tl-t">'+s[0]+'</span>'
+      var k = actKey(D.n, s), dn = actDone(k);
+      return '<div class="tl'+(dn?' tl-done':'')+'" id="act-'+k+'"><span class="tl-t">'+s[0]+'</span>'
         + '<span class="tl-w">'+(isBooked?'<b>'+s[1]+'</b>':s[1])
-        + (s[2]?'<span class="tl-n">'+s[2]+'</span>':'')+'</span></div>';
+        + (s[2]?'<span class="tl-n">'+s[2]+'</span>':'')+'</span>'
+        + '<button class="tl-ck" aria-label="Mark done" title="Mark done" onclick="actToggle(\''+k+'\')">&#10003;</button></div>';
     }).join('');
     return '<div class="card blk daycard" id="day-'+D.n+'" data-dt="'+D.date+'">'
       + '<div class="dh"><div><div class="dh-d">Day '+D.n+' &middot; '+D.date+'</div>'
@@ -2986,6 +2994,15 @@ function renderBooking(){
     + '<div class="blk"><div class="blk-h">To do ('+open.length+')</div><div class="card">'+(openRows||'<div style="padding:14px">All done.</div>')+'</div></div>'
     + afterBlock()
     + '<div class="blk"><div class="blk-h">Done ('+done.length+')</div><div class="card">'+doneRows+'</div></div>';
+}
+
+/* ---------- tick off activities as you go (saved on this phone) ---------- */
+function actKey(n, s){ var str = s[0]+'|'+String(s[1]).replace(/<[^>]+>/g,'').slice(0,40), h = 0; for(var i=0;i<str.length;i++){ h = (h*31 + str.charCodeAt(i)) | 0; } return n+'_'+(h>>>0).toString(36); }
+function actDone(k){ try { return localStorage.getItem('eu26_act_'+k) === '1'; } catch(e){ return false; } }
+function actToggle(k){
+  var d = !actDone(k);
+  try { localStorage.setItem('eu26_act_'+k, d ? '1' : '0'); } catch(e){}
+  var el = document.getElementById('act-'+k); if(el) el.classList.toggle('tl-done', d);
 }
 
 /* ---------- Decide on landing: everything ready, exact steps ---------- */
