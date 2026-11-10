@@ -668,7 +668,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-10a";
+var BUILD = "2026-11-10b";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -1833,7 +1833,7 @@ var BOOKINGS = [
     {id:"pass", done:1, ph:5, t:"Check all three passports",
    n:"Must be valid at least six months past your return date. Renewals take weeks, so verify today rather than in October.",
    by:"2026-09-10", est:0},
-  {id:"esim", ph:5, t:"eSIM for Rizwan's phone only",
+  {id:"esim", done:1, cost:75, paid:1, ph:5, t:"Phone data: T-Mobile international plan, $75, DONE",
    n:"<b>Checked 10 Oct:</b> Rizwan is on T-Mobile Simple Choice, which gives only 256 kbps data abroad and charges $0.50 a minute for calls. Zaibnish's line is covered. <b>Plan:</b> Airalo Europe (Eurolink) 10 GB / 30 days, about $20 to $26. Install it over wifi and leave it off; on Nov 10 in Lisbon switch it on with roaming, make it the data line, keep T-Mobile on for texts and wifi calling. Use WhatsApp for calls.",
    by:"2026-11-07", est:25,
    u:"https://www.airalo.com", ul:"Get an eSIM"},
@@ -1929,14 +1929,14 @@ function satBanner(){
    + '<div class="stat"><div class="st-l">Rooms booked</div><div class="st-v">4 of 4</div><div class="st-n">Lisbon, Granada, Seville, Paris</div></div>'
    + '<div class="stat"><div class="st-l">Flights</div><div class="st-v">All paid</div><div class="st-n">Four legs, bags included</div></div>'
    + '<div class="stat"><div class="st-l">Committed</div><div class="st-v">$'+s.committed.toLocaleString()+'</div><div class="st-n">Across '+s.paidCount+' paid items</div></div>'
-   + '<div class="stat"><div class="st-l">Still open</div><div class="st-v">3 items</div><div class="st-n">eSIM, Seville luggage hold, Castelo (gate)</div></div>'
+   + '<div class="stat"><div class="st-l">Still open</div><div class="st-v">3 items</div><div class="st-n">Seville luggage hold, Castelo (gate), Wed train</div></div>'
    + '</div>'
    + '<div class="note n-g" style="margin-bottom:14px"><span class="n-t">Passports &amp; insurance documents (private)</span>'   + 'All three passport scans and the Tin Leg policy documents are in a <b>private Google Drive folder</b> that only opens when you are signed in as rizwan@swagprint.com. '   + '<a class="btn btn-p" href="https://drive.google.com/drive/folders/1DOcW20QwsuDA3ThgDWjzwOOnXIh940XN" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px">Open passports &amp; insurance folder</a>'   + '<br><span style="font-size:12px">Share it with Zaibnish from Drive. Also keep offline copies on both phones for no-signal moments.</span></div>'
    + '<div class="note n-w" style="margin-bottom:14px"><span class="n-t">Why no confirmation numbers on this page</span>'   + 'This planner is published on a <b>public</b> GitHub Pages URL. A Booking.com reference plus its PIN is enough for anyone to view, change or cancel a reservation, so <b>none are stored here</b>. They live in your email and in the confirmations folder alongside the PDFs. Property names, addresses and public phone numbers are fine to keep.</div>'
    + '<div class="acc-grp" style="margin:0 0 18px">'
    + '<div class="acc-grp-h">What is left, in order of deadline</div>'
-   + '<details class="acc" open><summary>By Nov 7 &mdash; eSIM for Rizwan&#39;s phone</summary><div class="acc-b">'
-   + 'T-Mobile Simple Choice is 256 kbps abroad. Airalo Europe 10 GB / 30 days, about $20 to $26. Install now, switch on in Lisbon. Zaibnish&#39;s line is covered.</div></details>'
+   + '<details class="acc"><summary>Done &mdash; phone data</summary><div class="acc-b">'
+   + 'Rizwan is on the T-Mobile $75 international plan. Zaibnish&#39;s line is covered.</div></details>'
    + '<details class="acc"><summary>Sun Nov 8 &mdash; United online check-in</summary><div class="acc-b">'
    + '24 hours before the 16:45 departure. Confirm all three passports in the app; Izyan&#39;s new passport is already on the booking.</div></details>'
    + '<details class="acc"><summary>About Nov 10 &mdash; arrange the Seville luggage hold</summary><div class="acc-b">'
@@ -2167,7 +2167,7 @@ function bkExport(){
    BUDGET
    ================================================================== */
 var BDG = [
-  {d:1, dt:"Mon Nov 9",  c:"Texas to Lisbon",     i:"Ride to IAH, parking, airport meals",            e:110},
+  {d:1, dt:"Mon Nov 9",  c:"Texas to Lisbon",     i:"Ride to IAH, parking (airport food $35 is now in Paid)", e:75},
   {d:2, dt:"Tue Nov 10", c:"Lisbon",               i:"Lunch and dinner, Time Out Market, metro (airport taxi paid)", e:130},
   {d:3, dt:"Wed Nov 11", c:"Lisbon",               i:"Castelo de Sao Jorge, meals, tram fares",             e:120},
   {d:4, dt:"Thu Nov 12", c:"Lisbon to Granada",  i:"Meals, taxi from Granada bus station (airport taxi and coach are paid)", e:100},
@@ -2189,7 +2189,7 @@ var COSTS = [
   ["City transport", "$220", "$340", "Metros, taxis, RER, Bolt"],
   ["Daily food and incidentals", "$" + BDG_TOTAL, "$" + BDG_TOTAL, "Tracked day by day below"],
   ["Travel insurance", "$77", "$77", "<b>Bought.</b> Tin Leg Gold, medical and evacuation only, all three travellers"],
-  ["eSIM and apps", "$20", "$40", "Two phones, eleven days"]
+  ["Phone data", "$75", "$75", "T-Mobile international plan, paid"]
 ];
 
 function renderBudget(){
@@ -3042,7 +3042,7 @@ var AFTER = [
   {id:"statement", t:"Match the Chase statement to the budget", by:"2026-12-05", n:"Look for duplicates (check the Alhambra 43.27 euro charge) and anything unexpected. Dispute anything wrong with Chase."},
   {id:"claims", t:"Insurance claims, if anything went wrong", by:"2026-12-15", n:"Delays, lost or late bags, medical: Tin Leg (tinleg.com/report-claim, 844-240-1233) and Chase Sapphire travel protection. Keep every receipt and the airline delay notices."},
   {id:"miles", t:"Miles posted to MileagePlus NCY24132", by:"2026-12-05", n:"United flights Nov 9. Request missing credit on united.com if they have not posted."},
-  {id:"datapass", t:"Turn off any international data pass or eSIM", by:"2026-11-20", n:"So nothing renews after you are home."}
+  {id:"datapass", t:"Turn off the T-Mobile $75 international plan", by:"2026-11-20", n:"Check in the T-Mobile app that it ends with the trip and does not renew."}
 ];
 function afGet(id){ try { return localStorage.getItem('eu26_after_'+id) === '1'; } catch(e){ return false; } }
 function afToggle(id){ try { localStorage.setItem('eu26_after_'+id, afGet(id) ? '0' : '1'); } catch(e){} built.booking = false; show('booking'); }
@@ -3065,11 +3065,11 @@ var PAID = [
   ["Tickets and tours", [["Disneyland, 1 day / 2 parks",348.74],["Eiffel Tower",70.89],["Lisbon photoshoot",60.51],["Alhambra",48.69],["Paris photoshoot",39.21],["Seville Cathedral",32.63]]],
   ["Coaches", [["ALSA Granada to Seville (84.12 euros)",97],["ALSA Malaga Airport to Granada (43.27 euros)",50]]],
   ["Airport taxis (Booking.com)", [["CDG to Nestay, Nov 16",68.66],["Nestay to CDG, Nov 19",62.25],["Apartment to Lisbon airport, Nov 12",16.97],["Lisbon airport to apartment, Nov 10",15.42]]],
-  ["Travel insurance", [["Tin Leg Gold, all three",77]]]
+  ["Travel insurance", [["Tin Leg Gold, all three",77]]],
+  ["Spent on the road", [["T-Mobile international plan (Rizwan)",75],["Houston airport food, Nov 9",35]]]
 ];
 var TOSPEND = [
-  ["Food, local transport, small extras", BDG_TOTAL, Math.round(BDG_TOTAL*1.3/10)*10, "Day-by-day plan below; high end allows 30% extra"],
-  ["Phone data (eSIM or T-Mobile pass)", 22, 75, "Decision paused"]
+  ["Food, local transport, small extras", BDG_TOTAL, Math.round(BDG_TOTAL*1.3/10)*10, "Day-by-day plan below; high end allows 30% extra. Actual spends move to Paid as you send them."]
 ];
 function usd(n){ return '$' + n.toLocaleString('en-US',{minimumFractionDigits:2, maximumFractionDigits:2}); }
 function usd0(n){ return '$' + Math.round(n).toLocaleString('en-US'); }
