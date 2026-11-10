@@ -668,7 +668,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-10g";
+var BUILD = "2026-11-10h";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -839,23 +839,21 @@ var PLAN = [
 },
 {
   n:3, date:"Wed Nov 11", wd:"Wednesday", city:"Lisbon", tag:["p-g","Full day"],
-  sum:"Izyan's fast train first, then the Oceanario through the heaviest rain, rest, and the Ismaili Centre tour at 5:30 PM. The Castelo was done on Tuesday.",
-  warn:"<b>Ismaili Centre tour CONFIRMED for 5:30 PM today.</b> Leave the apartment by 4:50 PM. Modest dress for the prayer hall. <b>Book tonight:</b> the CP train (AP 121 at 8:09 AM out, IC 540 at 10:40 AM back) and the Oceanario 12:00 slot (code ONLINE10). <b>Forecast:</b> heavy rain 11 AM to 4 PM, easing by 5 PM, so everything outdoors is either early or after 5. Keep dinner early: tomorrow's airport taxi is at 8:15 AM (be downstairs 8:10).",
+  sum:"Easy Lisbon day: breakfast, the Oceanario through the rain, lunch, nap, then the Ismaili Centre tour at 5:30 PM and an early dinner. No train today.",
+  warn:"<b>Ismaili Centre tour CONFIRMED for 5:30 PM today.</b> Leave the apartment by 4:50 PM. Modest dress for the prayer hall. <b>Book tonight:</b> Oceanario 10:30 AM slot on tickets.oceanario.pt, code ONLINE10. <b>Forecast:</b> heavy rain 11 AM to 4 PM, so you are indoors for all of it. Izyan's fast train is off for Lisbon; look for one in Spain or Paris. Keep dinner early: tomorrow's airport taxi is at 8:15 AM (be downstairs 8:10).",
   sched:[
-    ["06:45","Up and out","Grab nata or yogurt for the metro; proper breakfast at Oriente station after the train if he is hungry."],
-    ["07:20","Leave for Oriente","Walk 5 min to Baixa-Chiado or Rossio. Metro Green line to Alameda, then Red line to Oriente, about 30 minutes. Izyan (5) needs his own ticket: buy reloadable Navegante cards at the machine, or tap a contactless card per person."],
-    ["08:09","IZYAN'S FAST TRAIN: Alfa Pendular 121 to Santarem","Booked in the CP app (Turistica). Up to 220 km/h, tilting. Arrive Santarem 8:40 AM. Snack in the station cafe."],
-    ["10:40","Intercidades 540 back to Oriente","Arrive 11:14 AM. Backup: IC 730 at 11:18 AM, arriving 11:53 AM."],
-    ["11:20","Coffee and the walk over","Oriente station to the Oceanario is a short walk, about 10 minutes; umbrellas out."],
-    ["12:00","OCEANARIO (12:00 slot)","Tickets on tickets.oceanario.pt, code <b>ONLINE10</b>: about 65 euros for three. 1.5 to 2 hours. Otters, penguins, sharks and the giant central tank. Lockers on floor 0 for bags."],
-    ["14:00","Lunch at Vasco da Gama mall","Across from Oriente station, all indoors. Food court with pizza, burgers and Asian counters, so Izyan gets something plain. Add the Pavilhao do Conhecimento next door only if he still has energy (about 14 euros adult, 8 euros child)."],
-    ["15:00","Metro back and rest","Red line to Alameda, Green line to Baixa-Chiado. Nap for Izyan, start packing for Granada."],
+    ["08:00","Breakfast","Manteigaria in Chiado (3 min) for a hot nata, or Confeitaria Nacional on Praca da Figueira. No rush today."],
+    ["09:45","Metro to Oriente","Walk 5 min to Baixa-Chiado. Green line to Alameda, then Red line to Oriente, about 30 minutes. Izyan (5) needs his own ticket: buy reloadable Navegante cards at the machine, or tap a contactless card per person."],
+    ["10:30","OCEANARIO (book the 10:30 slot tonight)","Tickets on tickets.oceanario.pt, code <b>ONLINE10</b> for 10 percent off; 2 adults + 1 child, price shows at checkout (the midday slot is 27.70 euros adult, 16.60 euros child). 1.5 to 2 hours. Otters, penguins, sharks and the giant central tank. Lockers on floor 0."],
+    ["12:30","Lunch at Vasco da Gama mall","8 min walk from the Oceanario, all indoors. Food court with pizza, burgers and Asian counters, so Izyan gets something plain. Add the Pavilhao do Conhecimento next door only if he still has energy."],
+    ["13:45","Metro back","Red line to Alameda, Green line to Baixa-Chiado, about 30 minutes."],
+    ["14:30","Nap and rest","Nap for Izyan. Start packing for Granada while he sleeps."],
     ["16:30","Snack, change, get ready","Modest dress for the prayer hall. A snack for Izyan before the tour."],
     ["16:50","Bolt to Laranjeiras","About 8 euros and 15 to 20 minutes at rush hour. Metro Blue line to Laranjeiras is the backup. Aim to arrive by 5:15 PM."],
     ["17:30","Ismaili Centre tour, CONFIRMED","Av. Lusiada 1. Courtyard, gardens and prayer hall."],
     ["19:00","Early dinner","Pick below. Bolt back towards Baixa; nothing late."],
     ["20:30","Pack for Granada","Bags by the door. Tomorrow: 8:15 AM taxi to the airport (be downstairs 8:10), TAP 10:45 AM to Malaga, ALSA 3:00 PM coach to Granada."],
-    ["--","Lisbon photoshoot: TBD","Waiting on the photographer. Today is too wet and too tight; if they cannot do Tuesday about 5:30 PM, ask GetYourGuide for a weather refund in the app."]
+    ["--","Lisbon photoshoot: TBD","Waiting on the photographer. Today is too wet; if they cannot do Tuesday about 5:30 PM, ask GetYourGuide for a weather refund in the app."]
   ],
   afternoon:{
     label:"Afternoon, tour at 5:30 PM",
@@ -1802,7 +1800,7 @@ var BOOKINGS = [
   {id:"fla", done:1, cost:0, ph:4, t:"Flamenco, Seville, Nov 15: street flamenco, no booking",
    n:"<b>Ticketed show skipped.</b> Catch free street flamenco if it is on: Plaza de Espana in the morning, by the Cathedral in the afternoon, Calle Betis in Triana at dusk. All three are in the Sunday plan. Tip 2 to 5 euros. Nothing to book.",
    by:"2026-10-25", est:0},
-  {id:"ap11", ph:5, t:"Tue Nov 10 evening: if Wed is wet, book Izyan's fast train (AP 121 Oriente 8:09 AM to Santarem, IC 540 back 10:40 AM)", n:"CP app or cp.pt: Wed Nov 11, Lisboa Oriente to Santarem, Alfa Pendular 121 at 8:09 AM, Turistica; return Santarem to Lisboa Oriente, Intercidades 540 at 10:40 AM. 2 adults + 1 child (half price). About 80 euros. Then the Oceanario at Oriente.", by:"2026-11-10", est:95, u:"https://www.cp.pt/passageiros/en", ul:"CP trains"},
+  {id:"ap11", ph:5, t:"Izyan's fast train: skipped in Lisbon, look for one in Spain or Paris", n:"Lisbon train (AP 121) is off. Options to check later: a short AVE hop in Spain, or a TGV ride near Paris. Decide on the road.", by:"2026-11-17", est:0},
   {id:"cast", ph:4, t:"Castelo de Sao Jorge, TODAY Tue Nov 10 (moved from Wed): buy at the gate",
    n:"Buy at the gate around 4:10 PM, after the rain eases. 17 euros an adult, Izyan free under 12, about $37 for three. Open 09:00 to 18:00 in November, last entry 17:30. Then walk down via Portas do Sol and Alfama.",
    by:"2026-11-10", est:37,
@@ -1914,7 +1912,7 @@ function satBanner(){
    + '<div class="stat"><div class="st-l">Rooms booked</div><div class="st-v">4 of 4</div><div class="st-n">Lisbon, Granada, Seville, Paris</div></div>'
    + '<div class="stat"><div class="st-l">Flights</div><div class="st-v">All paid</div><div class="st-n">Four legs, bags included</div></div>'
    + '<div class="stat"><div class="st-l">Committed</div><div class="st-v">$'+s.committed.toLocaleString()+'</div><div class="st-n">Across '+s.paidCount+' paid items</div></div>'
-   + '<div class="stat"><div class="st-l">Still open</div><div class="st-v">3 items</div><div class="st-n">Seville luggage hold, Castelo (gate), Wed train</div></div>'
+   + '<div class="stat"><div class="st-l">Still open</div><div class="st-v">3 items</div><div class="st-n">Seville luggage hold, Oceanario 10:30, fast train (Spain/Paris)</div></div>'
    + '</div>'
    + '<div class="note n-g" style="margin-bottom:14px"><span class="n-t">Passports &amp; insurance documents (private)</span>'   + 'All three passport scans and the Tin Leg policy documents are in a <b>private Google Drive folder</b> that only opens when you are signed in as rizwan@swagprint.com. '   + '<a class="btn btn-p" href="https://drive.google.com/drive/folders/1DOcW20QwsuDA3ThgDWjzwOOnXIh940XN" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px">Open passports &amp; insurance folder</a>'   + '<br><span style="font-size:12px">Share it with Zaibnish from Drive. Also keep offline copies on both phones for no-signal moments.</span></div>'
    + '<div class="note n-w" style="margin-bottom:14px"><span class="n-t">Why no confirmation numbers on this page</span>'   + 'This planner is published on a <b>public</b> GitHub Pages URL. A Booking.com reference plus its PIN is enough for anyone to view, change or cancel a reservation, so <b>none are stored here</b>. They live in your email and in the confirmations folder alongside the PDFs. Property names, addresses and public phone numbers are fine to keep.</div>'
@@ -2996,7 +2994,7 @@ function actToggle(k){
 /* ---------- Decide on landing: everything ready, exact steps ---------- */
 var DECIDE = [
   {id:"d_photo", t:"1. Lisbon photoshoot &mdash; TBD, waiting on the photographer (ask for today about 5:30 PM at Portas do Sol)", n:"Forecast: steady rain Wed 11 AM to 2 PM. <b>Move:</b> WhatsApp +351 912 237 740: &ldquo;Hi, we have your 15-min family shoot Wed Nov 11 at 11:45 at Portas do Sol. Heavy rain is forecast late morning. Could we move it to 4:00 PM the same day? Thank you, Rizwan Ali.&rdquo; <b>Cancel:</b> GetYourGuide app &rarr; Bookings &rarr; Lisbon photoshoot &rarr; Cancel booking &rarr; full refund $60.51. You land 10:20 AM and will be in passport control near the deadline, so do it in the queue."},
-  {id:"d_train", t:"2. Izyan's fast train Wed &mdash; book Tue evening if Wed is wet", n:"CP app: Wed Nov 11, <b>Lisboa Oriente 8:09 AM &rarr; Santarem 8:40 AM, Alfa Pendular 121</b>, Turistica. Return <b>Santarem 10:40 AM &rarr; Oriente 11:14 AM, IC 540</b>. 2 adults + 1 child. About 80 euros. Then Oceanario: book the 12:00 slot on tickets.oceanario.pt, code ONLINE10, 2 adults + 1 child, about 65 euros."},
+  {id:"d_train", t:"2. Izyan's fast train &mdash; skipped in Lisbon", n:"Not doing the Santarem train on Wednesday. Look for a fast-train ride in Granada, Seville or Paris instead."},
   {id:"d_early", t:"3. Lisbon early check-in (optional) &mdash; decide on landing", n:"Residentas Priority Arrival Access opens the apartment from 2:00 PM instead of 4:00 PM. Paid add-on; link is in Zaibnish's Residentas email (Your access codes). Worth it after the overnight flight and rain. Bags can go in the luggage room on the 2nd floor either way."},
   {id:"d_home", t:"4. Nov 19 DFW to home &mdash; rental or flight", n:"<b>Rental (planned):</b> National, Nissan Rogue or similar, DFW Rental Car Center 4:00 PM Thu Nov 19 &rarr; Sugar Land Regional Airport (SGR) by noon Nov 20, about $106 + booster seat. Free cancellation up to 48 hours before, so cancel by Tue Nov 17 4:00 PM if you switch. <b>Flight instead:</b> AA DFW 6:05 PM &rarr; IAH 7:23 PM, or AA 6:19 PM &rarr; Hobby 7:40 PM, about $716 for three plus a checked bag. Not earlier than 6 PM: you land 2:50 PM and clear immigration first."},
   {id:"d_refund", t:"5. Train refund (Trainline 2FKGY4) &mdash; check the amount", n:"About $181.76 means both legs are refunded. Less means the Cordoba to Seville leg is still open: request its refund in Trainline (reason: connecting train cancelled by Renfe), or call Renfe +34 912 320 320 for an anulacion con reembolso. Not a change of date."},
@@ -3194,11 +3192,11 @@ var CHOICES = {
    {n:"Zambeze (Mouraria, view terrace)", a:"Calcada Marques de Tancos (Mercado Chao do Loureiro), Lisbon", h:"Walk 10 min uphill or the free lift from Rua dos Fanqueiros", why:"Special-dinner option: Portuguese-Mozambican food with a castle-hill view. Grilled chicken works for him."}]}
  ],
  3: [
-  {s:"Breakfast", t:"07:00", o:[
-   {n:"Grab-and-go nata, then Oriente station", a:"Baixa, then Lisboa Oriente", h:"On the way", best:1, local:1, why:"Out at 7:20 AM for the 8:09 AM train; eat properly at the station cafe after the ride."},
-   {n:"Confeitaria Nacional (Praca da Figueira)", a:"Praca da Figueira 18B, Lisbon", h:"Walk 4 min", why:"Historic bakery since 1829; a quick nata and juice if it is open before the metro."},
-   {n:"Apartment breakfast", a:"At the apartment", h:"No travel", why:"Pingo Doce is next door: yogurt, fruit, bread. Calm start before an early metro."}]},
-  {s:"Lunch (Oriente)", t:"14:00", o:[
+  {s:"Breakfast", t:"08:00", o:[
+   {n:"Manteigaria, Chiado", a:"Rua do Loreto 2, Lisbon", h:"Walk 3 min", best:1, local:1, why:"Hot nata straight from the oven, about 1.30 euros each. Quick, then the metro at 9:45."},
+   {n:"Confeitaria Nacional (Praca da Figueira)", a:"Praca da Figueira 18B, Lisbon", h:"Walk 4 min", why:"Historic bakery since 1829; a sit-down nata and juice before the metro."},
+   {n:"Apartment breakfast", a:"At the apartment", h:"No travel", why:"Pingo Doce is next door: yogurt, fruit, bread. Calm start before the metro."}]},
+  {s:"Lunch (Oriente)", t:"12:30", o:[
    {n:"Vasco da Gama mall food court", a:"Av. D. Joao II, Parque das Nacoes", h:"Walk 8 min from the Oceanario", best:1, why:"All indoors in the rain; pizza, burgers and Asian so everyone picks their own."},
    {n:"Oceanario cafe", a:"Esplanada Dom Carlos I, Parque das Nacoes", h:"On site", why:"Quickest option straight after the visit; simple sandwiches and snacks."},
    {n:"Time Out Market (if you head back first)", a:"Av. 24 de Julho 49, Lisbon", h:"Metro / Bolt 20 min", why:"Guaranteed plain food for Izyan if he is tired of new things."}]},
@@ -3622,10 +3620,9 @@ var RAIN = {
     ["Pavilhao do Conhecimento","Hands-on science centre next to the Oceanario; now planned for Wednesday with it. Tue to Fri 10 AM to 6 PM (last entry 5:30 PM). About 14 euros adult, 8 euros child (3 to 11); family ticket at the desk.","Pavilhao do Conhecimento Lisboa"]]},
   3: {d:"Castelo, the photoshoot and the Alfama walk", s:[
     ["Any of Tuesday's indoor list","Belem double-decker day, Story Centre, Marinha, Planetario, Coches, tram museum, Estufa Fria: all open Wednesday. Ticket links are in Tuesday's rain plan.",""],
-    ["IZYAN'S FAST TRAIN: Alfa Pendular to Santarem, back by Intercidades, then the Oceanario","The rain-day pick. Only one morning Alfa Pendular stops at Santarem: <b>AP 121, Lisboa Oriente 8:09 AM, Santarem 8:40 AM</b> (tilting train, up to 220 km/h). Back on the <b>IC 540, Santarem 10:40 AM, Oriente 11:14 AM</b> (backup IC 730, 11:18 AM to 11:53 AM). Leave the apartment by 7:20 AM: Metro Green line to Alameda, Red line to Oriente, about 30 min. Then the <b>Oceanario</b>, at the same station, through the worst of the rain (11 AM to 2 PM). Fares: AP Turistica 19.70 euros adult, Izyan half price; the IC back is cheaper. About 80 euros for three. Times read from CP's timetable valid since Dec 14, 2025: confirm on the CP app when you book Tuesday evening.","Lisboa Oriente"],
     ["Photoshoot decision","<b>Forecast (Nov 9): steady rain Wed 11 AM to 2 PM, easing after 3 PM.</b> Ask the photographer (+351 912 237 740, WhatsApp) to move to Wed 4:00 PM; leave by 4:20 PM for the Ismaili Centre. If they cannot move it, cancel before Tue 11:45 AM for a refund. You will be in passport control then, so decide before you fly.",""],
     ["Museu da Marioneta (Puppet Museum)","Puppets from around the world, with occasional shows. Tue to Sun 10 AM to 6 PM. 5 euros adult, under 13 free. Tram 25 or 28 to Santos, about 15 min.","Museu da Marioneta Lisboa"],
-    ["OCEANARIO (planned for Wednesday) + Pavilhao do Conhecimento","Open daily 10 AM to 8 PM (last entry 7 PM). Prices by time slot: 12:00 to 3:30 PM is 27.70 euros adult, 16.60 euros child (3 to 12); 10 percent off online with code ONLINE10. Allow 1.5 to 2 hours. At Oriente: the 12:00 slot right after the train, through the worst of the rain. Add the Pavilhao next door if he still has energy. Back by 4:30 PM for the Ismaili Centre tour.","Oceanario de Lisboa","https://oceanario.pt/en/"]]},
+    ["OCEANARIO (planned for Wednesday) + Pavilhao do Conhecimento","Open daily 10 AM to 8 PM (last entry 7 PM). Prices by time slot: 12:00 to 3:30 PM is 27.70 euros adult, 16.60 euros child (3 to 12); 10 percent off online with code ONLINE10. Allow 1.5 to 2 hours. At Oriente: the 10:30 AM slot, indoors through the worst of the rain. Add the Pavilhao next door if he still has energy. Book the 10:30 AM slot; back for a nap before the 5:30 PM Ismaili Centre tour.","Oceanario de Lisboa","https://oceanario.pt/en/"]]},
   4: {d:"Evening look at the hill and the tapas walk", s:[
     ["Skip the hill walk","Rest at Hotel America instead; the courtyard restaurant is right there if nobody wants to go out.",""],
     ["Taxi to the bars","Taxi down to Bodegas Castaneda and stay put; it is all indoors. Taxi back up, about 10 euros each way.","Bodegas Castaneda Granada"]]},
