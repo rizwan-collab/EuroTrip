@@ -668,7 +668,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-09j";
+var BUILD = "2026-11-09k";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -766,7 +766,10 @@ function paintLive(){
       + '<span class="live-sep"></span>'
       + '<span class="live-dim">' + (d > 0 ? d + " days to departure" : "Trip underway") + '</span>'
       + '<span class="live-sep"></span>'
+      + '<span class="live-dim" id="sync-st"></span>'
+      + '<span class="live-sep"></span>'
       + staleBadge();
+    paintSync();
   }
   var host = document.querySelector("section.on");
   if(host) convertEuros(host);
@@ -2896,7 +2899,7 @@ function renderItinerary(){
     var c = D.n===tn ? ' today' : (tn && D.n<tn ? ' past' : '');
     return '<button class="dchip'+c+'" onclick="jumpDay('+D.n+')">'+(D.n===tn?'Today · ':'')+D.date.replace(/^(\w+) Nov /,'$1 ')+'</button>';
   }).join('') + '</div>';
-  return simpleHead('Day by Day', 'Times are a guide; bold items are booked. Tap a meal or activity to see 4 options and pick one (saved on this phone).') + chips + wxBlock() + days;
+  return simpleHead('Day by Day', 'Times are a guide; bold items are booked. Tap a meal or activity to see 4 options and pick one. Tap the circle when an activity is done. Picks and ticks sync to both phones.') + chips + wxBlock() + days;
 }
 
 function renderFlights(){
@@ -2988,7 +2991,7 @@ function renderBooking(){
   var docs = '<div class="note n-g" style="margin-bottom:14px"><span class="n-t">Passports &amp; insurance documents (private)</span>'
     + 'Opens only when signed in as rizwan@swagprint.com. '
     + '<a class="btn btn-p" href="https://drive.google.com/drive/folders/1DOcW20QwsuDA3ThgDWjzwOOnXIh940XN" target="_blank" rel="noopener" style="display:inline-block;margin-top:6px">Open folder</a></div>';
-  return simpleHead('Checklist', done.length+' of '+list.length+' done. Tick items as you finish them (saved in this browser).')
+  return simpleHead('Checklist', done.length+' of '+list.length+' done. Tick items as you finish them; ticks sync to both phones.')
     + docs
     + decideBlock()
     + '<div class="blk"><div class="blk-h">To do ('+open.length+')</div><div class="card">'+(openRows||'<div style="padding:14px">All done.</div>')+'</div></div>'
@@ -3673,6 +3676,105 @@ var RENDER = {
   booking: renderBooking, budget: renderBudget, packing: renderPacking,
   food: renderFood, izyan: renderIzyan, codes: renderCodes
 };
+/* ---------- sync ticks and picks between phones ----------
+   Each phone keeps its own copy; changes are relayed through a private ntfy.sh topic
+   (stores only tick keys, 1/0 values and timestamps; messages kept 12h, phones re-send a snapshot every 3h). */
+var SYNC = {topic:'eu26hub-pgnt3gh7hnh4', re:/^eu26_(act_|dc_|after_|bk_|dl_|pick_)/, applying:false, t:null, ok:null};
+(function(){
+  var LS; try { LS = window.localStorage; LS.getItem('x'); } catch(e){ return; }
+  var rawSet = Storage.prototype.setItem, rawGet = Storage.prototype.getItem;
+  function jget(k, d){ try { return JSON.parse(rawGet.call(LS, k) || '') || d; } catch(e){ return d; } }
+  function jset(k, v){ try { rawSet.call(LS, k, JSON.stringify(v)); } catch(e){} }
+  Storage.prototype.setItem = function(k, v){
+    rawSet.call(this, k, v);
+    if(this !== LS || SYNC.applying || !SYNC.re.test(k)) return;
+    var ts = Date.now(), m = jget('eu26_sync_ts', {}), q = jget('eu26_sync_q', {});
+    m[k] = ts; q[k.slice(5)] = [String(v), ts];
+    jset('eu26_sync_ts', m); jset('eu26_sync_q', q);
+    clearTimeout(SYNC.t); SYNC.t = setTimeout(flush, 700);
+  };
+  function post(obj){
+    var keys = Object.keys(obj), chunks = [], cur = {}, size = 0;
+    keys.forEach(function(k){
+      var s = JSON.stringify(k).length + JSON.stringify(obj[k]).length + 2;
+      if(size + s > 3300 && size){ chunks.push(cur); cur = {}; size = 0; }
+      cur[k] = obj[k]; size += s;
+    });
+    if(size) chunks.push(cur);
+    return Promise.all(chunks.map(function(c){
+      return fetch('https://ntfy.sh/'+SYNC.topic, {method:'POST', body: JSON.stringify({v:1, k:c})})
+        .then(function(r){ if(!r.ok) throw new Error(r.status); });
+    }));
+  }
+  function flush(){
+    var q = jget('eu26_sync_q', {}), sent = Object.keys(q);
+    if(!sent.length) return Promise.resolve();
+    return post(q).then(function(){
+      var q2 = jget('eu26_sync_q', {});
+      sent.forEach(function(k){ if(q2[k] && q2[k][1] === q[k][1]) delete q2[k]; });
+      jset('eu26_sync_q', q2); SYNC.ok = Date.now(); paintSync();
+    }).catch(function(){ SYNC.ok = false; paintSync(); });
+  }
+  function snapshot(){
+    var last = +(rawGet.call(LS, 'eu26_sync_snap') || 0);
+    if(Date.now() - last < 3*3600*1000) return;
+    var m = jget('eu26_sync_ts', {}), all = {};
+    for(var i = 0; i < LS.length; i++){
+      var k = LS.key(i);
+      if(SYNC.re.test(k)) all[k.slice(5)] = [rawGet.call(LS, k), m[k] || 1];
+    }
+    if(!Object.keys(all).length) return;
+    post(all).then(function(){ rawSet.call(LS, 'eu26_sync_snap', String(Date.now())); }).catch(function(){});
+  }
+  function poll(){
+    if(document.visibilityState === 'hidden') return;
+    var since = rawGet.call(LS, 'eu26_sync_since') || 'all';
+    fetch('https://ntfy.sh/'+SYNC.topic+'/json?poll=1&since='+encodeURIComponent(since))
+      .then(function(r){ if(!r.ok) throw new Error(r.status); return r.text(); })
+      .then(function(t){
+        var m = jget('eu26_sync_ts', {}), changed = false, lastId = null;
+        t.split('\n').forEach(function(line){
+          if(!line.trim()) return;
+          var ev; try { ev = JSON.parse(line); } catch(e){ return; }
+          if(ev.event !== 'message') return;
+          lastId = ev.id;
+          var d; try { d = JSON.parse(ev.message); } catch(e){ return; }
+          Object.keys((d && d.k) || {}).forEach(function(sk){
+            var full = 'eu26_'+sk, pair = d.k[sk];
+            if(!SYNC.re.test(full) || !pair) return;
+            if((pair[1] || 0) > (m[full] || 0)){
+              SYNC.applying = true; try { rawSet.call(LS, full, pair[0]); } catch(e){} SYNC.applying = false;
+              m[full] = pair[1]; changed = true;
+            }
+          });
+        });
+        if(lastId) rawSet.call(LS, 'eu26_sync_since', lastId);
+        jset('eu26_sync_ts', m);
+        SYNC.ok = Date.now(); paintSync();
+        if(changed) syncRefresh();
+        flush(); snapshot();
+      }).catch(function(){ SYNC.ok = false; paintSync(); });
+  }
+  SYNC.poll = poll; SYNC.flush = flush;
+  setTimeout(poll, 1200);
+  setInterval(poll, 30000);
+  document.addEventListener('visibilitychange', function(){ if(document.visibilityState === 'visible') poll(); });
+  window.addEventListener('online', function(){ flush(); poll(); });
+})();
+function syncRefresh(){
+  var key = load('tab'), el = document.querySelector('section.on');
+  built = {};
+  if(!el || !key || !RENDER[key]) return;
+  var y = window.scrollY;
+  el.innerHTML = RENDER[key](); built[key] = true;
+  foldNotes(el); mobPolish(el); if(key === 'itinerary') wxPaint(); if(key === 'budget') loadBudget(); time12(el);
+  window.scrollTo(0, y);
+}
+function paintSync(){
+  var el = document.getElementById('sync-st'); if(!el || !window.SYNC) return;
+  el.textContent = SYNC.ok === false ? 'Sync: offline, will catch up' : (SYNC.ok ? 'Synced with both phones' : '');
+}
+
 var built = {};
 
 
