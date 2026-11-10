@@ -662,7 +662,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-09h";
+var BUILD = "2026-11-09i";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -1808,7 +1808,7 @@ var BOOKINGS = [
   {id:"fla", done:1, cost:0, ph:4, t:"Flamenco, Seville, Nov 15: street flamenco, no booking",
    n:"<b>Ticketed show skipped.</b> Catch free street flamenco if it is on: Plaza de Espana in the morning, by the Cathedral in the afternoon, Calle Betis in Triana at dusk. All three are in the Sunday plan. Tip 2 to 5 euros. Nothing to book.",
    by:"2026-10-25", est:0},
-  {id:"ap11", ph:5, t:"Tue Nov 10 evening: if Wed is wet, book Izyan's Alfa Pendular ride (Lisboa Oriente to Santarem and back)", n:"Check Wed morning times on cp.pt or the CP app, around 9:30 to 10:30 AM out. Turistica class, 2 adults + 1 child (half price), about 100 euros return. Details in the Wed rain plan.", by:"2026-11-10", est:115, u:"https://www.cp.pt/passageiros/en", ul:"CP trains"},
+  {id:"ap11", ph:5, t:"Tue Nov 10 evening: if Wed is wet, book Izyan's fast train (AP 121 Oriente 8:09 AM to Santarem, IC 540 back 10:40 AM)", n:"CP app or cp.pt: Wed Nov 11, Lisboa Oriente to Santarem, Alfa Pendular 121 at 8:09 AM, Turistica; return Santarem to Lisboa Oriente, Intercidades 540 at 10:40 AM. 2 adults + 1 child (half price). About 80 euros. Then the Oceanario at Oriente.", by:"2026-11-10", est:95, u:"https://www.cp.pt/passageiros/en", ul:"CP trains"},
   {id:"cast", ph:4, t:"Castelo de Sao Jorge, Wed Nov 11: buy at the gate",
    n:"Online payment failed, so buy at the gate around 10:00. 17 euros an adult, Izyan free under 12, about $37 for three. Open 09:00 to 18:00 in November, last entry 17:30. November lines are short. Then walk downhill through Alfama.",
    by:"2026-11-11", est:37,
@@ -2982,9 +2982,34 @@ function renderBooking(){
     + '<a class="btn btn-p" href="https://drive.google.com/drive/folders/1DOcW20QwsuDA3ThgDWjzwOOnXIh940XN" target="_blank" rel="noopener" style="display:inline-block;margin-top:6px">Open folder</a></div>';
   return simpleHead('Checklist', done.length+' of '+list.length+' done. Tick items as you finish them (saved in this browser).')
     + docs
+    + decideBlock()
     + '<div class="blk"><div class="blk-h">To do ('+open.length+')</div><div class="card">'+(openRows||'<div style="padding:14px">All done.</div>')+'</div></div>'
     + afterBlock()
     + '<div class="blk"><div class="blk-h">Done ('+done.length+')</div><div class="card">'+doneRows+'</div></div>';
+}
+
+/* ---------- Decide on landing: everything ready, exact steps ---------- */
+var DECIDE = [
+  {id:"d_photo", t:"1. Lisbon photoshoot (Wed 11:45 AM) &mdash; decide by Tue 11:45 AM Lisbon", n:"Forecast: steady rain Wed 11 AM to 2 PM. <b>Move:</b> WhatsApp +351 912 237 740: &ldquo;Hi, we have your 15-min family shoot Wed Nov 11 at 11:45 at Portas do Sol. Heavy rain is forecast late morning. Could we move it to 4:00 PM the same day? Thank you, Rizwan Ali.&rdquo; <b>Cancel:</b> GetYourGuide app &rarr; Bookings &rarr; Lisbon photoshoot &rarr; Cancel booking &rarr; full refund $60.51. You land 10:20 AM and will be in passport control near the deadline, so do it in the queue."},
+  {id:"d_train", t:"2. Izyan's fast train Wed &mdash; book Tue evening if Wed is wet", n:"CP app: Wed Nov 11, <b>Lisboa Oriente 8:09 AM &rarr; Santarem 8:40 AM, Alfa Pendular 121</b>, Turistica. Return <b>Santarem 10:40 AM &rarr; Oriente 11:14 AM, IC 540</b>. 2 adults + 1 child. About 80 euros. Then Oceanario tickets online for about 11:30 AM (2 adults + 1 child)."},
+  {id:"d_early", t:"3. Lisbon early check-in (optional) &mdash; decide on landing", n:"Residentas Priority Arrival Access opens the apartment from 2:00 PM instead of 4:00 PM. Paid add-on; link is in Zaibnish's Residentas email (Your access codes). Worth it after the overnight flight and rain. Bags can go in the luggage room on the 2nd floor either way."},
+  {id:"d_home", t:"4. Nov 19 DFW to home &mdash; rental or flight", n:"<b>Rental (planned):</b> National, Nissan Rogue or similar, DFW Rental Car Center 4:00 PM Thu Nov 19 &rarr; Sugar Land Regional Airport (SGR) by noon Nov 20, about $106 + booster seat. Free cancellation up to 48 hours before, so cancel by Tue Nov 17 4:00 PM if you switch. <b>Flight instead:</b> AA DFW 6:05 PM &rarr; IAH 7:23 PM, or AA 6:19 PM &rarr; Hobby 7:40 PM, about $716 for three plus a checked bag. Not earlier than 6 PM: you land 2:50 PM and clear immigration first."},
+  {id:"d_refund", t:"5. Train refund (Trainline 2FKGY4) &mdash; check the amount", n:"About $181.76 means both legs are refunded. Less means the Cordoba to Seville leg is still open: request its refund in Trainline (reason: connecting train cancelled by Renfe), or call Renfe +34 912 320 320 for an anulacion con reembolso. Not a change of date."},
+  {id:"d_iber", t:"6. Iberflat message (Seville) &mdash; any day before Nov 13", n:"Phone or WhatsApp +34 955 515 541: &ldquo;Hi, booking 82035, Apt 09, arriving Sat Nov 14 around 2:30 PM. 1) Can the housekeeper hold our bags Mon Nov 16 from 12:00 to 1:45 PM? 2) Do you need a registration form for our son Izyan (5)? Thank you, Zaibnish Ali.&rdquo;"}
+];
+function dcGet(id){ try { return localStorage.getItem('eu26_dc_'+id) === '1'; } catch(e){ return false; } }
+function dcToggle(id){ try { localStorage.setItem('eu26_dc_'+id, dcGet(id) ? '0' : '1'); } catch(e){} built.booking = false; show('booking'); }
+function decideBlock(){
+  var n = DECIDE.filter(function(a){ return dcGet(a.id); }).length;
+  if(n === DECIDE.length) return '';
+  var rows = DECIDE.map(function(a){
+    var d = dcGet(a.id);
+    return '<label class="chk" style="align-items:flex-start'+(d?';opacity:.55':'')+'">'
+      + '<input type="checkbox" '+(d?'checked ':'')+'onchange="dcToggle(\''+a.id+'\')">'
+      + '<span class="chk-t"><b>'+(d?'<s>'+a.t+'</s>':a.t)+'</b>'
+      + '<br><span style="font-size:13px">'+a.n+'</span></span></label>';
+  }).join('');
+  return '<div class="blk"><div class="blk-h">Decide on landing ('+n+' of '+DECIDE.length+' done)</div><div class="card">'+rows+'</div></div>';
 }
 
 /* ---------- After the trip: refunds, deposits, claims ---------- */
@@ -3585,7 +3610,7 @@ var RAIN = {
     ["Oceanario de Lisboa","One of Europe's best aquariums; the giant central tank is the highlight. Open daily 10 AM to 8 PM (last entry 7 PM). 25 euros adult, 15 euros child (3 to 12). Allow 2 to 2.5 hours. Metro Green line to Alameda, then Red line to Oriente, about 30 min. Book online on the day.","Oceanario de Lisboa"],
     ["Pavilhao do Conhecimento","Hands-on science centre next to the Oceanario. Tue to Fri 10 AM to 6 PM (last entry 5:30 PM). About 11 euros adult, 8 euros child. Do both in one trip.","Pavilhao do Conhecimento Lisboa"]]},
   3: {d:"Castelo, the photoshoot and the Alfama walk", s:[
-    ["IZYAN'S FAST TRAIN: Alfa Pendular to Santarem and back","The rain-day pick. Tilting train, up to 220 km/h. Metro Green then Red line to <b>Lisboa Oriente</b> (about 30 min), ride to <b>Santarem</b> (about 40 min), coffee and a snack at the station, ride back. About 3 hours door to door, so go around 9:30 AM and be back by 1 PM. Turistica class about 19.70 euros an adult each way, Izyan half price, so about 50 euros each way for three. Buy on cp.pt or the CP app; check exact times there on Tue evening. Oriente is the Oceanario station, so you can add it after.","Lisboa Oriente"],
+    ["IZYAN'S FAST TRAIN: Alfa Pendular to Santarem, back by Intercidades, then the Oceanario","The rain-day pick. Only one morning Alfa Pendular stops at Santarem: <b>AP 121, Lisboa Oriente 8:09 AM, Santarem 8:40 AM</b> (tilting train, up to 220 km/h). Back on the <b>IC 540, Santarem 10:40 AM, Oriente 11:14 AM</b> (backup IC 730, 11:18 AM to 11:53 AM). Leave the apartment by 7:20 AM: Metro Green line to Alameda, Red line to Oriente, about 30 min. Then the <b>Oceanario</b>, at the same station, through the worst of the rain (11 AM to 2 PM). Fares: AP Turistica 19.70 euros adult, Izyan half price; the IC back is cheaper. About 80 euros for three. Times read from CP's timetable valid since Dec 14, 2025: confirm on the CP app when you book Tuesday evening.","Lisboa Oriente"],
     ["Photoshoot decision","<b>Forecast (Nov 9): steady rain Wed 11 AM to 2 PM, easing after 3 PM.</b> Ask the photographer (+351 912 237 740, WhatsApp) to move to Wed 4:00 PM; leave by 4:20 PM for the Ismaili Centre. If they cannot move it, cancel before Tue 11:45 AM for a refund. You will be in passport control then, so decide before you fly.",""],
     ["Museu da Marioneta (Puppet Museum)","Puppets from around the world, with occasional shows. Tue to Sun 10 AM to 6 PM. 5 euros adult, under 13 free. Tram 25 or 28 to Santos, about 15 min.","Museu da Marioneta Lisboa"],
     ["Oceanario + Pavilhao do Conhecimento","If you did not go on Tuesday: same details as Tue. Back by 4:30 PM for the Ismaili Centre tour, which stays as planned.","Oceanario de Lisboa"]]},
