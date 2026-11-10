@@ -668,7 +668,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-10i";
+var BUILD = "2026-11-10k";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -840,11 +840,11 @@ var PLAN = [
 {
   n:3, date:"Wed Nov 11", wd:"Wednesday", city:"Lisbon", tag:["p-g","Full day"],
   sum:"Easy Lisbon day: breakfast, the Oceanario through the rain, lunch, nap, then the Ismaili Centre tour at 5:30 PM and an early dinner. No train today.",
-  warn:"<b>Ismaili Centre tour CONFIRMED for 5:30 PM today.</b> Leave the apartment by 4:50 PM. Modest dress for the prayer hall. <b>Pay in euros, never USD:</b> when a card machine asks, pick EUR; the USD option adds a 3 to 7 percent markup. <b>Book tonight:</b> Oceanario 10:30 AM slot on tickets.oceanario.pt, code ONLINE10. <b>Forecast:</b> heavy rain 11 AM to 4 PM, so you are indoors for all of it. Izyan's fast train is off for Lisbon; look for one in Spain or Paris. Keep dinner early: tomorrow's airport taxi is at 8:15 AM (be downstairs 8:10).",
+  warn:"<b>Ismaili Centre tour CONFIRMED for 5:30 PM today.</b> Leave the apartment by 4:50 PM. Modest dress for the prayer hall. <b>Pay in euros, never USD:</b> when a card machine asks, pick EUR; the USD option adds a 3 to 7 percent markup. <b>Oceanario BOOKED, 10:30 AM:</b> ref 110965481, 69.75 euros, in Zaibnish's name; tickets in her Gmail. <b>Forecast:</b> heavy rain 11 AM to 4 PM, so you are indoors for all of it. Izyan's fast train is off for Lisbon; look for one in Spain or Paris. Keep dinner early: tomorrow's airport taxi is at 8:15 AM (be downstairs 8:10).",
   sched:[
     ["08:00","Breakfast","Manteigaria in Chiado (3 min) for a hot nata, or Confeitaria Nacional on Praca da Figueira. No rush today."],
     ["09:45","Metro to Oriente","Walk 5 min to Baixa-Chiado. Green line to Alameda, then Red line to Oriente, about 30 minutes. Izyan (5) needs his own ticket: buy reloadable Navegante cards at the machine, or tap a contactless card per person."],
-    ["10:30","OCEANARIO (book the 10:30 slot tonight)","Tickets on tickets.oceanario.pt, code <b>ONLINE10</b> for 10 percent off; 2 adults + 1 child, price shows at checkout (the midday slot is 27.70 euros adult, 16.60 euros child). 1.5 to 2 hours. Otters, penguins, sharks and the giant central tank. Lockers on floor 0."],
+    ["10:30","OCEANARIO, BOOKED","<b>Ref 110965481, 10:30 AM, 2 adults + 1 child, 69.75 euros paid.</b> Tickets are in Zaibnish's Gmail; add them to Apple Wallet tonight. Esplanada Dom Carlos I. 1.5 to 2 hours. Otters, penguins, sharks and the giant central tank. Lockers on floor 0."],
     ["12:30","Lunch at Vasco da Gama mall","8 min walk from the Oceanario, all indoors. Food court with pizza, burgers and Asian counters, so Izyan gets something plain. Add the Pavilhao do Conhecimento next door only if he still has energy."],
     ["13:45","Metro back","Red line to Alameda, Green line to Baixa-Chiado, about 30 minutes."],
     ["14:30","Nap and rest","Nap for Izyan. Start packing for Granada while he sleeps."],
@@ -1912,7 +1912,7 @@ function satBanner(){
    + '<div class="stat"><div class="st-l">Rooms booked</div><div class="st-v">4 of 4</div><div class="st-n">Lisbon, Granada, Seville, Paris</div></div>'
    + '<div class="stat"><div class="st-l">Flights</div><div class="st-v">All paid</div><div class="st-n">Four legs, bags included</div></div>'
    + '<div class="stat"><div class="st-l">Committed</div><div class="st-v">$'+s.committed.toLocaleString()+'</div><div class="st-n">Across '+s.paidCount+' paid items</div></div>'
-   + '<div class="stat"><div class="st-l">Still open</div><div class="st-v">3 items</div><div class="st-n">Seville luggage hold, Oceanario 10:30, fast train (Spain/Paris)</div></div>'
+   + '<div class="stat"><div class="st-l">Still open</div><div class="st-v">2 items</div><div class="st-n">Seville checkout bags (Nov 16), fast train (Spain/Paris)</div></div>'
    + '</div>'
    + '<div class="note n-g" style="margin-bottom:14px"><span class="n-t">Passports &amp; insurance documents (private)</span>'   + 'All three passport scans and the Tin Leg policy documents are in a <b>private Google Drive folder</b> that only opens when you are signed in as rizwan@swagprint.com. '   + '<a class="btn btn-p" href="https://drive.google.com/drive/folders/1DOcW20QwsuDA3ThgDWjzwOOnXIh940XN" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px">Open passports &amp; insurance folder</a>'   + '<br><span style="font-size:12px">Share it with Zaibnish from Drive. Also keep offline copies on both phones for no-signal moments.</span></div>'
    + '<div class="note n-w" style="margin-bottom:14px"><span class="n-t">Why no confirmation numbers on this page</span>'   + 'This planner is published on a <b>public</b> GitHub Pages URL. A Booking.com reference plus its PIN is enough for anyone to view, change or cancel a reservation, so <b>none are stored here</b>. They live in your email and in the confirmations folder alongside the PDFs. Property names, addresses and public phone numbers are fine to keep.</div>'
@@ -2152,7 +2152,7 @@ function bkExport(){
 var BDG = [
   {d:1, dt:"Mon Nov 9",  c:"Texas to Lisbon",     i:"Ride to IAH, parking (airport food is in Paid)", e:75},
   {d:2, dt:"Tue Nov 10", c:"Lisbon",               i:"Dinner tonight only (the day's spends so far are in Paid)", e:40},
-  {d:3, dt:"Wed Nov 11", c:"Lisbon",               i:"Oceanario (about 70 euros), meals, metro, Bolt to the Ismaili Centre", e:180},
+  {d:3, dt:"Wed Nov 11", c:"Lisbon",               i:"Meals, metro, Bolt to the Ismaili Centre (Oceanario is in Paid)", e:105},
   {d:4, dt:"Thu Nov 12", c:"Lisbon to Granada",  i:"Meals, taxi from Granada bus station (airport taxi and coach are paid)", e:100},
   {d:5, dt:"Fri Nov 13", c:"Granada, Alhambra",  i:"Lunch tapas, Parador or hotel dinner",            e:150},
   {d:6, dt:"Sat Nov 14", c:"Granada to Seville", i:"Meals, taxis both ends, tapas dinner",            e:100},
@@ -3045,7 +3045,7 @@ function afterBlock(){
 var PAID = [
   ["Flights and bags", [["United IAH-IAD-LIS + $90 bag",1479],["American CDG-DFW incl. $87 bag",1616.49],["TAP Lisbon-Malaga",538.32],["Air France Seville-Paris",369.80]]],
   ["Places to stay, 9 nights", [["Lisbon, Residentas (2 nights)",582],["Granada, Hotel America (2)",497.38],["Seville, Iberflat (2)",330],["Paris, Nestay (3)",1378]]],
-  ["Tickets and tours", [["Disneyland, 1 day / 2 parks",348.74],["Eiffel Tower",70.89],["Lisbon photoshoot (cancelled, $60.51 refund pending)",0],["Alhambra",48.69],["Paris photoshoot",39.21],["Seville Cathedral",32.63]]],
+  ["Tickets and tours", [["Disneyland, 1 day / 2 parks",348.74],["Eiffel Tower",70.89],["Oceanario, Wed 10:30 (69.75 euros)",78.26],["Lisbon photoshoot (cancelled, $60.51 refund pending)",0],["Alhambra",48.69],["Paris photoshoot",39.21],["Seville Cathedral",32.63]]],
   ["Coaches", [["ALSA Granada to Seville (84.12 euros, card $94.52)",94.52],["ALSA Malaga Airport to Granada (43.27 euros)",50]]],
   ["Airport taxis (Booking.com)", [["CDG to Nestay, Nov 16",68.66],["Nestay to CDG, Nov 19",62.25],["Apartment to Lisbon airport, Nov 12",16.97],["Lisbon airport to apartment, Nov 10",15.42]]],
   ["Travel insurance", [["Tin Leg Gold, all three",77]]],
@@ -3617,7 +3617,7 @@ var RAIN = {
     ["Museu da Carris (tram museum)","Old trams and buses, with a vintage tram ride between halls. About 4.50 euros adult, under 6 free. On the Belem side.","Museu da Carris Lisboa"],
     ["Estufa Fria greenhouse","Covered tropical greenhouse in Parque Eduardo VII; winter 9 AM to 5 PM, closed Mondays. 3.25 euros adult, under 6 free. Metro to Marques de Pombal.","Estufa Fria Lisboa"],
     ["Lisboa Card (if you do 3+ of these)","Free Story Centre, Coches and public transport; 15 percent off Oceanario and Pavilhao. Buy on the phone.","","https://www.lisboacard.com/en/"],
-    ["Oceanario: moved to Wednesday","Saved for Wed with Izyan's train, since both are at Oriente. Tickets and details are in Wednesday's rain plan.",""],
+    ["Oceanario: BOOKED for Wednesday","Ref 110965481, 10:30 AM, in Zaibnish's name. Details are in Wednesday's plan.",""],
     ["Pavilhao do Conhecimento","Hands-on science centre next to the Oceanario; now planned for Wednesday with it. Tue to Fri 10 AM to 6 PM (last entry 5:30 PM). About 14 euros adult, 8 euros child (3 to 11); family ticket at the desk.","Pavilhao do Conhecimento Lisboa"]]},
   3: {d:"Castelo, the photoshoot and the Alfama walk", s:[
     ["Any of Tuesday's indoor list","Belem double-decker day, Story Centre, Marinha, Planetario, Coches, tram museum, Estufa Fria: all open Wednesday. Ticket links are in Tuesday's rain plan.",""],
