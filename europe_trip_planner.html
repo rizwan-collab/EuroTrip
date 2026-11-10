@@ -668,7 +668,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-09k";
+var BUILD = "2026-11-10a";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -3199,7 +3199,7 @@ var CHOICES = {
    {n:"Forno d'Oro pizza (Rato)", a:"Rua Tenente Ferreira Durao 51, Lisbon", h:"Bolt 12 min", why:"Proper Neapolitan pizza, plain margherita for him. Sit-down but relaxed."}]},
   {s:"Afternoon activity", t:"~15:00", o:[
    {n:"Oceanario de Lisboa", a:"Esplanada Dom Carlos I, Parque das Nacoes", h:"Metro Red line or car 25 min", best:1, why:"Top pick for a 5-year-old: huge central tank, sharks, otters, indoors. Iconic. 25 min by metro or car."},
-   {n:"Elevador de Santa Justa + Carmo viewpoint", a:"Rua do Ouro / Rua de Santa Justa, Lisbon", h:"Walk 4 min", local:1, why:"Short iron-lift ride he will love and a big city view, 5 min from the apartment. Low effort after the flight."},
+   {n:"Elevador de Santa Justa + Carmo viewpoint", a:"Rua do Ouro / Rua de Santa Justa, Lisbon", h:"Walk 4 min", local:1, why:"Short iron-lift ride he will love and a big city view, 5 min from the apartment. Low effort after the flight. Reported out of service in Oct 2026: check before you walk over."},
    {n:"Ribeira das Naus riverside + Arco da Rua Augusta", a:"Rua Augusta 2, Praca do Comercio", h:"Walk 8 min", why:"Flat walk to the river, room to run, climb the arch for the Praca do Comercio view."},
    {n:"Rest day at the apartment", a:"226 Rua dos Sapateiros", h:"At the apartment", why:"Overnight flight with a 5-year-old. A nap now buys a good evening and a strong Nov 11."}]},
   {s:"Dinner (aim 18:30)", t:"18:30", o:[
@@ -3627,9 +3627,18 @@ function tinCards(){
 /* ---- Rain plans: indoor swaps per day (hours and prices checked Nov 6, 2026) ---- */
 var RAIN = {
   2: {d:"Afternoon walk (Ribeira das Naus, Praca do Comercio, Rua Augusta)", s:[
+    ["BELEM RAIN DAY ON A DOUBLE-DECKER (Izyan's bus ride)","Yellow Bus hop-on hop-off double-decker from <b>Praca da Figueira, 5 min walk</b>. Sit downstairs if it pours. Ride the Belem line to the <b>Museu dos Coches</b> (royal carriages), then the <b>Museu de Marinha</b> (royal barges, a seaplane) and the <b>Planetario</b> next door, then back on the bus. Buy the ticket at the stop or online.","Praca da Figueira Lisboa","https://yellowbustours.com/en/city-centre-belem-hop-on-hop-off-bus-tour"],
+    ["Lisboa Story Centre","Praca do Comercio, 8 min walk. Interactive Lisbon history with an earthquake room; best from 6, fine for a curious 5-year-old. About an hour.","Lisboa Story Centre","https://www.lisboastorycentre.pt/en/"],
+    ["Museu de Marinha (Belem)","Tue to Sun 10 AM to 5 PM. Adults from 8 euros, children 4 to 12 4 euros. Museum + Planetario combined 12 euros. Royal barges, ship models, a 1922 seaplane.","Museu de Marinha Lisboa","https://cultura.marinha.pt/en"],
+    ["Planetario (Belem)","Shows for age 4+. About 19 euros adult, 10 euros child; closed Mondays. Check show times first.","Planetario Calouste Gulbenkian","https://cultura.marinha.pt/en"],
+    ["Museu Nacional dos Coches (Belem)","Huge gilded royal carriages in one big hall. About 6 euros adult, under 12 free.","Museu Nacional dos Coches","https://www.mncoches.gov.pt/en"],
+    ["Museu da Carris (tram museum)","Old trams and buses, with a vintage tram ride between halls. About 4.50 euros adult, under 6 free. On the Belem side.","Museu da Carris Lisboa"],
+    ["Estufa Fria greenhouse","Covered tropical greenhouse in Parque Eduardo VII; winter 9 AM to 5 PM, closed Mondays. 3.25 euros adult, under 6 free. Metro to Marques de Pombal.","Estufa Fria Lisboa"],
+    ["Lisboa Card (if you do 3+ of these)","Free Story Centre, Coches and public transport; 15 percent off Oceanario and Pavilhao. Buy on the phone.","","https://www.lisboacard.com/en/"],
     ["Oceanario de Lisboa","One of Europe's best aquariums; the giant central tank is the highlight. Open daily 10 AM to 8 PM (last entry 7 PM). 25 euros adult, 15 euros child (3 to 12). Allow 2 to 2.5 hours. Metro Green line to Alameda, then Red line to Oriente, about 30 min. Book online on the day.","Oceanario de Lisboa"],
     ["Pavilhao do Conhecimento","Hands-on science centre next to the Oceanario. Tue to Fri 10 AM to 6 PM (last entry 5:30 PM). About 11 euros adult, 8 euros child. Do both in one trip.","Pavilhao do Conhecimento Lisboa"]]},
   3: {d:"Castelo, the photoshoot and the Alfama walk", s:[
+    ["Any of Tuesday's indoor list","Belem double-decker day, Story Centre, Marinha, Planetario, Coches, tram museum, Estufa Fria: all open Wednesday. Ticket links are in Tuesday's rain plan.",""],
     ["IZYAN'S FAST TRAIN: Alfa Pendular to Santarem, back by Intercidades, then the Oceanario","The rain-day pick. Only one morning Alfa Pendular stops at Santarem: <b>AP 121, Lisboa Oriente 8:09 AM, Santarem 8:40 AM</b> (tilting train, up to 220 km/h). Back on the <b>IC 540, Santarem 10:40 AM, Oriente 11:14 AM</b> (backup IC 730, 11:18 AM to 11:53 AM). Leave the apartment by 7:20 AM: Metro Green line to Alameda, Red line to Oriente, about 30 min. Then the <b>Oceanario</b>, at the same station, through the worst of the rain (11 AM to 2 PM). Fares: AP Turistica 19.70 euros adult, Izyan half price; the IC back is cheaper. About 80 euros for three. Times read from CP's timetable valid since Dec 14, 2025: confirm on the CP app when you book Tuesday evening.","Lisboa Oriente"],
     ["Photoshoot decision","<b>Forecast (Nov 9): steady rain Wed 11 AM to 2 PM, easing after 3 PM.</b> Ask the photographer (+351 912 237 740, WhatsApp) to move to Wed 4:00 PM; leave by 4:20 PM for the Ismaili Centre. If they cannot move it, cancel before Tue 11:45 AM for a refund. You will be in passport control then, so decide before you fly.",""],
     ["Museu da Marioneta (Puppet Museum)","Puppets from around the world, with occasional shows. Tue to Sun 10 AM to 6 PM. 5 euros adult, under 13 free. Tram 25 or 28 to Santos, about 15 min.","Museu da Marioneta Lisboa"],
@@ -3665,6 +3674,7 @@ function rainBlock(n){
     + '<div style="margin-bottom:8px;color:var(--mute)">If it rains during: '+r.d+'</div>'
     + r.s.map(function(x){
         return '<div style="padding:8px 0;border-top:1px solid var(--line2)"><b>'+x[0]+'</b><br>'+x[1]
+          + (x[3]?' <a class="btn btn-sm btn-p" href="'+x[3]+'" target="_blank" rel="noopener">Tickets</a>':'')
           + (x[2]?' <a class="btn btn-sm" href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(x[2])+'" target="_blank" rel="noopener">Map</a>':'')+'</div>';
       }).join('')
     + '</div></details>';
