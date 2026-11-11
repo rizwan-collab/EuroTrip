@@ -668,7 +668,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-11e";
+var BUILD = "2026-11-11f";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -1185,7 +1185,7 @@ var PLAN = [
     ["08:20","Arrive CDG","American boards from Terminal 2A. Bag drop, security, then French exit passport control, which is the slow part."],
     ["11:05","Depart CDG for Dallas","<b>AA 49</b>. Nonstop, lunch and a snack served."],
     ["14:50","Land DFW","Same calendar day, you gain seven hours. US immigration and customs, then re-check nothing &mdash; this is the end of the line."],
-    ["16:00","Onward to Houston","Pick up the rental and head south whenever you are ready."]
+    ["16:00","ENTERPRISE RENTAL - BOOKED (conf. 81132750)","<b>Pick up at DFW, 2424 E 38th St (Rental Car Center), 4:00 PM.</b> Midsize SUV (Nissan Rogue or similar) + child safety seat: ask for a booster. About $115.64 paid at the counter; check Chase Sapphire rental cover before declining the damage waiver. <b>Return: Enterprise Sugar Land, 1414 Highway 6, 77478, Fri Nov 20 by 12:00 PM</b> (open 7:30 AM to 6 PM, no after-hours drop; +1 281-313-3700, ask about home collection for $25). Flight AA 49 is on the booking."]
   ]
 }
 
@@ -1726,7 +1726,7 @@ var BOOKINGS = [
    n:"<b>Booked for 09:00 on 13 Nov 2026.</b> 21.64 euros an adult, 43.27 euros total, and Izyan is on it as a free minor aged 3 to 11. Tickets arrived as PDF and Passbook, so <b>load the Passbook version into Apple Wallet</b> and the QR is offline at the gate. <b>One thing to check on the PDF:</b> all three names must match passports, because ID is verified at entry.",
    by:"2026-09-15", est:48,
    u:"https://tickets.alhambra-patronato.es/en/", ul:"Book at the official Patronato site"},
-  {id:"gra", done:1, cost:497.38, ph:1, paid:1, t:"Hotel America, Granada, Nov 12 to 14",
+  {id:"gra", done:1, cost:481.63, ph:1, paid:1, t:"Hotel America, Granada, Nov 12 to 14",
    n:"<b>Booked.</b> Family Room, $497.38 all in at 428 euros, reserved with a Visa but paid to the property on arrival. Check in 14:00 to 21:00, check out 08:00 to 12:00, both of which fit. Free cancellation until Nov 7 if anything changes. The confirmation is in the email.",
    by:"2026-09-15", est:497, dep:["alh"],
    u:"https://www.booking.com/hotel/es/america-granada.html?checkin=2026-11-12&checkout=2026-11-14&group_adults=2&group_children=1&age=5&no_rooms=1", ul:"Open Hotel America"},
@@ -1757,7 +1757,7 @@ var BOOKINGS = [
    u:"https://www.booking.com/hotel/pt/residentas-arco-do-bandeira.html?checkin=2026-11-10&checkout=2026-11-12&group_adults=2&group_children=1&age=5&no_rooms=1&selected_currency=USD", ul:"Open Arco do Bandeira"},
   {id:"lugcode", done:1, ph:5, t:"Lisbon luggage codes: RECEIVED (door 66*242806, luggage room 2#242806)", n:"Drop bags around noon Nov 10.", by:"2026-11-07", est:0},
     {id:"aptcodes", done:1, ph:5, t:"Lisbon apartment codes: RECEIVED (Apt ARC22, 2nd floor)", n:"Main door 26*504074, apartment 2#504074. Check-in from 4:00 PM, check-out by 10:00 AM.", by:"2026-11-09", est:0},
-    {id:"hsev", done:1, cost:330, ph:2, paid:1, t:"Seville, Nov 14 to 16: Iberflat San Gregorio, BOOKED",
+    {id:"hsev", done:1, cost:432.12, ph:2, paid:1, t:"Seville, Nov 14 to 16: Iberflat San Gregorio, BOOKED",
    n:"<b>BOOKED 12 Sep. Confirmation and PIN are in your email and the confirmations folder.</b> Iberflat San Gregorio One-Bedroom, Calle San Gregorio 7, in Zaibnish&#39;s name. <b>Check in Sat 14 Nov from 15:00, check out Mon 16 Nov by 12:00.</b> <b>$330 all in</b> &mdash; $300 plus 10 percent VAT, no cleaning fee. <b>Izyan is correctly listed.</b> <b>Online check-in (traveller registration) done Nov 9 for Rizwan and Zaibnish: Iberflat ref 82035, Apt 09, 2nd floor.</b> Free cancellation to <b>8 Nov 23:59</b>, then 284 euros. <b>Bring a credit card and photo ID: a 100 euro damage deposit is taken on arrival</b> and refunded within 7 days. The card is charged within 5 days of arrival. Phone +34 697 16 72 22.",
    by:"2026-11-08", est:330,
    u:"https://www.booking.com/hotel/es/suites-murillo-segovias.html?checkin=2026-11-14&checkout=2026-11-16&group_adults=2&group_children=1&age=5&no_rooms=1", ul:"Open Suites Murillo"},
@@ -2148,7 +2148,7 @@ function bkExport(){
 var BDG = [
   {d:1, dt:"Mon Nov 9",  c:"Texas to Lisbon",     i:"Ride to IAH, parking (airport food is in Paid)", e:75},
   {d:2, dt:"Tue Nov 10", c:"Lisbon",               i:"Dinner tonight only (the day's spends so far are in Paid)", e:40},
-  {d:3, dt:"Wed Nov 11", c:"Lisbon",               i:"Storm day in: delivery meals and snacks", e:70},
+  {d:3, dt:"Wed Nov 11", c:"Lisbon",               i:"Dinner tonight (the day's spends so far are in Paid)", e:30},
   {d:4, dt:"Thu Nov 12", c:"Lisbon to Granada",  i:"Meals, taxi from Granada bus station (airport taxi and coach are paid)", e:100},
   {d:5, dt:"Fri Nov 13", c:"Granada, Alhambra",  i:"Lunch tapas, Parador or hotel dinner",            e:150},
   {d:6, dt:"Sat Nov 14", c:"Granada to Seville", i:"Meals, taxis both ends, tapas dinner",            e:100},
@@ -2156,7 +2156,7 @@ var BDG = [
   {d:8, dt:"Mon Nov 16", c:"Seville to Paris",   i:"Lunch in Seville, taxi to SVQ (26 to 29 euros), dinner (CDG taxi paid)", e:110},
   {d:9, dt:"Tue Nov 17", c:"Disneyland Paris",     i:"Lunch and dinner in the parks, snacks, RER A both ways", e:170},
   {d:10,dt:"Wed Nov 18", c:"Paris",             i:"Market breakfast, lunch, Tootbus (~94 euros), Seine cruise (~37 euros), metro, dinner", e:310},
-  {d:11,dt:"Thu Nov 19", c:"Paris to Texas",    i:"Breakfast, airport food, drive home (CDG taxi paid)", e:100}
+  {d:11,dt:"Thu Nov 19", c:"Paris to Texas",    i:"Breakfast, airport food, Enterprise rental $115.64 at the counter, fuel (CDG taxi paid)", e:230}
 ];
 var BDG_TOTAL = BDG.reduce(function(s,x){ return s + x.e; }, 0);
 
@@ -2992,7 +2992,7 @@ var DECIDE = [
   {id:"d_photo", done:1, t:"1. Lisbon photoshoot &mdash; cancelled, $60.51 refund pending (Nov 10)", n:"Closed. Old notes: Forecast: steady rain Wed 11 AM to 2 PM. <b>Move:</b> WhatsApp +351 912 237 740: &ldquo;Hi, we have your 15-min family shoot Wed Nov 11 at 11:45 at Portas do Sol. Heavy rain is forecast late morning. Could we move it to 4:00 PM the same day? Thank you, Rizwan Ali.&rdquo; <b>Cancel:</b> GetYourGuide app &rarr; Bookings &rarr; Lisbon photoshoot &rarr; Cancel booking &rarr; full refund $60.51. You land 10:20 AM and will be in passport control near the deadline, so do it in the queue."},
   {id:"d_train", t:"2. Izyan's fast train &mdash; skipped in Lisbon", n:"Not doing the Santarem train on Wednesday. Look for a fast-train ride in Granada, Seville or Paris instead."},
   {id:"d_early", t:"3. Lisbon early check-in (optional) &mdash; decide on landing", n:"Residentas Priority Arrival Access opens the apartment from 2:00 PM instead of 4:00 PM. Paid add-on; link is in Zaibnish's Residentas email (Your access codes). Worth it after the overnight flight and rain. Bags can go in the luggage room on the 2nd floor either way."},
-  {id:"d_home", t:"4. Nov 19 DFW to home &mdash; rental or flight", n:"<b>Rental (corrected Nov 11):</b> National no longer lists a Sugar Land (SGR) location. <b>Use Enterprise instead:</b> DFW Airport 4:00 PM Thu Nov 19 &rarr; <b>Enterprise Sugar Land, 1414 Highway 6, Sugar Land 77478</b> (+1 281-313-3700), return Fri Nov 20 before 6:00 PM (open 7:30 AM to 6 PM; no after-hours returns). They can collect the car from home for $25: call the branch. Midsize SUV + booster seat; check the one-way fee before you confirm. Backup: National DFW &rarr; Houston Hobby (HOU), open 24/7. <b>Flight instead:</b> AA DFW 6:05 PM &rarr; IAH 7:23 PM, or AA 6:19 PM &rarr; Hobby 7:40 PM, about $716 for three plus a checked bag. Not earlier than 6 PM: you land 2:50 PM and clear immigration first."},
+  {id:"d_home", t:"4. Nov 19 DFW to home &mdash; rental or flight", n:"<b>Rental BOOKED: Enterprise, confirmation 81132750.</b> DFW Airport 4:00 PM Thu Nov 19 &rarr; <b>Enterprise Sugar Land, 1414 Highway 6, Sugar Land 77478</b> (+1 281-313-3700), return Fri Nov 20 by 12:00 PM (open 7:30 AM to 6 PM; no after-hours returns). Midsize SUV + child safety seat (ask for a booster), AA 49 on the booking, about $115.64 paid at the counter. Home collection $25: call the branch. Reserved in Rizwan&#39;s name; manage at enterprise.com &rarr; View/Modify/Cancel. <b>Flight instead:</b> AA DFW 6:05 PM &rarr; IAH 7:23 PM, or AA 6:19 PM &rarr; Hobby 7:40 PM, about $716 for three plus a checked bag. Not earlier than 6 PM: you land 2:50 PM and clear immigration first."},
   {id:"d_refund", t:"5. Train refund (Trainline 2FKGY4) &mdash; check the amount", n:"About $181.76 means both legs are refunded. Less means the Cordoba to Seville leg is still open: request its refund in Trainline (reason: connecting train cancelled by Renfe), or call Renfe +34 912 320 320 for an anulacion con reembolso. Not a change of date."},
   {id:"d_iber", t:"6. Iberflat message (Seville) &mdash; any day before Nov 13", n:"Phone or WhatsApp +34 955 515 541: &ldquo;Hi, booking 82035, Apt 09, arriving Sat Nov 14 around 2:30 PM. 1) Can the housekeeper hold our bags Mon Nov 16 from 12:00 to 1:45 PM? 2) Do you need a registration form for our son Izyan (5)? Thank you, Zaibnish Ali.&rdquo;"}
 ];
@@ -3041,13 +3041,14 @@ function afterBlock(){
 
 var PAID = [
   ["Flights and bags", [["United IAH-IAD-LIS + $90 bag",1479],["American CDG-DFW incl. $87 bag",1616.49],["TAP Lisbon-Malaga",538.32],["Air France Seville-Paris",369.80]]],
-  ["Places to stay, 9 nights", [["Lisbon, Residentas (2 nights)",582],["Granada, Hotel America (2)",497.38],["Seville, Iberflat (2)",330],["Paris, Nestay (3)",1378]]],
+  ["Places to stay, 9 nights", [["Lisbon, Residentas (2 nights)",582],["Granada, Hotel America (2), 428 euros charged Nov 11",481.63],["Seville, Iberflat (2), charged Nov 11 incl. 100 euro deposit",432.12],["Paris, Nestay (3)",1378]]],
   ["Tickets and tours", [["Disneyland, 1 day / 2 parks",348.74],["Eiffel Tower",70.89],["Oceanario (closed by the storm, 69.75 euros refund requested)",0],["Lisbon photoshoot (cancelled, $60.51 refund pending)",0],["Alhambra",48.69],["Paris photoshoot",39.21],["Seville Cathedral",32.63]]],
   ["Coaches", [["ALSA Granada to Seville (84.12 euros, card $94.52)",94.52],["ALSA Malaga Airport to Granada (43.27 euros)",50]]],
   ["Airport taxis (Booking.com)", [["CDG to Nestay, Nov 16",68.66],["Nestay to CDG, Nov 19",62.25],["Apartment to Lisbon airport, Nov 12",16.97],["Lisbon airport to apartment, Nov 10",15.42]]],
   ["Travel insurance", [["Tin Leg Gold, all three",77]]],
   ["Spent on the road", [["T-Mobile international plan (Rizwan)",75],["Velvet Taco, Houston airport, Nov 9 (Zaibnish)",37.73]]],
-  ["Lisbon, Tue Nov 10", [["Sidhu Tours (Zaibnish)",224.54],["Henrique Sa Pessoa (Zaibnish)",17.65],["Pizzeria Romana (Zaibnish)",13.47],["Crush Doughnuts (Zaibnish)",11.74],["Loja Candy Lisa (Zaibnish)",6.75],["Sabores d'Avila (Zaibnish)",6.68],["Bolt (Zaibnish)",3.63],["Rest Smokin (Zaibnish)",2.53],["Food, 21 euros (Rizwan)",23.56],["Food, 17 euros (Rizwan)",19.07]]]
+  ["Lisbon, Tue Nov 10", [["Sidhu Tours (Zaibnish)",224.54],["Henrique Sa Pessoa (Zaibnish)",17.65],["Pizzeria Romana (Zaibnish)",13.47],["Crush Doughnuts (Zaibnish)",11.74],["Loja Candy Lisa (Zaibnish)",6.75],["Sabores d'Avila (Zaibnish)",6.68],["Bolt (Zaibnish)",3.63],["Rest Smokin (Zaibnish)",2.53],["Food, 21 euros (Rizwan)",23.56],["Food, 17 euros (Rizwan)",19.07]]],
+  ["Lisbon, Wed Nov 11 (storm day)", [["Bullger",28.30],["BK Carmo",10.75],["Restauradores",8.10],["CD R.C. Sanches",7.43],["Starbucks",5.51],["Bolt x5",34.62]]]
 ];
 var TOSPEND = [
   ["Food, local transport, small extras", BDG_TOTAL, Math.round(BDG_TOTAL*1.3/10)*10, "Day-by-day plan below; high end allows 30% extra. Actual spends move to Paid as you send them."]
