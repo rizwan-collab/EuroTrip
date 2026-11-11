@@ -668,7 +668,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-11d";
+var BUILD = "2026-11-11e";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -3013,11 +3013,11 @@ function decideBlock(){
 
 /* ---------- After the trip: refunds, deposits, claims ---------- */
 var AFTER = [
-  {id:"trainrefund", t:"Train refund: Trainline 2FKGY4 (Granada to Seville)", by:"2026-11-30", n:"Check the card for about $181.76 back, both legs and all three tickets. If it has not landed by Nov 30, chase Trainline. If they will not pay, open a Chase dispute (chargeback): Renfe cancelled the train (email of Nov 9)."},
+  {id:"trainrefund", t:"REFUND: Trainline 2FKGY4, Granada to Seville (confirm both legs)", by:"2026-11-30", n:"Check the card for about $181.76 back, both legs and all three tickets. If it has not landed by Nov 30, chase Trainline. If they will not pay, open a Chase dispute (chargeback): Renfe cancelled the train (email of Nov 9)."},
   {id:"ibdeposit", t:"Seville deposit: Iberflat 100 euros back", by:"2026-11-23", n:"Damage deposit taken on arrival Nov 14, refunded within 7 days. Chase Iberflat (+34 955 515 541) if it is still held after Nov 23."},
   {id:"holds", t:"Card holds released (Nestay, hotels, car services)", by:"2026-11-30", n:"Check for any pre-authorisations still sitting on the Chase card, and whether Nestay charged Paris city tax."},
-  {id:"oceanrefund", t:"Oceanario refund: 69.75 euros (about $78)", by:"2026-11-25", n:"Closed Wed Nov 11 for Storm Charles. Booking 110965481, in Zaibnish's name, paid on the card. Email info@oceanario.pt asking for a refund to the original card; chase it if nothing by Nov 25. If they refuse, dispute it with Chase as a service not provided."},
-  {id:"lphotorefund", t:"Lisbon photoshoot: refund or photos", by:"2026-11-25", n:"Cancelled. $60.51 GetYourGuide credit pending since Nov 10; confirm it posts to the Chase Sapphire."},
+  {id:"oceanrefund", t:"REFUND: Oceanario, 69.75 euros / about $78 (closed by the storm)", by:"2026-11-25", n:"Closed Wed Nov 11 for Storm Charles. Booking 110965481, in Zaibnish's name, paid on the card. Email info@oceanario.pt asking for a refund to the original card; chase it if nothing by Nov 25. If they refuse, dispute it with Chase as a service not provided."},
+  {id:"lphotorefund", t:"REFUND: Lisbon photoshoot, $60.51 (GetYourGuide, pending on the card)", by:"2026-11-25", n:"Cancelled. $60.51 GetYourGuide credit pending since Nov 10; confirm it posts to the Chase Sapphire."},
   {id:"pphotos", t:"Paris photoshoot: 5 edited photos received", by:"2026-11-28", n:"GetYourGuide, Nov 18. Message the photographer on WhatsApp if nothing arrives within about a week."},
   {id:"statement", t:"Match the Chase statement to the budget", by:"2026-12-05", n:"Look for duplicates (check the Alhambra 43.27 euro charge) and anything unexpected. Dispute anything wrong with Chase."},
   {id:"claims", t:"Insurance claims, if anything went wrong", by:"2026-12-15", n:"Delays, lost or late bags, medical: Tin Leg (tinleg.com/report-claim, 844-240-1233) and Chase Sapphire travel protection. Keep every receipt and the airline delay notices."},
