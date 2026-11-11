@@ -668,7 +668,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-10l";
+var BUILD = "2026-11-10m";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -3641,6 +3641,8 @@ var RAIN = {
     ["Real Alcazar (morning, mostly indoors)","Royal palace with tiled halls, five minutes from the cathedral. Winter 9:30 AM to 5 PM daily. 15.50 euros adult; under 13 free. Book a timed ticket on the official site.","Real Alcazar de Sevilla","https://www.alcazarsevilla.org/"],
     ["Casa de Pilatos","Smaller palace full of tiles and courtyards, quieter than the Alcazar. Sun 9 AM to 6 PM. Ground floor 12 euros; under 12 free.","Casa de Pilatos Sevilla","https://www.fundacionmedinaceli.org/"],
     ["Acuario de Sevilla (morning)","Sun 10 AM to 7 PM. Same details as Saturday.","Acuario de Sevilla","https://www.acuariosevilla.es/"],
+    ["Archivo de Indias","Free, indoors, next to the cathedral. Sun 10 AM to 2 PM; closed Mondays. Twenty minutes is enough.","Archivo General de Indias Sevilla"],
+    ["Palacio de las Duenas","Courtyard palace with tiles and orange trees. Daily 10 AM to 6 PM. 13 euros adult; under 6 free. Book on lasduenas.es.","Palacio de las Duenas Sevilla","https://www.lasduenas.es/"],
     ["Flamenco indoors (evening)","Museo del Baile Flamenco shows at 5 PM, 7 PM and 8:45 PM. About 25 euros adult, 12 euros child (6 to 12). Izyan is 5, so check the child policy when booking. Book online.","Museo del Baile Flamenco Sevilla"],
     ["Cathedral stays","Your 2:30 PM ticket is indoors. No change.",""]]},
   8: {d:"Last walk through Santa Cruz", s:[
@@ -3649,12 +3651,22 @@ var RAIN = {
     ["Go to the airport early","Collect bags from the housekeeper at 1:30 PM and take the taxi rank at Puerta de Jerez; SVQ is small and dry.",""]]},
   9: {d:"Queues, the parade and the night show", s:[
     ["Bring ponchos","Buy ponchos before you go (park ones cost more). Rides keep running in rain; the parade and Cascade of Lights can be cancelled in heavy rain.",""],
-    ["Lean on the indoor list","Frozen Ever After, Ratatouille, Spider-Man, Mickey's PhilharMagic, Pirates, It's a Small World, Buzz Lightyear, Stitch Live!, Animation Academy, Mickey and the Magician. Queues for outdoor rides like Dumbo get shorter in rain.",""]]},
+    ["Lean on the indoor list","Frozen Ever After, Ratatouille, Spider-Man, Mickey's PhilharMagic, Pirates, It's a Small World, Buzz Lightyear, Stitch Live!, Animation Academy, Mickey and the Magician. Queues for outdoor rides like Dumbo get shorter in rain.",""],
+    ["If wind closes rides","Big Thunder, Orbitron and the outdoor coasters pause in high wind and reopen when it drops. Check the Disneyland Paris app for live status, and do the indoor list in the meantime.",""],
+    ["Disney Village break","Covered shops and restaurants between the parks and the RER station. Good for a warm-up or an early dinner before the train.","Disney Village"]]},
   10: {d:"Photoshoot, the open-top Tootbus and the evening sparkle", s:[
     ["Eiffel Tower stays","Your 9:30 AM ticket stands. The top can close in high wind; check your email and the official app that morning.",""],
     ["Photoshoot decision","Check your GetYourGuide booking's free-cancellation time by Tue Nov 17, and cancel or move it if heavy rain is forecast.",""],
     ["Aquarium de Paris instead of the Tootbus","Five minutes' walk from the tower at Trocadero, so it fits right after lunch. Open daily 9:30 AM to 7 PM (last entry 6 PM). 27.50 euros adult, 20.50 euros child (3 to 12) at the counter; online up to 20% cheaper and recommended. Then metro to Pont Neuf for the covered Seine cruise, which stays.","Aquarium de Paris Trocadero"],
-    ["Galeries Lafayette Christmas tree and windows","The giant tree and the Christmas windows are up from Nov 12. Free. Metro to Chaussee d'Antin-La Fayette.","Galeries Lafayette Haussmann"]]}
+    ["Galeries Lafayette Christmas tree and windows","The giant tree and the Christmas windows are up from Nov 12. Free. Metro to Chaussee d'Antin-La Fayette.","Galeries Lafayette Haussmann"],
+    ["Cite des enfants (best for Izyan)","Hands-on science play space at the Cite des sciences. The 5 to 10 space runs 1h30 sessions; Wednesday starts about 9:45, 11:45, 1:45 and 3:45 PM. About 15 to 17 euros each, adults need a ticket too. Closed Mondays. Book a session online. Metro line 7 to Porte de la Villette.","Cite des sciences et de l'industrie","https://www.cite-sciences.fr/en/"],
+    ["Grande Galerie de l'Evolution","A parade of life-size stuffed animals, from elephants to giraffes, in a huge glass-roofed hall. Wed 10 AM to 6 PM; <b>closed Tuesdays</b>. 10 euros adult. Metro line 7 to Place Monge.","Grande Galerie de l'Evolution Paris","https://www.mnhn.fr/en"],
+    ["Musee des Arts et Metiers","Old planes, cars, robots and Foucault's pendulum, 10 min walk from Nestay. Tue to Sun 10 AM to 6 PM; closed Mondays. 12 euros adult; free under 26. Metro Arts et Metiers.","Musee des Arts et Metiers Paris","https://www.arts-et-metiers.net/"],
+    ["Covered passages","Galerie Vivienne and Passage des Panoramas: glass-roofed 19th-century arcades with toy shops and cafes. Free, 15 min walk from Nestay.","Galerie Vivienne Paris"],
+    ["Seine cruise in a covered boat","If the open deck is miserable, Bateaux Parisiens boats from the Eiffel Tower have a glass-covered cabin.","Bateaux Parisiens Tour Eiffel","https://www.bateauxparisiens.com/en.html"]]},
+  11: {d:"Departure morning", s:[
+    ["Flight check","AA 49, 11:05 AM CDG to DFW. Check the American app at 6:30 AM. If it is delayed or cancelled, keep receipts: Chase covers delays over 12 hours, Tin Leg after 6 hours.",""],
+    ["Rental car backup","If you land late at DFW, call National about the 4:00 PM pickup; the free cancellation runs to Tue Nov 17 at 4:00 PM.",""]]}
 };
 function rainBlock(n){
   var r = RAIN[n]; if(!r) return '';
