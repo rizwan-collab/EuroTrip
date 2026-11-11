@@ -668,7 +668,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-11a";
+var BUILD = "2026-11-11b";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -3190,19 +3190,21 @@ var CHOICES = {
    {n:"Zambeze (Mouraria, view terrace)", a:"Calcada Marques de Tancos (Mercado Chao do Loureiro), Lisbon", h:"Walk 10 min uphill or the free lift from Rua dos Fanqueiros", why:"Special-dinner option: Portuguese-Mozambican food with a castle-hill view. Grilled chicken works for him."}]}
  ],
  3: [
-  {s:"Breakfast", t:"08:00", o:[
-   {n:"Manteigaria, Chiado", a:"Rua do Loreto 2, Lisbon", h:"Walk 3 min", best:1, local:1, why:"Hot nata straight from the oven, about 1.30 euros each. Quick, then the metro at 9:45."},
-   {n:"Confeitaria Nacional (Praca da Figueira)", a:"Praca da Figueira 18B, Lisbon", h:"Walk 4 min", why:"Historic bakery since 1829; a sit-down nata and juice before the metro."},
-   {n:"Apartment breakfast", a:"At the apartment", h:"No travel", why:"Pingo Doce is next door: yogurt, fruit, bread. Calm start before the metro."}]},
-  {s:"Lunch (Oriente)", t:"12:30", o:[
-   {n:"Vasco da Gama mall food court", a:"Av. D. Joao II, Parque das Nacoes", h:"Walk 8 min from the Oceanario", best:1, why:"All indoors in the rain; pizza, burgers and Asian so everyone picks their own."},
-   {n:"Oceanario cafe", a:"Esplanada Dom Carlos I, Parque das Nacoes", h:"On site", why:"Quickest option straight after the visit; simple sandwiches and snacks."},
-   {n:"Time Out Market (if you head back first)", a:"Av. 24 de Julho 49, Lisbon", h:"Metro / Bolt 20 min", why:"Guaranteed plain food for Izyan if he is tired of new things."}]},
-  {s:"Dinner after the Ismaili Centre", t:"19:00", o:[
-   {n:"Indian/Nepali near Laranjeiras or Martim Moniz", a:"Martim Moniz / Rua do Benformoso area", h:"Metro or Bolt 10 min from the Ismaili Centre", best:1, why:"Familiar comfort food after the Jamatkhana tour, early opening, no bar."},
-   {n:"Jesus e Goes (if you skipped it Nov 10)", a:"Rua de Sao Jose 23, Lisbon", h:"Bolt 12 min from Laranjeiras", why:"Goan home-style food, easy for Izyan with rice and mild curry."},
-   {n:"Pizza near the apartment", a:"Baixa, near Rua dos Sapateiros", h:"Walk 5 min", why:"Quickest early dinner; you pack for the 08:20 airport car tomorrow."},
-   {n:"Bonjardim frango assado (if not done Nov 10)", a:"Travessa de Santo Antao 11, Lisbon", h:"Bolt 10 min from Laranjeiras", local:1, why:"Portuguese roast chicken, simple and fast before the travel day."}]}
+  {s:"Breakfast and snacks (storm day, all within 3 min)", t:"08:30", o:[
+   {n:"Manteigaria, Rua Augusta", a:"Rua Augusta 195, Lisbon", h:"Walk 2 min", best:1, local:1, why:"Hot pastel de nata, 8 AM to midnight. Grab a box for the afternoon."},
+   {n:"Fabrica da Nata, Rua Augusta", a:"Rua Augusta 275A, Lisbon", h:"Walk 3 min", why:"Sit-down breakfast (eggs, croissants, juice) with seating upstairs, out of the wind. 8 AM to 11 PM."},
+   {n:"My Auchan mini-market", a:"Rua dos Correeiros 61, Lisbon", h:"Walk 1 min", why:"Closest shop for water, fruit, yogurt and snacks to last the day. 8 AM to 10 PM."},
+   {n:"Pingo Doce, Chao do Loureiro", a:"Largo Chao do Loureiro, Lisbon", h:"Walk 4 min", why:"Bigger supermarket with hot food: whole grilled chicken about 7 euros. 8 AM to 9 PM."}]},
+  {s:"Lunch (near the apartment or delivered)", t:"12:30", o:[
+   {n:"Pizzico Pizzeria", a:"Rua dos Correeiros 113, Lisbon", h:"Walk 2 min", best:1, why:"Pizza and salads, plain options for Izyan. From noon. Also on delivery apps."},
+   {n:"Pizzaria Tapas La Casa", a:"Rua dos Correeiros 170, Lisbon", h:"Walk 2 min", why:"Pizza, pasta, chicken skewers. From 11:30 AM."},
+   {n:"Pastelaria Baixa Chiado", a:"Rua do Crucifixo 94, Lisbon", h:"Walk 3 min", local:1, why:"Local cafe: daily plate menu about 9 euros with drink, dessert and coffee. Closes 8 PM."},
+   {n:"Delivery to the apartment", a:"Rua dos Sapateiros 226, Lisbon", h:"No travel", why:"Bolt Food or Uber Eats. Safest choice during the red warning, noon to 9 PM."}]},
+  {s:"Dinner in (storm)", t:"19:00", o:[
+   {n:"Delivery to the apartment", a:"Rua dos Sapateiros 226, Lisbon", h:"No travel", best:1, why:"Red warning until 9 PM. Order early; drivers may be slower in the storm."},
+   {n:"Cucina di Famiglia", a:"Rua da Assuncao 45, Lisbon", h:"Walk 2 min", why:"Family-friendly Italian, 11 AM to midnight, if the wind has dropped."},
+   {n:"Pingo Doce grilled chicken", a:"Largo Chao do Loureiro, Lisbon", h:"Walk 4 min", local:1, why:"Pick up before 9 PM with rice and salad; eat in while you pack."},
+   {n:"Pizzico or La Casa", a:"Rua dos Correeiros, Lisbon", h:"Walk 2 min", why:"Both open to 11 PM. Takeaway if you would rather not sit out."}]}
  ],
  4: [
   {s:"Dinner in Granada", t:"19:30", o:[
@@ -3616,11 +3618,15 @@ var RAIN = {
     ["Lisboa Card (if you do 3+ of these)","Free Story Centre, Coches and public transport; 15 percent off Oceanario and Pavilhao. Buy on the phone.","","https://www.lisboacard.com/en/"],
     ["Oceanario: BOOKED for Wednesday","CLOSED by the storm on Wed; refund requested (ref 110965481). Details are in Wednesday's plan.",""],
     ["Pavilhao do Conhecimento","Hands-on science centre next to the Oceanario; now planned for Wednesday with it. Tue to Fri 10 AM to 6 PM (last entry 5:30 PM). About 14 euros adult, 8 euros child (3 to 11); family ticket at the desk.","Pavilhao do Conhecimento Lisboa"]]},
-  3: {d:"Castelo, the photoshoot and the Alfama walk", s:[
-    ["Any of Tuesday's indoor list","Belem double-decker day, Story Centre, Marinha, Planetario, Coches, tram museum, Estufa Fria: all open Wednesday. Ticket links are in Tuesday's rain plan.",""],
-    ["Photoshoot decision","<b>Forecast (Nov 9): steady rain Wed 11 AM to 2 PM, easing after 3 PM.</b> Ask the photographer (+351 912 237 740, WhatsApp) to move to Wed 4:00 PM; leave by 4:20 PM for the Ismaili Centre. If they cannot move it, cancel before Tue 11:45 AM for a refund. You will be in passport control then, so decide before you fly.",""],
-    ["Museu da Marioneta (Puppet Museum)","Puppets from around the world, with occasional shows. Tue to Sun 10 AM to 6 PM. 5 euros adult, under 13 free. Tram 25 or 28 to Santos, about 15 min.","Museu da Marioneta Lisboa"],
-    ["OCEANARIO (planned for Wednesday) + Pavilhao do Conhecimento","Open daily 10 AM to 8 PM (last entry 7 PM). Prices by time slot: 12:00 to 3:30 PM is 27.70 euros adult, 16.60 euros child (3 to 12); 10 percent off online with code ONLINE10. Allow 1.5 to 2 hours. At Oriente: the 10:30 AM slot, indoors through the worst of the rain. Add the Pavilhao next door if he still has energy. Book the 10:30 AM slot; back for a nap before the 5:30 PM Ismaili Centre tour.","Oceanario de Lisboa","https://oceanario.pt/en/"]]},
+  3: {d:"Storm Charles day (most of Lisbon closed)", s:[
+    ["Stay near the apartment","Everything below is 1 to 3 minutes from Rua dos Sapateiros. Go out before noon if you need to; red warning noon to 9 PM. Hours may be cut by the storm, so call or check the delivery apps first.",""],
+    ["Manteigaria (nata)","Rua Augusta 195. 8 AM to midnight.","Manteigaria Rua Augusta 195 Lisboa"],
+    ["Fabrica da Nata (sit-down)","Rua Augusta 275A. Breakfast with seating upstairs. 8 AM to 11 PM.","Fabrica da Nata Rua Augusta Lisboa"],
+    ["My Auchan (snacks, water)","Rua dos Correeiros 61, 1 min. 8 AM to 10 PM.","My Auchan Rua dos Correeiros Lisboa"],
+    ["Pingo Doce (hot food)","Largo Chao do Loureiro, 4 min. Grilled chicken about 7 euros. 8 AM to 9 PM.","Pingo Doce Chao do Loureiro"],
+    ["Pizzico / La Casa (pizza)","Rua dos Correeiros 113 and 170. Noon / 11:30 AM to 11 PM.","Pizzico Pizzeria Lisboa"],
+    ["Cucina di Famiglia (Italian)","Rua da Assuncao 45. 11 AM to midnight.","Cucina di Famiglia Lisboa"],
+    ["Oceanario: CLOSED","Refund requested for ref 110965481; tracked in After the trip.",""]]},
   4: {d:"Travel day and the evening tapas walk", s:[
     ["If the flight is delayed","TAP app first. Later ALSA coaches from Malaga Airport to Granada run about 16:15, 18:30, 19:00 and 19:30 (about 15 euros, 2h15). Rebook in the ALSA app and keep every receipt for Tin Leg (missed connection after 3 hours) and Chase.","","https://www.alsa.com/en/"],
     ["Skip the hill walk","Rest at Hotel America instead; the courtyard restaurant is right there if nobody wants to go out.",""],
