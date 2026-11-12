@@ -668,7 +668,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-11h";
+var BUILD = "2026-11-12a";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -917,7 +917,7 @@ var PLAN = [
 {
   n:5, date:"Fri Nov 13", wd:"Friday", city:"Granada, the Alhambra", tag:["p-r","Fixed timing"],
   sum:"The only unmovable booking of the trip. 09:00 Nasrid slot, at the gate for 08:00 as the Patronato asks.",
-  warn:"<b>The Patronato tells you to arrive one hour before your Nasrid slot, so the plan below builds in the full hour.</b> Entry is timed, with no re-entry and no grace period &mdash; miss it and the ticket is void. The complex itself opens at 08:30 in winter, so you will be at the gate before it opens. Staying inside the walls still helps: it is a five-minute walk rather than a climb from the city, and a QR e-ticket scans at the Puerta de la Justicia so you skip the Access Pavilion entirely.",
+  warn:"<b>Weather (checked Nov 12):</b> dry until about 5 PM, 10 to 17&deg;C, gusts up to about 50 km/h late afternoon, light rain from 5 PM. After Storm Charles the Patronato closed some outer gardens (Adarves, Jardines Altos, Bosque de Gomerez) until Thu 8:30 AM; if any are still shut, the Nasrid Palaces are indoors and unaffected. Check alhambra-patronato.es or ask at the gate. <b>The Patronato tells you to arrive one hour before your Nasrid slot, so the plan below builds in the full hour.</b> Entry is timed, with no re-entry and no grace period &mdash; miss it and the ticket is void. The complex itself opens at 08:30 in winter, so you will be at the gate before it opens. Staying inside the walls still helps: it is a five-minute walk rather than a climb from the city, and a QR e-ticket scans at the Puerta de la Justicia so you skip the Access Pavilion entirely.",
   sched:[
     ["07:00","Breakfast at the hotel","Early, and do not skip it. Lunch is a long way off."],
     ["07:50","Walk to the Puerta de la Justicia","Five minutes from Hotel America on Real de la Alhambra. Five, not fifty &mdash; this is why you are paying to sleep inside the walls."],
@@ -930,8 +930,8 @@ var PLAN = [
     ["12:45","Charles V Palace","Circular courtyard, free entry, five minutes, and it is on your way out."],
     ["13:15","Lunch","Down the hill or at the hotel. He will be finished by now."],
     ["14:45","Rest","Two hours. You have walked five kilometres on stone."],
-    ["16:30","Sacromonte caves","Real cave houses on the hillside, still lived in. Big impression, twenty minutes of walking."],
-    ["17:45","Mirador San Nicolas","Sunset over the Alhambra with the Sierra Nevada behind it. Free, and the locals gather here."],
+    ["16:00","Sacromonte caves (go early)","Real cave houses on the hillside, still lived in. Rain is likely from about 5 PM and the cobbles get slippery, so go by 4 PM or skip it."],
+    ["16:45","Mirador San Nicolas","View of the Alhambra with the Sierra Nevada behind it. Free. Go before the 5 PM rain rather than waiting for sunset (about 6:10 PM); taxi back if it starts."],
     ["19:30","Dinner","More free tapas, or the Parador terrace if you want one splurge."],
     ["21:30","Pack","ALSA bus to Seville tomorrow at 11:00. Check out at 10:00, so bags by the door tonight."]
   ],
@@ -942,7 +942,7 @@ var PLAN = [
        u:"https://www.sacromontegranada.com/en/", ul:"sacromontegranada.com"},
       {n:"Arab tea houses, Albaicin", d:"Moroccan-style teterias with cushion seating and mint tea. Low effort, and he will love sitting on the floor.", p:"5 to 10 euros each",
        u:"https://www.google.com/maps/search/teteria+Albaicin+Granada", ul:"Find on Maps"},
-      {n:"Granada Cathedral and Royal Chapel", d:"Ferdinand and Isabella are buried here. Impressive but indoors, and after the Alhambra it may be one interior too many.", p:"6 euros adult",
+      {n:"Granada Cathedral and Royal Chapel", d:"Ferdinand and Isabella are buried here. Impressive but indoors, and after the Alhambra it may be one interior too many.", p:"7 euros adult, under 12 free",
        u:"https://catedraldegranada.com/", ul:"catedraldegranada.com"}
     ]
   },
@@ -2149,7 +2149,7 @@ var BDG = [
   {d:1, dt:"Mon Nov 9",  c:"Texas to Lisbon",     i:"Ride to IAH, parking (airport food is in Paid)", e:75},
   {d:2, dt:"Tue Nov 10", c:"Lisbon",               i:"Dinner tonight only (the day's spends so far are in Paid)", e:40},
   {d:3, dt:"Wed Nov 11", c:"Lisbon",               i:"Dinner tonight (the day's spends so far are in Paid)", e:30},
-  {d:4, dt:"Thu Nov 12", c:"Lisbon to Granada",  i:"Meals, taxi from Granada bus station (airport taxi and coach are paid)", e:100},
+  {d:4, dt:"Thu Nov 12", c:"Lisbon to Granada",  i:"Done: the day's spends are in Paid", e:0},
   {d:5, dt:"Fri Nov 13", c:"Granada, Alhambra",  i:"Lunch tapas, Parador or hotel dinner",            e:150},
   {d:6, dt:"Sat Nov 14", c:"Granada to Seville", i:"Meals, taxis both ends, tapas dinner",            e:100},
   {d:7, dt:"Sun Nov 15", c:"Seville",            i:"Churros, long lunch, tapas dinner, taxis",        e:130},
@@ -3048,7 +3048,8 @@ var PAID = [
   ["Travel insurance", [["Tin Leg Gold, all three",77]]],
   ["Spent on the road", [["T-Mobile international plan (Rizwan)",75],["Velvet Taco, Houston airport, Nov 9 (Zaibnish)",37.73]]],
   ["Lisbon, Tue Nov 10", [["Sidhu Tours (Zaibnish)",224.54],["Henrique Sa Pessoa (Zaibnish)",17.65],["Pizzeria Romana (Zaibnish)",13.47],["Crush Doughnuts (Zaibnish)",11.74],["Loja Candy Lisa (Zaibnish)",6.75],["Sabores d'Avila (Zaibnish)",6.68],["Bolt (Zaibnish)",3.63],["Rest Smokin (Zaibnish)",2.53],["Food, 21 euros (Rizwan)",23.56],["Food, 17 euros (Rizwan)",19.07]]],
-  ["Lisbon, Wed Nov 11 (storm day)", [["Bullger",28.30],["BK Carmo",10.75],["Restauradores",8.10],["CD R.C. Sanches",7.43],["Starbucks",5.51],["Bolt x5",34.62],["Rizwan, 23 euros",25.81],["Rizwan, 10 euros",11.22]]]
+  ["Lisbon, Wed Nov 11 (storm day)", [["Bullger",28.30],["BK Carmo",10.75],["Restauradores",8.10],["CD R.C. Sanches",7.43],["Starbucks",5.51],["Bolt x5",34.62],["Rizwan, 23 euros",25.81],["Rizwan, 10 euros",11.22]]],
+  ["Travel day, Thu Nov 12", [["SSP airport food",19.55],["Taxi 411 (Granada)",16.55],["Starbucks",7.98],["Areas Portugal",4.69],["Transportes Rober (Granada bus) x2",3.58],["Rizwan, 48.92 euros (5 charges)",54.89]]]
 ];
 var TOSPEND = [
   ["Food, local transport, small extras", BDG_TOTAL, Math.round(BDG_TOTAL*1.3/10)*10, "Day-by-day plan below; high end allows 30% extra. Actual spends move to Paid as you send them."]
@@ -3124,7 +3125,7 @@ var CODES = [
   {d:"Nov 12", w:"TAP TP1136, Lisbon to Malaga 10:45", s:"https://www.flytap.com", m:"Lisbon Airport Terminal 1", x:"Thu Nov 12: LIS 10:45 to AGP 13:00 (Spain +1 hour). 1 checked bag on Rizwan; carry-ons 10 kg max. Seats at check-in.", c:"<b>TAP booking reference XIT7D7</b> (booked via Booking.com Flights, Discount fare, Zaibnish). Check in on flytap.com with XIT7D7 + surname ALI", l:"https://www.flytap.com/en-us/manage-booking", ln:"TAP manage booking"},
   {d:"Nov 12", w:"ALSA coach, Malaga Airport 15:00 to Granada 17:15", s:"https://www.alsa.com/en/airports/malaga-costa-del-sol", m:"Malaga Airport Terminal 3 bus stop", x:"Stop in front of Arrivals, Terminal 3, Malaga Airport. Arrives Granada bus station, Av. Juan Pablo II 33. Each ticket 20 kg / 2 items + 1 extra bag paid. Show tickets on phone, carry passports. Free changes until Nov 5.", c:"<b>Booking ref 1g3kckz</b>. Tickets 203-2-999-16065343-1 (Rizwan, seat 34), 16065342-1 (Zaibnish, seat 33, + extra bag), 16065344-1 (Izyan, seat 30)", l:"https://www.alsa.com/en/", ln:"alsa.com"},
   {d:"Nov 12-14", w:"Granada: Hotel America", s:"https://www.booking.com/hotel/es/america-granada.html", m:"Hotel America, Real de la Alhambra 53, Granada", x:"Real de la Alhambra 53, inside the Alhambra walls. Thu Nov 12 to Sat Nov 14. Reception until 21:00. $497.38.", c:"<b>Booking.com confirmation 6318667433 &middot; PIN 3533</b> (Rizwan). Free cancellation until Nov 6, 23:59 CET", l:"https://secure.booking.com/myreservations.html", ln:"Booking.com trips"},
-  {d:"Nov 13", w:"Alhambra, 09:00 Nasrid Palaces", s:"https://www.alhambra-patronato.es/en", m:"Alhambra ticket office, Granada", x:"Fri Nov 13, Nasrid Palaces 09:00 slot; be at the gate 15 minutes early with passports. Hotel America is a short walk.", c:"<b>Alhambra order 2140590MUECH</b> (Zaibnish). 2 adults + 1 child, 13/11/2026 09:00. 43.27 euros. PDF and Passbook tickets attached to the email; bring passports", l:"https://tickets.alhambra-patronato.es/en/", ln:"Alhambra tickets"},
+  {d:"Nov 13", w:"Alhambra, 09:00 Nasrid Palaces", s:"https://www.alhambra-patronato.es/en", m:"Alhambra ticket office, Granada", x:"Fri Nov 13, Nasrid Palaces 09:00 slot; be at the Puerta de la Justicia by 8:00 AM with passports. Hotel America is a short walk.", c:"<b>Alhambra order 2140590MUECH</b> (Zaibnish). 2 adults + 1 child, 13/11/2026 09:00. 43.27 euros. PDF and Passbook tickets attached to the email; bring passports", l:"https://tickets.alhambra-patronato.es/en/", ln:"Alhambra tickets"},
   {d:"Nov 14", w:"ALSA bus 11:00 Granada to Seville (direct)", s:"https://www.alsa.com/en/", m:"Estacion de Autobuses de Granada, Avenida Juan Pablo II 33", x:"Sat Nov 14. Taxi to Granada bus station at 10:15. Arrive Seville Plaza de Armas bus station 14:00, taxi to the apartment. 84.12 euros. Train cancelled by Renfe and refunded.", c:"<b>ALSA booking ref 1gvje7u</b> (Zaibnish). Seats: Zaibnish 5, Rizwan 6, Izyan 8. 1 extra bag paid. Flexible: free changes up to 48h before", l:"https://drive.google.com/file/d/1XgpwP-9QMufm9JB0hYmdYskH_OJUPxsh/view", ln:"Bus tickets (PDF)", l2:"https://www.alsa.com/en/", ln2:"ALSA"},
   {d:"Nov 14-16", w:"Seville: Iberflat San Gregorio, Calle San Gregorio 7", s:"https://www.booking.com/hotel/es/iberflat-san-gregorio.html", m:"Calle San Gregorio 7, 41004 Sevilla", x:"Check in Sat Nov 14 15:00 to midnight, check out Mon Nov 16 by 12:00. Housekeeper holds bags Nov 16 if arranged ahead. $330. Bring credit card and photo ID.", c:"<b>Booking.com confirmation 6795.767.661 &middot; PIN 7427</b> (Zaibnish). $330. Phones +34 697 16 72 22 / office +34 955 515 541<br><b>Online check-in done Nov 9</b> (Rizwan + Zaibnish) &middot; Iberflat ref <b>82035</b> &middot; <b>Apt 09, 2nd floor</b>. Izyan not on the forms: confirm with Iberflat if a minor form is needed.", l:"https://secure.booking.com/myreservations.html", ln:"Booking.com trips", l2:"https://drive.google.com/drive/folders/1DOcW20QwsuDA3ThgDWjzwOOnXIh940XN", ln2:"Check-in forms (private)"},
   {d:"Nov 15", w:"Seville Cathedral + Giralda, 14:30", s:"https://www.catedraldesevilla.es/en", m:"Puerta del Lagarto, Catedral de Sevilla", x:"Sun Nov 15, 14:30 entry, Giralda first. Includes Church of El Salvador. 26 euros paid.", c:"<b>Purchase ref 262INA5EXR</b> &middot; Reservation ref CMK2NVE7 &middot; Puerta del Lagarto &middot; bring passports", l:"https://www.catedraldesevilla.es", ln:"catedraldesevilla.es"},
