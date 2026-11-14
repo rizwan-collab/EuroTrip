@@ -668,7 +668,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-14d";
+var BUILD = "2026-11-14e";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -963,7 +963,7 @@ var PLAN = [
 {
   n:6, date:"Sat Nov 14", wd:"Saturday", city:"Granada to Seville", tag:["p-g","Bus day"],
   sum:"NOW: on the 11:00 ALSA bus (ref 1gvje7u), due at Seville Plaza de Armas 2:00 PM. Taxi to Iberflat, check in 3:00 PM, late lunch, Plaza de Espana at golden hour if dry.",
-  warn:"<b>Train option checked Nov 13 and dropped (the 1:12 PM Avant sold out); staying on the bus.</b> Light showers possible today; Sunday is the dry day. Afternoon plan: Acuario de Sevilla at 5:00 PM. <b>Renfe cancelled the trains (high-speed line closed); refunded. Replacement BOOKED: ALSA 11:00 Granada bus station to Seville Plaza de Armas, arrives 14:00, ref 1gvje7u, 84.12 euros, Flexible fare (free changes up to 48h before), 1 extra bag.</b> Leave from the <b>Estacion de Autobuses</b>, Av. Juan Pablo II 33 &mdash; <b>not</b> the railway station. Seats: Zaibnish 5, Rizwan 6, Izyan 8. Tickets in Zaibnish&#39;s email. Bring all three passports.",
+  warn:"<b>Train option checked Nov 13 and dropped (the 1:12 PM Avant sold out); staying on the bus.</b> Light showers possible today; Sunday is the dry day. Afternoon plan: 1-hour tuk tuk tour at 5:00 PM (aquarium dropped). <b>Renfe cancelled the trains (high-speed line closed); refunded. Replacement BOOKED: ALSA 11:00 Granada bus station to Seville Plaza de Armas, arrives 14:00, ref 1gvje7u, 84.12 euros, Flexible fare (free changes up to 48h before), 1 extra bag.</b> Leave from the <b>Estacion de Autobuses</b>, Av. Juan Pablo II 33 &mdash; <b>not</b> the railway station. Seats: Zaibnish 5, Rizwan 6, Izyan 8. Tickets in Zaibnish&#39;s email. Bring all three passports.",
   sched:[
     ["08:30","Breakfast at Hotel America, final pack","Unhurried. Bags by the door."],
     ["10:00","Check out","Checkout window is 08:00 to 12:00."],
@@ -971,10 +971,10 @@ var PLAN = [
     ["11:00","ALSA BUS TO SEVILLE - BOOKED (ref 1gvje7u)","Direct, 3 hours, no stops. <b>Seats: Zaibnish 5, Rizwan 6, Izyan 8</b> (ALSA says no seat swaps, so ask the driver or the passenger in 7 politely). Be at the bay by 10:40; big bags in the hold (1 extra bag paid). Tickets on your phone (also <a href=\"https://drive.google.com/file/d/1XgpwP-9QMufm9JB0hYmdYskH_OJUPxsh/view\" target=\"_blank\">PDF in your private Drive</a>), passports out."],
     ["14:00","Arrive Seville, Plaza de Armas bus station","Taxi rank outside, about 5 to 10 minutes and 8 to 10 euros to Calle San Gregorio 7. Coffee or a quick bite nearby if you are early for the 3:00 PM check-in. Have the Iberflat booking (ref 82035, Apt 09, 2nd floor) open."],
     ["15:00","Check in at Iberflat San Gregorio","Check-in opens 15:00. You arrive almost exactly on time, no waiting with bags."],
-    ["15:30","Late lunch in Santa Cruz","Quick and relaxed so you reach the aquarium by 5:00 PM."],
-    ["16:45","Taxi to the Acuario de Sevilla","Muelle de las Delicias s/n, about 10 min, 8 to 10 euros."],
-    ["17:00","ACUARIO DE SEVILLA","Sharks and a big ocean tank, about 1.5 hours. Sat 10 AM to 7 PM, <b>last entry 6 PM</b>. 18 euros adult, 13 euros child (4 to 14), about 49 euros for three; buy at the door or on acuariosevilla.es."],
-    ["18:45","Taxi back toward the apartment","Or walk along the river past the Torre del Oro if it is dry, about 25 min."],
+    ["15:30","Late lunch in Santa Cruz","Quick and relaxed, then over to the tuk tuk."],
+    ["16:45","Walk or taxi to the tuk tuk meeting point","If booked on Musement: SABA Parking Plaza de Armas, Calle Marques de Paradas (floor -1, by the Centro de Control). Arrive 5 min early. If not booked: tuk tuks wait for hire by the Cathedral and at Plaza de Espana; agree the price for 1 hour first."],
+    ["17:00","TUK TUK TOUR, 1 hour (sunset about 6:15 PM)","Private, up to 4 per tuk tuk, covered with blankets. Route: Triana bridge, Triana, Torre del Oro, Columbus monument, Tobacco Factory, Plaza de Espana stop, Maria Luisa Park, Plaza de America, the bullring. Ask for a booster for Izyan. From about 79 dollars (Musement); a late-arrival of over 20 min is a no-show."],
+    ["18:15","Back toward the apartment","Taxi from Plaza de Armas, about 8 min, or walk 15 min along Reyes Catolicos."],
     ["19:30","Early dinner","Near the apartment. Then optional: Setas rooftop at night (10 min walk, 39 euros family ticket) or straight to bed."],
     ["21:00","Book Sunday","Photoshoot 9:30 AM (Smiler, 75 euros) and Alcazar timed ticket about 4:00 PM (alcazarsevilla.org)."]
   ],
@@ -1812,7 +1812,7 @@ var BOOKINGS = [
     {id:"pjk", done:1, ph:5, t:"Paris Jamatkhana: CONFIRMED, daily Du'a 7:30 PM (planned Wed Nov 18)", n:"55 rue de la Croix Nivert, 75015, metro Commerce. Open every day. Reply to the Mukhi with your names.", by:"2026-11-07", est:0},
     {id:"lphotowx", ph:5, t:"TODAY before you fly: move or cancel the Lisbon photoshoot (rain Wed 11 AM to 2 PM)", n:"Forecast Nov 9: 100 percent rain Wed 11 AM to 2 PM, easing after 3 PM. WhatsApp the photographer (+351 912 237 740) to move to Wed 4:00 PM. If not possible, cancel in GetYourGuide before Tue 11:45 AM Lisbon time (5:45 AM Houston) for the $60.51 refund. Tomorrow at 11:45 AM you will be in passport control.", by:"2026-11-09", est:0},
     {id:"bus", ph:6, t:"Tue Nov 17 evening: buy Tootbus and Seine cruise tickets online for Wed Nov 18", n:"Tootbus Paris 1-day, 2 adults + 1 child, about 94 euros. Vedettes du Pont Neuf 4:00 PM cruise, 15 euros adult, 7 euros child online. Check the weather first.", by:"2026-11-17", est:0, u:"https://www.tootbus.com/en/paris/home", ul:"Tootbus Paris"},
-    {id:"sat_aq", ph:5, t:"TODAY Sat 5:00 PM: Acuario de Sevilla", n:"Pay at the door or on acuariosevilla.es: 18 euros adult, 13 euros child (4 to 14). <b>Last entry 6 PM.</b> Taxi about 10 min to Muelle de las Delicias.", by:"2026-11-14", est:55, u:"https://www.acuariosevilla.es/", ul:"acuariosevilla.es"},
+    {id:"sat_aq", ph:5, t:"TODAY Sat 5:00 PM: tuk tuk tour, 1 hour", n:"Private tuk tuk for up to 4. Book online (Musement, from about 79 dollars, meets at SABA Parking Plaza de Armas) or hire one on the spot by the Cathedral or Plaza de Espana and agree the price first. Ask for a booster seat.", by:"2026-11-14", est:90, u:"https://www.musement.com/us/seville/seville-1-hour-tuk-tuk-discovery-tour-with-local-guide-514888/", ul:"Book tuk tuk"},
     {id:"sat_photo", ph:5, t:"TONIGHT: book the Sunday 9:30 AM photoshoot, Plaza de Espana", n:"Smiler Premium, 75 euros, 25 edited photos (Plaza de Espana + Maria Luisa Park), delivered within 48 hours. You enter the card.", by:"2026-11-14", est:85, u:"https://smiler.rezdy.com/543553/seville-professional-photoshoot-at-plaza-de-espa-a-premium?lang=pt", ul:"Book photoshoot"},
     {id:"sat_alc", ph:5, t:"TONIGHT: book the Real Alcazar for Sunday about 4:00 PM", n:"Timed ticket on the official site: 15.50 euros adult, under 13 free. Open to 5 PM; last entry about 4:30 PM. Right after the 2:30 PM Cathedral.", by:"2026-11-14", est:35, u:"https://www.alcazarsevilla.org/", ul:"alcazarsevilla.org"},
     {id:"sat_svq", ph:5, t:"Mon Nov 16: taxi to SVQ at 2:00 PM", n:"Taxi rank at Puerta de Jerez, fixed fare about 26 to 29 euros, 20 min. AF 1547 departs 4:40 PM. Or ask Iberflat to call one.", by:"2026-11-16", est:0},
