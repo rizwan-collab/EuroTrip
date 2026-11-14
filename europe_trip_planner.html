@@ -679,7 +679,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-14s";
+var BUILD = "2026-11-14t";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -973,8 +973,8 @@ var PLAN = [
 },
 {
   n:6, date:"Sat Nov 14", wd:"Saturday", city:"Granada to Seville", tag:["p-g","Bus day"],
-  sum:"NOW: checked in at Iberflat, lunch at La Mediterranea. Groceries at Spar, rest (tuk tuk moved to Monday morning), FLAMENCO 7:00 PM at El Real in Triana (tickets bought), dinner in Triana after.",
-  warn:"<b>Train option checked Nov 13 and dropped (the 1:12 PM Avant sold out); staying on the bus.</b> <b>Stock up tonight:</b> most supermarkets close or open late on Sunday (DIA and Mercadona closed). Spar (Calle San Fernando 35) and Carrefour Express (Av. Menendez Pelayo 12) are open Sunday. Light showers possible today; Sunday is the dry day. Afternoon plan: 1-hour tuk tuk tour at 5:00 PM, walk-in (aquarium dropped). <b>Renfe cancelled the trains (high-speed line closed); refunded. Replacement BOOKED: ALSA 11:00 Granada bus station to Seville Plaza de Armas, arrives 14:00, ref 1gvje7u, 84.12 euros, Flexible fare (free changes up to 48h before), 1 extra bag.</b> Leave from the <b>Estacion de Autobuses</b>, Av. Juan Pablo II 33 &mdash; <b>not</b> the railway station. Seats: Zaibnish 5, Rizwan 6, Izyan 8. Tickets in Zaibnish&#39;s email. Bring all three passports.",
+  sum:"Done: bus to Seville, Iberflat check-in, lunch at La Mediterranea, groceries, flamenco at El Real in Triana, dinner in Triana. Tomorrow: Alcazar ticket office at 8:00 AM.",
+  warn:"<b>Train option checked Nov 13 and dropped (the 1:12 PM Avant sold out); staying on the bus.</b> <b>Stock up tonight:</b> most supermarkets close or open late on Sunday (DIA and Mercadona closed). Spar (Calle San Fernando 35) and Carrefour Express (Av. Menendez Pelayo 12) are open Sunday. Tuk tuk moved to Monday 10:15 AM (aquarium dropped). <b>Renfe cancelled the trains (high-speed line closed); refunded. Replacement BOOKED: ALSA 11:00 Granada bus station to Seville Plaza de Armas, arrives 14:00, ref 1gvje7u, 84.12 euros, Flexible fare (free changes up to 48h before), 1 extra bag.</b> Leave from the <b>Estacion de Autobuses</b>, Av. Juan Pablo II 33 &mdash; <b>not</b> the railway station. Seats: Zaibnish 5, Rizwan 6, Izyan 8. Tickets in Zaibnish&#39;s email. Bring all three passports.",
   sched:[
     ["08:30","Breakfast at Hotel America, final pack","Unhurried. Bags by the door."],
     ["10:00","Check out","Checkout window is 08:00 to 12:00."],
@@ -1832,8 +1832,10 @@ var BOOKINGS = [
     {id:"sat_aq", ph:5, t:"Mon Nov 16 10:15 AM: tuk tuk tour, 1 hour (walk-in)", n:"Moved from Saturday. Tuk tuks wait by the Cathedral (Av. de la Constitucion / Plaza del Triunfo), covered with blankets if it rains. Agree about 60 to 80 euros for the hour first; ask for Plaza de Espana + Triana and a booster seat. Back by 11:30 AM for the 12:00 checkout.", by:"2026-11-16", est:80, u:"https://www.google.com/maps/search/?api=1&query=Plaza+del+Triunfo+Sevilla", ul:"Tuk tuk stand"},
     {id:"sat_photo", ph:5, t:"Photoshoot: TBD, Sunday or Monday morning", n:"Photographer found. Sunday: 9:00 to 10:30 AM at Plaza de Espana, done by 1:00 PM. Monday: done by 11:30 AM (checkout 12:00, taxi to SVQ 2:00 PM); rain likely Monday. Send Claude the time, spot and price to add.", by:"2026-11-16", est:190},
     {id:"sat_alc", ph:5, t:"Sun 8:00 AM: try the Alcazar ticket office", n:"Puerta del Leon, Patio de Banderas. If tickets, visit before lunch (doors 9:30 AM); if none, skip it. 15.50 euros adult, under 13 free.", by:"2026-11-15", est:35, u:"https://www.alcazarsevilla.org/", ul:"alcazarsevilla.org"},
-    {id:"sat_flam", ph:5, done:1, cost:48, t:"Flamenco El Real tonight 7:00 PM: TICKETS BOUGHT (48 euros)", n:"Calle Pages del Corro 68, Triana, +34 614 016 617. Unassigned seats, arrive by 6:40 PM. Bought at the Visitor Center.", by:"2026-11-14", est:48},
+    {id:"sat_flam", ph:5, done:1, cost:53.86, paid:1, t:"Flamenco El Real tonight 7:00 PM: TICKETS BOUGHT (48 euros)", n:"Calle Pages del Corro 68, Triana, +34 614 016 617. Unassigned seats, arrive by 6:40 PM. Bought at the Visitor Center.", by:"2026-11-14", est:48},
     {id:"sun_boat", ph:5, done:1, t:"River cruise Sun 5:00 PM: TICKETS BOUGHT", n:"Cruceros Torre del Oro, ticket 114953 (Visitor Center, Calle Miguel Manara 4). 20 euros adult, 5 euros child. Boards at the Torre del Oro dock; includes two walking tours.", by:"2026-11-15", est:0},
+    {id:"mon_taxi", ph:5, t:"Mon Nov 16: book a LARGE taxi or Bolt XL for 2:00 PM", n:"1 large suitcase, roller, 3 backpacks and the stroller will not fit a standard taxi boot. Ask Iberflat (+34 955 515 545) to call a taxi grande / monovolumen, or book Bolt XL in the app. Gate-check the stroller with Air France.", by:"2026-11-16", est:35},
+    {id:"wed_pol", ph:5, t:"Wed Nov 18, 5:10 PM: Polene flagship, 69 Rue de Richelieu", n:"Bring Zaibnish's ORIGINAL passport for the tax-free form (over 100.01 euros, same visit, final sale). Thu Nov 19: scan the form at a PABLO kiosk in CDG Terminal 2A before check-in.", by:"2026-11-18", est:0},
     {id:"sat_svq", ph:5, t:"Mon Nov 16: taxi to SVQ at 2:00 PM", n:"Taxi rank at Puerta de Jerez, fixed fare about 26 to 29 euros, 20 min. AF 1547 departs 4:40 PM. Or ask Iberflat to call one.", by:"2026-11-16", est:0},
     {id:"ibl", ph:5, t:"AT CHECK-IN TODAY: confirm late checkout or bag hold for Mon Nov 16 with Iberflat",
    n:"Call or message Iberflat (<b>+34 955 515 541</b>), or use the guest portal, about Nov 10. Ask the housekeeper to hold your bags on <b>Mon Nov 16 from 12:00 (check-out) to about 13:45</b>, before the 14:00 taxi to the airport. They have no luggage room, so it must be arranged ahead.", by:"2026-11-10", est:0},
@@ -1936,7 +1938,7 @@ function satBanner(){
    + '<div class="stat"><div class="st-l">Rooms booked</div><div class="st-v">4 of 4</div><div class="st-n">Lisbon, Granada, Seville, Paris</div></div>'
    + '<div class="stat"><div class="st-l">Flights</div><div class="st-v">All paid</div><div class="st-n">Four legs, bags included</div></div>'
    + '<div class="stat"><div class="st-l">Committed</div><div class="st-v">$'+s.committed.toLocaleString()+'</div><div class="st-n">Across '+s.paidCount+' paid items</div></div>'
-   + '<div class="stat"><div class="st-l">Still open</div><div class="st-v">4 items</div><div class="st-n">Alcazar (8 AM ticket office), photoshoot (Sun or Mon), Mon checkout bags, fast train (Paris)</div></div>'
+   + '<div class="stat"><div class="st-l">Still open</div><div class="st-v">6 items</div><div class="st-n">Alcazar (Sun 8 AM ticket office), photoshoot (Sun or Mon), Mon bag hold + large taxi to SVQ, Polene (Wed, bring passport), fast train (Paris)</div></div>'
    + '</div>'
    + '<div class="note n-g" style="margin-bottom:14px"><span class="n-t">Passports &amp; insurance documents (private)</span>'   + 'All three passport scans and the Tin Leg policy documents are in a <b>private Google Drive folder</b> that only opens when you are signed in as rizwan@swagprint.com. '   + '<a class="btn btn-p" href="https://drive.google.com/drive/folders/1DOcW20QwsuDA3ThgDWjzwOOnXIh940XN" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px">Open passports &amp; insurance folder</a>'   + '<br><span style="font-size:12px">Share it with Zaibnish from Drive. Also keep offline copies on both phones for no-signal moments.</span></div>'
    + '<div class="note n-w" style="margin-bottom:14px"><span class="n-t">Why no confirmation numbers on this page</span>'   + 'This planner is published on a <b>public</b> GitHub Pages URL. A Booking.com reference plus its PIN is enough for anyone to view, change or cancel a reservation, so <b>none are stored here</b>. They live in your email and in the confirmations folder alongside the PDFs. Property names, addresses and public phone numbers are fine to keep.</div>'
@@ -3083,7 +3085,7 @@ function afterBlock(){
 var PAID = [
   ["Flights and bags", [["United IAH-IAD-LIS + $90 bag",1479],["American CDG-DFW incl. $87 bag",1616.49],["TAP Lisbon-Malaga",538.32],["Air France Seville-Paris",369.80]]],
   ["Places to stay, 9 nights", [["Lisbon, Residentas (2 nights)",582],["Granada, Hotel America (2), 428 euros charged Nov 11",481.63],["Seville, Iberflat (2), charged Nov 11 incl. 100 euro deposit",432.12],["Paris, Nestay (3)",1378]]],
-  ["Tickets and tours", [["Disneyland, 1 day / 2 parks",348.74],["Eiffel Tower",70.89],["Oceanario (closed by the storm, 69.75 euros refund requested)",0],["Lisbon photoshoot (cancelled, $60.51 refund pending)",0],["Alhambra",48.69],["Paris photoshoot",39.21],["Seville Cathedral",32.63]]],
+  ["Tickets and tours", [["Disneyland, 1 day / 2 parks",348.74],["Eiffel Tower",70.89],["Oceanario (closed by the storm, 69.75 euros refund requested)",0],["Lisbon photoshoot (cancelled, $60.51 refund pending)",0],["Alhambra",48.69],["Paris photoshoot",39.21],["Seville Cathedral",32.63],["Flamenco El Real, Seville (48 euros)",53.86]]],
   ["Coaches", [["ALSA Granada to Seville (84.12 euros, card $94.52)",94.52],["ALSA Malaga Airport to Granada (43.27 euros)",50]]],
   ["Airport taxis (Booking.com)", [["CDG to Nestay, Nov 16",68.66],["Nestay to CDG, Nov 19",62.25],["Apartment to Lisbon airport, Nov 12",16.97],["Lisbon airport to apartment, Nov 10",15.42]]],
   ["Travel insurance", [["Tin Leg Gold, all three",77]]],
