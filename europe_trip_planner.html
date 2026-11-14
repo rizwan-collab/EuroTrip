@@ -668,7 +668,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-13a";
+var BUILD = "2026-11-14a";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -973,7 +973,7 @@ var PLAN = [
     ["15:00","Check in at Iberflat San Gregorio","Check-in opens 15:00. You arrive almost exactly on time, no waiting with bags."],
     ["15:45","Late lunch in Santa Cruz","Normal Seville lunch hour. Keep it relaxed."],
     ["17:00","Walk Santa Cruz","Orange trees, tiled lanes, the Giralda from below. No tickets, no plan."],
-    ["17:45","Plaza de Espana","Ten minutes on foot. He can run. Rowing boats on the moat until dusk, sunset about 18:15."],
+    ["17:45","Plaza de Espana at golden hour (if dry)","Ten minutes on foot. Sunset about 6:15 PM. Light showers possible today; if wet, save it for Sunday morning."],
     ["19:00","Back, rest",""],
     ["20:30","Tapas dinner","Seville eats at 21:00. Going out at 20:30 gets you a table."]
   ],
@@ -998,17 +998,18 @@ var PLAN = [
 },
 {
   n:7, date:"Sun Nov 15", wd:"Sunday", city:"Seville", tag:["p-g","Full day"],
-  sum:"Plaza de Espana while it is empty, the Cathedral and Giralda when they open to visitors, street flamenco if it is on. Alcazar skipped, the Alhambra covers it.",
+  sum:"Best-weather day in Seville (dry, 12 to 21 C). Photoshoot and boats at Plaza de Espana in the morning, Cathedral at 2:30 PM (booked), Alcazar gardens after.",
+  warn:"<b>To book:</b> Plaza de Espana photoshoot, 9:30 AM Sunday. Best value: Smiler Premium, 75 euros, 25 edited photos, Plaza de Espana + Maria Luisa Park, delivered within 48 hours (smiler.rezdy.com). Alcazar timed ticket for about 4:00 PM on alcazarsevilla.org (15.50 euros adult, under 13 free). Fast train to Cordoba skipped: not confirmed running, and it would cost the morning; Izyan's fast train moves to Paris.",
   sched:[
-    ["08:30","Breakfast","Churros con chocolate. He will remember this more than the palace."],
-    ["09:30","Plaza de Espana and Maria Luisa park","Ten minutes on foot. Near empty on a Sunday morning. Rowing boats on the moat, tiled bridges, room to sprint. The single best place in Seville for a five-year-old. <b>Street flamenco:</b> dancers and guitarists often perform under the arches here. Free, tip 2 to 5 euros if he watches. Not scheduled, so catch it if it is on."],
-    ["11:30","Wander Santa Cruz","Narrow lanes, no agenda, ice cream."],
-    ["13:00","Long lunch","Sit down. The Spanish long lunch is what buys you the afternoon."],
-    ["14:30","Cathedral and Giralda - booked","<b>Booked, 14:30, entry at the Puerta del Lagarto by the Giralda.</b> Be there by 14:20: no entry outside your time and no refund if late. All three passports required, they match the ticket. Shoulders covered, no caps or hats, no food inside. The visit starts with the Giralda climb, then the Cathedral, about 75 minutes. Ticket also covers the Church of El Salvador. The tower is ramps, not stairs, so he walks up himself. Forty-five minutes. Buskers, sometimes flamenco, play in Plaza Virgen de los Reyes outside."],
-    ["16:00","Back, rest","Non-negotiable if you want the evening to work."],
-    ["19:00","Optional: street flamenco in Triana","No ticketed show. Walk across the Puente de Triana to Calle Betis by the river, where locals and buskers often play in the early evening. If nothing is on, it is still the nicest walk in Seville at dusk. Free."],
-    ["20:30","Tapas dinner","Late but short. Last Spanish night."],
-    ["22:00","Pack for Paris","Flight is mid-afternoon tomorrow, so this is unhurried."]
+    ["09:00","Churros","Churros con chocolate near the apartment."],
+    ["09:30","PHOTOSHOOT, Plaza de Espana (to book)","Smiler Premium, 75 euros, 25 photos. Quiet square and soft light at this hour. Meet at Plaza de Espana, 41013; check the booking for the exact spot."],
+    ["10:15","Rowing boat on the canal + Maria Luisa Park","Boats on the Plaza de Espana moat, then the park; the duck and dove island (Isleta de los Patos) is the hit for Izyan."],
+    ["11:30","Optional: horse carriage ride","From the park toward the Cathedral, about 50 euros; agree the price before you get in."],
+    ["13:00","Long lunch","Near the Cathedral."],
+    ["14:30","Cathedral and Giralda - booked","<b>Booked, 14:30, entry at the Puerta del Lagarto by the Giralda.</b> Be there by 14:20. About an hour; the Giralda ramps are easy for Izyan."],
+    ["16:00","Real Alcazar gardens (to book)","Peacocks, fountains and a hedge maze, 5 min from the Cathedral. 15.50 euros adult, under 13 free; book a timed ticket on alcazarsevilla.org. Open to 5 PM, last entry about 4:30."],
+    ["18:00","Sunset walk to Triana","Across the Puente de Triana to Calle Betis by the river."],
+    ["19:30","Early dinner, then pack","Last Spanish night. Flight to Paris is 4:40 PM tomorrow."]
   ],
   activities:{
     label:"Main sight",
@@ -3020,6 +3021,7 @@ var AFTER = [
   {id:"ibdeposit", t:"Seville deposit: Iberflat 100 euros back", by:"2026-11-23", n:"Damage deposit taken on arrival Nov 14, refunded within 7 days. Chase Iberflat (+34 955 515 541) if it is still held after Nov 23."},
   {id:"holds", t:"Card holds released (Nestay, hotels, car services)", by:"2026-11-30", n:"Check for any pre-authorisations still sitting on the Chase card, and whether Nestay charged Paris city tax."},
   {id:"oceanrefund", t:"REFUND: Oceanario, 69.75 euros / about $78 (closed by the storm)", by:"2026-11-25", n:"Closed Wed Nov 11 for Storm Charles. Booking 110965481, in Zaibnish's name, paid on the card. Email info@oceanario.pt asking for a refund to the original card; chase it if nothing by Nov 25. If they refuse, dispute it with Chase as a service not provided."},
+  {id:"svqphoto", t:"Seville photoshoot (if booked): photos received", by:"2026-11-20", n:"Smiler, Plaza de Espana, Sun Nov 15. Photos come by link within 48 hours."},
   {id:"lphotorefund", t:"REFUND: Lisbon photoshoot, $60.51 (GetYourGuide, pending on the card)", by:"2026-11-25", n:"Cancelled. $60.51 GetYourGuide credit pending since Nov 10; confirm it posts to the Chase Sapphire."},
   {id:"pphotos", t:"Paris photoshoot: 5 edited photos received", by:"2026-11-28", n:"GetYourGuide, Nov 18. Message the photographer on WhatsApp if nothing arrives within about a week."},
   {id:"statement", t:"Match the Chase statement to the budget", by:"2026-12-05", n:"Look for duplicates (check the Alhambra 43.27 euro charge) and anything unexpected. Dispute anything wrong with Chase."},
