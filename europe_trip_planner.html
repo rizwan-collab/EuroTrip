@@ -161,6 +161,17 @@ tbody tr:last-child td{border-bottom:0}
 .tl-t{font-size:11.5px;font-weight:600;color:var(--brand);min-width:70px;
   font-variant-numeric:tabular-nums;min-width:44px;flex-shrink:0}
 .tl-w{font-size:13px;color:var(--ink);line-height:1.5}
+.go{margin-top:6px;font-size:12.5px}
+.go summary{cursor:pointer;color:var(--brand);font-weight:600;list-style:none}
+.go summary::-webkit-details-marker{display:none}
+.go summary:before{content:"\25B8  "}.go[open] summary:before{content:"\25BE  "}
+.go-a{margin:6px 0;line-height:1.4}.go-f{color:var(--mute);font-size:11.5px}
+.go-g{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.go-c{border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:var(--line2)}
+.go-l{font-size:10.5px;text-transform:uppercase;color:var(--mute);letter-spacing:.04em}
+.go-v{font-weight:600;margin:2px 0}.go-c a{font-size:11.5px}
+.go-x{color:var(--faint);font-size:10.5px;margin-top:4px}
+@media(max-width:480px){.go-g{grid-template-columns:1fr}}
 .tl-n{display:block;font-size:11.5px;color:var(--mute);
   margin-top:2px;line-height:1.55;font-weight:400}
 
@@ -668,7 +679,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-14p";
+var BUILD = "2026-11-14q";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -972,12 +983,12 @@ var PLAN = [
     ["14:00","Arrive Seville, Plaza de Armas bus station","Taxi rank outside, about 5 to 10 minutes and 8 to 10 euros to Calle San Gregorio 7. Coffee or a quick bite nearby if you are early for the 3:00 PM check-in. Have the Iberflat booking (ref 82035, Apt 09, 2nd floor) open."],
     ["15:00","Check in at Iberflat San Gregorio","Check-in opens 15:00. You arrive almost exactly on time, no waiting with bags."],
     ["15:30","Late lunch at La Mediterranea (DONE)","Calle San Fernando 23. Ask sin cerdo."],
-    ["16:30","Groceries at Spar, a few doors down","<a href=\"https://www.google.com/maps/search/?api=1&query=Spar+Calle+San+Fernando+35+Sevilla\" target=\"_blank\">Calle San Fernando 35</a>, open to 10 PM (Sunday too). Breakfast, water and snacks for Sunday and Monday. Cheaper option: DIA, Av. Paseo de Cristina 3 (6 min, to 10 PM, closed Sunday). Drop bags at the apartment. <b>Getting there:</b> walk 2 min from La Mediterranea; 3 min back to the apartment."],
-    ["16:45","Rest at the apartment","Tuk tuk moved to Monday morning."],
-    ["18:15","Taxi to Triana (10 min, about 8 euros)","To <a href=\"https://www.google.com/maps/search/?api=1&query=Flamenco+El+Real+Calle+Pages+del+Corro+68+Sevilla\" target=\"_blank\">Calle Pages del Corro 68</a>. Taxi rank at Puerta de Jerez, or Uber/Bolt. Or walk 20 min over the Triana bridge. Snack and bathroom for Izyan before the show. <b>Getting there:</b> taxi 10 min / walk 20 to 25 min (1.8 km) from the apartment."],
-    ["19:00","FLAMENCO EL REAL - TICKETS BOUGHT (48 euros)","Calle Pages del Corro 68, Triana. +34 614 016 617. Name: Ali; 2 adults + 1 child. <b>Unassigned seats: arrive by 6:40 PM</b> for a front row. About an hour. Non-refundable within 72h."],
-    ["20:15","Dinner in Triana, then taxi home","You are already there: Calle San Jacinto and Calle Betis are lined with places. Ask sin cerdo. Taxi back about 10 min. Bed early: Alcazar ticket office at 8:00 AM. <b>Getting there:</b> walk 3 to 5 min from El Real to Calle San Jacinto or Calle Betis; home by taxi 10 min (about 8 euros) or walk 25 min."],
-    ["21:30","Sunday prep","Alcazar: try the ticket office at 8:00 AM; if none, skip it. Photoshoot: TBD, Sunday morning or Monday morning. Boat cruise Sunday 5:00 PM (tickets bought)."]
+    ["16:30", "Groceries at Spar", "Breakfast, water, snacks for Sun and Mon. Open to 10 PM, Sunday too.", {"a": "Spar, Calle San Fernando 35, 41004 Sevilla", "q": "Spar Calle San Fernando 35 Sevilla", "f": "La Mediterranea", "w": "2 min", "d": "-", "tx": "-", "b": "-"}],
+    ["16:45", "Rest at the apartment", "", {"a": "Calle San Gregorio 7, 41004 Sevilla", "q": "Calle San Gregorio 7, 41004 Sevilla", "f": "Spar", "w": "3 min", "d": "-", "tx": "-", "b": "-"}],
+    ["18:15", "Leave for the flamenco", "Arrive by 6:40 PM; seats are unassigned.", {"a": "Flamenco El Real, Calle Pages del Corro 68, 41010 Sevilla", "q": "Flamenco El Real Calle Pages del Corro 68 Sevilla", "f": "the apartment", "w": "22 min (1.8 km)", "d": "10 min", "tx": "7 to 9 euros", "b": "6 to 10 euros"}],
+    ["19:00", "FLAMENCO EL REAL - TICKETS BOUGHT (48 euros)", "Name: Ali. 2 adults + 1 child. About 1 hour. +34 614 016 617.", {"a": "Flamenco El Real, Calle Pages del Corro 68, 41010 Sevilla", "q": "Flamenco El Real Calle Pages del Corro 68 Sevilla", "f": "the apartment", "w": "22 min", "d": "10 min", "tx": "7 to 9 euros", "b": "6 to 10 euros"}],
+    ["20:15", "Dinner in Triana", "Calle San Jacinto or Calle Betis. Ask sin cerdo.", {"a": "Calle San Jacinto, 41010 Sevilla", "q": "Calle San Jacinto Sevilla", "f": "El Real", "w": "3 to 5 min", "d": "-", "tx": "-", "b": "-"}],
+    ["21:30", "Home", "Alcazar ticket office at 8:00 AM tomorrow.", {"a": "Calle San Gregorio 7, 41004 Sevilla", "q": "Calle San Gregorio 7, 41004 Sevilla", "f": "Triana", "w": "25 min (2 km)", "d": "10 min", "tx": "7 to 9 euros", "b": "6 to 10 euros"}]
   ],
   transport:{
     leg:"Granada to Seville", flight:false, note:"No flight on this route. Trains cancelled by Renfe (refunded); booked the direct ALSA bus instead.",
@@ -1000,24 +1011,22 @@ var PLAN = [
 },
 {
   n:7, date:"Sun Nov 15", wd:"Sunday", city:"Seville", tag:["p-g","Full day"],
-  sum:"Best-weather day (dry, 12 to 21 C). 8:00 AM try for Alcazar tickets; Plaza de Espana; Santa Cruz walking tour 11:30 AM; Cathedral 2:30 PM (booked); Casa de Pilatos; river cruise 5:00 PM (booked); El Salvador; dinner at Plaza de la Alfalfa.",
-  warn:"<b>Status:</b> Cathedral 2:30 PM BOOKED. River cruise 5:00 PM BOOKED (Cruceros Torre del Oro, ticket 114953, bought at the Visitor Center, Calle Miguel Manara 4; 20 euros adult, 5 euros child; includes two free walking tours, details on the back). <b>Santa Cruz walking tour 11:30 AM</b> (free with the cruise ticket): <b>meet at the Postigo del Carbon</b> (Calle Santander, by the Torre de la Plata, near the Torre del Oro; No. 4 on the ticket map). Plaza de Espana must finish by 11:00 to make it back. <b>Afternoon order matters:</b> Cathedral, then Casa de Pilatos (closes 6 PM), cruise at 5, then El Salvador (Sunday visits run into the evening, about 3:00 to 7:30 PM; confirm on the ticket). Dinner near El Salvador. <b>Alcazar:</b> online sold out; you will try the ticket office at 8:00 AM, and if there is nothing, it is out. Note: doors open 9:30 AM in winter, so ask at the office and check alcazarsevilla.org on your phone at the same time for released slots. <b>Photoshoot:</b> TBD, Sunday morning or Monday morning.",
+  sum:"Alcazar try 8:00 AM; Plaza de Espana; Santa Cruz walking tour 11:30 AM; Cathedral 2:30 PM; El Salvador; river cruise 5:00 PM; dinner in Triana.",
+  warn:"<b>Booked:</b> Cathedral + El Salvador (2:30 PM, Puerta del Lagarto), river cruise 5:00 PM (ticket 114953, includes the 11:30 AM Santa Cruz walking tour from the Postigo del Carbon). <b>Not booked:</b> Alcazar (8:00 AM ticket office try), Casa de Pilatos (filler), photoshoot (TBD).",
   sched:[
-    ["08:00","Alcazar ticket office (Puerta del Leon, Patio de Banderas)","Ask for same-day tickets for 3 (under 13 free). <b>If YES:</b> visit 9:30 to 11:10 AM, then walk 8 to 10 min to the Postigo del Carbon for the 11:30 tour. Plaza de Espana moves to Monday (tuk tuk stops there). <b>If NO:</b> churros, then Plaza de Espana below. <b>Getting there:</b> walk 4 min from the apartment."],
-    ["08:45","Churros (if no Alcazar)","Churros con chocolate near the apartment. <b>Getting there:</b> walk 3 to 5 min."],
-    ["09:15","Walk to Plaza de Espana","Through the Jardines de Murillo and past the Tobacco Factory. Near empty on a Sunday morning; best light. <b>Getting there:</b> walk 15 min (1.2 km) / taxi 5 min."],
-    ["09:30","Plaza de Espana + rowing boat, quick duck island","Tiled province alcoves, bridges, a rowing boat on the canal, then the Isleta de los Patos in Maria Luisa Park (5 min walk). Photoshoot here if you book one for Sunday. <b>Leave by 11:00.</b>"],
-    ["11:00","To the Postigo del Carbon (tour meeting point)","<b>Getting there:</b> walk 15 to 18 min straight up Paseo de las Delicias / Paseo de Cristobal Colon past the Torre del Oro, or taxi 5 to 7 min. Horse carriage 15 min (about 50 euros, agree first)."],
-    ["11:30","SANTA CRUZ WALKING TOUR (free with the cruise ticket)","<b>Meet at the Postigo del Carbon</b>, the old city gate on <a href=\"https://www.google.com/maps/search/?api=1&query=Postigo+del+Carbon+Sevilla\" target=\"_blank\">Calle Santander</a>, by the Torre de la Plata (No. 4 on the ticket map). Arrive 11:20. The walk leads into Santa Cruz. <b>Getting there:</b> walk 8 min from the apartment, 8 to 10 min from the Alcazar, 2 min from the Torre del Oro."],
-    ["13:00","Lunch near the Cathedral","Sit down and rest before the visit. <b>Getting there:</b> eat within 5 min of the Cathedral."],
-    ["14:20","At the Puerta del Lagarto","By the Giralda. No entry outside your time. <b>Getting there:</b> walk 5 min from the apartment or Santa Cruz."],
-    ["14:30","Cathedral and Giralda - booked","About an hour; the Giralda ramps are easy for Izyan and the view is the reward."],
-    ["15:35","Casa de Pilatos (walk-in)","Plaza de Pilatos 1. Tiled courtyards and gardens; ground floor 12 euros, under 12 free. Open to 6 PM. About 45 minutes. <b>Leave by 4:30 PM.</b> <b>Getting there:</b> walk 12 min from the Cathedral (via Calle Mateos Gago and Calle Aguilas) / taxi 5 min."],
-    ["16:30","Taxi to the Torre del Oro","<b>Getting there:</b> taxi 10 min (Plaza de Pilatos has a rank; or Uber/Bolt) / walk 22 min (1.6 km) is too tight. Be at the dock by 4:45."],
-    ["16:45","At the Torre del Oro dock","Paseo de Cristobal Colon, by the tower. Bring the paper tickets (No. 114953)."],
-    ["17:00","RIVER CRUISE - BOOKED (Cruceros Torre del Oro)","1 hour on the Guadalquivir; sunset about 6:15 PM from the water. Upper deck for views, a jacket for the breeze."],
-    ["18:05","To El Salvador (included in the Cathedral ticket)","Plaza del Salvador. Show the same Cathedral ticket. About 30 minutes. <b>Getting there:</b> taxi 7 min / walk 18 to 20 min (1.3 km) up Calle Santander, Av. de la Constitucion and Calle Francos."],
-    ["19:00","Dinner at Plaza del Salvador / Plaza de la Alfalfa, then pack","Lively squares 2 to 5 min from El Salvador. Ask sin cerdo. <b>Getting there:</b> home by walk 10 to 12 min / taxi 5 min. Last Spanish night; flight to Paris 4:40 PM tomorrow."]
+    ["08:00", "Alcazar ticket office", "Ask for same-day tickets for 3 (under 13 free). Yes: visit 9:30 to 11:10 AM, then the tour. No: churros and Plaza de Espana.", {"a": "Puerta del Leon, Patio de Banderas, 41004 Sevilla", "q": "Puerta del Leon Real Alcazar Sevilla", "f": "the apartment", "w": "4 min", "d": "-", "tx": "-", "b": "-"}],
+    ["08:45", "Churros (if no Alcazar)", "", {"a": "Near the apartment", "q": "churros near Calle San Gregorio Sevilla", "f": "the apartment", "w": "3 to 5 min", "d": "-", "tx": "-", "b": "-"}],
+    ["09:30", "Plaza de Espana + rowing boat + duck island", "Leave by 11:00.", {"a": "Plaza de Espana, Av. de Isabel la Catolica, 41013 Sevilla", "q": "Plaza de Espana Sevilla", "f": "the apartment", "w": "15 min (1.2 km)", "d": "5 min", "tx": "5 to 7 euros", "b": "5 to 8 euros"}],
+    ["11:20", "SANTA CRUZ WALKING TOUR 11:30 (free with the cruise ticket)", "Meet at the Postigo del Carbon, by the Torre de la Plata (No. 4 on the ticket map).", {"a": "Postigo del Carbon, Calle Santander, 41001 Sevilla", "q": "Postigo del Carbon Sevilla", "f": "Plaza de Espana (8 min walk from the apartment; 8 to 10 min from the Alcazar)", "w": "15 to 18 min", "d": "5 to 7 min", "tx": "5 to 7 euros", "b": "5 to 8 euros"}],
+    ["13:00", "Lunch near the Cathedral", "Ask sin cerdo.", {"a": "Around the Cathedral", "q": "restaurants near Seville Cathedral", "f": "Santa Cruz", "w": "5 min", "d": "-", "tx": "-", "b": "-"}],
+    ["14:20", "At the Puerta del Lagarto", "Entrance for online tickets, under the Giralda off the Patio de los Naranjos. Sunday visits 2:30 to 7 PM. Bring all three passports; shoulders covered.", {"a": "Puerta del Lagarto, Calle Cardenal Amigo Vallejo (Calle Alemanes), by the Giralda", "q": "Puerta del Lagarto Catedral de Sevilla", "f": "the apartment", "w": "5 min", "d": "-", "tx": "-", "b": "-"}],
+    ["14:30", "CATHEDRAL AND GIRALDA - BOOKED", "About 1 hour."],
+    ["15:40", "EL SALVADOR (included in the Cathedral ticket)", "Show the Cathedral ticket. About 30 minutes.", {"a": "Plaza del Salvador 3, 41004 Sevilla", "q": "Iglesia del Salvador Sevilla", "f": "the Cathedral", "w": "8 to 10 min", "d": "5 min", "tx": "5 to 7 euros", "b": "5 to 8 euros"}],
+    ["16:15", "Casa de Pilatos (filler, only if time)", "Not before the 5:00 PM cruise; best on Monday 9:00 AM instead.", {"a": "Casa de Pilatos, Plaza de Pilatos 1, 41003 Sevilla", "q": "Casa de Pilatos Sevilla", "f": "El Salvador", "w": "8 min", "d": "5 min", "tx": "5 to 7 euros", "b": "5 to 8 euros"}],
+    ["16:25", "Leave El Salvador for the Torre del Oro", "Be at the dock by 4:45 PM with ticket No. 114953.", {"a": "Torre del Oro, Paseo de Cristobal Colon s/n, 41001 Sevilla", "q": "Torre del Oro Sevilla", "f": "El Salvador", "w": "20 min (1.4 km)", "d": "7 to 10 min", "tx": "6 to 8 euros", "b": "5 to 9 euros"}],
+    ["17:00", "RIVER CRUISE - BOOKED (Cruceros Torre del Oro)", "1 hour. Sunset about 6:15 PM."],
+    ["18:15", "Dinner in Triana (Calle Betis), then pack", "Ask sin cerdo. Flight to Paris 4:40 PM tomorrow.", {"a": "Calle Betis, 41010 Sevilla", "q": "Calle Betis Sevilla", "f": "the Torre del Oro", "w": "7 to 10 min", "d": "-", "tx": "-", "b": "-"}],
+    ["20:30", "Home", "", {"a": "Calle San Gregorio 7, 41004 Sevilla", "q": "Calle San Gregorio 7, 41004 Sevilla", "f": "Calle Betis", "w": "20 min", "d": "8 min", "tx": "6 to 8 euros", "b": "5 to 9 euros"}]
   ],
   activities:{
     label:"Main sight",
@@ -1055,12 +1064,12 @@ var PLAN = [
   sum:"A direct flight from the city you are already in, booked and paid. This used to be the worst day of the trip; reversing Spain removed it.",
   warn:"This is what the reversed order buys you. The old plan had a 08:00 coach to Malaga the morning after the Alhambra, then a flight you could not miss. Now it is a twenty-minute taxi and a direct flight, with a slow morning first.",
   sched:[
-    ["09:00","Slow breakfast, pack","Casa de Pilatos moved to Sunday."],
-    ["10:15","TUK TUK TOUR, 1 hour (walk-in, moved from Saturday)","From the Cathedral (Plaza del Triunfo), 5 min walk. Agree about 60 to 80 euros first; Plaza de Espana, Maria Luisa Park, Triana, Torre del Oro. Covered with blankets if it rains. Ask for a booster for Izyan. Back by 11:30 AM. <b>Getting there:</b> walk 5 min from the apartment to Plaza del Triunfo. Back to the apartment 5 min."],
-    ["11:45","Check out, bags to the housekeeper","Check-out is by 12:00. Iberflat has no luggage room; the housekeeper holds bags only if you arranged it a few days ahead (+34 955 515 541)."],
-    ["12:30","Lunch in Seville","Better than anything you will get at the airport. <b>Getting there:</b> stay within 5 to 10 min walk of the apartment."],
-    ["13:45","Collect the bags","Back at Calle San Gregorio 7 for the suitcase, roller and backpacks."],
-    ["14:00","Taxi or Uber/Bolt to SVQ","Official taxi from Puerta de Jerez rank, fixed 26 to 29 euros, about 20 minutes. Collect bags from the housekeeper first. <b>Getting there:</b> taxi 20 to 25 min (allow 30 if traffic); Puerta de Jerez rank is 3 min walk."],
+    ["09:00", "Casa de Pilatos (filler, optional)", "Opens 9:00 AM. 12 euros adult, under 12 free. Leave by 10:00. Skip if the photoshoot is Monday.", {"a": "Casa de Pilatos, Plaza de Pilatos 1, 41003 Sevilla", "q": "Casa de Pilatos Sevilla", "f": "the apartment", "w": "12 to 15 min (1.1 km)", "d": "7 min", "tx": "5 to 7 euros", "b": "5 to 8 euros"}],
+    ["10:15", "TUK TUK TOUR, 1 hour (walk-in)", "Agree 60 to 80 euros first. Ask for a booster seat. Back by 11:30.", {"a": "Plaza del Triunfo, 41004 Sevilla", "q": "Plaza del Triunfo Sevilla", "f": "the apartment", "w": "5 min", "d": "-", "tx": "-", "b": "-"}],
+    ["11:45", "Check out, bags to the housekeeper", "Checkout by 12:00. Iberflat +34 955 515 545.", {"a": "Calle San Gregorio 7, 41004 Sevilla", "q": "Calle San Gregorio 7, 41004 Sevilla", "f": "Plaza del Triunfo", "w": "5 min", "d": "-", "tx": "-", "b": "-"}],
+    ["12:30", "Lunch near the apartment", ""],
+    ["13:45", "Collect the bags", "", {"a": "Calle San Gregorio 7, 41004 Sevilla", "q": "Calle San Gregorio 7, 41004 Sevilla", "f": "the apartment", "w": "-", "d": "-", "tx": "-", "b": "-"}],
+    ["14:00", "Taxi to SVQ airport", "Air France AF 1547 departs 4:40 PM.", {"a": "Seville Airport (SVQ), A-4, 41020 Sevilla", "q": "Aeropuerto de Sevilla", "f": "the apartment (taxi rank at Puerta de Jerez, 3 min walk)", "w": "-", "d": "20 to 25 min", "tx": "Fixed fare about 26 to 29 euros", "b": "20 to 30 euros"}],
     ["14:40","Check in and security","Small airport, quick to move through."],
     ["16:40","Depart Seville","Air France, booked and paid. Direct to CDG, 2h35, and the fare carries your checked bag."],
     ["19:15","Land CDG, Terminal 2G","Same time zone as Spain, so no clock change."],
@@ -2882,7 +2891,7 @@ function renderItinerary(){
       var k = actKey(D.n, s), dn = actDone(k);
       return '<div class="tl'+(dn?' tl-done':'')+'" id="act-'+k+'"><span class="tl-t">'+s[0]+'</span>'
         + '<span class="tl-w">'+(isBooked?'<b>'+s[1]+'</b>':s[1])
-        + (s[2]?'<span class="tl-n">'+s[2]+'</span>':'')+'</span>'
+        + (s[2]?'<span class="tl-n">'+s[2]+'</span>':'') + goBlock(s[3]) +'</span>'
         + '<button class="tl-ck" aria-label="Mark done" title="Mark done" onclick="actToggle(\''+k+'\')">&#10003;</button></div>';
     }).join('');
     return '<div class="card blk daycard" id="day-'+D.n+'" data-dt="'+D.date+'">'
@@ -2997,6 +3006,18 @@ function renderBooking(){
 }
 
 /* ---------- tick off activities as you go (saved on this phone) ---------- */
+function goBlock(g){
+  if(!g||typeof g!=='object') return '';
+  var e=encodeURIComponent(g.q||g.a), u='https://www.google.com/maps/dir/?api=1&destination='+e;
+  var c=function(l,v,x){return (v&&v!=='-')?'<div class="go-c"><div class="go-l">'+l+'</div><div class="go-v">'+v+'</div>'+(x||'')+'</div>':'';};
+  return '<details class="go"><summary>How to get there</summary>'
+    + '<div class="go-a"><b>'+g.a+'</b><br><span class="go-f">From '+(g.f||'the apartment')+'</span></div>'
+    + '<div class="go-g">'
+    + c('Walk',g.w,'<a href="'+u+'&travelmode=walking" target="_blank">Walking route</a>')
+    + c('Taxi',g.d+(g.tx&&g.tx!=='-'?' &middot; '+g.tx:''),'<a href="'+u+'&travelmode=driving" target="_blank">Driving route</a>')
+    + c('Bolt',g.b,'<a href="https://bolt.eu/" target="_blank">Open Bolt</a>')
+    + '</div><div class="go-x">Fares are estimates. Taxi rank: Puerta de Jerez. Bolt prices rise with demand.</div></details>';
+}
 function actKey(n, s){ var str = s[0]+'|'+String(s[1]).replace(/<[^>]+>/g,'').slice(0,40), h = 0; for(var i=0;i<str.length;i++){ h = (h*31 + str.charCodeAt(i)) | 0; } return n+'_'+(h>>>0).toString(36); }
 function actDone(k){ try { return localStorage.getItem('eu26_act_'+k) === '1'; } catch(e){ return false; } }
 function actToggle(k){
