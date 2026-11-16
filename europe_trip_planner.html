@@ -679,7 +679,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-16b";
+var BUILD = "2026-11-16c";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -3056,7 +3056,7 @@ function decideBlock(){
 /* ---------- After the trip: refunds, deposits, claims ---------- */
 var AFTER = [
   {id:"trainrefund", t:"REFUND: Trainline 2FKGY4, Granada to Seville (confirm both legs)", by:"2026-11-30", n:"Check the card for about $181.76 back, both legs and all three tickets. If it has not landed by Nov 30, chase Trainline. If they will not pay, open a Chase dispute (chargeback): Renfe cancelled the train (email of Nov 9)."},
-  {id:"ibdeposit", t:"RECEIVED: Iberflat 100 euro deposit refunded (about $112)", by:"2026-11-23", n:"Confirmed back by Nov 16. Tick this off."},
+  {id:"ibdeposit", t:"RECEIVED: Iberflat 100 euro deposit, $110.19 credit (Arrendamientos Apari)", by:"2026-11-23", n:"Pending credit on the Chase card Nov 16. Tick this off once it posts."},
   {id:"holds", t:"Card holds released (Nestay, hotels, car services)", by:"2026-11-30", n:"Check for any pre-authorisations still sitting on the Chase card, and whether Nestay charged Paris city tax."},
   {id:"oceanrefund", t:"REFUND: Oceanario, 69.75 euros / about $78 (closed by the storm)", by:"2026-11-25", n:"Closed Wed Nov 11 for Storm Charles. Booking 110965481, in Zaibnish's name, paid on the card. Email info@oceanario.pt asking for a refund to the original card; chase it if nothing by Nov 25. If they refuse, dispute it with Chase as a service not provided."},
   {id:"svqphoto", t:"Seville photoshoot (if booked): photos received", by:"2026-11-20", n:"Smiler, Plaza de Espana, Sun Nov 15. Photos come by link within 48 hours."},
@@ -3084,7 +3084,7 @@ function afterBlock(){
 
 var PAID = [
   ["Flights and bags", [["United IAH-IAD-LIS + $90 bag",1479],["American CDG-DFW incl. $87 bag",1616.49],["TAP Lisbon-Malaga",538.32],["Air France Seville-Paris",369.80]]],
-  ["Places to stay, 9 nights", [["Lisbon, Residentas (2 nights)",582],["Granada, Hotel America (2), 428 euros charged Nov 11",481.63],["Seville, Iberflat (2), charged Nov 11 incl. 100 euro deposit",432.12],["Iberflat 100 euro deposit REFUNDED",-112.20],["Paris, Nestay (3)",1378]]],
+  ["Places to stay, 9 nights", [["Lisbon, Residentas (2 nights)",582],["Granada, Hotel America (2), 428 euros charged Nov 11",481.63],["Seville, Iberflat (2), charged Nov 11 incl. 100 euro deposit",432.12],["Iberflat 100 euro deposit REFUNDED (Arrendamientos Apari credit, pending)",-110.19],["Paris, Nestay (3)",1378]]],
   ["Tickets and tours", [["Disneyland, 1 day / 2 parks",348.74],["Eiffel Tower",70.89],["Oceanario (closed by the storm, 69.75 euros refund requested)",0],["Lisbon photoshoot (cancelled, $60.51 refund pending)",0],["Alhambra",48.69],["Paris photoshoot",39.21],["Seville Cathedral",32.63],["Real Alcazar, Sun 1:00 PM (Rizwan, 31 euros)",34.78],["Visitor Center Seville, one charge (Zaibnish): flamenco 48 + river cruise about 45 = about 93 euros; confirm on her Nov 14 alert",104.35]]],
   ["Coaches", [["ALSA Granada to Seville (84.12 euros, card $94.52)",94.52],["ALSA Malaga Airport to Granada (43.27 euros)",50]]],
   ["Airport taxis (Booking.com)", [["CDG to Nestay, Nov 16",68.66],["Nestay to CDG, Nov 19",62.25],["Apartment to Lisbon airport, Nov 12",16.97],["Lisbon airport to apartment, Nov 10",15.42]]],
@@ -3094,6 +3094,7 @@ var PAID = [
   ["Lisbon, Wed Nov 11 (storm day)", [["Bullger",28.30],["BK Carmo",10.75],["Restauradores",8.10],["CD R.C. Sanches",7.43],["Starbucks",5.51],["Bolt x5",34.62],["Rizwan, 23 euros",25.81],["Rizwan, 10 euros",11.22]]],
   ["Travel day, Thu Nov 12", [["SSP airport food",19.55],["Taxi 411 (Granada)",16.55],["Starbucks",7.98],["Areas Portugal",4.69],["Transportes Rober (Granada bus) x2",3.58],["Rizwan, 48.92 euros (5 charges)",54.89]]],
   ["Granada, Fri Nov 13 (Zaibnish)", [["Luisitas Darro",7.77],["Souvenirs Valdivieso",5.55],["Taxi 266",4.72],["Artesania Fes",3.33],["Coffee and Tea House",3.33],["La Blanca Paloma",2.78],["Art. Medina Plaza Nueva x2 (2.55 + 2.17)",4.72],["Transportes Rober (bus) x2",3.56],["Taxis on Booking, pending credit",-1.54]]],
+  ["Seville to Paris, Mon Nov 16 (Zaibnish)", [["Taxi 1076 (apartment to SVQ)",28.79],["Sevilla Aeropuerto",21.77],["Villa Tokyo (Paris dinner)",17.72],["Jechura, Constitucion",10.96],["Starbucks",8.08],["Sevilla Futbol Club shop",3.21],["Service Navigo (Paris metro)",2.82]]],
   ["Seville, Sun Nov 15 (Zaibnish)", [["Belenes",22.70],["Slice Pizza",13.84],["Starbucks Av. Constitucion",7.09],["Alfaro Restauracion",6.87],["Amorino, C/ Alemanes",6.87],["Alemanes",6.64]]],
   ["Granada and Seville, Nov 13-14 (Rizwan)", [["Rizwan, 103.18 euros (8 charges: 36.09, 20.54, 16.43, 13.32, 8.77, 4.37, 2.22, 1.44)",115.77]]]
 ];
