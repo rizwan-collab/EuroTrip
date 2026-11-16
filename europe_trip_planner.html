@@ -679,7 +679,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-15d";
+var BUILD = "2026-11-16a";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -3056,7 +3056,7 @@ function decideBlock(){
 /* ---------- After the trip: refunds, deposits, claims ---------- */
 var AFTER = [
   {id:"trainrefund", t:"REFUND: Trainline 2FKGY4, Granada to Seville (confirm both legs)", by:"2026-11-30", n:"Check the card for about $181.76 back, both legs and all three tickets. If it has not landed by Nov 30, chase Trainline. If they will not pay, open a Chase dispute (chargeback): Renfe cancelled the train (email of Nov 9)."},
-  {id:"ibdeposit", t:"Seville deposit: Iberflat 100 euros back", by:"2026-11-23", n:"Damage deposit taken on arrival Nov 14, refunded within 7 days. Chase Iberflat (+34 955 515 541) if it is still held after Nov 23."},
+  {id:"ibdeposit", t:"RECEIVED: Iberflat 100 euro deposit refunded (about $112)", by:"2026-11-23", n:"Confirmed back by Nov 16. Tick this off."},
   {id:"holds", t:"Card holds released (Nestay, hotels, car services)", by:"2026-11-30", n:"Check for any pre-authorisations still sitting on the Chase card, and whether Nestay charged Paris city tax."},
   {id:"oceanrefund", t:"REFUND: Oceanario, 69.75 euros / about $78 (closed by the storm)", by:"2026-11-25", n:"Closed Wed Nov 11 for Storm Charles. Booking 110965481, in Zaibnish's name, paid on the card. Email info@oceanario.pt asking for a refund to the original card; chase it if nothing by Nov 25. If they refuse, dispute it with Chase as a service not provided."},
   {id:"svqphoto", t:"Seville photoshoot (if booked): photos received", by:"2026-11-20", n:"Smiler, Plaza de Espana, Sun Nov 15. Photos come by link within 48 hours."},
@@ -3084,7 +3084,7 @@ function afterBlock(){
 
 var PAID = [
   ["Flights and bags", [["United IAH-IAD-LIS + $90 bag",1479],["American CDG-DFW incl. $87 bag",1616.49],["TAP Lisbon-Malaga",538.32],["Air France Seville-Paris",369.80]]],
-  ["Places to stay, 9 nights", [["Lisbon, Residentas (2 nights)",582],["Granada, Hotel America (2), 428 euros charged Nov 11",481.63],["Seville, Iberflat (2), charged Nov 11 incl. 100 euro deposit",432.12],["Paris, Nestay (3)",1378]]],
+  ["Places to stay, 9 nights", [["Lisbon, Residentas (2 nights)",582],["Granada, Hotel America (2), 428 euros charged Nov 11",481.63],["Seville, Iberflat (2), charged Nov 11 incl. 100 euro deposit",432.12],["Iberflat 100 euro deposit REFUNDED",-112.20],["Paris, Nestay (3)",1378]]],
   ["Tickets and tours", [["Disneyland, 1 day / 2 parks",348.74],["Eiffel Tower",70.89],["Oceanario (closed by the storm, 69.75 euros refund requested)",0],["Lisbon photoshoot (cancelled, $60.51 refund pending)",0],["Alhambra",48.69],["Paris photoshoot",39.21],["Seville Cathedral",32.63],["Real Alcazar, Sun 1:00 PM (Rizwan, 31 euros)",34.78],["Visitor Center Seville, one charge (Zaibnish): flamenco 48 + river cruise about 45 = about 93 euros; confirm on her Nov 14 alert",104.35]]],
   ["Coaches", [["ALSA Granada to Seville (84.12 euros, card $94.52)",94.52],["ALSA Malaga Airport to Granada (43.27 euros)",50]]],
   ["Airport taxis (Booking.com)", [["CDG to Nestay, Nov 16",68.66],["Nestay to CDG, Nov 19",62.25],["Apartment to Lisbon airport, Nov 12",16.97],["Lisbon airport to apartment, Nov 10",15.42]]],
