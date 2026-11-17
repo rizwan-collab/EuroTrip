@@ -679,7 +679,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-18b";
+var BUILD = "2026-11-18c";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -1148,24 +1148,24 @@ var PLAN = [
   sum:"A real Paris day rather than a scramble. Market, river, and the Eiffel summit at night when it is worth doing.",
   sched:[
     ["07:45","Montorgueil market breakfast","<b>Rue Montorgueil, 5 minutes from Nestay.</b> <b>Earlier than the other mornings</b> because of the 09:30 Eiffel slot. Pedestrian market street: bakeries, cheesemongers, fruit stalls, cafes. Bread, cheese, fruit, coffee. <b>Replaces Rue Cler</b>, which is 3.5 km away in the 7th and was planned when Paris was going to be based there."],
-    ["08:35","Metro to Bir-Hakeim","<b>Chatelet, line 1 to Charles de Gaulle-Etoile, then line 6.</b> About 30 to 35 minutes door to tower. <b>Line 6 runs above ground and crosses the Seine with the tower filling the window</b> - sit on the right."],
+    ["08:45", "Uber to the Eiffel Tower (about 25 min)", "Book from Rue Montorgueil; drop-off at the tower&#39;s Avenue Gustave Eiffel side. Uber has car seats only in some cars: bring the booster or ask.", {"a": "Eiffel Tower, Avenue Gustave Eiffel, 75007 Paris", "q": "Tour Eiffel entrance", "f": "Rue Montorgueil", "w": "-", "d": "25 to 30 min", "tx": "-", "b": "Uber about 25 to 35 euros"}],
     ["09:15","Arrive, security","Bag check before the lifts. Allow the full 15 minutes."],
     ["09:30","EIFFEL TOWER - booked, stairs + lift","<b>Booked, 63 euros for three.</b> Stairs to the 2nd floor (about 670 steps, rest at the 1st floor, 30 to 45 minutes with Izyan), then the lift to the summit. Daytime ascent, so you get the view. E-tickets on your phone, Izyan&#39;s passport for proof of age."],
     ["11:30","Leave the summit, head down","<b>Hard stop.</b> Summit lift queues can run long; start down by 11:30 so you reach the bridge in time."],
     ["11:55","Walk to Pont de Bir-Hakeim","About 10 minutes from the tower base along the Seine. Meet in the middle of the bridge by the Joan of Arc horse statue. Photographer contacts you on WhatsApp."],
     ["12:00","FAMILY PHOTOSHOOT - booked","<b>GetYourGuide, 15 minutes, 5 edited photos, private for up to 4. $39.21, in Zaibnish&#39;s name.</b> Booking reference and PIN in the GetYourGuide app. If you are running late, message the photographer on WhatsApp right away."],
     ["12:20", "Lunch by the Champ de Mars", "Cafes on Avenue de la Bourdonnais or Rue Saint-Dominique, 5 min from the bridge. Ask for no pork. Let Izyan run on the lawn."],
-    ["13:15", "RER C to Notre-Dame (direct, about 15 min)", "From Champ de Mars-Tour Eiffel station to Saint-Michel Notre-Dame. Metro ticket, same as the RER.", {"a": "Notre-Dame de Paris, 6 Parvis Notre-Dame, 75004 Paris", "q": "Cathedrale Notre-Dame de Paris", "f": "the Eiffel Tower", "w": "45 min", "d": "15 min (RER C) / taxi 20 min", "tx": "20 to 25 euros", "b": "18 to 25 euros"}],
+    ["13:15", "Uber to Notre-Dame (about 20 min)", "From Avenue de la Bourdonnais / Champ de Mars to the Parvis Notre-Dame.", {"a": "Notre-Dame de Paris, 6 Parvis Notre-Dame, 75004 Paris", "q": "Cathedrale Notre-Dame de Paris", "f": "the Champ de Mars", "w": "-", "d": "15 to 25 min", "tx": "-", "b": "Uber about 18 to 25 euros"}],
     ["13:45", "NOTRE-DAME (free)", "<b>Book a free timed slot tonight</b> on notredamedeparis.fr (walk-in line otherwise). About 45 min inside. Shoulders covered, quiet voices."],
-    ["14:40", "Walk to the Louvre (about 15 min)", "Over the Pont Neuf, then along the river to the glass pyramid.", {"a": "Louvre Museum, Pyramid entrance, Rue de Rivoli, 75001 Paris", "q": "Louvre Pyramid entrance", "f": "Notre-Dame", "w": "15 min (1.2 km)", "d": "7 min", "tx": "10 to 13 euros", "b": "10 to 14 euros"}],
-    ["15:00", "LOUVRE (book a timed ticket tonight)", "Open late on Wednesdays. Under-18s free; adults pay (non-EU price raised in 2026: check louvre.fr). Highlights only, about 90 min: Mona Lisa, Winged Victory, the Egyptian mummies (Izyan will love these). Strollers allowed."],
-    ["16:35", "POLENE flagship (handbag), 5 min walk", "69 Rue de Richelieu. <b>Bring Zaibnish&#39;s original passport</b> for the tax-free form (over 100.01 euros, final sale). Open to about 7:00 to 7:30 PM.", {"a": "Polene, 69 Rue de Richelieu, 75002 Paris", "q": "Polene 69 Rue de Richelieu Paris", "f": "the Louvre", "w": "5 to 8 min", "d": "-", "tx": "-", "b": "-"}],
-    ["17:20", "Optional: Tuileries Christmas market", "10 min walk back past the Louvre, or skip and rest."],
-    ["17:40", "Back to the apartment, warm up and change", "Coats on for the evening.", {"a": "Nestay, 7 Rue de la Cossonnerie, 75001 Paris", "q": "7 Rue de la Cossonnerie Paris", "f": "Polene", "w": "15 min (1.1 km)", "d": "7 min", "tx": "10 to 13 euros", "b": "10 to 14 euros"}],
-    ["18:45","Metro to Paris Jamatkhana","Line 14 from Chatelet to Madeleine, then line 8 to Commerce, about 35 min. Or Bolt, about 25 min."],
+    ["14:40", "Walk to the Louvre pyramid (about 15 min)", "Over the Pont Neuf, then along the river to the glass pyramid.", {"a": "Louvre Pyramid, Cour Napoleon, 75001 Paris", "q": "Louvre Pyramid", "f": "Notre-Dame", "w": "15 min (1.2 km)", "d": "7 min", "tx": "-", "b": "Uber about 10 to 14 euros"}],
+    ["15:00", "LOUVRE from outside (no ticket)", "Glass pyramid photos in the Cour Napoleon, then walk through the arch to the Tuileries. About 20 to 30 min."],
+    ["15:30", "POLENE flagship (handbag), 5 to 8 min walk", "69 Rue de Richelieu. <b>Bring Zaibnish&#39;s original passport</b> for the tax-free form (over 100.01 euros, final sale).", {"a": "Polene, 69 Rue de Richelieu, 75002 Paris", "q": "Polene 69 Rue de Richelieu Paris", "f": "the Louvre", "w": "5 to 8 min", "d": "-", "tx": "-", "b": "-"}],
+    ["16:15", "Tuileries Christmas market", "10 min walk back past the Louvre: chalets, rides, Ferris wheel."],
+    ["17:15", "Uber back to the apartment, rest and change", "Coats on for the evening.", {"a": "Nestay, 7 Rue de la Cossonnerie, 75001 Paris", "q": "7 Rue de la Cossonnerie Paris", "f": "the Tuileries", "w": "20 min", "d": "7 to 10 min", "tx": "-", "b": "Uber about 10 to 15 euros"}],
+    ["18:50", "Uber to Paris Jamatkhana (about 25 min)", "55 rue de la Croix Nivert, 75015.", {"a": "Paris Jamatkhana, 55 rue de la Croix Nivert, 75015 Paris", "q": "55 rue de la Croix Nivert Paris", "f": "Nestay", "w": "-", "d": "25 to 30 min", "tx": "-", "b": "Uber about 20 to 30 euros"}],
     ["19:30","PARIS JAMATKHANA - evening Du'a, CONFIRMED","55 rue de la Croix Nivert, 75015. Open every day, Du'a at 7:30 PM (confirmed by the Paris Jamat). Nearest metro: Commerce (line 8)."],
     ["20:45","Dinner on rue du Commerce","Five minutes' walk from the Jamatkhana. Last proper meal of the trip."],
-    ["22:00","Optional: Trocadero for the sparkle","<b>Line 8 to La Motte-Picquet, then line 6 to Trocadero, about 15 min.</b> Five minutes of lights on the hour. <b>Then the Christmas lights:</b> walk 15 min down Av. du President Wilson to <b>Avenue Montaigne</b> (lit trees with the tower behind), metro home from Alma-Marceau (line 9, then line 4 at Strasbourg-Saint-Denis or taxi 15 min, 15 to 20 euros). Skip it if Izyan is done."],
+    ["22:00","Optional: Trocadero for the sparkle","<b>Uber to Trocadero, about 10 min.</b> Five minutes of lights on the hour. <b>Then the Christmas lights:</b> walk 15 min down Av. du President Wilson to <b>Avenue Montaigne</b> (lit trees with the tower behind), Uber home from Avenue Montaigne (about 15 min, 15 to 20 euros). Skip it if Izyan is done."],
     ["22:15","Back, and pack tonight","So tomorrow morning is only breakfast and a taxi."]
   ],
   activities:{
