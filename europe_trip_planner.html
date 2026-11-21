@@ -679,7 +679,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-21a";
+var BUILD = "2026-11-21c";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -1098,7 +1098,7 @@ var PLAN = [
 },
 {
   n:9, date:"Tue Nov 17", wd:"Tuesday", city:"Disneyland Paris", tag:["p-g","His day"],
-  sum:"Rope drop, the two rides that matter first, out before he breaks. Tuesday is a low-crowd day, the Christmas overlay is running, and there is a steam train.",
+  sum:"DONE. Frontierland, Adventureland, Peter Pan, Meet Mickey, Pinocchio, Snow White, the dragon, Orbitron, then Adventure World. Frozen reopened after a morning breakdown.",
   warn:"<b>LIVE RIDE BOARD, Disneyland Park refreshed 10:15 AM</b> (Adventure World data from 9:50) (queue-times.com; refresh in the Disneyland app). Weather: 15 C, cloudy, <b>65% rain</b>: outdoor rides and boats can pause in heavy rain; covered/indoor rides keep running.<br><b>DOWN now:</b> <b>Frozen Ever After</b> (check the app, retry later), Crush&#39;s Coaster, Cars Road Trip, Toy Soldiers Parachute Drop, Phantom Manor, River Rogue Keelboats, Mickey&#39;s PhilharMagic, Pirate Galleon, the Railroad (all stations). Meet Mickey, Princess Pavilion, Meet Spider-Man, Starport not open yet.<br><b>ADVENTURE WORLD - go now (5 min):</b> Raiponce Tangled Spin, Flying Carpets, Slinky Dog, Cars Quatre Roues, Flight Force, RC Racer. Tower of Terror 15. Spider-Man W.E.B. 30. Ratatouille 55 (skip or later).<br><b>DISNEYLAND PARK - short (5 to 15):</b> Pirates of the Caribbean, small world, Casey Jr., Carrousel, Mad Hatter, Pays des Contes de Fees, Alice&#39;s Labyrinth, Indiana Jones, Robinson treehouse, Nautilus, Buzz Lightyear 10, Star Tours 10, Orbitron 10, Dumbo 10, Snow White 15, Pinocchio 15, Hyperspace 15. <b>Long:</b> Peter Pan 50 (go after 6 PM or Premier Access), Big Thunder 35, Autopia 25, Riverboat 20.<br><b>IZYAN CAN RIDE (109 cm, open this morning):</b> Disneyland Park: Big Thunder (102 cm), Pirates, Robinson treehouse, Adventure Isle, Aladdin, Dumbo, Carrousel, Casey Jr., Storybook boats, Mad Hatter, small world, Alice, Pinocchio, Snow White, Peter Pan, Orbitron, Buzz Lightyear, Star Tours (102 cm), Nautilus, Autopia (with an adult), Riverboat, Main Street Vehicles. Adventure World: Raiponce, Flying Carpets, Slinky Dog, Cars Quatre Roues, Spider-Man, Ratatouille, Frozen (when fixed). <b>Too short:</b> Indiana Jones (140), Hyperspace Mountain (120), RC Racer (120), Flight Force (120). Crush&#39;s Coaster (107, he fits) is down.<br><b>Route (started in Frontierland at 10 AM):</b> Frontierland, Adventureland, Fantasyland, Discoveryland and lunch, then Adventure World from 3 PM. Frozen whenever it reopens. Elsa/Anna and Hero Training virtual queues in the app.<br>Both parks open at 09:30. Being at the gate at 09:15 rather than 10:30 is worth about two hours of queueing later.",
   sched:[
     ["07:00","Breakfast at the apartment","Eat properly. Park food is six to ten euros an item."],
@@ -1145,7 +1145,7 @@ var PLAN = [
 },
 {
   n:10, date:"Wed Nov 18", wd:"Wednesday", city:"Paris", tag:["p-g","The day the extra night buys"],
-  sum:"A real Paris day rather than a scramble. Market, river, and the Eiffel summit at night when it is worth doing.",
+  sum:"DONE. Eiffel Tower, family photoshoot (moved to 1 PM), then the afternoon in central Paris and the Jamatkhana.",
   sched:[
     ["07:45","Montorgueil market breakfast","<b>Rue Montorgueil, 5 minutes from Nestay.</b> <b>Earlier than the other mornings</b> because of the 09:30 Eiffel slot. Pedestrian market street: bakeries, cheesemongers, fruit stalls, cafes. Bread, cheese, fruit, coffee. <b>Replaces Rue Cler</b>, which is 3.5 km away in the 7th and was planned when Paris was going to be based there."],
     ["08:45", "Uber to the Eiffel Tower (about 25 min)", "Book from Rue Montorgueil; drop-off at the tower&#39;s Avenue Gustave Eiffel side. Uber has car seats only in some cars: bring the booster or ask.", {"a": "Eiffel Tower, Avenue Gustave Eiffel, 75007 Paris", "q": "Tour Eiffel entrance", "f": "Rue Montorgueil", "w": "-", "d": "25 to 30 min", "tx": "-", "b": "Uber about 25 to 35 euros"}],
@@ -1200,7 +1200,7 @@ var PLAN = [
 },
 {
   n:11, date:"Thu Nov 19", wd:"Thursday", city:"Paris to Texas", tag:["p-n","Departure"],
-  sum:"Breakfast and a taxi. Nothing else, and nothing needed.",
+  sum:"DONE. Taxi to CDG Terminal 2A, AA 49 to Dallas, Enterprise car to Sugar Land. Trip complete.",
   sched:[
     ["06:45","Breakfast, final check","Anything left on Rue Cler, or the apartment kitchen. Bins out, keys where the host asked."],
     ["07:30","TAXI TO CDG - BOOKED (Booking.com 334368205)","VYCAB, standard car, booster seat. Driver waits 15 min only, so be downstairs at 07:25. About 50 min to Terminal 2A."],
@@ -3055,11 +3055,13 @@ function decideBlock(){
 
 /* ---------- After the trip: refunds, deposits, claims ---------- */
 var AFTER = [
-  {id:"trainrefund", t:"REFUND: Trainline 2FKGY4, Granada to Seville (confirm both legs)", by:"2026-11-30", n:"Check the card for about $181.76 back, both legs and all three tickets. If it has not landed by Nov 30, chase Trainline. If they will not pay, open a Chase dispute (chargeback): Renfe cancelled the train (email of Nov 9)."},
+  {id:"trainrefund", t:"REFUND: Trainline 2FKGY4, about $181.76 to ZAIBNISH&#39;S card", by:"2026-11-30", n:"On Zaibnish&#39;s Chase card. Check for about $181.76 back, both legs and all three tickets. If it has not landed by Nov 30, chase Trainline. If they will not pay, open a Chase dispute (chargeback): Renfe cancelled the train (email of Nov 9)."},
   {id:"ibdeposit", t:"RECEIVED: Iberflat 100 euro deposit, $110.19 credit (Arrendamientos Apari)", by:"2026-11-23", n:"Pending credit on the Chase card Nov 16. Tick this off once it posts."},
   {id:"holds", t:"Card holds released (Nestay, hotels, car services)", by:"2026-11-30", n:"Check for any pre-authorisations still sitting on the Chase card, and whether Nestay charged Paris city tax."},
-  {id:"oceanrefund", t:"REFUND: Oceanario, 69.75 euros / about $78 (closed by the storm)", by:"2026-11-25", n:"Closed Wed Nov 11 for Storm Charles. Booking 110965481, in Zaibnish's name, paid on the card. Email info@oceanario.pt asking for a refund to the original card; chase it if nothing by Nov 25. If they refuse, dispute it with Chase as a service not provided."},
+  {id:"oceanrefund", t:"REFUND: Oceanario, $78.49 to RIZWAN&#39;S card (closed by the storm)", by:"2026-11-25", n:"Charged $78.49 on Rizwan&#39;s card Nov 10. Closed Wed Nov 11 for Storm Charles. Booking 110965481, in Zaibnish's name. Email info@oceanario.pt asking for a refund to the original card; chase it if nothing by Nov 25. If they refuse, dispute it with Chase as a service not provided."},
   {id:"svqphoto", t:"Seville photoshoot (if booked): photos received", by:"2026-11-20", n:"Smiler, Plaza de Espana, Sun Nov 15. Photos come by link within 48 hours."},
+  {id:"vatrefund", t:"TAX-FREE REFUNDS: Leo et Violette ($617.40) and La Cadette ($915.16), if forms were scanned at CDG", by:"2026-12-31", n:"Only if a tax-free form was issued in store AND scanned at a PABLO kiosk at CDG on Nov 19. Expect roughly 10 to 12 percent back to the card used, often 2 to 8 weeks later."},
+  {id:"bkcredit", t:"CREDIT: Booking.com taxis, $1.54 (pending on Zaibnish&#39;s card)", by:"2026-11-30", n:"Small taxi adjustment; just confirm it posts."},
   {id:"lphotorefund", t:"REFUND: Lisbon photoshoot, $60.51 (GetYourGuide, pending on the card)", by:"2026-11-25", n:"Cancelled. $60.51 GetYourGuide credit pending since Nov 10; confirm it posts to the Chase Sapphire."},
   {id:"pphotos", t:"Paris photoshoot: 5 edited photos received", by:"2026-11-28", n:"GetYourGuide, Nov 18. Message the photographer on WhatsApp if nothing arrives within about a week."},
   {id:"statement", t:"Match the Chase statement to the budget", by:"2026-12-05", n:"Look for duplicates (check the Alhambra 43.27 euro charge) and anything unexpected. Dispute anything wrong with Chase."},
@@ -3085,24 +3087,25 @@ function afterBlock(){
 var PAID = [
   ["Flights and bags", [["United IAH-IAD-LIS + $90 bag",1479],["American CDG-DFW incl. $87 bag",1616.49],["TAP Lisbon-Malaga",538.32],["Air France Seville-Paris",369.80]]],
   ["Places to stay, 9 nights", [["Lisbon, Residentas (2 nights)",582],["Granada, Hotel America (2), 428 euros charged Nov 11",481.63],["Seville, Iberflat (2), charged Nov 11 incl. 100 euro deposit",432.12],["Iberflat 100 euro deposit REFUNDED (Arrendamientos Apari credit, pending)",-110.19],["Paris, Nestay (3)",1378]]],
-  ["Tickets and tours", [["Disneyland, 1 day / 2 parks",348.74],["Eiffel Tower",70.89],["Oceanario (closed by the storm, 69.75 euros refund requested)",0],["Lisbon photoshoot (cancelled, $60.51 refund pending)",0],["Alhambra",48.69],["Paris photoshoot",39.21],["Seville Cathedral",32.63],["Real Alcazar, Sun 1:00 PM (Rizwan, 31 euros)",34.78],["Visitor Center Seville, one charge (Zaibnish): flamenco 48 + river cruise about 45 = about 93 euros; confirm on her Nov 14 alert",104.35]]],
+  ["Tickets and tours", [["Disneyland, 1 day / 2 parks",348.74],["Eiffel Tower",70.89],["Oceanario (closed by the storm, 69.75 euros refund requested)",0],["Lisbon photoshoot (cancelled, $60.51 refund pending)",0],["Alhambra",48.69],["Paris photoshoot",39.21],["Seville Cathedral",32.63],["Real Alcazar, Sun 1:00 PM (Rizwan, 31 euros)",34.33],["Visitor Center Seville, one charge (Zaibnish): flamenco 48 + river cruise about 45 = about 93 euros; confirm on her Nov 14 alert",104.35]]],
   ["Coaches", [["ALSA Granada to Seville (84.12 euros, card $94.52)",94.52],["ALSA Malaga Airport to Granada (43.27 euros)",50]]],
   ["Airport taxis (Booking.com)", [["CDG to Nestay, Nov 16",68.66],["Nestay to CDG, Nov 19",62.25],["Apartment to Lisbon airport, Nov 12",16.97],["Lisbon airport to apartment, Nov 10",15.42]]],
   ["Travel insurance", [["Tin Leg Gold, all three",77]]],
   ["Spent on the road", [["T-Mobile international plan (Rizwan)",75],["Velvet Taco, Houston airport, Nov 9 (Zaibnish)",37.73]]],
   ["Lisbon, Tue Nov 10", [["Sidhu Tours (Zaibnish)",224.54],["Henrique Sa Pessoa (Zaibnish)",17.65],["Pizzeria Romana (Zaibnish)",13.47],["Crush Doughnuts (Zaibnish)",11.74],["Loja Candy Lisa (Zaibnish)",6.75],["Sabores d'Avila (Zaibnish)",6.68],["Bolt (Zaibnish)",3.63],["Rest Smokin (Zaibnish)",2.53],["Food, 21 euros (Rizwan)",23.56],["Food, 17 euros (Rizwan)",19.07]]],
-  ["Lisbon, Wed Nov 11 (storm day)", [["Bullger",28.30],["BK Carmo",10.75],["Restauradores",8.10],["CD R.C. Sanches",7.43],["Starbucks",5.51],["Bolt x5",34.62],["Rizwan, 23 euros",25.81],["Rizwan, 10 euros",11.22]]],
-  ["Travel day, Thu Nov 12", [["SSP airport food",19.55],["Taxi 411 (Granada)",16.55],["Starbucks",7.98],["Areas Portugal",4.69],["Transportes Rober (Granada bus) x2",3.58],["Rizwan, 48.92 euros (5 charges)",54.89]]],
+  ["Lisbon, Wed Nov 11 (storm day)", [["Bullger",28.30],["BK Carmo",10.75],["Restauradores",8.10],["CD R.C. Sanches",7.43],["Starbucks",5.51],["Bolt x5",34.62],["Rizwan card: Cafeteria Sao Nicolau",23.15],["Rizwan card: Seher Souvenir",7.31]]],
+  ["Travel day, Thu Nov 12", [["SSP airport food",19.55],["Taxi 411 (Granada)",16.55],["Starbucks",7.98],["Areas Portugal",4.69],["Transportes Rober (Granada bus) x2",3.58],["Rizwan card: El Taj Halal, Granada",31.28],["Rizwan card: Hediard, Lisbon",6.93],["Rizwan card: Mini Market, Granada",4.58],["Rizwan card: 1 Minute Malaga",3.34],["Rizwan card: Croissanteria La Blanca",2.79]]],
   ["Granada, Fri Nov 13 (Zaibnish)", [["Luisitas Darro",7.77],["Souvenirs Valdivieso",5.55],["Taxi 266",4.72],["Artesania Fes",3.33],["Coffee and Tea House",3.33],["La Blanca Paloma",2.78],["Art. Medina Plaza Nueva x2 (2.55 + 2.17)",4.72],["Transportes Rober (bus) x2",3.56],["Taxis on Booking, pending credit",-1.54]]],
   ["Seville to Paris, Mon Nov 16 (Zaibnish)", [["Taxi 1076 (apartment to SVQ)",28.79],["Sevilla Aeropuerto",21.77],["Villa Tokyo (Paris dinner)",17.72],["Jechura, Constitucion",10.96],["Starbucks",8.08],["Sevilla Futbol Club shop",3.21],["Service Navigo (Paris metro)",2.82]]],
   ["Disneyland day, Tue Nov 17 (Zaibnish)", [["Euro Disney (park, 2:00 PM)",36.43],["Euro Disney (park, morning)",23.18],["Euro Disney (park, lunchtime)",7.73],["RATP (RER/metro)",3.64],["Service Navigo",2.82],["RATP",1.44],["Uber, 11:03 PM Paris (pending; likely the ride home)",22.71]]],
   ["Paris, Wed Nov 18 (Zaibnish)", [["Leo et Violette handbag (617.40 dollars; tax refund pending if a form was done)",617.40],["SBH Company",30.10],["Bolt",20.84],["Bolt",14.22],["Bolt (separate ride)",14.22],["Uber",12.26],["Uber",9.40],["Eiffel Tower restaurant",8.82],["SB Canopee",7.44],["Pixie",2.21]]],
+  ["Rizwan card, Nov 9 to 18 (from the card app)", [["La Cadette, Paris, Wed (915.16 dollars: CONFIRM what this is)",915.16],["Pepecab, Mon (likely airport taxi)",105.20],["Five Chickens, Seville, Sun",45.18],["Italian Trattoria, Paris, Tue",25.03],["Ground Burger, Lisbon, Nov 10",23.98],["Duro de Matar, Lisbon, Nov 10",21.38],["Petit Sohail, Paris, Wed",18.52],["Popeyes",16.14],["Motolo Capital, Seville, Mon",15.73],["Reales Alcazares cafe, Sun",7.31],["Souvenirs 2000, Paris, Wed",5.51],["Rdoa8, Paris, Wed",3.31],["Navigo x2 (Mon, Tue)",5.62]]],
   ["Travel home, Thu Nov 19 (Zaibnish)", [["Enterprise rental, DFW to Sugar Land",115.63],["Starbucks (CDG)",21.46],["Buc-ee&#39;s",10.27]]],
   ["Seville, Sun Nov 15 (Zaibnish)", [["Belenes",22.70],["Slice Pizza",13.84],["Starbucks Av. Constitucion",7.09],["Alfaro Restauracion",6.87],["Amorino, C/ Alemanes",6.87],["Alemanes",6.64]]],
-  ["Granada and Seville, Nov 13-14 (Rizwan)", [["Rizwan, 103.18 euros (8 charges: 36.09, 20.54, 16.43, 13.32, 8.77, 4.37, 2.22, 1.44)",115.77]]]
+  ["Granada and Seville, Nov 13-14 (Rizwan)", [["Muglia",36.09],["Nemrut Kebab-Pizza",20.54],["Granada City Tour",16.43],["Vaiven-paraiso2",13.32],["Hotel America",8.77],["Malvon",4.37],["Artesanias Andaluz",2.22],["Mini Market",1.44]]]
 ];
 var TOSPEND = [
-  ["Food, local transport, small extras", BDG_TOTAL, Math.round(BDG_TOTAL*1.3/10)*10, "Day-by-day plan below; high end allows 30% extra. Actual spends move to Paid as you send them."]
+  ["Nothing left to spend: trip complete", 0, 0, "All card charges are under Paid. About $432 in refunds is still to come back (see the refund list in Bookings), plus any tax-free refunds."]
 ];
 function usd(n){ return '$' + n.toLocaleString('en-US',{minimumFractionDigits:2, maximumFractionDigits:2}); }
 function usd0(n){ return '$' + Math.round(n).toLocaleString('en-US'); }
