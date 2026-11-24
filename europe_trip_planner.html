@@ -602,6 +602,7 @@ nav{position:sticky}
 #lkm input{width:100%;box-sizing:border-box;font-size:16px;padding:10px 12px;border:1px solid var(--line,#ccc);border-radius:10px;margin:12px 0 8px;background:transparent;color:inherit}
 #lkm .lke{color:#c0392b;font-size:13px;min-height:18px}
 .lkp{text-align:center;padding:30px 16px}
+.vit nav,.vit #lkbtn,.vit #hdr-allin,.vit .h-m:has(#hdr-allin),.vit #sync-st{display:none !important}
 </style>
 </head>
 <body>
@@ -651,6 +652,9 @@ var TABS = [
   ["booking","Booking Checklist"], ["budget","Budget"], ["packing","Packing"],
   ["food","Food"], ["izyan","Izyan's Guide"]
 ];
+/* ?view=itinerary: itinerary-only page for sharing (no other tabs, no tick sync, no budget) */
+var VIEW_IT = /[?&]view=itinerary(&|$)/.test(location.search);
+if(VIEW_IT){ TABS = TABS.filter(function(x){ return x[0] === 'itinerary'; }); document.documentElement.classList.add('vit'); document.title = 'Europe 2026 \u00b7 Itinerary'; }
 
 /* ---------- persistence ---------- */
 function save(k,v){ try{ localStorage.setItem("eu26_"+k, v); }catch(e){} }
@@ -688,7 +692,7 @@ function kflight(a,b,d){
    a verified date and a one-click link to the live search instead.
    ================================================================== */
 var VERIFIED_ON = "2026-10-31";
-var BUILD = "2026-11-22a";
+var BUILD = "2026-11-24a";
 var BUILD_LABEL = "Updated Nov 4";
 /* Self-update: if this browser is showing a cached older copy, load the latest one. */
 (function(){
@@ -3717,6 +3721,7 @@ var RENDER = {
    (stores only tick keys, 1/0 values and timestamps; messages kept 12h, phones re-send a snapshot every 3h). */
 var SYNC = {topic:'eu26hub-pgnt3gh7hnh4', re:/^eu26_(act_|dc_|after_|bk_|dl_|pick_)/, applying:false, t:null, ok:null};
 (function(){
+  if(VIEW_IT) return;
   var LS; try { LS = window.localStorage; LS.getItem('x'); } catch(e){ return; }
   var rawSet = Storage.prototype.setItem, rawGet = Storage.prototype.getItem;
   function jget(k, d){ try { return JSON.parse(rawGet.call(LS, k) || '') || d; } catch(e){ return d; } }
@@ -3842,6 +3847,7 @@ function foldNotes(scope){
 }
 
 function show(key){
+  if(VIEW_IT) key = "itinerary";
   var i, el;
   var navs = document.querySelectorAll(".nv");
   for(i = 0; i < navs.length; i++){
@@ -3869,7 +3875,7 @@ function show(key){
   if(nb && nv){ nv.scrollLeft = nb.offsetLeft - (nv.clientWidth - nb.offsetWidth)/2; }
   centerChip();
   var hA=document.getElementById('hdr-allin'); if(hA && !LOCK.on){ hA.innerHTML='&#128274;'; } else if(hA){ var bT=budgetTotals(); hA.innerHTML=usd0(bT.allLo)+'&ndash;'+usd0(bT.allHi).slice(1); }
-  document.documentElement.style.setProperty('--navh', (document.querySelector('nav').offsetHeight||46)+'px');
+  document.documentElement.style.setProperty('--navh', (VIEW_IT ? 0 : (document.querySelector('nav').offsetHeight||46))+'px');
   if(key === 'itinerary' && todayN() > 1 && !show._jumped){ show._jumped = true; setTimeout(function(){ var c=document.getElementById('day-'+todayN()); if(c) c.scrollIntoView({block:'start'}); }, 60); }
 }
 window.addEventListener('scroll', function(){ var b = document.getElementById('totop'); if(b) b.classList.toggle('on', window.scrollY > 900); }, {passive:true});
